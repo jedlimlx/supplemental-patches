@@ -27,7 +27,7 @@ plugins {
 }
 
 group = "io.github.jedlimlx.supplemental_patches"
-version = "1.0.0"
+version = "0.1.0-beta"
 
 val modid = "supplemental_patches"
 val vendor = "jedlimlx"

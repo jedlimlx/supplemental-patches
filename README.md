@@ -1,3 +1,3 @@
-# Adjustments
+# Supplemental Patches
 
-This is a mod adding compatibility between various mods.
+Additional patches to Euphoria Patches providing better support for many modded blocks from popular mods, added via a data-driven format.
