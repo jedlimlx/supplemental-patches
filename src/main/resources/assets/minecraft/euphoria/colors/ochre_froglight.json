@@ -1,0 +1,4 @@
+{
+  "index": 7,
+  "code": "vec4(pow(vec3(1.1, 0.85, 0.35), vec3(FROGLIGHT_SATURATION * 0.5 + 0.5)) * 5.0, 0.0)"
+}

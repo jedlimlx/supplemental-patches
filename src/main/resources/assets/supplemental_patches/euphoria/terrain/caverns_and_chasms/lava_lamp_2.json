@@ -1,0 +1,10 @@
+{
+  "name": "lava_lamp_2",
+  "glsl": "lava_lamp_2.glsl",
+  "mat0": [
+    "caverns_and_chasms:lava_lamp:facing=north",
+    "caverns_and_chasms:lava_lamp:facing=south"
+  ],
+  "color": "minecraft:lava",
+  "held_lighting": true
+}

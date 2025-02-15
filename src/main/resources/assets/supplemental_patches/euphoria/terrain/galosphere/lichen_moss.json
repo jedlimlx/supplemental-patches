@@ -1,0 +1,20 @@
+{
+  "name": "lichen_moss",
+  "glsl": "lichen_moss.glsl",
+  "mat0": [
+    "galosphere:lichen_moss:lit=false"
+  ],
+  "mat1": [
+    "galosphere:bowl_lichen",
+    "galosphere:lichen_roots"
+  ],
+  "mat2": [
+    "galosphere:lichen_moss:lit=true"
+  ],
+  "color": [
+    null,
+    null,
+    "minecraft:glow_lichen",
+    null
+  ]
+}

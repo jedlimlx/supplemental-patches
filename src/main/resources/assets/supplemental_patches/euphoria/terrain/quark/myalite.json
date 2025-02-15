@@ -1,0 +1,29 @@
+{
+  "name": "myalite",
+  "glsl": "myalite.glsl",
+  "mat0": [
+    "quark:myalite",
+    "quark:polished_myalite",
+    "quark:myalite_bricks",
+    "supplemental_patches:myalite_tiles",
+    "quark:chiseled_myalite_bricks"
+  ],
+  "mat1": [
+    "quark:myalite_stairs",
+    "quark:myalite_slab",
+    "quark:myalite_wall",
+    "quark:myalite_vertical_slab",
+    "quark:polished_myalite_stairs",
+    "quark:polished_myalite_slab",
+    "quark:polished_myalite_wall",
+    "quark:polished_myalite_vertical_slab",
+    "quark:myalite_bricks_stairs",
+    "quark:myalite_bricks_slab",
+    "quark:myalite_bricks_wall",
+    "quark:myalite_bricks_vertical_slab",
+    "supplemental_patches:myalite_tile_stairs",
+    "supplemental_patches:myalite_tile_slab",
+    "supplemental_patches:myalite_tile_wall",
+    "supplemental_patches:myalite_column"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "setting",
+  "name": "GLOWING_PINK_SALT",
+  "default": 2,
+  "values": [0, 1, 2, 3],
+  "en_US": {
+    "option": "Glowing Pink Salt",
+    "value.0": "§cOFF",
+    "value.1": "Cluster",
+    "value.2": "Cluster & Berserker",
+    "value.3": "Cluster & Berserker & Preserved"
+  }
+}

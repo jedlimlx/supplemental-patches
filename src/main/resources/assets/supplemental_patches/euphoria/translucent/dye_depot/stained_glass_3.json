@@ -1,0 +1,23 @@
+{
+  "name": "stained_glass_dye_depot_3",
+  "glsl": "stained_glass.glsl",
+  "mat0": [
+    "dye_depot:forest_stained_glass"
+  ],
+  "mat1": [
+    "dye_depot:forest_stained_glass_pane"
+  ],
+  "mat2": [
+    "dye_depot:ginger_stained_glass"
+  ],
+  "mat3": [
+    "dye_depot:ginger_stained_glass_pane"
+  ],
+  "color": [
+    "supplemental_patches:dye_depot/stained_glass/forest",
+    "supplemental_patches:dye_depot/stained_glass/forest",
+    "supplemental_patches:dye_depot/stained_glass/ginger",
+    "supplemental_patches:dye_depot/stained_glass/ginger"
+  ],
+  "needs_voxelization": true
+}

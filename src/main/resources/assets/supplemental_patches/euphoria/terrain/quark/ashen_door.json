@@ -1,0 +1,10 @@
+{
+  "name": "ashen_door",
+  "glsl": "ashen_door.glsl",
+  "mat1": [
+    "quark:ancient_door:powered=false"
+  ],
+  "mat3": [
+    "quark:ancient_door:powered=true"
+  ]
+}

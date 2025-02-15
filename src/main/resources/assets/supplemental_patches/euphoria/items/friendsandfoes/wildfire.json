@@ -1,0 +1,8 @@
+{
+  "name": "wildfire",
+  "glsl": "wildfire.glsl",
+  "mat0": [
+    "friendsandfoes:wildfire_crown",
+    "friendsandfoes:wildfire_crown_fragment"
+  ]
+}

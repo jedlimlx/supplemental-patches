@@ -1,0 +1,21 @@
+{
+  "name": "pink_salt",
+  "glsl": "pink_salt.glsl",
+  "mat0": [
+    "galosphere:pink_salt",
+    "galosphere:pastel_pink_salt",
+    "galosphere:rose_pink_salt"
+  ],
+  "mat1": [
+    "galosphere:pink_salt_straw",
+    "galosphere:pink_salt_slab",
+    "galosphere:pastel_pink_salt_slab",
+    "galosphere:rose_pink_salt_slab",
+    "galosphere:pink_salt_stairs",
+    "galosphere:pastel_pink_salt_stairs",
+    "galosphere:rose_pink_salt_stairs",
+    "galosphere:pink_salt_wall",
+    "galosphere:pastel_pink_salt_wall",
+    "galosphere:rose_pink_salt_wall"
+  ]
+}

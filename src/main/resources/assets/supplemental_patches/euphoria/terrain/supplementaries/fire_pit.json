@@ -1,0 +1,17 @@
+{
+  "name": "fire_pit",
+  "glsl": "fire_pit.glsl",
+  "mat0": [
+    "supplementaries:fire_pit:lit=true"
+  ],
+  "mat1": [
+    "supplementaries:fire_pit:lit=false"
+  ],
+  "color": [
+    "supplemental_patches:supplementaries/lumisene_fire",
+    null,
+    null,
+    null
+  ],
+  "held_lighting": true
+}

@@ -1,0 +1,11 @@
+{
+  "name": "endstone_lamp",
+  "glsl": "endstone_lamp.glsl",
+  "mat0": [
+    "supplementaries:end_stone_lamp"
+  ],
+  "color": [
+    "supplemental_patches:supplementaries/endstone_lamp"
+  ],
+  "held_lighting": true
+}

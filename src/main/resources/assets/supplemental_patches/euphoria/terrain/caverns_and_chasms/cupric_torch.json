@@ -1,0 +1,9 @@
+{
+  "name": "cupric_torch",
+  "glsl": "cupric_torch.glsl",
+  "mat0": [
+    "caverns_and_chasms:cupric_torch"
+  ],
+  "color": "supplemental_patches:caverns_and_chasms/cupric_fire",
+  "held_lighting": true
+}

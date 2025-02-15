@@ -1,0 +1,13 @@
+{
+  "name": "jasper",
+  "glsl": "jasper.glsl",
+  "mat0": [
+    "quark:jasper"
+  ],
+  "mat1": [
+    "quark:jasper_stairs",
+    "quark:jasper_slab",
+    "quark:jasper_wall",
+    "quark:jasper_vertical_slab"
+  ]
+}

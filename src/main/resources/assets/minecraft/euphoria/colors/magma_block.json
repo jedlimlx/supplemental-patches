@@ -1,0 +1,4 @@
+{
+  "index": 37,
+  "code": "vec4(lavaSpecialLightColor.rgb * 0.1, 0.1)"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "lead_bolt_crate",
+  "glsl": "lead_bolt_crate.glsl",
+  "mat0": [
+    "oreganized:lead_bolt_crate"
+  ]
+}

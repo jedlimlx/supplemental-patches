@@ -1,0 +1,7 @@
+{
+  "name": "wildfire",
+  "glsl": "wildfire.glsl",
+  "mat0": [
+    "friendsandfoes:wildfire"
+  ]
+}

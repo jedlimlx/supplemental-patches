@@ -1,0 +1,9 @@
+{
+  "name": "amethyst_lamp",
+  "glsl": "amethyst_lamp.glsl",
+  "mat0": [
+    "galosphere:amethyst_lamp"
+  ],
+  "color": "supplemental_patches:galosphere/amethyst_lamp",
+  "held_lighting": true
+}

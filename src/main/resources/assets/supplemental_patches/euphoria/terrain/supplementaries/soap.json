@@ -1,0 +1,7 @@
+{
+  "name": "soap_block",
+  "glsl": "soap.glsl",
+  "mat0": [
+    "supplementaries:soap_block"
+  ]
+}

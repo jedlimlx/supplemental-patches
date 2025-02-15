@@ -1,0 +1,9 @@
+{
+  "type": "setting",
+  "name": "GLOWING_ORETORTOISE",
+  "default": true,
+  "en_US": {
+    "option": "Glowing Oretortoise",
+    "comment": "Enables the functionality of glowing ores on the back of the oretortoise."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "bubble_pearl",
+  "glsl": "bubble_pearl.glsl",
+  "mat0": [
+    "endermanoverhaul:bubble_pearl"
+  ]
+}

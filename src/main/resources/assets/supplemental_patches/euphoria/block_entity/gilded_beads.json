@@ -1,0 +1,30 @@
+{
+  "name": "gilded_beads",
+  "glsl": "gilded_beads.glsl",
+  "mat0": [
+    "galosphere:gilded_beads:rotation=0",
+    "galosphere:gilded_beads:rotation=1",
+    "galosphere:gilded_beads:rotation=8",
+    "galosphere:gilded_beads:rotation=9"
+  ],
+  "mat1": [
+    "galosphere:gilded_beads:rotation=2",
+    "galosphere:gilded_beads:rotation=3",
+    "galosphere:gilded_beads:rotation=10",
+    "galosphere:gilded_beads:rotation=11"
+  ],
+  "mat2": [
+    "galosphere:gilded_beads:rotation=4",
+    "galosphere:gilded_beads:rotation=5",
+    "galosphere:gilded_beads:rotation=12",
+    "galosphere:gilded_beads:rotation=13"
+  ],
+  "mat3": [
+    "galosphere:gilded_beads:rotation=6",
+    "galosphere:gilded_beads:rotation=7",
+    "galosphere:gilded_beads:rotation=14",
+    "galosphere:gilded_beads:rotation=15"
+  ],
+  "waving": "supplemental_patches:waving_gilded_beads",
+  "needs_voxelization": true
+}

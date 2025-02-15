@@ -1,0 +1,7 @@
+{
+  "name": "soul_pearl",
+  "glsl": "soul_pearl.glsl",
+  "mat0": [
+    "endermanoverhaul:soul_pearl"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "allurite_cluster",
+  "glsl": "allurite_cluster.glsl",
+  "mat0": [
+    "galosphere:allurite_cluster",
+    "galosphere:glinted_allurite_cluster"
+  ],
+  "color": "supplemental_patches:galosphere/allurite"
+}

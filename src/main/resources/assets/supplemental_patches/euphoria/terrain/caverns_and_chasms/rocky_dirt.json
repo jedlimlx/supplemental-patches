@@ -1,0 +1,7 @@
+{
+  "name": "rocky_dirt",
+  "glsl": "rocky_dirt.glsl",
+  "mat0": [
+    "caverns_and_chasms:rocky_dirt"
+  ]
+}

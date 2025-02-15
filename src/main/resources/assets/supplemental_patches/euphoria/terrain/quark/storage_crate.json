@@ -1,0 +1,7 @@
+{
+  "name": "storage_crate",
+  "glsl": "storage_crate.glsl",
+  "mat0": [
+    "quark:crate"
+  ]
+}

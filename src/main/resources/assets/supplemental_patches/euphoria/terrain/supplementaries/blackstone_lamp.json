@@ -1,0 +1,11 @@
+{
+  "name": "blackstone_lamp",
+  "glsl": "blackstone_lamp.glsl",
+  "mat0": [
+    "supplementaries:blackstone_lamp"
+  ],
+  "color": [
+    "supplemental_patches:supplementaries/blackstone_lamp"
+  ],
+  "held_lighting": true
+}

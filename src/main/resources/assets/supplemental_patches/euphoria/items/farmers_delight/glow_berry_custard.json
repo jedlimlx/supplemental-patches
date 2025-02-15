@@ -1,0 +1,7 @@
+{
+  "name": "glow_berry_custard",
+  "glsl": "glow_berry_custard.glsl",
+  "mat0": [
+    "farmersdelight:glow_berry_custard"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "polished_rhyolite",
+  "glsl": "polished_rhyolite.glsl",
+  "mat0": [
+    "twigs:polished_rhyolite",
+    "twigs:polished_rhyolite_bricks",
+    "twigs:cracked_polished_rhyolite_bricks",
+    "supplemental_patches:chiseled_polished_rhyolite",
+    "supplemental_patches:polished_rhyolite_tiles"
+  ],
+  "mat1": [
+    "twigs:polished_rhyolite_slab",
+    "twigs:polished_rhyolite_brick_slab",
+    "supplemental_patches:cracked_polished_rhyolite_brick_slab",
+    "supplemental_patches:polished_rhyolite_tile_slab",
+    "twigs:polished_rhyolite_stairs",
+    "twigs:polished_rhyolite_brick_stairs",
+    "supplemental_patches:cracked_polished_rhyolite_brick_stairs",
+    "supplemental_patches:polished_rhyolite_tile_stairs",
+    "twigs:polished_rhyolite_wall",
+    "twigs:polished_rhyolite_brick_wall",
+    "supplemental_patches:cracked_polished_rhyolite_brick_wall",
+    "supplemental_patches:polished_rhyolite_tile_wall",
+    "supplemental_patches:rhyolite_column"
+  ]
+}

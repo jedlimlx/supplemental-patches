@@ -1,0 +1,12 @@
+{
+  "name": "crimson_lantern",
+  "glsl": "crimson_lantern.glsl",
+  "mat0": [
+    "suppsquared:crimson_lantern",
+    "amendments:wall_lantern:lantern=crimson_lantern"
+  ],
+  "color": [
+    "supplemental_patches:supplementaries/crimson_lantern"
+  ],
+  "held_lighting": true
+}

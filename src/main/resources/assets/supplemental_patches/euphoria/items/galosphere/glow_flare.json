@@ -1,0 +1,7 @@
+{
+  "name": "glow_flare",
+  "glsl": "glow_flare.glsl",
+  "mat0": [
+    "galosphere:glow_flare"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "icy_pearl",
+  "glsl": "icy_pearl.glsl",
+  "mat0": [
+    "endermanoverhaul:icy_pearl"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "bald_cypress_log",
+  "glsl": "bald_cypress_log.glsl",
+  "mat0": [
+    "wetland_whimsy:bald_cypress_log",
+    "wetland_whimsy:bald_cypress_wood"
+  ]
+}

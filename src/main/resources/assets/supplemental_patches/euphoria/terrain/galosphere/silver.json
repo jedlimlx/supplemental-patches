@@ -1,0 +1,21 @@
+{
+  "name": "silver",
+  "glsl": "silver.glsl",
+  "mat0": [
+    "galosphere:silver_block",
+    "galosphere:silver_panel",
+    "galosphere:silver_tiles",
+    "oreganized:silver_block",
+    "caverns_and_chasms:silver_block"
+  ],
+  "mat1": [
+    "galosphere:silver_panel_stairs",
+    "galosphere:silver_panel_slab",
+    "galosphere:silver_tiles_stairs",
+    "galosphere:silver_tiles_slab",
+    "galosphere:silver_balance"
+  ],
+  "mat3": [
+    "caverns_and_chasms:medium_weighted_pressure_plate"
+  ]
+}

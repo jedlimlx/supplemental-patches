@@ -1,0 +1,8 @@
+{
+  "name": "stone_enderman",
+  "glsl": "stone_enderman.glsl",
+  "mat0": [
+    "endermanoverhaul:stone_enderman",
+    "endermanoverhaul:windswept_hills_enderman"
+  ]
+}

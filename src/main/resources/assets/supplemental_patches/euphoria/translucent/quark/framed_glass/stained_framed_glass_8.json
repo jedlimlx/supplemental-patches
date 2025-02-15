@@ -1,0 +1,26 @@
+{
+  "name": "stained_framed_glass_8",
+  "glsl": "stained_framed_glass.glsl",
+  "mat0": [
+    "dye_the_world:slate_framed_glass",
+    "dye_the_world:slate_framed_glass_pane"
+  ],
+  "mat1": [
+    "dye_the_world:tan_framed_glass",
+    "dye_the_world:tan_framed_glass_pane"
+  ],
+  "mat2": [
+    "dye_the_world:teal_framed_glass",
+    "dye_the_world:teal_framed_glass_pane"
+  ],
+  "mat3": [
+    "dye_the_world:verdant_framed_glass",
+    "dye_the_world:verdant_framed_glass_pane"
+  ],
+  "color": [
+    "supplemental_patches:dyes/dye_depot/slate",
+    "supplemental_patches:dyes/dye_depot/tan",
+    "supplemental_patches:dyes/dye_depot/teal",
+    "supplemental_patches:dyes/dye_depot/verdant"
+  ]
+}

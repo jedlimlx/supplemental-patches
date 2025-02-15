@@ -1,0 +1,33 @@
+{
+  "name": "azalea_wood",
+  "glsl": "azalea_wood.glsl",
+  "mat0": [
+    "caverns_and_chasms:azalea_planks",
+    "caverns_and_chasms:azalea_boards",
+    "caverns_and_chasms:stripped_azalea_log",
+    "caverns_and_chasms:stripped_azalea_wood",
+    "caverns_and_chasms:azalea_bookshelf",
+    "caverns_and_chasms:chiseled_azalea_bookshelf",
+    "caverns_and_chasms:azalea_beehive",
+    "abnormals_delight:azalea_cabinet"
+  ],
+  "mat1": [
+    "caverns_and_chasms:azalea_fence",
+    "caverns_and_chasms:azalea_fence_gate:powered=false",
+    "caverns_and_chasms:azalea_button:powered=false",
+    "caverns_and_chasms:azalea_pressure_plate:powered=false",
+    "caverns_and_chasms:azalea_plank_slab",
+    "caverns_and_chasms:azalea_plank_stairs",
+    "caverns_and_chasms:azalea_trapdoor:powered=false",
+    "caverns_and_chasms:azalea_ladder",
+    "caverns_and_chasms:azalea_sign",
+    "caverns_and_chasms:azalea_wall_sign",
+    "caverns_and_chasms:azalea_wall_hanging_sign"
+  ],
+  "mat3": [
+    "caverns_and_chasms:azalea_fence_gate:powered=true",
+    "caverns_and_chasms:azalea_button:powered=true",
+    "caverns_and_chasms:azalea_pressure_plate:powered=true",
+    "caverns_and_chasms:azalea_trapdoor:powered=true"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "ender_watcher",
+  "glsl": "ender_watcher.glsl",
+  "mat0": [
+    "quark:ender_watcher"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "limestone [wetland_whimsy]",
+  "glsl": "limestone.glsl",
+  "mat0": [
+    "wetland_whimsy:limestone"
+  ],
+  "mat1": [
+    "wetland_whimsy:limestone_brazier:lit=false",
+    "wetland_whimsy:soul_brazier:lit=false",
+    "wetland_whimsy:ancient_brazier:flame=unlit",
+    "wetland_whimsy:limestone_slab",
+    "wetland_whimsy:limestone_stairs",
+    "wetland_whimsy:limestone_wall"
+  ],
+  "mat2": [
+    "wetland_whimsy:polished_limestone",
+    "wetland_whimsy:limestone_bricks",
+    "wetland_whimsy:limestone_pillar"
+  ],
+  "mat3": [
+    "wetland_whimsy:limestone_brick_stairs",
+    "wetland_whimsy:limestone_brick_slab",
+    "wetland_whimsy:limestone_brick_wall",
+    "wetland_whimsy:polished_limestone_stairs",
+    "wetland_whimsy:polished_limestone_slab",
+    "wetland_whimsy:polished_limestone_wall"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "heart_of_diamond",
+  "glsl": "heart_of_diamond.glsl",
+  "mat0": [
+    "quark:heart_of_diamond"
+  ]
+}

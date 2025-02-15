@@ -1,0 +1,9 @@
+{
+  "name": "brazier [silver]",
+  "glsl": "brazier.glsl",
+  "mat0": [
+    "caverns_and_chasms:brazier:lit=true"
+  ],
+  "color": "minecraft:campfire",
+  "held_lighting": true
+}

@@ -1,0 +1,10 @@
+{
+  "name": "molten_lead_bucket",
+  "glsl": "molten_lead_bucket.glsl",
+  "mat0": [
+    "oreganized:molten_lead_bucket"
+  ],
+  "held_lighting": true,
+  "color": "supplemental_patches:oreganized/molten_lead",
+  "light_level": 8
+}

@@ -1,0 +1,14 @@
+{
+  "type": "setting",
+  "name": "MOLTEN_LEAD_WAVINESS",
+  "default": 1,
+  "values": [0, 1, 2, 3],
+  "en_US": {
+    "option": "Waviness",
+    "value.0": "§cOFF",
+    "value.1": "Light",
+    "value.2": "Moderate",
+    "value.3": "Intense",
+    "comment": "Adjusts the waviness of molten lead."
+  }
+}

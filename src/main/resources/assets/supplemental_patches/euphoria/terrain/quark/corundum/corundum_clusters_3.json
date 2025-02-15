@@ -1,0 +1,16 @@
+{
+  "name": "corundum_clusters_3",
+  "glsl": "corundum_clusters_3.glsl",
+  "mat0": [
+    "quark:blue_corundum_cluster"
+  ],
+  "mat2": [
+    "quark:indigo_corundum_cluster"
+  ],
+  "color": [
+    "supplemental_patches:quark/corundum/blue",
+    null,
+    "supplemental_patches:quark/corundum/indigo",
+    null
+  ]
+}

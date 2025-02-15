@@ -1,0 +1,19 @@
+{
+  "name": "necronium",
+  "glsl": "necronium.glsl",
+  "mat0": [
+    "caverns_and_chasms:necronium_axe",
+    "caverns_and_chasms:necronium_chestplate",
+    "caverns_and_chasms:necronium_leggings",
+    "caverns_and_chasms:necronium_boots",
+    "caverns_and_chasms:necronium_horse_armor",
+    "caverns_and_chasms:necronium_ingot",
+    "caverns_and_chasms:necronium_nugget",
+    "caverns_and_chasms:necronium_nugget",
+    "caverns_and_chasms:necronium_axe",
+    "caverns_and_chasms:necronium_shovel",
+    "caverns_and_chasms:necronium_hoe",
+    "caverns_and_chasms:necronium_pickaxe",
+    "caverns_and_chasms:necronium_sword"
+  ]
+}

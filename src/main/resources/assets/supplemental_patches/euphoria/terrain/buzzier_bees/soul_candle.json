@@ -1,0 +1,16 @@
+{
+  "name": "ender_candle",
+  "glsl": "ender_candle.glsl",
+  "mat0": [
+    "buzzier_bees:soul_candle:lit=true"
+  ],
+  "mat1": [
+    "buzzier_bees:soul_candle:lit=false"
+  ],
+  "color": [
+    "supplemental_patches:buzzier_bees/soul_candle",
+    null,
+    null,
+    null
+  ]
+}

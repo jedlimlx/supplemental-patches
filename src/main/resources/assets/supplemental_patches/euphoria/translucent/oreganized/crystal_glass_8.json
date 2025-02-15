@@ -1,0 +1,26 @@
+{
+  "name": "crystal_glass_8",
+  "glsl": "crystal_glass.glsl",
+  "mat0": [
+    "oreganized:slate_crystal_glass",
+    "oreganized:slate_crystal_glass_pane"
+  ],
+  "mat1": [
+    "oreganized:tan_crystal_glass",
+    "oreganized:tan_crystal_glass_pane"
+  ],
+  "mat2": [
+    "oreganized:teal_crystal_glass",
+    "oreganized:teal_crystal_glass_pane"
+  ],
+  "mat3": [
+    "oreganized:verdant_crystal_glass",
+    "oreganized:verdant_crystal_glass_pane"
+  ],
+  "color": [
+    "supplemental_patches:dyes/dye_depot/slate",
+    "supplemental_patches:dyes/dye_depot/tan",
+    "supplemental_patches:dyes/dye_depot/teal",
+    "supplemental_patches:dyes/dye_depot/verdant"
+  ]
+}

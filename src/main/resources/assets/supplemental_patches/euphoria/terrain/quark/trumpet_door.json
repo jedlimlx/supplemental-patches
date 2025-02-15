@@ -1,0 +1,10 @@
+{
+  "name": "trumpet_door",
+  "glsl": "trumpet_door.glsl",
+  "mat1": [
+    "quark:blossom_door:powered=false"
+  ],
+  "mat3": [
+    "quark:blossom_door:powered=true"
+  ]
+}

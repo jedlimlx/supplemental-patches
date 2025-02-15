@@ -1,0 +1,10 @@
+{
+  "name": "magnet",
+  "glsl": "magnet.glsl",
+  "mat0": [
+    "quark:magnet:powered=false"
+  ],
+  "mat2": [
+    "quark:magnet:powered=true"
+  ]
+}

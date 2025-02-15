@@ -1,0 +1,8 @@
+{
+  "name": "framed_glass",
+  "glsl": "framed_glass.glsl",
+  "mat0": [
+    "quark:framed_glass"
+  ],
+  "color": "supplemental_patches:transparent"
+}

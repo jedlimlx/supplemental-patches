@@ -1,0 +1,16 @@
+{
+  "name": "polished_glance",
+  "glsl": "polished_glance.glsl",
+  "mat0": [
+    "oreganized:polished_glance",
+    "oreganized:glance_bricks",
+    "oreganized:chiseled_glance"
+  ],
+  "mat1": [
+    "oreganized:polished_glance_stairs",
+    "oreganized:polished_glance_slab",
+    "oreganized:glance_brick_slab",
+    "oreganized:glance_brick_stairs",
+    "oreganized:glance_brick_wall"
+  ]
+}

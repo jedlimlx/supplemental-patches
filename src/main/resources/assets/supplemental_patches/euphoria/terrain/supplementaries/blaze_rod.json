@@ -1,0 +1,10 @@
+{
+  "name": "blaze_rod",
+  "glsl": "blaze_rod.glsl",
+  "mat0": [
+    "supplementaries:blaze_rod"
+  ],
+  "color": [
+    "minecraft:brewing_stand"
+  ]
+}

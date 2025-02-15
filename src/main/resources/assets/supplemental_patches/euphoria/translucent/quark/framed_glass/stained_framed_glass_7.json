@@ -1,0 +1,26 @@
+{
+  "name": "stained_framed_glass_7",
+  "glsl": "stained_framed_glass.glsl",
+  "mat0": [
+    "dye_the_world:mint_framed_glass",
+    "dye_the_world:mint_framed_glass_pane"
+  ],
+  "mat1": [
+    "dye_the_world:navy_framed_glass",
+    "dye_the_world:navy_framed_glass_pane"
+  ],
+  "mat2": [
+    "dye_the_world:olive_framed_glass",
+    "dye_the_world:olive_framed_glass_pane"
+  ],
+  "mat3": [
+    "dye_the_world:rose_framed_glass",
+    "dye_the_world:rose_framed_glass_pane"
+  ],
+  "color": [
+    "supplemental_patches:dyes/dye_depot/mint",
+    "supplemental_patches:dyes/dye_depot/navy",
+    "supplemental_patches:dyes/dye_depot/olive",
+    "supplemental_patches:dyes/dye_depot/rose"
+  ]
+}

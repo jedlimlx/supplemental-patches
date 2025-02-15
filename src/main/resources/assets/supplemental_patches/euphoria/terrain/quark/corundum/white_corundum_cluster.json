@@ -1,0 +1,13 @@
+{
+  "name": "white_corundum_cluster",
+  "glsl": "white_corundum_cluster.glsl",
+  "mat0": [
+    "quark:white_corundum_cluster"
+  ],
+  "color": [
+    "supplemental_patches:quark/corundum/white",
+    null,
+    null,
+    null
+  ]
+}

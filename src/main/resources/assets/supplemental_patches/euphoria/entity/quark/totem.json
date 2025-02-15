@@ -1,0 +1,7 @@
+{
+  "name": "totem",
+  "glsl": "totem.glsl",
+  "mat0": [
+    "quark:totem"
+  ]
+}

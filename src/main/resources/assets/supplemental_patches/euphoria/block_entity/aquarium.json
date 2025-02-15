@@ -1,0 +1,7 @@
+{
+  "name": "aquarium",
+  "glsl": "aquarium.glsl",
+  "mat0": [
+    "villagersplus:oceanographer_table"
+  ]
+}

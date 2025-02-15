@@ -1,0 +1,9 @@
+{
+  "name": "soul_brazier [limestone]",
+  "glsl": "soul_brazier.glsl",
+  "mat0": [
+    "wetland_whimsy:soul_brazier:lit=true"
+  ],
+  "color": "minecraft:soul_campfire",
+  "held_lighting": true
+}

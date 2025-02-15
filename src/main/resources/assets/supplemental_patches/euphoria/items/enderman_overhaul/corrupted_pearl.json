@@ -1,0 +1,7 @@
+{
+  "name": "corrupted_pearl",
+  "glsl": "corrupted_pearl.glsl",
+  "mat0": [
+    "endermanoverhaul:corrupted_pearl"
+  ]
+}

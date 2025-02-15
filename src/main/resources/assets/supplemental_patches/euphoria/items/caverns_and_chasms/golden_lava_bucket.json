@@ -1,0 +1,10 @@
+{
+  "name": "golden_lava_bucket",
+  "glsl": "golden_lava_bucket.glsl",
+  "mat0": [
+    "caverns_and_chasms:golden_lava_bucket"
+  ],
+  "held_lighting": true,
+  "color": "minecraft:lava",
+  "light_level": 15
+}

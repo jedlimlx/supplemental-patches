@@ -1,0 +1,12 @@
+{
+  "name": "azalea_log",
+  "glsl": "azalea_log.glsl",
+  "mat0": [
+    "quark:azalea_log",
+    "quark:azalea_wood",
+    "quark:hollow_azalea_log"
+  ],
+  "mat1": [
+    "quark:azalea_post"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "redstone_randomizer",
+  "glsl": "redstone_randomizer.glsl",
+  "mat0": [
+    "quark:redstone_randomizer:powered=left",
+    "quark:redstone_randomizer:powered=right"
+  ],
+  "mat1": [
+    "quark:redstone_randomizer:powered=off"
+  ]
+}

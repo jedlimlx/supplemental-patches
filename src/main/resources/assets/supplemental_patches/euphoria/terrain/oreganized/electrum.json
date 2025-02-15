@@ -1,0 +1,7 @@
+{
+  "name": "electrum",
+  "glsl": "electrum.glsl",
+  "mat0": [
+    "oreganized:electrum_block"
+  ]
+}

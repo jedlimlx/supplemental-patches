@@ -1,0 +1,9 @@
+{
+  "type": "directory",
+  "name": "MOLTEN_LEAD",
+  "folder": "molten_lead",
+  "en_US": {
+    "screen": "Molten Lead",
+    "comment": "Settings that relate to molten lead."
+  }
+}

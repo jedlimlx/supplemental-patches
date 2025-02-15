@@ -1,0 +1,16 @@
+{
+  "name": "quark_potted_plants_2",
+  "glsl": "quark_potted_plants_2.glsl",
+  "mat0": [
+    "quark:potted_sea_pickle"
+  ],
+  "mat2": [
+    "quark:potted_weeping_vines"
+  ],
+  "color": [
+    "supplemental_patches:quark/potted_sea_pickle",
+    null,
+    "minecraft:weeping_vines",
+    null
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "spinel_lamp",
+  "glsl": "spinel_lamp.glsl",
+  "mat0": [
+    "caverns_and_chasms:spinel_lamp"
+  ],
+  "color": "supplemental_patches:caverns_and_chasms/spinel_lamp",
+  "held_lighting": true
+}

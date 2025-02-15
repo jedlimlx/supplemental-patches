@@ -1,0 +1,10 @@
+{
+  "name": "stove",
+  "glsl": "stove.glsl",
+  "mat0": [
+    "farmersdelight:stove"
+  ],
+  "color": [
+    "minecraft:furnace"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "spectre_flare",
+  "glsl": "spectre_flare.glsl",
+  "mat0": [
+    "galosphere:spectre_flare",
+    "galosphere:bottle_of_spectre"
+  ]
+}

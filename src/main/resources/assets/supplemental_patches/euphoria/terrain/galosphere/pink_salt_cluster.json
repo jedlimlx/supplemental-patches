@@ -1,0 +1,11 @@
+{
+  "name": "pink_salt_cluster",
+  "glsl": "pink_salt_cluster.glsl",
+  "mat0": [
+    "galosphere:pink_salt_cluster"
+  ],
+  "color": "supplemental_patches:galosphere/pink_salt",
+  "conditions": [
+    "GLOWING_PINK_SALT"
+  ]
+}

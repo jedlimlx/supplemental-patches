@@ -1,0 +1,9 @@
+{
+  "type": "directory",
+  "name": "GENERAL_SETTINGS",
+  "folder": "general",
+  "en_US": {
+    "screen": "General"
+  },
+  "priority": 3
+}

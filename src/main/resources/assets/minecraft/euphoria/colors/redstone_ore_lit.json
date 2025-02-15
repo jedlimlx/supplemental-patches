@@ -1,0 +1,4 @@
+{
+  "index": 31,
+  "code": "vec4(redstoneSpecialLightColor * 0.5, 0.1)"
+}

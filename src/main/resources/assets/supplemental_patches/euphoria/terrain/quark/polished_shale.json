@@ -1,0 +1,24 @@
+{
+  "name": "polished_shale",
+  "glsl": "polished_shale.glsl",
+  "mat0": [
+    "quark:polished_shale",
+    "quark:shale_bricks",
+    "supplemental_patches:shale_tiles",
+    "quark:chiseled_shale_bricks"
+  ],
+  "mat1": [
+    "quark:polished_shale_stairs",
+    "quark:polished_shale_slab",
+    "quark:polished_shale_wall",
+    "quark:polished_shale_vertical_slab",
+    "quark:shale_bricks_stairs",
+    "quark:shale_bricks_slab",
+    "quark:shale_bricks_wall",
+    "quark:shale_bricks_vertical_slab",
+    "supplemental_patches:shale_tile_stairs",
+    "supplemental_patches:shale_tile_slab",
+    "supplemental_patches:shale_tile_wall",
+    "supplemental_patches:shale_column"
+  ]
+}

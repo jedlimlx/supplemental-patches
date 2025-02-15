@@ -1,0 +1,10 @@
+{
+  "name": "spinel",
+  "glsl": "spinel.glsl",
+  "mat0": [
+    "caverns_and_chasms:spinel",
+    "caverns_and_chasms:bejeweled_pearl",
+    "caverns_and_chasms:bejeweled_apple",
+    "caverns_and_chasms:blunt_arrow"
+  ]
+}

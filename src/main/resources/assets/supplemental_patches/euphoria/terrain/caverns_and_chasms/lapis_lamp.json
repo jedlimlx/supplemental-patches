@@ -1,0 +1,9 @@
+{
+  "name": "lapis_lamp",
+  "glsl": "lapis_lamp.glsl",
+  "mat0": [
+    "caverns_and_chasms:lapis_lamp"
+  ],
+  "color": "supplemental_patches:caverns_and_chasms/lapis_lamp",
+  "held_lighting": true
+}

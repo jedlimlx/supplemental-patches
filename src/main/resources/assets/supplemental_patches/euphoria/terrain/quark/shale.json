@@ -1,0 +1,13 @@
+{
+  "name": "shale",
+  "glsl": "shale.glsl",
+  "mat0": [
+    "quark:shale"
+  ],
+  "mat1": [
+    "quark:shale_stairs",
+    "quark:shale_slab",
+    "quark:shale_wall",
+    "quark:shale_vertical_slab"
+  ]
+}

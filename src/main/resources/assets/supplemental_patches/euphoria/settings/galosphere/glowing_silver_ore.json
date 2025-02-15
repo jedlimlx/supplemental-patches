@@ -1,0 +1,14 @@
+{
+  "type": "setting",
+  "name": "GLOWING_ORE_SILVER_G",
+  "conditions": [
+    {
+      "if": "GLOWING_ORE_MASTER == 2 || SHADER_STYLE == 4 && GLOWING_ORE_MASTER == 1",
+      "then": true
+    }
+  ],
+  "en_US": {
+    "option": "Glowing Silver Ore §e[*]§r",
+    "comment": "§e[*]§r This setting will only affect the silver ore added by Galosphere."
+  }
+}

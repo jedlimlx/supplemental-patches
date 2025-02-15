@@ -1,0 +1,15 @@
+{
+  "name": "necronium",
+  "glsl": "necronium.glsl",
+  "mat0": [
+    "caverns_and_chasms:necronium_block",
+    "netherexp:necronium_plated_block",
+    "netherexp:cut_necronium_block",
+    "netherexp:cut_necronium_pillar"
+  ],
+  "mat1": [
+    "netherexp:necronium_grate",
+    "netherexp:cut_necronium_slab",
+    "netherexp:cut_necronium_stairs"
+  ]
+}

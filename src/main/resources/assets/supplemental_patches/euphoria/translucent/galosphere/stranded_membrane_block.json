@@ -1,0 +1,8 @@
+{
+  "name": "stranded_membrane_block",
+  "glsl": "stranded_membrane_block.glsl",
+  "mat0": [
+    "galosphere:stranded_membrane_block"
+  ],
+  "color": "supplemental_patches:galosphere/stranded_membrane"
+}

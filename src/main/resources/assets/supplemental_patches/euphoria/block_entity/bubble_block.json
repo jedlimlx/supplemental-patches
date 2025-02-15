@@ -1,0 +1,7 @@
+{
+  "name": "bubble_block",
+  "glsl": "bubble_block.glsl",
+  "mat0": [
+    "supplementaries:bubble_block"
+  ]
+}

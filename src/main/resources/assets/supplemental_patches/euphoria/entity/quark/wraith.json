@@ -1,0 +1,7 @@
+{
+  "name": "wraith",
+  "glsl": "wraith.glsl",
+  "mat0": [
+    "quark:wraith"
+  ]
+}

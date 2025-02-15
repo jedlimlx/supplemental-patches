@@ -1,0 +1,16 @@
+{
+  "name": "blackstone_furnace",
+  "glsl": "blackstone_furnace.glsl",
+  "mat0": [
+    "quark:blackstone_furnace:lit=true:soul=false"
+  ],
+  "mat2": [
+    "quark:blackstone_furnace:lit=true:soul=true"
+  ],
+  "color": [
+    "minecraft:furnace",
+    null,
+    "minecraft:soul_lantern",
+    null
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "chiseled_purpur",
+  "glsl": "chiseled_purpur.glsl",
+  "mat0": [
+    "supplemental_patches:chiseled_purpur:lit=true"
+  ],
+  "mat2": [
+    "supplemental_patches:chiseled_purpur:lit=false"
+  ],
+  "color": [
+    "supplemental_patches:supplementaries/endstone_lamp",
+    null,
+    null,
+    null
+  ]
+}

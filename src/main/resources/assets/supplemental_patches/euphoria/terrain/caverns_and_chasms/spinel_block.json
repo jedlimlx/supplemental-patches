@@ -1,0 +1,14 @@
+{
+  "name": "spinel_block",
+  "glsl": "spinel_block.glsl",
+  "mat0": [
+    "caverns_and_chasms:spinel_block",
+    "caverns_and_chasms:spinel_bricks",
+    "caverns_and_chasms:spinel_pillar"
+  ],
+  "mat1": [
+    "caverns_and_chasms:spinel_brick_slab",
+    "caverns_and_chasms:spinel_brick_stairs",
+    "caverns_and_chasms:spinel_brick_wall"
+  ]
+}

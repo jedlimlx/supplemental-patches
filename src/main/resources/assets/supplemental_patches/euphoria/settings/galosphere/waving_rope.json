@@ -1,0 +1,14 @@
+{
+  "type": "setting",
+  "name": "WAVING_GILDED_BEADS",
+  "default": 1,
+  "values": [0, 1, 2, 3],
+  "en_US": {
+    "option": "Waving Gilded Beads",
+    "comment": "Adjusts the intensity that gilded beads will wave.",
+    "value.0": "§cOFF",
+    "value.1": "Light",
+    "value.2": "Moderate",
+    "value.3": "Intense"
+  }
+}

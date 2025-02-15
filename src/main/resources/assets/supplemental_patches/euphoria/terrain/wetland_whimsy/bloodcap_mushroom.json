@@ -1,0 +1,12 @@
+{
+  "name": "bloodcap_mushroom",
+  "glsl": "bloodcap_mushroom.glsl",
+  "mat0": [
+    "wetland_whimsy:bloodcap_mushroom"
+  ],
+  "color": "supplemental_patches:wetland_whimsy/bloodcap_mushroom",
+  "conditions": [
+    "GLOWING_BLOODCAP_MUSHROOM >= 1",
+    "DO_IPBR_LIGHTS"
+  ]
+}

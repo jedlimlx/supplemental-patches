@@ -1,0 +1,4 @@
+{
+  "index": 24,
+  "code": "vec4(fireSpecialLightColor * 0.25 * candleColorMult, candleExtraLight)"
+}

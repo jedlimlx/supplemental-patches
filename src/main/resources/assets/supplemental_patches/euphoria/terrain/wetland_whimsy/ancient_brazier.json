@@ -1,0 +1,11 @@
+{
+  "name": "ancient_brazier [limestone]",
+  "glsl": "ancient_brazier.glsl",
+  "mat0": [
+    "wetland_whimsy:ancient_brazier:flame=lit"
+  ],
+  "mat2": [
+    "wetland_whimsy:ancient_brazier:flame=smoldering"
+  ],
+  "color": "supplemental_patches:wetland_whimsy/ancient_brazier"
+}

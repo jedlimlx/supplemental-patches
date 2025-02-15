@@ -1,0 +1,8 @@
+{
+  "name": "crimson_pearl",
+  "glsl": "crimson_pearl.glsl",
+  "mat0": [
+    "endermanoverhaul:crimson_pearl",
+    "endermanoverhaul:warped_pearl"
+  ]
+}

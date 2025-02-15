@@ -1,0 +1,9 @@
+{
+  "name": "blaze_lantern",
+  "glsl": "blaze_lantern.glsl",
+  "mat0": [
+    "quark:blaze_lantern"
+  ],
+  "color": "supplemental_patches:quark/blaze_lantern",
+  "held_lighting": true
+}

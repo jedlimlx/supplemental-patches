@@ -1,0 +1,14 @@
+{
+  "name": "blue_nether_bricks",
+  "glsl": "blue_nether_bricks.glsl",
+  "mat0": [
+    "quark:blue_nether_bricks",
+    "supplemental_patches:chiseled_blue_nether_bricks"
+  ],
+  "mat1": [
+    "quark:blue_nether_bricks_slab",
+    "quark:blue_nether_bricks_wall",
+    "quark:blue_nether_bricks_stairs",
+    "quark:blue_nether_bricks_vertical_slab"
+  ]
+}

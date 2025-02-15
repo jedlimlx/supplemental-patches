@@ -1,0 +1,9 @@
+{
+  "name": "allurite_lamp",
+  "glsl": "allurite_lamp.glsl",
+  "mat0": [
+    "galosphere:allurite_lamp"
+  ],
+  "color": "supplemental_patches:galosphere/allurite_lamp",
+  "held_lighting": true
+}

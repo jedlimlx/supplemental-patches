@@ -1,0 +1,7 @@
+{
+  "name": "shadow_frame",
+  "glsl": "shadow_frame.glsl",
+  "mat1": [
+    "galosphere:shadow_frame:filled=false"
+  ]
+}

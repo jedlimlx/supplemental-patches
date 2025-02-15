@@ -1,0 +1,26 @@
+{
+  "name": "polished_bloodstone",
+  "glsl": "polished_bloodstone.glsl",
+  "mat0": [
+    "twigs:polished_bloodstone",
+    "twigs:polished_bloodstone_bricks",
+    "twigs:cracked_polished_bloodstone_bricks",
+    "supplemental_patches:chiseled_polished_bloodstone",
+    "supplemental_patches:polished_bloodstone_tiles"
+  ],
+  "mat1": [
+    "twigs:polished_bloodstone_slab",
+    "twigs:polished_bloodstone_brick_slab",
+    "supplemental_patches:cracked_polished_bloodstone_brick_slab",
+    "supplemental_patches:polished_bloodstone_tile_slab",
+    "twigs:polished_bloodstone_stairs",
+    "twigs:polished_bloodstone_brick_stairs",
+    "supplemental_patches:cracked_polished_bloodstone_brick_stair",
+    "supplemental_patches:polished_bloodstone_tile_stairs",
+    "twigs:polished_bloodstone_wall",
+    "twigs:polished_bloodstone_brick_wall",
+    "supplemental_patches:cracked_polished_bloodstone_brick_wall",
+    "supplemental_patches:polished_bloodstone_tile_wall",
+    "supplemental_patches:bloodstone_column"
+  ]
+}

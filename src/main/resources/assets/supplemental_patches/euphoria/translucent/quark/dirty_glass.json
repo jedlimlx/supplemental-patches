@@ -1,0 +1,12 @@
+{
+  "name": "dirty_glass",
+  "glsl": "dirty_glass.glsl",
+  "mat0": [
+    "quark:dirty_glass"
+  ],
+  "mat2": [
+    "quark:dirty_glass_pane"
+  ],
+  "color": "supplemental_patches:quark/dirty_glass",
+  "needs_voxelization": true
+}

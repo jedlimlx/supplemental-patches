@@ -1,0 +1,9 @@
+{
+  "type": "setting",
+  "name": "SITUATIONAL_ORETORTOISE",
+  "default": true,
+  "en_US": {
+    "option": "Situational Oretortoise",
+    "comment": "Ores on the oretortoise will only glow in caves and at night. §e[*]§r Glowing Oretortoise must be enabled for this to work."
+  }
+}

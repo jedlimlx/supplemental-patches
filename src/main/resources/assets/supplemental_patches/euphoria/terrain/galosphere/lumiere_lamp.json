@@ -1,0 +1,9 @@
+{
+  "name": "lumiere_lamp",
+  "glsl": "lumiere_lamp.glsl",
+  "mat0": [
+    "galosphere:lumiere_lamp"
+  ],
+  "color": "supplemental_patches:galosphere/lumiere_lamp",
+  "held_lighting": true
+}

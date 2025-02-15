@@ -1,0 +1,7 @@
+{
+  "name": "drip_fall",
+  "glsl": "drip_fall.glsl",
+  "mat0": [
+    "minecraft:drip_fall"
+  ]
+}

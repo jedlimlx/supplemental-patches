@@ -1,0 +1,19 @@
+{
+  "name": "copper_lantern",
+  "glsl": "copper_lantern.glsl",
+  "mat0": [
+    "suppsquared:copper_lantern:lit=true",
+    "amendments:wall_lantern:lantern=copper_lantern:lit=true"
+  ],
+  "mat1": [
+    "suppsquared:copper_lantern:lit=false",
+    "amendments:wall_lantern:lantern=copper_lantern:lit=false"
+  ],
+  "color": [
+    "minecraft:lantern",
+    null,
+    null,
+    null
+  ],
+  "held_lighting": true
+}

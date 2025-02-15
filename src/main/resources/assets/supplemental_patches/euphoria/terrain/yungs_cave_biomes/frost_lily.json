@@ -1,0 +1,8 @@
+{
+  "name": "frost_lily",
+  "glsl": "frost_lily.glsl",
+  "mat0": [
+    "yungscavebiomes:frost_lily"
+  ],
+  "color": "minecraft:amethyst"
+}

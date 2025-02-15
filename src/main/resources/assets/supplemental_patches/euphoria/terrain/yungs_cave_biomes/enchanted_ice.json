@@ -1,0 +1,8 @@
+{
+  "name": "enchanted_ice",
+  "glsl": "enchanted_ice.glsl",
+  "mat0": [
+    "yungscavebiomes:rare_ice"
+  ],
+  "color": "supplemental_patches:yungs_cave_biomes/enchanted_ice"
+}

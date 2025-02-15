@@ -1,0 +1,23 @@
+{
+  "name": "duskbound_lantern",
+  "glsl": "duskbound_lantern.glsl",
+  "mat0": [
+    "quark:duskbound_block",
+    "quark:dusky_myalite"
+  ],
+  "mat1": [
+    "quark:duskbound_block_slab",
+    "quark:duskbound_block_stairs",
+    "quark:duskbound_block_wall"
+  ],
+  "mat2": [
+    "quark:duskbound_lantern"
+  ],
+  "color": [
+    null,
+    null,
+    "supplemental_patches:quark/duskbound_lantern",
+    null
+  ],
+  "held_lighting": true
+}

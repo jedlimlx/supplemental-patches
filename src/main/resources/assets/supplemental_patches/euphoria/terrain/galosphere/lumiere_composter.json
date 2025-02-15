@@ -1,0 +1,7 @@
+{
+  "name": "lumiere_composter",
+  "glsl": "lumiere_composter.glsl",
+  "mat0": [
+    "galosphere:lumiere_composter"
+  ]
+}

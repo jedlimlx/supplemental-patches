@@ -1,0 +1,7 @@
+{
+  "name": "spiked_rail",
+  "glsl": "spiked_rail.glsl",
+  "mat0": [
+    "caverns_and_chasms:spiked_rail"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "crystal_glass_5",
+  "glsl": "crystal_glass.glsl",
+  "mat0": [
+    "oreganized:amber_crystal_glass",
+    "oreganized:amber_crystal_glass_pane"
+  ],
+  "mat1": [
+    "oreganized:aqua_crystal_glass",
+    "oreganized:aqua_crystal_glass_pane"
+  ],
+  "mat2": [
+    "oreganized:beige_crystal_glass",
+    "oreganized:beige_crystal_glass_pane"
+  ],
+  "mat3": [
+    "oreganized:coral_crystal_glass",
+    "oreganized:coral_crystal_glass_pane"
+  ],
+  "color": [
+    "supplemental_patches:dyes/dye_depot/amber",
+    "supplemental_patches:dyes/dye_depot/aqua",
+    "supplemental_patches:dyes/dye_depot/beige",
+    "supplemental_patches:dyes/dye_depot/coral"
+  ]
+}

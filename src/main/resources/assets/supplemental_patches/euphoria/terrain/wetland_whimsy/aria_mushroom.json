@@ -1,0 +1,9 @@
+{
+  "name": "aria_mushroom",
+  "glsl": "aria_mushroom.glsl",
+  "mat0": [
+    "wetland_whimsy:aria_mushroom",
+    "wetland_whimsy:aria_spores"
+  ],
+  "color": "supplemental_patches:wetland_whimsy/aria_mushroom"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "lumisene_bucket",
+  "glsl": "lumisene_bucket.glsl",
+  "mat0": [
+    "supplementaries:lumisene_bucket"
+  ],
+  "held_lighting": true,
+  "color": "supplemental_patches:supplementaries/lumisene_fire",
+  "light_level": 10
+}

@@ -1,0 +1,23 @@
+{
+  "name": "stained_glass_dye_depot_6",
+  "glsl": "stained_glass.glsl",
+  "mat0": [
+    "dye_depot:olive_stained_glass"
+  ],
+  "mat1": [
+    "dye_depot:olive_stained_glass_pane"
+  ],
+  "mat2": [
+    "dye_depot:rose_stained_glass"
+  ],
+  "mat3": [
+    "dye_depot:rose_stained_glass_pane"
+  ],
+  "color": [
+    "supplemental_patches:dye_depot/stained_glass/olive",
+    "supplemental_patches:dye_depot/stained_glass/olive",
+    "supplemental_patches:dye_depot/stained_glass/rose",
+    "supplemental_patches:dye_depot/stained_glass/rose"
+  ],
+  "needs_voxelization": true
+}

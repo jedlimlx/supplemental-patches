@@ -1,0 +1,7 @@
+{
+  "name": "ancient_pearl",
+  "glsl": "ancient_pearl.glsl",
+  "mat0": [
+    "endermanoverhaul:ancient_pearl"
+  ]
+}

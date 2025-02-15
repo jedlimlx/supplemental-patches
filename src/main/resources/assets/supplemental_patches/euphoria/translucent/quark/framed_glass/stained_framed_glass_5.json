@@ -1,0 +1,26 @@
+{
+  "name": "stained_framed_glass_5",
+  "glsl": "stained_framed_glass.glsl",
+  "mat0": [
+    "dye_the_world:amber_framed_glass",
+    "dye_the_world:amber_framed_glass_pane"
+  ],
+  "mat1": [
+    "dye_the_world:aqua_framed_glass",
+    "dye_the_world:aqua_framed_glass_pane"
+  ],
+  "mat2": [
+    "dye_the_world:beige_framed_glass",
+    "dye_the_world:beige_framed_glass_pane"
+  ],
+  "mat3": [
+    "dye_the_world:coral_framed_glass",
+    "dye_the_world:coral_framed_glass_pane"
+  ],
+  "color": [
+    "supplemental_patches:dyes/dye_depot/amber",
+    "supplemental_patches:dyes/dye_depot/aqua",
+    "supplemental_patches:dyes/dye_depot/beige",
+    "supplemental_patches:dyes/dye_depot/coral"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "stone_lamp",
+  "glsl": "stone_lamp.glsl",
+  "mat0": [
+    "supplementaries:stone_lamp"
+  ],
+  "color": [
+    "supplemental_patches:supplementaries/stone_lamp"
+  ],
+  "held_lighting": true
+}

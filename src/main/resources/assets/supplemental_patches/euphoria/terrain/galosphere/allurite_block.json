@@ -1,0 +1,18 @@
+{
+  "name": "allurite_block",
+  "glsl": "allurite_block.glsl",
+  "mat0": [
+    "galosphere:allurite_block",
+    "galosphere:smooth_allurite",
+    "galosphere:allurite_bricks",
+    "galosphere:chiseled_allurite"
+  ],
+  "mat1": [
+    "galosphere:allurite_block_slab",
+    "galosphere:smooth_allurite_slab",
+    "galosphere:allurite_brick_slab",
+    "galosphere:allurite_block_stairs",
+    "galosphere:smooth_allurite_stairs",
+    "galosphere:allurite_brick_stairs"
+  ]
+}

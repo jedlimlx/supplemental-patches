@@ -1,0 +1,13 @@
+{
+  "type": "setting",
+  "name": "GLOWING_BLOODCAP_MUSHROOM",
+  "default": 0,
+  "values": [0, 1, 2, 3],
+  "en_US": {
+    "option": "Glowing Bloodcap Mushroom",
+    "value.0": "§cOFF",
+    "value.1": "Dim",
+    "value.2": "Moderate",
+    "value.3": "Bright"
+  }
+}

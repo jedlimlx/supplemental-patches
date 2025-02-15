@@ -1,0 +1,17 @@
+{
+  "name": "crates",
+  "glsl": "crates.glsl",
+  "mat0": [
+    "cratedelight:glowberry_crate"
+  ],
+  "mat2": [
+    "cratedelight:golden_apple_crate", "cratedelight:golden_carrot_crate"
+  ],
+  "color": [
+    "minecraft:glow_berries",
+    null,
+    null,
+    null
+  ],
+  "held_lighting": true
+}

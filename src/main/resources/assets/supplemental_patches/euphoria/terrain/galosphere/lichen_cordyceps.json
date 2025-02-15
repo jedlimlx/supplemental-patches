@@ -1,0 +1,18 @@
+{
+  "name": "lichen_cordyceps",
+  "glsl": "lichen_cordyceps.glsl",
+  "mat0": [
+    "galosphere:lichen_cordyceps:bulb=true"
+  ],
+  "mat1": [
+    "galosphere:lichen_cordyceps:bulb=false",
+    "galosphere:lichen_cordyceps_plant"
+  ],
+  "color": [
+    "supplemental_patches:galosphere/spectre",
+    null,
+    null,
+    null
+  ],
+  "waving": "supplemental_patches:waving_cordyceps"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "myalite_crystal",
+  "glsl": "myalite_crystal.glsl",
+  "mat0": [
+    "quark:myalite_crystal"
+  ],
+  "color": "minecraft:amethyst"
+}

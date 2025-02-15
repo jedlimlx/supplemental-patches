@@ -1,0 +1,7 @@
+{
+  "name": "ice_chunk",
+  "glsl": "ice_chunk.glsl",
+  "mat0": [
+    "friendsandfoes:ice_chunk"
+  ]
+}

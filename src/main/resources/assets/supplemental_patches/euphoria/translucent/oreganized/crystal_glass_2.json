@@ -1,0 +1,26 @@
+{
+  "name": "crystal_glass_2",
+  "glsl": "crystal_glass.glsl",
+  "mat0": [
+    "oreganized:green_crystal_glass",
+    "oreganized:green_crystal_glass_pane"
+  ],
+  "mat1": [
+    "oreganized:light_blue_crystal_glass",
+    "oreganized:light_blue_crystal_glass_pane"
+  ],
+  "mat2": [
+    "oreganized:light_gray_crystal_glass",
+    "oreganized:light_gray_crystal_glass_pane"
+  ],
+  "mat3": [
+    "oreganized:lime_crystal_glass",
+    "oreganized:lime_crystal_glass_pane"
+  ],
+  "color": [
+    "supplemental_patches:dyes/green",
+    "supplemental_patches:dyes/light_blue",
+    "supplemental_patches:dyes/light_gray",
+    "supplemental_patches:dyes/lime"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "sugilite",
+  "glsl": "sugilite.glsl",
+  "mat0": [
+    "caverns_and_chasms:sugilite"
+  ],
+  "mat1": [
+    "caverns_and_chasms:sugilite_stairs",
+    "caverns_and_chasms:sugilite_slab"
+  ],
+  "mat2": [
+    "caverns_and_chasms:polished_sugilite"
+  ],
+  "mat3": [
+    "caverns_and_chasms:polished_sugilite_stairs",
+    "caverns_and_chasms:polished_sugilite_slab",
+    "caverns_and_chasms:polished_sugilite_wall"
+  ]
+}

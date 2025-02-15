@@ -1,0 +1,13 @@
+{
+  "remove": [
+    "quark:red_crystal_lamp",
+    "quark:orange_crystal_lamp",
+    "quark:yellow_crystal_lamp",
+    "quark:green_crystal_lamp",
+    "quark:blue_crystal_lamp",
+    "quark:indigo_crystal_lamp",
+    "quark:violet_crystal_lamp",
+    "quark:white_crystal_lamp",
+    "quark:black_crystal_lamp"
+  ]
+}

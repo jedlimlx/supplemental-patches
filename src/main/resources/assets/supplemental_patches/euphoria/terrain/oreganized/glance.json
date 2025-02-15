@@ -1,0 +1,13 @@
+{
+  "name": "glance",
+  "glsl": "glance.glsl",
+  "mat0": [
+    "oreganized:glance",
+    "oreganized:spotted_glance"
+  ],
+  "mat1": [
+    "oreganized:glance_stairs",
+    "oreganized:glance_slab",
+    "oreganized:glance_wall"
+  ]
+}

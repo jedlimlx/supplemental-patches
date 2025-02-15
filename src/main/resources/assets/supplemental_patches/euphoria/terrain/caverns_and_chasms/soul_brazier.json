@@ -1,0 +1,9 @@
+{
+  "name": "soul_brazier [silver]",
+  "glsl": "soul_brazier.glsl",
+  "mat0": [
+    "caverns_and_chasms:soul_brazier:lit=true"
+  ],
+  "color": "minecraft:soul_campfire",
+  "held_lighting": true
+}

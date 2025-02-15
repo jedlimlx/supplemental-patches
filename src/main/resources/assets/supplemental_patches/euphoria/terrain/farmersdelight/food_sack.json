@@ -1,0 +1,8 @@
+{
+  "name": "food_sack",
+  "glsl": "food_sack.glsl",
+  "mat0": [
+    "farmersdelight:rice_bag",
+    "cratedelight:sugar_bag"
+  ]
+}

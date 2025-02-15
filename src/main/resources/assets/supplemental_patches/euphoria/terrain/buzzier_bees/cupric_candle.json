@@ -1,0 +1,16 @@
+{
+  "name": "cupric_candle",
+  "glsl": "cupric_candle.glsl",
+  "mat0": [
+    "buzzier_bees:cupric_candle:lit=true"
+  ],
+  "mat1": [
+    "buzzier_bees:cupric_candle:lit=false"
+  ],
+  "color": [
+    "supplemental_patches:buzzier_bees/cupric_candle",
+    null,
+    null,
+    null
+  ]
+}

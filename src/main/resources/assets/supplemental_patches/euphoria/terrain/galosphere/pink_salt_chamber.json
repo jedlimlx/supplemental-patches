@@ -1,0 +1,17 @@
+{
+  "name": "pink_salt_chamber",
+  "glsl": "pink_salt_chamber.glsl",
+  "mat0": [
+    "galosphere:pink_salt_chamber:chamber_phase=inactive",
+    "galosphere:pink_salt_chamber:chamber_phase=cooldown"
+  ],
+  "mat2": [
+    "galosphere:pink_salt_chamber:chamber_phase=charged"
+  ],
+  "color": [
+    null,
+    null,
+    "supplemental_patches:galosphere/pink_salt",
+    null
+  ]
+}

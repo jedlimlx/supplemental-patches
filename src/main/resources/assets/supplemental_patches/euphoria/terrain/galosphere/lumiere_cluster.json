@@ -1,0 +1,9 @@
+{
+  "name": "lumiere_cluster",
+  "glsl": "lumiere_cluster.glsl",
+  "mat0": [
+    "galosphere:lumiere_cluster",
+    "galosphere:glinted_lumiere_cluster"
+  ],
+  "color": "supplemental_patches:galosphere/lumiere"
+}

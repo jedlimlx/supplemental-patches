@@ -1,0 +1,21 @@
+{
+  "name": "sack",
+  "glsl": "sack.glsl",
+  "mat0": [
+    "supplementaries:sack",
+    "farmersdelight:tatami",
+    "cratedelight:cocoabeans_bag",
+    "cratedelight:gunpowder_bag",
+    "cratedelight:cookie_bag",
+    "quark:bamboo_mat",
+    "quark:gunpowder_sack",
+    "quark:cocoa_beans_sack",
+    "quark:nether_wart_sack",
+    "quark:berry_sack"
+  ],
+  "mat1": [
+    "farmersdelight:full_tatami_mat",
+    "farmersdelight:half_tatami_mat",
+    "quark:bamboo_mat_carpet"
+  ]
+}

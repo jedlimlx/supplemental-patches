@@ -1,0 +1,7 @@
+{
+  "name": "oretortoise",
+  "glsl": "oretortoise.glsl",
+  "mat0": [
+    "quark:toretoise"
+  ]
+}

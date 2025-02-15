@@ -1,0 +1,32 @@
+{
+  "name": "trumpet_wood",
+  "glsl": "trumpet_wood.glsl",
+  "mat0": [
+    "quark:blossom_planks",
+    "quark:vertical_blossom_planks",
+    "quark:stripped_blossom_log",
+    "quark:stripped_blossom_wood",
+    "quark:blossom_bookshelf"
+  ],
+  "mat1": [
+    "quark:blossom_fence",
+    "quark:blossom_fence_gate:powered=false",
+    "quark:blossom_button:powered=false",
+    "quark:blossom_pressure_plate:powered=false",
+    "quark:blossom_planks_slab",
+    "quark:blossom_planks_vertical_slab",
+    "quark:blossom_planks_stairs",
+    "quark:blossom_trapdoor:powered=false",
+    "quark:blossom_ladder",
+    "quark:blossom_sign",
+    "quark:blossom_wall_sign",
+    "quark:blossom_wall_hanging_sign",
+    "quark:stripped_blossom_post"
+  ],
+  "mat3": [
+    "quark:blossom_fence_gate:powered=true",
+    "quark:blossom_button:powered=true",
+    "quark:blossom_pressure_plate:powered=true",
+    "quark:blossom_trapdoor:powered=true"
+  ]
+}

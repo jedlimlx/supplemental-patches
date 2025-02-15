@@ -1,0 +1,7 @@
+{
+  "name": "warped_forest_enderman",
+  "glsl": "warped_forest_enderman.glsl",
+  "mat0": [
+    "endermanoverhaul:warped_forest_enderman"
+  ]
+}

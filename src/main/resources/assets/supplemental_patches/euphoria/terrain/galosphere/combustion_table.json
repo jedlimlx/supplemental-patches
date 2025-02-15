@@ -1,0 +1,7 @@
+{
+  "name": "combustion_table",
+  "glsl": "combustion_table.glsl",
+  "mat0": [
+    "galosphere:combustion_table"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "summoner_pearl",
+  "glsl": "summoner_pearl.glsl",
+  "mat0": [
+    "endermanoverhaul:summoner_pearl"
+  ]
+}

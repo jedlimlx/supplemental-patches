@@ -1,0 +1,13 @@
+{
+  "name": "rope",
+  "glsl": "rope.glsl",
+  "mat1": [
+    "farmersdelight:rope",
+    "supplementaries:rope"
+  ],
+  "mat3": [
+    "quark:rope"
+  ],
+  "waving": "supplemental_patches:waving_rope",
+  "needs_voxelization": true
+}

@@ -1,0 +1,14 @@
+{
+  "name": "lava_lamp",
+  "glsl": "lava_lamp.glsl",
+  "mat0": [
+    "caverns_and_chasms:lava_lamp:facing=up",
+    "caverns_and_chasms:lava_lamp:facing=down"
+  ],
+  "mat2": [
+    "caverns_and_chasms:lava_lamp:facing=east",
+    "caverns_and_chasms:lava_lamp:facing=west"
+  ],
+  "color": "minecraft:lava",
+  "held_lighting": true
+}

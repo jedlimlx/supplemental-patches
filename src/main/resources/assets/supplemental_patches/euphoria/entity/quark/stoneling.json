@@ -1,0 +1,7 @@
+{
+  "name": "stoneling",
+  "glsl": "stoneling.glsl",
+  "mat0": [
+    "quark:stoneling"
+  ]
+}

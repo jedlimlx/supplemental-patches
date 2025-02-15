@@ -1,0 +1,8 @@
+{
+  "name": "ender_fire",
+  "glsl": "ender_fire.glsl",
+  "mat0": [
+    "endergetic:ender_fire"
+  ],
+  "color": "supplemental_patches:endergetic/ender_fire"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "lumisene_bottle",
+  "glsl": "lumisene_bottle.glsl",
+  "mat0": [
+    "supplementaries:lumisene_bottle"
+  ]
+}

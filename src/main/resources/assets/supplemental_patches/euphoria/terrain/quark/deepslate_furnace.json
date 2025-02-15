@@ -1,0 +1,16 @@
+{
+  "name": "deepslate_furnace",
+  "glsl": "deepslate_furnace.glsl",
+  "mat0": [
+    "quark:deepslate_furnace:lit=false"
+  ],
+  "mat2": [
+    "quark:deepslate_furnace:lit=true"
+  ],
+  "color": [
+    null,
+    null,
+    "minecraft:furnace",
+    null
+  ]
+}

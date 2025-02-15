@@ -1,0 +1,9 @@
+{
+  "name": "cupric_brazier [silver]",
+  "glsl": "cupric_brazier.glsl",
+  "mat0": [
+    "caverns_and_chasms:cupric_brazier:lit=true"
+  ],
+  "color": "supplemental_patches:caverns_and_chasms/cupric_fire",
+  "held_lighting": true
+}

@@ -1,0 +1,7 @@
+{
+  "name": "pike",
+  "glsl": "pike.glsl",
+  "mat0": [
+    "upgrade_aquatic:pike"
+  ]
+}

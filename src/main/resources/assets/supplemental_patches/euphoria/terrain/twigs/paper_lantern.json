@@ -1,0 +1,16 @@
+{
+  "name": "paper_lantern",
+  "glsl": "paper_lantern.glsl",
+  "mat0": [
+    "twigs:paper_lantern",
+    "twigs:allium_paper_lantern",
+    "twigs:blue_orchid_paper_lantern",
+    "twigs:crimson_roots_paper_lantern",
+    "twigs:dandelion_paper_lantern",
+    "twigs:torchflower_paper_lantern",
+    "amendments:wall_lantern:lantern=paper_lantern",
+    "quark:paper_lantern",
+    "quark:paper_lantern_sakura"
+  ],
+  "color": "minecraft:lantern"
+}

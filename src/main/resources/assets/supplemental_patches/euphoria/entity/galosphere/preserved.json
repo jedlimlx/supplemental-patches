@@ -1,0 +1,10 @@
+{
+  "name": "preserved",
+  "glsl": "preserved.glsl",
+  "mat0": [
+    "galosphere:preserved"
+  ],
+  "mat1": [
+    "galosphere:berserker"
+  ]
+}

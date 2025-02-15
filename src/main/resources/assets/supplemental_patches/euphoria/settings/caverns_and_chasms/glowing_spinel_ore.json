@@ -1,0 +1,13 @@
+{
+  "type": "setting",
+  "name": "GLOWING_ORE_SPINEL",
+  "conditions": [
+    {
+      "if": "GLOWING_ORE_MASTER == 2 || SHADER_STYLE == 4 && GLOWING_ORE_MASTER == 1",
+      "then": true
+    }
+  ],
+  "en_US": {
+    "option": "Glowing Spinel Ore"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "ender_lantern",
+  "glsl": "ender_lantern.glsl",
+  "mat0": [
+    "endergetic:ender_lantern"
+  ],
+  "color": "supplemental_patches:endergetic/ender_fire",
+  "held_lighting": true
+}

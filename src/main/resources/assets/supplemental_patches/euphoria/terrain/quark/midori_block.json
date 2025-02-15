@@ -1,0 +1,25 @@
+{
+  "name": "midori_block",
+  "glsl": "midori_block.glsl",
+  "mat0": [
+    "quark:midori_block",
+    "supplemental_patches:midori_bricks",
+    "supplemental_patches:midori_tiles",
+    "supplemental_patches:chiseled_midori:lit=false"
+  ],
+  "mat1": [
+    "quark:midori_block_slab",
+    "supplemental_patches:midori_brick_slab",
+    "supplemental_patches:midori_tile_slab",
+    "quark:midori_block_stairs",
+    "supplemental_patches:midori_brick_stairs",
+    "supplemental_patches:midori_tile_stairs",
+    "quark:midori_block_wall",
+    "supplemental_patches:midori_brick_wall",
+    "supplemental_patches:midori_tile_wall",
+    "supplemental_patches:midori_column"
+  ],
+  "mat2": [
+    "supplemental_patches:chiseled_midori:lit=true"
+  ]
+}

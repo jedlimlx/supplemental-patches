@@ -1,0 +1,24 @@
+{
+  "name": "polished_jasper",
+  "glsl": "polished_jasper.glsl",
+  "mat0": [
+    "quark:polished_jasper",
+    "quark:jasper_bricks",
+    "supplemental_patches:jasper_tiles",
+    "quark:chiseled_jasper_bricks"
+  ],
+  "mat1": [
+    "quark:polished_jasper_stairs",
+    "quark:polished_jasper_slab",
+    "quark:polished_jasper_wall",
+    "quark:polished_jasper_vertical_slab",
+    "quark:jasper_bricks_stairs",
+    "quark:jasper_bricks_slab",
+    "quark:jasper_bricks_wall",
+    "quark:jasper_bricks_vertical_slab",
+    "supplemental_patches:jasper_tile_stairs",
+    "supplemental_patches:jasper_tile_slab",
+    "supplemental_patches:jasper_tile_wall",
+    "supplemental_patches:jasper_column"
+  ]
+}

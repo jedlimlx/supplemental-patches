@@ -1,0 +1,22 @@
+{
+  "name": "crystal_lamps",
+  "glsl": "crystal_lamps.glsl",
+  "mat0": [
+    "quark:red_crystal_lamp:lit=true"
+  ],
+  "mat1": [
+    "quark:red_crystal_lamp:lit=false"
+  ],
+  "mat2": [
+    "quark:orange_crystal_lamp:lit=true"
+  ],
+  "mat3": [
+    "quark:orange_crystal_lamp:lit=false"
+  ],
+  "color": [
+    "supplemental_patches:quark/crystal_lamp/red",
+    null,
+    "supplemental_patches:quark/crystal_lamp/orange",
+    null
+  ]
+}

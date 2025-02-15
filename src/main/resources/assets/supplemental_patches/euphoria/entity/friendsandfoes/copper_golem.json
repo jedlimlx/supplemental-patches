@@ -1,0 +1,8 @@
+{
+  "name": "copper_golem",
+  "glsl": "copper_golem.glsl",
+  "mat0": [
+    "friendsandfoes:copper_golem",
+    "caverns_and_chasms:copper_golem"
+  ]
+}

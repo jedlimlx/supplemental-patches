@@ -1,0 +1,9 @@
+{
+  "name": "glowberry_sack",
+  "glsl": "glowberry_sack.glsl",
+  "mat0": [
+    "quark:glowberry_sack"
+  ],
+  "color": "minecraft:glow_berries",
+  "held_lighting": true
+}

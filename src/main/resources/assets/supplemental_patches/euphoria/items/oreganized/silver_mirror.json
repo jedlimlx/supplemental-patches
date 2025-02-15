@@ -1,0 +1,7 @@
+{
+  "name": "silver_mirror",
+  "glsl": "silver_mirror.glsl",
+  "mat0": [
+    "oreganized:silver_mirror"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "enchanted_basin",
+  "glsl": "enchanted_basin.glsl",
+  "mat0": [
+    "villagersplus:occultist_table:filling=0"
+  ],
+  "mat2": [
+    "villagersplus:occultist_table:filling=1",
+    "villagersplus:occultist_table:filling=2",
+    "villagersplus:occultist_table:filling=3",
+    "villagersplus:occultist_table:filling=4",
+    "villagersplus:occultist_table:filling=5"
+  ],
+  "colors": [
+    null,
+    null,
+    "supplemental_patches:experience",
+    null
+  ]
+}

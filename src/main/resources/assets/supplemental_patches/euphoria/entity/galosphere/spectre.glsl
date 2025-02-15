@@ -1,0 +1,1 @@
+emission = 1.2 + 4.0 * pow2(max0(color.b - color.r));

@@ -1,0 +1,25 @@
+{
+  "name": "crimson_lantern",
+  "glsl": "crimson_lantern.glsl",
+  "mat0": [
+    "supplementaries:lumisene:age=1",
+    "supplementaries:lumisene:age=2",
+    "supplementaries:lumisene:age=3",
+    "supplementaries:lumisene:age=4",
+    "supplementaries:lumisene:age=5",
+    "supplementaries:lumisene:age=6",
+    "supplementaries:lumisene:age=7",
+    "supplementaries:lumisene:age=8",
+    "supplementaries:lumisene:age=9",
+    "supplementaries:lumisene:age=10",
+    "supplementaries:lumisene:age=11",
+    "supplementaries:lumisene:age=12",
+    "supplementaries:lumisene:age=13",
+    "supplementaries:lumisene:age=14",
+    "supplementaries:lumisene:age=15",
+    "supplementaries:lumisene:age=16"
+  ],
+  "color": [
+    "supplemental_patches:supplementaries/lumisene_fire"
+  ]
+}

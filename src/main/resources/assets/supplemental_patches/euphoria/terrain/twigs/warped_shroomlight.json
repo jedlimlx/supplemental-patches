@@ -1,0 +1,9 @@
+{
+  "name": "warped_shroomlight",
+  "glsl": "warped_shroomlight.glsl",
+  "mat0": [
+    "twigs:warped_shroomlight"
+  ],
+  "color": "minecraft:shroomlight",
+  "held_lighting": true
+}

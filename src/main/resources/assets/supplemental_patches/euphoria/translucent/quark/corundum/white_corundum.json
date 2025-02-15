@@ -1,0 +1,21 @@
+{
+  "name": "white_corundum",
+  "glsl": "white_corundum.glsl",
+  "mat0": [
+    "quark:white_crystal_lamp:lit=true"
+  ],
+  "mat1": [
+    "quark:white_crystal_lamp:lit=false"
+  ],
+  "mat2": [
+    "quark:white_corundum",
+    "quark:waxed_white_corundum",
+    "quark:white_corundum_sheet"
+  ],
+  "color": [
+    "supplemental_patches:quark/crystal_lamp/white",
+    null,
+    "supplemental_patches:quark/corundum/white",
+    null
+  ]
+}

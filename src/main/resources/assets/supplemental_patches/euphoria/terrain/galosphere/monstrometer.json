@@ -1,0 +1,16 @@
+{
+  "name": "monstrometer",
+  "glsl": "monstrometer.glsl",
+  "mat0": [
+    "galosphere:monstrometer:charged=true"
+  ],
+  "mat2": [
+    "galosphere:monstrometer:charged=false"
+  ],
+  "color": [
+    "supplemental_patches:galosphere/lumiere",
+    null,
+    null,
+    null
+  ]
+}

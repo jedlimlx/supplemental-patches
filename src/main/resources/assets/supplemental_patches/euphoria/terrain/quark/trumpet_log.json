@@ -1,0 +1,12 @@
+{
+  "name": "trumpet_log",
+  "glsl": "trumpet_log.glsl",
+  "mat0": [
+    "quark:blossom_log",
+    "quark:blossom_wood",
+    "quark:hollow_blossom_log"
+  ],
+  "mat1": [
+    "quark:blossom_post"
+  ]
+}

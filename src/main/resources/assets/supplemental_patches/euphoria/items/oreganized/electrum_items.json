@@ -1,0 +1,18 @@
+{
+  "name": "lead_items",
+  "glsl": "lead_items.glsl",
+  "mat0": [
+    "oreganized:electrum_helmet",
+    "oreganized:electrum_chestplate",
+    "oreganized:electrum_leggings",
+    "oreganized:electrum_boots",
+    "oreganized:electrum_sword",
+    "oreganized:electrum_pickaxe",
+    "oreganized:electrum_axe",
+    "oreganized:electrum_shovel",
+    "oreganized:electrum_hoe",
+    "oreganized:electrum_knife",
+    "oreganized:electrum_ingot",
+    "oreganized:electrum_nugget"
+  ]
+}

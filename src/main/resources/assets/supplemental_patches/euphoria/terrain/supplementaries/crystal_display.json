@@ -1,0 +1,30 @@
+{
+  "name": "crystal_display",
+  "glsl": "crystal_display.glsl",
+  "mat0": [
+    "supplementaries:crystal_display:power=1",
+    "supplementaries:crystal_display:power=2",
+    "supplementaries:crystal_display:power=3",
+    "supplementaries:crystal_display:power=4",
+    "supplementaries:crystal_display:power=5",
+    "supplementaries:crystal_display:power=6",
+    "supplementaries:crystal_display:power=7",
+    "supplementaries:crystal_display:power=8",
+    "supplementaries:crystal_display:power=9",
+    "supplementaries:crystal_display:power=10",
+    "supplementaries:crystal_display:power=11",
+    "supplementaries:crystal_display:power=12",
+    "supplementaries:crystal_display:power=13",
+    "supplementaries:crystal_display:power=14",
+    "supplementaries:crystal_display:power=15"
+  ],
+  "mat1": [
+    "supplementaries:crystal_display:power=0"
+  ],
+  "color": [
+    "minecraft:amethyst",
+    null,
+    null,
+    null
+  ]
+}

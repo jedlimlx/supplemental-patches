@@ -1,0 +1,31 @@
+{
+  "name": "silver_items",
+  "glsl": "silver_items.glsl",
+  "mat0": [
+    "galosphere:sterling_helmet",
+    "galosphere:sterling_chestplate",
+    "galosphere:sterling_leggings",
+    "galosphere:sterling_boots",
+    "galosphere:sterling_horse_armour",
+    "galosphere:silver_ingot",
+    "galosphere:silver_nugget",
+    "galosphere:silver_bomb",
+    "oreganized:silver_ingot",
+    "oreganized:silver_nugget",
+    "oreganized:scribe",
+    "caverns_and_chasms:silver_helmet",
+    "caverns_and_chasms:silver_chestplate",
+    "caverns_and_chasms:silver_leggings",
+    "caverns_and_chasms:silver_boots",
+    "caverns_and_chasms:silver_horse_armor",
+    "caverns_and_chasms:silver_ingot",
+    "caverns_and_chasms:silver_nugget",
+    "caverns_and_chasms:silver_axe",
+    "caverns_and_chasms:silver_shovel",
+    "caverns_and_chasms:silver_hoe",
+    "caverns_and_chasms:silver_pickaxe",
+    "caverns_and_chasms:silver_sword",
+    "caverns_and_chasms:kunai",
+    "caverns_and_chasms:large_arrow"
+  ]
+}

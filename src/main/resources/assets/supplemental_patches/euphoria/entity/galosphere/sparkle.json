@@ -1,0 +1,7 @@
+{
+  "name": "sparkle",
+  "glsl": "sparkle.glsl",
+  "mat0": [
+    "galosphere:sparkle"
+  ]
+}

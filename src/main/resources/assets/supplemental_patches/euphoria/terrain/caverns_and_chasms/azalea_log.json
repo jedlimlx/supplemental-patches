@@ -1,0 +1,8 @@
+{
+  "name": "azalea_log",
+  "glsl": "azalea_log.glsl",
+  "mat0": [
+    "caverns_and_chasms:azalea_log",
+    "caverns_and_chasms:azalea_wood"
+  ]
+}

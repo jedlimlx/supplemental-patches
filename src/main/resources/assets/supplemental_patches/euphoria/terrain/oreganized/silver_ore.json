@@ -1,0 +1,13 @@
+{
+  "name": "silver_ore",
+  "glsl": "silver_ore.glsl",
+  "mat0": [
+    "oreganized:silver_ore",
+    "oreganized:deepslate_silver_ore"
+  ],
+  "color": "supplemental_patches:oreganized/silver_ore",
+  "conditions": [
+    "GLOWING_ORE_SILVER_O",
+    "DO_IPBR_LIGHTS"
+  ]
+}

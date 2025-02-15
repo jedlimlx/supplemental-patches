@@ -1,0 +1,12 @@
+{
+  "name": "raw_lead",
+  "glsl": "raw_lead.glsl",
+  "mat0": [
+    "oreganized:raw_lead_block"
+  ],
+  "color": "supplemental_patches:oreganized/lead_ore",
+  "conditions": [
+    "GLOWING_RAW_BLOCKS",
+    "DO_IPBR_LIGHTS"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "azalea_door",
+  "glsl": "azalea_door.glsl",
+  "mat1": [
+    "caverns_and_chasms:azalea_door:powered=false"
+  ],
+  "mat3": [
+    "caverns_and_chasms:azalea_door:powered=true"
+  ]
+}

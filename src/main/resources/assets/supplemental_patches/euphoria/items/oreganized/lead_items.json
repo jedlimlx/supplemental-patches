@@ -1,0 +1,10 @@
+{
+  "name": "lead_items",
+  "glsl": "lead_items.glsl",
+  "mat0": [
+    "oreganized:lead_nugget",
+    "oreganized:lead_ingot",
+    "oreganized:lead_bolt",
+    "oreganized:flint_and_pewter"
+  ]
+}

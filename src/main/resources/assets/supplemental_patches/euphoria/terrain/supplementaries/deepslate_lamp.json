@@ -1,0 +1,11 @@
+{
+  "name": "deepslate_lamp",
+  "glsl": "deepslate_lamp.glsl",
+  "mat0": [
+    "supplementaries:deepslate_lamp"
+  ],
+  "color": [
+    "supplemental_patches:supplementaries/deepslate_lamp"
+  ],
+  "held_lighting": true
+}

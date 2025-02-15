@@ -1,0 +1,13 @@
+{
+  "name": "lead_ore",
+  "glsl": "lead_ore.glsl",
+  "mat0": [
+    "oreganized:lead_ore",
+    "oreganized:deepslate_lead_ore"
+  ],
+  "color": "supplemental_patches:oreganized/lead_ore",
+  "conditions": [
+    "GLOWING_ORE_LEAD",
+    "DO_IPBR_LIGHTS"
+  ]
+}

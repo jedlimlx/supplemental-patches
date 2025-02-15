@@ -1,0 +1,7 @@
+{
+  "name": "clock_block",
+  "glsl": "clock.glsl",
+  "mat0": [
+    "supplementaries:clock_block"
+  ]
+}

@@ -1,0 +1,29 @@
+modLoader = "kotlinforforge"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "supplemental_patches"
+version = "${file.jarVersion}"
+displayName = ""
+authors = "lemon41625"
+description = '''
+Additional patches to Euphoria Patches providing better support for many modded blocks from popular mods.
+'''
+
+[[mixins]]
+config = "supplemental_patches.mixins.json"
+
+[[dependencies.supplemental_patches]]
+modId = "forge"
+mandatory = true
+versionRange = "[46,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.supplemental_patches]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20,1.21)"
+ordering = "NONE"
+side = "BOTH"

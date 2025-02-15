@@ -1,0 +1,7 @@
+{
+  "name": "sugar_cube",
+  "glsl": "sugar_cube.glsl",
+  "mat0": [
+    "supplementaries:sugar_cube"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "griseo_block",
+  "glsl": "griseo_block.glsl",
+  "mat0": [
+    "supplemental_patches:griseo_block",
+    "supplemental_patches:griseo_bricks",
+    "supplemental_patches:griseo_tiles",
+    "supplemental_patches:chiseled_griseo:lit=false"
+  ],
+  "mat1": [
+    "supplemental_patches:griseo_block_slab",
+    "supplemental_patches:griseo_brick_slab",
+    "supplemental_patches:griseo_tile_slab",
+    "supplemental_patches:griseo_block_stairs",
+    "supplemental_patches:griseo_brick_stairs",
+    "supplemental_patches:griseo_tile_stairs",
+    "supplemental_patches:griseo_block_wall",
+    "supplemental_patches:griseo_brick_wall",
+    "supplemental_patches:griseo_tile_wall",
+    "supplemental_patches:griseo_column"
+  ],
+  "mat2": [
+    "supplemental_patches:chiseled_griseo:lit=true"
+  ],
+  "color": [
+    null,
+    null,
+    "supplemental_patches:galosphere/spectre",
+    null
+  ]
+}

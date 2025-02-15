@@ -1,0 +1,10 @@
+{
+  "name": "azalea_door",
+  "glsl": "azalea_door.glsl",
+  "mat1": [
+    "quark:azalea_door:powered=false"
+  ],
+  "mat3": [
+    "quark:azalea_door:powered=true"
+  ]
+}

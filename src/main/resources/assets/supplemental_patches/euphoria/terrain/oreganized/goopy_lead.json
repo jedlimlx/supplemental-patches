@@ -1,0 +1,12 @@
+{
+  "name": "goopy_lead",
+  "glsl": "goopy_lead.glsl",
+  "mat0": [
+    "oreganized:lead_block:goopyness=2",
+    "oreganized:cut_lead:goopyness=2",
+    "oreganized:lead_bricks:goopyness=2",
+    "oreganized:lead_pillar:goopyness=2",
+    "oreganized:lead_bulb:goopyness=3"
+  ],
+  "color": "supplemental_patches:oreganized/molten_lead"
+}

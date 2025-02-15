@@ -1,0 +1,23 @@
+{
+  "name": "lead",
+  "glsl": "lead.glsl",
+  "mat0": [
+    "oreganized:lead_block:goopyness=0",
+    "oreganized:cut_lead:goopyness=0",
+    "oreganized:lead_bricks:goopyness=0",
+    "oreganized:lead_pillar:goopyness=0"
+  ],
+  "mat2": [
+    "oreganized:lead_block:goopyness=1",
+    "oreganized:cut_lead:goopyness=1",
+    "oreganized:lead_bricks:goopyness=1",
+    "oreganized:lead_pillar:goopyness=1",
+    "oreganized:lead_bulb:goopyness=2"
+  ],
+  "color": [
+    null,
+    null,
+    "supplemental_patches:oreganized/goopy_lead",
+    null
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "setting",
+  "name": "GLOWING_POTION_EFFECT",
+  "default": true,
+  "en_US": {
+    "option": "Glowing Potion Effects",
+    "comment": "Enables glowing potion effect particles."
+  }
+}

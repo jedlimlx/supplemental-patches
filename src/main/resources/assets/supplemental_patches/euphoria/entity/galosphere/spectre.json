@@ -1,0 +1,7 @@
+{
+  "name": "spectre",
+  "glsl": "spectre.glsl",
+  "mat0": [
+    "galosphere:spectre"
+  ]
+}

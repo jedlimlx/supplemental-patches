@@ -1,0 +1,10 @@
+{
+  "name": "quark_stone_lamp",
+  "glsl": "quark_stone_lamp.glsl",
+  "mat0": [
+    "quark:stone_lamp",
+    "quark:stone_brick_lamp"
+  ],
+  "color": "minecraft:torch",
+  "held_lighting": true
+}

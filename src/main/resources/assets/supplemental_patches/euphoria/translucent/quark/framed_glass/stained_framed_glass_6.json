@@ -1,0 +1,26 @@
+{
+  "name": "stained_framed_glass_6",
+  "glsl": "stained_framed_glass.glsl",
+  "mat0": [
+    "dye_the_world:forest_framed_glass",
+    "dye_the_world:forest_framed_glass_pane"
+  ],
+  "mat1": [
+    "dye_the_world:ginger_framed_glass",
+    "dye_the_world:ginger_framed_glass_pane"
+  ],
+  "mat2": [
+    "dye_the_world:indigo_framed_glass",
+    "dye_the_world:indigo_framed_glass_pane"
+  ],
+  "mat3": [
+    "dye_the_world:maroon_framed_glass",
+    "dye_the_world:maroon_framed_glass_pane"
+  ],
+  "color": [
+    "supplemental_patches:dyes/dye_depot/forest",
+    "supplemental_patches:dyes/dye_depot/ginger",
+    "supplemental_patches:dyes/dye_depot/indigo",
+    "supplemental_patches:dyes/dye_depot/maroon"
+  ]
+}

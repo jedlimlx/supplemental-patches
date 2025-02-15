@@ -1,0 +1,17 @@
+{
+  "name": "sanguine",
+  "glsl": "sanguine.glsl",
+  "mat0": [
+    "caverns_and_chasms:sanguine_block",
+    "caverns_and_chasms:sanguine_tiles",
+    "caverns_and_chasms:fortified_sanguine_tiles"
+  ],
+  "mat1": [
+    "caverns_and_chasms:sanguine_tile_stairs",
+    "caverns_and_chasms:sanguine_tile_slab",
+    "caverns_and_chasms:sanguine_tile_wall",
+    "caverns_and_chasms:fortified_sanguine_tile_stairs",
+    "caverns_and_chasms:fortified_sanguine_tile_slab",
+    "caverns_and_chasms:fortified_sanguine_tile_wall"
+  ]
+}

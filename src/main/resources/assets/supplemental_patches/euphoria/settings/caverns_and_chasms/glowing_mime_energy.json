@@ -1,0 +1,9 @@
+{
+  "type": "setting",
+  "name": "GLOWING_MIME_ENERGY",
+  "default": false,
+  "en_US": {
+    "option": "Glowing Mime Energy",
+    "comment": "Enables the particles emitted by the Mine to glow."
+  }
+}

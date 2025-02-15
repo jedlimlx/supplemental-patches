@@ -1,0 +1,7 @@
+{
+  "name": "ice_spikes_enderman",
+  "glsl": "ice_spikes_enderman.glsl",
+  "mat0": [
+    "endermanoverhaul:ice_spikes_enderman"
+  ]
+}

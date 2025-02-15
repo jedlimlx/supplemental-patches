@@ -1,0 +1,7 @@
+{
+  "name": "spectrepillar",
+  "glsl": "spectrepillar.glsl",
+  "mat0": [
+    "galosphere:spectrepillar"
+  ]
+}

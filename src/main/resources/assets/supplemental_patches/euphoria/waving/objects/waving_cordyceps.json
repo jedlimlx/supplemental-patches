@@ -1,0 +1,6 @@
+{
+  "glsl": "waving_cordyceps.glsl",
+  "conditions": [
+    "WAVING_FOLIAGE"
+  ]
+}

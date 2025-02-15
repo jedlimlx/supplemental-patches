@@ -1,0 +1,24 @@
+{
+  "name": "copper_bars / copper_button",
+  "glsl": "copper_bars.glsl",
+  "mat1": [
+    "caverns_and_chasms:copper_bars",
+    "caverns_and_chasms:exposed_copper_bars",
+    "caverns_and_chasms:weathered_copper_bars",
+    "caverns_and_chasms:oxidised_copper_bars",
+    "caverns_and_chasms:waxed_copper_bars",
+    "caverns_and_chasms:waxed_exposed_copper_bars",
+    "caverns_and_chasms:waxed_weathered_copper_bars",
+    "caverns_and_chasms:waxed_oxidised_copper_bars"
+  ],
+  "mat3": [
+    "caverns_and_chasms:copper_button",
+    "caverns_and_chasms:exposed_copper_button",
+    "caverns_and_chasms:weathered_copper_button",
+    "caverns_and_chasms:oxidised_copper_button",
+    "caverns_and_chasms:waxed_copper_button",
+    "caverns_and_chasms:waxed_exposed_copper_button",
+    "caverns_and_chasms:waxed_weathered_copper_button",
+    "caverns_and_chasms:waxed_oxidised_copper_button"
+  ]
+}

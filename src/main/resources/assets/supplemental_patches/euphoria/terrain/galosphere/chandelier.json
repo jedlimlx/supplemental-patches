@@ -1,0 +1,9 @@
+{
+  "name": "chandelier",
+  "glsl": "chandelier.glsl",
+  "mat0": [
+    "galosphere:chandelier"
+  ],
+  "color": "supplemental_patches:galosphere/spectre",
+  "held_lighting": true
+}

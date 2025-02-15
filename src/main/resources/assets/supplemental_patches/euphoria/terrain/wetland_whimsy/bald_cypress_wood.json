@@ -1,0 +1,33 @@
+{
+  "name": "bald_cypress_wood",
+  "glsl": "bald_cypress_wood.glsl",
+  "mat0": [
+    "wetland_whimsy:bald_cypress_planks",
+    "wetland_whimsy:bald_cypress_boards",
+    "wetland_whimsy:stripped_bald_cypress_log",
+    "wetland_whimsy:stripped_bald_cypress_wood",
+    "wetland_whimsy:bald_cypress_bookshelf",
+    "wetland_whimsy:chiseled_bald_cypress_bookshelf",
+    "wetland_whimsy:bald_cypress_beehive",
+    "wetland_whimsy:bald_cypress_cabinet"
+  ],
+  "mat1": [
+    "wetland_whimsy:bald_cypress_fence",
+    "wetland_whimsy:bald_cypress_fence_gate:powered=false",
+    "wetland_whimsy:bald_cypress_button:powered=false",
+    "wetland_whimsy:bald_cypress_pressure_plate:powered=false",
+    "wetland_whimsy:bald_cypress_plank_slab",
+    "wetland_whimsy:bald_cypress_plank_stairs",
+    "wetland_whimsy:bald_cypress_trapdoor:powered=false",
+    "wetland_whimsy:bald_cypress_ladder",
+    "wetland_whimsy:bald_cypress_sign",
+    "wetland_whimsy:bald_cypress_wall_sign",
+    "wetland_whimsy:bald_cypress_wall_hanging_sign"
+  ],
+  "mat3": [
+    "wetland_whimsy:bald_cypress_fence_gate:powered=true",
+    "wetland_whimsy:bald_cypress_button:powered=true",
+    "wetland_whimsy:bald_cypress_pressure_plate:powered=true",
+    "wetland_whimsy:bald_cypress_trapdoor:powered=true"
+  ]
+}

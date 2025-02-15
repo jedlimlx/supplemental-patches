@@ -1,0 +1,13 @@
+{
+  "name": "quark_potted_plants_3",
+  "glsl": "quark_potted_plants_3.glsl",
+  "mat0": [
+    "quark:potted_glow_shroom"
+  ],
+  "color": [
+    "supplemental_patches:quark/glow_shroom",
+    null,
+    null,
+    null
+  ]
+}

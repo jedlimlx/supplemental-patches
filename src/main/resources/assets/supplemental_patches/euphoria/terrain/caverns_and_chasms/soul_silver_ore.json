@@ -1,0 +1,12 @@
+{
+  "name": "soul_silver_ore",
+  "glsl": "soul_silver_ore.glsl",
+  "mat0": [
+    "caverns_and_chasms:soul_silver_ore"
+  ],
+  "color": "supplemental_patches:oreganized/silver_ore",
+  "conditions": [
+    "GLOWING_ORE_SOULSILVER",
+    "DO_IPBR_LIGHTS"
+  ]
+}

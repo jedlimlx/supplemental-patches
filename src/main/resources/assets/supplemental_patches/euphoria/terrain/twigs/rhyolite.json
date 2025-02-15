@@ -1,0 +1,12 @@
+{
+  "name": "rhyolite",
+  "glsl": "rhyolite.glsl",
+  "mat0": [
+    "twigs:rhyolite"
+  ],
+  "mat1": [
+    "twigs:rhyolite_stairs",
+    "twigs:rhyolite_slab",
+    "twigs:rhyolite_wall"
+  ]
+}

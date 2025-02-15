@@ -1,0 +1,9 @@
+{
+  "name": "molten_lead",
+  "glsl": "molten_lead.glsl",
+  "mat0": [
+    "oreganized:molten_lead"
+  ],
+  "color": "supplemental_patches:oreganized/molten_lead",
+  "waving": "supplemental_patches:waving_molten_lead"
+}

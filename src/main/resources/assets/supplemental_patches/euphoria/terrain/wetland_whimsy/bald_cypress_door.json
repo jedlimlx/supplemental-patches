@@ -1,0 +1,10 @@
+{
+  "name": "bald_cypress_door",
+  "glsl": "bald_cypress_door.glsl",
+  "mat1": [
+    "wetland_whimsy:bald_cypress_door:powered=false"
+  ],
+  "mat3": [
+    "wetland_whimsy:bald_cypress_door:powered=true"
+  ]
+}

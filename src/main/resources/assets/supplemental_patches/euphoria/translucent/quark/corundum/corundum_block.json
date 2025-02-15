@@ -1,0 +1,31 @@
+{
+  "name": "corundum_block",
+  "glsl": "corundum_block.glsl",
+  "mat0": [
+    "quark:red_corundum",
+    "quark:waxed_red_corundum",
+    "quark:red_corundum_sheet"
+  ],
+  "mat1": [
+    "quark:orange_corundum",
+    "quark:waxed_orange_corundum",
+    "quark:orange_corundum_sheet"
+  ],
+  "mat2": [
+    "quark:yellow_corundum",
+    "quark:waxed_yellow_corundum",
+    "quark:yellow_corundum_sheet"
+  ],
+  "mat3": [
+    "quark:green_corundum",
+    "quark:waxed_green_corundum",
+    "quark:green_corundum_sheet"
+  ],
+  "color": [
+    "supplemental_patches:quark/corundum/red",
+    "supplemental_patches:quark/corundum/orange",
+    "supplemental_patches:quark/corundum/yellow",
+    "supplemental_patches:quark/corundum/green"
+  ],
+  "held_lighting": true
+}

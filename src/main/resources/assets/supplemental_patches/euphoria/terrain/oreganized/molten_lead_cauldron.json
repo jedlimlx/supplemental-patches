@@ -1,0 +1,8 @@
+{
+  "name": "molten_lead_cauldron",
+  "glsl": "molten_lead_cauldron.glsl",
+  "mat0": [
+    "oreganized:molten_lead_cauldron"
+  ],
+  "color": "supplemental_patches:oreganized/molten_lead"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "cured_membrane",
+  "glsl": "cured_membrane.glsl",
+  "mat0": [
+    "galosphere:cured_membrane_block"
+  ]
+}

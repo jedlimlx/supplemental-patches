@@ -1,0 +1,18 @@
+{
+  "name": "glow_shroom",
+  "glsl": "glow_shroom.glsl",
+  "mat0": [
+    "quark:glow_shroom_block",
+    "quark:glow_shroom"
+  ],
+  "mat2": [
+    "quark:glow_shroom_stem"
+  ],
+  "color": [
+    "supplemental_patches:quark/glow_shroom",
+    null,
+    null,
+    null
+  ],
+  "held_lighting": true
+}

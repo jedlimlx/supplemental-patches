@@ -1,0 +1,28 @@
+{
+  "name": "redstone_illuminator",
+  "glsl": "redstone_illuminator.glsl",
+  "mat0": [
+    "supplementaries:redstone_illuminator:power=0",
+    "supplementaries:redstone_illuminator:power=1",
+    "supplementaries:redstone_illuminator:power=2",
+    "supplementaries:redstone_illuminator:power=3",
+    "supplementaries:redstone_illuminator:power=4",
+    "supplementaries:redstone_illuminator:power=5",
+    "supplementaries:redstone_illuminator:power=6",
+    "supplementaries:redstone_illuminator:power=7",
+    "supplementaries:redstone_illuminator:power=8",
+    "supplementaries:redstone_illuminator:power=9",
+    "supplementaries:redstone_illuminator:power=10",
+    "supplementaries:redstone_illuminator:power=11",
+    "supplementaries:redstone_illuminator:power=12",
+    "supplementaries:redstone_illuminator:power=13",
+    "supplementaries:redstone_illuminator:power=14"
+  ],
+  "mat1": [
+    "supplementaries:redstone_illuminator:power=15"
+  ],
+  "color": [
+    "minecraft:redstone_lamp"
+  ],
+  "held_lighting": true
+}

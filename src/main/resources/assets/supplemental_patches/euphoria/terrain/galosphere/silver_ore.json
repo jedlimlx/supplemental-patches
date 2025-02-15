@@ -1,0 +1,12 @@
+{
+  "name": "silver_ore",
+  "glsl": "silver_ore.glsl",
+  "mat0": [
+    "galosphere:silver_ore"
+  ],
+  "color": "supplemental_patches:galosphere/silver_ore",
+  "conditions": [
+    "GLOWING_ORE_SILVER_G",
+    "DO_IPBR_LIGHTS"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "stained_glass_dye_depot_4",
+  "glsl": "stained_glass.glsl",
+  "mat0": [
+    "dye_depot:indigo_stained_glass"
+  ],
+  "mat1": [
+    "dye_depot:indigo_stained_glass_pane"
+  ],
+  "mat2": [
+    "dye_depot:maroon_stained_glass"
+  ],
+  "mat3": [
+    "dye_depot:maroon_stained_glass_pane"
+  ],
+  "color": [
+    "supplemental_patches:dye_depot/stained_glass/indigo",
+    "supplemental_patches:dye_depot/stained_glass/indigo",
+    "supplemental_patches:dye_depot/stained_glass/maroon",
+    "supplemental_patches:dye_depot/stained_glass/maroon"
+  ],
+  "needs_voxelization": true
+}

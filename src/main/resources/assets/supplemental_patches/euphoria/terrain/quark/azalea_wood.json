@@ -1,0 +1,32 @@
+{
+  "name": "azalea_wood",
+  "glsl": "azalea_wood.glsl",
+  "mat0": [
+    "quark:azalea_planks",
+    "quark:vertical_azalea_planks",
+    "quark:stripped_azalea_log",
+    "quark:stripped_azalea_wood",
+    "quark:azalea_bookshelf"
+  ],
+  "mat1": [
+    "quark:azalea_fence",
+    "quark:azalea_fence_gate:powered=false",
+    "quark:azalea_button:powered=false",
+    "quark:azalea_pressure_plate:powered=false",
+    "quark:azalea_planks_slab",
+    "quark:azalea_planks_vertical_slab",
+    "quark:azalea_planks_stairs",
+    "quark:azalea_trapdoor:powered=false",
+    "quark:azalea_ladder",
+    "quark:azalea_sign",
+    "quark:azalea_wall_sign",
+    "quark:azalea_wall_hanging_sign",
+    "quark:stripped_azalea_post"
+  ],
+  "mat3": [
+    "quark:azalea_fence_gate:powered=true",
+    "quark:azalea_button:powered=true",
+    "quark:azalea_pressure_plate:powered=true",
+    "quark:azalea_trapdoor:powered=true"
+  ]
+}

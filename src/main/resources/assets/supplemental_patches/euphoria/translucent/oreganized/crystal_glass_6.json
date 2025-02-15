@@ -1,0 +1,26 @@
+{
+  "name": "crystal_glass_6",
+  "glsl": "crystal_glass.glsl",
+  "mat0": [
+    "oreganized:forest_crystal_glass",
+    "oreganized:forest_crystal_glass_pane"
+  ],
+  "mat1": [
+    "oreganized:ginger_crystal_glass",
+    "oreganized:ginger_crystal_glass_pane"
+  ],
+  "mat2": [
+    "oreganized:indigo_crystal_glass",
+    "oreganized:indigo_crystal_glass_pane"
+  ],
+  "mat3": [
+    "oreganized:maroon_crystal_glass",
+    "oreganized:maroon_crystal_glass_pane"
+  ],
+  "color": [
+    "supplemental_patches:dyes/dye_depot/forest",
+    "supplemental_patches:dyes/dye_depot/ginger",
+    "supplemental_patches:dyes/dye_depot/indigo",
+    "supplemental_patches:dyes/dye_depot/maroon"
+  ]
+}

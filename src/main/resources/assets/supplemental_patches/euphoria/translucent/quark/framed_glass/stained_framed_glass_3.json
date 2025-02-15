@@ -1,0 +1,26 @@
+{
+  "name": "stained_framed_glass_3",
+  "glsl": "stained_framed_glass.glsl",
+  "mat0": [
+    "quark:magenta_framed_glass",
+    "quark:magenta_framed_glass_pane"
+  ],
+  "mat1": [
+    "quark:orange_framed_glass",
+    "quark:orange_framed_glass_pane"
+  ],
+  "mat2": [
+    "quark:pink_framed_glass",
+    "quark:pink_framed_glass_pane"
+  ],
+  "mat3": [
+    "quark:purple_framed_glass",
+    "quark:purple_framed_glass_pane"
+  ],
+  "color": [
+    "supplemental_patches:dyes/magenta",
+    "supplemental_patches:dyes/orange",
+    "supplemental_patches:dyes/pink",
+    "supplemental_patches:dyes/purple"
+  ]
+}

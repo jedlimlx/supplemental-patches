@@ -1,0 +1,12 @@
+{
+  "name": "lead_bulb",
+  "glsl": "lead_bulb.glsl",
+  "mat0": [
+    "oreganized:lead_bulb:goopyness=0"
+  ],
+  "mat2": [
+    "oreganized:lead_bulb:goopyness=1"
+  ],
+  "color": "supplemental_patches:oreganized/molten_lead",
+  "held_lighting": true
+}

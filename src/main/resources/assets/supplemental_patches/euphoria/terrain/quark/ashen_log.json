@@ -1,0 +1,12 @@
+{
+  "name": "ashen_log",
+  "glsl": "ashen_log.glsl",
+  "mat0": [
+    "quark:ancient_log",
+    "quark:ancient_wood",
+    "quark:hollow_ancient_log"
+  ],
+  "mat1": [
+    "quark:ancient_post"
+  ]
+}

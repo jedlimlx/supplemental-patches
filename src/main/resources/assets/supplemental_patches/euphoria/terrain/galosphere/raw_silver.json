@@ -1,0 +1,12 @@
+{
+  "name": "raw_silver",
+  "glsl": "raw_silver.glsl",
+  "mat0": [
+    "galosphere:raw_silver_block"
+  ],
+  "color": "supplemental_patches:galosphere/silver_ore",
+  "conditions": [
+    "GLOWING_RAW_BLOCKS",
+    "DO_IPBR_LIGHTS"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "ashen_wood",
+  "glsl": "ashen_wood.glsl",
+  "mat0": [
+    "quark:ancient_planks",
+    "quark:vertical_ancient_planks",
+    "quark:stripped_ancient_log",
+    "quark:stripped_ancient_wood",
+    "quark:ancient_bookshelf"
+  ],
+  "mat1": [
+    "quark:ancient_fence",
+    "quark:ancient_fence_gate:powered=false",
+    "quark:ancient_button:powered=false",
+    "quark:ancient_pressure_plate:powered=false",
+    "quark:ancient_planks_slab",
+    "quark:ancient_planks_vertical_slab",
+    "quark:ancient_planks_stairs",
+    "quark:ancient_trapdoor:powered=false",
+    "quark:ancient_ladder",
+    "quark:ancient_sign",
+    "quark:ancient_wall_sign",
+    "quark:ancient_wall_hanging_sign",
+    "quark:stripped_ancient_post"
+  ],
+  "mat3": [
+    "quark:ancient_fence_gate:powered=true",
+    "quark:ancient_button:powered=true",
+    "quark:ancient_pressure_plate:powered=true",
+    "quark:ancient_trapdoor:powered=true"
+  ]
+}

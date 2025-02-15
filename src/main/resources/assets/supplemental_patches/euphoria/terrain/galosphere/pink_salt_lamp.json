@@ -1,0 +1,9 @@
+{
+  "name": "pink_salt_lamp",
+  "glsl": "pink_salt_lamp.glsl",
+  "mat0": [
+    "galosphere:pink_salt_lamp"
+  ],
+  "held_lighting": true,
+  "color": "supplemental_patches:galosphere/pink_salt_lamp"
+}

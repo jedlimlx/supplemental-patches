@@ -1,0 +1,8 @@
+{
+  "name": "tooth_lantern",
+  "glsl": "tooth_lantern.glsl",
+  "mat0": [
+    "upgrade_aquatic:tooth_lantern"
+  ],
+  "color": "supplemental_patches:upgrade_aquatic/tooth_lantern"
+}

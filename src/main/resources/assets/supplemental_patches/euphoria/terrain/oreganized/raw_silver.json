@@ -1,0 +1,13 @@
+{
+  "name": "raw_silver",
+  "glsl": "raw_silver.glsl",
+  "mat0": [
+    "oreganized:raw_silver_block",
+    "caverns_and_chasms:raw_silver_block"
+  ],
+  "color": "supplemental_patches:oreganized/silver_ore",
+  "conditions": [
+    "GLOWING_RAW_BLOCKS",
+    "DO_IPBR_LIGHTS"
+  ]
+}

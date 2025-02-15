@@ -1,0 +1,23 @@
+{
+  "name": "stained_glass_dye_depot",
+  "glsl": "stained_glass.glsl",
+  "mat0": [
+    "dye_depot:amber_stained_glass"
+  ],
+  "mat1": [
+    "dye_depot:amber_stained_glass_pane"
+  ],
+  "mat2": [
+    "dye_depot:aqua_stained_glass"
+  ],
+  "mat3": [
+    "dye_depot:aqua_stained_glass_pane"
+  ],
+  "color": [
+    "supplemental_patches:dye_depot/stained_glass/amber",
+    "supplemental_patches:dye_depot/stained_glass/amber",
+    "supplemental_patches:dye_depot/stained_glass/aqua",
+    "supplemental_patches:dye_depot/stained_glass/aqua"
+  ],
+  "needs_voxelization": true
+}

@@ -1,0 +1,16 @@
+{
+  "name": "quark_potted_plants",
+  "glsl": "quark_potted_plants.glsl",
+  "mat0": [
+    "quark:potted_cave_vines"
+  ],
+  "mat2": [
+    "quark:potted_glow_lichen_growth"
+  ],
+  "color": [
+    "minecraft:glow_berries",
+    null,
+    "minecraft:glow_lichen",
+    null
+  ]
+}

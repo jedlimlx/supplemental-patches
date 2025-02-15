@@ -1,0 +1,22 @@
+{
+  "name": "silver_lattice",
+  "glsl": "silver_lattice.glsl",
+  "mat0": [
+    "galosphere:glow_berries_silver_lattice:berries=true"
+  ],
+  "mat1": [
+    "galosphere:silver_lattice",
+    "galosphere:glow_berries_silver_lattice:berries=false",
+    "caverns_and_chasms:silver_bars",
+    "caverns_and_chasms:brazier:lit=false",
+    "caverns_and_chasms:soul_brazier:lit=false",
+    "caverns_and_chasms:ender_brazier:lit=false",
+    "caverns_and_chasms:cupric_brazier:lit=false"
+  ],
+  "color": [
+    "minecraft:glow_berries",
+    null,
+    null,
+    null
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "lumiere_crystal_display",
+  "glsl": "lumiere_crystal_display.glsl",
+  "mat0": [
+    "supplementaries:lumiere_crystal_display:power=1",
+    "supplementaries:lumiere_crystal_display:power=2",
+    "supplementaries:lumiere_crystal_display:power=3",
+    "supplementaries:lumiere_crystal_display:power=4",
+    "supplementaries:lumiere_crystal_display:power=5",
+    "supplementaries:lumiere_crystal_display:power=6",
+    "supplementaries:lumiere_crystal_display:power=7",
+    "supplementaries:lumiere_crystal_display:power=8",
+    "supplementaries:lumiere_crystal_display:power=9",
+    "supplementaries:lumiere_crystal_display:power=10",
+    "supplementaries:lumiere_crystal_display:power=11",
+    "supplementaries:lumiere_crystal_display:power=12",
+    "supplementaries:lumiere_crystal_display:power=13",
+    "supplementaries:lumiere_crystal_display:power=14",
+    "supplementaries:lumiere_crystal_display:power=15"
+  ],
+  "mat1": [
+    "supplementaries:lumiere_crystal_display:power=0"
+  ],
+  "color": [
+    "supplemental_patches:galosphere/lumiere",
+    null,
+    null,
+    null
+  ]
+}

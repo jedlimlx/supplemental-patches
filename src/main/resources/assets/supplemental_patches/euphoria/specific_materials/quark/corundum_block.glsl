@@ -1,0 +1,17 @@
+float dotColor = dot(color.rgb, color.rgb);
+translucentMultCalculated = true;
+reflectMult = dotColor * 0.7 - factor * 0.2;
+translucentMult.rgb = pow2(color.rgb) * 0.5;
+
+highlightMult = factor * 3.0;
+color.rgb *= 0.7 + 0.3 * GetLuminance(color.rgb);
+
+#if GLOWING_AMETHYST >= 1
+    emission = dotColor * 1.3 - factor * 0.5;
+#endif
+
+smoothnessG = 1.0 - factor * 0.5;
+
+#ifdef COATED_TEXTURES
+    noiseFactor = 0.66;
+#endif

@@ -1,0 +1,19 @@
+{
+  "name": "warped_anchor",
+  "glsl": "warped_anchor.glsl",
+  "mat0": [
+    "galosphere:warped_anchor:warped_charge=1",
+    "galosphere:warped_anchor:warped_charge=2",
+    "galosphere:warped_anchor:warped_charge=3",
+    "galosphere:warped_anchor:warped_charge=4"
+  ],
+  "mat1": [
+    "galosphere:warped_anchor:warped_charge=0"
+  ],
+  "color": [
+    "supplemental_patches:galosphere/allurite",
+    null,
+    null,
+    null
+  ]
+}

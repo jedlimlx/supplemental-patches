@@ -1,0 +1,12 @@
+{
+  "name": "bloodstone",
+  "glsl": "bloodstone.glsl",
+  "mat0": [
+    "twigs:bloodstone"
+  ],
+  "mat1": [
+    "twigs:bloodstone_stairs",
+    "twigs:bloodstone_slab",
+    "twigs:bloodstone_wall"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "lead_door",
+  "glsl": "lead_door.glsl",
+  "mat0": [
+    "oreganized:lead_door:goopyness=1",
+    "oreganized:lead_trapdoor:goopyness=1",
+    "oreganized:lead_bars:goopyness=1"
+  ],
+  "mat1": [
+    "oreganized:lead_door:goopyness=0",
+    "oreganized:lead_trapdoor:goopyness=0",
+    "oreganized:lead_bars:goopyness=0"
+  ],
+  "mat2": [
+    "oreganized:lead_door:goopyness=2",
+    "oreganized:lead_trapdoor:goopyness=2",
+    "oreganized:lead_bars:goopyness=2"
+  ],
+  "color": [
+    "supplemental_patches:oreganized/molten_lead",
+    null,
+    "supplemental_patches:oreganized/molten_lead",
+    null
+  ]
+}

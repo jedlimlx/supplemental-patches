@@ -1,0 +1,9 @@
+{
+  "name": "ender_brazier [silver]",
+  "glsl": "ender_brazier.glsl",
+  "mat0": [
+    "caverns_and_chasms:ender_brazier:lit=true"
+  ],
+  "color": "supplemental_patches:endergetic/ender_fire",
+  "held_lighting": true
+}

@@ -1,0 +1,9 @@
+{
+  "name": "brazier [limestone]",
+  "glsl": "brazier.glsl",
+  "mat0": [
+    "wetland_whimsy:limestone_brazier:lit=true"
+  ],
+  "color": "minecraft:campfire",
+  "held_lighting": true
+}

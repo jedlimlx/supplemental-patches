@@ -1,0 +1,9 @@
+{
+  "name": "crimson_shroomlight",
+  "glsl": "crimson_shroomlight.glsl",
+  "mat0": [
+    "twigs:crimson_shroomlight"
+  ],
+  "color": "minecraft:shroomlight",
+  "held_lighting": true
+}

@@ -1,0 +1,9 @@
+{
+  "name": "gold_bars",
+  "glsl": "gold_bars.glsl",
+  "mat1": [
+    "quark:gold_bars",
+    "supplementaries:gold_gate",
+    "caverns_and_chasms:golden_bars"
+  ]
+}

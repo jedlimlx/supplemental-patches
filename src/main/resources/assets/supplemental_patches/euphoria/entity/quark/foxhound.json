@@ -1,0 +1,7 @@
+{
+  "name": "foxhound",
+  "glsl": "foxhound.glsl",
+  "mat0": [
+    "quark:foxhound"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "pink_salt_pillar",
+  "glsl": "pink_salt_pillar.glsl",
+  "mat0": [
+    "galosphere:pink_salt_pillar",
+    "galosphere:pink_salt_shard"
+  ]
+}
