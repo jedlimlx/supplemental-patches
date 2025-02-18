@@ -1,0 +1,1 @@
+emission = pow2(color.b);

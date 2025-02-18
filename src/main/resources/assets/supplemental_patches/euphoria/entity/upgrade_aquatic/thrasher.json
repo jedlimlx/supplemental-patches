@@ -1,0 +1,10 @@
+{
+  "name": "thrasher",
+  "glsl": "thrasher.glsl",
+  "mat0": [
+    "upgrade_aquatic:thrasher"
+  ],
+  "mat2": [
+    "upgrade_aquatic:great_thrasher"
+  ]
+}

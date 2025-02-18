@@ -1,0 +1,15 @@
+{
+  "name": "elder_prismarine_coral",
+  "glsl": "elder_prismarine_coral.glsl",
+  "mat0": [
+    "upgrade_aquatic:elder_prismarine_coral",
+    "upgrade_aquatic:elder_prismarine_coral_wall_fan",
+    "upgrade_aquatic:elder_prismarine_coral_shower"
+  ],
+  "mat1": [
+    "upgrade_aquatic:elder_prismarine_coral_fan"
+  ],
+  "mat2": [
+    "upgrade_aquatic:elder_prismarine_coral_block"
+  ]
+}

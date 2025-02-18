@@ -1,0 +1,11 @@
+{
+  "name": "blast_proof_plating",
+  "glsl": "blast_proof_plating.glsl",
+  "mat0": [
+    "savage_and_ravage:blast_proof_plating",
+    "savage_and_ravage:griefer_helmet",
+    "savage_and_ravage:griefer_chestplate",
+    "savage_and_ravage:griefer_leggings",
+    "savage_and_ravage:griefer_boots"
+  ]
+}

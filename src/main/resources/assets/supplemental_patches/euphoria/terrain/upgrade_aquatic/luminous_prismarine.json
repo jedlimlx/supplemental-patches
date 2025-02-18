@@ -1,0 +1,10 @@
+{
+  "name": "luminous_prismarine",
+  "glsl": "luminous_prismarine.glsl",
+  "mat0": [
+    "upgrade_aquatic:luminous_prismarine",
+    "upgrade_aquatic:luminous_prismarine_slab",
+    "upgrade_aquatic:luminous_prismarine_stairs"
+  ],
+  "color": "supplemental_patches:upgrade_aquatic/luminous_prismarine"
+}

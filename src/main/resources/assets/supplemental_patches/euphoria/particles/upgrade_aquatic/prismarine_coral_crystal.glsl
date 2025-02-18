@@ -1,0 +1,1 @@
+emission = 1.6 * pow2(color.b);

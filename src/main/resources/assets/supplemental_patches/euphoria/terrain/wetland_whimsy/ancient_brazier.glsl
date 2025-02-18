@@ -1,4 +1,3 @@
-// block.12616 = ancient_brazier [limestone]
 vec3 fractPos = fract(playerPos + cameraPosition) - 0.5;
 float maxColor = max(color.r, max(color.g, color.b));
 float minColor = min(color.r, min(color.g, color.b));
@@ -7,9 +6,9 @@ if (color.b < 0.5 && color.r < 0.3) {
     smoothnessD = smoothnessG;
 
     overlayNoiseIntensity = 0.6;
-} else if (fractPos.y > 0.24 || maxColor - minColor > 0.1) {
+} else if (fractPos.y > 0.24 || maxColor - minColor > 0.07) {
     noDirectionalShading = true;
-    emission = 2.4;
+    emission = 2.9;
     color.rgb *= pow1_5(color.rgb);
 
     overlayNoiseIntensity = 0.0;
