@@ -705,7 +705,6 @@ const val PARTICLES_PATH = "/shaders/program/gbuffers_textured.glsl"
 
 fun generateParticleCode(directory: Path) {
     val textureAtlas = Minecraft.getInstance().particleEngine.textureAtlas
-
     val file = File(directory.absolutePathString() + PARTICLES_PATH)
     val code = file.readText()
 
@@ -725,7 +724,7 @@ fun generateParticleCode(directory: Path) {
 
             append(
                 it.mat0.joinToString(" || ") {
-                    val sprite = textureAtlas.getSprite(ResourceLocation(it))
+                    val sprite = textureAtlas.getSprite(ResourceLocation.parse(it))
                     "(texCoord.x >= ${sprite.u0} && texCoord.x <= ${sprite.u1} && texCoord.y >= ${sprite.v0} && texCoord.y <= ${sprite.v1})"
                 }
             )

@@ -2,14 +2,14 @@ package io.github.jedlimlx.supplemental_patches.events
 
 import io.github.jedlimlx.supplemental_patches.shaders.installShader
 import net.minecraft.network.chat.Component
-import net.minecraftforge.client.event.ClientPlayerNetworkEvent
-import net.minecraftforge.common.MinecraftForge
-import net.minecraftforge.eventbus.api.SubscribeEvent
+import net.neoforged.bus.api.SubscribeEvent
+import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent
+import net.neoforged.neoforge.common.NeoForge
 
 
 object ServerEvents {
     fun init() {
-        MinecraftForge.EVENT_BUS.register(ServerEvents)
+        NeoForge.EVENT_BUS.register(ServerEvents)
     }
 
     @SubscribeEvent

@@ -7,19 +7,19 @@ import io.github.jedlimlx.supplemental_patches.shaders.installShader
 import net.minecraft.client.KeyMapping
 import net.minecraft.client.Minecraft
 import net.minecraft.network.chat.Component
-import net.minecraftforge.api.distmarker.Dist
-import net.minecraftforge.client.event.RegisterKeyMappingsEvent
-import net.minecraftforge.client.settings.KeyConflictContext
-import net.minecraftforge.event.TickEvent
-import net.minecraftforge.eventbus.api.SubscribeEvent
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber
+import net.neoforged.api.distmarker.Dist
+import net.neoforged.bus.api.SubscribeEvent
+import net.neoforged.fml.common.EventBusSubscriber
+import net.neoforged.neoforge.client.event.ClientTickEvent
+import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent
+import net.neoforged.neoforge.client.settings.KeyConflictContext
 import org.lwjgl.glfw.GLFW
 
-@EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = arrayOf(Dist.CLIENT))
+@EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = [Dist.CLIENT])
 object KeyBinds {
     val KB_REGENERATE_SHADERS by lazy {
         KeyMapping(
-            "ONE",
+            "REGENERATE SUPPLEMENTAL SHADERS",
             KeyConflictContext.IN_GAME,
             InputConstants.Type.KEYSYM,
             GLFW.GLFW_KEY_INSERT,
@@ -33,17 +33,13 @@ object KeyBinds {
     }
 }
 
-@EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.FORGE, value = [Dist.CLIENT])
+@EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.GAME, value = [Dist.CLIENT])
 object KeyHandler {
     @SubscribeEvent
-    fun onClientTick(event: TickEvent.ClientTickEvent) {
-        if (event.phase === TickEvent.Phase.END) { // Only call code once as the tick event is called twice every tick
-            if (KB_REGENERATE_SHADERS.isDown) {
-                KB_REGENERATE_SHADERS.consumeClick()
-
-                val player = Minecraft.getInstance().player ?: return
-                player.sendSystemMessage(Component.nullToEmpty(installShader()))
-            }
+    fun onClientTick(event: ClientTickEvent.Post) {
+        while (KB_REGENERATE_SHADERS.consumeClick()) {
+            val player = Minecraft.getInstance().player ?: return
+            player.sendSystemMessage(Component.nullToEmpty(installShader()))
         }
     }
 }

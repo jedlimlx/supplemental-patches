@@ -1,5 +1,5 @@
 modLoader = "kotlinforforge"
-loaderVersion = "[4,)"
+loaderVersion = "[5,)"
 license = "MIT"
 
 [[mods]]
@@ -15,15 +15,15 @@ Additional patches to Euphoria Patches providing better support for many modded 
 config = "supplemental_patches.mixins.json"
 
 [[dependencies.supplemental_patches]]
-modId = "forge"
+modId = "neoforge"
 mandatory = true
-versionRange = "[46,)"
+versionRange = "[21,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.supplemental_patches]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.20,1.21)"
+versionRange = "[1.21,1.22)"
 ordering = "NONE"
 side = "BOTH"

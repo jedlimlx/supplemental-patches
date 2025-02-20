@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
 import io.github.jedlimlx.supplemental_patches.SupplementalPatches.LOGGER
-import net.minecraftforge.fml.loading.FMLPaths
+import net.neoforged.fml.loading.FMLPaths
 import java.nio.file.Path
 import kotlin.io.path.*
 
