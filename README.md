@@ -31,17 +31,10 @@ The following features are also currently planned:
 - Biome-Specific Shaders
 - Custom Shaders for Dimensions
 
-## Gallery
-
-[](docs/images/prismarine_coral.png)
-[](docs/images/elder_prismarine_coral.png)
-[](docs/images/glimmering_weald.png)
-
 ## FAQ
 
 Q: Will there be ports to loaders other than (Neo)Forge and Fabric? <br>
 A: Probably not.
-
 
 Q: Will there be backports? <br>
 A: Probably not.
@@ -51,3 +44,14 @@ A: All in due time. Alter natively, you could do it yourself. See the documentat
 
 Q: I found a bug. <br>
 A: Please report it to me first, do not bother the developers of Complementary Shaders / Euphoria Patches.
+
+## Gallery
+
+![Prismarine Coral Crystal (Upgrade Aquatic)](docs/images/prismarine_coral.png)
+![Elder Prismarine Coral Crystal (Upgrade Aquatic)](docs/images/elder_prismarine_coral.png)
+![Glimmering Weald (Quark)](docs/images/glimmering_weald.png)
+![Foxhound (Quark)](docs/images/foxhound.png)
+![Oretortoise (Quark)](docs/images/oretortoise.png)
+![Pink Salt Shrine (Galosphere)](docs/images/pink_salt_shrine.png)
+![Confusion Bolt (Savage & Ravage)](docs/images/confusion_bolt.png)
+![Rune Prison (Savage & Ravage)](docs/images/rune_prison.png)
