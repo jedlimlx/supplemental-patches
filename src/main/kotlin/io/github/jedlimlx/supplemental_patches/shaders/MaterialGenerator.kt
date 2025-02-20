@@ -715,7 +715,9 @@ fun generateParticleCode(directory: Path) {
     val indent = " ".repeat(4*2)
     val newCode = lines.subList(0, lines.size - 2).joinToString("\n") + StringBuilder().apply {
         var first = true
-        PARTICLES.forEach {
+        PARTICLES.map {
+            Pair(it, it.mat0.map { ResourceLocation(it) }.filter { it in textureAtlas.textureLocations })
+        }.filter { it.second.isNotEmpty() }.forEach { (it, lst) ->
             if (first) {
                 append("\n${indent}if (")
                 first = false
@@ -724,13 +726,10 @@ fun generateParticleCode(directory: Path) {
             }
 
             append(
-                it.mat0
-                    .map { ResourceLocation(it) }
-                    .filter { it in textureAtlas.textureLocations }
-                    .joinToString(" || ") {
-                        val sprite = textureAtlas.getSprite(it)
-                        "(texCoord.x >= ${sprite.u0} && texCoord.x <= ${sprite.u1} && texCoord.y >= ${sprite.v0} && texCoord.y <= ${sprite.v1})"
-                    }
+                lst.joinToString(" || ") {
+                    val sprite = textureAtlas.getSprite(it)
+                    "(texCoord.x >= ${sprite.u0} && texCoord.x <= ${sprite.u1} && texCoord.y >= ${sprite.v0} && texCoord.y <= ${sprite.v1})"
+                }
             )
             append(") {\n")
             it.glsl.split("\n").forEach { append("$indent    $it\n") }
