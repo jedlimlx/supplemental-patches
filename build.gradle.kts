@@ -114,8 +114,10 @@ dependencies {
     implementation("thedarkcolour:kotlinforforge-neoforge:5.6.0")
 
     implementation("maven.modrinth:sodium:mc1.21.1-0.6.9-neoforge")
-    implementation("maven.modrinth:iris:1.8.6+1.21.1-neoforge")
+    implementation("maven.modrinth:iris:1.8.8+1.21.1-neoforge")
     implementation("maven.modrinth:wetland-whimsy:0.6")
+    implementation("maven.modrinth:rodspawn:1.0.1")
+    implementation("maven.modrinth:cobblemon:1.6.1-neoforge")
 
     compileOnly("mezz.jei:jei-$minecraftVersion-neoforge-api:$jeiVersion")
     runtimeOnly("mezz.jei:jei-$minecraftVersion-neoforge:$jeiVersion")
