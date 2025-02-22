@@ -5,5 +5,8 @@
     "wetland_whimsy:aria_mushroom",
     "wetland_whimsy:aria_spores"
   ],
-  "color": "supplemental_patches:wetland_whimsy/aria_mushroom"
+  "mat2": [
+    "wetland_whimsy:potted_aria_mushroom"
+  ],
+  "color": "supplemental_patches:wetland_whimsy/small_aria_mushroom"
 }

@@ -4,6 +4,9 @@
   "mat0": [
     "wetland_whimsy:bloodcap_mushroom"
   ],
+  "mat2": [
+    "wetland_whimsy:potted_bloodcap_mushroom"
+  ],
   "color": "supplemental_patches:wetland_whimsy/bloodcap_mushroom",
   "conditions": [
     "GLOWING_BLOODCAP_MUSHROOM >= 1",

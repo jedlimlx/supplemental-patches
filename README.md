@@ -40,10 +40,13 @@ Q: Will there be backports? <br>
 A: Probably not.
 
 Q: Can you support XXX mod? <br>
-A: All in due time. Alter natively, you could do it yourself. See the documentation for more details.
+A: All in due time. Alternatively, you could do it yourself. See the documentation for more details.
 
 Q: I found a bug. <br>
 A: Please report it to me first, do not bother the developers of Complementary Shaders / Euphoria Patches.
+
+Q: The shaders I added aren't showing.
+A: Try reloading the shaderpack, after ensuring that the resource-pack is loaded.
 
 ## Gallery
 
