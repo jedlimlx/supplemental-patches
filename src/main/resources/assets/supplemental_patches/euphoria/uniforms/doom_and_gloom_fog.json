@@ -1,0 +1,7 @@
+{
+  "type": "float",
+  "name": "doomAndGloomFog",
+  "conditions": [
+    "MOD_DOOM_AND_GLOOM"
+  ]
+}

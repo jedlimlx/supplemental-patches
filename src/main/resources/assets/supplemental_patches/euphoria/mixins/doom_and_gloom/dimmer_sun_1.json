@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/program/gbuffers_skytextured.glsl",
+  "type": "before",
+  "key": "color.rgb *= dot(color.rgb, color.rgb) * normalize(lightColor) * sunBrightness;",
+  "code": "dimmer_sun.glsl"
+}

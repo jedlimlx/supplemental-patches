@@ -1,0 +1,8 @@
+{
+  "type": "float",
+  "name": "inLostCaves",
+  "code": "smooth(54, if(in(biome, BIOME_LOST_CAVES), 1, 0), 15, 15)",
+  "conditions": [
+    "MOD_LOST_CAVES"
+  ]
+}

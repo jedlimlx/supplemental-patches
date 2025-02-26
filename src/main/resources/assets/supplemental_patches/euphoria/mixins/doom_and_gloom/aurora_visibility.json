@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/atmospherics/auroraBorealis.glsl",
+  "type": "after",
+  "key": "float visibility = GetAuroraVisibility(VdotU);",
+  "code": "aurora_visibility.glsl"
+}

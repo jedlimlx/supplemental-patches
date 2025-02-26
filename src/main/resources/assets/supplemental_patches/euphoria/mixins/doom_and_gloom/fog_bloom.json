@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/atmospherics/fog/bloomFog.glsl",
+  "type": "after",
+  "key": "bloomFogMult = (rainFactor2 * rainBloomAdd + nightBloomAdd * (1.0 - sunFactor)) * eyeBrightnessM;",
+  "code": "fog_bloom.glsl"
+}

@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/atmospherics/stars.glsl",
+  "type": "after",
+  "key": "if (VdotU < 0.0) return vec3(0.0);",
+  "code": "no_stars.glsl"
+}

@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/atmospherics/clouds/mainClouds.glsl",
+  "type": "before",
+  "key": "return clouds;",
+  "code": "fade_clouds.glsl"
+}
