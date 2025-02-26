@@ -415,9 +415,7 @@ fun generateVoxelsAndBlocklight(directory: Path) {
                         val conditions = material.colourConditions.isNotEmpty()
                         if (conditions) append(
                             "    ".repeat(depth) +
-                            "#if ${material.colourConditions.joinToString(" && ") {
-                                if (it.matches(Regex("^([A-Za-z0-9]|_)*$"))) "defined $it" else "($it)"
-                            }}\n"
+                            "#if ${material.colourConditions.conditions()}\n"
                         )
                         append("    ".repeat(depth))
 
@@ -642,9 +640,7 @@ fun generateWavingCode(directory: Path) {
                     val conditions = wavingObject.conditions.isNotEmpty()
 
                     val indent = "    ".repeat(depth)
-                    if (conditions) append("$indent#if ${wavingObject.conditions.joinToString(" && ") {
-                        if (it.matches(Regex("^([A-Za-z0-9]|_)*$"))) "defined $it" else "($it)"
-                    }}\n")
+                    if (conditions) append("$indent#if ${wavingObject.conditions.conditions()}\n")
                     append("${indent}if (blockEntityId >= $idx && blockEntityId < ${idx + 4}) {\n")
                     append("$indent    const int voxelNumber = ${entity.voxelNumber[0]};\n")
                     append(
@@ -679,7 +675,7 @@ fun generateWavingCode(directory: Path) {
                     val conditions = wavingObject.conditions.isNotEmpty()
 
                     val indent = "    ".repeat(depth)
-                    if (conditions) append("$indent#if defined ${wavingObject.conditions.joinToString(" && defined ")}\n")
+                    if (conditions) append("$indent#if defined ${wavingObject.conditions.conditions()}\n")
                     append("${indent}if (mat >= $idx && mat < ${idx + 4}) {\n")
                     append("$indent    const int voxelNumber = ${material.voxelNumber[0]};\n")
                     append(
@@ -739,6 +735,28 @@ fun generateParticleCode(directory: Path) {
     } + tokens[1]
 
     file.writeText(newCode)
+}
+
+val FOG_FUNCTIONS = arrayListOf<String>()
+val FOGS = arrayListOf<String>()
+const val MAIN_FOG_PATH = "/shaders/lib/atmospherics/fog/mainFog.glsl"
+
+fun generateFog(directory: Path) {
+    val file = File(directory.absolutePathString() + MAIN_FOG_PATH)
+
+    val temp = "void DoFog(inout vec3 color"
+    file.writeText(
+        file.readText().replace(temp, FOG_FUNCTIONS.joinToString("\n\n") + "\n\n" + temp)
+    )
+
+    val temp2 = "if (darknessFactor > 0.00001) DoDarknessFog(color, lViewPos);"
+    file.writeText(
+        file.readText().replace(
+            temp2, temp2 + "\n\n" + FOGS.joinToString("\n\n") {
+                it.split("\n").joinToString("\n") { "    " + it }
+            }
+        )
+    )
 }
 
 const val SHADOW_DIRECTORY = "/shaders/program/shadow.glsl"

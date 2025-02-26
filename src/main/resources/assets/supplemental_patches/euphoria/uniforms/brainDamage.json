@@ -1,0 +1,7 @@
+{
+  "type": "float",
+  "name": "brainDamage",
+  "conditions": [
+    "MOD_OREGANIZED"
+  ]
+}

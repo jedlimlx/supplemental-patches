@@ -5,6 +5,8 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "supplemental_patches.refmap.json",
   "mixins": [
+    "CommonUniformsMixin",
+    "StandardMacrosMixin"
   ],
   "client": [
   ],

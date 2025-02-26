@@ -16,7 +16,6 @@ buildscript {
 
 apply(plugin = "kotlin")
 apply(plugin = "org.spongepowered.mixin")
-
 plugins {
     eclipse
     idea
@@ -147,7 +146,7 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:architectury-api:9.2.14+forge"))
     implementation(fg.deobf("maven.modrinth:polymorph:0.49.5+1.20.1"))
     implementation(fg.deobf("maven.modrinth:blueprint:7.1.0-forge"))
-    implementation(fg.deobf("maven.modrinth:geckolib:4.4.7-forge"))
+    implementation(fg.deobf("maven.modrinth:geckolib:4.4.9-forge"))
     implementation(fg.deobf("maven.modrinth:resourceful-config:2.1.0-forge"))
     implementation(fg.deobf("maven.modrinth:resourceful-lib:2.1.20-forge"))
     implementation(fg.deobf("maven.modrinth:lithostitched:1.4-forge"))
@@ -204,7 +203,7 @@ dependencies {
 
     implementation(fg.deobf("maven.modrinth:sullysmod:3.2.1-beta"))
 
-    implementation(fg.deobf("maven.modrinth:wetland-whimsy:1.1.4-1.20.1"))
+    implementation(fg.deobf("maven.modrinth:wetland-whimsy:1.1.5-1.20.1"))
 
     implementation(fg.deobf("maven.modrinth:oreganized:3.1.2"))
     implementation(fg.deobf("maven.modrinth:doom-gloom:1.0.2"))
@@ -214,6 +213,8 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:lukis-grand-capitals:1.1.1+mod"))
 
     compileOnly(fg.deobf("maven.modrinth:the-bumblezone:7.5.13+1.20.1-forge"))
+
+    implementation(fg.deobf("maven.modrinth:yungs-cave-biomes:1.20.1-Forge-2.0.1"))
 
 //    implementation(fg.deobf("maven.modrinth:subtle-effects:1.7.1-forge"))
     implementation(fg.deobf("maven.modrinth:elysium-api:1.20.1-1.0.2"))

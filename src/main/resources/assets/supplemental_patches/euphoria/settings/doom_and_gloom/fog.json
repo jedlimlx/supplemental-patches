@@ -1,0 +1,9 @@
+{
+  "type": "directory",
+  "name": "DOOM_AND_GLOOM_FOG",
+  "folder": "fog",
+  "en_US": {
+    "screen": "Fog",
+    "comment": "Settings regarding the Fog effect from Doom & Gloom."
+  }
+}

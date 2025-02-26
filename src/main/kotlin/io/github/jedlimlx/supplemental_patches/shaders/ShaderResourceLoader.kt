@@ -120,7 +120,11 @@ object ShaderResourceLoader {
             loadSpecificMaterials(backgroundExecutor, resourceManager, "euphoria/specific_materials"),
             loadWavingFuntions(backgroundExecutor, resourceManager, "euphoria/waving/functions"),
             loadSettings(backgroundExecutor, resourceManager, "euphoria/settings"),
-            loadColourInjections(backgroundExecutor, resourceManager, "euphoria/colors/injects")
+            loadFiles(backgroundExecutor, resourceManager, "euphoria/colors/injects", COLOUR_INJECTIONS),
+            loadFiles(backgroundExecutor, resourceManager, "euphoria/atmospherics/fog/fogs", FOGS),
+            loadFiles(backgroundExecutor, resourceManager, "euphoria/atmospherics/fog/functions", FOG_FUNCTIONS),
+            loadUniforms(backgroundExecutor, resourceManager, "euphoria/uniforms"),
+            loadMixins(backgroundExecutor, resourceManager, "euphoria/mixins")
         ).thenAcceptAsync {
             fun process(json: JsonObject, string: String, map: HashMap<String, ShaderBuilder>, regexReplaces: MutableList<Regex>, additionaMapping: MutableMap<Int, List<String>>) {
                 json.keySet().forEach {
@@ -355,8 +359,8 @@ object ShaderResourceLoader {
         ).thenAcceptAsync {}
     }
 
-    fun loadColourInjections(
-        executor: Executor, resourceManager: ResourceManager, type: String
+    fun loadFiles(
+        executor: Executor, resourceManager: ResourceManager, type: String, lst: ArrayList<String>
     ): CompletableFuture<Void> {
         return CompletableFuture.supplyAsync (
             {
@@ -364,7 +368,66 @@ object ShaderResourceLoader {
             }, executor
         ).thenAcceptAsync(
             {
-                it.forEach { (loc, _) -> COLOUR_INJECTIONS.add(getFileContents(loc, resourceManager)) }
+                it.forEach { (loc, _) -> lst.add(getFileContents(loc, resourceManager)) }
+            }, executor
+        ).thenAcceptAsync {}
+    }
+
+    fun loadUniforms(
+        executor: Executor, resourceManager: ResourceManager, type: String
+    ): CompletableFuture<Void> {
+        return CompletableFuture.supplyAsync (
+            {
+                resourceManager.listResources(type) { it.path.endsWith(".json") }
+            }, executor
+        ).thenAcceptAsync(
+            {
+                it.forEach { (loc, _) ->
+                    val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
+                    UNIFORMS.add(
+                        Uniform(
+                        type = json["type"].asString,
+                        name = json["name"].asString,
+                        code = json["code"]?.asString ?: "",
+                        conditions = json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
+                    )
+                    )
+                }
+            }, executor
+        ).thenAcceptAsync {}
+    }
+
+    fun loadMixins(
+        executor: Executor, resourceManager: ResourceManager, type: String
+    ): CompletableFuture<Void> {
+        return CompletableFuture.supplyAsync (
+            {
+                resourceManager.listResources(type) { it.path.endsWith(".glsl") }.map { (loc, _) ->
+                    loc.path.replace("$type/", "") to getFileContents(loc, resourceManager)
+                }.toMap()
+            }, executor
+        ).thenAcceptAsync(
+            {
+                val lst = resourceManager.listResources(type) { it.path.endsWith(".json") }
+
+                LOGGER.info("Loading ${lst.entries.size} shader mixins...")
+                lst.forEach { (loc, _) ->
+                    val tokens = loc.path.replace("$type/", "").split("/")
+                    val path = tokens.subList(0, tokens.size - 1).joinToString("/")
+                    val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
+
+                    MIXINS.add(
+                        ShaderMixin(
+                            path = json["file"].asString ?: throw IllegalArgumentException("Path of file to modify is not specified"),
+                            type = ShaderMixinType.fromString(json["type"].asString ?: throw IllegalArgumentException("Injection type is not specified")),
+                            key = json["key"].asString ?: throw IllegalArgumentException("Key to identify modification location is not specified"),
+                            code = it[
+                                "$path${if (path.isEmpty()) "" else "/"}" +
+                                    (json["code"].asString ?: throw IllegalArgumentException(".glsl file not specified."))
+                            ] ?: throw FileNotFoundException("$path/${json["code"].asString} not found!")
+                        )
+                    )
+                }
             }, executor
         ).thenAcceptAsync {}
     }

@@ -1,9 +1,0 @@
-{
-  "type": "setting",
-  "name": "MOLTEN_LEAD_EDGE_EFFECT",
-  "default": false,
-  "en_US": {
-    "option": "Molten Lead Edge Effect",
-    "comment": "Adds an edge to lava when it touches other blocks. §e[*]§r This feature only works if Advanced Colored Lighting is enabled in Performance Settings."
-  }
-}
