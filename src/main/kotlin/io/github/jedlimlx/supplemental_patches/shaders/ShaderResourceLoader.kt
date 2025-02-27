@@ -118,7 +118,7 @@ object ShaderResourceLoader {
             loadMaterialShaders(backgroundExecutor, resourceManager, "euphoria/entity", ENTITY_MAP),
             loadMaterialShaders(backgroundExecutor, resourceManager, "euphoria/particles"),
             loadSpecificMaterials(backgroundExecutor, resourceManager, "euphoria/specific_materials"),
-            loadWavingFuntions(backgroundExecutor, resourceManager, "euphoria/waving/functions"),
+            loadFiles(backgroundExecutor, resourceManager, "euphoria/waving/functions", WAVING_FUNCTIONS),
             loadSettings(backgroundExecutor, resourceManager, "euphoria/settings"),
             loadFiles(backgroundExecutor, resourceManager, "euphoria/colors/injects", COLOUR_INJECTIONS),
             loadFiles(backgroundExecutor, resourceManager, "euphoria/atmospherics/fog/fogs", FOGS),
@@ -286,18 +286,6 @@ object ShaderResourceLoader {
         ).thenAcceptAsync {}
     }
 
-    fun loadWavingFuntions(
-        executor: Executor, resourceManager: ResourceManager, type: String
-    ): CompletableFuture<Void> {
-        return CompletableFuture.supplyAsync (
-            {
-                resourceManager.listResources(type) { it.path.endsWith(".glsl") }.forEach { (loc, _) ->
-                    WAVING_FUNCTIONS.add(getFileContents(loc, resourceManager))
-                }
-            }, executor
-        ).thenAcceptAsync {}
-    }
-
     fun loadSettings(
         executor: Executor, resourceManager: ResourceManager, type: String
     ): CompletableFuture<Void> {
@@ -368,7 +356,9 @@ object ShaderResourceLoader {
             }, executor
         ).thenAcceptAsync(
             {
-                it.forEach { (loc, _) -> lst.add(getFileContents(loc, resourceManager)) }
+                it.forEach { (loc, _) ->
+                    lst.add(getFileContents(loc, resourceManager))
+                }
             }, executor
         ).thenAcceptAsync {}
     }
@@ -382,15 +372,16 @@ object ShaderResourceLoader {
             }, executor
         ).thenAcceptAsync(
             {
+                LOGGER.info("Loading ${it.size} uniforms...")
                 it.forEach { (loc, _) ->
                     val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
                     UNIFORMS.add(
                         Uniform(
-                        type = json["type"].asString,
-                        name = json["name"].asString,
-                        code = json["code"]?.asString ?: "",
-                        conditions = json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
-                    )
+                            type = json["type"].asString,
+                            name = json["name"].asString,
+                            code = json["code"]?.asString ?: "",
+                            conditions = json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
+                        )
                     )
                 }
             }, executor
@@ -433,11 +424,6 @@ object ShaderResourceLoader {
     }
 
     fun getFileContents(location: ResourceLocation, manager: ResourceManager): String {
-        try {
-            return manager.getResourceOrThrow(location).open().use { it.bufferedReader().readText() }
-        } catch (e: Exception) {
-            LOGGER.error("Couldn't load $location", e)
-            throw RuntimeException(FileNotFoundException(location.toString()))
-        }
+        return manager.getResourceOrThrow(location).open().use { it.bufferedReader().readText() }
     }
 }
