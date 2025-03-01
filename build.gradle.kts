@@ -195,15 +195,16 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:clayworks:3.0.1-forge"))
     implementation(fg.deobf("maven.modrinth:caverns-and-chasms:2.0.0-forge"))
     implementation(fg.deobf("maven.modrinth:savage-and-ravage:6.0.0-forge"))
-    implementation(fg.deobf("maven.modrinth:atmospheric:6.0.0-forge"))
+    implementation(fg.deobf("maven.modrinth:atmospheric:6.1.0-forge"))
     implementation(fg.deobf("maven.modrinth:environmental:4.0.0-forge"))
     implementation(fg.deobf("maven.modrinth:endergetic:5.0.0-forge"))
     implementation(fg.deobf("maven.modrinth:abnormals-delight:5.0.0-forge"))
     implementation(fg.deobf("maven.modrinth:berry-good:7.0.0-forge"))
+    implementation(fg.deobf("maven.modrinth:neapolitan:5.1.0-forge"))
 
     implementation(fg.deobf("maven.modrinth:sullysmod:3.2.1-beta"))
 
-    implementation(fg.deobf("maven.modrinth:wetland-whimsy:1.1.5-1.20.1"))
+    implementation(fg.deobf("maven.modrinth:wetland-whimsy:1.1.7-1.20.1"))
 
     implementation(fg.deobf("maven.modrinth:oreganized:3.1.2"))
     implementation(fg.deobf("maven.modrinth:doom-gloom:1.0.2"))
@@ -214,7 +215,7 @@ dependencies {
 
     compileOnly(fg.deobf("maven.modrinth:the-bumblezone:7.5.13+1.20.1-forge"))
 
-    implementation(fg.deobf("maven.modrinth:yungs-cave-biomes:1.20.1-Forge-2.0.1"))
+    implementation(fg.deobf("maven.modrinth:yungs-cave-biomes:1.20.1-Forge-2.0.2"))
 
 //    implementation(fg.deobf("maven.modrinth:subtle-effects:1.7.1-forge"))
     implementation(fg.deobf("maven.modrinth:elysium-api:1.20.1-1.0.2"))
@@ -222,8 +223,8 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:terrablender:3.0.1.7-forge"))
 
     implementation(fg.deobf("maven.modrinth:zeta:1.20.1-1.0-24-forge"))
-    implementation(fg.deobf("maven.modrinth:quark:1.20.1-4.0-460-forge"))
-    implementation(fg.deobf("maven.modrinth:quark-oddities:1.20.1-forge"))
+    compileOnly(fg.deobf("maven.modrinth:quark:1.20.1-4.0-460-forge"))
+    compileOnly(fg.deobf("maven.modrinth:quark-oddities:1.20.1-forge"))
     compileOnly(fg.deobf("maven.modrinth:biome-makeover:forge-1.20.1-1.11.0"))
 
     implementation(fg.deobf("maven.modrinth:spawn-mod:1.0.2-forge"))

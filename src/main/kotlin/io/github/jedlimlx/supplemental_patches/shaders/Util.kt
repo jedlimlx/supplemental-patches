@@ -1,5 +1,15 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
+import io.github.jedlimlx.supplemental_patches.SupplementalPatches
+import it.unimi.dsi.fastutil.objects.Object2IntMap
+import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap
+import net.minecraft.core.registries.Registries
+import net.minecraft.resources.ResourceKey
+import net.minecraft.world.level.biome.Biome
+import net.minecraft.world.level.biome.Biomes
+import net.minecraftforge.registries.ForgeRegistries
+import java.util.*
+
 const val BLOCK_PROPERTIES = "/shaders/block.properties"
 const val ENTITY_PROPERTIES = "/shaders/entity.properties"
 const val ITEM_PROPERTIES = "/shaders/item.properties"
@@ -134,4 +144,21 @@ fun removeId(id: String, string: String) = Regex("$id[ \n]").replace(string, "")
 
 fun List<String>.conditions() = this.joinToString(" && ") {
     if (it.matches(Regex("^([A-Za-z0-9]|_)*$"))) "defined $it" else "($it)"
+}
+
+fun getBiomeMap(): Object2IntMap<ResourceKey<Biome>> {
+    val currentId = ForgeRegistries.BIOMES.keys.count { it.namespace == "minecraft" }
+
+    val map = Object2IntOpenHashMap<ResourceKey<Biome>>()
+    ForgeRegistries.BIOMES.entries
+        .sortedWith(
+            compareBy({ it.key.location().path }, { it.key.location().namespace })
+        )
+        .filter { it.key.location().namespace != "minecraft" }  // filter out all minecraft biomes
+        .forEach {
+            map[it.key] = currentId
+        }
+
+    SupplementalPatches.LOGGER.info("map map map ${map.size} ${ForgeRegistries.BIOMES.entries} $map ${Registries.BIOME} ")
+    return map
 }

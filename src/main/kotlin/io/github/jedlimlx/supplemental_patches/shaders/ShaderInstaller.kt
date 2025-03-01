@@ -52,6 +52,8 @@ fun installShader(): String {
     generateShaderMixins(newInstallation)
     modifyGBuffers(newInstallation)
 
+    getBiomeMap()
+
     return "Shaders successfully installed at $newInstallation."
 }
 

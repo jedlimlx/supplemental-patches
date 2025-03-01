@@ -1,0 +1,8 @@
+{
+  "type": "float",
+  "name": "sandstormFactor",
+  "code": "inLostCaves * sandstorm",
+  "conditions": [
+    "MOD_YUNGSCAVEBIOMES"
+  ]
+}

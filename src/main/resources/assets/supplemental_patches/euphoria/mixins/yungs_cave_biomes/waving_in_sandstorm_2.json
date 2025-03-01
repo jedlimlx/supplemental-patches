@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/materials/materialMethods/wavingBlocks.glsl",
+  "type": "after",
+  "key": "wave.z = wave.z * 3.0;",
+  "code": "waving_in_sandstorm_2.glsl"
+}

@@ -3,6 +3,6 @@
   "name": "inFrostedCaves",
   "code": "smooth(54, if(in(biome, BIOME_FROSTED_CAVES), 1, 0), 15, 15)",
   "conditions": [
-    "MOD_YUNGS_CAVE_BIOMES"
+    "MOD_YUNGSCAVEBIOMES"
   ]
 }

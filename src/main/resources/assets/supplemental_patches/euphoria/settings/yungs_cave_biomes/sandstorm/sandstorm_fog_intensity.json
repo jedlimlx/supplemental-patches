@@ -1,0 +1,15 @@
+{
+  "type": "setting",
+  "name": "SANDSTORM_FOG_INTENSITY",
+  "default": 0.150,
+  "slider": true,
+  "values": [
+    0.025, 0.050, 0.075, 0.100,
+    0.125, 0.150, 0.175, 0.200,
+    0.225, 0.250, 0.275, 0.300
+  ],
+  "en_US": {
+    "option": "Sandstorm Fog Intensity",
+    "comment": "Determines intensity of the fog during a sandstorm."
+  }
+}

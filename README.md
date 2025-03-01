@@ -59,3 +59,4 @@ A: No. This only works with Oculus / Iris.
 ![Rune Prison (Savage & Ravage)](docs/images/rune_prison.png)
 ![Fog (Doom & Gloom)](docs/images/doom_and_gloom_fog_1.png)
 ![Fog (Doom & Gloom)](docs/images/doom_and_gloom_fog_2.png)
+![Fog (Doom & Gloom)](docs/images/doom_and_gloom_fog_3.png)
