@@ -6,7 +6,8 @@
   "refmap": "supplemental_patches.refmap.json",
   "mixins": [
     "CommonUniformsMixin",
-    "StandardMacrosMixin"
+    "StandardMacrosMixin",
+    "biomes.WetlandWhimsyMixin"
   ],
   "client": [
   ],

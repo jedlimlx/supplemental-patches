@@ -1,0 +1,9 @@
+{
+  "type": "directory",
+  "name": "SANDSTORM",
+  "folder": "sandstorm",
+  "en_US": {
+    "screen": "Sandstorm",
+    "comment": "Settings regarding the sandstorm found in the Lost Caves."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/materials/materialMethods/wavingBlocks.glsl",
+  "type": "replace",
+  "key": "wave *= clamp(lmCoord.y - 0.87, 0.0, 0.1);",
+  "code": "waving_in_sandstorm.glsl"
+}

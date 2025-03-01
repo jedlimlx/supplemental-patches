@@ -32,9 +32,9 @@ fun generateUniforms(directory: Path) {
         UNIFORMS.filter { it.custom }.forEach {
             if (it.conditions.isNotEmpty()) {
                 append("$indent#if ${it.conditions.conditions()}\n")
-                append("${indent}uniform ${it.type} ${it.name} = \n")
+                append("${indent}uniform.${it.type}.${it.name} = ${it.code}\n")
                 append("$indent#endif\n")
-            } else append("${indent}uniform ${it.type} ${it.name};\n")
+            } else append("${indent}uniform ${it.type} ${it.name}\n")
         }
 
         append("\n\n")

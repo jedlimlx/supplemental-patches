@@ -1,5 +1,13 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
+import io.github.jedlimlx.supplemental_patches.SupplementalPatches
+import it.unimi.dsi.fastutil.objects.Object2IntMap
+import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap
+import net.minecraft.core.registries.Registries
+import net.minecraft.resources.ResourceKey
+import net.minecraft.world.level.biome.Biome
+import java.util.*
+
 const val BLOCK_PROPERTIES = "/shaders/block.properties"
 const val ENTITY_PROPERTIES = "/shaders/entity.properties"
 const val ITEM_PROPERTIES = "/shaders/item.properties"
