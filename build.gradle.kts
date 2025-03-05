@@ -45,6 +45,11 @@ repositories {
     maven { url = uri("https://mvn.devos.one/releases/") }
 
     maven {
+        name = "Ladysnake Mods"
+        url = uri("https://maven.ladysnake.org/releases")
+    }
+
+    maven {
         name = "GeckoLib"
         url = uri("https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/")
         content {
@@ -87,11 +92,13 @@ dependencies {
     localRuntime("org.joml:joml:1.10.4")
     localRuntime("org.anarres:jcpp:1.4.14")
     localRuntime("io.github.douira:glsl-transformer:2.0.2")
+
     implementation("io.sigpipe:jbsdiff:1.0")
     implementation("com.eliotlash.mclib:mclib:20")
-    modImplementation("com.github.Chocohead:Fabric-ASM:2.3")
     implementation("com.electronwill.night-config:toml:3.8.1")
     implementation("org.reflections:reflections:0.10.2")
+
+    modImplementation("com.github.Chocohead:Fabric-ASM:2.3")
     modImplementation("com.jamieswhiteshirt:reach-entity-attributes:2.4.0")
 
     val portLibModules = "accessors,base,networking,tags,config,tool_actions,loot,lazy_registration,recipe_book_categories"
@@ -106,18 +113,17 @@ dependencies {
     modImplementation("maven.modrinth:euphoria-patches:1.5.2-r5.4-fabric")
 
     // general library mods
+    modImplementation("maven.modrinth:athena-ctm:3.1.2-fabric")
     modImplementation("maven.modrinth:architectury-api:9.2.14+fabric")
-    modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.4.9")
-    implementation("com.eliotlash.mclib:mclib:20")
+    compileOnly("maven.modrinth:blueprint:7.1.1-forge")
     modImplementation("maven.modrinth:cloth-config:11.1.136+fabric")
-    modImplementation("maven.modrinth:terrablender:3.0.1.7-fabric")
+    modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.4.9")
     modImplementation("maven.modrinth:midnightlib:1.4.1-fabric")
     modImplementation("maven.modrinth:moonlight:fabric_1.20-2.13.71")
+    modImplementation("maven.modrinth:porting_lib:2.3.8+1.20.1")
     modImplementation("maven.modrinth:resourceful-config:2.1.3-fabric")
     modImplementation("maven.modrinth:resourceful-lib:2.1.29-fabric")
-    modImplementation("maven.modrinth:porting_lib:2.3.8+1.20.1")
-
-    compileOnly("maven.modrinth:blueprint:7.1.1-forge")
+    modImplementation("maven.modrinth:terrablender:3.0.1.7-fabric")
 
     // abnormals mods
     compileOnly("maven.modrinth:abnormals-delight:5.0.0-forge")
@@ -167,7 +173,7 @@ dependencies {
 
     compileOnly("maven.modrinth:wetland-whimsy:1.1.7-1.20.1")
 
-    compileOnly("maven.modrinth:friends-and-foes-forge:forge-mc1.20.1-3.0.6")
+    compileOnly("maven.modrinth:friends-and-foes:fabric-mc1.20.1-3.0.7")
 
     modImplementation("maven.modrinth:yungs-api:1.20-Fabric-4.0.6")
     modImplementation("maven.modrinth:yungs-cave-biomes:1.20.1-Fabric-2.0.2")
@@ -184,11 +190,9 @@ dependencies {
     modImplementation("maven.modrinth:dye-depot:1.0.3-fabric")
     compileOnly("maven.modrinth:dye-the-world:1.1.2-forge")
 
-    modImplementation("maven.modrinth:the-bumblezone:7.5.13+1.20.1-forge")
-
     // jei & jade
     modImplementation("maven.modrinth:jade:11.12.3+fabric")
-    modImplementation("maven.modrinth:jei:15.20.0.106-fabric")
+//    modRuntimeOnly("mezz.jei:jei-1.20.1-fabric:15.20.0.106")
 }
 
 tasks {
