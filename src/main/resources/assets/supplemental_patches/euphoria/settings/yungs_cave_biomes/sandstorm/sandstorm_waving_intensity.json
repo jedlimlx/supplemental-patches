@@ -8,6 +8,6 @@
   ],
   "en_US": {
     "option": "Sandstorm Waving Intensity",
-    "comment": "Determines strength of waving foliage during a sandstorm."
+    "comment": "Determines how strongly foliage waves during a sandstorm."
   }
 }

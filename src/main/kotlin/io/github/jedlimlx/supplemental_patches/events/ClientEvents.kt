@@ -7,9 +7,10 @@ import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent
 import net.neoforged.neoforge.common.NeoForge
 
 
-object ServerEvents {
+@OnlyIn(Dist.CLIENT)
+object ClientEvents {
     fun init() {
-        NeoForge.EVENT_BUS.register(ServerEvents)
+        NeoForge.EVENT_BUS.register(ClientEvents)
     }
 
     @SubscribeEvent

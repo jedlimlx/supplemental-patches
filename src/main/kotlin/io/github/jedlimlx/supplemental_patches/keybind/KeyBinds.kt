@@ -19,7 +19,7 @@ import org.lwjgl.glfw.GLFW
 object KeyBinds {
     val KB_REGENERATE_SHADERS by lazy {
         KeyMapping(
-            "REGENERATE SUPPLEMENTAL SHADERS",
+            "key.supplemental_patches.reload_shaders",
             KeyConflictContext.IN_GAME,
             InputConstants.Type.KEYSYM,
             GLFW.GLFW_KEY_INSERT,

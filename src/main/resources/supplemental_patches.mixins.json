@@ -4,12 +4,22 @@
   "package": "io.github.jedlimlx.supplemental_patches.mixins",
   "compatibilityLevel": "JAVA_17",
   "refmap": "supplemental_patches.refmap.json",
-  "mixins": [
-    "CommonUniformsMixin",
-    "StandardMacrosMixin",
-    "biomes.WetlandWhimsyMixin"
-  ],
+  "plugin": "io.github.jedlimlx.supplemental_patches.mixins.SupplementalPatchesMixinPlugin",
   "client": [
+    "StandardMacrosMixin",
+    "uniforms.DoomAndGloomUniforms",
+    "uniforms.OreganizedUniforms",
+    "uniforms.SandstormUniforms",
+    "biomes.AtmosphericMixin",
+    "biomes.AutumnityMixin",
+    "biomes.EndergeticMixin",
+    "biomes.EnvironmentalMixin",
+    "biomes.GalosphereMixin",
+    "biomes.JNEMixin",
+    "biomes.NeapolitanMixin",
+    "biomes.SpawnMixin",
+    "biomes.WetlandWhimsyMixin",
+    "biomes.YungsCaveBiomesMixin"
   ],
   "injectors": {
     "defaultRequire": 1

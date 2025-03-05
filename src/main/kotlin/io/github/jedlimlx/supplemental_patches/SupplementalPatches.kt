@@ -1,6 +1,6 @@
 package io.github.jedlimlx.supplemental_patches
 
-import io.github.jedlimlx.supplemental_patches.events.ServerEvents
+import io.github.jedlimlx.supplemental_patches.events.ClientEvents
 import io.github.jedlimlx.supplemental_patches.shaders.ShaderResourceLoader
 import net.minecraft.resources.ResourceLocation.fromNamespaceAndPath
 import net.neoforged.api.distmarker.Dist
@@ -20,7 +20,7 @@ object SupplementalPatches {
     val LOGGER: Logger = LogManager.getLogger("supplemental_patches")
 
     init {
-        ServerEvents.init()
+        ClientEvents.init()
 
         if (FMLEnvironment.dist == Dist.CLIENT)
             ShaderResourceLoader.registerListener()
