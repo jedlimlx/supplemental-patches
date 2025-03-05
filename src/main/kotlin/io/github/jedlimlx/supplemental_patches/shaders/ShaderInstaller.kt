@@ -1,11 +1,11 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
 import io.github.jedlimlx.supplemental_patches.SupplementalPatches.LOGGER
-import net.minecraftforge.fml.loading.FMLPaths
+import net.fabricmc.loader.api.FabricLoader
 import java.nio.file.Path
 import kotlin.io.path.*
 
-val SHADERS_DIRECTORY: Path = FMLPaths.GAMEDIR.get().resolve("shaderpacks")
+val SHADERS_DIRECTORY: Path = FabricLoader.getInstance().gameDir.resolve("shaderpacks")
 
 @OptIn(ExperimentalPathApi::class)
 fun installShader(): String {
@@ -51,8 +51,6 @@ fun installShader(): String {
     generateFog(newInstallation)
     generateShaderMixins(newInstallation)
     modifyGBuffers(newInstallation)
-
-    getBiomeMap()
 
     return "Shaders successfully installed at $newInstallation."
 }

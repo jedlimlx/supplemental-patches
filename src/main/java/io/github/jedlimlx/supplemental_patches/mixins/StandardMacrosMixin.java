@@ -1,10 +1,10 @@
 package io.github.jedlimlx.supplemental_patches.mixins;
 
 
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.ModContainer;
 import net.irisshaders.iris.gl.shader.StandardMacros;
 import net.irisshaders.iris.helpers.StringPair;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.forgespi.language.IModInfo;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
@@ -20,8 +20,8 @@ public class StandardMacrosMixin {
         remap = false
     )
     private static ArrayList<StringPair> createStandardEnvironmentDefines(ArrayList<StringPair> lst) {
-        for (IModInfo mod : ModList.get().getMods()) {
-            lst.add(new StringPair("MOD_" + mod.getModId().toUpperCase(), ""));
+        for (ModContainer mod : FabricLoader.getInstance().getAllMods()) {
+            lst.add(new StringPair("MOD_" + mod.getMetadata().getId().toUpperCase().replace("-", "_"), ""));
         }
 
         return lst;

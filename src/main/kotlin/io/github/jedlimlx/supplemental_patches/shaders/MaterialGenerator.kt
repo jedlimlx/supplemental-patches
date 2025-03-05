@@ -712,7 +712,7 @@ fun generateParticleCode(directory: Path) {
     val newCode = lines.subList(0, lines.size - 2).joinToString("\n") + StringBuilder().apply {
         var first = true
         PARTICLES.map {
-            Pair(it, it.mat0.map { ResourceLocation(it) }.filter { it in textureAtlas.textureLocations })
+            Pair(it, it.mat0.map { ResourceLocation(it) }.filter { it in textureAtlas.texturesByName.keys })
         }.filter { it.second.isNotEmpty() }.forEach { (it, lst) ->
             if (first) {
                 append("\n${indent}if (")
