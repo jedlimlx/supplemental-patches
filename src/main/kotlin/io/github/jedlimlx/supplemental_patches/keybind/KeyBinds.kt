@@ -15,11 +15,11 @@ import net.minecraftforge.eventbus.api.SubscribeEvent
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber
 import org.lwjgl.glfw.GLFW
 
-@EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = arrayOf(Dist.CLIENT))
+@EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = [Dist.CLIENT])
 object KeyBinds {
     val KB_REGENERATE_SHADERS by lazy {
         KeyMapping(
-            "ONE",
+            "key.supplemental_patches.reload_shaders",
             KeyConflictContext.IN_GAME,
             InputConstants.Type.KEYSYM,
             GLFW.GLFW_KEY_INSERT,

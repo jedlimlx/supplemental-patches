@@ -21,32 +21,20 @@ plugins {
     idea
     `maven-publish`
     id("net.minecraftforge.gradle") version "[6.0,6.2)"
-    id("org.jetbrains.kotlin.jvm") version "1.9.22"
-    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.22"
+    id("org.jetbrains.kotlin.jvm") version "2.0.0"
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.0.0"
 }
-
-group = "io.github.jedlimlx.supplemental_patches"
-version = "0.1.0-beta"
 
 val modid = "supplemental_patches"
 val vendor = "jedlimlx"
 
-val minecraftVersion = "1.20.1"
-val forgeVersion = "47.3.0"
-val jeiVersion = "15.19.5.99"
+group = property("maven_group")!!
+version = property("mod_version")!!
 
 java.toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 
-println(
-    "Java: ${System.getProperty("java.version")} JVM: ${System.getProperty("java.vm.version")}(${
-        System.getProperty(
-            "java.vendor"
-        )
-    }) Arch: ${System.getProperty("os.arch")}"
-)
-
 minecraft {
-    mappings("official", minecraftVersion)
+    mappings("official", "${property("minecraft_version")}")
     accessTransformer(file("src/main/resources/META-INF/accesstransformer.cfg"))
 
     runs.all {
@@ -72,19 +60,6 @@ minecraft {
         }
 
         create("server") {}
-        create("gameTestServer") {}
-        create("data") {
-            workingDirectory(project.file("run"))
-            args(
-                "--mod",
-                modid,
-                "--all",
-                "--output",
-                file("src/generated/resources/"),
-                "--existing",
-                file("src/main/resources")
-            )
-        }
     }
 }
 
@@ -112,10 +87,18 @@ repositories {
         name = "CurseForge"
         url = uri("https://cursemaven.com")
     }
-    maven {
-        url = uri("https://maven.jaackson.me")
-    }
+    maven { url = uri("https://maven.jaackson.me") }
     maven { url = uri("https://jitpack.io") }
+
+    maven {
+        name = "GeckoLib"
+        url = uri("https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/")
+        content {
+            includeGroupByRegex("software\\.bernie.*")
+            includeGroup("com.eliotlash.mclib")
+        }
+    }
+
     exclusiveContent {
         forRepository {
             maven {
@@ -130,107 +113,100 @@ repositories {
     }
 }
 
-fun getProperty(name: String): String {
-    return project.findProperty(name)?.toString() ?: System.getProperty(name)
-}
+jarJar.enable()
 
 dependencies {
-    minecraft("net.minecraftforge:forge:$minecraftVersion-$forgeVersion")
+    minecraft("net.minecraftforge:forge:${property("minecraft_version")}-${property("forge_version")}")
     annotationProcessor("org.spongepowered:mixin:0.8.7:processor")
-    implementation("thedarkcolour:kotlinforforge:4.10.0")
+    implementation("thedarkcolour:kotlinforforge:${property("forge_kotlin_version")}")
 
-    compileOnly("io.github.llamalad7:mixinextras-common:0.4.1")
-    implementation("io.github.llamalad7:mixinextras-forge:0.4.1")
+    implementation("com.github.Fallen-Breath.conditional-mixin:conditional-mixin-forge:0.6.4")
+    jarJar(group = "com.github.Fallen-Breath.conditional-mixin", name = "conditional-mixin-forge", version = "[0.6.0,)")
 
-    implementation(fg.deobf("maven.modrinth:twkfQtEc:EAVq8Fld"))  // moonlight
-    implementation(fg.deobf("maven.modrinth:architectury-api:9.2.14+forge"))
-    implementation(fg.deobf("maven.modrinth:polymorph:0.49.5+1.20.1"))
-    implementation(fg.deobf("maven.modrinth:blueprint:7.1.0-forge"))
-    implementation(fg.deobf("maven.modrinth:geckolib:4.4.9-forge"))
-    implementation(fg.deobf("maven.modrinth:resourceful-config:2.1.0-forge"))
-    implementation(fg.deobf("maven.modrinth:resourceful-lib:2.1.20-forge"))
-    implementation(fg.deobf("maven.modrinth:lithostitched:1.4-forge"))
-    implementation(fg.deobf("maven.modrinth:structure-gel-api:2.16.2-forge"))
-    implementation(fg.deobf("maven.modrinth:cloth-config:11.1.136+forge"))
-    implementation(fg.deobf("maven.modrinth:yungs-api:1.20-Forge-4.0.6"))
-
-    implementation(fg.deobf("maven.modrinth:ct-overhaul-village:3.4.10-forge"))
-
-    implementation(fg.deobf("maven.modrinth:fusion-connected-textures:1.1.1-forge-mc1.20.1"))
+    // rendering / optimisation mods
     implementation(fg.deobf("maven.modrinth:xenon-forge:0.3.31"))
-    implementation(fg.deobf("maven.modrinth:oculus:1.20.1-1.7.0-forge"))
+    implementation(fg.deobf("maven.modrinth:oculus:1.20.1-1.8.0-forge"))
     implementation(fg.deobf("maven.modrinth:euphoria-patches:1.5.2-r5.4-forge"))
-//    implementation(fg.deobf("maven.modrinth:distanthorizons:2.1.0-a-1.20.1-forge"))
 
-    implementation(fg.deobf("maven.modrinth:jade:11.11.1+forge"))
+    // general library mods
+    implementation(fg.deobf("maven.modrinth:architectury-api:9.2.14+forge"))
+    implementation(fg.deobf("software.bernie.geckolib:geckolib-forge-${property("minecraft_version")}:4.4.9"))
+    implementation(fg.deobf("maven.modrinth:cloth-config:11.1.136+forge"))
+    implementation(fg.deobf("maven.modrinth:terrablender:3.0.1.7-forge"))
+    implementation(fg.deobf("maven.modrinth:moonlight:forge_1.20-2.13.71"))
+    implementation(fg.deobf("maven.modrinth:resourceful-config:2.1.3-forge"))
+    implementation(fg.deobf("maven.modrinth:resourceful-lib:2.1.29-forge"))
 
-    implementation(fg.deobf("maven.modrinth:twigs:1.20.1-3.1.1-forge"))
-    implementation(fg.deobf( "maven.modrinth:etcetera:1.1.3-forge"))
-    implementation(fg.deobf("maven.modrinth:artsandcrafts:1.3.2-forge"))
+    implementation(fg.deobf("maven.modrinth:blueprint:7.1.1-forge"))
 
-    implementation(fg.deobf("maven.modrinth:galosphere:1.20.1-1.4.1-forge"))
-
-    implementation(fg.deobf("maven.modrinth:supplementaries:1.20-3.1.6-forge"))
-    implementation(fg.deobf("maven.modrinth:amendments:1.20-1.2.12-forge"))
-    implementation(fg.deobf("maven.modrinth:supplementaries-squared:1.20-1.1.16-forge"))
-
-    implementation(fg.deobf("maven.modrinth:villagersplus:3.1-forge"))
-    compileOnly(fg.deobf("maven.modrinth:immersive-weathering:1.20.1-2.0.2-forge"))
-
-    implementation(fg.deobf("maven.modrinth:farmers-delight:1.20.1-1.2.5"))
-    implementation(fg.deobf("maven.modrinth:rustic-delight:1.3.0-forge"))
-    implementation(fg.deobf("maven.modrinth:crate-delight:24.11.06-1.20-forge"))
-
-    implementation(fg.deobf("maven.modrinth:enderman-overhaul:1.0.4-forge"))
-    implementation(fg.deobf("maven.modrinth:creeper-overhaul:3.0.2-forge"))
-    compileOnly(fg.deobf("maven.modrinth:friends-and-foes-forge:forge-mc1.20.1-3.0.6"))
-
-    implementation(fg.deobf("maven.modrinth:dye-depot:1.0.0-forge"))
-    compileOnly(fg.deobf("maven.modrinth:dye-the-world:1.1.2-forge"))
-
+    // abnormals mods
+    implementation(fg.deobf("maven.modrinth:abnormals-delight:5.0.0-forge"))
+    implementation(fg.deobf("maven.modrinth:atmospheric:6.1.0-forge"))
+    implementation(fg.deobf("maven.modrinth:autumnity:5.0.1-forge"))
+    implementation(fg.deobf("maven.modrinth:berry-good:7.0.0-forge"))
+    implementation(fg.deobf("maven.modrinth:buzzier-bees:6.0.0-forge"))
+    implementation(fg.deobf("maven.modrinth:caverns-and-chasms:2.0.0-forge"))
+    implementation(fg.deobf("maven.modrinth:clayworks:3.0.1-forge"))
+    implementation(fg.deobf("maven.modrinth:endergetic:5.0.0-forge"))
+    implementation(fg.deobf("maven.modrinth:environmental:4.0.0-forge"))
+    implementation(fg.deobf("maven.modrinth:neapolitan:5.1.0-forge"))
+    implementation(fg.deobf("maven.modrinth:savage-and-ravage:6.0.0-forge"))
     implementation(fg.deobf("maven.modrinth:woodworks:3.0.1-forge"))
     implementation(fg.deobf("maven.modrinth:upgrade-aquatic:6.0.1-forge"))
-    implementation(fg.deobf("maven.modrinth:buzzier-bees:6.0.0-forge"))
-    implementation(fg.deobf("maven.modrinth:autumnity:5.0.1-forge"))
-    implementation(fg.deobf("maven.modrinth:clayworks:3.0.1-forge"))
-    implementation(fg.deobf("maven.modrinth:caverns-and-chasms:2.0.0-forge"))
-    implementation(fg.deobf("maven.modrinth:savage-and-ravage:6.0.0-forge"))
-    implementation(fg.deobf("maven.modrinth:atmospheric:6.1.0-forge"))
-    implementation(fg.deobf("maven.modrinth:environmental:4.0.0-forge"))
-    implementation(fg.deobf("maven.modrinth:endergetic:5.0.0-forge"))
-    implementation(fg.deobf("maven.modrinth:abnormals-delight:5.0.0-forge"))
-    implementation(fg.deobf("maven.modrinth:berry-good:7.0.0-forge"))
-    implementation(fg.deobf("maven.modrinth:neapolitan:5.1.0-forge"))
+
+    // supplementaries
+    compileOnly(fg.deobf("maven.modrinth:supplementaries:1.20-3.1.20-forge"))
+    compileOnly(fg.deobf("maven.modrinth:amendments:1.20-1.2.19-forge"))
+    compileOnly(fg.deobf("maven.modrinth:supplementaries-squared:1.20-1.1.18-forge"))
+
+    // oreganized
+    implementation(fg.deobf("maven.modrinth:oreganized:3.1.2"))
+    implementation(fg.deobf("maven.modrinth:doom-gloom:1.0.2"))
+
+    // farmers delight
+    implementation(fg.deobf("maven.modrinth:farmers-delight:1.20.1-1.2.7"))
+    implementation(fg.deobf("maven.modrinth:rustic-delight:1.4.0-forge"))
+    implementation(fg.deobf("maven.modrinth:crate-delight:24.11.22-1.20-forge"))
+
+    // mob overhauls
+    implementation(fg.deobf("maven.modrinth:enderman-overhaul:1.0.4-forge"))
+    implementation(fg.deobf("maven.modrinth:creeper-overhaul:3.0.2-forge"))
+
+    // fabric-exclusive
+    compileOnly(fg.deobf("maven.modrinth:hybrid-aquatic:1.20.1-1.4.0"))
+
+    // misc
+    implementation(fg.deobf("maven.modrinth:galosphere:1.20.1-1.4.1-forge"))
+    implementation(fg.deobf("maven.modrinth:spawn-mod:1.0.2-forge"))
+    implementation(fg.deobf("maven.modrinth:twigs:1.20.1-3.1.1-forge"))
+
+    implementation(fg.deobf("maven.modrinth:elysium-api:1.20.1-1.0.2"))
+    implementation(fg.deobf("maven.modrinth:jadens-nether-expansion:2.2.1"))
 
     implementation(fg.deobf("maven.modrinth:sullysmod:3.2.1-beta"))
 
     implementation(fg.deobf("maven.modrinth:wetland-whimsy:1.1.7-1.20.1"))
 
-    implementation(fg.deobf("maven.modrinth:oreganized:3.1.2"))
-    implementation(fg.deobf("maven.modrinth:doom-gloom:1.0.2"))
-    compileOnly(fg.deobf("maven.modrinth:glowroot:1.0.8.4"))
+    compileOnly(fg.deobf("maven.modrinth:friends-and-foes-forge:forge-mc1.20.1-3.0.6"))
 
-    implementation(fg.deobf("maven.modrinth:when-dungeons-arise:2.1.57-1.20.1-forge"))
-    implementation(fg.deobf("maven.modrinth:lukis-grand-capitals:1.1.1+mod"))
+    implementation(fg.deobf("maven.modrinth:yungs-api:1.20-Forge-4.0.6"))
+    implementation(fg.deobf("maven.modrinth:yungs-cave-biomes:1.20.1-Forge-2.0.1"))
 
-    compileOnly(fg.deobf("maven.modrinth:the-bumblezone:7.5.13+1.20.1-forge"))
+    implementation(fg.deobf("maven.modrinth:villagersplus:3.1-forge"))
 
-    implementation(fg.deobf("maven.modrinth:yungs-cave-biomes:1.20.1-Forge-2.0.2"))
-
-//    implementation(fg.deobf("maven.modrinth:subtle-effects:1.7.1-forge"))
-    implementation(fg.deobf("maven.modrinth:elysium-api:1.20.1-1.0.2"))
-    implementation(fg.deobf("maven.modrinth:jadens-nether-expansion:2.2.1"))
-    implementation(fg.deobf("maven.modrinth:terrablender:3.0.1.7-forge"))
+    compileOnly(fg.deobf("maven.modrinth:immersive-weathering:1.20.1-2.0.2-forge"))
 
     implementation(fg.deobf("maven.modrinth:zeta:1.20.1-1.0-24-forge"))
-    compileOnly(fg.deobf("maven.modrinth:quark:1.20.1-4.0-460-forge"))
-    compileOnly(fg.deobf("maven.modrinth:quark-oddities:1.20.1-forge"))
+    implementation(fg.deobf("maven.modrinth:quark:1.20.1-4.0-460-forge"))
+    implementation(fg.deobf("maven.modrinth:quark-oddities:1.20.1-forge"))
     compileOnly(fg.deobf("maven.modrinth:biome-makeover:forge-1.20.1-1.11.0"))
 
-    implementation(fg.deobf("maven.modrinth:spawn-mod:1.0.2-forge"))
+    implementation(fg.deobf("maven.modrinth:dye-depot:1.0.0-forge"))
+    implementation(fg.deobf("maven.modrinth:dye-the-world:1.1.2-forge"))
 
-    compileOnly(fg.deobf("mezz.jei:jei-$minecraftVersion-forge-api:$jeiVersion"))
-    runtimeOnly(fg.deobf("mezz.jei:jei-$minecraftVersion-forge:$jeiVersion"))
+    // jei & jade
+    implementation(fg.deobf("maven.modrinth:jade:11.12.3+forge"))
+    implementation(fg.deobf("maven.modrinth:jei:15.20.0.106-forge"))
 }
 
 val Project.mixin: MixinExtension
