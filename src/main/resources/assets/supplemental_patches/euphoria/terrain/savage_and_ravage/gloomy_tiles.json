@@ -3,7 +3,8 @@
   "glsl": "gloomy_tiles.glsl",
   "mat0": [
     "savage_and_ravage:gloomy_tiles",
-    "savage_and_ravage:runed_gloomy_tiles:powered=false"
+    "savage_and_ravage:runed_gloomy_tiles:powered=false",
+    "savage_and_ravage:chiseled_gloomy_tiles:powered=false"
   ],
   "mat1": [
     "savage_and_ravage:gloomy_tile_slab",
@@ -11,7 +12,8 @@
     "savage_and_ravage:gloomy_tile_wall"
   ],
   "mat2": [
-    "savage_and_ravage:runed_gloomy_tiles:powered=true"
+    "savage_and_ravage:runed_gloomy_tiles:powered=true",
+    "savage_and_ravage:chiseled_gloomy_tiles:powered=true"
   ],
   "color": [
     null,

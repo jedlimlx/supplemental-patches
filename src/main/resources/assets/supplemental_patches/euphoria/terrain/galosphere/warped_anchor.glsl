@@ -7,8 +7,11 @@ if (
 ) {
     emission = 4.5;
 } else if (color.r / color.b < 0.6 || color.b > 0.9) {  // Allurite Part
-    #include "/lib/materials/specificMaterials/terrain/alluriteBlock.glsl"
-    emission = 2.1 * pow2(color.b);
+    emission = 2.5 * pow2(color.b) * sqrt(color.r);
+    color.rgb *= sqrt1(GetLuminance(color.rgb));
+    smoothnessD = 0;
+    smoothnessG = 0;
+
 } else {  // Silver Part
     #include "/lib/materials/specificMaterials/terrain/silverBlock.glsl"
 }

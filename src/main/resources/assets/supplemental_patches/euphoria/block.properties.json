@@ -9,71 +9,71 @@
     "oreganized:lead_bulb"
   ],
   "block.10113": [
-    "supplemental_patches:deepslate_pillar"
+    "adjustments:deepslate_pillar"
   ],
   "block.10116": [
     "twigs:polished_calcite",
-    "supplemental_patches:calcite_tiles",
-    "supplemental_patches:calcite_column"
+    "adjustments:calcite_tiles",
+    "adjustments:calcite_column"
   ],
   "block.10100": [
-    "supplemental_patches:diorite_tiles"
+    "adjustments:diorite_tiles"
   ],
   "block.10101": [
-    "supplemental_patches:diorite_column",
-    "supplemental_patches:diorite_tile_slab",
-    "supplemental_patches:diorite_tile_stairs",
-    "supplemental_patches:diorite_tile_wall"
+    "adjustments:diorite_column",
+    "adjustments:diorite_tile_slab",
+    "adjustments:diorite_tile_stairs",
+    "adjustments:diorite_tile_wall"
   ],
   "block.10096": [
-    "supplemental_patches:granite_tiles"
+    "adjustments:granite_tiles"
   ],
   "block.10097": [
-    "supplemental_patches:granite_column",
-    "supplemental_patches:granite_tile_slab",
-    "supplemental_patches:granite_tile_stairs",
-    "supplemental_patches:granite_tile_wall"
+    "adjustments:granite_column",
+    "adjustments:granite_tile_slab",
+    "adjustments:granite_tile_stairs",
+    "adjustments:granite_tile_wall"
   ],
   "block.10104": [
-    "supplemental_patches:andesite_tiles",
-    "supplemental_patches:mud_tiles"
+    "adjustments:andesite_tiles",
+    "adjustments:mud_tiles"
   ],
   "block.10105": [
-    "supplemental_patches:andesite_column",
-    "supplemental_patches:mud_column",
-    "supplemental_patches:andesite_tile_slab",
-    "supplemental_patches:mud_tile_slab",
-    "supplemental_patches:andesite_tile_stairs",
-    "supplemental_patches:mud_tile_stairs",
-    "supplemental_patches:andesite_tile_wall",
-    "supplemental_patches:mud_tile_wall"
+    "adjustments:andesite_column",
+    "adjustments:mud_column",
+    "adjustments:andesite_tile_slab",
+    "adjustments:mud_tile_slab",
+    "adjustments:andesite_tile_stairs",
+    "adjustments:mud_tile_stairs",
+    "adjustments:andesite_tile_wall",
+    "adjustments:mud_tile_wall"
   ],
   "block.10120": [
-    "supplemental_patches:dripstone_tiles"
+    "adjustments:dripstone_tiles"
   ],
   "block.10121": [
-    "supplemental_patches:dripstone_column",
-    "supplemental_patches:dripstone_tile_slab",
-    "supplemental_patches:dripstone_tile_stairs",
-    "supplemental_patches:dripstone_tile_wall"
+    "adjustments:dripstone_column",
+    "adjustments:dripstone_tile_slab",
+    "adjustments:dripstone_tile_stairs",
+    "adjustments:dripstone_tile_wall"
   ],
   "block.10240": [
-    "supplemental_patches:sandstone_tiles"
+    "adjustments:sandstone_tiles"
   ],
   "block.10241": [
-    "supplemental_patches:sandstone_column",
-    "supplemental_patches:sandstone_tile_slab",
-    "supplemental_patches:sandstone_tile_stairs",
-    "supplemental_patches:sandstone_tile_wall"
+    "adjustments:sandstone_column",
+    "adjustments:sandstone_tile_slab",
+    "adjustments:sandstone_tile_stairs",
+    "adjustments:sandstone_tile_wall"
   ],
   "block.10244": [
-    "supplemental_patches:red_sandstone_tiles"
+    "adjustments:red_sandstone_tiles"
   ],
   "block.10245": [
-    "supplemental_patches:red_sandstone_column",
-    "supplemental_patches:red_sandstone_tile_slab",
-    "supplemental_patches:red_sandstone_tile_stairs",
-    "supplemental_patches:red_sandstone_tile_wall"
+    "adjustments:red_sandstone_column",
+    "adjustments:red_sandstone_tile_slab",
+    "adjustments:red_sandstone_tile_stairs",
+    "adjustments:red_sandstone_tile_wall"
   ],
   "block.10384": [
     "quark:permafrost_bricks",
@@ -93,54 +93,54 @@
     "galosphere:glinted_amethyst_cluster"
   ],
   "block.10364": [
-    "supplemental_patches:quartz_tiles"
+    "adjustments:quartz_tiles"
   ],
   "block.10365": [
-    "supplemental_patches:quartz_tile_slab",
-    "supplemental_patches:quartz_tile_stairs",
-    "supplemental_patches:quartz_tile_wall"
+    "adjustments:quartz_tile_slab",
+    "adjustments:quartz_tile_stairs",
+    "adjustments:quartz_tile_wall"
   ],
   "block.10376": [
-    "supplemental_patches:purpur_bricks",
-    "supplemental_patches:purpur_tiles"
+    "adjustments:purpur_bricks",
+    "adjustments:purpur_tiles"
   ],
   "block.10377": [
-    "supplemental_patches:purpur_column",
-    "supplemental_patches:purpur_brick_slab",
-    "supplemental_patches:purpur_brick_stairs",
-    "supplemental_patches:purpur_brick_wall",
-    "supplemental_patches:purpur_tile_slab",
-    "supplemental_patches:purpur_tile_stairs",
-    "supplemental_patches:purpur_tile_wall"
+    "adjustments:purpur_column",
+    "adjustments:purpur_brick_slab",
+    "adjustments:purpur_brick_stairs",
+    "adjustments:purpur_brick_wall",
+    "adjustments:purpur_tile_slab",
+    "adjustments:purpur_tile_stairs",
+    "adjustments:purpur_tile_wall"
   ],
   "block.10408": [
-    "supplemental_patches:basalt_tiles"
+    "adjustments:basalt_tiles"
   ],
   "block.10409": [
-    "supplemental_patches:basalt_column",
-    "supplemental_patches:basalt_tile_slab",
-    "supplemental_patches:basalt_tile_stairs",
-    "supplemental_patches:basalt_tile_wall"
+    "adjustments:basalt_column",
+    "adjustments:basalt_tile_slab",
+    "adjustments:basalt_tile_stairs",
+    "adjustments:basalt_tile_wall"
   ],
   "block.10428": [
-    "supplemental_patches:chiseled_end_stone",
-    "supplemental_patches:end_stone_tiles"
+    "adjustments:chiseled_end_stone",
+    "adjustments:end_stone_tiles"
   ],
   "block.10429": [
-    "supplemental_patches:end_stone_column",
-    "supplemental_patches:end_stone_tile_slab",
-    "supplemental_patches:end_stone_tile_stairs",
-    "supplemental_patches:end_stone_tile_wall"
+    "adjustments:end_stone_column",
+    "adjustments:end_stone_tile_slab",
+    "adjustments:end_stone_tile_stairs",
+    "adjustments:end_stone_tile_wall"
   ],
   "block.10440": [
-    "supplemental_patches:chiseled_prismarine",
-    "supplemental_patches:prismarine_tiles"
+    "adjustments:chiseled_prismarine",
+    "adjustments:prismarine_tiles"
   ],
   "block.10441": [
-    "supplemental_patches:prismarine_column",
-    "supplemental_patches:prismarine_tile_slab",
-    "supplemental_patches:prismarine_tile_stairs",
-    "supplemental_patches:prismarine_tile_wall"
+    "adjustments:prismarine_column",
+    "adjustments:prismarine_tile_slab",
+    "adjustments:prismarine_tile_stairs",
+    "adjustments:prismarine_tile_wall"
   ],
   "block.10480": [
     "quark:blackstone_furnace:lit=false"
@@ -150,12 +150,12 @@
     "quark:glow_lichen_ring"
   ],
   "block.10712": [
-    "supplemental_patches:tuff_tiles"
+    "adjustments:tuff_tiles"
   ],
   "block.10713": [
-    "supplemental_patches:tuff_column",
-    "supplemental_patches:tuff_tile_slab",
-    "supplemental_patches:tuff_tile_stairs",
-    "supplemental_patches:tuff_tile_wall"
+    "adjustments:tuff_column",
+    "adjustments:tuff_tile_slab",
+    "adjustments:tuff_tile_stairs",
+    "adjustments:tuff_tile_wall"
   ]
 }

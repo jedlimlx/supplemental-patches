@@ -1,9 +1,9 @@
 {
   "type": "directory",
-  "name": "ADJUSTMENTS_VERSION",
+  "name": "SUPPLEMENTAL_VERSION",
   "folder": "about",
   "en_US": {
-    "screen": "Adjustments §d1.0.0",
+    "screen": "Supplemental Patches §d1.0.0",
     "comment": "This is a modification of Euphoria Patches to provide better support for many popular mods."
   },
   "priority": 2
