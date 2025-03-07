@@ -22,8 +22,4 @@ if (lit) {
     emission *= 1.3;
 
     overlayNoiseIntensity = 0.5;
-
-    #ifdef COATED_TEXTURES
-        noiseFactor = 0.66;
-    #endif
 }

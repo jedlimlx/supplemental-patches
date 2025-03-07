@@ -4,5 +4,6 @@
   "mat0": [
     "upgrade_aquatic:tooth_lantern"
   ],
-  "color": "supplemental_patches:upgrade_aquatic/tooth_lantern"
+  "color": "supplemental_patches:upgrade_aquatic/tooth_lantern",
+  "held_lighting": true
 }
