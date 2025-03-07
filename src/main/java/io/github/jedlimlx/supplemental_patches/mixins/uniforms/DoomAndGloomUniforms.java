@@ -25,18 +25,18 @@ public class DoomAndGloomUniforms {
         remap = false
     )
     private static void generalCommonUniforms(UniformHolder uniforms, FrameUpdateNotifier updateNotifier, PackDirectives directives, CallbackInfo ci) {
-        uniforms.uniform1f(UniformUpdateFrequency.PER_FRAME, "doomAndGloomFog", DoomAndGloomUniforms::getDoomAndGloomFog);
+//        uniforms.uniform1f(UniformUpdateFrequency.PER_FRAME, "doomAndGloomFog", DoomAndGloomUniforms::getDoomAndGloomFog);
     }
 
-    private static float getDoomAndGloomFog() {
-        Entity cameraEntity = Minecraft.getInstance().getCameraEntity();
-        if (cameraEntity instanceof LivingEntity) {
-            MobEffectInstance fog = ((LivingEntity)cameraEntity).getEffect(galena.doom_and_gloom.index.OEffects.FOG.get());
-            if (fog != null) {
-                return 1.0F;
-            } else return 0.0F;
-        }
-
-        return 0.0F;
-    }
+//    private static float getDoomAndGloomFog() {
+//        Entity cameraEntity = Minecraft.getInstance().getCameraEntity();
+//        if (cameraEntity instanceof LivingEntity) {
+//            MobEffectInstance fog = ((LivingEntity)cameraEntity).getEffect(galena.doom_and_gloom.index.OEffects.FOG);
+//            if (fog != null) {
+//                return 1.0F;
+//            } else return 0.0F;
+//        }
+//
+//        return 0.0F;
+//    }
 }

@@ -26,18 +26,18 @@ public class OreganizedUniforms {
         remap = false
     )
     private static void generalCommonUniforms(UniformHolder uniforms, FrameUpdateNotifier updateNotifier, PackDirectives directives, CallbackInfo ci) {
-        uniforms.uniform1f(UniformUpdateFrequency.PER_FRAME, "brainDamage", OreganizedUniforms::getBrainDamage);
+//        uniforms.uniform1f(UniformUpdateFrequency.PER_FRAME, "brainDamage", OreganizedUniforms::getBrainDamage);
     }
 
-    private static float getBrainDamage() {
-        Entity cameraEntity = Minecraft.getInstance().getCameraEntity();
-        if (cameraEntity instanceof LivingEntity) {
-            MobEffectInstance brainDamage = ((LivingEntity)cameraEntity).getEffect(OEffects.STUNNING.get());
-            if (brainDamage != null) {
-                return brainDamage.getAmplifier();
-            } else return 0.0F;
-        }
-
-        return 0.0F;
-    }
+//    private static float getBrainDamage() {
+//        Entity cameraEntity = Minecraft.getInstance().getCameraEntity();
+//        if (cameraEntity instanceof LivingEntity) {
+//            MobEffectInstance brainDamage = ((LivingEntity)cameraEntity).getEffect(OEffects.STUNNING.get());
+//            if (brainDamage != null) {
+//                return brainDamage.getAmplifier();
+//            } else return 0.0F;
+//        }
+//
+//        return 0.0F;
+//    }
 }

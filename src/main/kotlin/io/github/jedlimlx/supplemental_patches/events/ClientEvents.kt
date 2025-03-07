@@ -2,6 +2,8 @@ package io.github.jedlimlx.supplemental_patches.events
 
 import io.github.jedlimlx.supplemental_patches.shaders.installShader
 import net.minecraft.network.chat.Component
+import net.neoforged.api.distmarker.Dist
+import net.neoforged.api.distmarker.OnlyIn
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent
 import net.neoforged.neoforge.common.NeoForge

@@ -110,7 +110,7 @@ dependencies {
     // general library mods
     implementation("maven.modrinth:architectury-api:13.0.8+neoforge")
     implementation("software.bernie.geckolib:geckolib-neoforge-${property("minecraft_version")}:4.7.3")
-    implementation("maven.modrinth:cloth-config:17.0.144+neoforge")
+    implementation("maven.modrinth:cloth-config:15.0.140+neoforge")
     implementation("maven.modrinth:terrablender:4.1.0.8-neoforge")
     implementation("maven.modrinth:moonlight:neoforge_1.21-2.17.32")
     implementation("maven.modrinth:resourceful-config:3.0.10-neoforge")
@@ -152,7 +152,7 @@ dependencies {
     implementation("maven.modrinth:creeper-overhaul:4.0.6-neoforge")
 
     // fabric-exclusive
-    compileOnly("maven.modrinth:hybrid-aquatic:1.20.1-1.4.0")
+    // compileOnly("maven.modrinth:hybrid-aquatic:1.20.1-1.4.0")
 
     // misc
     compileOnly("maven.modrinth:galosphere:1.20.1-1.4.1-forge")
