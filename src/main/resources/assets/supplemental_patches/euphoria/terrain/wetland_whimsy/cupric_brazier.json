@@ -1,0 +1,9 @@
+{
+  "name": "cupric_brazier [limestone]",
+  "glsl": "cupric_brazier.glsl",
+  "mat0": [
+    "wetland_whimsy:cupric_brazier:lit=true"
+  ],
+  "color": "supplemental_patches:caverns_and_chasms/cupric_fire",
+  "held_lighting": true
+}

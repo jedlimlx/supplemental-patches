@@ -1,10 +1,7 @@
-vec2 num = floor(16.0 * (playerPos.xz + cameraPosition.xz) + 16.0 * (playerPos.y + cameraPosition.y));
-vec2 noise = texture2D(noisetex, num / 16.0).rb;
-
-smoothnessG = pow2(color.r / color.b) * 0.001 * (1 + 100.0 * max(0.5 * (sin(noise.r) + cos(noise.g)), 0));
-smoothnessD = smoothnessG * 0.4;
+smoothnessG = pow2(color.r) * (0.1 + Noise3D(floor((playerPos + cameraPosition) * 16.0) / 16.0));
+smoothnessD = smoothnessG;
 highlightMult = 3.0;
 
 #ifdef COATED_TEXTURES
-    noiseFactor = 0.80;
+    noiseFactor = 1.20;
 #endif

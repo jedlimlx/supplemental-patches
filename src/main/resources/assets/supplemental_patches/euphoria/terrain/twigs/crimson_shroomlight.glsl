@@ -1,5 +1,6 @@
 if (color.b / color.r > 1.8) {
     #include "/lib/materials/specificMaterials/planks/crimsonPlanks.glsl"
+    lmCoordM.x *= 0.88;
 } else {
     lmCoordM = vec2(1.0, 0.0);
 
