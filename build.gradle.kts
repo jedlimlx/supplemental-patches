@@ -173,7 +173,14 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:creeper-overhaul:3.0.2-forge"))
 
     // fabric-exclusive
-    compileOnly(fg.deobf("maven.modrinth:hybrid-aquatic:1.20.1-1.4.0"))
+    compileOnly("maven.modrinth:hybrid-aquatic:1.4.1-1.20.1")
+
+    compileOnly("maven.modrinth:soulfulnether:1.0.0")
+    compileOnly("maven.modrinth:cinderscapes:4.0.10")
+
+    compileOnly("maven.modrinth:gipples-galore:1.0.0")
+    compileOnly("maven.modrinth:nears:2.1.2-1.20.1")
+    compileOnly("maven.modrinth:pearfection:1.1.1")
 
     // misc
     implementation(fg.deobf("maven.modrinth:galosphere:1.20.1-1.4.1-forge"))

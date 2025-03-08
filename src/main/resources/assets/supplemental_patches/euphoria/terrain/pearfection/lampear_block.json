@@ -1,0 +1,9 @@
+{
+  "name": "lampear_block",
+  "glsl": "lampear_block.glsl",
+  "mat0": [
+    "pearfection:lampear_block"
+  ],
+  "color": "supplemental_patches:pearfection/lampear",
+  "held_lighting": true
+}

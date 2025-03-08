@@ -1,0 +1,12 @@
+{
+  "name": "lampear",
+  "glsl": "lampear.glsl",
+  "mat0": [
+    "pearfection:lampear"
+  ],
+  "mat2": [
+    "pearfection:copper_lampear"
+  ],
+  "color": "supplemental_patches:pearfection/lampear",
+  "held_lighting": true
+}
