@@ -21,8 +21,6 @@ import net.minecraft.world.entity.player.Player
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 import org.lwjgl.glfw.GLFW
-import software.bernie.geckolib.cache.GeckoLibCache
-import java.util.concurrent.CompletableFuture
 import java.util.concurrent.Executor
 
 
@@ -58,7 +56,7 @@ object SupplementalPatches: ClientModInitializer {
                     gameExecutor
                 )
 
-                override fun getFabricId() = ResourceLocation("supplemental_patches:euphoria")
+                override fun getFabricId() = ResourceLocation.parse("supplemental_patches:euphoria")
             })
 
         ClientEntityEvents.ENTITY_LOAD.register(ClientEntityEvents.Load { entity, _ ->

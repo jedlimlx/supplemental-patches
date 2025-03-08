@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     kotlin("jvm")
     id("fabric-loom")
@@ -103,33 +105,22 @@ dependencies {
     implementation("com.electronwill.night-config:toml:3.8.1")
     implementation("org.reflections:reflections:0.10.2")
 
-    modImplementation("com.github.Chocohead:Fabric-ASM:2.3")
-    modImplementation("com.jamieswhiteshirt:reach-entity-attributes:2.4.0")
-
-    val portLibModules = "accessors,base,networking,tags,config,tool_actions,loot,lazy_registration,recipe_book_categories"
-    portLibModules.split(",").forEach {
-        modImplementation("io.github.fabricators_of_create.Porting-Lib:$it:2.3.8+1.20.1")
-    }
-
     // rendering / optimisation mods
-    modImplementation("maven.modrinth:sodium:mc1.20.1-0.5.13-fabric")
-    modImplementation("maven.modrinth:indium:1.0.36+mc1.20.1")
-    modImplementation("maven.modrinth:iris:1.7.6+1.20.1")
+    modImplementation("maven.modrinth:sodium:mc1.21.1-0.6.9-fabric")
+    modImplementation("maven.modrinth:iris:1.8.8+1.21.1-fabric")
     modImplementation("maven.modrinth:euphoria-patches:1.5.2-r5.4-fabric")
 
     // general library mods
-    modImplementation("maven.modrinth:athena-ctm:3.1.2-fabric")
-    modImplementation("maven.modrinth:architectury-api:9.2.14+fabric")
+    modImplementation("maven.modrinth:architectury-api:13.0.5+fabric")
     compileOnly("maven.modrinth:blueprint:7.1.1-forge")
     modImplementation("maven.modrinth:cloth-config:11.1.136+fabric")
-    modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.4.9")
-    modImplementation("maven.modrinth:midnightlib:1.4.1-fabric")
-    modImplementation("maven.modrinth:moonlight:fabric_1.20-2.13.71")
-    modImplementation("maven.modrinth:porting_lib:2.3.8+1.20.1")
-    modImplementation("maven.modrinth:resourceful-config:2.1.3-fabric")
-    modImplementation("maven.modrinth:resourceful-lib:2.1.29-fabric")
-    modImplementation("maven.modrinth:terrablender:3.0.1.7-fabric")
-    modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:7.0.0-beta.1")
+    modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.7.3")
+    modImplementation("maven.modrinth:midnightlib:1.6.9+1.21-fabric")
+    modImplementation("maven.modrinth:moonlight:fabric_1.21-2.17.32")
+    modImplementation("maven.modrinth:resourceful-config:3.0.9-fabric")
+    modImplementation("maven.modrinth:resourceful-lib:3.0.12-fabric")
+    modImplementation("maven.modrinth:terrablender:4.1.0.8-fabric")
+    modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0-alpha.1")
 
     // abnormals mods
     compileOnly("maven.modrinth:abnormals-delight:5.0.0-forge")
@@ -147,37 +138,37 @@ dependencies {
     compileOnly("maven.modrinth:upgrade-aquatic:6.0.1-forge")
 
     // supplementaries
-    compileOnly("maven.modrinth:supplementaries:1.20-3.1.16-fabric")
-    compileOnly("maven.modrinth:amendments:1.20-1.2.19-fabric")
-    compileOnly("maven.modrinth:supplementaries-squared:1.20-1.1.18-fabric")
+    compileOnly("maven.modrinth:supplementaries:fabric_1.21-3.0.40-beta")
+    compileOnly("maven.modrinth:amendments:fabric_1.21-1.2.24")
+    compileOnly("maven.modrinth:supplementaries-squared:fabric_1.21-1.2.3")
 
     // oreganized
     compileOnly("maven.modrinth:oreganized:3.1.2")
     compileOnly("maven.modrinth:doom-gloom:1.0.2")
 
     // farmers delight
-    modImplementation("maven.modrinth:farmers-delight-refabricated:1.20.1-2.3.0")
-    modImplementation("maven.modrinth:rustic-delight:1.3.2-fabric")
-    modImplementation("maven.modrinth:crate-delight:24.11.22-1.20-fabric")
+    compileOnly("maven.modrinth:farmers-delight-refabricated:1.21.1-2.3.0")
+    compileOnly("maven.modrinth:rustic-delight:1.3.3-fabric,1.21.1")
+    compileOnly("maven.modrinth:crate-delight:24.11.22-1.21-fabric")
 
     // mob overhauls
-    modImplementation("maven.modrinth:enderman-overhaul:1.0.4-fabric")
-    modImplementation("maven.modrinth:creeper-overhaul:3.0.2-fabric")
+    compileOnly("maven.modrinth:enderman-overhaul:2.0.2-neoforge")
+    compileOnly("maven.modrinth:creeper-overhaul:4.0.6-fabric")
 
     // fabric-exclusive
-    modImplementation("maven.modrinth:hybrid-aquatic:1.4.1-1.20.1")
+    compileOnly("maven.modrinth:hybrid-aquatic:1.4.1-1.20.1")
 
-    modImplementation("maven.modrinth:soulfulnether:1.0.0")
-    modImplementation("maven.modrinth:cinderscapes:4.0.10")
+    compileOnly("maven.modrinth:soulfulnether:1.0.0")
+    modImplementation("maven.modrinth:cinderscapes:5.0.2")
 
-    modImplementation("maven.modrinth:gipples-galore:1.0.0")
-    modImplementation("maven.modrinth:nears:2.1.2-1.20.1")
-    modImplementation("maven.modrinth:pearfection:1.1.1")
+    modImplementation("maven.modrinth:gipples-galore:1.1.1")
+    modImplementation("maven.modrinth:nears:2.1.2-1.21.1")
+    modImplementation("maven.modrinth:pearfection:1.2.4")
 
     // misc
-    modImplementation("maven.modrinth:galosphere:1.20.1-1.4.1-fabric")
-    modImplementation("maven.modrinth:spawn-mod:1.0.3-fabric")
-    modImplementation("maven.modrinth:twigs:3.1.0-fabric")
+    modImplementation("maven.modrinth:galosphere:1.21-1.4.2-fabric")
+    compileOnly("maven.modrinth:spawn-mod:1.0.3-fabric")
+    compileOnly("maven.modrinth:twigs:3.1.0-fabric")
 
     compileOnly("maven.modrinth:elysium-api:1.20.1-1.0.2")
     compileOnly("maven.modrinth:jadens-nether-expansion:2.2.1")
@@ -186,10 +177,10 @@ dependencies {
 
     compileOnly("maven.modrinth:wetland-whimsy:1.1.7-1.20.1")
 
-    modImplementation("maven.modrinth:friends-and-foes:fabric-mc1.20.1-3.0.7")
+    modImplementation("maven.modrinth:friends-and-foes:fabric-mc1.21.1-3.0.7")
 
-    modImplementation("maven.modrinth:yungs-api:1.20-Fabric-4.0.6")
-    modImplementation("maven.modrinth:yungs-cave-biomes:1.20.1-Fabric-2.0.2")
+    compileOnly("maven.modrinth:yungs-api:1.20-Fabric-4.0.6")
+    compileOnly("maven.modrinth:yungs-cave-biomes:1.20.1-Fabric-2.0.2")
 
     compileOnly("maven.modrinth:villagersplus:3.1-forge")
 
@@ -200,12 +191,12 @@ dependencies {
     compileOnly("maven.modrinth:quark-oddities:1.20.1-forge")
     compileOnly("maven.modrinth:biome-makeover:fabric-1.20.1-1.11.4")
 
-    modImplementation("maven.modrinth:dye-depot:1.0.3-fabric")
+    compileOnly("maven.modrinth:dye-depot:1.0.3-fabric")
     compileOnly("maven.modrinth:dye-the-world:1.1.2-forge")
 
     // jei & jade
-    modImplementation("maven.modrinth:jade:11.12.3+fabric")
-//    modRuntimeOnly("mezz.jei:jei-1.20.1-fabric:15.20.0.106")
+    modImplementation("maven.modrinth:jade:15.9.3+fabric")
+    modRuntimeOnly("mezz.jei:jei-1.21.1-fabric:19.21.1.248")
 }
 
 tasks {
@@ -241,7 +232,9 @@ tasks {
     }
 
     compileKotlin {
-        kotlinOptions.jvmTarget = "17"
+        compilerOptions {
+            jvmTarget = JvmTarget.JVM_21
+        }
     }
 }
 
