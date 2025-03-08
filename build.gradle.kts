@@ -50,6 +50,11 @@ repositories {
     }
 
     maven {
+        name = "TerraformersMC"
+        url = uri("https://maven.terraformersmc.com/")
+    }
+
+    maven {
         name = "GeckoLib"
         url = uri("https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/")
         content {
@@ -124,6 +129,7 @@ dependencies {
     modImplementation("maven.modrinth:resourceful-config:2.1.3-fabric")
     modImplementation("maven.modrinth:resourceful-lib:2.1.29-fabric")
     modImplementation("maven.modrinth:terrablender:3.0.1.7-fabric")
+    modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:7.0.0-beta.1")
 
     // abnormals mods
     compileOnly("maven.modrinth:abnormals-delight:5.0.0-forge")
@@ -141,7 +147,7 @@ dependencies {
     compileOnly("maven.modrinth:upgrade-aquatic:6.0.1-forge")
 
     // supplementaries
-    compileOnly("maven.modrinth:supplementaries:1.20-3.1.20-fabric")
+    compileOnly("maven.modrinth:supplementaries:1.20-3.1.16-fabric")
     compileOnly("maven.modrinth:amendments:1.20-1.2.19-fabric")
     compileOnly("maven.modrinth:supplementaries-squared:1.20-1.1.18-fabric")
 
@@ -159,7 +165,14 @@ dependencies {
     modImplementation("maven.modrinth:creeper-overhaul:3.0.2-fabric")
 
     // fabric-exclusive
-    modImplementation("maven.modrinth:hybrid-aquatic:1.20.1-1.4.0")
+    modImplementation("maven.modrinth:hybrid-aquatic:1.4.1-1.20.1")
+
+    modImplementation("maven.modrinth:soulfulnether:1.0.0")
+    modImplementation("maven.modrinth:cinderscapes:4.0.10")
+
+    modImplementation("maven.modrinth:gipples-galore:1.0.0")
+    modImplementation("maven.modrinth:nears:2.1.2-1.20.1")
+    modImplementation("maven.modrinth:pearfection:1.1.1")
 
     // misc
     modImplementation("maven.modrinth:galosphere:1.20.1-1.4.1-fabric")
@@ -173,19 +186,19 @@ dependencies {
 
     compileOnly("maven.modrinth:wetland-whimsy:1.1.7-1.20.1")
 
-    compileOnly("maven.modrinth:friends-and-foes:fabric-mc1.20.1-3.0.7")
+    modImplementation("maven.modrinth:friends-and-foes:fabric-mc1.20.1-3.0.7")
 
     modImplementation("maven.modrinth:yungs-api:1.20-Fabric-4.0.6")
     modImplementation("maven.modrinth:yungs-cave-biomes:1.20.1-Fabric-2.0.2")
 
-    modImplementation("maven.modrinth:villagersplus:3.1-forge")
+    compileOnly("maven.modrinth:villagersplus:3.1-forge")
 
     compileOnly("maven.modrinth:immersive-weathering:1.20.1-2.0.2-forge")
 
     compileOnly("maven.modrinth:zeta:1.20.1-1.0-24-forge")
     compileOnly("maven.modrinth:quark:1.20.1-4.0-460-forge")
     compileOnly("maven.modrinth:quark-oddities:1.20.1-forge")
-    compileOnly("maven.modrinth:biome-makeover:forge-1.20.1-1.11.0")
+    compileOnly("maven.modrinth:biome-makeover:fabric-1.20.1-1.11.4")
 
     modImplementation("maven.modrinth:dye-depot:1.0.3-fabric")
     compileOnly("maven.modrinth:dye-the-world:1.1.2-forge")
