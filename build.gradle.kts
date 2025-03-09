@@ -152,7 +152,14 @@ dependencies {
     implementation("maven.modrinth:creeper-overhaul:4.0.6-neoforge")
 
     // fabric-exclusive
-    // compileOnly("maven.modrinth:hybrid-aquatic:1.20.1-1.4.0")
+    compileOnly("maven.modrinth:hybrid-aquatic:1.4.1-1.20.1")
+
+    compileOnly("maven.modrinth:soulfulnether:1.0.0")
+    compileOnly("maven.modrinth:cinderscapes:4.0.10")
+
+    compileOnly("maven.modrinth:gipples-galore:1.0.0")
+    compileOnly("maven.modrinth:nears:2.1.2-1.20.1")
+    compileOnly("maven.modrinth:pearfection:1.1.1")
 
     // misc
     compileOnly("maven.modrinth:galosphere:1.20.1-1.4.1-forge")
@@ -164,7 +171,7 @@ dependencies {
 
     compileOnly("maven.modrinth:sullysmod:3.2.1-beta")
 
-    implementation("maven.modrinth:wetland-whimsy:0.6")
+    implementation("maven.modrinth:wetland-whimsy:1.0-1.21.1")
 
     implementation("maven.modrinth:friends-and-foes-forge:neoforge-mc1.21.1-3.0.7")
 
