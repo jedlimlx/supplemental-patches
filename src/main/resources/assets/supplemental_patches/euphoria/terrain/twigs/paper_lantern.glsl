@@ -1,8 +1,9 @@
 if (color.r / color.b > 1.9) {
     #include "/lib/materials/specificMaterials/planks/oakPlanks.glsl"
+    lmCoordM.x *= 0.88;
 } else {
     vec2 bpos = floor(playerPos.xz + cameraPosition.xz + 0.5)
-               + floor(playerPos.y + cameraPosition.y + 0.5);
+    + floor(playerPos.y + cameraPosition.y + 0.5);
     vec2 flickerNoise = texture2D(noisetex, vec2(frameTimeCounter * 0.015 + bpos.r * 0.1)).rb;
 
     noSmoothLighting = true;
@@ -11,11 +12,9 @@ if (color.r / color.b > 1.9) {
     emission = 0.4 * (color.r + color.b + color.g);
 
     // motion of candle within lantern
-    // TODO find a way to enable more movement without buggy graphics
-    if (NdotU < 0.1) emission /= (1 + sqrt2(
-        pow2(signMidCoordPos.x - 0.02 * sin(flickerNoise.g * 5.0)) +
-        pow2(signMidCoordPos.y - 0.02 * sin(flickerNoise.r * 5.0))
-    ));
+    vec3 fractPos = fract(playerPos.xyz + cameraPosition.xyz) - 0.5;
+    if (abs(NdotU) < 0.1 && max(abs(fractPos.x), abs(fractPos.z)) > 0.1)
+        emission /= (1 + length(signMidCoordPos - 0.05 * sin(flickerNoise.gr * 5.0)));
 
     // appearance of flickering
     emission *= mix(1.0, min1(max(flickerNoise.r, flickerNoise.g) * 1.7), pow2(7 * 0.1));

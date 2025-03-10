@@ -2,7 +2,9 @@
   "name": "silver_ore",
   "glsl": "silver_ore.glsl",
   "mat0": [
-    "oreganized:silver_ore",
+    "oreganized:silver_ore"
+  ],
+  "mat2": [
     "oreganized:deepslate_silver_ore"
   ],
   "color": "supplemental_patches:oreganized/silver_ore",

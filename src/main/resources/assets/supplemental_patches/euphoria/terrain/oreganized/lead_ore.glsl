@@ -14,5 +14,9 @@ if (abs(color.b - color.r) > 0.04) {  // Raw Lead Part
         emission *= GLOWING_ORE_MULT;
     #endif
 } else {  // Stone Part
-    #include "/lib/materials/specificMaterials/terrain/stone.glsl"
+    if (mat % 4 == 0) {
+        #include "/lib/materials/specificMaterials/terrain/stone.glsl"
+    } else {
+        #include "/lib/materials/specificMaterials/terrain/deepslate.glsl"
+    }
 }

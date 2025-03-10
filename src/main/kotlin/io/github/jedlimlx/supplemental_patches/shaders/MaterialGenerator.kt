@@ -676,7 +676,7 @@ fun generateWavingCode(directory: Path) {
                     val conditions = wavingObject.conditions.isNotEmpty()
 
                     val indent = "    ".repeat(depth)
-                    if (conditions) append("$indent#if defined ${wavingObject.conditions.conditions()}\n")
+                    if (conditions) append("$indent#if ${wavingObject.conditions.conditions()}\n")
                     append("${indent}if (mat >= $idx && mat < ${idx + 4}) {\n")
                     append("$indent    const int voxelNumber = ${material.voxelNumber[0]};\n")
                     append(
