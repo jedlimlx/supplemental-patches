@@ -45,11 +45,11 @@ data class ShaderMixin(val path: String, val type: ShaderMixinType, val key: Str
         val newCode = when (type) {
             ShaderMixinType.BEFORE -> modifiedTokens.mapIndexed { idx, it ->
                 if (idx != tokens.size - 1) "$it${code.prependIndent(modifiedIndent[idx])}${indents[idx]}\n" else it
-            }.joinToString(key)
+            }.joinToString(indents[0] + key)
 
             ShaderMixinType.AFTER -> modifiedTokens.mapIndexed { idx, it ->
                 if (idx != 0) "\n${code.prependIndent(modifiedIndent[idx - 1])}$it${indents[idx - 1]}" else it
-            }.joinToString(key)
+            }.joinToString(indents[0] + key)
 
             ShaderMixinType.REPLACE -> file.readText().replace(key, code)
         }

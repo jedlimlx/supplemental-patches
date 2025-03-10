@@ -2,7 +2,9 @@
   "name": "spinel_ore",
   "glsl": "spinel_ore.glsl",
   "mat0": [
-    "caverns_and_chasms:spinel_ore",
+    "caverns_and_chasms:spinel_ore"
+  ],
+  "mat2": [
     "caverns_and_chasms:deepslate_spinel_ore"
   ],
   "color": "supplemental_patches:caverns_and_chasms/spinel_ore",

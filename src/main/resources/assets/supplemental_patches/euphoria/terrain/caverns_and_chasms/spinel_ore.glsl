@@ -14,5 +14,9 @@ if (color.r - color.g > 0.03) {  // Raw Spinel Part
         emission *= GLOWING_ORE_MULT;
     #endif
 } else {  // Stone Part
-    #include "/lib/materials/specificMaterials/terrain/stone.glsl"
+    if (mat % 4 == 0) {
+        #include "/lib/materials/specificMaterials/terrain/stone.glsl"
+    } else {
+        #include "/lib/materials/specificMaterials/terrain/deepslate.glsl"
+    }
 }

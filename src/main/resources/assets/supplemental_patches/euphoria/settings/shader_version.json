@@ -3,7 +3,7 @@
   "name": "SUPPLEMENTAL_VERSION",
   "folder": "about",
   "en_US": {
-    "screen": "Supplemental Patches §d1.0.0",
+    "screen": "Supplemental Patches §d0.1.0-beta",
     "comment": "This is a modification of Euphoria Patches to provide better support for many popular mods."
   },
   "priority": 2

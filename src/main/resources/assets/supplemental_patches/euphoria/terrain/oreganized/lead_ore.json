@@ -2,7 +2,9 @@
   "name": "lead_ore",
   "glsl": "lead_ore.glsl",
   "mat0": [
-    "oreganized:lead_ore",
+    "oreganized:lead_ore"
+  ],
+  "mat2": [
     "oreganized:deepslate_lead_ore"
   ],
   "color": "supplemental_patches:oreganized/lead_ore",
