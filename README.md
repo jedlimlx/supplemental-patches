@@ -4,7 +4,9 @@ Supplemental Patches enables users to create custom shaders for modded blocks, e
 through a resource-pack. The mod by default, comes with a built-in resource pack which supports the following mods either partially or fully:
 
 - Quark
+- Supplementaries
 - Twigs
+- Dye Depot
 - Galosphere
 - Upgrade Aquatic
 - Caverns & Chasms
@@ -13,6 +15,10 @@ through a resource-pack. The mod by default, comes with a built-in resource pack
 - Doom & Gloom
 - Wetland Whimsy
 - Yung's Cave Biomes
+- Friends & Foes
+- Enderman Overhaul
+- Farmer's Delight
+- Pearfection
 
 These additional shaders are patched into Euphoria Patches, if it is installed. The custom patcher supports the customisation the following features of Euphoria Patches:
 
@@ -36,16 +42,19 @@ Q: Will there be backports? <br>
 A: Probably not.
 
 Q: Can you support XXX mod? <br>
-A: All in due time. Alternatively, you could do it yourself. See the documentation for more details.
+A: All in due time. Alternatively, you could do it yourself. See the [documentation](https://github.com/jedlimlx/supplemental-patches/wiki) for more details.
 
 Q: I found a bug. <br>
 A: Please report it to me first, do not bother the developers of Complementary Shaders / Euphoria Patches.
 
-Q: The shaders I added aren't showing.
+Q: The shaders I added aren't showing. <br>
 A: Try reloading the shaderpack, after ensuring that the resource-pack is loaded.
 
-Q: Does this work with Optifine?
+Q: Does this work with Optifine? <br>
 A: No. This only works with Oculus / Iris.
+
+Q: Can I include this my modpack? <br>
+A: Yes, go ahead.
 
 ## Gallery
 

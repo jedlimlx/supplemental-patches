@@ -2,7 +2,9 @@
   "name": "silver_ore",
   "glsl": "silver_ore.glsl",
   "mat0": [
-    "caverns_and_chasms:silver_ore",
+    "caverns_and_chasms:silver_ore"
+  ],
+  "mat2": [
     "caverns_and_chasms:deepslate_silver_ore"
   ],
   "color": "supplemental_patches:oreganized/silver_ore",
