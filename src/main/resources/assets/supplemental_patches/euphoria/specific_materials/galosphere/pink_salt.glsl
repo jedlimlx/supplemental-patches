@@ -1,4 +1,6 @@
-smoothnessG = pow2(color.r) * (0.1 + Noise3D(floor((playerPos + cameraPosition) * 16.0) / 16.0));
+float blockRes = absMidCoordPos.x * atlasSize.x;
+
+smoothnessG = pow2(color.r) * (0.05 + 0.5 * Noise3D(floor((playerPos + cameraPosition) * blockRes) / blockRes));
 smoothnessD = smoothnessG;
 highlightMult = 3.0;
 

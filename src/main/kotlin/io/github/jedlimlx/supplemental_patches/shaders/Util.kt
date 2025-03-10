@@ -130,7 +130,10 @@ fun _computeAllPivots(lst: List<Int>, depth: Int, variable: String, builder: Str
 }
 
 // removing id
-fun removeId(id: String, string: String) = Regex("$id[ \n]").replace(string, "")
+fun removeId(id: String, string: String): String {
+    val newString = Regex("$id( |\\r\\n|\\n|\\r)").replace(string, "")
+    return Regex("\\\\( |\\r\\n|\\n|\\r)\\\\( |\\r\\n|\\n|\\r)( |\\r\\n|\\n|\\r)").replace(newString, "")
+}
 
 fun List<String>.conditions() = this.joinToString(" && ") {
     if (it.matches(Regex("^([A-Za-z0-9]|_)*$"))) "defined $it" else "($it)"
