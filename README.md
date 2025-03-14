@@ -14,11 +14,12 @@ through a resource-pack. The mod by default, comes with a built-in resource pack
 - Oreganized
 - Doom & Gloom
 - Wetland Whimsy
-- Yung's Cave Biomes
+- YUNG's Cave Biomes
 - Friends & Foes
 - Enderman Overhaul
 - Farmer's Delight
 - Pearfection
+- Trailier Tales
 
 These additional shaders are patched into Euphoria Patches, if it is installed. The custom patcher supports the customisation the following features of Euphoria Patches:
 
