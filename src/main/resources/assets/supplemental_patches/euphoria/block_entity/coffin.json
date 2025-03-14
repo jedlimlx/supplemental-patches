@@ -1,0 +1,13 @@
+{
+  "name": "coffin",
+  "glsl": "coffin.glsl",
+  "mat0": [
+    "trailiertales:coffin:state=active",
+    "trailiertales:coffin:state=irritated",
+    "trailiertales:coffin:state=aggressive",
+    "trailiertales:coffin:state=ominous"
+  ],
+  "mat1": [
+    "trailiertales:coffin:state=inactive"
+  ]
+}

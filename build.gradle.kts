@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     kotlin("jvm")
     id("fabric-loom")
@@ -122,6 +124,7 @@ dependencies {
     modImplementation("maven.modrinth:architectury-api:9.2.14+fabric")
     compileOnly("maven.modrinth:blueprint:7.1.1-forge")
     modImplementation("maven.modrinth:cloth-config:11.1.136+fabric")
+    modImplementation("maven.modrinth:frozenlib:1.9.3-mc1.20.1")
     modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.4.9")
     modImplementation("maven.modrinth:midnightlib:1.4.1-fabric")
     modImplementation("maven.modrinth:moonlight:fabric_1.20-2.13.71")
@@ -173,6 +176,9 @@ dependencies {
     modImplementation("maven.modrinth:gipples-galore:1.0.0")
     modImplementation("maven.modrinth:nears:2.1.2-1.20.1")
     modImplementation("maven.modrinth:pearfection:1.1.1")
+
+    compileOnly("maven.modrinth:trailier-tales:1.0.5-mc1.21.1")
+    modImplementation("maven.modrinth:wilder-wild:3.0.7-mc1.20.1")
 
     // misc
     modImplementation("maven.modrinth:galosphere:1.20.1-1.4.1-fabric")
@@ -241,7 +247,9 @@ tasks {
     }
 
     compileKotlin {
-        kotlinOptions.jvmTarget = "17"
+        compilerOptions {
+            jvmTarget = JvmTarget.JVM_17
+        }
     }
 }
 
