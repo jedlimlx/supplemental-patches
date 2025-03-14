@@ -76,6 +76,10 @@ repositories {
             includeGroup("maven.modrinth")
         }
     }
+
+    flatDir {
+        dir("libs")
+    }
 }
 
 loom {
@@ -114,6 +118,7 @@ dependencies {
     modImplementation("maven.modrinth:architectury-api:13.0.5+fabric")
     compileOnly("maven.modrinth:blueprint:7.1.1-forge")
     modImplementation("maven.modrinth:cloth-config:11.1.136+fabric")
+    modImplementation("maven.modrinth:frozenlib:1.9.14-mc1.21.1")
     modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.7.3")
     modImplementation("maven.modrinth:midnightlib:1.6.9+1.21-fabric")
     modImplementation("maven.modrinth:moonlight:fabric_1.21-2.17.32")
@@ -163,7 +168,10 @@ dependencies {
 
     modImplementation("maven.modrinth:gipples-galore:1.1.1")
     modImplementation("maven.modrinth:nears:2.1.2-1.21.1")
-    modImplementation("maven.modrinth:pearfection:1.2.4")
+    modImplementation("maven.modrinth:pearfection:1.3.1-1.21.1")
+
+    modImplementation("maven.modrinth:trailier-tales:1.0.5-mc1.21.1")
+    modImplementation("maven.modrinth:wilder-wild:3.0.11-mc1.21.1")
 
     // misc
     modImplementation("maven.modrinth:galosphere:1.21-1.4.2-fabric")

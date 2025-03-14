@@ -518,14 +518,13 @@ fun generateVoxelsAndBlocklight(directory: Path) {
     )
 
     // Allowing block entities to have voxelization too
-    voxelisationFile.writeText(
-        voxelisationFile.readText().replace(
-            "int voxelData = GetVoxelIDs(mat);",
-            "int voxelData;\n" +
-                    "                if (mat == 0 && blockEntityId != 0) voxelData = GetVoxelIDs(blockEntityId);\n" +
-                    "                else voxelData = GetVoxelIDs(mat);"
-        )
-    )
+//    voxelisationFile.writeText(
+//        voxelisationFile.readText().replace(
+//            "int voxelData = GetVoxelIDs(mat);",
+//            "int voxelData;\n" +
+//                    "                voxelData = GetVoxelIDs(mat);"
+//        )
+//    )
 
     // Inserting code
     voxelisationFile.writeText(
