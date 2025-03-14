@@ -33,7 +33,8 @@ public class DoomAndGloomUniforms {
         if (cameraEntity instanceof LivingEntity) {
             MobEffectInstance fog = ((LivingEntity)cameraEntity).getEffect(galena.doom_and_gloom.index.OEffects.FOG.get());
             if (fog != null) {
-                return 1.0F;
+                if (fog.isInfiniteDuration() || fog.getDuration() > 1.0F) return 1.0F;
+                else return 1 - fog.getDuration() * fog.getDuration();
             } else return 0.0F;
         }
 
