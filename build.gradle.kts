@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -161,6 +162,9 @@ dependencies {
     compileOnly("maven.modrinth:nears:2.1.2-1.20.1")
     compileOnly("maven.modrinth:pearfection:1.1.1")
 
+    compileOnly("maven.modrinth:trailier-tales:1.0.5-mc1.21.1")
+    compileOnly("maven.modrinth:wilder-wild:3.0.7-mc1.20.1")
+
     // misc
     compileOnly("maven.modrinth:galosphere:1.20.1-1.4.1-forge")
     compileOnly("maven.modrinth:spawn-mod:1.0.2-forge")
@@ -230,7 +234,7 @@ tasks.withType<JavaCompile>().configureEach {
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions {
-        jvmTarget = "21"
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_21
     }
 }
