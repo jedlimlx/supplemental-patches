@@ -106,6 +106,7 @@ dependencies {
     // rendering / optimisation mods
     implementation("maven.modrinth:sodium:mc1.21.1-0.6.9-neoforge")
     implementation("maven.modrinth:iris:1.8.8+1.21.1-neoforge")
+    implementation("maven.modrinth:lithium:mc1.21.1-0.15.0-neoforge")
     implementation("maven.modrinth:euphoria-patches:1.5.2-r5.4-neoforge")
 
     // general library mods
@@ -176,6 +177,8 @@ dependencies {
     compileOnly("maven.modrinth:sullysmod:3.2.1-beta")
 
     implementation("maven.modrinth:wetland-whimsy:1.0-1.21.1")
+
+    implementation("maven.modrinth:rodspawn:1.0.2")
 
     implementation("maven.modrinth:friends-and-foes-forge:neoforge-mc1.21.1-3.0.7")
 

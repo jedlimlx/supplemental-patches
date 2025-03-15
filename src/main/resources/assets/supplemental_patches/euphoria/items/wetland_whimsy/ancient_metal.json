@@ -1,0 +1,9 @@
+{
+  "name": "ancient_metal",
+  "glsl": "ancient_metal.glsl",
+  "mat0": [
+    "wetland_whimsy:ancient_coin",
+    "wetland_whimsy:dagger",
+    "wetland_whimsy:rusted_artifact"
+  ]
+}

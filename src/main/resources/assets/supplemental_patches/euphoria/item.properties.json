@@ -1,5 +1,8 @@
 {
   "remove": [
     "quark:(.*?)_crystal_lamp"
+  ],
+  "item.45040": [
+    "wetland_whimsy:boiling_incense"
   ]
 }
