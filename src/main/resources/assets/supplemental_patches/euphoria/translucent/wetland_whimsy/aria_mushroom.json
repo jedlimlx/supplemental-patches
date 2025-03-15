@@ -4,5 +4,6 @@
   "mat0": [
     "wetland_whimsy:aria_mushroom_block"
   ],
-  "color": "supplemental_patches:wetland_whimsy/aria_mushroom"
+  "color": "supplemental_patches:wetland_whimsy/aria_mushroom",
+  "heldLighting": true
 }

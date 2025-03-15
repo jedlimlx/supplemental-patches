@@ -198,6 +198,8 @@ dependencies {
 
     implementation(fg.deobf("maven.modrinth:wetland-whimsy:1.1.7-1.20.1"))
 
+    compileOnly(fg.deobf("maven.modrinth:rodspawn:1.0.2"))
+
     compileOnly(fg.deobf("maven.modrinth:friends-and-foes-forge:forge-mc1.20.1-3.0.6"))
 
     implementation(fg.deobf("maven.modrinth:yungs-api:1.20-Forge-4.0.6"))
