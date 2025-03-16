@@ -76,10 +76,6 @@ repositories {
             includeGroup("maven.modrinth")
         }
     }
-
-    flatDir {
-        dir("libs")
-    }
 }
 
 loom {
@@ -184,6 +180,8 @@ dependencies {
     compileOnly("maven.modrinth:sullysmod:3.2.1-beta")
 
     compileOnly("maven.modrinth:wetland-whimsy:1.1.7-1.20.1")
+
+    compileOnly("maven.modrinth:rodspawn:1.0.2")
 
     modImplementation("maven.modrinth:friends-and-foes:fabric-mc1.21.1-3.0.7")
 
