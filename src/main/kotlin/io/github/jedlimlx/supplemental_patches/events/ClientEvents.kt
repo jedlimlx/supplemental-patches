@@ -1,22 +1,21 @@
 package io.github.jedlimlx.supplemental_patches.events
 
+import io.github.jedlimlx.supplemental_patches.MODID
+import io.github.jedlimlx.supplemental_patches.SupplementalPatches
 import io.github.jedlimlx.supplemental_patches.shaders.installShader
-import net.minecraft.network.chat.Component
+import net.minecraft.client.Minecraft
 import net.neoforged.api.distmarker.Dist
-import net.neoforged.api.distmarker.OnlyIn
 import net.neoforged.bus.api.SubscribeEvent
-import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent
-import net.neoforged.neoforge.common.NeoForge
+import net.neoforged.fml.common.EventBusSubscriber
+import net.neoforged.neoforge.client.event.TextureAtlasStitchedEvent
 
-
-@OnlyIn(Dist.CLIENT)
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = MODID, value = [Dist.CLIENT])
 object ClientEvents {
-    fun init() {
-        NeoForge.EVENT_BUS.register(ClientEvents)
-    }
-
+    // TODO reload shaders after mods are loaded, if possible
     @SubscribeEvent
-    fun playerLoggedInEvent(event: ClientPlayerNetworkEvent.LoggingIn) {
-        event.player.sendSystemMessage(Component.nullToEmpty(installShader()))
+    fun textureStitchedEvent(event: TextureAtlasStitchedEvent) {
+        val textureAtlas = Minecraft.getInstance().particleEngine.textureAtlas
+        if (event.atlas.location() == textureAtlas.location())
+            SupplementalPatches.LOGGER.info(installShader())
     }
 }
