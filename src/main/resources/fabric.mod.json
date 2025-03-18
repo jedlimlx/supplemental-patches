@@ -26,7 +26,8 @@
     "fabric-api": "*",
     "minecraft": "~1.21.1",
     "java": ">=21",
-    "fabric-language-kotlin": ">=${fabric_kotlin_version}"
+    "fabric-language-kotlin": ">=${fabric_kotlin_version}",
+    "iris": ">=1.8.0"
   },
   "suggests": {
     "another-mod": "*"
