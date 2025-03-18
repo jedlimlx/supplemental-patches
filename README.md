@@ -65,6 +65,7 @@ A: Yes, go ahead.
 ![Foxhound (Quark)](images/foxhound.png)
 ![Oretortoise (Quark)](images/oretortoise.png)
 ![Pink Salt Shrine (Galosphere)](images/pink_salt_shrine.png)
+![Lichen Caves (Galosphere)](images/lichen_caves.png)
 ![Confusion Bolt (Savage & Ravage)](images/confusion_bolt.png)
 ![Rune Prison (Savage & Ravage)](images/rune_prison.png)
 ![Fog (Doom & Gloom)](images/doom_and_gloom_fog_1.png)
