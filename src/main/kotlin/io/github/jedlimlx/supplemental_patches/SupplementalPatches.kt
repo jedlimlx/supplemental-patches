@@ -5,12 +5,15 @@ import io.github.jedlimlx.supplemental_patches.shaders.ShaderResourceLoader
 import io.github.jedlimlx.supplemental_patches.shaders.installShader
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientEntityEvents
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
+import net.fabricmc.fabric.api.event.lifecycle.v1.CommonLifecycleEvents
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
 import net.minecraft.client.KeyMapping
 import net.minecraft.client.Minecraft
+import net.minecraft.client.particle.ParticleEngine
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.PackType
@@ -59,9 +62,9 @@ object SupplementalPatches: ClientModInitializer {
                 override fun getFabricId() = ResourceLocation.parse("supplemental_patches:euphoria")
             })
 
-        ClientEntityEvents.ENTITY_LOAD.register(ClientEntityEvents.Load { entity, _ ->
-            if (entity is Player) {
-                entity.sendSystemMessage(Component.nullToEmpty(installShader()))
+        TextureStitchEvent.EVENT.register(TextureStitchEvent {
+            if (it.location() == Minecraft.getInstance().particleEngine.textureAtlas.location()) {
+                LOGGER.info(installShader())
             }
         })
 

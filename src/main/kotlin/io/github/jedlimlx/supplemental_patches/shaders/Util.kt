@@ -1,7 +1,5 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
-import net.fabricmc.loader.api.FabricLoader
-
 const val BLOCK_PROPERTIES = "/shaders/block.properties"
 const val ENTITY_PROPERTIES = "/shaders/entity.properties"
 const val ITEM_PROPERTIES = "/shaders/item.properties"
@@ -140,5 +138,3 @@ fun removeId(id: String, string: String): String {
 fun List<String>.conditions() = this.joinToString(" && ") {
     if (it.matches(Regex("^([A-Za-z0-9]|_)*$"))) "defined $it" else "($it)"
 }
-
-fun checkModLoaded(modid: String) = FabricLoader.getInstance().isModLoaded(modid)

@@ -48,6 +48,56 @@ object ShaderResourceLoader {
         backgroundExecutor: Executor,
         gameExecutor: Executor
     ): CompletableFuture<Void> {
+        // Clear all lists
+        COLOURS.clear()
+        TINTS.clear()
+        COLOUR_INJECTIONS.clear()
+        COLOURS_MAP.clear()
+        TINTS_MAP.clear()
+
+        WAVING_FUNCTIONS.clear()
+        WAVING_MAP.clear()
+
+        DEFERRED_MAP.clear()
+
+        BLOCK_MAP.clear()
+        BLOCK_ADDITIONAL_MAPPING.clear()
+        BLOCK_REGEX_REPLACES.clear()
+
+        ITEM_MAP.clear()
+        ITEM_ADDITIONAL_MAPPING.clear()
+        ITEM_REGEX_REPLACES.clear()
+
+        ENTITY_MAP.clear()
+        ENTITY_ADDITIONAL_MAPPING.clear()
+        ENTITY_REGEX_REPLACES.clear()
+
+        SpecificMaterial.MATERIALS.clear()
+
+        MATERIALS.clear()
+        MATERIALS_MAP.clear()
+
+        ENTITIES.clear()
+        ENTITY_MAP.clear()
+
+        ITEMS.clear()
+        ITEM_MAP.clear()
+
+        TRANSLUCENTS.clear()
+        TRANSLUCENTS_MAP.clear()
+
+        BLOCK_ENTITIES.clear()
+        BLOCK_ENTITIES_MAP.clear()
+
+        PARTICLES.clear()
+
+        FOGS.clear()
+        FOG_FUNCTIONS.clear()
+
+        MIXINS.clear()
+
+        UNIFORMS.clear()
+
         // Loading various colours
         val lst = resourceManager.listResources("euphoria/colors") { it.path.endsWith(".json") }
 
