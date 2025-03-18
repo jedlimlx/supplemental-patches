@@ -27,3 +27,17 @@ mandatory = true
 versionRange = "[1.21,1.22)"
 ordering = "NONE"
 side = "BOTH"
+
+[[dependencies.supplemental_patches]]
+modId = "iris"
+mandatory = true
+versionRange = "[1.8,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.supplemental_patches]]
+modId = "kotlinforforge"
+mandatory = true
+versionRange = "[5.3,)"
+ordering = "NONE"
+side = "BOTH"
