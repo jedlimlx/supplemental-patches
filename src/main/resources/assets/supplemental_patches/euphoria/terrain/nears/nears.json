@@ -1,0 +1,19 @@
+{
+  "name": "nears",
+  "glsl": "nears.glsl",
+  "mat0": [
+    "nears:near_twig_block"
+  ],
+  "mat1": [
+    "nears:near_hang:age=0",
+    "nears:near_hang:age=1",
+    "nears:near_hang_stem:age=0",
+    "nears:near_hang_stem:age=1"
+  ],
+  "mat2": [
+    "nears:near_hang:age=2",
+    "nears:near_hang:age=3",
+    "nears:near_hang_stem:age=2",
+    "nears:near_hang_stem:age=3"
+  ]
+}
