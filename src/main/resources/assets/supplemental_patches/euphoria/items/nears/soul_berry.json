@@ -1,0 +1,11 @@
+{
+  "name": "soul_berry",
+  "glsl": "soul_berry.glsl",
+  "mat0": [
+    "nears:soul_berries",
+    "nears:soulless_pastry"
+  ],
+  "mat1": [
+    "nears:glow_salad"
+  ]
+}

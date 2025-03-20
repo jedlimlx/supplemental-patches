@@ -1,0 +1,38 @@
+{
+  "name": "jelly",
+  "glsl": "jelly.glsl",
+  "mat0": [
+    "gipples_galore:blast_jelly:halved=false",
+    "gipples_galore:bouncy_jelly:halved=false",
+    "gipples_galore:cocoa_jelly:halved=false",
+    "gipples_galore:enchanting_jelly:halved=false",
+    "gipples_galore:floral_jelly:halved=false",
+    "gipples_galore:foamy_jelly:halved=false",
+    "gipples_galore:fruity_jelly:halved=false",
+    "gipples_galore:inky_jelly:halved=false",
+    "gipples_galore:milky_jelly:halved=false",
+    "gipples_galore:muddy_jelly:halved=false",
+    "gipples_galore:plain_jelly:halved=false",
+    "gipples_galore:pricky_jelly:halved=false",
+    "gipples_galore:sweet_jelly:halved=false",
+    "gipples_galore:symphonic_jelly:halved=false",
+    "gipples_galore:warp_jelly:halved=false"
+  ],
+  "mat1": [
+    "gipples_galore:blast_jelly:halved=true",
+    "gipples_galore:bouncy_jelly:halved=true",
+    "gipples_galore:cocoa_jelly:halved=true",
+    "gipples_galore:enchanting_jelly:halved=true",
+    "gipples_galore:floral_jelly:halved=true",
+    "gipples_galore:foamy_jelly:halved=true",
+    "gipples_galore:fruity_jelly:halved=true",
+    "gipples_galore:inky_jelly:halved=true",
+    "gipples_galore:milky_jelly:halved=true",
+    "gipples_galore:muddy_jelly:halved=true",
+    "gipples_galore:plain_jelly:halved=true",
+    "gipples_galore:pricky_jelly:halved=true",
+    "gipples_galore:sweet_jelly:halved=true",
+    "gipples_galore:symphonic_jelly:halved=true",
+    "gipples_galore:warp_jelly:halved=true"
+  ]
+}
