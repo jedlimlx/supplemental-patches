@@ -1,0 +1,7 @@
+{
+  "name": "gelatin",
+  "glsl": "gelatin.glsl",
+  "mat0": [
+    "gipples_galore:gelatin_layer"
+  ]
+}
