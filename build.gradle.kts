@@ -163,8 +163,12 @@ dependencies {
     compileOnly("maven.modrinth:nears:2.1.2-1.20.1")
     compileOnly("maven.modrinth:pearfection:1.1.1")
 
-    compileOnly("maven.modrinth:trailier-tales:1.0.5-mc1.21.1")
-    compileOnly("maven.modrinth:wilder-wild:3.0.7-mc1.20.1")
+    compileOnly("maven.modrinth:trailier-tales:1.1.1-mc1.21.1")
+    compileOnly("maven.modrinth:wilder-wild:4.0.1-mc1.21.1")
+
+    compileOnly("maven.modrinth:thermoo:4.4")
+    compileOnly("maven.modrinth:frostiful:2.2-beta.1")
+    compileOnly("maven.modrinth:scorchful:0.15-beta.1")
 
     // misc
     compileOnly("maven.modrinth:galosphere:1.20.1-1.4.1-forge")
