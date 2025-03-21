@@ -1,0 +1,25 @@
+{
+  "name": "icy_trial_spawner",
+  "glsl": "icy_trial_spawner.glsl",
+  "mat0": [
+    "frostiful:icy_trial_spawner:ominous=false:trial_spawner_state=active",
+    "frostiful:icy_trial_spawner:ominous=false:trial_spawner_state=ejecting_reward",
+    "frostiful:icy_trial_spawner:ominous=false:trial_spawner_state=waiting_for_players",
+    "frostiful:icy_trial_spawner:ominous=false:trial_spawner_state=waiting_for_reward_ejection",
+    "frostiful:icy_vault:ominous=false:vault_state=active",
+    "frostiful:icy_vault:ominous=false:vault_state=ejecting",
+    "frostiful:icy_vault:ominous=false:vault_state=unlocking"
+  ],
+  "mat2": [
+    "frostiful:icy_trial_spawner:ominous=true",
+    "frostiful:icy_vault:ominous=true:vault_state=active",
+    "frostiful:icy_vault:ominous=true:vault_state=ejecting",
+    "frostiful:icy_vault:ominous=true:vault_state=unlocking"
+  ],
+  "color": [
+    "supplemental_patches:frostiful/icy_trial_spawner",
+    null,
+    "supplemental_patches:frostiful/icy_ominous_trial_spawner",
+    null
+  ]
+}

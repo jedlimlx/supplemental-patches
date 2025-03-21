@@ -113,14 +113,17 @@ dependencies {
     // general library mods
     modImplementation("maven.modrinth:architectury-api:13.0.5+fabric")
     compileOnly("maven.modrinth:blueprint:7.1.1-forge")
+    modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-base:6.1.2")
+    modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-entity:6.1.2")
     modImplementation("maven.modrinth:cloth-config:11.1.136+fabric")
-    modImplementation("maven.modrinth:frozenlib:1.9.14-mc1.21.1")
+    modImplementation("maven.modrinth:frozenlib:2.0.1-mc1.21.1")
     modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.7.3")
     modImplementation("maven.modrinth:midnightlib:1.6.9+1.21-fabric")
     modImplementation("maven.modrinth:moonlight:fabric_1.21-2.17.32")
     modImplementation("maven.modrinth:resourceful-config:3.0.9-fabric")
     modImplementation("maven.modrinth:resourceful-lib:3.0.12-fabric")
     modImplementation("maven.modrinth:terrablender:4.1.0.8-fabric")
+    modImplementation("org.ladysnake:satin:2.0.0")
     modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0-alpha.1")
 
     // abnormals mods
@@ -166,8 +169,12 @@ dependencies {
     modImplementation("maven.modrinth:nears:2.1.2-1.21.1")
     modImplementation("maven.modrinth:pearfection:1.3.1-1.21.1")
 
-    modImplementation("maven.modrinth:trailier-tales:1.0.5-mc1.21.1")
-    modImplementation("maven.modrinth:wilder-wild:3.0.11-mc1.21.1")
+    modImplementation("maven.modrinth:trailier-tales:1.1.1-mc1.21.1")
+    modImplementation("maven.modrinth:wilder-wild:4.0.1-mc1.21.1")
+
+    modImplementation("maven.modrinth:thermoo:4.4")
+    modImplementation("maven.modrinth:frostiful:2.2-beta.1")
+    modImplementation("maven.modrinth:scorchful:0.15-beta.1")
 
     // misc
     modImplementation("maven.modrinth:galosphere:1.21-1.4.2-fabric")
