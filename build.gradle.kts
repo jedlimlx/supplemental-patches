@@ -123,6 +123,8 @@ dependencies {
     modImplementation("maven.modrinth:athena-ctm:3.1.2-fabric")
     modImplementation("maven.modrinth:architectury-api:9.2.14+fabric")
     compileOnly("maven.modrinth:blueprint:7.1.1-forge")
+    modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.2.2")
+    modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.2.2")
     modImplementation("maven.modrinth:cloth-config:11.1.136+fabric")
     modImplementation("maven.modrinth:frozenlib:1.9.3-mc1.20.1")
     modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.4.9")
@@ -179,6 +181,10 @@ dependencies {
 
     compileOnly("maven.modrinth:trailier-tales:1.0.5-mc1.21.1")
     modImplementation("maven.modrinth:wilder-wild:3.0.7-mc1.20.1")
+
+    modImplementation("maven.modrinth:thermoo:2.3.3")
+    modImplementation("maven.modrinth:frostiful:1.0.11")
+    modImplementation("maven.modrinth:scorchful:0.6.6")
 
     // misc
     modImplementation("maven.modrinth:galosphere:1.20.1-1.4.1-fabric")

@@ -1,0 +1,9 @@
+{
+  "name": "ice_pane",
+  "glsl": "ice_pane.glsl",
+  "mat0": [
+    "frostiful:ice_pane"
+  ],
+  "color": "minecraft:light_blue",
+  "needs_voxelization": true
+}

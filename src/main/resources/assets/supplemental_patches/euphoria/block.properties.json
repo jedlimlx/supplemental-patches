@@ -157,5 +157,15 @@
     "adjustments:tuff_tile_slab",
     "adjustments:tuff_tile_stairs",
     "adjustments:tuff_tile_wall"
+  ],
+  "block.10872": [
+    "frostiful:icy_vault:ominous=false:vault_state=inactive",
+    "frostiful:icy_vault:ominous=true:vault_state=inactive"
+  ],
+  "block.10873": [
+    "frostiful:icy_trial_spawner:ominous=false:trial_spawner_state=cooldown",
+    "frostiful:icy_trial_spawner:ominous=false:trial_spawner_state=inactive",
+    "frostiful:icy_trial_spawner:ominous=true:trial_spawner_state=cooldown",
+    "frostiful:icy_trial_spawner:ominous=true:trial_spawner_state=inactive"
   ]
 }

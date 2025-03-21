@@ -1,0 +1,8 @@
+{
+  "name": "castle_key",
+  "glsl": "castle_key.glsl",
+  "mat0": [
+    "frostiful:castle_key",
+    "frostiful:ominous_castle_key"
+  ]
+}
