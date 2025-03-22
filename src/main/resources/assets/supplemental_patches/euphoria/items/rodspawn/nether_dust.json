@@ -1,0 +1,8 @@
+{
+  "name": "nether_dust",
+  "glsl": "nether_dust.glsl",
+  "mat0": [
+    "rodspawn:nether_dust",
+    "rodspawn:ominous_nether_dust"
+  ]
+}
