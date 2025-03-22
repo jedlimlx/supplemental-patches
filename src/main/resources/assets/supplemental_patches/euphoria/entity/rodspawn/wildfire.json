@@ -1,0 +1,7 @@
+{
+  "name": "wildfire [rodspawn]",
+  "glsl": "wildfire.glsl",
+  "mat0": [
+    "rodspawn:wildfire"
+  ]
+}

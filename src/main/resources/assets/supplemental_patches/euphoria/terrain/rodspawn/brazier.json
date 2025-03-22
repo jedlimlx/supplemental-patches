@@ -1,0 +1,24 @@
+{
+  "name": "brazier [rodspawn]",
+  "glsl": "brazier.glsl",
+  "mat0": [
+    "rodspawn:brazier:brazier_state=active:ominous=false",
+    "rodspawn:brazier:brazier_state=ejecting:ominous=false",
+    "rodspawn:brazier:brazier_state=unlocking:ominous=false"
+  ],
+  "mat1": [
+    "rodspawn:brazier:brazier_state=inactive:ominous=false",
+    "rodspawn:brazier:brazier_state=inactive:ominous=true"
+  ],
+  "mat2": [
+    "rodspawn:brazier:brazier_state=active:ominous=true",
+    "rodspawn:brazier:brazier_state=ejecting:ominous=true",
+    "rodspawn:brazier:brazier_state=unlocking:ominous=true"
+  ],
+  "color": [
+    "minecraft:fire",
+    null,
+    "minecraft:soul_fire",
+    null
+  ]
+}
