@@ -1,0 +1,7 @@
+{
+  "name": "gilded_nether_bricks",
+  "glsl": "gilded_nether_bricks.glsl",
+  "mat0": [
+    "rodspawn:gilded_nether_bricks"
+  ]
+}

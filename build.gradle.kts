@@ -189,6 +189,7 @@ dependencies {
     compileOnly("maven.modrinth:wetland-whimsy:1.1.7-1.20.1")
 
     compileOnly("maven.modrinth:rodspawn:1.0.2")
+    compileOnly("maven.modrinth:hominid:1.0.1")
 
     modImplementation("maven.modrinth:friends-and-foes:fabric-mc1.21.1-3.0.7")
 
