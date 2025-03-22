@@ -179,6 +179,7 @@ dependencies {
     implementation("maven.modrinth:wetland-whimsy:1.0-1.21.1")
 
     implementation("maven.modrinth:rodspawn:1.0.2")
+    implementation("maven.modrinth:hominid:1.0.1")
 
     implementation("maven.modrinth:friends-and-foes-forge:neoforge-mc1.21.1-3.0.7")
 

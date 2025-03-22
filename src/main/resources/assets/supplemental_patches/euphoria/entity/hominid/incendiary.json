@@ -1,0 +1,7 @@
+{
+  "name": "incendiary",
+  "glsl": "incendiary.glsl",
+  "mat0": [
+    "hominid:incendiary"
+  ]
+}
