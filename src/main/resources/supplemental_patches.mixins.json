@@ -8,6 +8,7 @@
   "client": [
     "IrisDefinesMixin",
     "BiomeUniformsMixin",
+    "SonarWaveRendererMixin",
     "uniforms.DoomAndGloomUniforms",
     "uniforms.OreganizedUniforms",
     "uniforms.SandstormUniforms",
