@@ -1,4 +1,3 @@
-// TODO get sonar to be visible in shader
 vec2 tSize = textureSize(tex, 0);
 ivec2 texCoordScaled = ivec2(texCoord * tSize);
 if (entityId % 4 == 0) {  // thrasher
