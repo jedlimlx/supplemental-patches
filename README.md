@@ -61,6 +61,7 @@ A: Yes, go ahead.
 
 ![Prismarine Coral Crystal (Upgrade Aquatic)](images/prismarine_coral.png)
 ![Elder Prismarine Coral Crystal (Upgrade Aquatic)](images/elder_prismarine_coral.png)
+![Thrasher (Upgrade Aquatic)](images/thrasher.png)
 ![Glimmering Weald (Quark)](images/glimmering_weald.png)
 ![Foxhound (Quark)](images/foxhound.png)
 ![Oretortoise (Quark)](images/oretortoise.png)

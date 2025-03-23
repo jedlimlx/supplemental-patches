@@ -1,0 +1,7 @@
+{
+  "name": "sonar",
+  "glsl": "sonar.glsl",
+  "mat0": [
+    "upgrade_aquatic:sonar_wave"
+  ]
+}
