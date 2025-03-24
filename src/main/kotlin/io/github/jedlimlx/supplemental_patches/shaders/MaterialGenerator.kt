@@ -786,6 +786,19 @@ fun modifyGBuffers(directory: Path) {
         #endif
         gl_Position = gl_ProjectionMatrix * gbufferModelView * position;"""
             )
+            .replace(
+                "flat in vec2 absMidCoordPos;",
+                "flat in vec2 absMidCoordPos;\n" +
+                        "    flat in vec2 midCoord;"
+            )
+            .replace(
+                "#include \"/lib/materials/materialHandling/blockEntityMaterials.glsl\"",
+                "#include \"/lib/materials/materialHandling/blockEntityMaterials.glsl\"\n" +
+                "\n" +
+                "        #ifdef IS_IRIS\n" +
+                "            #include \"/lib/materials/materialHandling/irisMaterials.glsl\"\n" +
+                "        #endif"
+            )
     )
 
     file = File(directory.absolutePathString() + SHADOW_COMP_DIRECTORY)
@@ -793,5 +806,36 @@ fun modifyGBuffers(directory: Path) {
         file.readText().replace(
             "specialTintColor[min(voxel - 200u, specialTintColor.length() - 1u)]", "GetSpecialTintColor(voxel)"
         ).replace("200u", "${TRANSLUCENT_VOXEL_INITIAL_ID}u")
+    )
+
+    file = File(directory.absolutePathString() + IRIS_MATERIALS_PATH)
+    file.writeText(
+        file.readText().replace(
+            "#include \"/lib/materials/materialHandling/terrainMaterials.glsl\"",
+            "#ifdef DISTANT_LIGHT_BOKEH\n" +
+            "        #undef DISTANT_LIGHT_BOKEH\n" +
+            "        #include \"/lib/materials/materialHandling/terrainMaterials.glsl\"\n" +
+            "        #define DISTANT_LIGHT_BOKEH\n" +
+            "    #else\n" +
+            "        #include \"/lib/materials/materialHandling/terrainMaterials.glsl\"\n" +
+            "    #endif"
+        )
+        .replace("int subsurfaceMode;", "")
+        .replace(
+            "bool noDirectionalShading, noVanillaAO, centerShadowBias;",
+            "#if defined GBUFFERS_ENTITIES || defined GBUFFERS_HAND\n" +
+            "    int subsurfaceMode;\n" +
+            "    bool noDirectionalShading;\n" +
+            "#endif\n" +
+            "\n" +
+            "#if defined GBUFFERS_BLOCK\n" +
+            "    float skyLightCheck = 0.0;\n" +
+            "    float overlayNoiseEmission;\n" +
+            "    vec3 maRecolor;\n" +
+            "    bool noGeneratedNormals;\n" +
+            "#endif\n" +
+            "\n" +
+            "bool noVanillaAO, centerShadowBias;"
+        )
     )
 }
