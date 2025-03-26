@@ -1,0 +1,33 @@
+{
+  "name": "poise_wood",
+  "glsl": "poise_wood.glsl",
+  "mat0": [
+    "endergetic:poise_planks",
+    "endergetic:poise_boards",
+    "endergetic:stripped_poise_stem",
+    "endergetic:stripped_poise_wood",
+    "endergetic:poise_bookshelf",
+    "endergetic:poise_chiseled_bookshelf",
+    "endergetic:poise_beehive",
+    "abnormals_delight:poise_cabinet"
+  ],
+  "mat1": [
+    "endergetic:poise_fence",
+    "endergetic:poise_fence_gate:powered=false",
+    "endergetic:poise_button:powered=false",
+    "endergetic:poise_pressure_plate:powered=false",
+    "endergetic:poise_planks_slab",
+    "endergetic:poise_planks_stairs",
+    "endergetic:poise_trapdoor:powered=false",
+    "endergetic:poise_ladder",
+    "endergetic:poise_sign",
+    "endergetic:poise_wall_sign",
+    "endergetic:poise_wall_hanging_sign"
+  ],
+  "mat3": [
+    "endergetic:poise_fence_gate:powered=true",
+    "endergetic:poise_button:powered=true",
+    "endergetic:poise_pressure_plate:powered=true",
+    "endergetic:poise_trapdoor:powered=true"
+  ]
+}

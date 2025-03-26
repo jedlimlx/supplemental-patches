@@ -243,6 +243,7 @@ object ShaderResourceLoader {
                 lst.forEach { (loc, _) ->
                     val tokens = loc.path.replace("$type/", "").split("/")
                     val path = tokens.subList(0, tokens.size - 1).joinToString("/")
+                    LOGGER.info(loc)
                     val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
                     val builder = ShaderBuilder(
                         name = json["name"].asString ?: throw IllegalArgumentException("Name of material not specified"),
