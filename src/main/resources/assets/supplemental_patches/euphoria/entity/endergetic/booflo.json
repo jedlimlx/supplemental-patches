@@ -1,0 +1,13 @@
+{
+  "name": "booflo",
+  "glsl": "booflo.glsl",
+  "mat0": [
+    "endergetic:booflo"
+  ],
+  "mat1": [
+    "endergetic:booflo_adolescent"
+  ],
+  "mat2": [
+    "endergetic:booflo_baby"
+  ]
+}

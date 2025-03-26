@@ -1,0 +1,8 @@
+{
+  "name": "poise_cluster",
+  "glsl": "poise_cluster.glsl",
+  "mat0": [
+    "endergetic:poise_cluster"
+  ],
+  "tint": "supplemental_patches:endergetic/poise_cluster"
+}

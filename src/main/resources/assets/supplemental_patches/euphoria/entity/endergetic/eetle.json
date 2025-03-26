@@ -1,0 +1,10 @@
+{
+  "name": "eetle",
+  "glsl": "eetle.glsl",
+  "mat0": [
+    "endergetic:brood_eetle",
+    "endergetic:charger_eetle",
+    "endergetic:glider_eetle",
+    "endergetic:leetle"
+  ]
+}
