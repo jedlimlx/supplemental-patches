@@ -9,6 +9,7 @@
     "IrisDefinesMixin",
     "BiomeUniformsMixin",
     "SonarWaveRendererMixin",
+    "EERenderTypesMixin",
     "uniforms.DoomAndGloomUniforms",
     "uniforms.OreganizedUniforms",
     "uniforms.SandstormUniforms",

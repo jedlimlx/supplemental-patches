@@ -1,0 +1,10 @@
+{
+  "name": "poise_door",
+  "glsl": "poise_door.glsl",
+  "mat1": [
+    "endergetic:poise_door:powered=false"
+  ],
+  "mat3": [
+    "endergetic:poise_door:powered=true"
+  ]
+}

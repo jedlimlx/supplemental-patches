@@ -1,0 +1,22 @@
+{
+  "name": "mystical_obsidian",
+  "glsl": "mystical_obsidian.glsl",
+  "mat0": [
+    "endergetic:mystical_obsidian",
+    "endergetic:mystical_obsidian_activation_rune",
+    "endergetic:mystical_obsidian_rune",
+    "endergetic:crystal_holder"
+  ],
+  "mat1": [
+    "endergetic:mystical_obsidian_wall"
+  ],
+  "mat2": [
+    "endergetic:activated_mystical_obsidian_activation_rune"
+  ],
+  "color": [
+    null,
+    null,
+    "minecraft:crying_obsidian",
+    null
+  ]
+}

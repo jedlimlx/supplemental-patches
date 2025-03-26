@@ -1,0 +1,7 @@
+{
+  "name": "bolloom_bud",
+  "glsl": "bolloom_bud.glsl",
+  "mat0": [
+    "endergetic:bolloom_bud"
+  ]
+}
