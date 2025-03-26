@@ -6,8 +6,8 @@
   "refmap": "supplemental_patches.refmap.json",
   "plugin": "io.github.jedlimlx.supplemental_patches.mixins.SupplementalPatchesMixinPlugin",
   "client": [
-    "BiomeUniformsMixin",
     "IrisDefinesMixin",
+    "BiomeUniformsMixin",
     "TextureAtlasMixin",
     "biomes.AtmosphericMixin",
     "biomes.AutumnityMixin",

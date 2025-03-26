@@ -1,0 +1,9 @@
+{
+  "name": "acidian_lantern",
+  "glsl": "acidian_lantern.glsl",
+  "mat0": [
+    "endergetic:acidian_lantern"
+  ],
+  "color": "supplemental_patches:endergetic/ender_fire",
+  "held_lighting": true
+}

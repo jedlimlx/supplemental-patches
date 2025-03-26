@@ -1,0 +1,35 @@
+{
+  "name": "eumus",
+  "glsl": "eumus.glsl",
+  "mat0": [
+    "endergetic:eumus",
+    "endergetic:eumus_poismoss",
+    "endergetic:eumus_poismoss_path",
+    "endergetic:poismoss",
+    "endergetic:poismoss_path"
+  ],
+  "mat1": [
+    "endergetic:poise_fence",
+    "endergetic:poise_fence_gate:powered=false",
+    "endergetic:poise_button:powered=false",
+    "endergetic:poise_pressure_plate:powered=false",
+    "endergetic:poise_planks_slab",
+    "endergetic:poise_planks_stairs",
+    "endergetic:poise_trapdoor:powered=false",
+    "endergetic:poise_ladder",
+    "endergetic:poise_sign",
+    "endergetic:poise_wall_sign",
+    "endergetic:poise_wall_hanging_sign"
+  ],
+  "mat2": [
+    "endergetic:eumus_bricks",
+    "endergetic:cracked_eumus_bricks",
+    "endergetic:eumus_bricks",
+    "endergetic:chiseled_eumus_bricks"
+  ],
+  "mat3": [
+    "endergetic:eumus_brick_stairs",
+    "endergetic:eumus_brick_slab",
+    "endergetic:eumus_brick_wall"
+  ]
+}

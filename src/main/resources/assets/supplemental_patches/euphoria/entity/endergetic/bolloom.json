@@ -1,0 +1,10 @@
+{
+  "name": "bolloom",
+  "glsl": "bolloom.glsl",
+  "mat0": [
+    "endergetic:bolloom_balloon"
+  ],
+  "mat2": [
+    "endergetic:bolloom_fruit"
+  ]
+}
