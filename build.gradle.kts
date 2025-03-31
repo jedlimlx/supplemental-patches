@@ -116,7 +116,7 @@ dependencies {
     modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-base:6.1.2")
     modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-entity:6.1.2")
     modImplementation("maven.modrinth:cloth-config:11.1.136+fabric")
-    modImplementation("maven.modrinth:frozenlib:2.0.1-mc1.21.1")
+    modImplementation("maven.modrinth:frozenlib:2.0.2-mc1.21.1")
     modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.7.3")
     modImplementation("maven.modrinth:midnightlib:1.6.9+1.21-fabric")
     modImplementation("maven.modrinth:moonlight:fabric_1.21-2.17.32")
@@ -169,8 +169,8 @@ dependencies {
     modImplementation("maven.modrinth:nears:2.1.2-1.21.1")
     modImplementation("maven.modrinth:pearfection:1.3.1-1.21.1")
 
-    modImplementation("maven.modrinth:trailier-tales:1.1.1-mc1.21.1")
-    modImplementation("maven.modrinth:wilder-wild:4.0.1-mc1.21.1")
+    modImplementation("maven.modrinth:trailier-tales:1.1.2-mc1.21.1")
+    modImplementation("maven.modrinth:wilder-wild:4.0.2-mc1.21.1")
 
     modImplementation("maven.modrinth:thermoo:4.4")
     modImplementation("maven.modrinth:frostiful:2.2-beta.1")

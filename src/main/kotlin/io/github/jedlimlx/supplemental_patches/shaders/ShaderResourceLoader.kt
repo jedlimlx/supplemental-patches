@@ -98,6 +98,8 @@ object ShaderResourceLoader {
 
         UNIFORMS.clear()
 
+        ATMOSPHERICS.clear()
+
         // Loading various colours
         val lst = resourceManager.listResources("euphoria/colors") { it.path.endsWith(".json") }
 
@@ -174,7 +176,8 @@ object ShaderResourceLoader {
             loadFiles(backgroundExecutor, resourceManager, "euphoria/atmospherics/fog/fogs", FOGS),
             loadFiles(backgroundExecutor, resourceManager, "euphoria/atmospherics/fog/functions", FOG_FUNCTIONS),
             loadUniforms(backgroundExecutor, resourceManager, "euphoria/uniforms"),
-            loadMixins(backgroundExecutor, resourceManager, "euphoria/mixins")
+            loadMixins(backgroundExecutor, resourceManager, "euphoria/mixins"),
+            loadVolumetricAtmospherics(backgroundExecutor, resourceManager, "euphoria/atmospherics/volumetric")
         ).thenAcceptAsync {
             fun process(json: JsonObject, string: String, map: HashMap<String, ShaderBuilder>, regexReplaces: MutableList<Regex>, additionaMapping: MutableMap<Int, List<String>>) {
                 json.keySet().forEach {
@@ -243,7 +246,6 @@ object ShaderResourceLoader {
                 lst.forEach { (loc, _) ->
                     val tokens = loc.path.replace("$type/", "").split("/")
                     val path = tokens.subList(0, tokens.size - 1).joinToString("/")
-                    LOGGER.info(loc)
                     val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
                     val builder = ShaderBuilder(
                         name = json["name"].asString ?: throw IllegalArgumentException("Name of material not specified"),
@@ -467,6 +469,44 @@ object ShaderResourceLoader {
                                 "$path${if (path.isEmpty()) "" else "/"}" +
                                     (json["code"].asString ?: throw IllegalArgumentException(".glsl file not specified."))
                             ] ?: throw FileNotFoundException("$path/${json["code"].asString} not found!")
+                        )
+                    )
+                }
+            }, executor
+        ).thenAcceptAsync {}
+    }
+
+    fun loadVolumetricAtmospherics(
+        executor: Executor, resourceManager: ResourceManager, type: String
+    ): CompletableFuture<Void> {
+        return CompletableFuture.supplyAsync (
+            {
+                resourceManager.listResources(type) { it.path.endsWith(".glsl") }.map { (loc, _) ->
+                    loc.path.replace("$type/", "") to getFileContents(loc, resourceManager)
+                }.toMap()
+            }, executor
+        ).thenAcceptAsync(
+            {
+                val lst = resourceManager.listResources(type) { it.path.endsWith(".json") }
+
+                LOGGER.info("Loading ${lst.entries.size} volumetric atmospherics...")
+                lst.forEach { (loc, _) ->
+                    val tokens = loc.path.replace("$type/", "").split("/")
+                    val path = tokens.subList(0, tokens.size - 1).joinToString("/")
+                    val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
+
+                    ATMOSPHERICS.add(
+                        Atmospherics(
+                            libPath = json["lib"].asJsonObject["name"].asString ?: throw IllegalArgumentException("Path to place library file is not specified"),
+                            libCode = it[
+                                "$path${if (path.isEmpty()) "" else "/"}" +
+                                        (json["lib"].asJsonObject["glsl"].asString ?: throw IllegalArgumentException(".glsl file not specified."))
+                            ] ?: throw FileNotFoundException("$path/${json["lib"].asJsonObject["glsl"].asString} not found!"),
+                            mainCode = it[
+                                "$path${if (path.isEmpty()) "" else "/"}" +
+                                        (json["main"].asString ?: throw IllegalArgumentException(".glsl file not specified."))
+                            ] ?: throw FileNotFoundException("$path/${json["main"].asString} not found!"),
+                            conditions = json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
                         )
                     )
                 }

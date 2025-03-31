@@ -51,7 +51,14 @@ data class ShaderMixin(val path: String, val type: ShaderMixinType, val key: Str
                 if (idx != 0) "\n${code.prependIndent(modifiedIndent[idx - 1])}$it${indents[idx - 1]}" else it
             }.joinToString(indents[0] + key)
 
-            ShaderMixinType.REPLACE -> file.readText().replace(key, code)
+            ShaderMixinType.REPLACE -> {
+                val temp = tokens[0].lines().last()
+                val useIndent = temp.count { it == ' ' } == temp.length
+                file.readText().replace(
+                    if (useIndent) indents[0] + key else key,
+                    if (useIndent) code.prependIndent(indents[0]) else code
+                )
+            }
         }
 
         file.writeText(newCode)

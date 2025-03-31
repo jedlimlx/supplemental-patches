@@ -25,13 +25,6 @@ fun installShader(): String {
     LOGGER.info("Duplicated shader installation to $newInstallation.")
 
     // load the shaders
-    MaterialShaders
-    BlockEntityShaders
-    TranslucentShaders
-    EntityShaders
-    ItemShaders
-    ParticleShaders
-
     modifyBlockProperties(newInstallation)
     modifyEntityProperties(newInstallation)
     modifyItemProperties(newInstallation)
@@ -50,6 +43,7 @@ fun installShader(): String {
     generateUniforms(newInstallation)
     generateFog(newInstallation)
     generateShaderMixins(newInstallation)
+    generateAtmospherics(newInstallation)
     modifyGBuffers(newInstallation)
 
     return "Shaders successfully installed at $newInstallation."

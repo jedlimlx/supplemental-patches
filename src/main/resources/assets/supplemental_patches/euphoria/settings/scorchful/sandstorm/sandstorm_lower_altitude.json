@@ -1,0 +1,13 @@
+{
+  "type": "setting",
+  "name": "SCORCHFUL_SANDSTORM_LOWER_ALT",
+  "default": 64,
+  "slider": true,
+  "values": [
+    0, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80
+  ],
+  "en_US": {
+    "option": "Sandstorm Lower Altitude",
+    "comment": "Determines the lower starting point of the volumetric sandstorm. The fog won't appear below this altitude, and it will look the most bright right above this altitude.\n"
+  }
+}

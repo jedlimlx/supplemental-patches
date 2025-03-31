@@ -1,0 +1,1 @@
+nmscWeatherM + nmscRainM + nmscSnowM + nmscDryM + sandstormM
