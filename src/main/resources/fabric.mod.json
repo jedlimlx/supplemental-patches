@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "supplemental_patches",
-  "version": "0.1.0-beta",
+  "version": "${mod_version}",
   "name": "Supplemental Patches",
   "description": "Additional patches to Euphoria Patches providing better support for many modded blocks from popular mods.",
   "authors": [
