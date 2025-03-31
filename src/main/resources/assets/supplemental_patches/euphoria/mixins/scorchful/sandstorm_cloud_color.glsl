@@ -1,0 +1,1 @@
+mix(nightMiddleSkyColor, dayMiddleSkyColor, sunFactor) + 2.0 * sandstormM * rainFactor
