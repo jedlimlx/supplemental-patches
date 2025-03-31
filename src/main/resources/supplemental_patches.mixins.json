@@ -18,7 +18,7 @@
     "biomes.SpawnMixin",
     "biomes.WetlandWhimsyMixin",
     "biomes.YungsCaveBiomesMixin",
-    "uniforms.SandstormUniforms"
+    "uniforms.YUNGSandstormUniforms"
   ],
   "injectors": {
     "defaultRequire": 1

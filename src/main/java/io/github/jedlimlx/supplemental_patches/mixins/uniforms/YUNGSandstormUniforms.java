@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Restriction(require = @Condition("yungscavebiomes"))
 @Mixin(CommonUniforms.class)
-public class SandstormUniforms {
+public class YUNGSandstormUniforms {
     @Inject(
         method = "generalCommonUniforms(Lnet/irisshaders/iris/gl/uniform/UniformHolder;Lnet/irisshaders/iris/uniforms/FrameUpdateNotifier;Lnet/irisshaders/iris/shaderpack/properties/PackDirectives;)V",
         at = @At("TAIL"),
@@ -28,8 +28,8 @@ public class SandstormUniforms {
     )
     private static void generalCommonUniforms(UniformHolder uniforms, FrameUpdateNotifier updateNotifier, PackDirectives directives, CallbackInfo ci) {
         uniforms
-                .uniform1f(UniformUpdateFrequency.PER_FRAME, "sandstorm", SandstormUniforms::getSandstorm)
-                .uniform3f(UniformUpdateFrequency.PER_FRAME, "sandstormWindDirection", SandstormUniforms::getSandstormWindDirection);
+                .uniform1f(UniformUpdateFrequency.PER_FRAME, "yungSandstorm", YUNGSandstormUniforms::getSandstorm)
+                .uniform3f(UniformUpdateFrequency.PER_FRAME, "yungSandstormWindDirection", YUNGSandstormUniforms::getSandstormWindDirection);
     }
 
     private static float getSandstorm() {

@@ -800,6 +800,10 @@ fun modifyGBuffers(directory: Path) {
                 "            #include \"/lib/materials/materialHandling/irisMaterials.glsl\"\n" +
                 "        #endif"
             )
+            .replace(
+                "defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || SHOCKWAVE > 0",
+                "defined IS_IRIS || defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || SHOCKWAVE > 0"
+            )
     )
 
     file = File(directory.absolutePathString() + SHADOW_COMP_DIRECTORY)

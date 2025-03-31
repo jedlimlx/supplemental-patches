@@ -1,0 +1,9 @@
+{
+  "type": "directory",
+  "name": "SCORCHFUL_SANDSTORM",
+  "folder": "sandstorm",
+  "en_US": {
+    "screen": "Sandstorm",
+    "comment": "Settings regarding the sandstorm effect from Scorchful."
+  }
+}

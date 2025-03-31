@@ -1,3 +1,3 @@
 #ifdef MOD_YUNGSCAVEBIOMES
-    bloomFogMult += SANDSTORM_FOG_BLOOM * sandstormFactor * 10;
+    bloomFogMult += YUNGS_SANDSTORM_FOG_BLOOM * yungSandstormFactor * 10;
 #endif

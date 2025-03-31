@@ -1,0 +1,1 @@
+vec3(0.07, 0.14, 0.24) * (1.0 - 0.5 * rainFactorM) + skyColor + 0.4 * rainFactorM * sandstormM

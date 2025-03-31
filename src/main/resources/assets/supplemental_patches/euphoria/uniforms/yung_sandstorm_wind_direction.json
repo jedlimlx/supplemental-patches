@@ -1,6 +1,6 @@
 {
   "type": "vec3",
-  "name": "sandstormWindDirection",
+  "name": "yungSandstormWindDirection",
   "conditions": [
     "MOD_YUNGSCAVEBIOMES"
   ]

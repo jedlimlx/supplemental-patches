@@ -1,6 +1,6 @@
 {
   "type": "setting",
-  "name": "SANDSTORM_WAVING_INTENSITY",
+  "name": "YUNGS_SANDSTORM_WAVING_INTENSITY",
   "default": 0.30,
   "slider": true,
   "values": [

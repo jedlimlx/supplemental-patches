@@ -159,12 +159,12 @@ dependencies {
     compileOnly("maven.modrinth:soulfulnether:1.0.0")
     compileOnly("maven.modrinth:cinderscapes:4.0.10")
 
-    compileOnly("maven.modrinth:gipples-galore:1.0.0")
-    compileOnly("maven.modrinth:nears:2.1.2-1.20.1")
-    compileOnly("maven.modrinth:pearfection:1.1.1")
+    compileOnly("maven.modrinth:gipples-galore:1.1.1")
+    compileOnly("maven.modrinth:nears:2.1.2-1.21.1")
+    compileOnly("maven.modrinth:pearfection:1.3.1-1.21.1")
 
-    compileOnly("maven.modrinth:trailier-tales:1.1.1-mc1.21.1")
-    compileOnly("maven.modrinth:wilder-wild:4.0.1-mc1.21.1")
+    compileOnly("maven.modrinth:trailier-tales:1.1.2-mc1.21.1")
+    compileOnly("maven.modrinth:wilder-wild:4.0.2-mc1.21.1")
 
     compileOnly("maven.modrinth:thermoo:4.4")
     compileOnly("maven.modrinth:frostiful:2.2-beta.1")

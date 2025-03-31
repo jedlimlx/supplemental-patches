@@ -1,0 +1,8 @@
+{
+  "type": "setting",
+  "name": "GLOWING_NEARS",
+  "default": true,
+  "en_US": {
+    "option": "Glowing Nears"
+  }
+}
