@@ -1,6 +1,6 @@
 {
   "type": "setting",
-  "name": "SANDSTORM_FOG_INTENSITY",
+  "name": "YUNGS_SANDSTORM_FOG_INTENSITY",
   "default": 0.150,
   "slider": true,
   "values": [

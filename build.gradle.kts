@@ -179,7 +179,7 @@ dependencies {
     modImplementation("maven.modrinth:nears:2.1.2-1.20.1")
     modImplementation("maven.modrinth:pearfection:1.1.1")
 
-    compileOnly("maven.modrinth:trailier-tales:1.0.5-mc1.21.1")
+    compileOnly("maven.modrinth:trailier-tales:1.1.2-mc1.21.1")
     modImplementation("maven.modrinth:wilder-wild:3.0.7-mc1.20.1")
 
     modImplementation("maven.modrinth:thermoo:2.3.3")

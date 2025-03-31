@@ -1,6 +1,8 @@
-package io.github.jedlimlx.supplemental_patches.mixins;
+package io.github.jedlimlx.supplemental_patches.mixins.uniforms;
 
-import io.github.jedlimlx.supplemental_patches.shaders.BiomeUniformsKt;
+import com.github.thedeathlycow.scorchful.server.Sandstorms;
+import me.fallenbreath.conditionalmixin.api.annotation.Condition;
+import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import net.irisshaders.iris.gl.uniform.UniformHolder;
 import net.irisshaders.iris.gl.uniform.UniformUpdateFrequency;
 import net.irisshaders.iris.uniforms.BiomeUniforms;
@@ -9,15 +11,14 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.function.IntSupplier;
 import java.util.function.ToIntFunction;
 
+@Restriction(require = @Condition("scorchful"))
 @Mixin(value = BiomeUniforms.class, remap = false)
-public class BiomeUniformsMixin {
+public class ScorchfulSandstormUniforms {
     @Shadow
     static IntSupplier playerI(ToIntFunction<LocalPlayer> function) {
         return () -> 0;
@@ -30,8 +31,14 @@ public class BiomeUniformsMixin {
     private static void addBiomeUniforms(UniformHolder uniforms, CallbackInfo ci) {
         uniforms.uniform1i(
             UniformUpdateFrequency.PER_TICK,
-            "moddedBiome",
-            playerI((player) -> BiomeUniformsKt.get_biomeMap().getInt(player.level().getBiome(player.blockPosition()).unwrapKey().orElse(null)))
+            "scorchfulSandstorm",
+            playerI(
+                (player) -> {
+                    if (Sandstorms.hasRegularSandStorms(player.level().getBiome(player.blockPosition()))) return 1;
+                    else if (Sandstorms.hasRedSandStorms(player.level().getBiome(player.blockPosition()))) return 2;
+                    return 0;
+                }
+            )
         );
     }
 }

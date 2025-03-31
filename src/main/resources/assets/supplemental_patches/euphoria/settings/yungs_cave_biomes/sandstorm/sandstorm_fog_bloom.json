@@ -1,6 +1,6 @@
 {
   "type": "setting",
-  "name": "SANDSTORM_FOG_BLOOM",
+  "name": "YUNGS_SANDSTORM_FOG_BLOOM",
   "default": 14.0,
   "slider": true,
   "values": [
