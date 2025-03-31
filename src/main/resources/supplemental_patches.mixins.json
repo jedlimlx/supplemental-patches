@@ -10,9 +10,6 @@
     "BiomeUniformsMixin",
     "SonarWaveRendererMixin",
     "EERenderTypesMixin",
-    "uniforms.DoomAndGloomUniforms",
-    "uniforms.OreganizedUniforms",
-    "uniforms.SandstormUniforms",
     "biomes.AtmosphericMixin",
     "biomes.AutumnityMixin",
     "biomes.EndergeticMixin",
@@ -22,7 +19,10 @@
     "biomes.NeapolitanMixin",
     "biomes.SpawnMixin",
     "biomes.WetlandWhimsyMixin",
-    "biomes.YungsCaveBiomesMixin"
+    "biomes.YungsCaveBiomesMixin",
+    "uniforms.DoomAndGloomUniforms",
+    "uniforms.OreganizedUniforms",
+    "uniforms.YUNGSandstormUniforms"
   ],
   "injectors": {
     "defaultRequire": 1

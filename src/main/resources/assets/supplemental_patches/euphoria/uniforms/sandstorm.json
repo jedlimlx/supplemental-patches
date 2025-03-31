@@ -1,7 +1,0 @@
-{
-  "type": "float",
-  "name": "sandstorm",
-  "conditions": [
-    "MOD_YUNGSCAVEBIOMES"
-  ]
-}

@@ -186,6 +186,10 @@ dependencies {
     compileOnly("maven.modrinth:trailier-tales:1.0.5-mc1.21.1")
     compileOnly("maven.modrinth:wilder-wild:3.0.7-mc1.20.1")
 
+    compileOnly("maven.modrinth:thermoo:2.3.3")
+    compileOnly("maven.modrinth:frostiful:1.0.11")
+    compileOnly("maven.modrinth:scorchful:0.6.3")
+
     // misc
     implementation(fg.deobf("maven.modrinth:galosphere:1.20.1-1.4.1-forge"))
     implementation(fg.deobf("maven.modrinth:spawn-mod:1.0.2-forge"))

@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/colors/skyColors.glsl",
+  "type": "replace",
+  "key": "ndscWeatherM + ndscRainM + ndscSnowM + ndscDryM",
+  "code": "sandstorm_sky_color.glsl"
+}

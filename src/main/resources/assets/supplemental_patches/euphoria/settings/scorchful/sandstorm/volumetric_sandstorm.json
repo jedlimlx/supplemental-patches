@@ -1,0 +1,14 @@
+{
+  "type": "setting",
+  "name": "VOLUMETRIC_SCORCHFUL_SANDSTORM",
+  "values": [0, 1, 2],
+  "default": 0,
+  "priority": 2,
+  "en_US": {
+    "option": "Volumetric Sandstorm §e[*]§r",
+    "comment": "Enables a volumetric fog effect during Scorchful's sandstorms. §c[-]§r This effect can impact performance. §e[*]§r This setting is experimental.",
+    "value.0": "§cDisabled",
+    "value.1": "Low-Quality",
+    "value.2": "High-Quality"
+  }
+}

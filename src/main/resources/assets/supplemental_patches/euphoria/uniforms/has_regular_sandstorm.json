@@ -1,0 +1,8 @@
+{
+  "type": "float",
+  "name": "hasRegularSandstorm",
+  "code": "smooth(104, if(in(scorchfulSandstorm, 1), 1, 0), 20, 10)",
+  "conditions": [
+    "MOD_SCORCHFUL"
+  ]
+}
