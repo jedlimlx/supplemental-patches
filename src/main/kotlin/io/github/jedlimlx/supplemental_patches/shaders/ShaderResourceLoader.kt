@@ -43,8 +43,6 @@ object ShaderResourceLoader {
     fun reload(
         stage: PreparationBarrier,
         resourceManager: ResourceManager,
-        preparationsProfiler: ProfilerFiller,
-        reloadProfiler: ProfilerFiller,
         backgroundExecutor: Executor,
         gameExecutor: Executor
     ): CompletableFuture<Void> {

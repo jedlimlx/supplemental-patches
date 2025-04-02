@@ -24,6 +24,7 @@ import net.minecraft.world.entity.player.Player
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 import org.lwjgl.glfw.GLFW
+import java.util.concurrent.CompletableFuture
 import java.util.concurrent.Executor
 
 
@@ -46,15 +47,11 @@ object SupplementalPatches: ClientModInitializer {
                 override fun reload(
                     preparationBarrier: PreparationBarrier,
                     resourceManager: ResourceManager,
-                    preparationsProfiler: ProfilerFiller,
-                    reloadProfiler: ProfilerFiller,
                     backgroundExecutor: Executor,
                     gameExecutor: Executor
                 ) = ShaderResourceLoader.reload(
                     preparationBarrier,
                     resourceManager,
-                    preparationsProfiler,
-                    reloadProfiler,
                     backgroundExecutor,
                     gameExecutor
                 )
@@ -73,7 +70,7 @@ object SupplementalPatches: ClientModInitializer {
                 KB_REGENERATE_SHADERS.consumeClick()
 
                 val player = Minecraft.getInstance().player ?: break
-                player.sendSystemMessage(Component.nullToEmpty(installShader()))
+                player.displayClientMessage(Component.nullToEmpty(installShader()), false)
             }
         })
     }

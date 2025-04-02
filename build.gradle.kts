@@ -106,25 +106,24 @@ dependencies {
     implementation("org.reflections:reflections:0.10.2")
 
     // rendering / optimisation mods
-    modImplementation("maven.modrinth:sodium:mc1.21.1-0.6.9-fabric")
-    modImplementation("maven.modrinth:iris:1.8.8+1.21.1-fabric")
+    modImplementation("maven.modrinth:sodium:mc1.21.4-0.6.10-fabric")
+    modImplementation("maven.modrinth:iris:1.8.8+1.21.4-fabric")
     modImplementation("maven.modrinth:euphoria-patches:1.5.2-r5.4-fabric")
 
     // general library mods
-    modImplementation("maven.modrinth:architectury-api:13.0.5+fabric")
+    modImplementation("maven.modrinth:architectury-api:15.0.3+fabric")
     compileOnly("maven.modrinth:blueprint:7.1.1-forge")
-    modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-base:6.1.2")
-    modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-entity:6.1.2")
-    modImplementation("maven.modrinth:cloth-config:11.1.136+fabric")
-    modImplementation("maven.modrinth:frozenlib:2.0.2-mc1.21.1")
-    modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.7.3")
-    modImplementation("maven.modrinth:midnightlib:1.6.9+1.21-fabric")
-    modImplementation("maven.modrinth:moonlight:fabric_1.21-2.17.32")
-    modImplementation("maven.modrinth:resourceful-config:3.0.9-fabric")
-    modImplementation("maven.modrinth:resourceful-lib:3.0.12-fabric")
-    modImplementation("maven.modrinth:terrablender:4.1.0.8-fabric")
-    modImplementation("org.ladysnake:satin:2.0.0")
-    modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0-alpha.1")
+    modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-base:6.2.2")
+    modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-entity:6.2.2")
+    modImplementation("maven.modrinth:cloth-config:17.0.144+fabric")
+    modImplementation("maven.modrinth:frozenlib:2.0.3-mc1.21.4")
+    modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.8.4")
+    modImplementation("maven.modrinth:midnightlib:1.7.0+1.21.4-fabric")
+    compileOnly("maven.modrinth:moonlight:fabric_1.21-2.17.32")
+    modImplementation("maven.modrinth:resourceful-config:3.4.3-fabric")
+    modImplementation("maven.modrinth:resourceful-lib:3.4.5-fabric")
+    modImplementation("maven.modrinth:terrablender:4.3.0.2-fabric")
+    modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:13.0.0-beta.1")
 
     // abnormals mods
     compileOnly("maven.modrinth:abnormals-delight:5.0.0-forge")
@@ -163,21 +162,21 @@ dependencies {
     compileOnly("maven.modrinth:hybrid-aquatic:1.4.1-1.20.1")
 
     compileOnly("maven.modrinth:soulfulnether:1.0.0")
-    modImplementation("maven.modrinth:cinderscapes:5.0.2")
+    modImplementation("maven.modrinth:cinderscapes:5.2.1")
 
-    modImplementation("maven.modrinth:gipples-galore:1.1.1")
-    modImplementation("maven.modrinth:nears:2.1.2-1.21.1")
-    modImplementation("maven.modrinth:pearfection:1.3.1-1.21.1")
+    modImplementation("maven.modrinth:gipples-galore:1.1.8-1.21.4")
+    modImplementation("maven.modrinth:nears:2.1.4-1.21.4")
+    modImplementation("maven.modrinth:pearfection:1.2.6-1.21.4")
 
-    modImplementation("maven.modrinth:trailier-tales:1.1.2-mc1.21.1")
-    modImplementation("maven.modrinth:wilder-wild:4.0.2-mc1.21.1")
+    modImplementation("maven.modrinth:trailier-tales:1.1.3-mc1.21.4")
+    modImplementation("maven.modrinth:wilder-wild:4.0.3-mc1.21.4")
 
-    modImplementation("maven.modrinth:thermoo:4.4")
-    modImplementation("maven.modrinth:frostiful:2.2-beta.1")
-    modImplementation("maven.modrinth:scorchful:0.15-beta.1")
+    modImplementation("maven.modrinth:thermoo:5.3")
+    modCompileOnly("maven.modrinth:frostiful:2.2-beta.1")
+    modCompileOnly("maven.modrinth:scorchful:0.15.1+1.21.4")
 
     // misc
-    modImplementation("maven.modrinth:galosphere:1.21-1.4.2-fabric")
+    compileOnly("maven.modrinth:galosphere:1.21-1.4.2-fabric")
     compileOnly("maven.modrinth:spawn-mod:1.0.3-fabric")
     compileOnly("maven.modrinth:twigs:3.1.0-fabric")
 
@@ -191,7 +190,7 @@ dependencies {
     compileOnly("maven.modrinth:rodspawn:1.0.2")
     compileOnly("maven.modrinth:hominid:1.0.1")
 
-    modImplementation("maven.modrinth:friends-and-foes:fabric-mc1.21.1-3.0.7")
+    compileOnly("maven.modrinth:friends-and-foes:fabric-mc1.21.1-3.0.7")
 
     compileOnly("maven.modrinth:yungs-api:1.20-Fabric-4.0.6")
     compileOnly("maven.modrinth:yungs-cave-biomes:1.20.1-Fabric-2.0.2")
@@ -209,8 +208,8 @@ dependencies {
     compileOnly("maven.modrinth:dye-the-world:1.1.2-forge")
 
     // jei & jade
-    modImplementation("maven.modrinth:jade:15.9.3+fabric")
-    modRuntimeOnly("mezz.jei:jei-1.21.1-fabric:19.21.1.248")
+//    modImplementation("maven.modrinth:jade:17.2.2+fabric")
+//    modRuntimeOnly("mezz.jei:jei-1.21.1-fabric:19.21.1.248")
 }
 
 tasks {
