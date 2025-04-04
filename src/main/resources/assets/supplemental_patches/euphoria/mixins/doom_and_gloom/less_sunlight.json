@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/colors/lightAndAmbientColors.glsl",
+  "type": "replace",
+  "key": "mix(clearLightColor, rainLightColor, rainFactor)",
+  "code": "less_sunlight.glsl"
+}
