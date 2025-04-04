@@ -1,0 +1,22 @@
+{
+  "name": "vigil_candle [green, indigo]",
+  "glsl": "vigil_candle.glsl",
+  "mat0": [
+    "doom_and_gloom:green_vigil_candle:lit=true"
+  ],
+  "mat1": [
+    "doom_and_gloom:green_vigil_candle:lit=false"
+  ],
+  "mat2": [
+    "doom_and_gloom:indigo_vigil_candle:lit=true"
+  ],
+  "mat3": [
+    "doom_and_gloom:indigo_vigil_candle:lit=false"
+  ],
+  "color": [
+    "minecraft:green_candle",
+    null,
+    "supplemental_patches:doom_and_gloom/indigo",
+    null
+  ]
+}

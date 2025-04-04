@@ -1,0 +1,22 @@
+{
+  "name": "vigil_candle [forest, ginger]",
+  "glsl": "vigil_candle.glsl",
+  "mat0": [
+    "doom_and_gloom:forest_vigil_candle:lit=true"
+  ],
+  "mat1": [
+    "doom_and_gloom:forest_vigil_candle:lit=false"
+  ],
+  "mat2": [
+    "doom_and_gloom:ginger_vigil_candle:lit=true"
+  ],
+  "mat3": [
+    "doom_and_gloom:ginger_vigil_candle:lit=false"
+  ],
+  "color": [
+    "supplemental_patches:doom_and_gloom/forest",
+    null,
+    "supplemental_patches:doom_and_gloom/ginger",
+    null
+  ]
+}
