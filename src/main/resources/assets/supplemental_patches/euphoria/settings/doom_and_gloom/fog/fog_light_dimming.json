@@ -1,0 +1,13 @@
+{
+  "type": "setting",
+  "name": "FOG_LIGHT_DIMMING",
+  "default": 0.6,
+  "slider": true,
+  "values": [
+    0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0
+  ],
+  "en_US": {
+    "option": "Fog Light Dimming",
+    "comment": "Determines how much skylight will be dimmed by the fog. Lower values mean less skylight."
+  }
+}
