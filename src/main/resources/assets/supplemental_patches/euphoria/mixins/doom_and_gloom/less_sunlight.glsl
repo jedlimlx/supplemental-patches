@@ -1,0 +1,1 @@
+mix(clearLightColor, rainLightColor, rainFactor) * mix(1.0, FOG_LIGHT_DIMMING, doomAndGloomFog)

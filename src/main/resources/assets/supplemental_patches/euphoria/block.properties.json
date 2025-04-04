@@ -6,7 +6,8 @@
     "supplementaries:rope",
     "galosphere:glinted_amethyst_cluster",
     "quark:blackstone_furnace",
-    "oreganized:lead_bulb"
+    "oreganized:lead_bulb",
+    "doom_and_gloom:(.*?)_vigil_candle"
   ],
   "block.10113": [
     "adjustments:deepslate_pillar"

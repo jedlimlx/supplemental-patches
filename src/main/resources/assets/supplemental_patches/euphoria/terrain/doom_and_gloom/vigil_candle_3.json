@@ -1,0 +1,22 @@
+{
+  "name": "vigil_candle [coral, cyan]",
+  "glsl": "vigil_candle.glsl",
+  "mat0": [
+    "doom_and_gloom:coral_vigil_candle:lit=true"
+  ],
+  "mat1": [
+    "doom_and_gloom:coral_vigil_candle:lit=false"
+  ],
+  "mat2": [
+    "doom_and_gloom:cyan_vigil_candle:lit=true"
+  ],
+  "mat3": [
+    "doom_and_gloom:cyan_vigil_candle:lit=false"
+  ],
+  "color": [
+    "supplemental_patches:doom_and_gloom/coral",
+    null,
+    "minecraft:cyan_candle",
+    null
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "holler",
+  "glsl": "holler.glsl",
+  "mat0": [
+    "doom_and_gloom:holler"
+  ]
+}

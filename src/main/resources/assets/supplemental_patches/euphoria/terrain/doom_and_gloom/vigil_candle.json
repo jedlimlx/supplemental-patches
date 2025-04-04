@@ -1,0 +1,34 @@
+{
+  "name": "vigil_candle [normal, amber]",
+  "glsl": "vigil_candle.glsl",
+  "mat0": [
+    "doom_and_gloom:vigil_candle:lit=true",
+    "doom_and_gloom:black_vigil_candle:lit=true",
+    "doom_and_gloom:gray_vigil_candle:lit=true",
+    "doom_and_gloom:light_gray_vigil_candle:lit=true",
+    "doom_and_gloom:white_vigil_candle:lit=true",
+    "doom_and_gloom:brown_vigil_candle:lit=true",
+    "doom_and_gloom:beige_vigil_candle:lit=true"
+  ],
+  "mat1": [
+    "doom_and_gloom:vigil_candle:lit=false",
+    "doom_and_gloom:black_vigil_candle:lit=false",
+    "doom_and_gloom:gray_vigil_candle:lit=false",
+    "doom_and_gloom:light_gray_vigil_candle:lit=false",
+    "doom_and_gloom:white_vigil_candle:lit=false",
+    "doom_and_gloom:brown_vigil_candle:lit=true",
+    "doom_and_gloom:beige_vigil_candle:lit=true"
+  ],
+  "mat2": [
+    "doom_and_gloom:amber_vigil_candle:lit=true"
+  ],
+  "mat3": [
+    "doom_and_gloom:amber_vigil_candle:lit=false"
+  ],
+  "color": [
+    "minecraft:standard_candle",
+    null,
+    "supplemental_patches:doom_and_gloom/amber",
+    null
+  ]
+}

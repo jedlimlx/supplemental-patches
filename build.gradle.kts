@@ -176,7 +176,6 @@ dependencies {
     // fabric-exclusive
     compileOnly("maven.modrinth:hybrid-aquatic:1.4.1-1.20.1")
 
-    compileOnly("maven.modrinth:soulfulnether:1.0.0")
     compileOnly("maven.modrinth:cinderscapes:4.0.10")
 
     compileOnly("maven.modrinth:gipples-galore:1.0.0")
@@ -195,8 +194,10 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:spawn-mod:1.0.2-forge"))
     implementation(fg.deobf("maven.modrinth:twigs:1.20.1-3.1.1-forge"))
 
-    implementation(fg.deobf("maven.modrinth:elysium-api:1.20.1-1.0.2"))
-    implementation(fg.deobf("maven.modrinth:jadens-nether-expansion:2.2.1"))
+    implementation(fg.deobf("maven.modrinth:elysium-api:1.20.1-1.1.0"))
+    implementation(fg.deobf("maven.modrinth:jadens-nether-expansion:2.3.0"))
+
+    implementation(fg.deobf("maven.modrinth:soulfulnether:1.0.0-forge"))
 
     implementation(fg.deobf("maven.modrinth:sullysmod:3.2.1-beta"))
 
