@@ -8,9 +8,11 @@ through a resource-pack. The mod by default, comes with a built-in resource pack
 - Twigs
 - Dye Depot
 - Galosphere
-- Upgrade Aquatic
+- Buzzier Bees
 - Caverns & Chasms
+- Endergetic Expansion
 - Savage & Ravage
+- Upgrade Aquatic
 - Oreganized
 - Doom & Gloom
 - Wetland Whimsy
@@ -20,6 +22,11 @@ through a resource-pack. The mod by default, comes with a built-in resource pack
 - Farmer's Delight
 - Pearfection
 - Trailier Tales
+- Rodspawn
+- Nears
+- Gipples Galore
+- Frostiful
+- Scorchful
 
 These additional shaders are patched into Euphoria Patches, if it is installed. The custom patcher supports the customisation the following features of Euphoria Patches:
 
@@ -69,6 +76,7 @@ A: Yes, go ahead.
 ![Lichen Caves (Galosphere)](images/lichen_caves.png)
 ![Confusion Bolt (Savage & Ravage)](images/confusion_bolt.png)
 ![Rune Prison (Savage & Ravage)](images/rune_prison.png)
+![Poise Forest (Endergetic Expansion)](images/poise_forest.png)
 ![Fog (Doom & Gloom)](images/doom_and_gloom_fog_1.png)
 ![Fog (Doom & Gloom)](images/doom_and_gloom_fog_2.png)
 ![Fog (Doom & Gloom)](images/doom_and_gloom_fog_3.png)
@@ -76,3 +84,4 @@ A: Yes, go ahead.
 ![Copper Lampear (Pearfection)](images/copper_lampear.png)
 ![Coffins (Trailier Tales)](images/coffins.png)
 ![Apparition (Trailier Tales)](images/apparition.png)
+![Icy Ominous Vault (Frostiful)](images/icy_ominous_vault.png)
