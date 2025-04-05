@@ -1,0 +1,8 @@
+{
+  "name": "honey_lamp",
+  "glsl": "honey_lamp.glsl",
+  "mat0": [
+    "buzzier_bees:honey_lamp"
+  ],
+  "color": "supplemental_patches:buzzier_bees/honey_lamp"
+}
