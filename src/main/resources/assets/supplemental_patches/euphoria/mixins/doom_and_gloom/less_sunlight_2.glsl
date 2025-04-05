@@ -1,0 +1,1 @@
+mix(clearLightColor, rainLightColor, rainFactor) * lightDimming
