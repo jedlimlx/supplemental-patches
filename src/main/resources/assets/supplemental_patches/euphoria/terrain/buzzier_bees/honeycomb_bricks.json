@@ -1,0 +1,22 @@
+{
+  "name": "honeycomb_bricks",
+  "glsl": "honeycomb_bricks.glsl",
+  "mat0": [
+    "buzzier_bees:honeycomb_bricks",
+    "buzzier_bees:honeycomb_tiles",
+    "buzzier_bees:chiseled_honeycomb_block"
+  ],
+  "mat1": [
+    "buzzier_bees:honeycomb_brick_slab",
+    "buzzier_bees:honeycomb_brick_stairs",
+    "buzzier_bees:honeycomb_brick_wall",
+    "buzzier_bees:honeycomb_tile_slab",
+    "buzzier_bees:honeycomb_tile_stairs",
+    "buzzier_bees:honeycomb_tile_wall",
+    "buzzier_bees:honeycomb_trapdoor",
+    "buzzier_bees:honeycomb_door"
+  ],
+  "mat2": [
+    "buzzier_bees:crystallized_honey_block"
+  ]
+}
