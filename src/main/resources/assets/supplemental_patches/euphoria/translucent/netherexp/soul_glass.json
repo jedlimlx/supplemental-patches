@@ -1,0 +1,16 @@
+{
+  "name": "soul_glass",
+  "glsl": "soul_glass.glsl",
+  "mat0": [
+    "netherexp:soul_glass:lit=false"
+  ],
+  "mat2": [
+    "netherexp:soul_glass:lit=true"
+  ],
+  "color": [
+    null,
+    null,
+    "minecraft:soul_lantern",
+    null
+  ]
+}

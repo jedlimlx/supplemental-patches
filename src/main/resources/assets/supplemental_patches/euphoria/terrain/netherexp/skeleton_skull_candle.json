@@ -1,0 +1,9 @@
+{
+  "name": "skeleton_skull_candle",
+  "glsl": "skeleton_skull_candle.glsl",
+  "mat0": [
+    "netherexp:skeleton_skull_candle"
+  ],
+  "color": "minecraft:campfire",
+  "held_lighting": true
+}

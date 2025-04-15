@@ -1,0 +1,13 @@
+{
+  "name": "banshee_powder",
+  "glsl": "banshee_powder.glsl",
+  "mat0": [
+    "netherexp:banshee_powder",
+    "netherexp:banshee_rod",
+    "netherexp:will_o_wisp",
+    "netherexp:wisp_bottle"
+  ],
+  "held_lighting": true,
+  "color": "supplemental_patches:netherexp/ectoplasm",
+  "light_level": 7
+}

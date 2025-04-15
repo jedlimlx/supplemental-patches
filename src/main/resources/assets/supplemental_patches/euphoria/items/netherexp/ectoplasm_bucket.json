@@ -1,0 +1,10 @@
+{
+  "name": "ectoplasm_bucket",
+  "glsl": "ectoplasm_bucket.glsl",
+  "mat0": [
+    "netherexp:ectoplasm_bucket"
+  ],
+  "held_lighting": true,
+  "color": "supplemental_patches:netherexp/ectoplasm",
+  "light_level": 7
+}

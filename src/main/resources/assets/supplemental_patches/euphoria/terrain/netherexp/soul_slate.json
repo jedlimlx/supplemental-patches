@@ -1,0 +1,45 @@
+{
+  "name": "soul_slate",
+  "glsl": "soul_slate.glsl",
+  "mat0": [
+    "netherexp:etched_soul_slate_bricks:lit=false",
+    "netherexp:etched_soul_slate_tiles:lit=false",
+    "netherexp:chiseled_soul_slate_bricks:lit=false",
+    "netherexp:chiseled_soul_slate_tiles:lit=false",
+    "netherexp:soul_slate",
+    "netherexp:soul_slate_brick_pillar",
+    "netherexp:soul_slate_bricks",
+    "netherexp:cracked_soul_slate_bricks"
+  ],
+  "mat1": [
+    "netherexp:soul_slate_slab",
+    "netherexp:soul_slate_stairs",
+    "netherexp:soul_slate_wall",
+    "netherexp:soul_slate_brick_slab",
+    "netherexp:soul_slate_brick_stairs",
+    "netherexp:soul_slate_brick_wall",
+    "netherexp:souled_geyser:cooldown=true",
+    "netherexp:cirripedia_gargoyle_statue",
+    "netherexp:ghoul_gargoyle_statue",
+    "netherexp:obfuscated_gargoyle_statue",
+    "netherexp:occult_gargoyle_statue",
+    "netherexp:ossified_gargoyle_statue",
+    "netherexp:phase_gargoyle_statue",
+    "netherexp:sealed_gargoyle_statue",
+    "netherexp:trample_gargoyle_statue",
+    "netherexp:treacherous_gargoyle_statue",
+    "netherexp:wretched_gargoyle_statue",
+    "netherexp:inscribed_panel"
+  ],
+  "mat2": [
+    "netherexp:souled_geyser:cooldown=false",
+    "netherexp:etched_soul_slate_bricks:lit=true",
+    "netherexp:chiseled_soul_slate_bricks:lit=true"
+  ],
+  "color": [
+    null,
+    null,
+    "supplemental_patches:netherexp/soul_glow",
+    null
+  ]
+}

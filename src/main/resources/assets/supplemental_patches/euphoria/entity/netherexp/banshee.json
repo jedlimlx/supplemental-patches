@@ -1,0 +1,7 @@
+{
+  "name": "banshee",
+  "glsl": "banshee.glsl",
+  "mat0": [
+    "netherexp:banshee"
+  ]
+}

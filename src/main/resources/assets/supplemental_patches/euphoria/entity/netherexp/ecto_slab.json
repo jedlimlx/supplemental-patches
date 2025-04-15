@@ -1,0 +1,7 @@
+{
+  "name": "ecto_slab",
+  "glsl": "ecto_slab.glsl",
+  "mat0": [
+    "netherexp:ecto_slab"
+  ]
+}
