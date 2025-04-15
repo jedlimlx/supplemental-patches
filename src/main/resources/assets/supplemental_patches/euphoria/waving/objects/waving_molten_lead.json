@@ -1,3 +1,6 @@
 {
-  "glsl": "waving_molten_lead.glsl"
+  "glsl": "waving_molten_lead.glsl",
+  "conditions": [
+    "MOLTEN_LEAD_WAVINESS >= 1"
+  ]
 }

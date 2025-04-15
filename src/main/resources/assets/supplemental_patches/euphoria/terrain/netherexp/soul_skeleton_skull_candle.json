@@ -1,0 +1,9 @@
+{
+  "name": "soul_skeleton_skull_candle",
+  "glsl": "soul_skeleton_skull_candle.glsl",
+  "mat0": [
+    "netherexp:soul_skeleton_skull_candle"
+  ],
+  "color": "minecraft:soul_campfire",
+  "held_lighting": true
+}

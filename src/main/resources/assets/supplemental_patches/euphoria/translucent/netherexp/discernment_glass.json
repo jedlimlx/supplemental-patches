@@ -1,0 +1,7 @@
+{
+  "name": "discernment_glass",
+  "glsl": "discernment_glass.glsl",
+  "mat0": [
+    "netherexp:discernment_glass"
+  ]
+}

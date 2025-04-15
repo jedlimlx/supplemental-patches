@@ -1,0 +1,7 @@
+{
+  "name": "treacherous_flame",
+  "glsl": "treacherous_flame.glsl",
+  "mat0": [
+    "netherexp:treacherous_flame"
+  ]
+}

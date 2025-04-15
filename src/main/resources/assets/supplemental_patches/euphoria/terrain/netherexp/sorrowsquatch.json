@@ -1,0 +1,17 @@
+{
+  "name": "sorrowsquatch",
+  "glsl": "sorrowsquatch.glsl",
+  "mat0": [
+    "netherexp:sorrowsquatch",
+    "netherexp:carved_sorrowsquatch"
+  ],
+  "mat2": [
+    "netherexp:ghoul_o_lantern"
+  ],
+  "color": [
+    null,
+    null,
+    "minecraft:soul_campfire",
+    null
+  ]
+}

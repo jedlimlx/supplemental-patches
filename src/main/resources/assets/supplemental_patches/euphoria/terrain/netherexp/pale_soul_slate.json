@@ -1,0 +1,31 @@
+{
+  "name": "soul_slate",
+  "glsl": "soul_slate.glsl",
+  "mat0": [
+    "netherexp:etched_soul_slate_tiles:lit=false",
+    "netherexp:chiseled_soul_slate_tiles:lit=false",
+    "netherexp:pale_soul_slate",
+    "netherexp:soul_slate_tiles"
+  ],
+  "mat1": [
+    "netherexp:soul_slate_slab",
+    "netherexp:soul_slate_stairs",
+    "netherexp:soul_slate_wall",
+    "netherexp:soul_slate_brick_slab",
+    "netherexp:soul_slate_brick_stairs",
+    "netherexp:soul_slate_brick_wall",
+    "netherexp:soul_slate_tile_slab",
+    "netherexp:soul_slate_tile_stairs",
+    "netherexp:soul_slate_tile_wall"
+  ],
+  "mat2": [
+    "netherexp:etched_soul_slate_tiles:lit=true",
+    "netherexp:chiseled_soul_slate_tiles:lit=true"
+  ],
+  "color": [
+    null,
+    null,
+    "minecraft:soul_lantern",
+    null
+  ]
+}

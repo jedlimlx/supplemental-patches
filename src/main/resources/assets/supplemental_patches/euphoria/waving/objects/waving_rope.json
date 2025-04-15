@@ -1,3 +1,6 @@
 {
-  "glsl": "waving_rope.glsl"
+  "glsl": "waving_rope.glsl",
+  "conditions": [
+    "WAVING_ROPE"
+  ]
 }

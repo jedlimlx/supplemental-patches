@@ -1,0 +1,7 @@
+{
+  "name": "sanctum_compass",
+  "glsl": "sanctum_compass.glsl",
+  "mat0": [
+    "netherexp:sanctum_compass"
+  ]
+}

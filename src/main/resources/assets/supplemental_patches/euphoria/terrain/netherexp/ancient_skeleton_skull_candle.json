@@ -1,0 +1,9 @@
+{
+  "name": "ancient_skeleton_skull_candle",
+  "glsl": "ancient_skeleton_skull_candle.glsl",
+  "mat0": [
+    "netherexp:ancient_skeleton_skull_candle"
+  ],
+  "color": "supplemental_patches:netherexp/ancient_fire",
+  "held_lighting": true
+}

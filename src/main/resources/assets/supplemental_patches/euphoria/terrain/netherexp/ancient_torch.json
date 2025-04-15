@@ -1,0 +1,8 @@
+{
+  "name": "ancient_torch",
+  "glsl": "ancient_torch.glsl",
+  "mat0": [
+    "netherexp:ancient_torch"
+  ],
+  "color": "supplemental_patches:netherexp/ancient_fire"
+}

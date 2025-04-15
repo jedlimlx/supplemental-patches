@@ -193,6 +193,8 @@ dependencies {
     compileOnly("maven.modrinth:elysium-api:1.20.1-1.1.0")
     compileOnly("maven.modrinth:jadens-nether-expansion:2.3.0")
 
+    compileOnly("maven.modrinth:rubinated-nether:1.3.0.E-1.20.1")
+
     compileOnly("maven.modrinth:soulfulnether:1.0.0")
 
     compileOnly("maven.modrinth:sullysmod:3.2.1-beta")
