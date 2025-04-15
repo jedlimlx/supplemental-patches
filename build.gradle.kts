@@ -195,7 +195,9 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:twigs:1.20.1-3.1.1-forge"))
 
     implementation(fg.deobf("maven.modrinth:elysium-api:1.20.1-1.1.0"))
-    implementation(fg.deobf("maven.modrinth:jadens-nether-expansion:2.3.0"))
+    implementation(fg.deobf("maven.modrinth:jadens-nether-expansion:2.3.2"))
+
+    implementation(fg.deobf("maven.modrinth:rubinated-nether:1.3.0.E-1.20.1"))
 
     implementation(fg.deobf("maven.modrinth:soulfulnether:1.0.0-forge"))
 

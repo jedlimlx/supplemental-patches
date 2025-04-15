@@ -1,0 +1,12 @@
+{
+  "name": "black_ice",
+  "glsl": "black_ice.glsl",
+  "mat0": [
+    "netherexp:black_ice",
+    "netherexp:grooved_black_ice",
+    "netherexp:soul_permafrost"
+  ],
+  "mat1": [
+    "netherexp:black_icicle"
+  ]
+}

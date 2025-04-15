@@ -1,0 +1,16 @@
+{
+  "name": "luminous_jelly",
+  "glsl": "luminous_jelly.glsl",
+  "mat0": [
+    "gipples_galore:bright_jelly"
+  ],
+  "mat2": [
+    "gipples_galore:luminescent_jelly"
+  ],
+  "color": [
+    "minecraft:lantern",
+    null,
+    "minecraft:soul_lantern",
+    null
+  ]
+}

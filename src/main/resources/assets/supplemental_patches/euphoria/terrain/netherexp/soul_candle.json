@@ -1,0 +1,11 @@
+{
+  "name": "soul_candle",
+  "glsl": "soul_candle.glsl",
+  "mat0": [
+    "netherexp:soul_candle:lit=true"
+  ],
+  "mat1": [
+    "netherexp:soul_candle:lit=false"
+  ],
+  "color": "supplemental_patches:buzzier_bees/soul_candle"
+}

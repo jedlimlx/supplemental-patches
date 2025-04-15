@@ -1,0 +1,11 @@
+{
+  "name": "basaltic_geyser",
+  "glsl": "basaltic_geyser.glsl",
+  "mat0": [
+    "netherexp:basaltic_geyser:cooldown=false"
+  ],
+  "mat1": [
+    "netherexp:basaltic_geyser:cooldown=true"
+  ],
+  "color": "minecraft:torch"
+}

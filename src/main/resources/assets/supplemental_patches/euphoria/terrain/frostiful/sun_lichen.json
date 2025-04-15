@@ -1,0 +1,13 @@
+{
+  "name": "sun_lichen",
+  "glsl": "sun_lichen.glsl",
+  "mat0": [
+    "frostiful:cool_sun_lichen",
+    "frostiful:warm_sun_lichen",
+    "frostiful:hot_sun_lichen"
+  ],
+  "mat1": [
+    "frostiful:cold_sun_lichen"
+  ],
+  "color": "supplemental_patches:frostiful/sun_lichen"
+}

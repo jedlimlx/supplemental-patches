@@ -1,0 +1,34 @@
+{
+  "name": "gelatite",
+  "glsl": "gelatite.glsl",
+  "mat0": [
+    "gipples_galore:amoebalith",
+    "gipples_galore:amoebalith_bricks",
+    "gipples_galore:chiseled_amoebalith_bricks",
+    "gipples_galore:gelatite",
+    "gipples_galore:gelatite_bricks",
+    "gipples_galore:chiseled_gelatite_bricks"
+  ],
+  "mat1": [
+    "gipples_galore:amoebalith_slab",
+    "gipples_galore:amoebalith_stairs",
+    "gipples_galore:amoebalith_wall",
+    "gipples_galore:amoebalith_brick_slab",
+    "gipples_galore:amoebalith_brick_stairs",
+    "gipples_galore:amoebalith_brick_wall",
+    "gipples_galore:gelatite_slab",
+    "gipples_galore:gelatite_stairs",
+    "gipples_galore:gelatite_wall",
+    "gipples_galore:gelatite_brick_slab",
+    "gipples_galore:gelatite_brick_stairs",
+    "gipples_galore:gelatite_brick_wall"
+  ],
+  "mat2": [
+    "gipples_galore:gelatin_block",
+    "gipples_galore:hibernating_gipple"
+  ],
+  "mat3": [
+    "gipples_galore:gelatinous_growth",
+    "gipples_galore:gipplepad"
+  ]
+}

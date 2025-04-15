@@ -7,7 +7,13 @@
     "galosphere:glinted_amethyst_cluster",
     "quark:blackstone_furnace",
     "oreganized:lead_bulb",
-    "doom_and_gloom:(.*?)_vigil_candle"
+    "doom_and_gloom:(.*?)_vigil_candle",
+    "weeping_vines",
+    "weeping_vines_plant",
+    "twisting_vines",
+    "twisting_vines_plant",
+    "nether_wart_block",
+    "warped_wart_block"
   ],
   "block.10113": [
     "adjustments:deepslate_pillar"
@@ -158,5 +164,18 @@
     "adjustments:tuff_tile_slab",
     "adjustments:tuff_tile_stairs",
     "adjustments:tuff_tile_wall"
+  ],
+  "block.10776": [
+    "netherexp:crimson_sporeshroom"
+  ],
+  "block.10872": [
+    "frostiful:icy_vault:ominous=false:vault_state=inactive",
+    "frostiful:icy_vault:ominous=true:vault_state=inactive"
+  ],
+  "block.10873": [
+    "frostiful:icy_trial_spawner:ominous=false:trial_spawner_state=cooldown",
+    "frostiful:icy_trial_spawner:ominous=false:trial_spawner_state=inactive",
+    "frostiful:icy_trial_spawner:ominous=true:trial_spawner_state=cooldown",
+    "frostiful:icy_trial_spawner:ominous=true:trial_spawner_state=inactive"
   ]
 }
