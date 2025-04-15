@@ -1,0 +1,18 @@
+{
+  "name": "warped_wart_block",
+  "glsl": "warped_wart_block.glsl",
+  "mat0": [
+    "warped_wart_block:spots=0"
+  ],
+  "mat2": [
+    "warped_wart_block:spots=1",
+    "warped_wart_block:spots=2",
+    "warped_wart_block:spots=3"
+  ],
+  "color": [
+    null,
+    null,
+    "supplemental_patches:netherexp/warped_fungus",
+    null
+  ]
+}

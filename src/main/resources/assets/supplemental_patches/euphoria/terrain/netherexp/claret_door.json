@@ -1,0 +1,10 @@
+{
+  "name": "claret_door",
+  "glsl": "claret_door.glsl",
+  "mat1": [
+    "netherexp:claret_door:powered=false"
+  ],
+  "mat3": [
+    "netherexp:claret_door:powered=true"
+  ]
+}

@@ -1,1 +1,1 @@
-DoWave_Foliage(playerPos.xyz, worldPos, 1.0);  // TODO improve on this
+DoWave_TallFoliage(playerPos.xyz, worldPos, 1.0, 0);

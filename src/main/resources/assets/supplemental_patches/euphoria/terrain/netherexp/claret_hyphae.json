@@ -1,0 +1,8 @@
+{
+  "name": "claret_hyphae",
+  "glsl": "claret_hyphae.glsl",
+  "mat0": [
+    "netherexp:cerebrage_claret_hyphae",
+    "netherexp:cerebrage_claret_stem"
+  ]
+}

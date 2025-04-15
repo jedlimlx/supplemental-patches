@@ -1,0 +1,16 @@
+{
+  "name": "brazier_chest",
+  "glsl": "brazier_chest.glsl",
+  "mat0": [
+    "netherexp:brazier_chest:locked=false"
+  ],
+  "mat2": [
+    "netherexp:brazier_chest:locked=true"
+  ],
+  "color": [
+    "supplemental_patches:netherexp/ancient_fire",
+    null,
+    null,
+    null
+  ]
+}

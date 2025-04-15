@@ -1,0 +1,8 @@
+{
+  "name": "spores",
+  "glsl": "spores.glsl",
+  "mat0": [
+    "netherexp:lightspores",
+    "netherexp:nightspores"
+  ]
+}

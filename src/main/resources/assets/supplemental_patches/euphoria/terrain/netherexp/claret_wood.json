@@ -1,0 +1,27 @@
+{
+  "name": "claret_wood",
+  "glsl": "claret_wood.glsl",
+  "mat0": [
+    "netherexp:claret_planks",
+    "netherexp:stripped_claret_stem",
+    "netherexp:stripped_claret_hyphae"
+  ],
+  "mat1": [
+    "netherexp:claret_fence",
+    "netherexp:claret_fence_gate:powered=false",
+    "netherexp:claret_button:powered=false",
+    "netherexp:claret_pressure_plate:powered=false",
+    "netherexp:claret_slab",
+    "netherexp:claret_stairs",
+    "netherexp:claret_trapdoor:powered=false",
+    "netherexp:claret_sign",
+    "netherexp:claret_wall_sign",
+    "netherexp:claret_wall_hanging_sign"
+  ],
+  "mat3": [
+    "netherexp:claret_fence_gate:powered=true",
+    "netherexp:claret_button:powered=true",
+    "netherexp:claret_pressure_plate:powered=true",
+    "netherexp:claret_trapdoor:powered=true"
+  ]
+}

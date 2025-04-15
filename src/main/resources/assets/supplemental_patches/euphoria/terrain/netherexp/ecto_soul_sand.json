@@ -1,0 +1,8 @@
+{
+  "name": "ecto_soul_sand",
+  "glsl": "ecto_soul_sand.glsl",
+  "mat0": [
+    "netherexp:ecto_soul_sand"
+  ],
+  "color": "supplemental_patches:netherexp/soul_glow"
+}

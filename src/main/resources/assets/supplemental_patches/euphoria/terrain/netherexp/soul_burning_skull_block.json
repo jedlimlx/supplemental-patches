@@ -1,0 +1,12 @@
+{
+  "name": "soul_burning_skull_block",
+  "glsl": "soul_burning_skull_block.glsl",
+  "mat0": [
+    "netherexp:soul_burning_skull_block"
+  ],
+  "mat2": [
+    "netherexp:soul_burning_wither_skull_block"
+  ],
+  "color": "minecraft:soul_campfire",
+  "held_lighting": true
+}
