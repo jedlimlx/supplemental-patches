@@ -11,7 +11,3 @@ color.rgb *= 0.7 + 0.3 * GetLuminance(color.rgb);
 #endif
 
 smoothnessG = 1.0 - factor * 0.5;
-
-#ifdef COATED_TEXTURES
-    noiseFactor = 0.66;
-#endif
