@@ -1,0 +1,9 @@
+{
+  "name": "warped_fungus",
+  "glsl": "warped_fungus.glsl",
+  "mat0": [
+    "warped_fungus",
+    "netherexp:warped_sporeshroom"
+  ],
+  "color": "supplemental_patches:netherexp/warped_fungus"
+}

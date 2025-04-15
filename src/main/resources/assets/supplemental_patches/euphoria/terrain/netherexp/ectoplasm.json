@@ -1,0 +1,10 @@
+{
+  "name": "ectoplasm",
+  "glsl": "ectoplasm.glsl",
+  "mat0": [
+    "netherexp:ectoplasm",
+    "netherexp:flowing_ectoplasm"
+  ],
+  "color": "supplemental_patches:netherexp/ectoplasm",
+  "waving": "supplemental_patches:waving_ectoplasm"
+}

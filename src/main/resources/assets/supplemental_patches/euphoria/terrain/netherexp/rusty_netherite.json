@@ -1,0 +1,17 @@
+{
+  "name": "rusty_netherite",
+  "glsl": "rusty_netherite.glsl",
+  "mat0": [
+    "netherexp:rusty_cut_netherite_block",
+    "netherexp:rusty_cut_netherite_pillar",
+    "netherexp:rusty_netherite_plated_block",
+    "netherexp:rusty_netherite_grate:fluidlogged=lava",
+    "netherexp:rusty_netherite_grate:fluidlogged=ectoplasm"
+  ],
+  "mat1": [
+    "netherexp:rusty_cut_netherite_slab",
+    "netherexp:rusty_cut_netherite_stairs",
+    "netherexp:rusty_netherite_grate:fluidlogged=air",
+    "netherexp:rusty_netherite_grate:fluidlogged=water"
+  ]
+}

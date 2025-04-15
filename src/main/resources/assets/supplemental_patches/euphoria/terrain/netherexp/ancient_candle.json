@@ -1,0 +1,11 @@
+{
+  "name": "ancient_candle",
+  "glsl": "soul_candle.glsl",
+  "mat0": [
+    "netherexp:ancient_candle:lit=true"
+  ],
+  "mat1": [
+    "netherexp:ancient_candle:lit=false"
+  ],
+  "color": "supplemental_patches:netherexp/ancient_candle"
+}

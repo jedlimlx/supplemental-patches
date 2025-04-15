@@ -1,0 +1,12 @@
+{
+  "name": "ancient_burning_skull_block",
+  "glsl": "ancient_burning_skull_block.glsl",
+  "mat0": [
+    "netherexp:ancient_burning_skull_block"
+  ],
+  "mat2": [
+    "netherexp:ancient_burning_wither_skull_block"
+  ],
+  "color": "supplemental_patches:netherexp/ancient_fire",
+  "held_lighting": true
+}

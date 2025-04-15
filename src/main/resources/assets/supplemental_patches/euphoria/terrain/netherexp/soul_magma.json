@@ -1,0 +1,9 @@
+{
+  "name": "soul_magma",
+  "glsl": "soul_magma.glsl",
+  "mat0": [
+    "netherexp:soul_magma"
+  ],
+  "color": "supplemental_patches:netherexp/soul_glow",
+  "held_lighting": true
+}

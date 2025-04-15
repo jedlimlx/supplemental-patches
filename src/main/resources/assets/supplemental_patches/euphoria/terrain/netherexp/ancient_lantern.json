@@ -1,0 +1,9 @@
+{
+  "name": "ancient_lantern",
+  "glsl": "ancient_lantern.glsl",
+  "mat0": [
+    "netherexp:ancient_lantern"
+  ],
+  "color": "supplemental_patches:netherexp/ancient_fire",
+  "held_lighting": true
+}

@@ -1,3 +1,6 @@
 {
-  "glsl": "waving_gilded_beads.glsl"
+  "glsl": "waving_gilded_beads.glsl",
+  "conditions": [
+    "WAVING_GILDED_BEADS >= 1"
+  ]
 }

@@ -1,0 +1,7 @@
+{
+  "name": "glowcheese",
+  "glsl": "glowcheese.glsl",
+  "mat0": [
+    "netherexp:nether_pizza"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "shroomnight",
+  "glsl": "shroomnight.glsl",
+  "mat0": [
+    "netherexp:shroomnight"
+  ],
+  "color": "supplemental_patches:netherexp/shroomnight"
+}

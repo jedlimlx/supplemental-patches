@@ -1,0 +1,18 @@
+{
+  "name": "nether_wart_block",
+  "glsl": "nether_wart_block.glsl",
+  "mat0": [
+    "nether_wart_block:spots=0"
+  ],
+  "mat2": [
+    "nether_wart_block:spots=1",
+    "nether_wart_block:spots=2",
+    "nether_wart_block:spots=3"
+  ],
+  "color": [
+    null,
+    null,
+    "minecraft:weeping_vines",
+    null
+  ]
+}

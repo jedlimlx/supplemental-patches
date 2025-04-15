@@ -1,0 +1,7 @@
+{
+  "name": "cerebrage_skull",
+  "glsl": "cerebrage_skull.glsl",
+  "mat0": [
+    "netherexp:cerebrage_skull"
+  ]
+}

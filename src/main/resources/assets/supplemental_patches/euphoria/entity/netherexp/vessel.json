@@ -1,0 +1,8 @@
+{
+  "name": "vessel",
+  "glsl": "vessel.glsl",
+  "mat0": [
+    "netherexp:vessel",
+    "netherexp:stampede"
+  ]
+}
