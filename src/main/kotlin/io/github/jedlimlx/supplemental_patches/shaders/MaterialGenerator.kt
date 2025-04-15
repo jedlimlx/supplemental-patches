@@ -803,6 +803,12 @@ fun modifyGBuffers(directory: Path) {
                 "defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || SHOCKWAVE > 0",
                 "defined IS_IRIS || defined GENERATED_NORMALS || defined COATED_TEXTURES || defined POM || SHOCKWAVE > 0"
             )
+            .replace(
+                "color *= glColor;",
+                "color *= glColor;\n" +
+                "    \n" +
+                "    float luminance = GetLuminance(color.rgb);"
+            )
     )
 
     file = File(directory.absolutePathString() + SHADOW_COMP_DIRECTORY)
