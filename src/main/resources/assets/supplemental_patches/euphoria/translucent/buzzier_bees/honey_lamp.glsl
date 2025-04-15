@@ -13,10 +13,6 @@ if (color.a < 0.05) {
         highlightMult = 3.5 * max(colorG4, 0.2);
 
         color.rgb *= 0.5 + 0.4 * GetLuminance(color.rgb);
-
-        #ifdef COATED_TEXTURES
-        noiseFactor = 0.33;
-        #endif
     } else {
         emission = 5.0;
     }
