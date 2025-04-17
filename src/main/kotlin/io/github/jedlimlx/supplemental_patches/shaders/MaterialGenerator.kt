@@ -1,5 +1,6 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
+import kotlinx.coroutines.flow.merge
 import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.resources.Resource
@@ -697,6 +698,7 @@ fun generateWavingCode(directory: Path) {
 
 val PARTICLES = mutableListOf<ShaderBuilder>()
 
+const val SCALE = 1000000
 const val PARTICLES_PATH = "/shaders/program/gbuffers_textured.glsl"
 
 fun generateParticleCode(directory: Path) {
@@ -705,11 +707,8 @@ fun generateParticleCode(directory: Path) {
     val file = File(directory.absolutePathString() + PARTICLES_PATH)
     val code = file.readText()
 
-    val tokens = code.split("bool noSmoothLighting = false;")
-    val lines = tokens[0].split("\n")
-
     val indent = " ".repeat(4*2)
-    val newCode = lines.subList(0, lines.size - 2).joinToString("\n") + StringBuilder().apply {
+    val newCode = "if (atlasSize.x < atlasCheck) {\n" + StringBuilder().apply {
         var first = true
         PARTICLES.map {
             Pair(it, it.mat0.map { ResourceLocation.parse(it) }.filter { textureAtlas.textures[it] != null })
@@ -721,10 +720,66 @@ fun generateParticleCode(directory: Path) {
                 append(" else if (")
             }
 
+            val rectangles = lst.map {
+                val sprite = textureAtlas.getSprite(it)
+                Rectangle(
+                    (sprite.u0 * SCALE).toInt(),
+                    (sprite.v0 * SCALE).toInt(),
+                    (sprite.u1 * SCALE).toInt(),
+                    (sprite.v1 * SCALE).toInt()
+                )
+            }
+
+            val sortedRectangles = rectangles.sortedWith { a, b ->
+                if (a.x1 == b.x1) a.y1.compareTo(b.y1) else a.x1.compareTo(b.x2)
+            }
+
+            var currRectangle: Rectangle? = null
+            val mergedRectangles = arrayListOf<Rectangle>()
+            for (rectangle in sortedRectangles) {
+                if (currRectangle == null) {
+                    currRectangle = rectangle
+                    continue
+                }
+
+                if (currRectangle.canMergeX(rectangle)) {
+                    currRectangle.mergeX(rectangle)
+                } else {
+                    mergedRectangles.add(currRectangle)
+                    currRectangle = null
+                }
+            }
+
+            if (currRectangle != null)
+                mergedRectangles.add(currRectangle)
+
+            val sortedRectangles2 = mergedRectangles.sortedWith { a, b ->
+                if (a.y1 == b.y1) a.x1.compareTo(b.x2) else a.y1.compareTo(b.y2)
+            }
+
+            mergedRectangles.clear()
+            currRectangle = null
+            for (rectangle in sortedRectangles2) {
+                if (currRectangle == null) {
+                    currRectangle = rectangle
+                    continue
+                }
+
+                if (currRectangle.canMergeY(rectangle)) {
+                    currRectangle.mergeY(rectangle)
+                } else {
+                    mergedRectangles.add(currRectangle)
+                    currRectangle = null
+                }
+            }
+
+            if (currRectangle != null)
+                mergedRectangles.add(currRectangle)
+
             append(
-                lst.joinToString(" || ") {
-                    val sprite = textureAtlas.getSprite(it)
-                    "(texCoord.x >= ${sprite.u0} && texCoord.x <= ${sprite.u1} && texCoord.y >= ${sprite.v0} && texCoord.y <= ${sprite.v1})"
+                mergedRectangles.joinToString(" || ") {
+                    "(texCoord.x >= ${it.x1.toFloat() / SCALE} && texCoord.x <= ${it.x2.toFloat() / SCALE} && " +
+                            "texCoord.y >= ${it.y1.toFloat() / SCALE} && texCoord.y <= ${it.y2.toFloat() / SCALE})"
                 }
             )
             append(") {\n")
@@ -732,9 +787,11 @@ fun generateParticleCode(directory: Path) {
             append("${indent}}")
         }
         append("\n    }\n    bool noSmoothLighting = false;\n")
-    } + tokens[1]
+    }.toString()
 
-    file.writeText(newCode)
+    file.writeText(
+        Regex("if \\(atlasSize.x < atlasCheck\\) \\{[\\s\\S]*bool noSmoothLighting = false;", RegexOption.MULTILINE).replaceFirst(code, newCode)
+    )
 }
 
 val FOG_FUNCTIONS = arrayListOf<String>()
