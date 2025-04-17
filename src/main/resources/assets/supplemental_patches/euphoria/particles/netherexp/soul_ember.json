@@ -1,0 +1,9 @@
+{
+  "name": "soul_ember",
+  "glsl": "soul_ember.glsl",
+  "mat0": [
+    "netherexp:soul_ember_1",
+    "netherexp:soul_ember_2",
+    "netherexp:soul_ember_3"
+  ]
+}
