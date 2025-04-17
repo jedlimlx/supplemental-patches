@@ -1,0 +1,18 @@
+{
+  "name": "fire_particle",
+  "glsl": "fire_particle.glsl",
+  "mat0": [
+    "minecraft:flame",
+    "minecraft:lava",
+    "supplementaries:cannon_bang_00",
+    "supplementaries:cannon_bang_01",
+    "supplementaries:cannon_bang_02",
+    "supplementaries:cannon_bang_03",
+    "supplementaries:cannon_bang_04",
+    "supplementaries:cannon_ring_00",
+    "supplementaries:cannon_ring_01",
+    "supplementaries:cannon_ring_02",
+    "supplementaries:cannon_ring_03",
+    "supplementaries:cannon_ring_04"
+  ]
+}
