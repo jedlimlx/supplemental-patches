@@ -138,3 +138,24 @@ fun removeId(id: String, string: String): String {
 fun List<String>.conditions() = this.joinToString(" && ") {
     if (it.matches(Regex("^([A-Za-z0-9]|_)*$"))) "defined $it" else "($it)"
 }
+
+// rectangles
+class Rectangle(var x1: Int, var y1: Int, var x2: Int, var y2: Int) {
+    val eps = 1e-5
+
+    fun canMergeX(rectangle: Rectangle): Boolean =
+        x1 == rectangle.x1 && x2 == rectangle.x2 && (y1 == rectangle.y2 || y2 == rectangle.y1)
+
+    fun canMergeY(rectangle: Rectangle): Boolean =
+        y1 == rectangle.y1 && y2 == rectangle.y2 && (x1 == rectangle.x2 || x2 == rectangle.x1)
+
+    fun mergeX(rectangle: Rectangle) {
+        y1 = minOf(y1, rectangle.y1)
+        y2 = maxOf(y2, rectangle.y2)
+    }
+
+    fun mergeY(rectangle: Rectangle) {
+        x1 = minOf(x1, rectangle.x1)
+        x2 = maxOf(x2, rectangle.x2)
+    }
+}
