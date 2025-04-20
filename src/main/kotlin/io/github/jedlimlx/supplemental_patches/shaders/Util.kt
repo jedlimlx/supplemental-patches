@@ -140,14 +140,13 @@ fun List<String>.conditions() = this.joinToString(" && ") {
 }
 
 // rectangles
-class Rectangle(var x1: Int, var y1: Int, var x2: Int, var y2: Int) {
-    val eps = 1e-5
-
+const val SCALE = 1000000
+class Rectangle(var x1: Int, var y1: Int, var x2: Int, var y2: Int, val glsl: String) {
     fun canMergeX(rectangle: Rectangle): Boolean =
-        x1 == rectangle.x1 && x2 == rectangle.x2 && (y1 == rectangle.y2 || y2 == rectangle.y1)
+        x1 == rectangle.x1 && x2 == rectangle.x2 && (y1 == rectangle.y2 + 1 || y2 + 1 == rectangle.y1)
 
     fun canMergeY(rectangle: Rectangle): Boolean =
-        y1 == rectangle.y1 && y2 == rectangle.y2 && (x1 == rectangle.x2 || x2 == rectangle.x1)
+        y1 == rectangle.y1 && y2 == rectangle.y2 && (x1 == rectangle.x2 + 1 || x2 + 1 == rectangle.x1)
 
     fun mergeX(rectangle: Rectangle) {
         y1 = minOf(y1, rectangle.y1)
@@ -158,4 +157,45 @@ class Rectangle(var x1: Int, var y1: Int, var x2: Int, var y2: Int) {
         x1 = minOf(x1, rectangle.x1)
         x2 = maxOf(x2, rectangle.x2)
     }
+
+    fun copy(): Rectangle = Rectangle(x1, y1, x2, y2, glsl)
+
+    override fun hashCode() = glsl.hashCode()
+}
+
+fun List<Rectangle>.splitX(threshold: Int) = Pair(
+    this.filter { it.x1 <= threshold }.map { it.copy() }.onEach { it.x2 = minOf(it.x2, threshold) },
+    this.filter { it.x2 > threshold }.map { it.copy() }.onEach { it.x1 = maxOf(it.x1, threshold + 1) }
+)
+
+fun List<Rectangle>.splitY(threshold: Int) = Pair(
+    this.filter { it.y1 <= threshold }.map { it.copy() }.onEach { it.y2 = minOf(it.y2, threshold) },
+    this.filter { it.y2 > threshold }.map { it.copy() }.onEach { it.y1 = maxOf(it.y1, threshold + 1) }
+)
+
+fun split(rectangles: List<Rectangle>, depth: Int = 0, splitX: Boolean = true): String {
+    val indent = "    ".repeat(depth + 2)
+    if (rectangles.isEmpty()) return ""
+    if (rectangles.size == 1) {
+        val it = rectangles[0]
+        return StringBuilder().apply {
+            append("${indent}if (texCoordScaled.x >= ${it.x1} && texCoordScaled.x <= ${it.x2} " +
+                    "&& texCoordScaled.y >= ${it.y1} && texCoordScaled.y <= ${it.y2}) {\n")
+            it.glsl.split("\n").forEach { append("$indent    $it\n") }
+            append("${indent}}\n")
+        }.toString()
+    }
+
+    val lst = rectangles.map { if (splitX) it.x1 else it.y1 }.sorted()
+    val threshold = lst[rectangles.size / 2] - 1
+    val (first, second) = if (splitX) rectangles.splitX(threshold) else rectangles.splitY(threshold)
+    if (first.isEmpty() || second.isEmpty()) return split(rectangles, depth, !splitX)
+
+    return StringBuilder().apply {
+        append("${indent}if (texCoordScaled.${if (splitX) "x" else "y"} <= ${threshold}) {\n")
+        append(split(first, depth + 1, !splitX))
+        append("${indent}} else {\n")
+        append(split(second, depth + 1, !splitX))
+        append("${indent}}\n")
+    }.toString()
 }
