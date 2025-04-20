@@ -697,95 +697,84 @@ fun generateWavingCode(directory: Path) {
 
 val PARTICLES = mutableListOf<ShaderBuilder>()
 
-const val SCALE = 1000000
 const val PARTICLES_PATH = "/shaders/program/gbuffers_textured.glsl"
 
+
+// TODO fix some particles not having shaders applied properly
 fun generateParticleCode(directory: Path) {
     val textureAtlas = Minecraft.getInstance().particleEngine.textureAtlas
 
     val file = File(directory.absolutePathString() + PARTICLES_PATH)
     val code = file.readText()
 
-    val indent = " ".repeat(4*2)
-    val newCode = "if (atlasSize.x < atlasCheck) {\n" + StringBuilder().apply {
-        var first = true
-        PARTICLES.map {
-            Pair(it, it.mat0.map { ResourceLocation(it) }.filter { it in textureAtlas.textureLocations })
-        }.filter { it.second.isNotEmpty() }.forEach { (it, lst) ->
-            if (first) {
-                append("\n${indent}if (")
-                first = false
-            } else {
-                append(" else if (")
-            }
+    val newCode = "if (atlasSize.x < atlasCheck) {\n        ivec2 texCoordScaled = $SCALE * texCoord;\n" + StringBuilder().apply {
+        append(
+            split(
+                PARTICLES.map {
+                    Pair(it, it.mat0.map { ResourceLocation(it) }.filter { it in textureAtlas.textureLocations })
+                }.filter { it.second.isNotEmpty() }.map { (particle, lst) ->
+                    val rectangles = lst.map {
+                        val sprite = textureAtlas.getSprite(it)
+                        Rectangle(
+                            (sprite.u0 * SCALE).toInt(),
+                            (sprite.v0 * SCALE).toInt(),
+                            (sprite.u1 * SCALE).toInt() - 1,
+                            (sprite.v1 * SCALE).toInt() - 1,
+                            particle.glsl
+                        )
+                    }
 
-            val rectangles = lst.map {
-                val sprite = textureAtlas.getSprite(it)
-                Rectangle(
-                    (sprite.u0 * SCALE).toInt(),
-                    (sprite.v0 * SCALE).toInt(),
-                    (sprite.u1 * SCALE).toInt(),
-                    (sprite.v1 * SCALE).toInt()
-                )
-            }
+                    val sortedRectangles = rectangles.sortedWith { a, b ->
+                        if (a.x1 == b.x1) a.y1.compareTo(b.y1) else a.x1.compareTo(b.x2)
+                    }
 
-            val sortedRectangles = rectangles.sortedWith { a, b ->
-                if (a.x1 == b.x1) a.y1.compareTo(b.y1) else a.x1.compareTo(b.x2)
-            }
+                    var currRectangle: Rectangle? = null
+                    val mergedRectangles = arrayListOf<Rectangle>()
+                    for (rectangle in sortedRectangles) {
+                        if (currRectangle == null) {
+                            currRectangle = rectangle
+                            continue
+                        }
 
-            var currRectangle: Rectangle? = null
-            val mergedRectangles = arrayListOf<Rectangle>()
-            for (rectangle in sortedRectangles) {
-                if (currRectangle == null) {
-                    currRectangle = rectangle
-                    continue
-                }
+                        if (currRectangle.canMergeX(rectangle)) {
+                            currRectangle.mergeX(rectangle)
+                        } else {
+                            mergedRectangles.add(currRectangle)
+                            currRectangle = null
+                        }
+                    }
 
-                if (currRectangle.canMergeX(rectangle)) {
-                    currRectangle.mergeX(rectangle)
-                } else {
-                    mergedRectangles.add(currRectangle)
+                    if (currRectangle != null)
+                        mergedRectangles.add(currRectangle)
+
+                    val sortedRectangles2 = mergedRectangles.sortedWith { a, b ->
+                        if (a.y1 == b.y1) a.x1.compareTo(b.x2) else a.y1.compareTo(b.y2)
+                    }
+
+                    mergedRectangles.clear()
                     currRectangle = null
-                }
-            }
+                    for (rectangle in sortedRectangles2) {
+                        if (currRectangle == null) {
+                            currRectangle = rectangle
+                            continue
+                        }
 
-            if (currRectangle != null)
-                mergedRectangles.add(currRectangle)
+                        if (currRectangle.canMergeY(rectangle)) {
+                            currRectangle.mergeY(rectangle)
+                        } else {
+                            mergedRectangles.add(currRectangle)
+                            currRectangle = null
+                        }
+                    }
 
-            val sortedRectangles2 = mergedRectangles.sortedWith { a, b ->
-                if (a.y1 == b.y1) a.x1.compareTo(b.x2) else a.y1.compareTo(b.y2)
-            }
+                    if (currRectangle != null)
+                        mergedRectangles.add(currRectangle)
 
-            mergedRectangles.clear()
-            currRectangle = null
-            for (rectangle in sortedRectangles2) {
-                if (currRectangle == null) {
-                    currRectangle = rectangle
-                    continue
-                }
-
-                if (currRectangle.canMergeY(rectangle)) {
-                    currRectangle.mergeY(rectangle)
-                } else {
-                    mergedRectangles.add(currRectangle)
-                    currRectangle = null
-                }
-            }
-
-            if (currRectangle != null)
-                mergedRectangles.add(currRectangle)
-
-            append(
-                mergedRectangles.joinToString(" || ") {
-                    "(texCoord.x >= ${it.x1.toFloat() / SCALE} && texCoord.x <= ${it.x2.toFloat() / SCALE} && " +
-                            "texCoord.y >= ${it.y1.toFloat() / SCALE} && texCoord.y <= ${it.y2.toFloat() / SCALE})"
-                }
+                    mergedRectangles
+                }.flatten()
             )
-            append(") {\n")
-            it.glsl.split("\n").forEach { append("$indent    $it\n") }
-            append("${indent}}")
-        }
-        append("\n    }\n    bool noSmoothLighting = false;\n")
+        )
+        append("    }\n    bool noSmoothLighting = false;\n")
     }.toString()
 
     file.writeText(
