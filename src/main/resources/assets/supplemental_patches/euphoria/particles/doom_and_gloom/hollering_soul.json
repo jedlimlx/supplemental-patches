@@ -1,0 +1,17 @@
+{
+  "name": "hollering_soul",
+  "glsl": "hollering_soul.glsl",
+  "mat0": [
+    "doom_and_gloom:hollering_soul_0",
+    "doom_and_gloom:hollering_soul_1",
+    "doom_and_gloom:hollering_soul_2",
+    "doom_and_gloom:hollering_soul_3",
+    "doom_and_gloom:hollering_soul_4",
+    "doom_and_gloom:hollering_soul_5",
+    "doom_and_gloom:hollering_soul_6",
+    "doom_and_gloom:hollering_soul_7",
+    "doom_and_gloom:hollering_soul_8",
+    "doom_and_gloom:hollering_soul_9",
+    "doom_and_gloom:hollering_soul_10"
+  ]
+}
