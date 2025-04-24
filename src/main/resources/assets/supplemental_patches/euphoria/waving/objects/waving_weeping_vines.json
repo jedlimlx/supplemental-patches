@@ -1,7 +1,0 @@
-{
-  "glsl": "waving_nether_vines.glsl",
-  "conditions": [
-    "WAVING_FOLIAGE",
-    "defined NETHER || defined DO_NETHER_VINE_WAVING_OUTSIDE_NETHER"
-  ]
-}

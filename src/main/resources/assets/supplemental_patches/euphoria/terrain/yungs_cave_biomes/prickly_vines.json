@@ -5,5 +5,5 @@
     "yungscavebiomes:prickly_vines",
     "yungscavebiomes:prickly_vines_plant"
   ],
-  "waving": "supplemental_patches:waving_prickly_vines"
+  "waving": "supplemental_patches:generic/waving_tall_foliage"
 }

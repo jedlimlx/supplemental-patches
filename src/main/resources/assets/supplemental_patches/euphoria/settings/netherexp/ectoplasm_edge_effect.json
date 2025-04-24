@@ -1,0 +1,9 @@
+{
+  "type": "setting",
+  "name": "ECTOPLASM_EDGE_EFFECT",
+  "default": false,
+  "en_US": {
+    "option": "Ectoplasm Edge Effect",
+    "comment": "Adds an edge to ectoplasm when it touches other blocks. §e[*]§r This feature only works if Advanced Colored Lighting is enabled in Performance Settings."
+  }
+}

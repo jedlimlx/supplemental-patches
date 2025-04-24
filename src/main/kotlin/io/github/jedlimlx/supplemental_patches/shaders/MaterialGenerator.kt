@@ -707,7 +707,7 @@ fun generateParticleCode(directory: Path) {
     val file = File(directory.absolutePathString() + PARTICLES_PATH)
     val code = file.readText()
 
-    val newCode = "if (atlasSize.x < atlasCheck) {\n        ivec2 texCoordScaled = $SCALE * texCoord;\n" + StringBuilder().apply {
+    val newCode = "if (atlasSize.x < atlasCheck) {\n        vec2 texCoordScaled = $SCALE * texCoord;\n" + StringBuilder().apply {
         append(
             split(
                 PARTICLES.map {
