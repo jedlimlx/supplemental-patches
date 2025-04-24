@@ -5,11 +5,14 @@
     "caverns_and_chasms:necronium_block",
     "netherexp:necronium_plated_block",
     "netherexp:cut_necronium_block",
-    "netherexp:cut_necronium_pillar"
+    "netherexp:cut_necronium_pillar",
+    "netherexp:necronium_grate:fluidlogged=lava",
+    "netherexp:necronium_grate:fluidlogged=ectoplasm"
   ],
   "mat1": [
-    "netherexp:necronium_grate",
     "netherexp:cut_necronium_slab",
-    "netherexp:cut_necronium_stairs"
+    "netherexp:cut_necronium_stairs",
+    "netherexp:necronium_grate:fluidlogged=air",
+    "netherexp:necronium_grate:fluidlogged=water"
   ]
 }
