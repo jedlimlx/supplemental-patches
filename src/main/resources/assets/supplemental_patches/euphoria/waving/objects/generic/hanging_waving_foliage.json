@@ -1,5 +1,5 @@
 {
-  "glsl": "waving_cordyceps.glsl",
+  "glsl": "hanging_waving_foliage.glsl",
   "conditions": [
     "WAVING_FOLIAGE"
   ]

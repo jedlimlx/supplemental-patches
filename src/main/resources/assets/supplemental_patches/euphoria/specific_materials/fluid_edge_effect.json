@@ -1,0 +1,4 @@
+{
+  "path": "terrain/fluidEdgeEffect.glsl",
+  "glsl": "fluid_edge_effect.glsl"
+}

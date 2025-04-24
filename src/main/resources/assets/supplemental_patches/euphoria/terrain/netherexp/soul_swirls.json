@@ -7,5 +7,6 @@
   "mat2": [
     "netherexp:soul_swirls:cooldown=true"
   ],
-  "color": "supplemental_patches:netherexp/soul_glow"
+  "color": "supplemental_patches:netherexp/soul_glow",
+  "waving": "supplemental_patches:generic/grounded_waving_foliage"
 }

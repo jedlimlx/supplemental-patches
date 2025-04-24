@@ -6,5 +6,6 @@
   ],
   "mat1": [
     "nears:faars_growth"
-  ]
+  ],
+  "waving": "supplemental_patches:generic/grounded_waving_foliage"
 }

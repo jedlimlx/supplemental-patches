@@ -11,5 +11,6 @@
   "conditions": [
     "GLOWING_BLOODCAP_MUSHROOM >= 1",
     "DO_IPBR_LIGHTS"
-  ]
+  ],
+  "waving": "supplemental_patches:generic/waving_foliage"
 }

@@ -186,8 +186,8 @@ fun split(rectangles: List<Rectangle>, depth: Int = 0, splitX: Boolean = true): 
         }.toString()
     }
 
-    val lst = rectangles.map { if (splitX) it.x1 else it.y1 }.sorted()
-    val threshold = lst[rectangles.size / 2] - 1
+    val lst = rectangles.map { if (splitX) it.x1 else it.y1 }.toSet().sorted()
+    val threshold = lst[lst.size / 2] - 1
     val (first, second) = if (splitX) rectangles.splitX(threshold) else rectangles.splitY(threshold)
     if (first.isEmpty() || second.isEmpty()) return split(rectangles, depth, !splitX)
 
