@@ -2,6 +2,7 @@
   "type": "directory",
   "name": "MOLTEN_LEAD",
   "folder": "molten_lead",
+  "priority": 2,
   "en_US": {
     "screen": "Molten Lead",
     "comment": "Settings that relate to molten lead."

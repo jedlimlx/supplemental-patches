@@ -113,7 +113,7 @@ object ShaderResourceLoader {
             COLOURS_MAP[loc.toString().replace("euphoria/colors/", "").replace(".json", "")] = colour
         }
 
-        // Loading various tint
+        // Loading various tints
         val tintLst = resourceManager.listResources("euphoria/tints") { it.path.endsWith(".json") }
 
         LOGGER.info("Loading ${tintLst.entries.size} tints...")

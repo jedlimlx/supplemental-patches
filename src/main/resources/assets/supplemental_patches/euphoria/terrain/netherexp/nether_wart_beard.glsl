@@ -1,13 +1,7 @@
+subsurfaceMode = 1, isFoliage = true;
+
 smoothnessG = color.r * 0.5;
 smoothnessD = smoothnessG;
-
-#ifdef MOD_NETHEREXP
-    if (color.r > 0.75) {
-        emission = 3.0 * color.g;
-        color.r *= 1.2;
-        maRecolor = vec3(0.1);
-    }
-#endif
 
 #ifdef COATED_TEXTURES
     noiseFactor = 0.77;

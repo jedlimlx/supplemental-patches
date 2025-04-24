@@ -1,0 +1,10 @@
+{
+  "name": "ancient_soul",
+  "glsl": "ancient_soul.glsl",
+  "mat0": [
+    "wetland_whimsy:ancient_soul_1",
+    "wetland_whimsy:ancient_soul_2",
+    "wetland_whimsy:ancient_soul_3",
+    "wetland_whimsy:ancient_soul_4"
+  ]
+}

@@ -4,9 +4,7 @@
   "mat0": [
     "netherexp:rusty_cut_netherite_block",
     "netherexp:rusty_cut_netherite_pillar",
-    "netherexp:rusty_netherite_plated_block",
-    "netherexp:rusty_netherite_grate:fluidlogged=lava",
-    "netherexp:rusty_netherite_grate:fluidlogged=ectoplasm"
+    "netherexp:rusty_netherite_plated_block"
   ],
   "mat1": [
     "netherexp:rusty_cut_netherite_slab",

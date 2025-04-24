@@ -6,5 +6,6 @@
     "netherexp:flowing_ectoplasm"
   ],
   "color": "supplemental_patches:netherexp/ectoplasm",
-  "waving": "supplemental_patches:waving_ectoplasm"
+  "waving": "supplemental_patches:fluids/waving_ectoplasm",
+  "needs_voxelization": true
 }
