@@ -1,5 +1,5 @@
 {
-  "glsl": "waving_prickly_vines.glsl",
+  "glsl": "waving_foliage.glsl",
   "conditions": [
     "WAVING_FOLIAGE"
   ]

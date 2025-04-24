@@ -13,74 +13,21 @@
     "twisting_vines",
     "twisting_vines_plant",
     "nether_wart_block",
-    "warped_wart_block"
+    "warped_wart_block",
+    "netherexp:basaltic_geyser"
   ],
-  "block.10113": [
-    "adjustments:deepslate_pillar"
+  "block.10248": [
+    "netherexp:cut_netherite_block",
+    "netherexp:cut_netherite_pillar",
+    "netherexp:netherite_plated_block",
+    "netherexp:netherite_grate:fluidlogged=lava",
+    "netherexp:netherite_grate:fluidlogged=ectoplasm"
   ],
-  "block.10116": [
-    "twigs:polished_calcite",
-    "adjustments:calcite_tiles",
-    "adjustments:calcite_column"
-  ],
-  "block.10100": [
-    "adjustments:diorite_tiles"
-  ],
-  "block.10101": [
-    "adjustments:diorite_column",
-    "adjustments:diorite_tile_slab",
-    "adjustments:diorite_tile_stairs",
-    "adjustments:diorite_tile_wall"
-  ],
-  "block.10096": [
-    "adjustments:granite_tiles"
-  ],
-  "block.10097": [
-    "adjustments:granite_column",
-    "adjustments:granite_tile_slab",
-    "adjustments:granite_tile_stairs",
-    "adjustments:granite_tile_wall"
-  ],
-  "block.10104": [
-    "adjustments:andesite_tiles",
-    "adjustments:mud_tiles"
-  ],
-  "block.10105": [
-    "adjustments:andesite_column",
-    "adjustments:mud_column",
-    "adjustments:andesite_tile_slab",
-    "adjustments:mud_tile_slab",
-    "adjustments:andesite_tile_stairs",
-    "adjustments:mud_tile_stairs",
-    "adjustments:andesite_tile_wall",
-    "adjustments:mud_tile_wall"
-  ],
-  "block.10120": [
-    "adjustments:dripstone_tiles"
-  ],
-  "block.10121": [
-    "adjustments:dripstone_column",
-    "adjustments:dripstone_tile_slab",
-    "adjustments:dripstone_tile_stairs",
-    "adjustments:dripstone_tile_wall"
-  ],
-  "block.10240": [
-    "adjustments:sandstone_tiles"
-  ],
-  "block.10241": [
-    "adjustments:sandstone_column",
-    "adjustments:sandstone_tile_slab",
-    "adjustments:sandstone_tile_stairs",
-    "adjustments:sandstone_tile_wall"
-  ],
-  "block.10244": [
-    "adjustments:red_sandstone_tiles"
-  ],
-  "block.10245": [
-    "adjustments:red_sandstone_column",
-    "adjustments:red_sandstone_tile_slab",
-    "adjustments:red_sandstone_tile_stairs",
-    "adjustments:red_sandstone_tile_wall"
+  "block.10249": [
+    "netherexp:cut_netherite_slab",
+    "netherexp:cut_netherite_stairs",
+    "netherexp:netherite_grate:fluidlogged=air",
+    "netherexp:netherite_grate:fluidlogged=water"
   ],
   "block.10384": [
     "quark:permafrost_bricks",
@@ -99,71 +46,12 @@
   "block.10332": [
     "galosphere:glinted_amethyst_cluster"
   ],
-  "block.10364": [
-    "adjustments:quartz_tiles"
-  ],
-  "block.10365": [
-    "adjustments:quartz_tile_slab",
-    "adjustments:quartz_tile_stairs",
-    "adjustments:quartz_tile_wall"
-  ],
-  "block.10376": [
-    "adjustments:purpur_bricks",
-    "adjustments:purpur_tiles"
-  ],
-  "block.10377": [
-    "adjustments:purpur_column",
-    "adjustments:purpur_brick_slab",
-    "adjustments:purpur_brick_stairs",
-    "adjustments:purpur_brick_wall",
-    "adjustments:purpur_tile_slab",
-    "adjustments:purpur_tile_stairs",
-    "adjustments:purpur_tile_wall"
-  ],
-  "block.10408": [
-    "adjustments:basalt_tiles"
-  ],
-  "block.10409": [
-    "adjustments:basalt_column",
-    "adjustments:basalt_tile_slab",
-    "adjustments:basalt_tile_stairs",
-    "adjustments:basalt_tile_wall"
-  ],
-  "block.10428": [
-    "adjustments:chiseled_end_stone",
-    "adjustments:end_stone_tiles"
-  ],
-  "block.10429": [
-    "adjustments:end_stone_column",
-    "adjustments:end_stone_tile_slab",
-    "adjustments:end_stone_tile_stairs",
-    "adjustments:end_stone_tile_wall"
-  ],
-  "block.10440": [
-    "adjustments:chiseled_prismarine",
-    "adjustments:prismarine_tiles"
-  ],
-  "block.10441": [
-    "adjustments:prismarine_column",
-    "adjustments:prismarine_tile_slab",
-    "adjustments:prismarine_tile_stairs",
-    "adjustments:prismarine_tile_wall"
-  ],
   "block.10480": [
     "quark:blackstone_furnace:lit=false"
   ],
   "block.10544": [
     "quark:glow_lichen_growth",
     "quark:glow_lichen_ring"
-  ],
-  "block.10712": [
-    "adjustments:tuff_tiles"
-  ],
-  "block.10713": [
-    "adjustments:tuff_column",
-    "adjustments:tuff_tile_slab",
-    "adjustments:tuff_tile_stairs",
-    "adjustments:tuff_tile_wall"
   ],
   "block.10776": [
     "netherexp:crimson_sporeshroom"

@@ -25,6 +25,6 @@
     "galosphere:gilded_beads:rotation=14",
     "galosphere:gilded_beads:rotation=15"
   ],
-  "waving": "supplemental_patches:waving_gilded_beads",
+  "waving": "supplemental_patches:misc/waving_gilded_beads",
   "needs_voxelization": true
 }

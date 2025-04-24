@@ -6,7 +6,7 @@
             color.rgb *= sqrt1(GetLuminance(color.rgb));
         }
     } else if (fractPos.y > 0.55) {  // candle
-        color.rgb *= 1.0 + 0.7 * pow2(max(0.6 - signMidCoordPos.y, float(NdotU > 0.9) * 1.6));
+        color.rgb *= 1.0 + 0.3 * pow2(max(0.5 - signMidCoordPos.y, float(NdotU > 0.9) * 1.6));
     }
 #endif
 

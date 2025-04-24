@@ -1,22 +1,16 @@
-smoothnessG = color.r * 0.5;
-smoothnessD = smoothnessG;
+subsurfaceMode = 1;
 
-#ifdef MOD_NETHEREXP
-    if (color.r > 0.75) {
-        emission = 3.0 * color.g;
-        color.r *= 1.2;
-        maRecolor = vec3(0.1);
-    }
-#endif
+smoothnessG = color.g * 0.5;
+smoothnessD = smoothnessG;
 
 #ifdef COATED_TEXTURES
     noiseFactor = 0.77;
 #endif
 
 #ifdef GLOWING_WART
-    if (color.r > 0.6) { // Nether Wart Block
-        overlayNoiseEmission = 0.28;
-        emission = 16.0 * color.g;
+    if (color.g > 0.7) { // Warped Wart Block
+        overlayNoiseIntensity = 0.7, overlayNoiseEmission = 0.8;
+        emission = 2.4;
         #ifdef GBUFFERS_TERRAIN
             vec2 bpos = floor(playerPos.xz + cameraPosition.xz + 0.5)
                       + floor(playerPos.y + cameraPosition.y + 0.5);

@@ -1,0 +1,1 @@
+emission = 2.5 * smoothstep1(color.a);

@@ -14,5 +14,6 @@
     null,
     "supplemental_patches:nears/soul_berry_bush",
     null
-  ]
+  ],
+  "waving": "supplemental_patches:generic/grounded_waving_foliage"
 }
