@@ -134,6 +134,7 @@ dependencies {
     modImplementation("maven.modrinth:resourceful-config:2.1.3-fabric")
     modImplementation("maven.modrinth:resourceful-lib:2.1.29-fabric")
     modImplementation("maven.modrinth:terrablender:3.0.1.7-fabric")
+    modImplementation("maven.modrinth:trimmed:1.20.1-2.1.4+fabric")
     modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:7.0.0-beta.1")
 
     // abnormals mods
@@ -196,6 +197,8 @@ dependencies {
     compileOnly("maven.modrinth:rubinated-nether:1.3.0.E-1.20.1")
 
     compileOnly("maven.modrinth:soulfulnether:1.0.0")
+
+    modImplementation("maven.modrinth:pigsteel-fabric:2.2.2")
 
     compileOnly("maven.modrinth:sullysmod:3.2.1-beta")
 

@@ -118,8 +118,8 @@ fun generateSettings(directory: Path) {
             "screen.EP_VERSION.columns=1",
             "screen.EP_VERSION.columns=1\n$shaderPropertiesCode"
         ).replace(
-            "PURKINJE_RENDER_DISTANCE_FADE",
-            "PURKINJE_RENDER_DISTANCE_FADE \\\n    ${sliders.joinToString(" ") { it.name }}"
+            "NIGHT_DESATURATION_END PURKINJE_RENDER_DISTANCE_FADE",
+            "NIGHT_DESATURATION_END PURKINJE_RENDER_DISTANCE_FADE \\\n    ${sliders.joinToString(" ") { it.name }}"
         )
     )
 

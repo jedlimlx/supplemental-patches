@@ -2,10 +2,10 @@
   "name": "faars",
   "glsl": "faars.glsl",
   "mat0": [
-    "nears:faars_bundle"
+    "nears:faar_bundle"
   ],
   "mat1": [
-    "nears:faars_growth"
+    "nears:faar_growth"
   ],
-  "waving": "supplemental_patches:generic/grounded_waving_foliage"
+  "waving": "supplemental_patches:generic/hanging_waving_foliage"
 }
