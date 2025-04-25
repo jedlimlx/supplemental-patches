@@ -123,6 +123,7 @@ dependencies {
     modImplementation("maven.modrinth:resourceful-config:3.0.9-fabric")
     modImplementation("maven.modrinth:resourceful-lib:3.0.12-fabric")
     modImplementation("maven.modrinth:terrablender:4.1.0.8-fabric")
+    modImplementation("maven.modrinth:trimmed:1.21-3.0.0+fabric")
     modImplementation("org.ladysnake:satin:2.0.0")
     modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0-alpha.1")
 
@@ -183,9 +184,11 @@ dependencies {
     compileOnly("maven.modrinth:elysium-api:1.20.1-1.1.0")
     compileOnly("maven.modrinth:jadens-nether-expansion:2.3.2")
 
-    implementation("maven.modrinth:rubinated-nether:1.3.1c")
+    compileOnly("maven.modrinth:rubinated-nether:1.3.1c")
 
     compileOnly("maven.modrinth:soulfulnether:1.0.0-forge")
+
+    implementation("maven.modrinth:pigsteel-fabric:2.3.0-1.21.1")
 
     compileOnly("maven.modrinth:sullysmod:3.2.1-beta")
 

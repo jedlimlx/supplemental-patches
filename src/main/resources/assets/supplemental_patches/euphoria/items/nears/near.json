@@ -1,0 +1,7 @@
+{
+  "name": "near",
+  "glsl": "near.glsl",
+  "mat0": [
+    "nears:near"
+  ]
+}
