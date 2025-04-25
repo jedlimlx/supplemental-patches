@@ -182,9 +182,11 @@ dependencies {
     compileOnly("maven.modrinth:elysium-api:1.20.1-1.1.0")
     compileOnly("maven.modrinth:jadens-nether-expansion:2.3.2")
 
-    implementation("maven.modrinth:rubinated-nether:1.3.1c")
+    compileOnly("maven.modrinth:rubinated-nether:1.3.1c")
 
     compileOnly("maven.modrinth:soulfulnether:1.0.0")
+
+    implementation("maven.modrinth:pigsteel-fabric:2.3.0-1.21.1")
 
     compileOnly("maven.modrinth:sullysmod:3.2.1-beta")
 
@@ -193,7 +195,7 @@ dependencies {
     compileOnly("maven.modrinth:rodspawn:1.0.2")
     compileOnly("maven.modrinth:hominid:1.0.1")
 
-    compileOnly("maven.modrinth:friends-and-foes:fabric-mc1.21.1-3.0.7")
+    modImplementation("maven.modrinth:friends-and-foes:fabric-mc1.21.1-3.0.7")
 
     compileOnly("maven.modrinth:yungs-api:1.20-Fabric-4.0.6")
     compileOnly("maven.modrinth:yungs-cave-biomes:1.20.1-Fabric-2.0.2")
@@ -211,8 +213,8 @@ dependencies {
     compileOnly("maven.modrinth:dye-the-world:1.1.2-forge")
 
     // jei & jade
-//    modImplementation("maven.modrinth:jade:17.2.2+fabric")
-//    modRuntimeOnly("mezz.jei:jei-1.21.1-fabric:19.21.1.248")
+    modImplementation("maven.modrinth:jade:15.9.3+fabric")
+    modRuntimeOnly("mezz.jei:jei-1.21.1-fabric:19.21.1.248")
 }
 
 tasks {

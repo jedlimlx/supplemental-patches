@@ -1,0 +1,15 @@
+{
+  "name": "pigsteel_soul_lantern",
+  "glsl": "pigsteel_soul_lantern.glsl",
+  "mat0": [
+    "pigsteel:pigsteel_soul_lantern",
+    "pigsteel:infected_pigsteel_soul_lantern",
+    "pigsteel:corrupted_pigsteel_soul_lantern",
+    "pigsteel:zombified_pigsteel_soul_lantern",
+    "pigsteel:waxed_pigsteel_soul_lantern",
+    "pigsteel:waxed_infected_pigsteel_soul_lantern",
+    "pigsteel:waxed_corrupted_pigsteel_soul_lantern",
+    "pigsteel:waxed_zombified_pigsteel_soul_lantern"
+  ],
+  "color": "minecraft:soul_lantern"
+}
