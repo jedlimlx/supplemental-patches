@@ -134,6 +134,7 @@ dependencies {
     implementation(fg.deobf("software.bernie.geckolib:geckolib-forge-${property("minecraft_version")}:4.4.9"))
     implementation(fg.deobf("maven.modrinth:cloth-config:11.1.136+forge"))
     implementation(fg.deobf("maven.modrinth:terrablender:3.0.1.7-forge"))
+    implementation(fg.deobf("maven.modrinth:trimmed:1.20.1-2.1.4+forge"))
     implementation(fg.deobf("maven.modrinth:moonlight:forge_1.20-2.13.71"))
     implementation(fg.deobf("maven.modrinth:resourceful-config:2.1.3-forge"))
     implementation(fg.deobf("maven.modrinth:resourceful-lib:2.1.29-forge"))
@@ -200,6 +201,8 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:rubinated-nether:1.3.0.E-1.20.1"))
 
     implementation(fg.deobf("maven.modrinth:soulfulnether:1.0.0-forge"))
+
+    implementation(fg.deobf("maven.modrinth:pigsteel-forge:5.1.0"))
 
     implementation(fg.deobf("maven.modrinth:sullysmod:3.2.1-beta"))
 
