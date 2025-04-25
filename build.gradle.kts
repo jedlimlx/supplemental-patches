@@ -114,6 +114,7 @@ dependencies {
     implementation("software.bernie.geckolib:geckolib-neoforge-${property("minecraft_version")}:4.7.3")
     implementation("maven.modrinth:cloth-config:15.0.140+neoforge")
     implementation("maven.modrinth:terrablender:4.1.0.8-neoforge")
+    implementation("maven.modrinth:trimmed:1.21-3.0.0+neoforge")
     implementation("maven.modrinth:moonlight:neoforge_1.21-2.17.32")
     implementation("maven.modrinth:resourceful-config:3.0.10-neoforge")
     implementation("maven.modrinth:resourceful-lib:3.0.12-neoforge")
@@ -180,6 +181,8 @@ dependencies {
     implementation("maven.modrinth:rubinated-nether:1.3.1c")
 
     compileOnly("maven.modrinth:soulfulnether:1.0.0-forge")
+
+    implementation("maven.modrinth:pigsteel-forge:7.1.0")
 
     compileOnly("maven.modrinth:sullysmod:3.2.1-beta")
 
