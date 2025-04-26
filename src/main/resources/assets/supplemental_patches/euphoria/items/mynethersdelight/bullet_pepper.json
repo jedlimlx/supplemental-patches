@@ -1,0 +1,7 @@
+{
+  "name": "bullet_pepper",
+  "glsl": "bullet_pepper.glsl",
+  "mat0": [
+    "mynethersdelight:bullet_pepper"
+  ]
+}
