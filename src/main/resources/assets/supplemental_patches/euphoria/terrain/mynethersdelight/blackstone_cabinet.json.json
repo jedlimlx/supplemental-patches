@@ -1,0 +1,7 @@
+{
+  "name": "blackstone_cabinet",
+  "glsl": "blackstone_cabinet.glsl",
+  "mat0": [
+    "mynethersdelight:blackstone_cabinet"
+  ]
+}

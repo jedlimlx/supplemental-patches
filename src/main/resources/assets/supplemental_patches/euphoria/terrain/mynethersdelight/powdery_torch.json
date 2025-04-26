@@ -1,0 +1,12 @@
+{
+  "name": "powdery_torch",
+  "glsl": "powdery_torch.glsl",
+  "mat0": [
+    "mynethersdelight:powdery_torch",
+    "mynethersdelight:wall_powdery_torch"
+  ],
+  "mat2": [
+    "mynethersdelight:bullet_pepper:lit=true"
+  ],
+  "color": "minecraft:magma_block"
+}

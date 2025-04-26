@@ -112,7 +112,7 @@ dependencies {
 
     // general library mods
     modImplementation("maven.modrinth:architectury-api:13.0.5+fabric")
-    compileOnly("maven.modrinth:blueprint:7.1.1-forge")
+    compileOnly("maven.modrinth:blueprint:8.0.3")
     modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-base:6.1.2")
     modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-entity:6.1.2")
     modImplementation("maven.modrinth:cloth-config:11.1.136+fabric")
@@ -131,15 +131,15 @@ dependencies {
     compileOnly("maven.modrinth:abnormals-delight:5.0.0-forge")
     compileOnly("maven.modrinth:atmospheric:6.1.0-forge")
     compileOnly("maven.modrinth:autumnity:5.0.1-forge")
-    compileOnly("maven.modrinth:berry-good:7.0.0-forge")
-    compileOnly("maven.modrinth:buzzier-bees:6.0.0-forge")
+    compileOnly("maven.modrinth:berry-good:8.0.0")
+    compileOnly("maven.modrinth:buzzier-bees:7.0.0")
     compileOnly("maven.modrinth:caverns-and-chasms:2.0.0-forge")
-    compileOnly("maven.modrinth:clayworks:3.0.1-forge")
+    compileOnly("maven.modrinth:clayworks:4.0.0")
     compileOnly("maven.modrinth:endergetic:5.0.0-forge")
     compileOnly("maven.modrinth:environmental:4.0.0-forge")
     compileOnly("maven.modrinth:neapolitan:5.1.0-forge")
     compileOnly("maven.modrinth:savage-and-ravage:6.0.0-forge")
-    compileOnly("maven.modrinth:woodworks:3.0.1-forge")
+    compileOnly("maven.modrinth:woodworks:4.0.0")
     compileOnly("maven.modrinth:upgrade-aquatic:6.0.1-forge")
 
     // supplementaries
@@ -152,9 +152,10 @@ dependencies {
     compileOnly("maven.modrinth:doom-gloom:1.0.2")
 
     // farmers delight
-    compileOnly("maven.modrinth:farmers-delight-refabricated:1.21.1-2.3.0")
+    compileOnly("maven.modrinth:farmers-delight-refabricated:1.21.1-3.0.1")
     compileOnly("maven.modrinth:rustic-delight:1.3.3-fabric,1.21.1")
     compileOnly("maven.modrinth:crate-delight:24.11.22-1.21-fabric")
+    compileOnly("maven.modrinth:my-nethers-delight-refabricated:2.0.3+1.7.8")
 
     // mob overhauls
     compileOnly("maven.modrinth:enderman-overhaul:2.0.2-neoforge")
@@ -188,7 +189,7 @@ dependencies {
 
     compileOnly("maven.modrinth:soulfulnether:1.0.0-forge")
 
-    implementation("maven.modrinth:pigsteel-fabric:2.3.0-1.21.1")
+    modImplementation("maven.modrinth:pigsteel-fabric:2.3.0-1.21.1")
 
     compileOnly("maven.modrinth:sullysmod:3.2.1-beta")
 

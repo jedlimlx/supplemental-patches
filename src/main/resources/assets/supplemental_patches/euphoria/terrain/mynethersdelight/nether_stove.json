@@ -1,0 +1,16 @@
+{
+  "name": "nether_stove",
+  "glsl": "nether_stove.glsl",
+  "mat0": [
+    "mynethersdelight:nether_stove:lit=true:soul=false"
+  ],
+  "mat2": [
+    "mynethersdelight:nether_stove:lit=true:soul=true"
+  ],
+  "color": [
+    "minecraft:furnace",
+    null,
+    "minecraft:soul_lantern",
+    null
+  ]
+}
