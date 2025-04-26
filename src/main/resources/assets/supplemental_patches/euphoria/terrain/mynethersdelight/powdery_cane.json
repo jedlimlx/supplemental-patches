@@ -1,0 +1,38 @@
+{
+  "name": "powdery_cane",
+  "glsl": "powdery_cane.glsl",
+  "mat0": [
+    "mynethersdelight:powdery_block",
+    "mynethersdelight:powdery_cabinet",
+    "mynethersdelight:powdery_mosaic",
+    "mynethersdelight:powdery_planks",
+    "mynethersdelight:stripped_powdery_block"
+  ],
+  "mat1": [
+    "mynethersdelight:powdery_button",
+    "mynethersdelight:powdery_door",
+    "mynethersdelight:powdery_fence",
+    "mynethersdelight:powdery_fence_gate",
+    "mynethersdelight:powdery_mosaic_slab",
+    "mynethersdelight:powdery_mosaic_stairs",
+    "mynethersdelight:powdery_pressure_plate",
+    "mynethersdelight:powdery_slab",
+    "mynethersdelight:powdery_stairs",
+    "mynethersdelight:powdery_trapdoor"
+  ],
+  "mat2": [
+    "mynethersdelight:powdery_cannon:lit=true",
+    "mynethersdelight:bullet_pepper_crate"
+  ],
+  "mat3": [
+    "mynethersdelight:bullet_pepper:lit=false",
+    "mynethersdelight:powdery_cannon:lit=false",
+    "mynethersdelight:powdery_chubby_sapling"
+  ],
+  "color": [
+    null,
+    null,
+    "minecraft:magma_block",
+    null
+  ]
+}
