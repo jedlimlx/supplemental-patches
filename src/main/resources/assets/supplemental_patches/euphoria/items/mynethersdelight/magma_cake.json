@@ -1,0 +1,10 @@
+{
+  "name": "magma_cake",
+  "glsl": "magma_cake.glsl",
+  "mat0": [
+    "mynethersdelight:magma_cake",
+    "mynethersdelight:magma_cake_slice",
+    "mynethersdelight:burnt_roll",
+    "mynethersdelight:rock_soup"
+  ]
+}

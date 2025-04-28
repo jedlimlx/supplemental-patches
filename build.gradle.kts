@@ -112,7 +112,7 @@ dependencies {
 
     // general library mods
     modImplementation("maven.modrinth:architectury-api:15.0.3+fabric")
-    compileOnly("maven.modrinth:blueprint:7.1.1-forge")
+    compileOnly("maven.modrinth:blueprint:8.0.3")
     modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-base:6.2.2")
     modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-entity:6.2.2")
     modImplementation("maven.modrinth:cloth-config:17.0.144+fabric")
@@ -124,20 +124,21 @@ dependencies {
     modImplementation("maven.modrinth:resourceful-lib:3.4.5-fabric")
     modImplementation("maven.modrinth:terrablender:4.3.0.2-fabric")
     modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:13.0.0-beta.1")
+    modImplementation("maven.modrinth:yacl:3.6.5+1.21.4-fabric")
 
     // abnormals mods
     compileOnly("maven.modrinth:abnormals-delight:5.0.0-forge")
     compileOnly("maven.modrinth:atmospheric:6.1.0-forge")
     compileOnly("maven.modrinth:autumnity:5.0.1-forge")
-    compileOnly("maven.modrinth:berry-good:7.0.0-forge")
-    compileOnly("maven.modrinth:buzzier-bees:6.0.0-forge")
+    compileOnly("maven.modrinth:berry-good:8.0.0")
+    compileOnly("maven.modrinth:buzzier-bees:7.0.0")
     compileOnly("maven.modrinth:caverns-and-chasms:2.0.0-forge")
-    compileOnly("maven.modrinth:clayworks:3.0.1-forge")
+    compileOnly("maven.modrinth:clayworks:4.0.0")
     compileOnly("maven.modrinth:endergetic:5.0.0-forge")
     compileOnly("maven.modrinth:environmental:4.0.0-forge")
     compileOnly("maven.modrinth:neapolitan:5.1.0-forge")
     compileOnly("maven.modrinth:savage-and-ravage:6.0.0-forge")
-    compileOnly("maven.modrinth:woodworks:3.0.1-forge")
+    compileOnly("maven.modrinth:woodworks:4.0.0")
     compileOnly("maven.modrinth:upgrade-aquatic:6.0.1-forge")
 
     // supplementaries
@@ -150,9 +151,10 @@ dependencies {
     compileOnly("maven.modrinth:doom-gloom:1.0.2")
 
     // farmers delight
-    compileOnly("maven.modrinth:farmers-delight-refabricated:1.21.1-2.3.0")
+    compileOnly("maven.modrinth:farmers-delight-refabricated:1.21.1-3.0.1")
     compileOnly("maven.modrinth:rustic-delight:1.3.3-fabric,1.21.1")
     compileOnly("maven.modrinth:crate-delight:24.11.22-1.21-fabric")
+    compileOnly("maven.modrinth:my-nethers-delight-refabricated:2.0.3+1.7.8")
 
     // mob overhauls
     compileOnly("maven.modrinth:enderman-overhaul:2.0.2-neoforge")
@@ -171,7 +173,7 @@ dependencies {
     modImplementation("maven.modrinth:wilder-wild:4.0.3-mc1.21.4")
 
     modImplementation("maven.modrinth:thermoo:5.3")
-    modCompileOnly("maven.modrinth:frostiful:2.2-beta.1")
+    modCompileOnly("maven.modrinth:frostiful:2.2+1.21.4")
     modCompileOnly("maven.modrinth:scorchful:0.15.1+1.21.4")
 
     // misc
@@ -186,7 +188,7 @@ dependencies {
 
     compileOnly("maven.modrinth:soulfulnether:1.0.0")
 
-    implementation("maven.modrinth:pigsteel-fabric:2.3.0-1.21.1")
+    modImplementation("maven.modrinth:pigsteel-fabric:2.4.0-1.21.4")
 
     compileOnly("maven.modrinth:sullysmod:3.2.1-beta")
 
@@ -195,7 +197,7 @@ dependencies {
     compileOnly("maven.modrinth:rodspawn:1.0.2")
     compileOnly("maven.modrinth:hominid:1.0.1")
 
-    modImplementation("maven.modrinth:friends-and-foes:fabric-mc1.21.1-3.0.7")
+    modImplementation("maven.modrinth:friends-and-foes:fabric-mc1.21.4-4.0.1")
 
     compileOnly("maven.modrinth:yungs-api:1.20-Fabric-4.0.6")
     compileOnly("maven.modrinth:yungs-cave-biomes:1.20.1-Fabric-2.0.2")
@@ -213,8 +215,8 @@ dependencies {
     compileOnly("maven.modrinth:dye-the-world:1.1.2-forge")
 
     // jei & jade
-    modImplementation("maven.modrinth:jade:15.9.3+fabric")
-    modRuntimeOnly("mezz.jei:jei-1.21.1-fabric:19.21.1.248")
+    modImplementation("maven.modrinth:jade:17.2.2+fabric")
+    compileOnly("mezz.jei:jei-1.21.1-fabric:19.21.1.248")
 }
 
 tasks {
