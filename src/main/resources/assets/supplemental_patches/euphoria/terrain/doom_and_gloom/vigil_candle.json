@@ -1,5 +1,5 @@
 {
-  "name": "vigil_candle [normal, amber]",
+  "name": "vigil_candle",
   "glsl": "vigil_candle.glsl",
   "mat0": [
     "doom_and_gloom:vigil_candle:lit=true",
@@ -25,10 +25,221 @@
   "mat3": [
     "doom_and_gloom:amber_vigil_candle:lit=false"
   ],
+  "mat4": [
+    "doom_and_gloom:aqua_vigil_candle:lit=true"
+  ],
+  "mat5": [
+    "doom_and_gloom:aqua_vigil_candle:lit=false"
+  ],
+  "mat6": [
+    "doom_and_gloom:blue_vigil_candle:lit=true"
+  ],
+  "mat7": [
+    "doom_and_gloom:blue_vigil_candle:lit=false"
+  ],
+  "mat8": [
+    "doom_and_gloom:coral_vigil_candle:lit=true"
+  ],
+  "mat9": [
+    "doom_and_gloom:coral_vigil_candle:lit=false"
+  ],
+  "mat10": [
+    "doom_and_gloom:cyan_vigil_candle:lit=true"
+  ],
+  "mat11": [
+    "doom_and_gloom:cyan_vigil_candle:lit=false"
+  ],
+  "mat12": [
+    "doom_and_gloom:forest_vigil_candle:lit=true"
+  ],
+  "mat13": [
+    "doom_and_gloom:forest_vigil_candle:lit=false"
+  ],
+  "mat14": [
+    "doom_and_gloom:ginger_vigil_candle:lit=true"
+  ],
+  "mat15": [
+    "doom_and_gloom:ginger_vigil_candle:lit=false"
+  ],
+  "mat16": [
+    "doom_and_gloom:green_vigil_candle:lit=true"
+  ],
+  "mat17": [
+    "doom_and_gloom:green_vigil_candle:lit=false"
+  ],
+  "mat18": [
+    "doom_and_gloom:indigo_vigil_candle:lit=true"
+  ],
+  "mat19": [
+    "doom_and_gloom:indigo_vigil_candle:lit=false"
+  ],
+  "mat20": [
+    "doom_and_gloom:light_blue_vigil_candle:lit=true"
+  ],
+  "mat21": [
+    "doom_and_gloom:light_blue_vigil_candle:lit=false"
+  ],
+  "mat22": [
+    "doom_and_gloom:lime_vigil_candle:lit=true"
+  ],
+  "mat23": [
+    "doom_and_gloom:lime_vigil_candle:lit=false"
+  ],
+  "mat24": [
+    "doom_and_gloom:magenta_vigil_candle:lit=true"
+  ],
+  "mat25": [
+    "doom_and_gloom:magenta_vigil_candle:lit=false"
+  ],
+  "mat26": [
+    "doom_and_gloom:maroon_vigil_candle:lit=true"
+  ],
+  "mat27": [
+    "doom_and_gloom:maroon_vigil_candle:lit=false"
+  ],
+  "mat28": [
+    "doom_and_gloom:mint_vigil_candle:lit=true"
+  ],
+  "mat29": [
+    "doom_and_gloom:mint_vigil_candle:lit=false"
+  ],
+  "mat30": [
+    "doom_and_gloom:navy_vigil_candle:lit=true"
+  ],
+  "mat31": [
+    "doom_and_gloom:navy_vigil_candle:lit=false"
+  ],
+  "mat32": [
+    "doom_and_gloom:olive_vigil_candle:lit=true"
+  ],
+  "mat33": [
+    "doom_and_gloom:olive_vigil_candle:lit=false"
+  ],
+  "mat34": [
+    "doom_and_gloom:orange_vigil_candle:lit=true"
+  ],
+  "mat35": [
+    "doom_and_gloom:orange_vigil_candle:lit=false"
+  ],
+  "mat36": [
+    "doom_and_gloom:pink_vigil_candle:lit=true"
+  ],
+  "mat37": [
+    "doom_and_gloom:pink_vigil_candle:lit=false"
+  ],
+  "mat38": [
+    "doom_and_gloom:purple_vigil_candle:lit=true"
+  ],
+  "mat39": [
+    "doom_and_gloom:purple_vigil_candle:lit=false"
+  ],
+  "mat40": [
+    "doom_and_gloom:red_vigil_candle:lit=true"
+  ],
+  "mat41": [
+    "doom_and_gloom:red_vigil_candle:lit=false"
+  ],
+  "mat42": [
+    "doom_and_gloom:rose_vigil_candle:lit=true"
+  ],
+  "mat43": [
+    "doom_and_gloom:rose_vigil_candle:lit=false"
+  ],
+  "mat44": [
+    "doom_and_gloom:slate_vigil_candle:lit=true"
+  ],
+  "mat45": [
+    "doom_and_gloom:slate_vigil_candle:lit=false"
+  ],
+  "mat46": [
+    "doom_and_gloom:tan_vigil_candle:lit=true"
+  ],
+  "mat47": [
+    "doom_and_gloom:tan_vigil_candle:lit=false"
+  ],
+  "mat48": [
+    "doom_and_gloom:teal_vigil_candle:lit=true"
+  ],
+  "mat49": [
+    "doom_and_gloom:teal_vigil_candle:lit=false"
+  ],
+  "mat50": [
+    "doom_and_gloom:verdant_vigil_candle:lit=true"
+  ],
+  "mat51": [
+    "doom_and_gloom:verdant_vigil_candle:lit=false"
+  ],
+  "mat52": [
+    "doom_and_gloom:yellow_vigil_candle:lit=true"
+  ],
+  "mat53": [
+    "doom_and_gloom:yellow_vigil_candle:lit=false"
+  ],
   "color": [
     "minecraft:standard_candle",
     null,
     "supplemental_patches:doom_and_gloom/amber",
+    null,
+    "supplemental_patches:doom_and_gloom/aqua",
+    null,
+    "minecraft:blue_candle",
+    null,
+    "supplemental_patches:doom_and_gloom/coral",
+    null,
+    "minecraft:cyan_candle",
+    null,
+    "supplemental_patches:doom_and_gloom/forest",
+    null,
+    "supplemental_patches:doom_and_gloom/ginger",
+    null,
+    "minecraft:green_candle",
+    null,
+    "supplemental_patches:doom_and_gloom/indigo",
+    null,
+    "minecraft:light_blue_candle",
+    null,
+    "minecraft:lime_candle",
+    null,
+    "minecraft:magenta_candle",
+    null,
+    "supplemental_patches:doom_and_gloom/maroon",
+    null,
+    "supplemental_patches:doom_and_gloom/mint",
+    null,
+    "supplemental_patches:doom_and_gloom/navy",
+    null,
+    "supplemental_patches:doom_and_gloom/olive",
+    null,
+    "minecraft:orange_candle",
+    null,
+    "minecraft:pink_candle",
+    null,
+    "minecraft:purple_candle",
+    null,
+    "minecraft:red_candle",
+    null,
+    "supplemental_patches:doom_and_gloom/rose",
+    null,
+    "supplemental_patches:doom_and_gloom/slate",
+    null,
+    "supplemental_patches:doom_and_gloom/tan",
+    null,
+    "supplemental_patches:doom_and_gloom/teal",
+    null,
+    "supplemental_patches:doom_and_gloom/verdant",
+    null,
+    "minecraft:yellow_candle",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
     null
-  ]
+  ],
+  "block_size": 64
 }

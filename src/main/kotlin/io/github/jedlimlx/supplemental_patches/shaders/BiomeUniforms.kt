@@ -1,6 +1,5 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
-import io.github.jedlimlx.supplemental_patches.SupplementalPatches
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap
 import net.minecraft.client.Minecraft
 import net.minecraft.client.multiplayer.ClientPacketListener
