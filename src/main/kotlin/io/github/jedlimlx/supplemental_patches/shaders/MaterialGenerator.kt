@@ -808,7 +808,15 @@ const val GBUFFER_BLOCK_DIRECTORY = "/shaders/program/gbuffers_block.glsl"
 const val SHADOW_COMP_DIRECTORY = "/shaders/program/shadowcomp.glsl"
 
 fun modifyGBuffers(directory: Path) {
-    var file = File(directory.absolutePathString() + SHADOW_DIRECTORY)
+    var file = File(directory.absolutePathString() + SHADER_PROPERTIES_FILE)
+    file.writeText(
+        file.readText().replace(
+            "voxel_sampler red_integer r8ui",
+            "voxel_sampler red_integer r16ui"
+        )
+    )
+
+    file = File(directory.absolutePathString() + SHADOW_DIRECTORY)
     file.writeText(
         file.readText().replace(
             "        DoWave(position.xyz, mat);",
