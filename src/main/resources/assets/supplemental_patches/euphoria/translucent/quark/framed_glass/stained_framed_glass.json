@@ -17,10 +17,151 @@
     "quark:gray_framed_glass",
     "quark:gray_framed_glass_pane"
   ],
+  "mat4": [
+    "quark:green_framed_glass",
+    "quark:green_framed_glass_pane"
+  ],
+  "mat5": [
+    "quark:light_blue_framed_glass",
+    "quark:light_blue_framed_glass_pane"
+  ],
+  "mat6": [
+    "quark:light_gray_framed_glass",
+    "quark:light_gray_framed_glass_pane"
+  ],
+  "mat7": [
+    "quark:lime_framed_glass",
+    "quark:lime_framed_glass_pane"
+  ],
+  "mat8": [
+    "quark:magenta_framed_glass",
+    "quark:magenta_framed_glass_pane"
+  ],
+  "mat9": [
+    "quark:orange_framed_glass",
+    "quark:orange_framed_glass_pane"
+  ],
+  "mat10": [
+    "quark:pink_framed_glass",
+    "quark:pink_framed_glass_pane"
+  ],
+  "mat11": [
+    "quark:purple_framed_glass",
+    "quark:purple_framed_glass_pane"
+  ],
+  "mat12": [
+    "quark:red_framed_glass",
+    "quark:red_framed_glass_pane"
+  ],
+  "mat13": [
+    "quark:white_framed_glass",
+    "quark:white_framed_glass_pane"
+  ],
+  "mat14": [
+    "quark:yellow_framed_glass",
+    "quark:yellow_framed_glass_pane"
+  ],
+  "mat15": [
+    "dye_the_world:amber_framed_glass",
+    "dye_the_world:amber_framed_glass_pane"
+  ],
+  "mat16": [
+    "dye_the_world:aqua_framed_glass",
+    "dye_the_world:aqua_framed_glass_pane"
+  ],
+  "mat17": [
+    "dye_the_world:beige_framed_glass",
+    "dye_the_world:beige_framed_glass_pane"
+  ],
+  "mat18": [
+    "dye_the_world:coral_framed_glass",
+    "dye_the_world:coral_framed_glass_pane"
+  ],
+  "mat19": [
+    "quark:brown_framed_glass",
+    "quark:brown_framed_glass_pane"
+  ],
+  "mat20": [
+    "dye_the_world:forest_framed_glass",
+    "dye_the_world:forest_framed_glass_pane"
+  ],
+  "mat21": [
+    "dye_the_world:ginger_framed_glass",
+    "dye_the_world:ginger_framed_glass_pane"
+  ],
+  "mat22": [
+    "dye_the_world:indigo_framed_glass",
+    "dye_the_world:indigo_framed_glass_pane"
+  ],
+  "mat23": [
+    "dye_the_world:maroon_framed_glass",
+    "dye_the_world:maroon_framed_glass_pane"
+  ],
+  "mat24": [
+    "dye_the_world:mint_framed_glass",
+    "dye_the_world:mint_framed_glass_pane"
+  ],
+  "mat25": [
+    "dye_the_world:navy_framed_glass",
+    "dye_the_world:navy_framed_glass_pane"
+  ],
+  "mat26": [
+    "dye_the_world:olive_framed_glass",
+    "dye_the_world:olive_framed_glass_pane"
+  ],
+  "mat27": [
+    "dye_the_world:rose_framed_glass",
+    "dye_the_world:rose_framed_glass_pane"
+  ],
+  "mat28": [
+    "dye_the_world:slate_framed_glass",
+    "dye_the_world:slate_framed_glass_pane"
+  ],
+  "mat29": [
+    "dye_the_world:tan_framed_glass",
+    "dye_the_world:tan_framed_glass_pane"
+  ],
+  "mat30": [
+    "dye_the_world:teal_framed_glass",
+    "dye_the_world:teal_framed_glass_pane"
+  ],
+  "mat31": [
+    "dye_the_world:verdant_framed_glass",
+    "dye_the_world:verdant_framed_glass_pane"
+  ],
   "color": [
     "supplemental_patches:dyes/black",
     "supplemental_patches:dyes/blue",
     "supplemental_patches:dyes/cyan",
-    "supplemental_patches:dyes/gray"
-  ]
+    "supplemental_patches:dyes/gray",
+    "supplemental_patches:dyes/green",
+    "supplemental_patches:dyes/light_blue",
+    "supplemental_patches:dyes/light_gray",
+    "supplemental_patches:dyes/lime",
+    "supplemental_patches:dyes/magenta",
+    "supplemental_patches:dyes/orange",
+    "supplemental_patches:dyes/pink",
+    "supplemental_patches:dyes/purple",
+    "supplemental_patches:dyes/red",
+    "supplemental_patches:dyes/white",
+    "supplemental_patches:dyes/yellow",
+    "supplemental_patches:dyes/brown",
+    "supplemental_patches:dyes/dye_depot/amber",
+    "supplemental_patches:dyes/dye_depot/aqua",
+    "supplemental_patches:dyes/dye_depot/beige",
+    "supplemental_patches:dyes/dye_depot/coral",
+    "supplemental_patches:dyes/dye_depot/forest",
+    "supplemental_patches:dyes/dye_depot/ginger",
+    "supplemental_patches:dyes/dye_depot/indigo",
+    "supplemental_patches:dyes/dye_depot/maroon",
+    "supplemental_patches:dyes/dye_depot/mint",
+    "supplemental_patches:dyes/dye_depot/navy",
+    "supplemental_patches:dyes/dye_depot/olive",
+    "supplemental_patches:dyes/dye_depot/rose",
+    "supplemental_patches:dyes/dye_depot/slate",
+    "supplemental_patches:dyes/dye_depot/tan",
+    "supplemental_patches:dyes/dye_depot/teal",
+    "supplemental_patches:dyes/dye_depot/verdant"
+  ],
+  "block_size": 32
 }

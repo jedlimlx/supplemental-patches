@@ -13,10 +13,59 @@
   "mat3": [
     "quark:orange_crystal_lamp:lit=false"
   ],
+  "mat4": [
+    "quark:yellow_crystal_lamp:lit=true"
+  ],
+  "mat5": [
+    "quark:yellow_crystal_lamp:lit=false"
+  ],
+  "mat6": [
+    "quark:green_crystal_lamp:lit=true"
+  ],
+  "mat7": [
+    "quark:green_crystal_lamp:lit=false"
+  ],
+  "mat8": [
+    "quark:blue_crystal_lamp:lit=true"
+  ],
+  "mat9": [
+    "quark:blue_crystal_lamp:lit=false"
+  ],
+  "mat10": [
+    "quark:indigo_crystal_lamp:lit=true"
+  ],
+  "mat11": [
+    "quark:indigo_crystal_lamp:lit=false"
+  ],
+  "mat12": [
+    "quark:violet_crystal_lamp:lit=true"
+  ],
+  "mat13": [
+    "quark:violet_crystal_lamp:lit=false"
+  ],
+  "mat14": [
+    "quark:black_crystal_lamp:lit=true"
+  ],
+  "mat15": [
+    "quark:black_crystal_lamp:lit=false"
+  ],
   "color": [
     "supplemental_patches:quark/crystal_lamp/red",
     null,
     "supplemental_patches:quark/crystal_lamp/orange",
+    null,
+    "supplemental_patches:quark/crystal_lamp/yellow",
+    null,
+    "supplemental_patches:quark/crystal_lamp/green",
+    null,
+    "supplemental_patches:quark/crystal_lamp/blue",
+    null,
+    "supplemental_patches:quark/crystal_lamp/indigo",
+    null,
+    "supplemental_patches:quark/crystal_lamp/violet",
+    null,
+    "supplemental_patches:quark/crystal_lamp/black",
     null
-  ]
+  ],
+  "block_size": 16
 }

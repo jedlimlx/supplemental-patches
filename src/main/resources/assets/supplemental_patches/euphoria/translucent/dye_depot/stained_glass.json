@@ -13,11 +13,124 @@
   "mat3": [
     "dye_depot:aqua_stained_glass_pane"
   ],
+  "mat4": [
+    "dye_depot:beige_stained_glass"
+  ],
+  "mat5": [
+    "dye_depot:beige_stained_glass_pane"
+  ],
+  "mat6": [
+    "dye_depot:coral_stained_glass"
+  ],
+  "mat7": [
+    "dye_depot:coral_stained_glass_pane"
+  ],
+  "mat8": [
+    "dye_depot:forest_stained_glass"
+  ],
+  "mat9": [
+    "dye_depot:forest_stained_glass_pane"
+  ],
+  "mat10": [
+    "dye_depot:ginger_stained_glass"
+  ],
+  "mat11": [
+    "dye_depot:ginger_stained_glass_pane"
+  ],
+  "mat12": [
+    "dye_depot:indigo_stained_glass"
+  ],
+  "mat13": [
+    "dye_depot:indigo_stained_glass_pane"
+  ],
+  "mat14": [
+    "dye_depot:maroon_stained_glass"
+  ],
+  "mat15": [
+    "dye_depot:maroon_stained_glass_pane"
+  ],
+  "mat16": [
+    "dye_depot:mint_stained_glass"
+  ],
+  "mat17": [
+    "dye_depot:mint_stained_glass_pane"
+  ],
+  "mat18": [
+    "dye_depot:navy_stained_glass"
+  ],
+  "mat19": [
+    "dye_depot:navy_stained_glass_pane"
+  ],
+  "mat20": [
+    "dye_depot:olive_stained_glass"
+  ],
+  "mat21": [
+    "dye_depot:olive_stained_glass_pane"
+  ],
+  "mat22": [
+    "dye_depot:rose_stained_glass"
+  ],
+  "mat23": [
+    "dye_depot:rose_stained_glass_pane"
+  ],
+  "mat24": [
+    "dye_depot:slate_stained_glass"
+  ],
+  "mat25": [
+    "dye_depot:slate_stained_glass_pane"
+  ],
+  "mat26": [
+    "dye_depot:tan_stained_glass"
+  ],
+  "mat27": [
+    "dye_depot:tan_stained_glass_pane"
+  ],
+  "mat28": [
+    "dye_depot:teal_stained_glass"
+  ],
+  "mat29": [
+    "dye_depot:teal_stained_glass_pane"
+  ],
+  "mat30": [
+    "dye_depot:verdant_stained_glass"
+  ],
+  "mat31": [
+    "dye_depot:verdant_stained_glass_pane"
+  ],
   "color": [
     "supplemental_patches:dye_depot/stained_glass/amber",
     "supplemental_patches:dye_depot/stained_glass/amber",
     "supplemental_patches:dye_depot/stained_glass/aqua",
-    "supplemental_patches:dye_depot/stained_glass/aqua"
+    "supplemental_patches:dye_depot/stained_glass/aqua",
+    "supplemental_patches:dye_depot/stained_glass/beige",
+    "supplemental_patches:dye_depot/stained_glass/beige",
+    "supplemental_patches:dye_depot/stained_glass/coral",
+    "supplemental_patches:dye_depot/stained_glass/coral",
+    "supplemental_patches:dye_depot/stained_glass/forest",
+    "supplemental_patches:dye_depot/stained_glass/forest",
+    "supplemental_patches:dye_depot/stained_glass/ginger",
+    "supplemental_patches:dye_depot/stained_glass/ginger",
+    "supplemental_patches:dye_depot/stained_glass/indigo",
+    "supplemental_patches:dye_depot/stained_glass/indigo",
+    "supplemental_patches:dye_depot/stained_glass/maroon",
+    "supplemental_patches:dye_depot/stained_glass/maroon",
+    "supplemental_patches:dye_depot/stained_glass/mint",
+    "supplemental_patches:dye_depot/stained_glass/mint",
+    "supplemental_patches:dye_depot/stained_glass/navy",
+    "supplemental_patches:dye_depot/stained_glass/navy",
+    "supplemental_patches:dye_depot/stained_glass/olive",
+    "supplemental_patches:dye_depot/stained_glass/olive",
+    "supplemental_patches:dye_depot/stained_glass/rose",
+    "supplemental_patches:dye_depot/stained_glass/rose",
+    "supplemental_patches:dye_depot/stained_glass/slate",
+    "supplemental_patches:dye_depot/stained_glass/slate",
+    "supplemental_patches:dye_depot/stained_glass/tan",
+    "supplemental_patches:dye_depot/stained_glass/tan",
+    "supplemental_patches:dye_depot/stained_glass/teal",
+    "supplemental_patches:dye_depot/stained_glass/teal",
+    "supplemental_patches:dye_depot/stained_glass/verdant",
+    "supplemental_patches:dye_depot/stained_glass/verdant"
   ],
-  "needs_voxelization": true
+  "needs_voxelization": true,
+  "block_size": 32
 }
