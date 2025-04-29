@@ -9,7 +9,7 @@ lmCoordM.x *= 0.88;
 
 #if GLOWING_AMETHYST >= 1 && defined GBUFFERS_TERRAIN
     vec3 worldPos = playerPos.xyz + cameraPosition.xyz;
-    vec3 blockPos = abs(fract(worldPos) - vec3(0.65, 0.7, 0.4));
+    vec3 blockPos = abs(fract(worldPos) - vec3(0.5, 0.7, 0.5));
     float maxBlockPos = max(blockPos.x, max(blockPos.y, blockPos.z));
     emission = pow2(max0(1.0 - pow1_5(maxBlockPos) * 2.60) * min(color.r, min(color.g, color.b))) * 7.0;
     if (color.r < color.b && color.r < color.g) {
