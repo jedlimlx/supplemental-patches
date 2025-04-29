@@ -7,10 +7,41 @@
   "mat2": [
     "quark:orange_corundum_cluster"
   ],
+  "mat4": [
+    "quark:yellow_corundum_cluster"
+  ],
+  "mat6": [
+    "quark:green_corundum_cluster"
+  ],
+  "mat8": [
+    "quark:blue_corundum_cluster"
+  ],
+  "mat10": [
+    "quark:indigo_corundum_cluster"
+  ],
+  "mat12": [
+    "quark:violet_corundum_cluster"
+  ],
+  "mat14": [
+    "quark:black_corundum_cluster"
+  ],
   "color": [
     "supplemental_patches:quark/corundum/red",
     null,
     "supplemental_patches:quark/corundum/orange",
+    null,
+    "supplemental_patches:quark/corundum/yellow",
+    null,
+    "supplemental_patches:quark/corundum/green",
+    null,
+    "supplemental_patches:quark/corundum/blue",
+    null,
+    "supplemental_patches:quark/corundum/indigo",
+    null,
+    "supplemental_patches:quark/corundum/violet",
+    null,
+    "supplemental_patches:quark/corundum/black",
     null
-  ]
+  ],
+  "block_size": 16
 }

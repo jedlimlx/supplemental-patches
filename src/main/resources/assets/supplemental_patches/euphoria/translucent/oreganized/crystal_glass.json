@@ -17,10 +17,151 @@
     "oreganized:gray_crystal_glass",
     "oreganized:gray_crystal_glass_pane"
   ],
+  "mat4": [
+    "oreganized:green_crystal_glass",
+    "oreganized:green_crystal_glass_pane"
+  ],
+  "mat5": [
+    "oreganized:light_blue_crystal_glass",
+    "oreganized:light_blue_crystal_glass_pane"
+  ],
+  "mat6": [
+    "oreganized:light_gray_crystal_glass",
+    "oreganized:light_gray_crystal_glass_pane"
+  ],
+  "mat7": [
+    "oreganized:lime_crystal_glass",
+    "oreganized:lime_crystal_glass_pane"
+  ],
+  "mat8": [
+    "oreganized:magenta_crystal_glass",
+    "oreganized:magenta_crystal_glass_pane"
+  ],
+  "mat9": [
+    "oreganized:orange_crystal_glass",
+    "oreganized:orange_crystal_glass_pane"
+  ],
+  "mat10": [
+    "oreganized:pink_crystal_glass",
+    "oreganized:pink_crystal_glass_pane"
+  ],
+  "mat11": [
+    "oreganized:purple_crystal_glass",
+    "oreganized:purple_crystal_glass_pane"
+  ],
+  "mat12": [
+    "oreganized:red_crystal_glass",
+    "oreganized:red_crystal_glass_pane"
+  ],
+  "mat13": [
+    "oreganized:white_crystal_glass",
+    "oreganized:white_crystal_glass_pane"
+  ],
+  "mat14": [
+    "oreganized:yellow_crystal_glass",
+    "oreganized:yellow_crystal_glass_pane"
+  ],
+  "mat15": [
+    "oreganized:amber_crystal_glass",
+    "oreganized:amber_crystal_glass_pane"
+  ],
+  "mat16": [
+    "oreganized:aqua_crystal_glass",
+    "oreganized:aqua_crystal_glass_pane"
+  ],
+  "mat17": [
+    "oreganized:beige_crystal_glass",
+    "oreganized:beige_crystal_glass_pane"
+  ],
+  "mat18": [
+    "oreganized:coral_crystal_glass",
+    "oreganized:coral_crystal_glass_pane"
+  ],
+  "mat19": [
+    "oreganized:brown_crystal_glass",
+    "oreganized:brown_crystal_glass_pane"
+  ],
+  "mat20": [
+    "oreganized:forest_crystal_glass",
+    "oreganized:forest_crystal_glass_pane"
+  ],
+  "mat21": [
+    "oreganized:ginger_crystal_glass",
+    "oreganized:ginger_crystal_glass_pane"
+  ],
+  "mat22": [
+    "oreganized:indigo_crystal_glass",
+    "oreganized:indigo_crystal_glass_pane"
+  ],
+  "mat23": [
+    "oreganized:maroon_crystal_glass",
+    "oreganized:maroon_crystal_glass_pane"
+  ],
+  "mat24": [
+    "oreganized:mint_crystal_glass",
+    "oreganized:mint_crystal_glass_pane"
+  ],
+  "mat25": [
+    "oreganized:navy_crystal_glass",
+    "oreganized:navy_crystal_glass_pane"
+  ],
+  "mat26": [
+    "oreganized:olive_crystal_glass",
+    "oreganized:olive_crystal_glass_pane"
+  ],
+  "mat27": [
+    "oreganized:rose_crystal_glass",
+    "oreganized:rose_crystal_glass_pane"
+  ],
+  "mat28": [
+    "oreganized:slate_crystal_glass",
+    "oreganized:slate_crystal_glass_pane"
+  ],
+  "mat29": [
+    "oreganized:tan_crystal_glass",
+    "oreganized:tan_crystal_glass_pane"
+  ],
+  "mat30": [
+    "oreganized:teal_crystal_glass",
+    "oreganized:teal_crystal_glass_pane"
+  ],
+  "mat31": [
+    "oreganized:verdant_crystal_glass",
+    "oreganized:verdant_crystal_glass_pane"
+  ],
   "color": [
     "supplemental_patches:dyes/black",
     "supplemental_patches:dyes/blue",
     "supplemental_patches:dyes/cyan",
-    "supplemental_patches:dyes/gray"
-  ]
+    "supplemental_patches:dyes/gray",
+    "supplemental_patches:dyes/green",
+    "supplemental_patches:dyes/light_blue",
+    "supplemental_patches:dyes/light_gray",
+    "supplemental_patches:dyes/lime",
+    "supplemental_patches:dyes/magenta",
+    "supplemental_patches:dyes/orange",
+    "supplemental_patches:dyes/pink",
+    "supplemental_patches:dyes/purple",
+    "supplemental_patches:dyes/red",
+    "supplemental_patches:dyes/white",
+    "supplemental_patches:dyes/yellow",
+    "supplemental_patches:dyes/brown",
+    "supplemental_patches:dyes/dye_depot/amber",
+    "supplemental_patches:dyes/dye_depot/aqua",
+    "supplemental_patches:dyes/dye_depot/beige",
+    "supplemental_patches:dyes/dye_depot/coral",
+    "supplemental_patches:dyes/dye_depot/forest",
+    "supplemental_patches:dyes/dye_depot/ginger",
+    "supplemental_patches:dyes/dye_depot/indigo",
+    "supplemental_patches:dyes/dye_depot/maroon",
+    "supplemental_patches:dyes/dye_depot/mint",
+    "supplemental_patches:dyes/dye_depot/navy",
+    "supplemental_patches:dyes/dye_depot/olive",
+    "supplemental_patches:dyes/dye_depot/rose",
+    "supplemental_patches:dyes/dye_depot/slate",
+    "supplemental_patches:dyes/dye_depot/tan",
+    "supplemental_patches:dyes/dye_depot/teal",
+    "supplemental_patches:dyes/dye_depot/verdant"
+  ],
+  "block_size": 32
 }

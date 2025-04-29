@@ -1,10 +1,10 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
-import kotlinx.coroutines.flow.merge
 import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation
 import java.io.File
 import java.nio.file.Path
+import kotlin.collections.flatten
 import kotlin.io.path.absolutePathString
 
 
@@ -70,15 +70,17 @@ fun modifyEntityProperties(directory: Path) {
 val MATERIALS = mutableListOf<ShaderBuilder>()
 val MATERIALS_MAP = mutableMapOf<Int, ShaderBuilder>()
 
-const val TERRAIN_INITIAL_ID = 12048
+const val TERRAIN_INITIAL_ID = 12288
 const val TERRAIN_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/terrainMaterials.glsl"
 
 fun generateTerrainMaterials(directory: Path) {
     val file = File(directory.absolutePathString() + TERRAIN_MATERIALS_PATH)
+    MATERIALS.sortBy { -it.blockSize }
 
     var count = 0
-    val code = generateCode("mat", 1024, TERRAIN_INITIAL_ID) {
+    val code = generateCode("mat", 2048, TERRAIN_INITIAL_ID) { size, it ->
         if (count < MATERIALS.size) {
+            if (size > MATERIALS[count].blockSize) return@generateCode null
             val material = MATERIALS[count]
             MATERIALS_MAP[it] = material
 
@@ -86,7 +88,7 @@ fun generateTerrainMaterials(directory: Path) {
             count++
 
             code
-        } else "// block.$it"
+        } else if (size > 4) null else "// block.$it"
     }
     val oldCode = file.readText()
 
@@ -102,21 +104,16 @@ fun generateTerrainMaterials(directory: Path) {
     val builder = StringBuilder("\n$BANNER# Blocks added by Supplemental Patches\n\n")
     MATERIALS_MAP.forEach { (id, material) ->
         // Removing from their existing materials
-        material.mat0.forEach { text = removeId(it, text) }
-        material.mat1.forEach { text = removeId(it, text) }
-        material.mat2.forEach { text = removeId(it, text) }
-        material.mat3.forEach { text = removeId(it, text) }
+        material.mat.forEach { it.forEach { text = removeId(it, text) } }
 
         // Adding to new materials
         builder.apply {
-            if (material.mat0.isNotEmpty())
-                append("block.$id = ${material.mat0.joinToString(" ")}\n")
-            if (material.mat1.isNotEmpty())
-                append("block.${id + 1} = ${material.mat1.joinToString(" ")}\n")
-            if (material.mat2.isNotEmpty())
-                append("block.${id + 2} = ${material.mat2.joinToString(" ")}\n")
-            if (material.mat3.isNotEmpty())
-                append("block.${id + 3} = ${material.mat3.joinToString(" ")}\n")
+            var count = 0
+            material.mat.forEach {
+                if (it.isNotEmpty())
+                    append("block.${id + count} = ${it.joinToString(" ")}\n")
+                count++
+            }
         }
     }
 
@@ -126,15 +123,17 @@ fun generateTerrainMaterials(directory: Path) {
 val ENTITIES = mutableListOf<ShaderBuilder>()
 val ENTITY_MAP = mutableMapOf<Int, ShaderBuilder>()
 
-const val ENTITY_INITIAL_ID = 51024
+const val ENTITY_INITIAL_ID = 51200
 const val ENTITY_PATH = "/shaders/lib/materials/materialHandling/entityMaterials.glsl"
 
 fun generateEntityMaterials(directory: Path) {
     val file = File(directory.absolutePathString() + ENTITY_PATH)
+    ENTITIES.sortBy { -it.blockSize }
 
     var count = 0
-    val code = generateCode("entityId", 256, ENTITY_INITIAL_ID, 4) {
+    val code = generateCode("entityId", 256, ENTITY_INITIAL_ID) { size, it ->
         if (count < ENTITIES.size) {
+            if (size > ENTITIES[count].blockSize) return@generateCode null
             val entity = ENTITIES[count]
             ENTITY_MAP[it] = entity
 
@@ -142,7 +141,7 @@ fun generateEntityMaterials(directory: Path) {
             count++
 
             code
-        } else "// entity.$it"
+        } else if (size > 4) null else "// entity.$it"
     }
     val oldCode = file.readText()
 
@@ -158,17 +157,16 @@ fun generateEntityMaterials(directory: Path) {
     val builder = StringBuilder("\n$BANNER# Entities added by Supplemental Patches\n\n")
     ENTITY_MAP.forEach { (id, material) ->
         // Removing from their existing entity ids
-        material.mat0.forEach { text = removeId(it, text) }
-        material.mat1.forEach { text = removeId(it, text) }
-        material.mat2.forEach { text = removeId(it, text) }
-        material.mat3.forEach { text = removeId(it, text) }
+        material.mat.forEach { it.forEach { text = removeId(it, text) } }
 
         // Adding to new materials
         builder.apply {
-            if (material.mat0.isNotEmpty()) append("entity.$id = ${material.mat0.joinToString(" ")}\n")
-            if (material.mat1.isNotEmpty()) append("entity.${id + 1} = ${material.mat1.joinToString(" ")}\n")
-            if (material.mat2.isNotEmpty()) append("entity.${id + 2} = ${material.mat2.joinToString(" ")}\n")
-            if (material.mat3.isNotEmpty()) append("entity.${id + 3} = ${material.mat3.joinToString(" ")}\n")
+            var count = 0
+            material.mat.forEach {
+                if (it.isNotEmpty())
+                    append("entity.${id + count} = ${it.joinToString(" ")}\n")
+                count++
+            }
         }
     }
 
@@ -178,15 +176,17 @@ fun generateEntityMaterials(directory: Path) {
 val ITEMS = mutableListOf<ShaderBuilder>()
 val ITEM_MAP = mutableMapOf<Int, ShaderBuilder>()
 
-const val IRIS_MATERIALS_INITIAL_ID = 45256
+const val IRIS_MATERIALS_INITIAL_ID = 46080
 const val IRIS_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/irisMaterials.glsl"
 
 fun generateIrisMaterials(directory: Path) {
     val file = File(directory.absolutePathString() + IRIS_MATERIALS_PATH)
+    ITEMS.sortBy { -it.blockSize }
 
     var count = 0
-    val code = generateCode("currentRenderedItemId", 256, IRIS_MATERIALS_INITIAL_ID, 4) {
+    val code = generateCode("currentRenderedItemId", 256, IRIS_MATERIALS_INITIAL_ID) { size, it ->
         if (count < ITEMS.size) {
+            if (size > ITEMS[count].blockSize) return@generateCode null
             val item = ITEMS[count]
             ITEM_MAP[it] = item
 
@@ -194,7 +194,7 @@ fun generateIrisMaterials(directory: Path) {
             count++
 
             code
-        } else "// item.$it"
+        } else if (size > 4) null else "// item.$it"
     }
     val oldCode = file.readText()
 
@@ -210,17 +210,16 @@ fun generateIrisMaterials(directory: Path) {
     val builder = StringBuilder("\n")
     ITEM_MAP.forEach { (id, material) ->
         // Removing from their existing item ids
-        material.mat0.forEach { text = removeId(it, text) }
-        material.mat1.forEach { text = removeId(it, text) }
-        material.mat2.forEach { text = removeId(it, text) }
-        material.mat3.forEach { text = removeId(it, text) }
+        material.mat.forEach { it.forEach { text = removeId(it, text) } }
 
         // Adding to new materials
         builder.apply {
-            if (material.mat0.isNotEmpty()) append("item.$id = ${material.mat0.joinToString(" ")}\n")
-            if (material.mat1.isNotEmpty()) append("item.${id + 1} = ${material.mat1.joinToString(" ")}\n")
-            if (material.mat2.isNotEmpty()) append("item.${id + 2} = ${material.mat2.joinToString(" ")}\n")
-            if (material.mat3.isNotEmpty()) append("item.${id + 3} = ${material.mat3.joinToString(" ")}\n")
+            var count = 0
+            material.mat.forEach {
+                if (it.isNotEmpty())
+                    append("item.${id + count} = ${it.joinToString(" ")}\n")
+                count++
+            }
         }
     }
 
@@ -230,15 +229,17 @@ fun generateIrisMaterials(directory: Path) {
 val TRANSLUCENTS = mutableListOf<ShaderBuilder>()
 val TRANSLUCENTS_MAP = mutableMapOf<Int, ShaderBuilder>()
 
-const val TRANSLUCENT_INITIAL_ID = 32128
+const val TRANSLUCENT_INITIAL_ID = 32768
 const val TRANSLUCENT_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/translucentMaterials.glsl"
 
 fun generateTranslucentMaterials(directory: Path) {
     val file = File(directory.absolutePathString() + TRANSLUCENT_MATERIALS_PATH)
+    TRANSLUCENTS.sortBy { -it.blockSize }
 
     var count = 0
-    val code = generateCode("mat", 256, TRANSLUCENT_INITIAL_ID, 4) {
+    val code = generateCode("mat", 256, TRANSLUCENT_INITIAL_ID) { size, it ->
         if (count < TRANSLUCENTS.size) {
+            if (size > TRANSLUCENTS[count].blockSize) return@generateCode null
             val translucent = TRANSLUCENTS[count]
             TRANSLUCENTS_MAP[it] = translucent
 
@@ -246,7 +247,7 @@ fun generateTranslucentMaterials(directory: Path) {
             count++
 
             code
-        } else "// block.$it"
+        } else if (size > 4) null else "// block.$it"
     }
     val oldCode = file.readText().replace(Regex("uint\\((2\\d\\d)")) {
         "uint(${it.groupValues[1].toInt() - 200 + TRANSLUCENT_VOXEL_INITIAL_ID}"
@@ -263,18 +264,16 @@ fun generateTranslucentMaterials(directory: Path) {
     var text = blockPropertiesFile.readText()
     val builder = StringBuilder("\n# Translucent materials added by Supplemental Patches\n\n")
     TRANSLUCENTS_MAP.forEach { (id, material) ->
-        // Removing from their existing block ids
-        material.mat0.forEach { text = removeId(it, text) }
-        material.mat1.forEach { text = removeId(it, text) }
-        material.mat2.forEach { text = removeId(it, text) }
-        material.mat3.forEach { text = removeId(it, text) }
+        // Removing from their existing materials
+        material.mat.forEach { it.forEach { text = removeId(it, text) } }
 
         // Adding to new materials
         builder.apply {
-            if (material.mat0.isNotEmpty()) append("block.$id = ${material.mat0.joinToString(" ")}\n")
-            if (material.mat1.isNotEmpty()) append("block.${id + 1} = ${material.mat1.joinToString(" ")}\n")
-            if (material.mat2.isNotEmpty()) append("block.${id + 2} = ${material.mat2.joinToString(" ")}\n")
-            if (material.mat3.isNotEmpty()) append("block.${id + 3} = ${material.mat3.joinToString(" ")}\n")
+            material.mat.forEach {
+                if (it.isNotEmpty())
+                    append("item.${id + count} = ${it.joinToString(" ")}\n")
+                count++
+            }
         }
     }
 
@@ -284,23 +283,25 @@ fun generateTranslucentMaterials(directory: Path) {
 val BLOCK_ENTITIES = mutableListOf<ShaderBuilder>()
 val BLOCK_ENTITIES_MAP = mutableMapOf<Int, ShaderBuilder>()
 
-const val BLOCK_ENTITY_INITIAL_ID = 60128
+const val BLOCK_ENTITY_INITIAL_ID = 61440
 const val BLOCK_ENTITY_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/blockEntityMaterials.glsl"
 
 fun generateBlockEntityMaterials(directory: Path) {
     val file = File(directory.absolutePathString() + BLOCK_ENTITY_MATERIALS_PATH)
+    BLOCK_ENTITIES.sortBy { -it.blockSize }
 
     var count = 0
-    val code = generateCode("blockEntityId", 256, BLOCK_ENTITY_INITIAL_ID, 4) {
+    val code = generateCode("blockEntityId", 256, BLOCK_ENTITY_INITIAL_ID) { size, it ->
         if (count < BLOCK_ENTITIES.size) {
-            val block_entity = BLOCK_ENTITIES[count]
-            BLOCK_ENTITIES_MAP[it] = block_entity
+            if (size > BLOCK_ENTITIES[count].blockSize) return@generateCode null
+            val blockEntity = BLOCK_ENTITIES[count]
+            BLOCK_ENTITIES_MAP[it] = blockEntity
 
-            val code = "// block.$it = ${block_entity.name}\n${block_entity.glsl}"
+            val code = "// block.$it = ${blockEntity.name}\n${blockEntity.glsl}"
             count++
 
             code
-        } else "// block.$it"
+        } else if (size > 4) null else "// block.$it"
     }
     val oldCode = file.readText()
 
@@ -315,18 +316,16 @@ fun generateBlockEntityMaterials(directory: Path) {
     var text = blockPropertiesFile.readText()
     val builder = StringBuilder("\n# Block entities added by Supplemental Patches\n\n")
     BLOCK_ENTITIES_MAP.forEach { (id, material) ->
-        // Removing from their existing block entity ids
-        material.mat0.forEach { text = removeId(it, text) }
-        material.mat1.forEach { text = removeId(it, text) }
-        material.mat2.forEach { text = removeId(it, text) }
-        material.mat3.forEach { text = removeId(it, text) }
+        // Removing from their existing materials
+        material.mat.forEach { it.forEach { text = removeId(it, text) } }
 
         // Adding to new materials
         builder.apply {
-            if (material.mat0.isNotEmpty()) append("block.$id = ${material.mat0.joinToString(" ")}\n")
-            if (material.mat1.isNotEmpty()) append("block.${id + 1} = ${material.mat1.joinToString(" ")}\n")
-            if (material.mat2.isNotEmpty()) append("block.${id + 2} = ${material.mat2.joinToString(" ")}\n")
-            if (material.mat3.isNotEmpty()) append("block.${id + 3} = ${material.mat3.joinToString(" ")}\n")
+            material.mat.forEach {
+                if (it.isNotEmpty())
+                    append("item.${id + count} = ${it.joinToString(" ")}\n")
+                count++
+            }
         }
     }
 
@@ -364,7 +363,7 @@ fun assignVoxelNumbers() {
     (MATERIALS + BLOCK_ENTITIES + TRANSLUCENTS).forEach { material ->
         if (material.lightColour.size == 1) {
             val colour = material.lightColour[0]!!
-            (0..3).forEach {
+            (0..< material.blockSize).forEach {
                 material.voxelNumber[it] =
                     colourIndex[colour] ?: (colour.index + (if (colour.tint) NEW_TINTS_INITIAL_ID else 0))
             }
@@ -375,7 +374,7 @@ fun assignVoxelNumbers() {
                     colourIndex[colour] ?: (colour.index + (if (colour.tint) NEW_TINTS_INITIAL_ID else 0))
             }
         } else if (material.needsVoxelisation)
-            (0..3).forEach { material.voxelNumber[it] = TOTAL_COLOURED_VOXELS + count++ }
+            (0..< material.blockSize).forEach { material.voxelNumber[it] = TOTAL_COLOURED_VOXELS + count++ }
     }
 }
 
@@ -397,18 +396,27 @@ fun generateVoxelsAndBlocklight(directory: Path) {
     val voxelisationCode = StringBuilder().apply {
         val temp = MATERIALS_MAP + BLOCK_ENTITIES_MAP + TRANSLUCENTS_MAP
         val output = (temp.map { (id, material) ->
-            if (material.lightColour.size == 1) id .. id + 3
+            if (material.lightColour.size == 1) id ..< id + material.blockSize
             else if (material.lightColour.isNotEmpty())
-                (0 .. 3).filter { material.lightColour[it] != null }.map { it + id }
+                (0 ..< material.blockSize).filter { material.lightColour[it] != null }.map { it + id }
             else if (material.needsVoxelisation) {
-                id .. id + 3
+                id ..< id + material.blockSize
             } else listOf()
         }.flatten()).sorted()
 
         append(
             computeAllPivots(output, 2, "mat", 1) { idx, depth ->
                 StringBuilder().apply {
-                    val material = temp[idx - idx % 4]!!
+                    var count = 2
+                    val material: ShaderBuilder
+                    while (true) {
+                        val output = temp[idx - idx % (1 shl count++)]
+                        if (output != null) {
+                            material = output
+                            break
+                        }
+                    }
+
                     if (material.needsVoxelisation && material.lightColour.isEmpty()) {
                         append("    ".repeat(depth) + "if (mat == $idx) return ${material.voxelNumber[0]};\n")
                     } else {
@@ -424,16 +432,16 @@ fun generateVoxelsAndBlocklight(directory: Path) {
                             val index = colour.index + (if (colour.tint) NEW_TINTS_INITIAL_ID else 0)
                             append("if (mat == $idx) return $index;\n")
 
-                            if (material.heldLighting && idx % 4 == 0) {
+                            if (material.heldLighting && idx % material.blockSize == 0) {
                                 // Removing from their existing item ids
-                                (material.mat0 + material.mat1 + material.mat2 + material.mat3).forEach {
+                                material.allIds().forEach {
                                     val tokens = it.split(":")
                                     text = text.replace("${tokens[0]}:${tokens[1]}", "")
                                 }
 
                                 // Adding to new materials
                                 if (material.lightColour.size == 1) {
-                                    val temp = (material.mat0 + material.mat1 + material.mat2 + material.mat3).joinToString(" ") {
+                                    val temp = material.allIds().joinToString(" ") {
                                         val tokens = it.split(":")
                                         "${tokens[0]}:${tokens[1]}"
                                     }
@@ -445,12 +453,7 @@ fun generateVoxelsAndBlocklight(directory: Path) {
                                     material.lightColour.forEachIndexed { idx, colour ->
                                         if (colour?.tint != false) return@forEachIndexed
 
-                                        val mat = when (idx) {
-                                            0 -> material.mat0
-                                            1 -> material.mat1
-                                            2 -> material.mat2
-                                            else -> material.mat3
-                                        }
+                                        val mat = material.mat[idx]
                                         text = text.replace(
                                             "item.${44000 + index} =",
                                             "item.${44000 + index} = " + mat.joinToString(" ") {
@@ -464,9 +467,9 @@ fun generateVoxelsAndBlocklight(directory: Path) {
                         } else {
                             append("if (mat == $idx) return ${colourIndex[colour]};\n")
 
-                            if (material.heldLighting && idx % 4 == 0) {
+                            if (material.heldLighting && idx % material.blockSize == 0) {
                                 // Removing from their existing item ids
-                                (material.mat0 + material.mat1 + material.mat2 + material.mat3).forEach {
+                                material.allIds().forEach {
                                     val tokens = it.split(":")
                                     text = text.replace("${tokens[0]}:${tokens[1]}", "")
                                 }
@@ -474,7 +477,7 @@ fun generateVoxelsAndBlocklight(directory: Path) {
                                 // Adding to new materials
                                 if (material.lightColour.size == 1) {
                                     heldLightingMap[44000 + colourIndex[colour]!!] = (heldLightingMap[44000 + colourIndex[colour]!!] ?: "") + " " +
-                                            (material.mat0 + material.mat1 + material.mat2 + material.mat3).joinToString(" ") {
+                                            material.allIds().joinToString(" ") {
                                         val tokens = it.split(":")
                                         "${tokens[0]}:${tokens[1]}"
                                     }
@@ -482,12 +485,7 @@ fun generateVoxelsAndBlocklight(directory: Path) {
                                     material.lightColour.forEachIndexed { idx, colour ->
                                         if (colour?.tint != false) return@forEachIndexed
 
-                                        val mat = when (idx) {
-                                            0 -> material.mat0
-                                            1 -> material.mat1
-                                            2 -> material.mat2
-                                            else -> material.mat3
-                                        }
+                                        val mat = material.mat[idx]
                                         heldLightingMap[44000 + colourIndex[colour]!!] = (heldLightingMap[44000 + colourIndex[colour]!!] ?: "") + " " +
                                                 mat.joinToString(" ") {
                                             val tokens = it.split(":")
@@ -641,7 +639,7 @@ fun generateWavingCode(directory: Path) {
 
                     val indent = "    ".repeat(depth)
                     if (conditions) append("$indent#if ${wavingObject.conditions.conditions()}\n")
-                    append("${indent}if (blockEntityId >= $idx && blockEntityId < ${idx + 4}) {\n")
+                    append("${indent}if (blockEntityId >= $idx && blockEntityId < ${idx + entity.blockSize}) {\n")
                     append("$indent    const int voxelNumber = ${entity.voxelNumber[0]};\n")
                     append(
                         wavingObject.code.split("\n").joinToString("\n") { "$indent    $it" }
@@ -676,7 +674,7 @@ fun generateWavingCode(directory: Path) {
 
                     val indent = "    ".repeat(depth)
                     if (conditions) append("$indent#if ${wavingObject.conditions.conditions()}\n")
-                    append("${indent}if (mat >= $idx && mat < ${idx + 4}) {\n")
+                    append("${indent}if (mat >= $idx && mat < ${idx + material.blockSize}) {\n")
                     append("$indent    const int voxelNumber = ${material.voxelNumber[0]};\n")
                     append(
                         wavingObject.code.split("\n").joinToString("\n") { "$indent    $it" }
@@ -699,7 +697,6 @@ val PARTICLES = mutableListOf<ShaderBuilder>()
 
 const val PARTICLES_PATH = "/shaders/program/gbuffers_textured.glsl"
 
-
 // TODO fix some particles not having shaders applied properly
 fun generateParticleCode(directory: Path) {
     val textureAtlas = Minecraft.getInstance().particleEngine.textureAtlas
@@ -711,7 +708,7 @@ fun generateParticleCode(directory: Path) {
         append(
             split(
                 PARTICLES.map {
-                    Pair(it, it.mat0.map { ResourceLocation.parse(it) }.filter { textureAtlas.texturesByName[it] != null })
+                    Pair(it, it.mat[0].map { ResourceLocation.parse(it) }.filter { it in textureAtlas.texturesByName.keys })
                 }.filter { it.second.isNotEmpty() }.map { (particle, lst) ->
                     val rectangles = lst.map {
                         val sprite = textureAtlas.getSprite(it)

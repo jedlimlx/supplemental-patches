@@ -15,6 +15,7 @@ import net.minecraft.util.profiling.ProfilerFiller
 import java.io.FileNotFoundException
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.Executor
+import kotlin.collections.forEach
 
 
 val GSON: Gson = GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create()
@@ -190,11 +191,12 @@ object ShaderResourceLoader {
                             additionaMapping[num] = json[it].asJsonArray.map { it.asString }
                         }
                         else -> {
-                            val shader = map[it] ?: return@forEach
-                            shader.mat0.addAll(json["mat0"]?.asJsonArray?.map { it.asString } ?: listOf())
-                            shader.mat1.addAll(json["mat1"]?.asJsonArray?.map { it.asString } ?: listOf())
-                            shader.mat2.addAll(json["mat2"]?.asJsonArray?.map { it.asString } ?: listOf())
-                            shader.mat3.addAll(json["mat3"]?.asJsonArray?.map { it.asString } ?: listOf())
+                            // Regex("([a-zA-Z\\d_-]+:[a-zA-Z\\d_/-]+).mat\\d+")
+                            val tokens = it.split(".")
+                            val shader = map[tokens[0]] ?: return@forEach
+                            shader.mat[tokens[1].replace("mat", "").toInt()].addAll(
+                                json[it]?.asJsonArray?.map { it.asString } ?: listOf()
+                            )
                         }
                     }
                 }
@@ -251,11 +253,11 @@ object ShaderResourceLoader {
                             "$path${if (path.isEmpty()) "" else "/"}" +
                                     (json["glsl"].asString ?: throw IllegalArgumentException(".glsl file not specified."))
                         ] ?: throw FileNotFoundException("$path/${json["glsl"].asString} not found!"),
-                        mat0 = json["mat0"]?.asJsonArray?.map { it.asString } ?: listOf(),
-                        mat1 = json["mat1"]?.asJsonArray?.map { it.asString } ?: listOf(),
-                        mat2 = json["mat2"]?.asJsonArray?.map { it.asString } ?: listOf(),
-                        mat3 = json["mat3"]?.asJsonArray?.map { it.asString } ?: listOf()
+                        blockSize = json["block_size"]?.asInt ?: 4
                     )
+
+                    for (i in builder.mat.indices)
+                        builder.mat[i] = json["mat$i"]?.asJsonArray?.map { it.asString }?.toMutableList() ?: mutableListOf()
 
                     if (json["color"] != null) {
                         if (json["color"].isJsonArray) {
