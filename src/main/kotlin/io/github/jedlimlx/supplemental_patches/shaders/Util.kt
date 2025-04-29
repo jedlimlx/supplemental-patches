@@ -7,10 +7,7 @@ const val ITEM_PROPERTIES = "/shaders/item.properties"
 class ShaderBuilder(
     val name: String,
     glsl: String,
-    mat0: List<String> = listOf(),
-    mat1: List<String> = listOf(),
-    mat2: List<String> = listOf(),
-    mat3: List<String> = listOf()
+    val blockSize: Int = 4
 ) {
     private val _glsl: String = glsl
     val glsl: String
@@ -22,18 +19,15 @@ class ShaderBuilder(
                 )
             }
 
-            var output = (if (needsVoxelisation) "const uint voxelNumbers[4] = uint[](${voxelNumber.joinToString(", ") { "${it}u" }});\nuint voxelNumber = voxelNumbers[mat % 4];\n" else "") + _glsl
+            var output = (if (needsVoxelisation) "const uint voxelNumbers[$blockSize] = uint[](${voxelNumber.joinToString(", ") { "${it}u" }});\nuint voxelNumber = voxelNumbers[mat % 4];\n" else "") + _glsl
             lst.forEach { output = output.replace("deferredMaterial(\"${it.first}\")", it.second.toString()) }
             return output
         }
 
-    val mat0 = mat0.toMutableList()
-    val mat1 = mat1.toMutableList()
-    val mat2 = mat2.toMutableList()
-    val mat3 = mat3.toMutableList()
+    val mat: Array<MutableList<String>> = Array(blockSize) { mutableListOf() }
 
     var needsVoxelisation: Boolean = false
-    val voxelNumber: IntArray = IntArray(4) { -1 }
+    val voxelNumber: IntArray = IntArray(blockSize) { -1 }
 
     var lightColour: List<Colour?> = listOf()
     var lightLevel: Int = 0
@@ -41,6 +35,8 @@ class ShaderBuilder(
     var translucent: Boolean = false
     var wavingObject: WavingObject? = null
     var colourConditions: List<String> = listOf()
+
+    fun allIds() = mat.toList().flatten()
 
     fun needsVoxelisation(): ShaderBuilder {
         this.needsVoxelisation = true
@@ -84,23 +80,31 @@ class ShaderBuilder(
 
 fun generateCode(
     variable: String, blockSize: Int, initialId: Int,
-    smallestBlock: Int = 4, suffix: String = "", shaderProvider: (Int) -> String = { "$it" }
+    suffix: String = "", shaderProvider: (Int, Int) -> String? = { size, id -> "$id" }
 ): String = StringBuilder().apply {
-    if (blockSize == smallestBlock) {
-        append("${shaderProvider(initialId)}\n")
+    val output = shaderProvider(blockSize, initialId)
+    if (output != null) {
+        append("$output\n")
         return@apply
     }
 
     append("if ($variable < ${blockSize / 2 + initialId}$suffix) {\n")
     append(
-        generateCode(variable, blockSize / 2, initialId, smallestBlock, suffix, shaderProvider).split("\n")
+        generateCode(variable, blockSize / 2, initialId, suffix, shaderProvider).split("\n")
             .joinToString("\n") { if (it.isNotEmpty()) "    $it" else it })
     append("} else /*if ($variable < ${blockSize + initialId}$suffix)*/ {\n")
     append(
-        generateCode(variable, blockSize / 2, initialId + blockSize / 2, smallestBlock, suffix, shaderProvider).split("\n")
+        generateCode(variable, blockSize / 2, initialId + blockSize / 2, suffix, shaderProvider).split("\n")
             .joinToString("\n") { if (it.isNotEmpty()) "    $it" else it })
     append("}\n")
 }.toString()
+
+fun generateCode(
+    variable: String, blockSize: Int, initialId: Int,
+    smallestBlock: Int, suffix: String = "", shaderProvider: (Int) -> String = { "$it" }
+): String = generateCode(variable, blockSize, initialId, suffix) { size, it ->
+    if (size > smallestBlock) null else shaderProvider(it)
+}
 
 // computing pivots
 fun computePivot(lst: List<Int>): Int = lst[lst.size / 2 - 1]
@@ -121,10 +125,10 @@ fun _computeAllPivots(lst: List<Int>, depth: Int, variable: String, builder: Str
         }
 
         val pivot = computePivot(lst)
-        append("    ".repeat(depth) + "if ($variable >= ${pivot + blockSize}) {\n")
-        _computeAllPivots(lst.subList(lst.size / 2, lst.size), depth + 1, variable, builder, blockSize, f)
-        append("    ".repeat(depth) + "} else { // $variable < ${pivot + blockSize}\n")
+        append("    ".repeat(depth) + "if ($variable < ${pivot + blockSize}) {\n")
         _computeAllPivots(lst.subList(0, lst.size / 2), depth + 1, variable, builder, blockSize, f)
+        append("    ".repeat(depth) + "} else { // $variable >= ${pivot + blockSize}\n")
+        _computeAllPivots(lst.subList(lst.size / 2, lst.size), depth + 1, variable, builder, blockSize, f)
         append("    ".repeat(depth) + "}\n")
     }
 }

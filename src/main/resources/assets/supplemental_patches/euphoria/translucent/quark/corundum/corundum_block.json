@@ -21,11 +21,36 @@
     "quark:waxed_green_corundum",
     "quark:green_corundum_sheet"
   ],
+  "mat4": [
+    "quark:blue_corundum",
+    "quark:waxed_blue_corundum",
+    "quark:blue_corundum_sheet"
+  ],
+  "mat5": [
+    "quark:indigo_corundum",
+    "quark:waxed_indigo_corundum",
+    "quark:indigo_corundum_sheet"
+  ],
+  "mat6": [
+    "quark:violet_corundum",
+    "quark:waxed_violet_corundum",
+    "quark:violet_corundum_sheet"
+  ],
+  "mat7": [
+    "quark:black_corundum",
+    "quark:waxed_black_corundum",
+    "quark:black_corundum_sheet"
+  ],
   "color": [
     "supplemental_patches:quark/corundum/red",
     "supplemental_patches:quark/corundum/orange",
     "supplemental_patches:quark/corundum/yellow",
-    "supplemental_patches:quark/corundum/green"
+    "supplemental_patches:quark/corundum/green",
+    "supplemental_patches:quark/corundum/blue",
+    "supplemental_patches:quark/corundum/indigo",
+    "supplemental_patches:quark/corundum/violet",
+    "supplemental_patches:quark/corundum/black"
   ],
-  "held_lighting": true
+  "held_lighting": true,
+  "block_size": 8
 }
