@@ -1,0 +1,9 @@
+{
+  "name": "ashen_basalt",
+  "glsl": "ashen_basalt.glsl",
+  "mat0": [
+    "soulfulnether:smooth_ashen_basalt",
+    "soulfulnether:polished_ashen_basalt",
+    "soulfulnether:ashen_basalt"
+  ]
+}
