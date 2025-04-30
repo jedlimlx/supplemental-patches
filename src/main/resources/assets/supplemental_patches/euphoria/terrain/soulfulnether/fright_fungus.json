@@ -1,0 +1,8 @@
+{
+  "name": "fright_fungus",
+  "glsl": "fright_fungus.glsl",
+  "mat0": [
+    "soulfulnether:fright_fungus"
+  ],
+  "color": "supplemental_patches:soulfulnether/fright_fungus"
+}

@@ -20,14 +20,14 @@
     "netherexp:cut_netherite_block",
     "netherexp:cut_netherite_pillar",
     "netherexp:netherite_plated_block",
-    "netherexp:netherite_grate:fluidlogged=lava",
-    "netherexp:netherite_grate:fluidlogged=ectoplasm"
+    "netherexp:netherite_grate:liquidlogged=lava",
+    "netherexp:netherite_grate:liquidlogged=ectoplasm"
   ],
   "block.10249": [
     "netherexp:cut_netherite_slab",
     "netherexp:cut_netherite_stairs",
-    "netherexp:netherite_grate:fluidlogged=air",
-    "netherexp:netherite_grate:fluidlogged=water"
+    "netherexp:netherite_grate:liquidlogged=air",
+    "netherexp:netherite_grate:liquidlogged=water"
   ],
   "block.10384": [
     "quark:permafrost_bricks",
@@ -59,6 +59,9 @@
   "block.10776": [
     "netherexp:crimson_sporeshroom",
     "mynethersdelight:crimson_fungus_colony"
+  ],
+  "block.10780": [
+    "netherexp:potted_crimson_sporeshroom"
   ],
   "block.10872": [
     "frostiful:icy_vault:ominous=false:vault_state=inactive",

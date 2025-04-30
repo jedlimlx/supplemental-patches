@@ -1,0 +1,7 @@
+{
+  "name": "fright_wart_block",
+  "glsl": "fright_wart_block.glsl",
+  "mat0": [
+    "soulfulnether:fright_wart_block"
+  ]
+}

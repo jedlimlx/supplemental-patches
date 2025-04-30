@@ -1,0 +1,10 @@
+{
+  "name": "ashen_snow",
+  "glsl": "ashen_snow.glsl",
+  "mat0": [
+    "soulfulnether:ashen_snow_block"
+  ],
+  "mat1": [
+    "soulfulnether:ashen_snow_layer"
+  ]
+}

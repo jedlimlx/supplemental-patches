@@ -1,0 +1,10 @@
+{
+  "name": "fright_door",
+  "glsl": "fright_door.glsl",
+  "mat1": [
+    "soulfulnether:fright_door:powered=false"
+  ],
+  "mat3": [
+    "soulfulnether:fright_door:powered=true"
+  ]
+}
