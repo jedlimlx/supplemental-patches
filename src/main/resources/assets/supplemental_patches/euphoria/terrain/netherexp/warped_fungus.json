@@ -5,5 +5,8 @@
     "warped_fungus",
     "netherexp:warped_sporeshroom"
   ],
-  "color": "supplemental_patches:netherexp/warped_fungus"
+  "color": "supplemental_patches:netherexp/warped_fungus",
+  "conditions": [
+    "DO_IPBR_LIGHTS"
+  ]
 }

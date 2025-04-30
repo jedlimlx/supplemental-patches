@@ -1,0 +1,9 @@
+{
+  "name": "ashen_quartz",
+  "glsl": "ashen_quartz.glsl",
+  "mat0": [
+    "soulfulnether:volcanic_quartz_block",
+    "soulfulnether:polished_volcanic_quartz",
+    "soulfulnether:volcanic_quartz_bricks"
+  ]
+}
