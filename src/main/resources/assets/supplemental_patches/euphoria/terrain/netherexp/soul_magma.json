@@ -5,5 +5,7 @@
     "netherexp:soul_magma"
   ],
   "color": "supplemental_patches:netherexp/soul_glow",
-  "held_lighting": true
+  "conditions": [
+    "DO_IPBR_LIGHTS"
+  ]
 }
