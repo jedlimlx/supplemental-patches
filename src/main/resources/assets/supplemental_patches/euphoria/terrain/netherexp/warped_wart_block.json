@@ -14,5 +14,8 @@
     null,
     "supplemental_patches:netherexp/warped_fungus",
     null
+  ],
+  "conditions": [
+    "DO_IPBR_LIGHTS"
   ]
 }

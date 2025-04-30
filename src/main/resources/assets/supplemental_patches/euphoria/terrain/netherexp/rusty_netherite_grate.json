@@ -2,10 +2,10 @@
   "name": "rusty_netherite_grate",
   "glsl": "rusty_netherite.glsl",
   "mat0": [
-    "netherexp:rusty_netherite_grate:fluidlogged=lava"
+    "netherexp:rusty_netherite_grate:liquidlogged=lava"
   ],
   "mat2": [
-    "netherexp:rusty_netherite_grate:fluidlogged=ectoplasm"
+    "netherexp:rusty_netherite_grate:liquidlogged=ectoplasm"
   ],
   "color": [
     "minecraft:lava",

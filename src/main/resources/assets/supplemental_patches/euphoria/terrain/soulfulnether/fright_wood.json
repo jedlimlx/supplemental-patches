@@ -1,0 +1,27 @@
+{
+  "name": "fright_wood",
+  "glsl": "fright_wood.glsl",
+  "mat0": [
+    "soulfulnether:fright_planks",
+    "soulfulnether:stripped_fright_stem",
+    "soulfulnether:stripped_fright_hyphae"
+  ],
+  "mat1": [
+    "soulfulnether:fright_fence",
+    "soulfulnether:fright_fence_gate:powered=false",
+    "soulfulnether:fright_button:powered=false",
+    "soulfulnether:fright_pressure_plate:powered=false",
+    "soulfulnether:fright_slab",
+    "soulfulnether:fright_stairs",
+    "soulfulnether:fright_trapdoor:powered=false",
+    "soulfulnether:fright_sign",
+    "soulfulnether:fright_wall_sign",
+    "soulfulnether:fright_wall_hanging_sign"
+  ],
+  "mat3": [
+    "soulfulnether:fright_fence_gate:powered=true",
+    "soulfulnether:fright_button:powered=true",
+    "soulfulnether:fright_pressure_plate:powered=true",
+    "soulfulnether:fright_trapdoor:powered=true"
+  ]
+}

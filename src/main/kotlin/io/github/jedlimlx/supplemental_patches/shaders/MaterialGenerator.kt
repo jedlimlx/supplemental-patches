@@ -229,7 +229,7 @@ fun generateIrisMaterials(directory: Path) {
 val TRANSLUCENTS = mutableListOf<ShaderBuilder>()
 val TRANSLUCENTS_MAP = mutableMapOf<Int, ShaderBuilder>()
 
-const val TRANSLUCENT_INITIAL_ID = 32768
+const val TRANSLUCENT_INITIAL_ID = 32128
 const val TRANSLUCENT_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/translucentMaterials.glsl"
 
 fun generateTranslucentMaterials(directory: Path) {
@@ -269,9 +269,10 @@ fun generateTranslucentMaterials(directory: Path) {
 
         // Adding to new materials
         builder.apply {
+            var count = 0
             material.mat.forEach {
                 if (it.isNotEmpty())
-                    append("item.${id + count} = ${it.joinToString(" ")}\n")
+                    append("block.${id + count} = ${it.joinToString(" ")}\n")
                 count++
             }
         }
@@ -321,9 +322,10 @@ fun generateBlockEntityMaterials(directory: Path) {
 
         // Adding to new materials
         builder.apply {
+            var count = 0
             material.mat.forEach {
                 if (it.isNotEmpty())
-                    append("item.${id + count} = ${it.joinToString(" ")}\n")
+                    append("block.${id + count} = ${it.joinToString(" ")}\n")
                 count++
             }
         }

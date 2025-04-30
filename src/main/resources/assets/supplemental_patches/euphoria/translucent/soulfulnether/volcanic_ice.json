@@ -1,0 +1,7 @@
+{
+  "name": "volcanic_ice",
+  "glsl": "volcanic_ice.glsl",
+  "mat0": [
+    "soulfulnether:volcanic_ice"
+  ]
+}

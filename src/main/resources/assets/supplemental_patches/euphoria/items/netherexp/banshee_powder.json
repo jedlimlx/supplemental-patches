@@ -7,7 +7,5 @@
     "netherexp:will_o_wisp",
     "netherexp:wisp_bottle"
   ],
-  "held_lighting": true,
-  "color": "supplemental_patches:netherexp/ectoplasm",
-  "light_level": 7
+  "color": "supplemental_patches:netherexp/ectoplasm"
 }
