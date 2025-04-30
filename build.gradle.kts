@@ -127,7 +127,7 @@ dependencies {
     // rendering / optimisation mods
     implementation(fg.deobf("maven.modrinth:xenon-forge:0.3.31"))
     implementation(fg.deobf("maven.modrinth:oculus:1.20.1-1.8.0-forge"))
-    implementation(fg.deobf("maven.modrinth:euphoria-patches:1.5.2-r5.4-forge"))
+    runtimeOnly(fg.deobf("maven.modrinth:euphoria-patches:1.5.2-r5.4-forge"))
 
     // general library mods
     implementation(fg.deobf("maven.modrinth:architectury-api:9.2.14+forge"))
@@ -175,8 +175,6 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:creeper-overhaul:3.0.2-forge"))
 
     // fabric-exclusive
-    compileOnly("maven.modrinth:hybrid-aquatic:1.4.1-1.20.1")
-
     compileOnly("maven.modrinth:cinderscapes:4.0.10")
 
     compileOnly("maven.modrinth:gipples-galore:1.0.0")
@@ -209,7 +207,6 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:wetland-whimsy:1.1.7-1.20.1"))
 
     compileOnly(fg.deobf("maven.modrinth:rodspawn:1.0.2"))
-    compileOnly(fg.deobf("maven.modrinth:hominid:1.0.1"))
 
     compileOnly(fg.deobf("maven.modrinth:friends-and-foes-forge:forge-mc1.20.1-3.0.6"))
 
@@ -218,21 +215,16 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:yungs-api:1.20-Forge-4.0.6"))
     implementation(fg.deobf("maven.modrinth:yungs-cave-biomes:1.20.1-Forge-2.0.1"))
 
-    implementation(fg.deobf("maven.modrinth:villagersplus:3.1-forge"))
-
-    compileOnly(fg.deobf("maven.modrinth:immersive-weathering:1.20.1-2.0.2-forge"))
-
     implementation(fg.deobf("maven.modrinth:zeta:1.20.1-1.0-24-forge"))
     implementation(fg.deobf("maven.modrinth:quark:1.20.1-4.0-460-forge"))
     implementation(fg.deobf("maven.modrinth:quark-oddities:1.20.1-forge"))
-    compileOnly(fg.deobf("maven.modrinth:biome-makeover:forge-1.20.1-1.11.0"))
 
     implementation(fg.deobf("maven.modrinth:dye-depot:1.0.0-forge"))
     implementation(fg.deobf("maven.modrinth:dye-the-world:1.1.2-forge"))
 
     // jei & jade
-    implementation(fg.deobf("maven.modrinth:jade:11.12.3+forge"))
-    implementation(fg.deobf("maven.modrinth:jei:15.20.0.106-forge"))
+    runtimeOnly(fg.deobf("maven.modrinth:jade:11.12.3+forge"))
+    runtimeOnly(fg.deobf("maven.modrinth:jei:15.20.0.106-forge"))
 }
 
 val Project.mixin: MixinExtension
