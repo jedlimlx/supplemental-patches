@@ -23,14 +23,14 @@
             fract(voxelPos.x + 0.5)
         );
 
-        edge = 1.0 - cos((edge * pi) / 1.5); // ease in towards the centre of the block to create a better shape
+        edge = 1.0 - cos((edge * pi) / easeAmount); // ease in towards the centre of the block to create a better shape
         edge *= clamp01(blockUV.y - 0.3) * 10/7; // Gradient towards the bottom, so 0.3 is now 0
 
         vec3 absPlayerPos = abs(playerPos);
         float maxPlayerPos = max(absPlayerPos.x, max(absPlayerPos.y * 2.0, absPlayerPos.z));
         float edgeDecider = pow2(min1(maxPlayerPos / min(effectiveACLdistance, far) * 2.0)); // this is to make the effect fade at the edge of ACL range
 
-        color.rgb = mix(color.rgb, edgeColor * 3.0, edge * (1.0 - edgeDecider));
-        emission = mix(emission, 1.0 + emission * 1.1, edge * (1.0 - edgeDecider));
+        color.rgb = mix(color.rgb, edgeColor, edge * (1.0 - edgeDecider));
+        emission = mix(emission, edgeEmission, edge * (1.0 - edgeDecider));
     }
 #endif

@@ -15,7 +15,15 @@ color.rgb *= pow(color.rgb, vec3(0.5 + 0.3 * emission));
 
 sandNoiseIntensity = 0.0, mossNoiseIntensity = 0.0;
 
-#ifdef ECTOPLASM_EDGE_EFFECT
-    vec3 edgeColor = vec3(0.15, 0.6, 0.7) * 1.15;
+#if ECTOPLASM_EDGE_EFFECT > 0
+    float easeAmount = 1.5;
+    vec3 edgeColor = vec3(0.15, 0.6, 0.7) * 3.25;
+    float edgeEmission = 0.8 + emission * 1.2;
+    #if ECTOPLASM_EDGE_EFFECT == 2
+        edgeColor *= 0.08;
+        edgeEmission = 0.5;
+        easeAmount = 1.2;
+    #endif
+
     #include "/lib/materials/specificMaterials/terrain/fluidEdgeEffect.glsl"
 #endif

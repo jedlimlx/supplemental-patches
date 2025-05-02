@@ -9,7 +9,7 @@ if (abs(color.b - color.g) < 0.07 && color.b > 0.35) { // Flat Part
         vec3 wind = vec3(0, 0.0075, 0) * frameTimeCounter;
         float noise = Noise3D(0.01 * (playerPos.xyz + cameraPosition.xyz) + wind);
         emission *= 0.1 + 0.9 * pow2(noise);
-        emission *= 3.0;
+        emission *= 4.0;
     #endif
     #endif
 }
