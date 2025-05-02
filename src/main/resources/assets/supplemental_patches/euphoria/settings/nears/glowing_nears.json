@@ -2,6 +2,7 @@
   "type": "setting",
   "name": "GLOWING_NEARS",
   "default": true,
+  "file": "materials.glsl",
   "en_US": {
     "option": "Glowing Nears"
   }

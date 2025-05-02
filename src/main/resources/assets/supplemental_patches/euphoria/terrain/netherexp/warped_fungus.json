@@ -3,7 +3,11 @@
   "glsl": "warped_fungus.glsl",
   "mat0": [
     "warped_fungus",
-    "netherexp:warped_sporeshroom"
+    "potted_warped_fungus",
+    "netherexp:warped_sporeshroom",
+    "netherexp:potted_warped_sporeshroom",
+    "mynethersdelight:warped_fungus_colony",
+    "mynethersdelight:stuffed_hoglin"
   ],
   "color": "supplemental_patches:netherexp/warped_fungus",
   "conditions": [
