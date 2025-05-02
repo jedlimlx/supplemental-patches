@@ -8,6 +8,7 @@
     0.125, 0.150, 0.175, 0.200,
     0.225, 0.250, 0.275, 0.300
   ],
+  "file": "mainFog.glsl",
   "en_US": {
     "option": "Sandstorm Fog Intensity",
     "comment": "Determines intensity of the fog during a sandstorm."

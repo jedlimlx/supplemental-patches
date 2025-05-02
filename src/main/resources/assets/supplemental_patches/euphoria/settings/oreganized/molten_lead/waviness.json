@@ -3,6 +3,7 @@
   "name": "MOLTEN_LEAD_WAVINESS",
   "default": 1,
   "values": [0, 1, 2, 3],
+  "file": "wavingBlocks.glsl",
   "en_US": {
     "option": "Waviness",
     "value.0": "§cOFF",

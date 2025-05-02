@@ -15,7 +15,7 @@
     "supplemental_patches:netherexp/warped_fungus",
     null
   ],
-  "need_voxelization": true,
+  "needs_voxelization": true,
   "waving": "supplemental_patches:generic/waving_nether_vines",
   "conditions": [
     "DO_IPBR_LIGHTS"

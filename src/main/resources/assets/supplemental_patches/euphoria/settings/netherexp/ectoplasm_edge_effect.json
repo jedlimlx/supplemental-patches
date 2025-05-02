@@ -1,9 +1,14 @@
 {
   "type": "setting",
   "name": "ECTOPLASM_EDGE_EFFECT",
-  "default": false,
+  "default": 0,
+  "values": [0, 1, 2],
+  "file": "materials.glsl",
   "en_US": {
     "option": "Ectoplasm Edge Effect",
-    "comment": "Adds an edge to ectoplasm when it touches other blocks. §e[*]§r This feature only works if Advanced Colored Lighting is enabled in Performance Settings."
+    "comment": "Adds an edge to ectoplasm when it touches other blocks. §e[*]§r This feature only works if Advanced Colored Lighting is enabled in Performance Settings.",
+    "value.0": "OFF",
+    "value.1": "ON - Bright",
+    "value.2": "ON - Dark"
   }
 }

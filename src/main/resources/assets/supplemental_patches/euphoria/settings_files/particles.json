@@ -1,0 +1,6 @@
+{
+  "name": "particles.glsl",
+  "files": [
+    "program/gbuffers_textured.glsl"
+  ]
+}

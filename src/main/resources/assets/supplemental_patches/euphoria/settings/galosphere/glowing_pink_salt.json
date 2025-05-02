@@ -3,6 +3,7 @@
   "name": "GLOWING_PINK_SALT",
   "default": 2,
   "values": [0, 1, 2, 3],
+  "file": "materials.glsl",
   "en_US": {
     "option": "Glowing Pink Salt",
     "value.0": "§cOFF",

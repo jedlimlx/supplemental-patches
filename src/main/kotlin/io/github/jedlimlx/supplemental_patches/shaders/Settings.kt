@@ -41,7 +41,8 @@ class Settings(
     val language: Map<String, Map<String, String>>,
     val conditions: List<Pair<String, String>>,
     val values: List<String>,
-    val slider: Boolean = false
+    val slider: Boolean = false,
+    settingsFile: String = "common.glsl"
 ) {
     val children: MutableList<Settings> = arrayListOf()
 
@@ -55,23 +56,25 @@ class Settings(
                 else if (value != "false") "#define $name $value //[${values.joinToString(" ")}]\n"
                 else "//#define $name\n"
 
-            if (conditions.size == 1 && conditions[0].first == "else") return "$indent${getDef(conditions[0].second)}"
+            if (conditions.size == 1 && conditions[0].first == "else") return getDef(conditions[0].second)
             return StringBuilder().apply {
                 conditions.forEachIndexed { it, (condition, value) ->
                     when (condition) {
-                        "else" -> append("$indent#else\n$indent$indent${getDef(value)}")
+                        "else" -> append("#else\n$indent${getDef(value)}")
                         else -> {
-                            if (it == 0) append("$indent#if $condition\n$indent$indent${getDef(value)}")
-                            else append("$indent#elif $condition\n$indent$indent${getDef(value)}")
+                            if (it == 0) append("#if $condition\n$indent${getDef(value)}")
+                            else append("#elif $condition\n$indent${getDef(value)}")
                         }
                     }
                 }
-                append("$indent#endif\n")
+                append("#endif\n")
             }.toString()
         }
 
     val shaderProperties: String
         get() = generateShaderProperties(children)
+
+    val settingsFile: String = if (type == SettingType.INFORMATION) "settingsFileDefines.glsl" else settingsFile
 
     fun language(code: String): String = language[code]?.map { (key, value) ->
         val tokens = key.split(".")
@@ -86,8 +89,34 @@ class Settings(
 }
 
 val SETTINGS = mutableListOf<Settings>()
+val SETTINGS_BANNER = "\n${BANNER.replace("#", "//")}// Settings added by Supplemental Patches\n\n"
 
+const val SHADER_SETTINGS_FOLDER = "/shaders/lib/shaderSettings/"
 const val COMMON_GLSL_FILE = "/shaders/lib/common.glsl"
+
+val visited: HashSet<String> = hashSetOf()
+fun writeToSettingsFile(directory: Path, fileName: String, text: String) {
+    if (fileName == "common.glsl") {
+        val commonGlsl = File(directory.absolutePathString() + COMMON_GLSL_FILE)
+        if (fileName !in visited) commonGlsl.appendText(SETTINGS_BANNER + text)
+        else commonGlsl.appendText(text)
+    } else {
+        val file = File(directory.absolutePathString() + SHADER_SETTINGS_FOLDER + fileName)
+        val lines = file.readText().lines()
+
+        var count = 0
+        while (lines[lines.size - count++ - 1].isEmpty()) {
+            println(count)
+        }
+
+        val newText = lines.subList(0, lines.size - count).joinToString("\n") + "\n$text#endif"
+        if (fileName !in visited) file.writeText(SETTINGS_BANNER + newText)
+        else file.writeText(newText)
+    }
+
+    visited.add(fileName)
+}
+
 const val SHADER_PROPERTIES_FILE = "/shaders/shaders.properties"
 const val LANGUAGE_FILE = "/shaders/lang/en_US.lang"
 fun generateSettings(directory: Path) {
@@ -104,6 +133,7 @@ fun generateSettings(directory: Path) {
 
         val indent = " ".repeat(4)
         append("${indent}screen.SUPPLEMENTAL_SETTINGS=${generateShaderProperties(SETTINGS)}\n")
+        append("${indent}screen.SUPPLEMENTAL_SETTINGS.columns=2\n")
         SETTINGS.forEach {
             if (it.type == SettingType.DIRECTORY) recurse(it, indent + " ".repeat(4))
         }
@@ -118,8 +148,8 @@ fun generateSettings(directory: Path) {
             "screen.EP_VERSION.columns=1",
             "screen.EP_VERSION.columns=1\n$shaderPropertiesCode"
         ).replace(
-            "NIGHT_DESATURATION_END PURKINJE_RENDER_DISTANCE_FADE",
-            "NIGHT_DESATURATION_END PURKINJE_RENDER_DISTANCE_FADE \\\n    ${sliders.joinToString(" ") { it.name }}"
+            "CLOUD_LAYER2_SPEED_MULT WATER_CAUSTIC_STRENGTH",
+            "CLOUD_LAYER2_SPEED_MULT WATER_CAUSTIC_STRENGTH \\\n    ${sliders.joinToString(" ") { it.name }}"
         )
     )
 
@@ -141,19 +171,35 @@ fun generateSettings(directory: Path) {
         }.toString()
     )
 
-    val commonGlsl = File(directory.absolutePathString() + COMMON_GLSL_FILE)
-    commonGlsl.appendText(
-        StringBuilder("\n${BANNER.replace("#", "//")}// Settings added by Supplemental Patches\n\n").apply {
-            fun recurse(setting: Settings) {
-                if (setting.type == SettingType.SETTING)
-                    append(setting.commonGlsl + "\n")
-                else if (setting.type == SettingType.INFORMATION)
-                    append("    #define ${setting.name} 0 //[0]\n")
+    fun recurse(setting: Settings) {
+        if (setting.type == SettingType.SETTING)
+            writeToSettingsFile(directory, setting.settingsFile,setting.commonGlsl + "\n")
+        else if (setting.type == SettingType.INFORMATION)
+            writeToSettingsFile(directory, setting.settingsFile,"#define ${setting.name} 0 //[0]\n")
 
-                setting.children.forEach { recurse(it) }
-            }
+        setting.children.forEach { recurse(it) }
+    }
 
-            SETTINGS.forEach { recurse(it) }
+    SETTINGS.forEach { recurse(it) }
+}
+
+data class SettingsFile(val name: String, val files: List<String>)
+
+val SETTINGS_FILES = mutableListOf<SettingsFile>()
+fun generateSettingsFiles(directory: Path) = SETTINGS_FILES.forEach {
+    val file = File(directory.absolutePathString() + SHADER_SETTINGS_FOLDER + it.name)
+    file.createNewFile()
+    file.writeText(
+        StringBuilder().apply {
+            val snakeCase = Regex("(?<=.)[A-Z]").replace(it.name.replace(".glsl", ""), "_$0").uppercase()
+            append("#ifndef ${snakeCase}_SETTINGS_FILE\n")
+            append("#define ${snakeCase}_SETTINGS_FILE\n\n")
+            append("#endif")
         }.toString()
     )
+
+    it.files.forEach { file ->
+        val temp = File(directory.absolutePathString() + "/shaders/$file")
+        temp.writeText("#include \"${SHADER_SETTINGS_FOLDER.replace("/shaders", "")}/${it.name}\"\n" + temp.readText())
+    }
 }
