@@ -1,12 +1,11 @@
 {
   "name": "vines",
   "glsl": "vines.glsl",
-  "mat0": [
+  "mat1": [
     "soulfulnether:hanging_lichoss",
     "soulfulnether:hanging_lichoss_plant",
     "soulfulnether:spiraling_vine",
     "soulfulnether:spiraling_vine_plant"
   ],
-  "need_voxelization": true,
   "waving": "supplemental_patches:generic/waving_nether_vines"
 }

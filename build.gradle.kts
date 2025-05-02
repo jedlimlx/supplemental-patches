@@ -108,10 +108,10 @@ dependencies {
     // rendering / optimisation mods
     modImplementation("maven.modrinth:sodium:mc1.21.4-0.6.10-fabric")
     modImplementation("maven.modrinth:iris:1.8.8+1.21.4-fabric")
-    modImplementation("maven.modrinth:euphoria-patches:1.5.2-r5.4-fabric")
+    modRuntimeOnly("maven.modrinth:euphoria-patches:1.6.1-r5.5.1-fabric")
 
     // general library mods
-    modImplementation("maven.modrinth:architectury-api:15.0.3+fabric")
+    modImplementation("maven.modrinth:architectury-api:13.0.5+fabric")
     compileOnly("maven.modrinth:blueprint:8.0.3")
     modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-base:6.2.2")
     modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-entity:6.2.2")

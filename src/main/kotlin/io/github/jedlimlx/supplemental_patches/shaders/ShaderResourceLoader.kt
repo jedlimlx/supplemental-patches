@@ -99,6 +99,10 @@ object ShaderResourceLoader {
 
         ATMOSPHERICS.clear()
 
+        SETTINGS.clear()
+
+        SETTINGS_FILES.clear()
+
         // Loading various colours
         val lst = resourceManager.listResources("euphoria/colors") { it.path.endsWith(".json") }
 
@@ -171,6 +175,7 @@ object ShaderResourceLoader {
             loadSpecificMaterials(backgroundExecutor, resourceManager, "euphoria/specific_materials"),
             loadFiles(backgroundExecutor, resourceManager, "euphoria/waving/functions", WAVING_FUNCTIONS),
             loadSettings(backgroundExecutor, resourceManager, "euphoria/settings"),
+            loadSettingsFiles(backgroundExecutor, resourceManager, "euphoria/settings_files"),
             loadFiles(backgroundExecutor, resourceManager, "euphoria/colors/injects", COLOUR_INJECTIONS),
             loadFiles(backgroundExecutor, resourceManager, "euphoria/atmospherics/fog/fogs", FOGS),
             loadFiles(backgroundExecutor, resourceManager, "euphoria/atmospherics/fog/functions", FOG_FUNCTIONS),
@@ -353,10 +358,10 @@ object ShaderResourceLoader {
                         val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
                         val settingType = SettingType.fromString(json["type"].asString)
 
-                        val languages = json.keySet().filter { it.matches(Regex("[a-z][a-z]_[A-Z][A-Z]")) }.map {
+                        val languages = json.keySet().filter { it.matches(Regex("[a-z][a-z]_[A-Z][A-Z]")) }.associate {
                             val temp = json[it].asJsonObject
                             it to temp.keySet().associateWith { temp[it].asString }
-                        }.toMap()
+                        }
                         when (settingType) {
                             SettingType.DIVIDER -> Settings(
                                 SettingType.DIVIDER, "", json["priority"]?.asInt ?: 0,
@@ -388,7 +393,8 @@ object ShaderResourceLoader {
                                     languages,
                                     conditionsLst,
                                     json["values"]?.asJsonArray?.map { it.asString } ?: listOf(),
-                                    json["slider"]?.asBoolean ?: false
+                                    json["slider"]?.asBoolean ?: false,
+                                    json["file"]?.asString ?: "common.glsl"
                                 )
                             }
                         }
@@ -507,6 +513,25 @@ object ShaderResourceLoader {
                                         (json["main"].asString ?: throw IllegalArgumentException(".glsl file not specified."))
                             ] ?: throw FileNotFoundException("$path/${json["main"].asString} not found!"),
                             conditions = json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
+                        )
+                    )
+                }
+            }, executor
+        ).thenAcceptAsync {}
+    }
+
+    fun loadSettingsFiles(
+        executor: Executor, resourceManager: ResourceManager, type: String
+    ): CompletableFuture<Void> {
+        return CompletableFuture.supplyAsync (
+            {
+                resourceManager.listResources(type) { it.path.endsWith(".json") }.forEach { (loc, _) ->
+                    val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
+                    SETTINGS_FILES.add(
+                        SettingsFile(
+                            json["name"]?.asString ?: throw IllegalArgumentException("Name not specified."),
+                            json["files"]?.asJsonArray?.map { it.asString } ?:
+                            throw IllegalArgumentException("No shader files for settings to be placed in specified.")
                         )
                     )
                 }

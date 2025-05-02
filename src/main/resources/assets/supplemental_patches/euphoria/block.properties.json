@@ -58,10 +58,8 @@
   ],
   "block.10776": [
     "netherexp:crimson_sporeshroom",
+    "netherexp:potted_crimson_sporeshroom",
     "mynethersdelight:crimson_fungus_colony"
-  ],
-  "block.10780": [
-    "netherexp:potted_crimson_sporeshroom"
   ],
   "block.10872": [
     "frostiful:icy_vault:ominous=false:vault_state=inactive",

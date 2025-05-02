@@ -7,7 +7,7 @@
     "netherexp:weeping_ivy"
   ],
   "color": "minecraft:weeping_vines",
-  "need_voxelization": true,
+  "needs_voxelization": true,
   "waving": "supplemental_patches:generic/waving_nether_vines",
   "conditions": [
     "DO_IPBR_LIGHTS"
