@@ -93,9 +93,7 @@ fun generateTerrainMaterials(directory: Path) {
     val oldCode = file.readText()
 
     // injecting code into the old code
-    val lines = oldCode.split("\n")
-    val newCode = lines.subList(0, lines.size - 3).joinToString("\n") + "} else $code}\n}"
-    file.writeText(newCode)
+    file.writeText(Regex("#endif\\r?\\n}").replace(oldCode, "#endif\n} else $code"))
 
     // writing the list of blocks to block.properties
     val blockPropertiesFile = File(directory.absolutePathString() + BLOCK_PROPERTIES)
@@ -284,7 +282,7 @@ fun generateTranslucentMaterials(directory: Path) {
 val BLOCK_ENTITIES = mutableListOf<ShaderBuilder>()
 val BLOCK_ENTITIES_MAP = mutableMapOf<Int, ShaderBuilder>()
 
-const val BLOCK_ENTITY_INITIAL_ID = 61440
+const val BLOCK_ENTITY_INITIAL_ID = 5056
 const val BLOCK_ENTITY_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/blockEntityMaterials.glsl"
 
 fun generateBlockEntityMaterials(directory: Path) {
@@ -341,7 +339,7 @@ const val TOTAL_COLOURED_VOXELS = 256 + VOXELISATION_INITIAL_ID
 const val TRANSLUCENT_VOXEL_INITIAL_ID = 60000
 const val NEW_TINTS_INITIAL_ID = 60020
 
-const val BLOCKLIGHT_PATH = "/shaders/lib/colors/blocklightColors.glsl"
+const val BLOCKLIGHT_PATH = "/shaders/lib/colors/blocklightColorsACL.glsl"
 const val MAIN_LIGHTING_PATH = "/shaders/lib/lighting/mainLighting.glsl"
 
 const val GET_TINT_CODE = """
@@ -883,12 +881,10 @@ fun modifyGBuffers(directory: Path) {
             "        #include \"/lib/materials/materialHandling/terrainMaterials.glsl\"\n" +
             "    #endif"
         )
-        .replace("int subsurfaceMode;", "")
         .replace(
-            "bool noDirectionalShading, noVanillaAO, centerShadowBias;",
+            "int subsurfaceMode;",
             "#if defined GBUFFERS_ENTITIES || defined GBUFFERS_HAND\n" +
             "    int subsurfaceMode;\n" +
-            "    bool noDirectionalShading;\n" +
             "#endif\n" +
             "\n" +
             "#if defined GBUFFERS_BLOCK\n" +
@@ -896,9 +892,8 @@ fun modifyGBuffers(directory: Path) {
             "    float overlayNoiseEmission;\n" +
             "    vec3 maRecolor;\n" +
             "    bool noGeneratedNormals;\n" +
-            "#endif\n" +
-            "\n" +
-            "bool noVanillaAO, centerShadowBias;"
+            "    bool noVanillaAO;\n" +
+            "#endif\n"
         )
     )
 }

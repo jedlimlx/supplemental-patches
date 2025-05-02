@@ -107,7 +107,7 @@ dependencies {
     implementation("maven.modrinth:sodium:mc1.21.1-0.6.9-neoforge")
     implementation("maven.modrinth:iris:1.8.8+1.21.1-neoforge")
     implementation("maven.modrinth:lithium:mc1.21.1-0.15.0-neoforge")
-    implementation("maven.modrinth:euphoria-patches:1.5.2-r5.4-neoforge")
+    implementation("maven.modrinth:euphoria-patches:1.6.1-r5.5-neoforge")
 
     // general library mods
     implementation("maven.modrinth:architectury-api:13.0.8+neoforge")
@@ -191,7 +191,7 @@ dependencies {
 
     implementation("maven.modrinth:friends-and-foes-forge:neoforge-mc1.21.1-3.0.7")
 
-    implementation("maven.modrinth:cobblemon:1.6.1-neoforge")
+    compileOnly("maven.modrinth:cobblemon:1.6.1-neoforge")
 
     compileOnly("maven.modrinth:yungs-api:1.20-Forge-4.0.6")
     compileOnly("maven.modrinth:yungs-cave-biomes:1.20.1-Forge-2.0.1")

@@ -7,6 +7,7 @@
       "then": true
     }
   ],
+  "file": "materials.glsl",
   "en_US": {
     "option": "Glowing Silver Ore §e[*]§r",
     "comment": "§e[*]§r This setting will only affect the silver ore added by Galosphere."

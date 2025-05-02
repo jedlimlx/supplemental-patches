@@ -4,6 +4,7 @@
   "priority": 1,
   "default": 1,
   "values": [0, 1, 2],
+  "file": "materials.glsl",
   "en_US": {
     "option": "Glowing Lumiere",
     "value.0": "§cOFF",

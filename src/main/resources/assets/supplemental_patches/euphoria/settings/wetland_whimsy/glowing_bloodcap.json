@@ -3,6 +3,7 @@
   "name": "GLOWING_BLOODCAP_MUSHROOM",
   "default": 0,
   "values": [0, 1, 2, 3],
+  "file": "materials.glsl",
   "en_US": {
     "option": "Glowing Bloodcap Mushroom",
     "value.0": "§cOFF",
