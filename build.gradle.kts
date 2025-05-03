@@ -111,7 +111,7 @@ dependencies {
     modRuntimeOnly("maven.modrinth:euphoria-patches:1.6.1-r5.5.1-fabric")
 
     // general library mods
-    modImplementation("maven.modrinth:architectury-api:13.0.5+fabric")
+    modImplementation("maven.modrinth:architectury-api:15.0.3+fabric")
     compileOnly("maven.modrinth:blueprint:8.0.3")
     modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-base:6.2.2")
     modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-entity:6.2.2")
