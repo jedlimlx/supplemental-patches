@@ -144,7 +144,6 @@ fun List<String>.conditions() = this.joinToString(" && ") {
 }
 
 // rectangles
-const val SCALE = 1000000
 class Rectangle(var x1: Int, var y1: Int, var x2: Int, var y2: Int, val glsl: String) {
     fun canMergeX(rectangle: Rectangle): Boolean =
         x1 == rectangle.x1 && x2 == rectangle.x2 && (y1 == rectangle.y2 + 1 || y2 + 1 == rectangle.y1)
@@ -183,8 +182,8 @@ fun split(rectangles: List<Rectangle>, depth: Int = 0, splitX: Boolean = true): 
     if (rectangles.size == 1) {
         val it = rectangles[0]
         return StringBuilder().apply {
-            append("${indent}if (texCoordScaled.x >= ${it.x1} && texCoordScaled.x <= ${it.x2} " +
-                    "&& texCoordScaled.y >= ${it.y1} && texCoordScaled.y <= ${it.y2}) {\n")
+            append("${indent}if (texCoordScaled.x >= ${it.x1} && texCoordScaled.x < ${it.x2 + 1} " +
+                    "&& texCoordScaled.y >= ${it.y1} && texCoordScaled.y < ${it.y2 + 1}) {\n")
             it.glsl.split("\n").forEach { append("$indent    $it\n") }
             append("${indent}}\n")
         }.toString()
@@ -196,7 +195,7 @@ fun split(rectangles: List<Rectangle>, depth: Int = 0, splitX: Boolean = true): 
     if (first.isEmpty() || second.isEmpty()) return split(rectangles, depth, !splitX)
 
     return StringBuilder().apply {
-        append("${indent}if (texCoordScaled.${if (splitX) "x" else "y"} <= ${threshold}) {\n")
+        append("${indent}if (texCoordScaled.${if (splitX) "x" else "y"} < ${threshold + 1}) {\n")
         append(split(first, depth + 1, !splitX))
         append("${indent}} else {\n")
         append(split(second, depth + 1, !splitX))
