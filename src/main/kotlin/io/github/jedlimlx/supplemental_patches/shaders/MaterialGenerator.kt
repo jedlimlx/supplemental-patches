@@ -711,7 +711,6 @@ fun generateParticleCode(directory: Path) {
                 PARTICLES.map {
                     Pair(it, it.mat[0].map { ResourceLocation.parse(it) }.filter { it in textureAtlas.textures })
                 }.filter { it.second.isNotEmpty() }.map { (particle, lst) ->
-                    println("${particle.name} ${lst.toList()}")
                     val rectangles = lst.map {
                         val sprite = textureAtlas.getSprite(it)
                         Rectangle(
@@ -724,7 +723,7 @@ fun generateParticleCode(directory: Path) {
                     }
 
                     val sortedRectangles = rectangles.sortedWith { a, b ->
-                        if (a.x1 == b.x1) a.y1.compareTo(b.y1) else a.x1.compareTo(b.x2)
+                        if (a.x1 == b.x1) a.y1.compareTo(b.y1) else a.x1.compareTo(b.x1)
                     }
 
                     var currRectangle: Rectangle? = null
@@ -748,7 +747,7 @@ fun generateParticleCode(directory: Path) {
                     }
 
                     val sortedRectangles2 = mergedRectangles.sortedWith { a, b ->
-                        if (a.y1 == b.y1) a.x1.compareTo(b.x2) else a.y1.compareTo(b.y2)
+                        if (a.y1 == b.y1) a.x1.compareTo(b.x1) else a.y1.compareTo(b.y1)
                     }
 
                     mergedRectangles.clear()
@@ -770,7 +769,6 @@ fun generateParticleCode(directory: Path) {
                     if (currRectangle != null)
                         mergedRectangles.add(currRectangle)
 
-                    println(mergedRectangles.joinToString { "[${it.x1} ${it.x2} ${it.y1} ${it.y2}]" })
                     mergedRectangles
                 }.flatten()
             )
