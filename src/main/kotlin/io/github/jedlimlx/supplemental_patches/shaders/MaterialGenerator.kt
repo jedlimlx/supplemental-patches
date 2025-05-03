@@ -709,7 +709,7 @@ fun generateParticleCode(directory: Path) {
         append(
             split(
                 PARTICLES.map {
-                    Pair(it, it.mat[0].map { ResourceLocation.parse(it) }.filter { it in textureAtlas.textureLocations })
+                    Pair(it, it.mat[0].map { ResourceLocation.parse(it) }.filter { it in textureAtlas.textures })
                 }.filter { it.second.isNotEmpty() }.map { (particle, lst) ->
                     println("${particle.name} ${lst.toList()}")
                     val rectangles = lst.map {
