@@ -697,19 +697,21 @@ val PARTICLES = mutableListOf<ShaderBuilder>()
 
 const val PARTICLES_PATH = "/shaders/program/gbuffers_textured.glsl"
 
-// TODO fix some particles not having shaders applied properly
+const val SCALE = 16384;
 fun generateParticleCode(directory: Path) {
     val textureAtlas = Minecraft.getInstance().particleEngine.textureAtlas
 
     val file = File(directory.absolutePathString() + PARTICLES_PATH)
     val code = file.readText()
 
-    val newCode = "if (atlasSize.x < atlasCheck) {\n        vec2 texCoordScaled = $SCALE * texCoord;\n" + StringBuilder().apply {
+    val newCode = "if (atlasSize.x < atlasCheck) {\n" +
+                "        vec2 texCoordScaled = texCoord * $SCALE;\n" + StringBuilder().apply {
         append(
             split(
                 PARTICLES.map {
                     Pair(it, it.mat[0].map { ResourceLocation.parse(it) }.filter { it in textureAtlas.textureLocations })
                 }.filter { it.second.isNotEmpty() }.map { (particle, lst) ->
+                    println("${particle.name} ${lst.toList()}")
                     val rectangles = lst.map {
                         val sprite = textureAtlas.getSprite(it)
                         Rectangle(
@@ -737,12 +739,13 @@ fun generateParticleCode(directory: Path) {
                             currRectangle.mergeX(rectangle)
                         } else {
                             mergedRectangles.add(currRectangle)
-                            currRectangle = null
+                            currRectangle = rectangle
                         }
                     }
 
-                    if (currRectangle != null)
+                    if (currRectangle != null) {
                         mergedRectangles.add(currRectangle)
+                    }
 
                     val sortedRectangles2 = mergedRectangles.sortedWith { a, b ->
                         if (a.y1 == b.y1) a.x1.compareTo(b.x2) else a.y1.compareTo(b.y2)
@@ -760,13 +763,14 @@ fun generateParticleCode(directory: Path) {
                             currRectangle.mergeY(rectangle)
                         } else {
                             mergedRectangles.add(currRectangle)
-                            currRectangle = null
+                            currRectangle = rectangle
                         }
                     }
 
                     if (currRectangle != null)
                         mergedRectangles.add(currRectangle)
 
+                    println(mergedRectangles.joinToString { "[${it.x1} ${it.x2} ${it.y1} ${it.y2}]" })
                     mergedRectangles
                 }.flatten()
             )
