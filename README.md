@@ -20,9 +20,13 @@ through a resource-pack. The mod by default, comes with a built-in resource pack
 - Friends & Foes
 - Enderman Overhaul
 - Farmer's Delight
+- My Nether's Delight
 - Pearfection
 - Trailier Tales
 - Rodspawn
+- Soulful Nether
+- Jaden's Nether Expansion
+- Pigsteel
 - Nears
 - Gipples Galore
 - Frostiful
@@ -85,3 +89,15 @@ A: Yes, go ahead.
 ![Coffins (Trailier Tales)](images/coffins.png)
 ![Apparition (Trailier Tales)](images/apparition.png)
 ![Icy Ominous Vault (Frostiful)](images/icy_ominous_vault.png)
+![Fright Forest (Soulful Nether)](images/fright_forest.png)
+![Fright Forest 2 (Soulful Nether)](images/fright_forest_2.png)
+![Ashen Deltas (Soulful Nether)](images/ashen_deltas.png)
+![Brazier Chest (Jaden's Nether Expansion)](images/brazier_chest.png)
+![Sanctum (Jaden's Nether Expansion)](images/sanctum.png)
+![Ectoplasm Pool (Jaden's Nether Expansion)](images/ectoplasm_pool.png)
+![Vessel (Jaden's Nether Expansion)](images/vessel.png)
+![Black Ice Glaciers (Jaden's Nether Expansion)](images/black_ice_glaciers.png)
+![Black Ice Glaciers 2 (Jaden's Nether Expansion)](images/black_ice_glaciers_2.png)
+![Basaltic Geyser (Jaden's Nether Expansion)](images/basaltic_geyser.png)
+![Porkslag (Pigsteel)](images/porkslag.png)
+![Powdery Cane (My Nether's Delight)](images/powdery_cane.png)
