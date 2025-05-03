@@ -24,6 +24,9 @@ if (color.b > 1.15 * (color.r + color.g) && color.g > color.r * 1.25 && color.g 
     color.a *= snowTexOpacity;
     color.rgb = sqrt2(color.rgb) * (blocklightCol * 2.0 * lmCoord.x + lmCoord.y * (0.7 + 0.35 * sunFactor) + ambientColor * 0.2);
 #endif
+} else if (color.r == color.g && color.r - 0.5 * color.b < 0.06) { // Underwater Particle
+    color.rgb = sqrt2(color.rgb) * 0.35;
+    if (fract(playerPos.y + cameraPosition.y) > 0.25) discard;
 }
 
 float dotColor = dot(color.rgb, color.rgb);
