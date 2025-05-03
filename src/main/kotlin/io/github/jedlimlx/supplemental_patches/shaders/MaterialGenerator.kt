@@ -697,7 +697,7 @@ val PARTICLES = mutableListOf<ShaderBuilder>()
 
 const val PARTICLES_PATH = "/shaders/program/gbuffers_textured.glsl"
 
-const val SCALE = 16384;
+const val SCALE = 16384
 fun generateParticleCode(directory: Path) {
     val textureAtlas = Minecraft.getInstance().particleEngine.textureAtlas
 
