@@ -161,8 +161,6 @@ dependencies {
     compileOnly("maven.modrinth:creeper-overhaul:4.0.6-fabric")
 
     // fabric-exclusive
-    compileOnly("maven.modrinth:hybrid-aquatic:1.4.1-1.20.1")
-
     modImplementation("maven.modrinth:cinderscapes:5.2.1")
 
     modImplementation("maven.modrinth:gipples-galore:1.1.8-1.21.4")
@@ -195,27 +193,21 @@ dependencies {
     compileOnly("maven.modrinth:wetland-whimsy:1.1.7-1.20.1")
 
     compileOnly("maven.modrinth:rodspawn:1.0.2")
-    compileOnly("maven.modrinth:hominid:1.0.1")
 
     modImplementation("maven.modrinth:friends-and-foes:fabric-mc1.21.4-4.0.1")
 
     compileOnly("maven.modrinth:yungs-api:1.20-Fabric-4.0.6")
     compileOnly("maven.modrinth:yungs-cave-biomes:1.20.1-Fabric-2.0.2")
 
-    compileOnly("maven.modrinth:villagersplus:3.1-forge")
-
-    compileOnly("maven.modrinth:immersive-weathering:1.20.1-2.0.2-forge")
-
     compileOnly("maven.modrinth:zeta:1.20.1-1.0-24-forge")
     compileOnly("maven.modrinth:quark:1.20.1-4.0-460-forge")
     compileOnly("maven.modrinth:quark-oddities:1.20.1-forge")
-    compileOnly("maven.modrinth:biome-makeover:fabric-1.20.1-1.11.4")
 
     compileOnly("maven.modrinth:dye-depot:1.0.3-fabric")
     compileOnly("maven.modrinth:dye-the-world:1.1.2-forge")
 
     // jei & jade
-    modImplementation("maven.modrinth:jade:17.2.2+fabric")
+    modRuntimeOnly("maven.modrinth:jade:17.2.2+fabric")
     compileOnly("mezz.jei:jei-1.21.1-fabric:19.21.1.248")
 }
 
