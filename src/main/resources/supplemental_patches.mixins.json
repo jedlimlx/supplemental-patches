@@ -24,6 +24,7 @@
     "biomes.YungsCaveBiomesMixin",
     "uniforms.DoomAndGloomUniforms",
     "uniforms.OreganizedUniforms",
+    "uniforms.JNEUniforms",
     "uniforms.YUNGSandstormUniforms"
   ],
   "injectors": {
