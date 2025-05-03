@@ -1,0 +1,11 @@
+{
+  "name": "treacherous_candle",
+  "glsl": "treacherous_candle.glsl",
+  "mat0": [
+    "netherexp:treacherous_candle:lit=true"
+  ],
+  "mat1": [
+    "netherexp:treacherous_candle:lit=false"
+  ],
+  "color": "supplemental_patches:netherexp/ancient_fire"
+}
