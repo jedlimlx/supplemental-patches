@@ -1,0 +1,17 @@
+{
+  "name": "flesh",
+  "glsl": "flesh.glsl",
+  "mat0": [
+    "biomesoplenty:flesh",
+    "biomesoplenty:porous_flesh"
+  ],
+  "mat1": [
+    "biomesoplenty:eyebulb",
+    "biomesoplenty:flesh_tendons",
+    "biomesoplenty:flesh_tendons_strand",
+    "biomesoplenty:pus_bubble",
+    "biomesoplenty:hair"
+  ],
+  "needs_voxelization": true,
+  "waving": "supplemental_patches:misc/waving_flesh"
+}

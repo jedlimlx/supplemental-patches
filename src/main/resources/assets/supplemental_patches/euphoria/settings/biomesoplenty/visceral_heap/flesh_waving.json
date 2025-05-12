@@ -1,0 +1,10 @@
+{
+  "type": "setting",
+  "name": "FLESH_WAVING",
+  "default": true,
+  "file": "wavingBlocks.glsl",
+  "en_US": {
+    "option": "Flesh Waving",
+    "comment": "Enables a waving effect on flesh blocks. §e[*]§r If Advanced Colored Lighting is not enabled in Performance Settings, some artifacts may be seen."
+  }
+}

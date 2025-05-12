@@ -127,12 +127,13 @@ dependencies {
     // rendering / optimisation mods
     implementation(fg.deobf("maven.modrinth:xenon-forge:0.3.31"))
     implementation(fg.deobf("maven.modrinth:oculus:1.20.1-1.8.0-forge"))
-    runtimeOnly(fg.deobf("maven.modrinth:euphoria-patches:1.6.1-r5.5.1-forge"))
+    runtimeOnly(fg.deobf("maven.modrinth:euphoria-patches:1.6.2-r5.5.1-forge"))
 
     // general library mods
     implementation(fg.deobf("maven.modrinth:architectury-api:9.2.14+forge"))
     implementation(fg.deobf("maven.modrinth:blueprint:7.1.1-forge"))
     implementation(fg.deobf("software.bernie.geckolib:geckolib-forge-${property("minecraft_version")}:4.4.9"))
+    implementation(fg.deobf("maven.modrinth:glitchcore:0.0.1.1"))
     implementation(fg.deobf("maven.modrinth:cloth-config:11.1.136+forge"))
     implementation(fg.deobf("maven.modrinth:terrablender:3.0.1.7-forge"))
     implementation(fg.deobf("maven.modrinth:trimmed:1.20.1-2.1.4+forge"))
@@ -173,6 +174,9 @@ dependencies {
     // mob overhauls
     implementation(fg.deobf("maven.modrinth:enderman-overhaul:1.0.4-forge"))
     implementation(fg.deobf("maven.modrinth:creeper-overhaul:3.0.2-forge"))
+
+    // biome mods
+    implementation(fg.deobf("maven.modrinth:biomes-o-plenty:19.0.0.96-forge"))
 
     // fabric-exclusive
     compileOnly("maven.modrinth:cinderscapes:4.0.10")
