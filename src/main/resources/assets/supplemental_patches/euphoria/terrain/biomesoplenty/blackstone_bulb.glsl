@@ -1,0 +1,1 @@
+emission = pow2(pow2(color.r));

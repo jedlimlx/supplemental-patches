@@ -1,0 +1,8 @@
+{
+  "type": "float",
+  "name": "inVisceralHeap",
+  "code": "smooth(54, if(in(biome, BIOME_VISCERAL_HEAP), 1, 0), 15, 15)",
+  "conditions": [
+    "MOD_BIOMESOPLENTY"
+  ]
+}

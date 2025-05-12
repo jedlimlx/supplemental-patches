@@ -1,0 +1,11 @@
+{
+  "name": "lumisene",
+  "glsl": "lumisene.glsl",
+  "mat0": [
+    "supplementaries:lumisene"
+  ],
+  "color": [
+    "supplemental_patches:supplementaries/lumisene_fluid"
+  ],
+  "waving": "supplemental_patches:fluids/waving_water"
+}

@@ -104,11 +104,12 @@ dependencies {
     implementation("com.eliotlash.mclib:mclib:20")
     implementation("com.electronwill.night-config:toml:3.8.1")
     implementation("org.reflections:reflections:0.10.2")
+    implementation("net.jodah:typetools:0.6.3")
 
     // rendering / optimisation mods
     modImplementation("maven.modrinth:sodium:mc1.21.4-0.6.10-fabric")
     modImplementation("maven.modrinth:iris:1.8.8+1.21.4-fabric")
-    modRuntimeOnly("maven.modrinth:euphoria-patches:1.6.1-r5.5.1-fabric")
+    modRuntimeOnly("maven.modrinth:euphoria-patches:1.6.2-r5.5.1-fabric")
 
     // general library mods
     modImplementation("maven.modrinth:architectury-api:15.0.3+fabric")
@@ -118,6 +119,7 @@ dependencies {
     modImplementation("maven.modrinth:cloth-config:17.0.144+fabric")
     modImplementation("maven.modrinth:frozenlib:2.0.3-mc1.21.4")
     modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.8.4")
+    modImplementation("maven.modrinth:glitchcore:2.3.0.4-fabric")
     modImplementation("maven.modrinth:midnightlib:1.7.0+1.21.4-fabric")
     compileOnly("maven.modrinth:moonlight:fabric_1.21-2.17.32")
     modImplementation("maven.modrinth:resourceful-config:3.4.3-fabric")
@@ -159,6 +161,9 @@ dependencies {
     // mob overhauls
     compileOnly("maven.modrinth:enderman-overhaul:2.0.2-neoforge")
     compileOnly("maven.modrinth:creeper-overhaul:4.0.6-fabric")
+
+    // biome mods
+    modImplementation("maven.modrinth:biomes-o-plenty:21.4.0.23-fabric")
 
     // fabric-exclusive
     modImplementation("maven.modrinth:cinderscapes:5.2.1")

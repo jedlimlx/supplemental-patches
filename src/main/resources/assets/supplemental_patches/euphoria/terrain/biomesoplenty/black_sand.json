@@ -1,0 +1,8 @@
+{
+  "name": "black_sand",
+  "glsl": "black_sand.glsl",
+  "mat0": [
+    "biomesoplenty:black_sand",
+    "biomesoplenty:mossy_black_sand"
+  ]
+}
