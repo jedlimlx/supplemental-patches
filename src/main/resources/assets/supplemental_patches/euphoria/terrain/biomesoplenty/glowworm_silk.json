@@ -1,0 +1,16 @@
+{
+  "name": "glowworm_silk",
+  "glsl": "glowworm_silk.glsl",
+  "mat0": [
+    "biomesoplenty:glowworm_silk"
+  ],
+  "mat2": [
+    "biomesoplenty:glowing_moss_block"
+  ],
+  "color": [
+    "supplemental_patches:biomesoplenty/glowworm_silk",
+    null,
+    null,
+    null
+  ]
+}

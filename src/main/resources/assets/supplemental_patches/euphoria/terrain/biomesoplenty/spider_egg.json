@@ -1,0 +1,8 @@
+{
+  "name": "spider_egg",
+  "glsl": "spider_egg.glsl",
+  "mat0": [
+    "biomesoplenty:spider_egg"
+  ],
+  "color": "supplemental_patches:biomesoplenty/spider_egg"
+}

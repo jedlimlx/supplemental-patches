@@ -11,6 +11,7 @@
     "TextureAtlasMixin",
     "biomes.AtmosphericMixin",
     "biomes.AutumnityMixin",
+    "biomes.BiomesOPlentyMixin",
     "biomes.EndergeticMixin",
     "biomes.EnvironmentalMixin",
     "biomes.GalosphereMixin",

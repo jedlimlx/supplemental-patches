@@ -1,0 +1,7 @@
+{
+  "name": "blood",
+  "glsl": "blood.glsl",
+  "mat0": [
+    "biomesoplenty:blood"
+  ]
+}

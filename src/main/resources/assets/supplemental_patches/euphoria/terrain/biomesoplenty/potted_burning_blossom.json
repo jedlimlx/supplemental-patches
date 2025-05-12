@@ -1,0 +1,8 @@
+{
+  "name": "potted_burning_blossom",
+  "glsl": "potted_burning_blossom.glsl",
+  "mat0": [
+    "biomesoplenty:potted_burning_blossom"
+  ],
+  "color": "minecraft:magma_block"
+}
