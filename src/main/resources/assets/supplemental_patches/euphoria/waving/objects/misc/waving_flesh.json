@@ -1,0 +1,7 @@
+{
+  "glsl": "waving_flesh.glsl",
+  "conditions": [
+    "NETHER || FLESH_WAVING_ANYWHERE",
+    "FLESH_WAVING"
+  ]
+}

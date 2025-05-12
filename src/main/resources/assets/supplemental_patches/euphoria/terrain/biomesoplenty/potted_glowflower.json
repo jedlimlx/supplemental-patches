@@ -1,0 +1,8 @@
+{
+  "name": "potted_glowflower",
+  "glsl": "potted_glowflower.glsl",
+  "mat0": [
+    "biomesoplenty:potted_glowflower"
+  ],
+  "color": "supplemental_patches:biomesoplenty/glowflower"
+}

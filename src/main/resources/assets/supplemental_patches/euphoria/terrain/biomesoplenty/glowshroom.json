@@ -1,0 +1,9 @@
+{
+  "name": "glowshroom",
+  "glsl": "glowshroom.glsl",
+  "mat0": [
+    "biomesoplenty:glowshroom",
+    "biomesoplenty:glowshroom_block"
+  ],
+  "color": "supplemental_patches:biomesoplenty/glowworm_silk"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "blackstone_bulb",
+  "glsl": "blackstone_bulb.glsl",
+  "mat0": [
+    "biomesoplenty:blackstone_bulb"
+  ],
+  "color": "supplemental_patches:biomesoplenty/blackstone_bulb",
+  "conditions": [
+    "DO_IPBR_LIGHTS"
+  ]
+}

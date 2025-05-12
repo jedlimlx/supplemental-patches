@@ -1,0 +1,8 @@
+{
+  "name": "rose_quartz_block",
+  "glsl": "rose_quartz_block.glsl",
+  "mat0": [
+    "biomesoplenty:rose_quartz_block"
+  ],
+  "color": "supplemental_patches:biomesoplenty/rose_quartz"
+}

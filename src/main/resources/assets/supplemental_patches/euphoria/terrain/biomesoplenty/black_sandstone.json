@@ -1,0 +1,17 @@
+{
+  "name": "black_sand",
+  "glsl": "black_sand.glsl",
+  "mat0": [
+    "biomesoplenty:black_sandstone",
+    "biomesoplenty:cut_black_sandstone",
+    "biomesoplenty:chiseled_black_sandstone"
+  ],
+  "mat1": [
+    "biomesoplenty:black_sandstone_slab",
+    "biomesoplenty:black_sandstone_stairs",
+    "biomesoplenty:black_sandstone_wall",
+    "biomesoplenty:cut_black_sandstone_slab",
+    "biomesoplenty:cut_black_sandstone_stairs",
+    "biomesoplenty:cut_black_sandstone_wall"
+  ]
+}
