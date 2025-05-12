@@ -1,0 +1,11 @@
+{
+  "name": "rose_quartz_cluster",
+  "glsl": "rose_quartz_cluster.glsl",
+  "mat0": [
+    "biomesoplenty:rose_quartz_cluster",
+    "biomesoplenty:small_rose_quartz_bud",
+    "biomesoplenty:medium_rose_quartz_bud",
+    "biomesoplenty:large_rose_quartz_bud"
+  ],
+  "color": "supplemental_patches:biomesoplenty/rose_quartz"
+}

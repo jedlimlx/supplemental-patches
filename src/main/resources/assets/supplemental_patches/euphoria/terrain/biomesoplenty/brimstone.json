@@ -1,0 +1,17 @@
+{
+  "name": "brimstone",
+  "glsl": "brimstone.glsl",
+  "mat0": [
+    "biomesoplenty:brimstone",
+    "biomesoplenty:brimstone_bricks",
+    "biomesoplenty:chiseled_brimstone_bricks",
+    "biomesoplenty:brimstone_fumarole"
+  ],
+  "mat1": [
+    "biomesoplenty:brimstone_brick_slab",
+    "biomesoplenty:brimstone_brick_stairs",
+    "biomesoplenty:brimstone_brick_wall",
+    "biomesoplenty:brimstone_cluster",
+    "biomesoplenty:brimstone_bud"
+  ]
+}

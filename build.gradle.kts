@@ -107,12 +107,13 @@ dependencies {
     implementation("maven.modrinth:sodium:mc1.21.1-0.6.9-neoforge")
     implementation("maven.modrinth:iris:1.8.8+1.21.1-neoforge")
     implementation("maven.modrinth:lithium:mc1.21.1-0.15.0-neoforge")
-    implementation("maven.modrinth:euphoria-patches:1.6.1-r5.5.1-neoforge")
+    implementation("maven.modrinth:euphoria-patches:1.6.2-r5.5.1-neoforge")
 
     // general library mods
     implementation("maven.modrinth:architectury-api:13.0.8+neoforge")
     implementation("maven.modrinth:blueprint:8.0.3")
     implementation("software.bernie.geckolib:geckolib-neoforge-${property("minecraft_version")}:4.7.3")
+    implementation("maven.modrinth:glitchcore:2.1.0.0-neoforge")
     implementation("maven.modrinth:cloth-config:15.0.140+neoforge")
     implementation("maven.modrinth:terrablender:4.1.0.8-neoforge")
     implementation("maven.modrinth:trimmed:1.21-3.0.0+neoforge")
@@ -152,6 +153,9 @@ dependencies {
     // mob overhauls
     implementation("maven.modrinth:enderman-overhaul:2.0.2-neoforge")
     implementation("maven.modrinth:creeper-overhaul:4.0.6-neoforge")
+
+    // biome mods
+    implementation("maven.modrinth:biomes-o-plenty:21.1.0.7-neoforge")
 
     // fabric-exclusive
     compileOnly("maven.modrinth:cinderscapes:4.0.10")

@@ -1,6 +1,12 @@
-vec2 num = floor(16.0 * (playerPos.xz + cameraPosition.xz) + 16.0 * (playerPos.y + cameraPosition.y));
-vec2 noise = texture2D(noisetex, 0.4 * playerPos.xz + 0.4 * vec2(playerPos.y) + vec2(num)).rb;
+color.a = 0.5 + 0.1 * fresnel;
 
-emission = 50.0 * (1 - color.b) * (1 - color.r) * (1 - color.g);
-emission *= mix(1.0, min1(max(noise.r, noise.g) * 1.7), pow2(7 * 0.1));
-smoothnessG = 1.5;
+emission = 0.6 * dot(color.rgb, color.rgb);
+color.rgb = saturateColors(color.rgb, 1.8 - color.a);
+
+smoothnessG = 1.2 - 0.3 * emission;
+
+translucentMultCalculated = true;
+reflectMult = 1.2 * smoothnessG;
+translucentMult.rgb = pow2(color.rgb) * 0.4;
+
+highlightMult = 2.5;
