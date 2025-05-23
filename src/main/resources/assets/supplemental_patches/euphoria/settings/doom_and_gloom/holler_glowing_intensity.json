@@ -10,5 +10,9 @@
   "en_US": {
     "option": "Holler Glowing Intensity",
     "comment": "Controls the emissiveness of the Hollers."
+  },
+  "ru_RU": {
+    "option": "Интенсивность свечения крикунов",
+    "comment": "Управляет яркостью свечения крикунов."
   }
 }

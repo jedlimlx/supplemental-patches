@@ -6,5 +6,9 @@
   "en_US": {
     "option": "Glowing Mime Energy",
     "comment": "Enables the particles emitted by the Mine to glow."
+  },
+  "ru_RU": {
+    "option": "Свечение энергии мима",
+    "comment": "Включает свечение частиц, испускаемых мимом."
   }
 }

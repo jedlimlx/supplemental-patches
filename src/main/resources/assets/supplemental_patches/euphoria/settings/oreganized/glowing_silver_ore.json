@@ -12,5 +12,9 @@
   "en_US": {
     "option": "Glowing Silver Ore §e[*]§r",
     "comment": "§e[*]§r This setting will only affect the silver ore added by Oreganized."
+  },
+  "ru_RU": {
+    "option": "Свечение серебряной руды §e[*]§r",
+    "comment": "§e[*]§r Настройка влияет только на серебряную руду из мода Oreganized."
   }
 }

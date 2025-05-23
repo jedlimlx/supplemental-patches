@@ -10,5 +10,9 @@
   "en_US": {
     "option": "Fog Light Dimming",
     "comment": "Determines how much skylight will be dimmed by the fog. Lower values mean less skylight."
+  },
+  "ru_RU": {
+    "option": "Затемнение света туманом",
+    "comment": "Определяет степень ослабления солнечного света в тумане. Низкие значения уменьшают освещение неба."
   }
 }

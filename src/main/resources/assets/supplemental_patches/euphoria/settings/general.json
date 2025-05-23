@@ -5,5 +5,8 @@
   "en_US": {
     "screen": "General"
   },
+  "ru_RU": {
+    "screen": "Общие"
+  },
   "priority": 3
 }
