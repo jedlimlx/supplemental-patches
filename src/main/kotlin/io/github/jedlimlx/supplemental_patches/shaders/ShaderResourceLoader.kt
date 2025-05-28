@@ -15,7 +15,10 @@ import net.minecraft.util.profiling.ProfilerFiller
 import java.io.FileNotFoundException
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.Executor
+import kotlin.collections.flatten
 import kotlin.collections.forEach
+import kotlin.math.ceil
+import kotlin.math.log10
 
 
 val GSON: Gson = GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create()
@@ -394,13 +397,32 @@ object ShaderResourceLoader {
                                     val temp = it.asJsonObject
                                     Pair(temp["if"].asString, temp["then"].asString)
                                 } ?: listOf(Pair("else", json["default"].asString))
+
+                                val values = (json["values"]?.asJsonArray?.toList() ?: listOf<JsonObject>()).map {
+                                    if (it.isJsonObject) {
+                                        val output = it.asJsonObject
+                                        if (output["type"].asString == "range") {
+                                            val lst = mutableListOf<String>()
+
+                                            var curr = output["start"].asString.toDouble()
+                                            val step = output["step"].asString.toDouble()
+                                            while (curr < output["stop"].asString.toDouble()) {
+                                                lst.add(String.format("%.${ceil(-log10(step)).toInt()}f", curr))
+                                                curr += step
+                                            }
+
+                                            lst
+                                        } else throw IllegalArgumentException("type is not known")
+                                    } else mutableListOf(it.asString)
+                                }.flatten()
+
                                 Settings(
                                     SettingType.SETTING,
                                     json["name"].asString,
                                     json["priority"]?.asInt ?: 0,
                                     languages,
                                     conditionsLst,
-                                    json["values"]?.asJsonArray?.map { it.asString } ?: listOf(),
+                                    values,
                                     json["slider"]?.asBoolean ?: false,
                                     json["file"]?.asString ?: "common.glsl"
                                 )
