@@ -1,0 +1,15 @@
+{
+  "name": "nebulite_ore",
+  "glsl": "nebulite_ore.glsl",
+  "mat0": [
+    "enderscape:nebulite_ore"
+  ],
+  "mat2": [
+    "enderscape:mirestone_nebulite_ore"
+  ],
+  "color": "supplemental_patches:enderscape/nebulite_ore",
+  "conditions": [
+    "GLOWING_ORE_NEBULITE",
+    "DO_IPBR_LIGHTS"
+  ]
+}

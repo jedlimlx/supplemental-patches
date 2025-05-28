@@ -1,0 +1,8 @@
+{
+  "name": "potted_bulb_flower",
+  "glsl": "potted_bulb_flower.glsl",
+  "mat0": [
+    "enderscape:potted_bulb_flower"
+  ],
+  "color": "minecraft:lantern"
+}

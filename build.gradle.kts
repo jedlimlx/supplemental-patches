@@ -57,6 +57,11 @@ repositories {
     }
 
     maven {
+        name = "Xander Maven"
+        url = uri("https://maven.isxander.dev/releases")
+    }
+
+    maven {
         name = "GeckoLib"
         url = uri("https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/")
         content {
@@ -104,6 +109,7 @@ dependencies {
     implementation("com.eliotlash.mclib:mclib:20")
     implementation("com.electronwill.night-config:toml:3.8.1")
     implementation("org.reflections:reflections:0.10.2")
+    implementation("net.jodah:typetools:0.6.3")
 
     modImplementation("com.github.Chocohead:Fabric-ASM:2.3")
     modImplementation("com.jamieswhiteshirt:reach-entity-attributes:2.4.0")
@@ -117,7 +123,7 @@ dependencies {
     modImplementation("maven.modrinth:sodium:mc1.20.1-0.5.13-fabric")
     modImplementation("maven.modrinth:indium:1.0.36+mc1.20.1")
     modImplementation("maven.modrinth:iris:1.7.6+1.20.1")
-    modRuntimeOnly("maven.modrinth:euphoria-patches:1.6.2-r5.5.1-fabric")
+    modRuntimeOnly("maven.modrinth:euphoria-patches:1.6.4-r5.5.1-fabric")
 
     // general library mods
     modImplementation("maven.modrinth:athena-ctm:3.1.2-fabric")
@@ -172,10 +178,12 @@ dependencies {
     modImplementation("maven.modrinth:creeper-overhaul:3.0.2-fabric")
 
     // biome mods
-    implementation("maven.modrinth:biomes-o-plenty:19.0.0.96-fabric")
+    modImplementation("maven.modrinth:biomes-o-plenty:19.0.0.96-fabric")
 
     // fabric-exclusive
     modImplementation("maven.modrinth:cinderscapes:4.0.10")
+
+    compileOnly("maven.modrinth:enderscape:1.0.2+1.21.1")
 
     modImplementation("maven.modrinth:gipples-galore:1.0.0")
     modImplementation("maven.modrinth:nears:2.1.2-1.20.1")

@@ -1,0 +1,15 @@
+{
+  "type": "setting",
+  "name": "GLOWING_CHORUS_FLOWER",
+  "priority": 4,
+  "conditions": [
+    {
+      "if": "!(defined MOD_ENDERSCAPE)",
+      "then": true
+    }
+  ],
+  "file": "materials.glsl",
+  "en_US": {
+    "option": "Glowing Chorus Flower"
+  }
+}

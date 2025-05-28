@@ -1,0 +1,14 @@
+{
+  "type": "setting",
+  "name": "ENDERSCAPE_NEBULA",
+  "conditions": [
+    {
+      "if": "defined MOD_ENDERSCAPE",
+      "then": true
+    }
+  ],
+  "en_US": {
+    "option": "Enderscape Nebula",
+    "comment": "Enables a procedurally-generated nebula skybox, similar to the one built into the Enderscape mod."
+  }
+}
