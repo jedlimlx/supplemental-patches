@@ -57,6 +57,11 @@ repositories {
     }
 
     maven {
+        name = "Xander Maven"
+        url = uri("https://maven.isxander.dev/releases")
+    }
+
+    maven {
         name = "GeckoLib"
         url = uri("https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/")
         content {
@@ -109,7 +114,7 @@ dependencies {
     // rendering / optimisation mods
     modImplementation("maven.modrinth:sodium:mc1.21.1-0.6.9-fabric")
     modImplementation("maven.modrinth:iris:1.8.8+1.21.1-fabric")
-    modRuntimeOnly("maven.modrinth:euphoria-patches:1.6.2-r5.5.1-fabric")
+    modRuntimeOnly("maven.modrinth:euphoria-patches:1.6.4-r5.5.1-fabric")
 
     // general library mods
     modImplementation("maven.modrinth:architectury-api:13.0.5+fabric")
@@ -121,6 +126,7 @@ dependencies {
     modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.7.3")
     modImplementation("maven.modrinth:glitchcore:2.1.0.0-fabric")
     modImplementation("maven.modrinth:midnightlib:1.6.9+1.21-fabric")
+    modImplementation("maven.modrinth:mixson:1.3.1-fabric")
     modImplementation("maven.modrinth:moonlight:fabric_1.21-2.17.32")
     modImplementation("maven.modrinth:resourceful-config:3.0.9-fabric")
     modImplementation("maven.modrinth:resourceful-lib:3.0.12-fabric")
@@ -128,6 +134,7 @@ dependencies {
     modImplementation("maven.modrinth:trimmed:1.21-3.0.0+fabric")
     modImplementation("org.ladysnake:satin:2.0.0")
     modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0-alpha.1")
+    modImplementation("dev.isxander:yet-another-config-lib:3.6.6+1.21.1-fabric")
 
     // abnormals mods
     compileOnly("maven.modrinth:abnormals-delight:5.0.0-forge")
@@ -168,6 +175,8 @@ dependencies {
 
     // fabric-exclusive
     modImplementation("maven.modrinth:cinderscapes:5.0.2")
+
+    modImplementation("maven.modrinth:enderscape:1.0.2+1.21.1")
 
     modImplementation("maven.modrinth:gipples-galore:1.1.1")
     modImplementation("maven.modrinth:nears:2.1.2-1.21.1")

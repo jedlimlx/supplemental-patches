@@ -1,0 +1,8 @@
+{
+  "name": "corrupt_growth",
+  "glsl": "corrupt_growth.glsl",
+  "mat0": [
+    "enderscape:corrupt_growth",
+    "enderscape:potted_corrupt_growth"
+  ]
+}

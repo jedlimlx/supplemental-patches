@@ -1,0 +1,14 @@
+{
+  "name": "end_lamp",
+  "glsl": "end_lamp.glsl",
+  "mat0": [
+    "enderscape:end_lamp"
+  ],
+  "color": [
+    "minecraft:end_rod",
+    null,
+    null,
+    null
+  ],
+  "held_lighting": true
+}

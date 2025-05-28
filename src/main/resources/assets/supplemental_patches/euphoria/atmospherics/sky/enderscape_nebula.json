@@ -1,0 +1,11 @@
+{
+  "name": "enderscapeNebula.glsl",
+  "code": "enderscape_nebula.glsl",
+  "dimension": "END",
+  "deferred": "color.rgb += GetEnderscapeNebula(viewPos.xyz, VdotU);",
+  "reflection": "skyReflection += GetEnderscapeNebula(nViewPosR, RVdotU);",
+  "conditions": [
+    "MOD_ENDERSCAPE",
+    "ENDERSCAPE_NEBULA"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "repulsive_magnia",
+  "glsl": "repulsive_magnia.glsl",
+  "mat0": [
+    "enderscape:repulsive_magnia",
+    "enderscape:etched_repulsive_magnia"
+  ],
+  "mat1": [
+    "enderscape:repulsive_magnia_sprout:powered=false"
+  ],
+  "mat2": [
+    "enderscape:repulsive_magnia_sprout:powered=true"
+  ],
+  "color": [
+    null,
+    null,
+    "supplemental_patches:enderscape/repulsive_magnia_sprout",
+    null
+  ]
+}
