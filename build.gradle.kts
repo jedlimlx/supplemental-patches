@@ -127,7 +127,7 @@ dependencies {
     // rendering / optimisation mods
     implementation(fg.deobf("maven.modrinth:xenon-forge:0.3.31"))
     implementation(fg.deobf("maven.modrinth:oculus:1.20.1-1.8.0-forge"))
-    runtimeOnly(fg.deobf("maven.modrinth:euphoria-patches:1.6.2-r5.5.1-forge"))
+    runtimeOnly(fg.deobf("maven.modrinth:euphoria-patches:1.6.4-r5.5.1-forge"))
 
     // general library mods
     implementation(fg.deobf("maven.modrinth:architectury-api:9.2.14+forge"))
@@ -180,6 +180,8 @@ dependencies {
 
     // fabric-exclusive
     compileOnly("maven.modrinth:cinderscapes:4.0.10")
+
+    compileOnly("maven.modrinth:enderscape:1.0.2+1.21.1")
 
     compileOnly("maven.modrinth:gipples-galore:1.0.0")
     compileOnly("maven.modrinth:nears:2.1.2-1.20.1")

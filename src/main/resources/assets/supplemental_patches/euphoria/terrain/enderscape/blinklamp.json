@@ -1,0 +1,29 @@
+{
+  "name": "blinklamp",
+  "glsl": "blinklamp.glsl",
+  "mat0": [
+    "enderscape:blinklamp:luminance=15",
+    "enderscape:blinklamp:luminance=14",
+    "enderscape:blinklamp:luminance=13",
+    "enderscape:blinklamp:luminance=12",
+    "enderscape:blinklamp:luminance=11",
+    "enderscape:blinklamp:luminance=10",
+    "enderscape:blinklamp:luminance=9",
+    "enderscape:blinklamp:luminance=8"
+  ],
+  "mat2": [
+    "enderscape:blinklamp:luminance=7",
+    "enderscape:blinklamp:luminance=6",
+    "enderscape:blinklamp:luminance=5",
+    "enderscape:blinklamp:luminance=4",
+    "enderscape:blinklamp:luminance=3",
+    "enderscape:blinklamp:luminance=2",
+    "enderscape:blinklamp:luminance=1"
+  ],
+  "color": [
+    "supplemental_patches:enderscape/blinklamp",
+    null,
+    "supplemental_patches:enderscape/blinklamp_dim",
+    null
+  ]
+}

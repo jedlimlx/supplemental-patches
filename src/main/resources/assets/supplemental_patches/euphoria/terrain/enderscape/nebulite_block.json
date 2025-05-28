@@ -1,0 +1,7 @@
+{
+  "name": "nebulite_block",
+  "glsl": "nebulite_block.glsl",
+  "mat0": [
+    "enderscape:nebulite_block"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "end_trial_spawner",
+  "glsl": "end_trial_spawner.glsl",
+  "mat0": [
+    "enderscape:end_trial_spawner:trial_spawner_state=active",
+    "enderscape:end_trial_spawner:trial_spawner_state=ejecting_reward",
+    "enderscape:end_trial_spawner:trial_spawner_state=waiting_for_players",
+    "enderscape:end_trial_spawner:trial_spawner_state=waiting_for_reward_ejection",
+    "enderscape:end_vault:vault_state=active",
+    "enderscape:end_vault:vault_state=ejecting",
+    "enderscape:end_vault:vault_state=unlocking"
+  ],
+  "color": [
+    "supplemental_patches:enderscape/end_trial_spawner",
+    null,
+    null,
+    null
+  ]
+}

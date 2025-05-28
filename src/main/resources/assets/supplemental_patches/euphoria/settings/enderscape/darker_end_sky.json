@@ -1,0 +1,14 @@
+{
+  "type": "setting",
+  "name": "DARKER_END_SKY",
+  "conditions": [
+    {
+      "if": "defined MOD_ENDERSCAPE",
+      "then": true
+    }
+  ],
+  "en_US": {
+    "option": "Darker End Sky",
+    "comment": "Darkens the end sky, to better mimic Enderscape's built-in custom skybox."
+  }
+}

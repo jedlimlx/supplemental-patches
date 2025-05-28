@@ -1,0 +1,7 @@
+{
+  "name": "end_city_key",
+  "glsl": "end_city_key.glsl",
+  "mat0": [
+    "enderscape:end_city_key"
+  ]
+}

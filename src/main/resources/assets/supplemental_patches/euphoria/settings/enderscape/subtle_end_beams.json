@@ -1,0 +1,15 @@
+{
+  "type": "setting",
+  "name": "SUBTLER_END_BEAMS",
+  "conditions": [
+    {
+      "if": "defined MOD_ENDERSCAPE",
+      "then": true
+    }
+  ],
+  "file": "endBeams.glsl",
+  "en_US": {
+    "option": "Subtler End Beams",
+    "comment": "Dims end beams to make them more subtle and give prominence to the Enderscape Nebula."
+  }
+}
