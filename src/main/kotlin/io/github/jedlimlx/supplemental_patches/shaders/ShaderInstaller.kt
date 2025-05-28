@@ -43,8 +43,10 @@ fun installShader(): String {
     generateParticleCode(newInstallation)
     generateUniforms(newInstallation)
     generateFog(newInstallation)
-    generateShaderMixins(newInstallation)
+    generateSkies(newInstallation)
+    generateTextures(newInstallation)
     generateAtmospherics(newInstallation)
+    generateShaderMixins(newInstallation)
     modifyGBuffers(newInstallation)
 
     return "Shaders successfully installed at $newInstallation."

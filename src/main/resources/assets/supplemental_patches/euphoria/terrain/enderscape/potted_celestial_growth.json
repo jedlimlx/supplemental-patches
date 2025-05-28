@@ -1,0 +1,8 @@
+{
+  "name": "potted_celestial_growth",
+  "glsl": "celestial_growth.glsl",
+  "mat0": [
+    "enderscape:potted_celestial_growth"
+  ],
+  "color": "supplemental_patches:enderscape/celestial_growth"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "bulb_lantern",
+  "glsl": "bulb_lantern.glsl",
+  "mat0": [
+    "enderscape:bulb_lantern"
+  ],
+  "color": "minecraft:lantern",
+  "held_lighting": true
+}

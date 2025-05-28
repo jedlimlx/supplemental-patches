@@ -1,0 +1,12 @@
+{
+  "name": "chorus_flower",
+  "glsl": "chorus_flower.glsl",
+  "mat0": [
+    "chorus_flower:age=5"
+  ],
+  "color": "minecraft:chorus_flower",
+  "conditions": [
+    "DO_IPBR_LIGHTS",
+    "GLOWING_CHORUS_FLOWER"
+  ]
+}

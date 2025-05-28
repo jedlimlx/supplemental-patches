@@ -1,0 +1,23 @@
+{
+  "name": "alluring_magnia",
+  "glsl": "alluring_magnia.glsl",
+  "mat0": [
+    "enderscape:alluring_magnia",
+    "enderscape:etched_alluring_magnia"
+  ],
+  "mat1": [
+    "enderscape:alluring_magnia_sprout:powered=false"
+  ],
+  "mat2": [
+    "enderscape:alluring_magnia_sprout:powered=true"
+  ],
+  "mat3": [
+    "enderscape:potted_alluring_magnia_sprout"
+  ],
+  "color": [
+    null,
+    null,
+    "supplemental_patches:enderscape/alluring_magnia_sprout",
+    null
+  ]
+}
