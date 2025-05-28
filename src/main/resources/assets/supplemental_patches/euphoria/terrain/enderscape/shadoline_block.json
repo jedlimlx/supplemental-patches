@@ -1,0 +1,17 @@
+{
+  "name": "shadoline_block",
+  "glsl": "shadoline_block.glsl",
+  "mat0": [
+    "enderscape:shadoline_block",
+    "enderscape:shadoline_pillar",
+    "enderscape:cut_shadoline"
+  ],
+  "mat1": [
+    "enderscape:shadoline_block_slab",
+    "enderscape:shadoline_block_stairs",
+    "enderscape:shadoline_block_wall",
+    "enderscape:cut_shadoline_block_slab",
+    "enderscape:cut_shadoline_block_stairs",
+    "enderscape:cut_shadoline_block_wall"
+  ]
+}

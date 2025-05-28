@@ -1,0 +1,9 @@
+{
+  "name": "wisp_flower",
+  "glsl": "wisp_flower.glsl",
+  "mat0": [
+    "enderscape:wisp_flower"
+  ],
+  "color": "supplemental_patches:enderscape/wisp_flower",
+  "waving": "supplemental_patches:generic/grounded_waving_foliage"
+}

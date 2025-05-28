@@ -109,7 +109,7 @@ dependencies {
     // rendering / optimisation mods
     modImplementation("maven.modrinth:sodium:mc1.21.4-0.6.10-fabric")
     modImplementation("maven.modrinth:iris:1.8.8+1.21.4-fabric")
-    modRuntimeOnly("maven.modrinth:euphoria-patches:1.6.2-r5.5.1-fabric")
+    modRuntimeOnly("maven.modrinth:euphoria-patches:1.6.4-r5.5.1-fabric")
 
     // general library mods
     modImplementation("maven.modrinth:architectury-api:15.0.3+fabric")
@@ -121,6 +121,7 @@ dependencies {
     modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.8.4")
     modImplementation("maven.modrinth:glitchcore:2.3.0.4-fabric")
     modImplementation("maven.modrinth:midnightlib:1.7.0+1.21.4-fabric")
+    modImplementation("maven.modrinth:mixson:1.3.1-fabric")
     compileOnly("maven.modrinth:moonlight:fabric_1.21-2.17.32")
     modImplementation("maven.modrinth:resourceful-config:3.4.3-fabric")
     modImplementation("maven.modrinth:resourceful-lib:3.4.5-fabric")
@@ -167,6 +168,8 @@ dependencies {
 
     // fabric-exclusive
     modImplementation("maven.modrinth:cinderscapes:5.2.1")
+
+    modImplementation("maven.modrinth:enderscape:1.0.4+1.21.4")
 
     modImplementation("maven.modrinth:gipples-galore:1.1.8-1.21.4")
     modImplementation("maven.modrinth:nears:2.1.4-1.21.4")
