@@ -1,0 +1,9 @@
+{
+  "type": "directory",
+  "name": "NOISE_PARAMETERS_FOLDER",
+  "folder": "noise_parameters",
+  "priority": -1,
+  "en_US": {
+    "screen": "Noise Parameters"
+  }
+}

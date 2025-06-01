@@ -1,9 +1,9 @@
 {
   "type": "directory",
-  "name": "ENDERSCAPE_NEBULA_FOLDER",
+  "name": "ES_NEBULA_FOLDER",
   "folder": "nebula",
+  "priority": 1,
   "en_US": {
     "screen": "Nebula"
-  },
-  "priority": 1
+  }
 }

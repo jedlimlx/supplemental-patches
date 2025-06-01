@@ -8,7 +8,7 @@
   ],
   "file": "wavingBlocks.glsl",
   "en_US": {
-    "option": "Flesh Waving Strength",
+    "option": "Flesh Waving Speed",
     "comment": "Adjusts the speed of the flesh waving in the Visceral Heap."
   }
 }

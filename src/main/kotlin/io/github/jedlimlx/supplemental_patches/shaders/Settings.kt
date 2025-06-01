@@ -10,7 +10,7 @@ fun generateShaderProperties(lst: List<Settings>): String = "<empty> <empty> " +
     when (it.type) {
         SettingType.DIRECTORY -> "[${it.name}]"
         SettingType.INFORMATION -> it.name
-        SettingType.DIVIDER -> "<empty> <empty>"
+        SettingType.DIVIDER -> List(it.dividers) { "<empty>" }.joinToString(" ")
         SettingType.SETTING -> it.name
     }
 }
@@ -42,7 +42,9 @@ class Settings(
     val conditions: List<Pair<String, String>>,
     val values: List<String>,
     val slider: Boolean = false,
-    settingsFile: String = "common.glsl"
+    settingsFile: String = "common.glsl",
+    val activation: Boolean = false,
+    val dividers: Int = 2
 ) {
     val children: MutableList<Settings> = arrayListOf()
 
@@ -119,7 +121,10 @@ fun writeToSettingsFile(directory: Path, fileName: String, text: String) {
 
 const val SHADER_PROPERTIES_FILE = "/shaders/shaders.properties"
 const val LANGUAGE_FILE = "/shaders/lang/en_US.lang"
+const val ACTIVATION_FILE = "/shaders/lib/shaderSettings/activateSettings.glsl"
 fun generateSettings(directory: Path) {
+    val activationFile = File(directory.absolutePathString() + ACTIVATION_FILE)
+
     val sliders = mutableListOf<Settings>()
     val shaderPropertiesCode = StringBuilder("\n$BANNER# Settings added by Supplemental Patches\n\n").apply {
         fun recurse(settings: Settings, indent: String) {
@@ -172,9 +177,10 @@ fun generateSettings(directory: Path) {
     )
 
     fun recurse(setting: Settings) {
-        if (setting.type == SettingType.SETTING)
-            writeToSettingsFile(directory, setting.settingsFile,setting.commonGlsl + "\n")
-        else if (setting.type == SettingType.INFORMATION)
+        if (setting.type == SettingType.SETTING) {
+            writeToSettingsFile(directory, setting.settingsFile, setting.commonGlsl + "\n")
+            if (setting.activation) activationFile.appendText("\n#ifdef ${setting.name}\n#endif")
+        } else if (setting.type == SettingType.INFORMATION)
             writeToSettingsFile(directory, setting.settingsFile,"#define ${setting.name} 0 //[0]\n")
 
         setting.children.forEach { recurse(it) }
@@ -200,6 +206,6 @@ fun generateSettingsFiles(directory: Path) = SETTINGS_FILES.forEach {
 
     it.files.forEach { file ->
         val temp = File(directory.absolutePathString() + "/shaders/$file")
-        temp.writeText("#include \"${SHADER_SETTINGS_FOLDER.replace("/shaders", "")}/${it.name}\"\n" + temp.readText())
+        temp.writeText("#include \"${SHADER_SETTINGS_FOLDER.replace("/shaders", "")}${it.name}\"\n" + temp.readText())
     }
 }
