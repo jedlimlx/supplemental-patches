@@ -374,7 +374,8 @@ object ShaderResourceLoader {
                         when (settingType) {
                             SettingType.DIVIDER -> Settings(
                                 SettingType.DIVIDER, "", json["priority"]?.asInt ?: 0,
-                                mapOf(), listOf(), listOf()
+                                mapOf(), listOf(), listOf(),
+                                dividers = json["dividers"]?.asInt ?: 2
                             )
                             SettingType.INFORMATION -> Settings(
                                 SettingType.INFORMATION, json["name"].asString, json["priority"]?.asInt ?: 0,
@@ -404,8 +405,12 @@ object ShaderResourceLoader {
 
                                             var curr = output["start"].asString.toDouble()
                                             val step = output["step"].asString.toDouble()
-                                            while (curr < output["stop"].asString.toDouble()) {
-                                                lst.add(String.format("%.${ceil(-log10(step)).toInt()}f", curr))
+                                            val stop = output["stop"].asString.toDouble()
+
+                                            val dp = ceil(-log10(step)).toInt()
+                                            while (curr < stop) {
+                                                if (dp > 0) lst.add(String.format("%.${dp}f", curr))
+                                                else lst.add(curr.toInt().toString())
                                                 curr += step
                                             }
 
@@ -422,7 +427,8 @@ object ShaderResourceLoader {
                                     conditionsLst,
                                     values,
                                     json["slider"]?.asBoolean ?: false,
-                                    json["file"]?.asString ?: "common.glsl"
+                                    json["file"]?.asString ?: "common.glsl",
+                                    json["activation"]?.asBoolean ?: false
                                 )
                             }
                         }

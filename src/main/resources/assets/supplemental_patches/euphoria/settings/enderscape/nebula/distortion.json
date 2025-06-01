@@ -1,0 +1,9 @@
+{
+  "type": "directory",
+  "name": "DISTORTION_FOLDER",
+  "folder": "distortion",
+  "priority": -1,
+  "en_US": {
+    "screen": "Nebula Distortion"
+  }
+}

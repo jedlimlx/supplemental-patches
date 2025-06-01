@@ -1,0 +1,19 @@
+{
+  "type": "setting",
+  "name": "ES_NEBULA_COLOR_2_R",
+  "default": 227,
+  "values": [
+    {
+      "type": "range",
+      "start": 0,
+      "stop": 256,
+      "step": 1
+    }
+  ],
+  "slider": true,
+  "file": "enderscapeNebula.glsl",
+  "priority": -3,
+  "en_US": {
+    "option": "Nebula Color 2 - Red"
+  }
+}

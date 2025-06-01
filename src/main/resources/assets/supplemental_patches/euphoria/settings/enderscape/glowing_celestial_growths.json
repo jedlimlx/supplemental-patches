@@ -1,0 +1,10 @@
+{
+  "type": "setting",
+  "name": "GLOWING_CELESTIAL_GROWTHS",
+  "priority": 4,
+  "default": false,
+  "file": "materials.glsl",
+  "en_US": {
+    "option": "Glowing Celestial Growths"
+  }
+}
