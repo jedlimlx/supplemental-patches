@@ -1,0 +1,27 @@
+{
+  "type": "setting",
+  "name": "ES_NEBULA_RESOLUTION",
+  "default": 1000,
+  "values": [
+    {
+      "type": "range",
+      "start": 100,
+      "stop": 1000,
+      "step": 100
+    },
+    {
+      "type": "range",
+      "start": 1000,
+      "stop": 11000,
+      "step": 1000
+    },
+    -1
+  ],
+  "slider": true,
+  "file": "enderscapeNebula.glsl",
+  "en_US": {
+    "option": "Nebula Resolution",
+    "comment": "Controls the number of pixels the nebula is discretised into. Noticeable distortion is present at lower resolutions as it is impossible to perfectly tile the surface of a sphere with squares.",
+    "value.-1": "Infinite"
+  }
+}

@@ -8,6 +8,7 @@
   "waving": "supplemental_patches:generic/waving_tall_foliage",
   "needs_voxelization": true,
   "conditions": [
-    "DO_IPBR_LIGHTS"
+    "DO_IPBR_LIGHTS",
+    "GLOWING_CELESTIAL_GROWTHS"
   ]
 }
