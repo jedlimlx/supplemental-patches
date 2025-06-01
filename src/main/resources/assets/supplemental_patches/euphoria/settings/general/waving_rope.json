@@ -3,6 +3,7 @@
   "name": "WAVING_ROPE",
   "default": true,
   "file": "wavingBlocks.glsl",
+  "activation": true,
   "en_US": {
     "option": "Waving Rope",
     "comment": "Enables ropes from Quark / Supplementaries / Farmers Delight to wave."

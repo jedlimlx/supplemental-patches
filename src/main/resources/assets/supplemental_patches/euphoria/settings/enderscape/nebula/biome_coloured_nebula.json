@@ -1,0 +1,12 @@
+{
+  "type": "setting",
+  "name": "BIOME_COLORED_ES_NEBULA",
+  "default": true,
+  "file": "enderscapeNebula.glsl",
+  "priority": -2,
+  "activation": true,
+  "en_US": {
+    "option": "Biome Colored Nebula",
+    "comment": "Gives the nebula different colors based on which Enderscape biome the player is in."
+  }
+}

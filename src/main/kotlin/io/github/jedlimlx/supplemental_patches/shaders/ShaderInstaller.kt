@@ -37,8 +37,6 @@ fun installShader(): String {
     generateTranslucentMaterials(newInstallation)
     generateBlockEntityMaterials(newInstallation)
     generateVoxelsAndBlocklight(newInstallation)
-    generateSettingsFiles(newInstallation)
-    generateSettings(newInstallation)
     generateWavingCode(newInstallation)
     generateParticleCode(newInstallation)
     generateUniforms(newInstallation)
@@ -46,6 +44,8 @@ fun installShader(): String {
     generateSkies(newInstallation)
     generateTextures(newInstallation)
     generateAtmospherics(newInstallation)
+    generateSettingsFiles(newInstallation)
+    generateSettings(newInstallation)
     generateShaderMixins(newInstallation)
     modifyGBuffers(newInstallation)
 
