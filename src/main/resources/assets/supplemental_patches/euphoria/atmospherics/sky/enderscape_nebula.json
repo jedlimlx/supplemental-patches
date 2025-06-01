@@ -6,6 +6,6 @@
   "reflection": "skyReflection += GetEnderscapeNebula(nViewPosR, RVdotU);",
   "conditions": [
     "MOD_ENDERSCAPE",
-    "ENDERSCAPE_NEBULA"
+    "ES_NEBULA"
   ]
 }
