@@ -4,5 +4,9 @@
   "mat0": [
     "enderscape:potted_celestial_growth"
   ],
-  "color": "supplemental_patches:enderscape/celestial_growth"
+  "color": "supplemental_patches:enderscape/celestial_growth",
+  "conditions": [
+    "DO_IPBR_LIGHTS",
+    "GLOWING_CELESTIAL_GROWTHS"
+  ]
 }

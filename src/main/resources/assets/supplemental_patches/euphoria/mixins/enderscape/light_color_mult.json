@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/common.glsl",
+  "type": "replace",
+  "key": "//#define LIGHT_COLOR_MULTS",
+  "code": "light_color_mults.glsl"
+}
