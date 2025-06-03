@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/common.glsl",
+  "type": "replace",
+  "key": "//#define ATM_COLOR_MULTS",
+  "code": "atm_color_mults.glsl"
+}

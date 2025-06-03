@@ -1,12 +1,12 @@
 {
   "type": "setting",
   "name": "ES_NEBULA_INTENSITY",
-  "default": 0.20,
+  "default": 0.40,
   "values": [
     {
       "type": "range",
       "start": 0.05,
-      "stop": 2.05,
+      "stop": 4.05,
       "step": 0.05
     }
   ],
