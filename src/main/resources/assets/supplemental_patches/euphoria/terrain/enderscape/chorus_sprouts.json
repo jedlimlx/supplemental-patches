@@ -8,6 +8,6 @@
   "waving": "supplemental_patches:generic/grounded_waving_foliage",
   "conditions": [
     "DO_IPBR_LIGHTS",
-    "GLOWING_CHORUS_FLOWER"
+    "!(defined NOT_GLOWING_CHORUS_FLOWER)"
   ]
 }
