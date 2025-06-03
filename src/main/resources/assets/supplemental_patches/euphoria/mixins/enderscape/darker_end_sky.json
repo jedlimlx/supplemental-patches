@@ -1,6 +1,6 @@
 {
-  "file": "/shaders/lib/common.glsl",
-  "type": "replace",
-  "key": "const vec3 originalEndSkyColor = vec3(E_SKY_COLORR, E_SKY_COLORG, E_SKY_COLORB) / 255.0 * E_SKY_COLORI;",
+  "file": "/shaders/lib/colors/colorMultipliers.glsl",
+  "type": "after",
+  "key": "vec3 endAtmMult = vec3(ATM_END_R, ATM_END_G, ATM_END_B) * ATM_END_I;",
   "code": "darker_end_sky.glsl"
 }

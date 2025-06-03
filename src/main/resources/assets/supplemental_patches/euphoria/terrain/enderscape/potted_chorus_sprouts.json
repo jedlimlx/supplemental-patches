@@ -2,8 +2,11 @@
   "name": "chorus_sprouts",
   "glsl": "chorus_sprouts.glsl",
   "mat0": [
-    "enderscape:chorus_sprouts",
     "enderscape:potted_chorus_sprouts"
   ],
-  "color": "minecraft:chorus_flower"
+  "color": "minecraft:chorus_flower",
+  "conditions": [
+    "DO_IPBR_LIGHTS",
+    "!(defined NOT_GLOWING_CHORUS_FLOWER)"
+  ]
 }
