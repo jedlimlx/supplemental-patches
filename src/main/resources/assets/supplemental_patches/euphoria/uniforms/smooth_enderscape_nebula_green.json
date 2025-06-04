@@ -1,0 +1,8 @@
+{
+  "type": "float",
+  "name": "smoothEnderscapeNebulaGreen",
+  "code": "smooth(54, enderscapeNebulaGreen, 15, 15)",
+  "conditions": [
+    "MOD_ENDERSCAPE"
+  ]
+}

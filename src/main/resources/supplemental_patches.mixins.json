@@ -13,6 +13,7 @@
     "biomes.AutumnityMixin",
     "biomes.BiomesOPlentyMixin",
     "biomes.EndergeticMixin",
+    "biomes.EnderscapeBiomesMixin",
     "biomes.EnvironmentalMixin",
     "biomes.GalosphereMixin",
     "biomes.JNEMixin",
@@ -22,7 +23,8 @@
     "biomes.YungsCaveBiomesMixin",
     "uniforms.HauntUniforms",
     "uniforms.YUNGSandstormUniforms",
-    "uniforms.ScorchfulSandstormUniforms"
+    "uniforms.ScorchfulSandstormUniforms",
+    "uniforms.EnderscapeAtmosphereUniforms"
   ],
   "injectors": {
     "defaultRequire": 1
