@@ -103,17 +103,26 @@ vec3 GetEnderscapeNebula(vec3 viewPos, float VdotU) {
     float hash = hash13(ES_NEBULA_RESOLUTION * wpos);
 
     // compute colour to apply to nebula
-    vec3 colour = mix(
-        ES_NEBULA_COLOR_1,
-        ES_NEBULA_COLOR_2,
-        pow2(cos(25.0 * colourNoise))
-    ) / 255;
+    #ifdef BIOME_COLORED_ES_NEBULA
+        vec3 colour = vec3(smoothEnderscapeNebulaRed, smoothEnderscapeNebulaGreen, smoothEnderscapeNebulaBlue) / 255;
+    #else
+        vec3 colour = mix(
+            ES_NEBULA_COLOR_1,
+            ES_NEBULA_COLOR_2,
+            pow2(cos(25.0 * colourNoise))
+        ) / 255;
+    #endif
     colour = saturateColors(colour, ES_NEBULA_SATURATION);
 
     // add granininess to nebula
     noise *= mix(1, hash, ES_NEBULA_GRAININESS);
 
-    vec4 nebulaTexture = vec4(vec3(noise) * colour, ES_NEBULA_INTENSITY);
+    #ifdef BIOME_COLORED_ES_NEBULA
+        float intensityFactor = 30.0 * smoothEnderscapeNebulaAlpha;
+    #else
+        float intensityFactor = 1.0;
+    #endif
+    vec4 nebulaTexture = vec4(vec3(noise) * colour, ES_NEBULA_INTENSITY * intensityFactor);
 
     #if defined ATM_COLOR_MULTS || defined SPOOKY
         nebulaTexture.rgb *= sqrtAtmColorMult; // C72380KD - Reduced atmColorMult impact on some things
