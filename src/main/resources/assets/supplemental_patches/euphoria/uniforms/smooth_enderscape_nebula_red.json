@@ -1,7 +1,7 @@
 {
   "type": "float",
   "name": "smoothEnderscapeNebulaRed",
-  "code": "smooth(54, enderscapeNebulaRed, 15, 15)",
+  "code": "smooth(54, enderscapeNebulaColor.r, 15, 15)",
   "conditions": [
     "MOD_ENDERSCAPE"
   ]
