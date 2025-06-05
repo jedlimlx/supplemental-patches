@@ -5,7 +5,7 @@ if ((mat % 4 == 0 && color.r > 0.5) || (mat % 4 == 2 && color.r > 0.24)) {
     #ifdef GBUFFERS_TERRAIN
         vec2 bpos = floor(playerPos.xz + cameraPosition.xz + 0.5)
                   + floor(playerPos.y + cameraPosition.y + 0.5);
-        bpos = bpos * 0.004 + 0.003 * frameTimeCounter;
+        bpos = bpos * 0.001 + 0.001 * frameTimeCounter;
         emission *= pow2(texture2D(noisetex, bpos).r * pow1_5(texture2D(noisetex, bpos * 0.5).r));
         emission *= 10.0;
     #endif
