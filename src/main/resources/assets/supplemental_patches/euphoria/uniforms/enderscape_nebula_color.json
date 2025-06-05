@@ -1,0 +1,7 @@
+{
+  "type": "vec3",
+  "name": "enderscapeNebulaColor",
+  "conditions": [
+    "MOD_ENDERSCAPE"
+  ]
+}
