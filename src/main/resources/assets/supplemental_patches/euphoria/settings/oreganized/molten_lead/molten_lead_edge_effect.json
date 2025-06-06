@@ -7,7 +7,7 @@
   "en_US": {
     "option": "Molten Lead Edge Effect",
     "comment": "Adds an edge to molten lead when it touches other blocks. §e[*]§r This feature only works if Advanced Colored Lighting is enabled in Performance Settings.",
-    "value.0": "OFF",
+    "value.0": "§cOFF",
     "value.1": "ON - Bright",
     "value.2": "ON - Dark"
   },

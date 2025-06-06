@@ -3,6 +3,7 @@
   "name": "GLOWING_MIME_ENERGY",
   "default": false,
   "file": "particles.glsl",
+  "activation": true,
   "en_US": {
     "option": "Glowing Mime Energy",
     "comment": "Enables the particles emitted by the Mine to glow."

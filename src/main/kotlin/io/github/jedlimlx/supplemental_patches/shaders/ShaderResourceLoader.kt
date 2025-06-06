@@ -15,7 +15,10 @@ import net.minecraft.util.profiling.ProfilerFiller
 import java.io.FileNotFoundException
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.Executor
+import kotlin.collections.flatten
 import kotlin.collections.forEach
+import kotlin.math.ceil
+import kotlin.math.log10
 
 
 val GSON: Gson = GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create()
@@ -105,6 +108,10 @@ object ShaderResourceLoader {
 
         SETTINGS_FILES.clear()
 
+        TEXTURES.clear()
+
+        SKIES.clear()
+
         // Loading various colours
         val lst = resourceManager.listResources("euphoria/colors") { it.path.endsWith(".json") }
 
@@ -183,7 +190,9 @@ object ShaderResourceLoader {
             loadFiles(backgroundExecutor, resourceManager, "euphoria/atmospherics/fog/functions", FOG_FUNCTIONS),
             loadUniforms(backgroundExecutor, resourceManager, "euphoria/uniforms"),
             loadMixins(backgroundExecutor, resourceManager, "euphoria/mixins"),
-            loadVolumetricAtmospherics(backgroundExecutor, resourceManager, "euphoria/atmospherics/volumetric")
+            loadVolumetricAtmospherics(backgroundExecutor, resourceManager, "euphoria/atmospherics/volumetric"),
+            loadSkies(backgroundExecutor, resourceManager, "euphoria/atmospherics/sky"),
+            loadTextures(backgroundExecutor, resourceManager, "euphoria/textures")
         ).thenAcceptAsync {
             fun process(json: JsonObject, string: String, map: HashMap<String, ShaderBuilder>, regexReplaces: MutableList<Regex>, additionaMapping: MutableMap<Int, List<String>>) {
                 json.keySet().forEach {
@@ -367,7 +376,8 @@ object ShaderResourceLoader {
                         when (settingType) {
                             SettingType.DIVIDER -> Settings(
                                 SettingType.DIVIDER, "", json["priority"]?.asInt ?: 0,
-                                mapOf(), listOf(), listOf()
+                                mapOf(), listOf(), listOf(),
+                                dividers = json["dividers"]?.asInt ?: 2
                             )
                             SettingType.INFORMATION -> Settings(
                                 SettingType.INFORMATION, json["name"].asString, json["priority"]?.asInt ?: 0,
@@ -388,15 +398,39 @@ object ShaderResourceLoader {
                                     val temp = it.asJsonObject
                                     Pair(temp["if"].asString, temp["then"].asString)
                                 } ?: listOf(Pair("else", json["default"].asString))
+
+                                val values = (json["values"]?.asJsonArray?.toList() ?: listOf<JsonObject>()).map {
+                                    if (it.isJsonObject) {
+                                        val output = it.asJsonObject
+                                        if (output["type"].asString == "range") {
+                                            val lst = mutableListOf<String>()
+
+                                            var curr = output["start"].asString.toDouble()
+                                            val step = output["step"].asString.toDouble()
+                                            val stop = output["stop"].asString.toDouble()
+
+                                            val dp = ceil(-log10(step)).toInt()
+                                            while (curr < stop) {
+                                                if (dp > 0) lst.add(String.format("%.${dp}f", curr))
+                                                else lst.add(curr.toInt().toString())
+                                                curr += step
+                                            }
+
+                                            lst
+                                        } else throw IllegalArgumentException("type is not known")
+                                    } else mutableListOf(it.asString)
+                                }.flatten()
+
                                 Settings(
                                     SettingType.SETTING,
                                     json["name"].asString,
                                     json["priority"]?.asInt ?: 0,
                                     languages,
                                     conditionsLst,
-                                    json["values"]?.asJsonArray?.map { it.asString } ?: listOf(),
+                                    values,
                                     json["slider"]?.asBoolean ?: false,
-                                    json["file"]?.asString ?: "common.glsl"
+                                    json["file"]?.asString ?: "common.glsl",
+                                    json["activation"]?.asBoolean ?: false
                                 )
                             }
                         }
@@ -522,6 +556,43 @@ object ShaderResourceLoader {
         ).thenAcceptAsync {}
     }
 
+    fun loadSkies(
+        executor: Executor, resourceManager: ResourceManager, type: String
+    ): CompletableFuture<Void> {
+        return CompletableFuture.supplyAsync(
+            {
+                resourceManager.listResources(type) { it.path.endsWith(".glsl") }.map { (loc, _) ->
+                    loc.path.replace("$type/", "") to getFileContents(loc, resourceManager)
+                }.toMap()
+            }, executor
+        ).thenAcceptAsync(
+            {
+                val lst = resourceManager.listResources(type) { it.path.endsWith(".json") }
+
+                LOGGER.info("Loading ${lst.entries.size} skies...")
+                lst.forEach { (loc, _) ->
+                    val tokens = loc.path.replace("$type/", "").split("/")
+                    val path = tokens.subList(0, tokens.size - 1).joinToString("/")
+                    val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
+
+                    SKIES.add(
+                        Sky(
+                            json["name"].asString ?: throw IllegalArgumentException("Name of main GLSL file is not specified"),
+                            it[
+                                "$path${if (path.isEmpty()) "" else "/"}" +
+                                        (json["code"].asString ?: throw IllegalArgumentException(".glsl file not specified."))
+                            ] ?: throw FileNotFoundException("$path/${json["code"].asString} not found!"),
+                            json["dimension"].asString ?: throw IllegalArgumentException("Dimension in which sky should be rendered is not specified."),
+                            json["deferred"].asString ?: throw IllegalArgumentException("Code to be inserted into deferred1.glsl not specified."),
+                            json["reflection"].asString ?: throw IllegalArgumentException("Code to be inserted into reflectionImpl.glsl is not specified."),
+                            json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
+                        )
+                    )
+                }
+            }, executor
+        ).thenAcceptAsync {}
+    }
+
     fun loadSettingsFiles(
         executor: Executor, resourceManager: ResourceManager, type: String
     ): CompletableFuture<Void> {
@@ -534,6 +605,25 @@ object ShaderResourceLoader {
                             json["name"]?.asString ?: throw IllegalArgumentException("Name not specified."),
                             json["files"]?.asJsonArray?.map { it.asString } ?:
                             throw IllegalArgumentException("No shader files for settings to be placed in specified.")
+                        )
+                    )
+                }
+            }, executor
+        ).thenAcceptAsync {}
+    }
+
+    fun loadTextures(
+        executor: Executor, resourceManager: ResourceManager, type: String
+    ): CompletableFuture<Void> {
+        return CompletableFuture.supplyAsync (
+            {
+                resourceManager.listResources(type) { it.path.endsWith(".json") }.forEach { (loc, _) ->
+                    val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
+                    TEXTURES.add(
+                        Texture(
+                            json["texture"]?.asString ?: throw IllegalArgumentException("Path to texture file not specified."),
+                            json["name"]?.asString ?: throw IllegalArgumentException("Name of texture is not specified."),
+                            json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
                         )
                     )
                 }

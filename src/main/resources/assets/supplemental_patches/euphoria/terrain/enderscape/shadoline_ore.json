@@ -1,0 +1,10 @@
+{
+  "name": "shadoline_ore",
+  "glsl": "shadoline_ore.glsl",
+  "mat0": [
+    "enderscape:shadoline_ore"
+  ],
+  "mat2": [
+    "enderscape:mirestone_shadoline_ore"
+  ]
+}

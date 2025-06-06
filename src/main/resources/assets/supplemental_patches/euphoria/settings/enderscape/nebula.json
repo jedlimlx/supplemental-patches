@@ -1,0 +1,9 @@
+{
+  "type": "directory",
+  "name": "ES_NEBULA_FOLDER",
+  "folder": "nebula",
+  "priority": 1,
+  "en_US": {
+    "screen": "Nebula"
+  }
+}

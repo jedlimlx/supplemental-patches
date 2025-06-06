@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/colors/colorMultipliers.glsl",
+  "type": "after",
+  "key": "vec3 endAtmMult = vec3(ATM_END_R, ATM_END_G, ATM_END_B) * ATM_END_I;",
+  "code": "darker_end_sky.glsl"
+}

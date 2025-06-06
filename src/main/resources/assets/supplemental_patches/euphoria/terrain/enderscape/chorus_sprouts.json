@@ -1,0 +1,13 @@
+{
+  "name": "chorus_sprouts",
+  "glsl": "chorus_sprouts.glsl",
+  "mat0": [
+    "enderscape:chorus_sprouts"
+  ],
+  "color": "supplemental_patches:enderscape/chorus_sprouts",
+  "waving": "supplemental_patches:generic/grounded_waving_foliage",
+  "conditions": [
+    "DO_IPBR_LIGHTS",
+    "!(defined NOT_GLOWING_CHORUS_FLOWER)"
+  ]
+}

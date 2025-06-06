@@ -1,0 +1,18 @@
+{
+  "type": "setting",
+  "name": "ES_NEBULA_DISTORTION_INTENSITY",
+  "default": 1.0,
+  "values": [
+    {
+      "type": "range",
+      "start": 0.0,
+      "stop": 3.05,
+      "step": 0.05
+    }
+  ],
+  "slider": true,
+  "file": "enderscapeNebula.glsl",
+  "en_US": {
+    "option": "Distortion Intensity"
+  }
+}

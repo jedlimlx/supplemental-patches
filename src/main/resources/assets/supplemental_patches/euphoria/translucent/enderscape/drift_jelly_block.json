@@ -1,0 +1,8 @@
+{
+  "name": "drift_jelly_block",
+  "glsl": "drift_jelly_block.glsl",
+  "mat0": [
+    "enderscape:drift_jelly_block"
+  ],
+  "color": "supplemental_patches:enderscape/drift_jelly"
+}

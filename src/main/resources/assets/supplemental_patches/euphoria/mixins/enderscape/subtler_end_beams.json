@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/atmospherics/enderBeams.glsl",
+  "type": "replace",
+  "key": "return beams.rgb;",
+  "code": "subtler_end_beams.glsl"
+}

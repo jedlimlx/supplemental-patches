@@ -1,0 +1,18 @@
+{
+  "type": "setting",
+  "name": "ES_NEBULA_WISPINESS",
+  "default": 3.0,
+  "values": [
+    {
+      "type": "range",
+      "start": 1.0,
+      "stop": 6.1,
+      "step": 0.1
+    }
+  ],
+  "slider": true,
+  "file": "enderscapeNebula.glsl",
+  "en_US": {
+    "option": "Nebula Wispiness"
+  }
+}

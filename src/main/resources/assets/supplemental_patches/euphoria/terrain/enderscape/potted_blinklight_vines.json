@@ -1,0 +1,8 @@
+{
+  "name": "potted_blinklight_vines",
+  "glsl": "blinklight_vines.glsl",
+  "mat0": [
+    "enderscape:potted_blinklight"
+  ],
+  "color": "supplemental_patches:enderscape/blinklamp"
+}

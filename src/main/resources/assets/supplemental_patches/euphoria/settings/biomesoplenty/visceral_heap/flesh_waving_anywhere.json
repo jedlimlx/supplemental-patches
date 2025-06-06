@@ -1,0 +1,11 @@
+{
+  "type": "setting",
+  "name": "FLESH_WAVING_ANYWHERE",
+  "default": false,
+  "file": "wavingBlocks.glsl",
+  "activation": true,
+  "en_US": {
+    "option": "Flesh Waving Anywhere",
+    "comment": "Enables flesh blocks to wave in any biome, even outside the Visceral Heap."
+  }
+}
