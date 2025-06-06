@@ -6,5 +6,9 @@
     "screen": "Supplemental Patches §d0.3.0-beta",
     "comment": "This is a modification of Euphoria Patches to provide better support for many popular mods."
   },
+  "ru_RU": {
+    "screen": "Supplemental Patches §d0.3.0-beta",
+    "comment": "Модификация Euphoria Patches для улучшенной совместимости с многими популярными модами."
+  },
   "priority": 2
 }

@@ -5,5 +5,9 @@
   "en_US": {
     "screen": "Fog",
     "comment": "Settings regarding the Fog effect from Doom & Gloom."
+  },
+  "ru_RU": {
+    "screen": "Туман",
+    "comment": "Настройки эффекта тумана из мода Doom & Gloom."
   }
 }

@@ -12,5 +12,9 @@
   "en_US": {
     "option": "Enderscape Nebula",
     "comment": "Enables a procedurally-generated nebula skybox, similar to the one built into the Enderscape mod. §c[-]§r This effect can impact performance."
+  },
+  "ru_RU": {
+    "option": "Туманность Enderscape",
+    "comment": "Включает процедурно-генерируемую туманность на небе, аналогичную встроенной в мод Enderscape. §c[-]§r Может снижать производительность."
   }
 }
