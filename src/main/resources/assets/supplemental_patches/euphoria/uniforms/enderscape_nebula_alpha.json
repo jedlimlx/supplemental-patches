@@ -1,0 +1,7 @@
+{
+  "type": "float",
+  "name": "enderscapeNebulaAlpha",
+  "conditions": [
+    "MOD_ENDERSCAPE"
+  ]
+}
