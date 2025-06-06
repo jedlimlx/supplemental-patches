@@ -1,0 +1,27 @@
+{
+  "name": "blinklight_vines",
+  "glsl": "blinklight_vines.glsl",
+  "mat0": [
+    "enderscape:blinklight_vines_head:stage=0",
+    "enderscape:blinklight_vines_head:stage=1",
+    "enderscape:blinklight_vines_head:stage=5",
+    "enderscape:potted_blinklight"
+  ],
+  "mat1": [
+    "enderscape:blinklight_vines_body",
+    "enderscape:blinklight_vines_head:stage=3"
+  ],
+  "mat2": [
+    "enderscape:blinklight_vines_head:stage=2",
+    "enderscape:blinklight_vines_head:stage=4"
+  ],
+  "color": [
+    "supplemental_patches:enderscape/blinklamp",
+    null,
+    "supplemental_patches:enderscape/blinklamp_dim",
+    null
+  ],
+  "waving": "minecraft:waving_tall_foliage",
+  "held_lighting": true,
+  "needs_voxelization": true
+}

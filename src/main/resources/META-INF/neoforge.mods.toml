@@ -5,6 +5,7 @@ license = "MIT"
 [[mods]]
 modId = "supplemental_patches"
 version = "${file.jarVersion}"
+logoFile = "logo.png"
 displayName = "Supplemental Patches"
 authors = "lemon41625"
 description = '''

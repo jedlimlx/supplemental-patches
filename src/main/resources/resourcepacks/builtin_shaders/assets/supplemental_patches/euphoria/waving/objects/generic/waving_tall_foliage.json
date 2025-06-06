@@ -1,0 +1,6 @@
+{
+  "glsl": "waving_tall_foliage.glsl",
+  "conditions": [
+    "WAVING_FOLIAGE"
+  ]
+}
