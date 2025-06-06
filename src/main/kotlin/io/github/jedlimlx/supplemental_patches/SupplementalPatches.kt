@@ -4,23 +4,20 @@ import com.mojang.blaze3d.platform.InputConstants
 import io.github.jedlimlx.supplemental_patches.shaders.ShaderResourceLoader
 import io.github.jedlimlx.supplemental_patches.shaders.installShader
 import net.fabricmc.api.ClientModInitializer
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientEntityEvents
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
-import net.fabricmc.fabric.api.event.lifecycle.v1.CommonLifecycleEvents
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType
+import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.client.KeyMapping
 import net.minecraft.client.Minecraft
-import net.minecraft.client.particle.ParticleEngine
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.PackType
 import net.minecraft.server.packs.resources.PreparableReloadListener.PreparationBarrier
 import net.minecraft.server.packs.resources.ResourceManager
 import net.minecraft.util.profiling.ProfilerFiller
-import net.minecraft.world.entity.player.Player
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 import org.lwjgl.glfw.GLFW
@@ -76,5 +73,14 @@ object SupplementalPatches: ClientModInitializer {
                 player.sendSystemMessage(Component.nullToEmpty(installShader()))
             }
         })
+
+        FabricLoader.getInstance().getModContainer("supplemental_patches").ifPresent {
+            ResourceManagerHelper.registerBuiltinResourcePack(
+                ResourceLocation("supplemental_patches:builtin_shaders"),
+                it,
+                Component.translatable("key.supplemental_patches.builtin_shaders"),
+                ResourcePackActivationType.DEFAULT_ENABLED
+            )
+        }
     }
 }

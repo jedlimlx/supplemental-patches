@@ -1,0 +1,23 @@
+{
+  "name": "resurgent_soil",
+  "glsl": "resurgent_soil.glsl",
+  "mat0": [
+    "mynethersdelight:resurgent_soil",
+    "mynethersdelight:resurgent_soil_farmland=0",
+    "mynethersdelight:resurgent_soil_farmland=1",
+    "mynethersdelight:resurgent_soil_farmland=2",
+    "mynethersdelight:resurgent_soil_farmland=3",
+    "mynethersdelight:resurgent_soil_farmland=4",
+    "mynethersdelight:resurgent_soil_farmland=5",
+    "mynethersdelight:resurgent_soil_farmland=6"
+  ],
+  "mat2": [
+    "mynethersdelight:resurgent_soil_farmland:moisture=7"
+  ],
+  "color": [
+    null,
+    null,
+    "supplemental_patches:netherexp/soul_glow",
+    null
+  ]
+}
