@@ -1,8 +1,0 @@
-{
-  "name": "warped_wart_beard",
-  "glsl": "warped_wart_beard.glsl",
-  "mat1": [
-    "netherexp:warped_wart_beard"
-  ],
-  "waving": "supplemental_patches:generic/hanging_waving_foliage"
-}

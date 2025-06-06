@@ -1,0 +1,9 @@
+{
+  "name": "glowflower",
+  "glsl": "glowflower.glsl",
+  "mat0": [
+    "biomesoplenty:glowflower"
+  ],
+  "color": "supplemental_patches:biomesoplenty/glowflower",
+  "waving": "minecraft:grounded_waving_foliage"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "weeping_vines",
+  "glsl": "weeping_vines.glsl",
+  "mat0": [
+    "weeping_vines",
+    "weeping_vines_plant",
+    "netherexp:weeping_ivy"
+  ],
+  "color": "minecraft:weeping_vines",
+  "needs_voxelization": true,
+  "waving": "minecraft:waving_nether_vines",
+  "conditions": [
+    "DO_IPBR_LIGHTS"
+  ]
+}

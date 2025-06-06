@@ -1,0 +1,11 @@
+{
+  "name": "vines",
+  "glsl": "vines.glsl",
+  "mat1": [
+    "soulfulnether:hanging_lichoss",
+    "soulfulnether:hanging_lichoss_plant",
+    "soulfulnether:spiraling_vine",
+    "soulfulnether:spiraling_vine_plant"
+  ],
+  "waving": "minecraft:waving_nether_vines"
+}
