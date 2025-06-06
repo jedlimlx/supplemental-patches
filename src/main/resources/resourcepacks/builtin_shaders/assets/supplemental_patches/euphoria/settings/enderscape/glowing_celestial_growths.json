@@ -6,5 +6,8 @@
   "file": "materials.glsl",
   "en_US": {
     "option": "Glowing Celestial Growths"
+  },
+  "ru_RU": {
+    "option": "Свечение небесных наростов"
   }
 }

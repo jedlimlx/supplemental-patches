@@ -5,5 +5,8 @@
   "priority": -1,
   "en_US": {
     "screen": "Nebula Distortion"
+  },
+  "ru_RU": {
+    "screen": "Искажение туманности"
   }
 }

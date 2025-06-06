@@ -15,5 +15,8 @@
   "priority": -3,
   "en_US": {
     "option": "Nebula Color 1 - Red"
+  },
+  "ru_RU": {
+    "option": "Красный для туманности 1"
   }
 }

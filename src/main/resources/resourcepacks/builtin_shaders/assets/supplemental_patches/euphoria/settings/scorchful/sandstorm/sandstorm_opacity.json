@@ -10,5 +10,9 @@
   "en_US": {
     "option": "Sandstorm Opacity",
     "comment": "Adjusts the opacity of the sandstorm."
+  },
+  "ru_RU": {
+    "option": "Непрозрачность песчаной бури",
+    "comment": "Регулирует плотность видимости песчаной бури."
   }
 }

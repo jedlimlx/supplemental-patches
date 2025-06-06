@@ -12,5 +12,9 @@
   "en_US": {
     "option": "Fog Intensity",
     "comment": "Determines intensity of the fog."
+  },
+  "ru_RU": {
+    "option": "Интенсивность тумана",
+    "comment": "Определяет силу эффекта тумана."
   }
 }

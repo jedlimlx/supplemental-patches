@@ -11,5 +11,8 @@
   "file": "materials.glsl",
   "en_US": {
     "option": "Not Glowing Chorus Flower"
+  },
+  "ru_RU": {
+    "option": "Без свечения цветов хоруса"
   }
 }

@@ -10,5 +10,9 @@
   "en_US": {
     "option": "Darker End Sky §e[*]§r",
     "comment": "Darkens the end sky, to better mimic Enderscape's built-in custom skybox. §e[*]§r This setting requires ATM_COLOR_MULT to be enabled to work."
+  },
+  "ru_RU": {
+    "option": "Тёмное небо Энда §e[*]§r",
+    "comment": "Затемняет небо Энда, лучше имитируя встроенное небо Enderscape. §e[*]§r Требует включения «Множителей цвета атмосферы»."
   }
 }

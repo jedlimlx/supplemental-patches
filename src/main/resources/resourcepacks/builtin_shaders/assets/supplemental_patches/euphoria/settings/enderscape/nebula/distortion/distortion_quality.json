@@ -9,5 +9,11 @@
     "value.1": "Low",
     "value.2": "Medium",
     "value.3": "High"
+  },
+  "ru_RU": {
+    "option": "Качество искажения",
+    "value.1": "Низкое",
+    "value.2": "Среднее",
+    "value.3": "Высокое"
   }
 }

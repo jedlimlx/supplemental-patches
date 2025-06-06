@@ -5,5 +5,9 @@
   "en_US": {
     "screen": "Sandstorm",
     "comment": "Settings regarding the sandstorm found in the Lost Caves."
+  },
+  "ru_RU": {
+    "screen": "Песчаная буря",
+    "comment": "Настройки эффекта песчаной бури из биома затерянных пещер."
   }
 }

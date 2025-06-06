@@ -7,5 +7,9 @@
   "en_US": {
     "option": "Animated End Lamp",
     "comment": "Adds a pixelated noise animation to the end lamp."
+  },
+  "ru_RU": {
+    "option": "Анимированная лампа Энда",
+    "comment": "Добавляет пикселизированную шумовую анимацию лампам Энда."
   }
 }

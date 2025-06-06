@@ -6,5 +6,9 @@
   "en_US": {
     "option": "Glowing Potion Effects",
     "comment": "Enables glowing potion effect particles."
+  },
+  "ru_RU": {
+    "option": "Свечение частиц зелий",
+    "comment": "Включает свечение частиц эффектов зелий."
   }
 }

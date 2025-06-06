@@ -11,5 +11,9 @@
   "en_US": {
     "option": "Subtler End Beams",
     "comment": "Dims end beams to make them more subtle and give prominence to the Enderscape Nebula."
+  },
+  "ru_RU": {
+    "option": "Приглушённые лучи Энда",
+    "comment": "Затеняет лучи в Энде, делая их менее заметными и выделяя туманность Enderscape."
   }
 }
