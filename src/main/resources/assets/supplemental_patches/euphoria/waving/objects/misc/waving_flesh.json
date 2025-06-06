@@ -2,6 +2,7 @@
   "glsl": "waving_flesh.glsl",
   "conditions": [
     "defined NETHER || defined FLESH_WAVING_ANYWHERE",
-    "FLESH_WAVING"
+    "FLESH_WAVING",
+    "MOD_BIOMESOPLENTY"
   ]
 }
