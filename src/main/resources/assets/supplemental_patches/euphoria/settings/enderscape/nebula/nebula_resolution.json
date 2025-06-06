@@ -23,5 +23,10 @@
     "option": "Nebula Resolution",
     "comment": "Controls the number of pixels the nebula is discretised into. Noticeable distortion is present at lower resolutions as it is impossible to perfectly tile the surface of a sphere with squares.",
     "value.-1": "Infinite"
+  },
+  "ru_RU": {
+    "option": "Разрешение туманности",
+    "comment": "Определяет детализацию пикселизации туманности. На низких значениях заметны искажения из-за невозможности идеально разбить сферу на квадраты.",
+    "value.-1": "Бесконечное"
   }
 }

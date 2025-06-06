@@ -15,5 +15,8 @@
   "file": "enderscapeNebula.glsl",
   "en_US": {
     "option": "Nebula Saturation"
+  },
+  "ru_RU": {
+    "option": "Насыщенность туманности"
   }
 }
