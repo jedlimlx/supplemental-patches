@@ -13,5 +13,9 @@
   "en_US": {
     "option": "Glowing Oretortoise Strength",
     "comment": "Determines the emission strength of glowing ores on the oretortoise."
+  },
+  "ru_RU": {
+    "option": "Сила свечения пещерепахи",
+    "comment": "Определяет интенсивность свечения руд на спине пещерепахи."
   }
 }

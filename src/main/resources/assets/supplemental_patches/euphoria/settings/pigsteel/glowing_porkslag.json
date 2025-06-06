@@ -10,5 +10,8 @@
   "file": "materials.glsl",
   "en_US": {
     "option": "Glowing Porkslag"
+  },
+  "ru_RU": {
+    "option": "Свечение свиношлака"
   }
 }

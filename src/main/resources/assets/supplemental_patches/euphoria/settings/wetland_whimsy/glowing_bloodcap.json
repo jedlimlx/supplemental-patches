@@ -10,5 +10,12 @@
     "value.1": "Dim",
     "value.2": "Moderate",
     "value.3": "Bright"
+  },
+  "ru_RU": {
+    "option": "Свечение гриба-кровошляпки",
+    "value.0": "§cНет",
+    "value.1": "Тусклое",
+    "value.2": "Умеренное",
+    "value.3": "Яркое"
   }
 }

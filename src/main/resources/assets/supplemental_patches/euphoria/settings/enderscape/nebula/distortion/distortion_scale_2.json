@@ -15,5 +15,9 @@
   "en_US": {
     "option": "Distortion Scale 2",
     "comment": "Controls how quickly the distortion applied to the nebula changes over the sky."
+  },
+  "ru_RU": {
+    "option": "Масштаб искажения 2",
+    "comment": "Определяет скорость изменения искажения туманности по небу."
   }
 }

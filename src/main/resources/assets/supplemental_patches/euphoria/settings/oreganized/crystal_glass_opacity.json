@@ -12,5 +12,9 @@
   "en_US": {
     "option": "Crystal Glass Opacity",
     "comment": "Determines opacity of crystal glass."
+  },
+  "ru_RU": {
+    "option": "Непрозрачность хрустального стекла",
+    "comment": "Определяет степень прозрачности хрустального стекла."
   }
 }

@@ -11,5 +11,9 @@
   "en_US": {
     "option": "Sun Intensity",
     "comment": "Determines the factor by which the sun should be dimmer during the fog effect."
+  },
+  "ru_RU": {
+    "option": "Интенсивность солнца",
+    "comment": "Определяет коэффициент затемнения солнца во время тумана."
   }
 }

@@ -10,5 +10,12 @@
     "value.1": "Cluster",
     "value.2": "Cluster & Berserker",
     "value.3": "Cluster & Berserker & Preserved"
+  },
+  "ru_RU": {
+    "option": "Свечение розовой соли",
+    "value.0": "§cНет",
+    "value.1": "Друзы",
+    "value.2": "Друзы и берсерки",
+    "value.3": "Друзы, берсерки и хранимые"
   }
 }

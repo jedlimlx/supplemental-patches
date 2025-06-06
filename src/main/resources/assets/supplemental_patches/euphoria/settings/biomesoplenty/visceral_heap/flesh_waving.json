@@ -7,5 +7,9 @@
   "en_US": {
     "option": "Flesh Waving",
     "comment": "Enables a waving effect on flesh blocks. §e[*]§r If Advanced Colored Lighting is not enabled in Performance Settings, some artifacts may be seen."
+  },
+  "ru_RU": {
+    "option": "Колыхание плоти",
+    "comment": "Включает эффект волнообразного движения для блоков плоти. §e[*]§r Без включённого «Расширенного цветного освещения» в настройках производительности возможны визуальные артефакты."
   }
 }

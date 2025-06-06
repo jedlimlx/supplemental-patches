@@ -10,5 +10,9 @@
   "en_US": {
     "option": "Flesh Waving Speed",
     "comment": "Adjusts the speed of the flesh waving in the Visceral Heap."
+  },
+  "ru_RU": {
+    "option": "Скорость колыхания плоти",
+    "comment": "Регулирует скорость анимации колыхания плоти в биоме груды плоти."
   }
 }

@@ -4,5 +4,8 @@
   "folder": "visceral_heap",
   "en_US": {
     "screen": "Visceral Heap"
+  },
+  "ru_RU": {
+    "screen": "Груда плоти"
   }
 }

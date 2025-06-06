@@ -13,5 +13,9 @@
   "en_US": {
     "option": "Fog Bloom",
     "comment": "Determines how much distant objects should be blurred by during fog."
+  },
+  "ru_RU": {
+    "option": "Размытие тумана",
+    "comment": "Определяет силу размытия удалённых объектов в тумане."
   }
 }
