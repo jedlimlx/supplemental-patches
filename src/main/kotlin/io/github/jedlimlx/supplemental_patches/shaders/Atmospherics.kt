@@ -50,11 +50,13 @@ fun generateAtmospherics(directory: Path) {
         file.writeText(it.libCode)
     }
 
-    val conditions = ATMOSPHERICS.map { "(${it.conditions.conditions()})" }.joinToString(" || ")
-    file.writeText(
-        file.readText().replace(
-            "defined NETHER_STORM || defined COLORED_LIGHT_FOG",
-            "$conditions || defined NETHER_STORM || defined COLORED_LIGHT_FOG"
+    val conditions = ATMOSPHERICS.joinToString(" || ") { "(${it.conditions.conditions()})" }
+    if (conditions.isNotEmpty()) {
+        file.writeText(
+            file.readText().replace(
+                "defined NETHER_STORM || defined COLORED_LIGHT_FOG",
+                "$conditions || defined NETHER_STORM || defined COLORED_LIGHT_FOG"
+            )
         )
-    )
+    }
 }
