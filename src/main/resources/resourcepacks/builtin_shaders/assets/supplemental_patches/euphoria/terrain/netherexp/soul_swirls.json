@@ -1,0 +1,12 @@
+{
+  "name": "soul_swirls",
+  "glsl": "soul_swirls.glsl",
+  "mat1": [
+    "netherexp:soul_swirls:cooldown=false"
+  ],
+  "mat2": [
+    "netherexp:soul_swirls:cooldown=true"
+  ],
+  "color": "supplemental_patches:netherexp/soul_glow",
+  "waving": "minecraft:grounded_waving_foliage"
+}

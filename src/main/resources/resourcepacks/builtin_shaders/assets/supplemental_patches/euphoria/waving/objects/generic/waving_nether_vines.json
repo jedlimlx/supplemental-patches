@@ -1,0 +1,7 @@
+{
+  "glsl": "waving_tall_foliage_2.glsl",
+  "conditions": [
+    "WAVING_FOLIAGE",
+    "defined NETHER || defined DO_NETHER_VINE_WAVING_OUTSIDE_NETHER"
+  ]
+}

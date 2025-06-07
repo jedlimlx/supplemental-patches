@@ -1,3 +1,4 @@
 {
-  "key.supplemental_patches.reload_shaders": "Regenerate Shaders"
+  "key.supplemental_patches.reload_shaders": "Regenerate Shaders",
+  "key.supplemental_patches.builtin_shaders": "Supplemental Shaders"
 }

@@ -1,9 +1,0 @@
-{
-  "name": "burning_blossom",
-  "glsl": "burning_blossom.glsl",
-  "mat0": [
-    "biomesoplenty:burning_blossom"
-  ],
-  "color": "minecraft:magma_block",
-  "waving": "supplemental_patches:generic/grounded_waving_foliage"
-}

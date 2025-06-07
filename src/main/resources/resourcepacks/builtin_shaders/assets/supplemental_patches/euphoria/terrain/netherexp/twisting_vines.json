@@ -1,0 +1,23 @@
+{
+  "name": "twisting_vines",
+  "glsl": "twisting_vines.glsl",
+  "mat0": [
+    "twisting_vines:budding=false",
+    "twisting_vines_plant",
+    "netherexp:twisting_ivy"
+  ],
+  "mat2": [
+    "twisting_vines:budding=true"
+  ],
+  "color": [
+    "supplemental_patches:netherexp/twisting_vines",
+    null,
+    "supplemental_patches:netherexp/warped_fungus",
+    null
+  ],
+  "needs_voxelization": true,
+  "waving": "minecraft:waving_nether_vines",
+  "conditions": [
+    "DO_IPBR_LIGHTS"
+  ]
+}
