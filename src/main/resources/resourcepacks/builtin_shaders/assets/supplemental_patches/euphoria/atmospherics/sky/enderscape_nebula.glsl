@@ -118,7 +118,7 @@ vec3 GetEnderscapeNebula(vec3 viewPos, float VdotU) {
     noise *= mix(1, hash, ES_NEBULA_GRAININESS);
 
     #ifdef BIOME_COLORED_ES_NEBULA
-        float intensityFactor = 30.0 * smoothEnderscapeNebulaAlpha;
+        float intensityFactor = 60.0 * smoothEnderscapeNebulaAlpha;
     #else
         float intensityFactor = 1.0;
     #endif
