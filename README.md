@@ -31,6 +31,8 @@ through a resource-pack. The mod by default, comes with a built-in resource pack
 - Gipples Galore
 - Frostiful
 - Scorchful
+- Enderscape
+- Biomes O Plenty
 
 These additional shaders are patched into Euphoria Patches, if it is installed. The custom patcher supports the customisation the following features of Euphoria Patches:
 
@@ -104,3 +106,10 @@ A: Yes, go ahead.
 ![Basaltic Geyser (Jaden's Nether Expansion)](images/basaltic_geyser.png)
 ![Porkslag (Pigsteel)](images/porkslag.png)
 ![Powdery Cane (My Nether's Delight)](images/powdery_cane.png)
+![Enderscape Nebula 1 (Enderscape)](images/enderscape_nebula_1.png)
+![Enderscape Nebula 2 (Enderscape)](images/enderscape_nebula_2.png)
+![Corrupt Growth (Enderscape)](images/corrupt_growth.png)
+![Celestial Grove (Enderscape)](images/celestial_grove.png)
+![Glowing Grotto (Enderscape)](images/glowing_grotto.png)
+![Undergrowth (Enderscape)](images/undergrowth.png)
+![Visceral Heap (Enderscape)](images/visceral_heap.png)
