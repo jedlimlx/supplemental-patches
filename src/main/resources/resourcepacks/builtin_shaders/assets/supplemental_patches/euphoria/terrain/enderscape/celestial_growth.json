@@ -1,0 +1,14 @@
+{
+  "name": "celestial_growth",
+  "glsl": "celestial_growth.glsl",
+  "mat0": [
+    "enderscape:celestial_growth"
+  ],
+  "color": "supplemental_patches:enderscape/celestial_growth",
+  "waving": "minecraft:waving_tall_foliage",
+  "needs_voxelization": true,
+  "conditions": [
+    "DO_IPBR_LIGHTS",
+    "GLOWING_CELESTIAL_GROWTHS"
+  ]
+}

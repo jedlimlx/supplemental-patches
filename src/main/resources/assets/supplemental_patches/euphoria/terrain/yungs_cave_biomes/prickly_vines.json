@@ -1,9 +1,0 @@
-{
-  "name": "prickly_vines",
-  "glsl": "prickly_vines.glsl",
-  "mat0": [
-    "yungscavebiomes:prickly_vines",
-    "yungscavebiomes:prickly_vines_plant"
-  ],
-  "waving": "supplemental_patches:generic/waving_tall_foliage"
-}
