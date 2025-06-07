@@ -62,6 +62,9 @@ A: Please report it to me first, do not bother the developers of Complementary S
 Q: The shaders I added aren't showing. <br>
 A: Try reloading the shaderpack, after ensuring that the resource-pack is loaded.
 
+Q: The built-in shaders aren't working. <br>
+A: Similarly, try reloading the shaderpack and ensuring that the built-in resource-pack is loaded.
+
 Q: Does this work with Optifine? <br>
 A: No. This only works with Oculus / Iris.
 
