@@ -160,8 +160,6 @@ dependencies {
     // fabric-exclusive
     compileOnly("maven.modrinth:cinderscapes:4.0.10")
 
-    compileOnly("maven.modrinth:enderscape:1.0.2+1.21.1")
-
     compileOnly("maven.modrinth:gipples-galore:1.1.1")
     compileOnly("maven.modrinth:nears:2.1.2-1.21.1")
     compileOnly("maven.modrinth:pearfection:1.3.1-1.21.1")
@@ -181,7 +179,7 @@ dependencies {
     compileOnly("maven.modrinth:elysium-api:1.20.1-1.1.0")
     compileOnly("maven.modrinth:jadens-nether-expansion:2.3.2")
 
-    implementation("maven.modrinth:rubinated-nether:1.3.1c")
+    implementation("maven.modrinth:rubinated-nether:2.0.0")
 
     compileOnly("maven.modrinth:soulfulnether:1.0.0-forge")
 
@@ -196,6 +194,8 @@ dependencies {
     implementation("maven.modrinth:rodspawn:1.0.2")
 
     implementation("maven.modrinth:friends-and-foes-forge:neoforge-mc1.21.1-3.0.7")
+
+    implementation("maven.modrinth:enderscape:1.0.5-neoforge")
 
     compileOnly("maven.modrinth:cobblemon:1.6.1-neoforge")
 
