@@ -14,5 +14,8 @@
   "file": "enderscapeNebula.glsl",
   "en_US": {
     "option": "Noise Amplitude 4"
+  },
+  "ru_RU": {
+    "option": "Амплитуда шума 4"
   }
 }

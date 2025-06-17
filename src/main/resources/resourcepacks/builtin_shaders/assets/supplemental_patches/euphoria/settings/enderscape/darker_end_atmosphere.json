@@ -11,5 +11,9 @@
   "en_US": {
     "option": "Darker End Atmosphere §e[*]§r",
     "comment": "Darkens the end atmosphere and makes ambient light greener, to be more faithful to the lighting modifications in Enderscape. §e[*]§r This setting requires LIGHT_COLOR_MULT to be enabled to work."
+  },
+  "ru_RU": {
+    "option": "Тёмная атмосфера Энда §e[*]§r",
+    "comment": "Затемняет атмосферу Энда и делает освещение зеленее, соответствуя изменениям освещения в Enderscape. §e[*]§r Требует включения «Множителей цвета освещения»."
   }
 }

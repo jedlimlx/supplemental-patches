@@ -6,5 +6,9 @@
   "en_US": {
     "option": "Situational Oretortoise",
     "comment": "Ores on the oretortoise will only glow in caves and at night. §e[*]§r Glowing Oretortoise must be enabled for this to work."
+  },
+  "ru_RU": {
+    "option": "Условное свечение пещерепахи",
+    "comment": "Руды на пещерепахе будут светиться только в пещерах и ночью. §e[*]§r Требует включённого «Свечения пещерепахи»."
   }
 }

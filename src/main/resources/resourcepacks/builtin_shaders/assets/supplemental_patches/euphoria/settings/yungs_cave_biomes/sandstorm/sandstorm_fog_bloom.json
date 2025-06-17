@@ -13,5 +13,9 @@
   "en_US": {
     "option": "Sandstorm Fog Bloom",
     "comment": "Determines how much distant objects should be blurred by during the sandstorm."
+  },
+  "ru_RU": {
+    "option": "Размытие тумана в песчаную бурю",
+    "comment": "Определяет степень размытия удалённых объектов во время песчаной бури."
   }
 }

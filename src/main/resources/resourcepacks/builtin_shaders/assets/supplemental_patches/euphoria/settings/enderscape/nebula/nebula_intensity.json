@@ -14,5 +14,8 @@
   "file": "enderscapeNebula.glsl",
   "en_US": {
     "option": "Nebula Intensity"
+  },
+  "ru_RU": {
+    "option": "Интенсивность туманности"
   }
 }

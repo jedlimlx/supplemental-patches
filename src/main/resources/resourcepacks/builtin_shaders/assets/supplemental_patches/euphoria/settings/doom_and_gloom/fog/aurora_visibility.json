@@ -11,5 +11,9 @@
   "en_US": {
     "option": "Aurora Visibility",
     "comment": "Determines how visible the aurora should be when then fog effect is on."
+  },
+  "ru_RU": {
+    "option": "Видимость северного сияния",
+    "comment": "Определяет степень видимости северного сияния при включённом тумане."
   }
 }

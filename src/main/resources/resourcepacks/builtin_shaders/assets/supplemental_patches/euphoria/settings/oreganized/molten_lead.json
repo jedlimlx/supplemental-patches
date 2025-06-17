@@ -6,5 +6,9 @@
   "en_US": {
     "screen": "Molten Lead",
     "comment": "Settings that relate to molten lead."
+  },
+  "ru_RU": {
+    "screen": "Расплавленный свинец",
+    "comment": "Настройки, связанные с расплавленным свинцом."
   }
 }

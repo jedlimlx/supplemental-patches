@@ -10,5 +10,9 @@
   "en_US": {
     "option": "Sandstorm Height",
     "comment": "Determines the height of the sandstorm that forms. Decreasing this value will result in the sandstorm gathering near its lower attitude."
+  },
+  "ru_RU": {
+    "option": "Высота песчаной бури",
+    "comment": "Определяет высоту формирования песчаной бури. Уменьшение значения опустит нижнюю границу бури."
   }
 }

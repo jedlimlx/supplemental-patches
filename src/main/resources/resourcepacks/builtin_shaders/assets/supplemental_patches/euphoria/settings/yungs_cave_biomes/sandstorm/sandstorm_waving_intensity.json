@@ -10,5 +10,9 @@
   "en_US": {
     "option": "Sandstorm Waving Intensity",
     "comment": "Determines how strongly foliage waves during a sandstorm."
+  },
+  "ru_RU": {
+    "option": "Интенсивность колыхания в песчаную бурю",
+    "comment": "Определяет силу колыхания листвы во время песчаной бури."
   }
 }
