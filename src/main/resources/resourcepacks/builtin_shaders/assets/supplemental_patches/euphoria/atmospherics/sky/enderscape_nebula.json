@@ -5,7 +5,7 @@
   "deferred": "color.rgb += GetEnderscapeNebula(viewPos.xyz, VdotU);",
   "reflection": "skyReflection += GetEnderscapeNebula(nViewPosR, RVdotU);",
   "conditions": [
-    "MOD_ENDERSCAPE",
+    "defined ENDERSCAPE_ATMOSPHERE || defined MOD_ENDERSCAPE",
     "ES_NEBULA"
   ]
 }

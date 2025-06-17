@@ -103,7 +103,7 @@ vec3 GetEnderscapeNebula(vec3 viewPos, float VdotU) {
     float hash = hash13(ES_NEBULA_RESOLUTION * wpos);
 
     // compute colour to apply to nebula
-    #ifdef BIOME_COLORED_ES_NEBULA
+    #if defined BIOME_COLORED_ES_NEBULA && defined MOD_ENDERSCAPE
         vec3 colour = vec3(smoothEnderscapeNebulaRed, smoothEnderscapeNebulaGreen, smoothEnderscapeNebulaBlue) / 255;
     #else
         vec3 colour = mix(
@@ -117,7 +117,7 @@ vec3 GetEnderscapeNebula(vec3 viewPos, float VdotU) {
     // add granininess to nebula
     noise *= mix(1, hash, ES_NEBULA_GRAININESS);
 
-    #ifdef BIOME_COLORED_ES_NEBULA
+    #if defined BIOME_COLORED_ES_NEBULA && defined MOD_ENDERSCAPE
         float intensityFactor = 60.0 * smoothEnderscapeNebulaAlpha;
     #else
         float intensityFactor = 1.0;
