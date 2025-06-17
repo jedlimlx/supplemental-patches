@@ -16,6 +16,12 @@
     "warped_wart_block",
     "netherexp:basaltic_geyser"
   ],
+  "block.10233": [
+    "scorchful:sand_pile"
+  ],
+  "block.10237": [
+    "scorchful:red_sand_pile"
+  ],
   "block.10248": [
     "netherexp:cut_netherite_block",
     "netherexp:cut_netherite_pillar",

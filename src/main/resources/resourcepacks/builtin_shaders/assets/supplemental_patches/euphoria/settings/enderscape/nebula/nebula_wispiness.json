@@ -14,5 +14,8 @@
   "file": "enderscapeNebula.glsl",
   "en_US": {
     "option": "Nebula Wispiness"
+  },
+  "ru_RU": {
+    "option": "Волнистость туманности"
   }
 }

@@ -10,5 +10,9 @@
   "en_US": {
     "option": "Flesh Waving Strength",
     "comment": "Adjusts the intensity of the flesh waving in the Visceral Heap."
+  },
+  "ru_RU": {
+    "option": "Интенсивность колыхания плоти",
+    "comment": "Регулирует силу анимации колыхания плоти в биоме груды плоти."
   }
 }

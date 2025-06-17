@@ -2,7 +2,8 @@
   "name": "ender_torch",
   "glsl": "ender_torch.glsl",
   "mat0": [
-    "endergetic:ender_torch"
+    "endergetic:ender_torch",
+    "endergetic:wall_ender_torch"
   ],
   "color": "supplemental_patches:endergetic/ender_fire",
   "held_lighting": true

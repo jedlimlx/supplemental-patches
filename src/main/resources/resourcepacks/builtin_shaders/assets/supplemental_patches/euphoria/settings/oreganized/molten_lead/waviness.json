@@ -11,5 +11,13 @@
     "value.2": "Moderate",
     "value.3": "Intense",
     "comment": "Adjusts the waviness of molten lead."
+  },
+  "ru_RU": {
+    "option": "Волнистость",
+    "value.0": "§cНет",
+    "value.1": "Слабая",
+    "value.2": "Умеренная",
+    "value.3": "Сильная",
+    "comment": "Регулирует степень волнистости расплавленного свинца."
   }
 }
