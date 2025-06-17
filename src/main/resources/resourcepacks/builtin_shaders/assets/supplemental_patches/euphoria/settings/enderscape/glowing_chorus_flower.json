@@ -4,7 +4,7 @@
   "priority": 4,
   "conditions": [
     {
-      "if": "defined MOD_ENDERSCAPE",
+      "if": "defined ENDERSCAPE_ATMOSPHERE || defined MOD_ENDERSCAPE",
       "then": true
     }
   ],

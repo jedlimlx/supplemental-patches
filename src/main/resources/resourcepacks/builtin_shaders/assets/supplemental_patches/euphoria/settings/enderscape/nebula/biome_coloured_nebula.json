@@ -6,11 +6,11 @@
   "priority": -2,
   "activation": true,
   "en_US": {
-    "option": "Biome Colored Nebula",
-    "comment": "Gives the nebula different colors based on which Enderscape biome the player is in."
+    "option": "Biome Colored Nebula §e[*]§r",
+    "comment": "Gives the nebula different colors based on which Enderscape biome the player is in. §e[*]§r Requires Enderscape to be installed."
   },
   "ru_RU": {
-    "option": "Биомно-окрашенная туманность",
+    "option": "Биомно-окрашенная туманность §e[*]§r",
     "comment": "Придаёт туманности разные цвета в зависимости от биома Enderscape, в котором находится игрок."
   }
 }
