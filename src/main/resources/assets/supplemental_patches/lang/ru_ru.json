@@ -1,3 +1,5 @@
 {
-  "key.supplemental_patches.reload_shaders": "Перезагрузить шейдеры"
+  "key.supplemental_patches.reload_shaders": "Перезагрузить шейдеры",
+  "key.supplemental_patches.builtin_shaders": "Дополнительные шейдеры",
+  "key.supplemental_patches.builtin_shaders_description": "Встроенные шейдеры для различных модов"
 }
