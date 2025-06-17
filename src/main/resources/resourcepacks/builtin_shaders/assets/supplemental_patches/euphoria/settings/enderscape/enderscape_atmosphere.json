@@ -8,5 +8,9 @@
   "en_US": {
     "option": "Enderscape Atmosphere",
     "comment": "Enables the changes made to the End's atmosphere made by Enderscape to be enabled even if Enderscape is not installed. If Enderscape is installed, this option does not do anything."
+  },
+  "ru_RU": {
+    "option": "Атмосфера Enderscape",
+    "comment": "Включает изменения атмосферы Энда из мода Enderscape, даже если он не установлен. При установленном Enderscape опция не действует."
   }
 }
