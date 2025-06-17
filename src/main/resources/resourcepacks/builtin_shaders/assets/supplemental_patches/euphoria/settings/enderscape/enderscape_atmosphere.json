@@ -1,0 +1,12 @@
+{
+  "type": "setting",
+  "name": "ENDERSCAPE_ATMOSPHERE",
+  "priority": 6,
+  "default": false,
+  "file": "materials.glsl",
+  "activation": true,
+  "en_US": {
+    "option": "Enderscape Atmosphere",
+    "comment": "Enables the changes made to the End's atmosphere made by Enderscape to be enabled even if Enderscape is not installed. If Enderscape is installed, this option does not do anything."
+  }
+}
