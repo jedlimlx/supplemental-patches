@@ -10,5 +10,8 @@
   "file": "materials.glsl",
   "en_US": {
     "option": "Glowing Soul Silver Ore"
+  },
+  "ru_RU": {
+    "option": "Свечение незерской серебряной руды"
   }
 }

@@ -15,5 +15,9 @@
   "en_US": {
     "option": "Nebula Graininess",
     "comment": "Controls how much white noise is added to the nebula to give it a grainy effect."
+  },
+  "ru_RU": {
+    "option": "Зернистость туманности",
+    "comment": "Регулирует количество шума, добавляемого для создания зернистого эффекта туманности."
   }
 }

@@ -12,5 +12,9 @@
   "en_US": {
     "option": "Sandstorm Fog Intensity",
     "comment": "Determines intensity of the fog during a sandstorm."
+  },
+  "ru_RU": {
+    "option": "Интенсивность тумана в песчаную бурю",
+    "comment": "Определяет силу эффекта тумана во время песчаной бури."
   }
 }
