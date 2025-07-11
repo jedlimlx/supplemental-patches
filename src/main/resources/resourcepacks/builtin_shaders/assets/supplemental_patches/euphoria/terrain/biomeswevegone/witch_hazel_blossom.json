@@ -1,0 +1,8 @@
+{
+  "name": "witch_hazel_blossom",
+  "glsl": "witch_hazel_blossom.glsl",
+  "mat0": [
+    "biomeswevegone:witch_hazel_blossom"
+  ],
+  "color": "supplemental_patches:biomeswevegone/blooming_witch_hazel_leaves"
+}

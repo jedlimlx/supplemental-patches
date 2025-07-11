@@ -1,0 +1,7 @@
+{
+  "name": "firefly",
+  "glsl": "firefly.glsl",
+  "mat0": [
+    "biomeswevegone:firefly"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "fluorescent_cattail",
+  "glsl": "fluorescent_cattail.glsl",
+  "mat0": [
+    "biomeswevegone:fluorescent_cattail:color=red"
+  ],
+  "mat1":[
+    "biomeswevegone:fluorescent_cattail:half=lower"
+  ],
+  "mat2": [
+    "biomeswevegone:fluorescent_cattail:color=yellow",
+    "biomeswevegone:fluorescent_cattail:half=upper:color=default"
+  ],
+  "mat4": [
+    "biomeswevegone:fluorescent_cattail:color=green"
+  ],
+  "mat6": [
+    "biomeswevegone:fluorescent_cattail:color=blue"
+  ],
+  "color": [
+    "supplemental_patches:biomeswevegone/red_glowcane",
+    null,
+    "supplemental_patches:biomeswevegone/yellow_glowcane",
+    null,
+    "supplemental_patches:biomeswevegone/green_glowcane",
+    null,
+    "supplemental_patches:biomeswevegone/blue_glowcane",
+    null
+  ],
+  "block_size": 8
+}

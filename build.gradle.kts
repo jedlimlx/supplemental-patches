@@ -111,13 +111,15 @@ dependencies {
 
     // general library mods
     implementation("maven.modrinth:architectury-api:13.0.8+neoforge")
-    implementation("maven.modrinth:blueprint:8.0.3")
+    compileOnly("maven.modrinth:blueprint:8.0.3")
+    implementation("maven.modrinth:corgilib:1.21.1-5.0.0.4-NeoForge")
     implementation("software.bernie.geckolib:geckolib-neoforge-${property("minecraft_version")}:4.7.3")
     implementation("maven.modrinth:glitchcore:2.1.0.0-neoforge")
     implementation("maven.modrinth:cloth-config:15.0.140+neoforge")
     implementation("maven.modrinth:terrablender:4.1.0.8-neoforge")
     implementation("maven.modrinth:trimmed:1.21-3.0.0+neoforge")
     implementation("maven.modrinth:moonlight:neoforge_1.21-2.17.32")
+    implementation("maven.modrinth:oh-the-trees-youll-grow:1.21.1-5.0.14-NeoForge")
     implementation("maven.modrinth:resourceful-config:3.0.10-neoforge")
     implementation("maven.modrinth:resourceful-lib:3.0.12-neoforge")
 
@@ -125,20 +127,20 @@ dependencies {
     compileOnly("maven.modrinth:abnormals-delight:5.0.0-forge")
     compileOnly("maven.modrinth:atmospheric:6.1.0-forge")
     compileOnly("maven.modrinth:autumnity:5.0.1-forge")
-    implementation("maven.modrinth:berry-good:8.0.0")
-    implementation("maven.modrinth:buzzier-bees:7.0.0")
+    compileOnly("maven.modrinth:berry-good:8.0.0")
+    compileOnly("maven.modrinth:buzzier-bees:7.0.0")
     compileOnly("maven.modrinth:caverns-and-chasms:2.0.0-forge")
-    implementation("maven.modrinth:clayworks:4.0.0")
+    compileOnly("maven.modrinth:clayworks:4.0.0")
     compileOnly("maven.modrinth:endergetic:5.0.0-forge")
     compileOnly("maven.modrinth:environmental:4.0.0-forge")
     compileOnly("maven.modrinth:neapolitan:5.1.0-forge")
     compileOnly("maven.modrinth:savage-and-ravage:6.0.0-forge")
-    implementation("maven.modrinth:woodworks:4.0.0")
+    compileOnly("maven.modrinth:woodworks:4.0.0")
     compileOnly("maven.modrinth:upgrade-aquatic:6.0.1-forge")
 
     // supplementaries
     implementation("maven.modrinth:supplementaries:neoforge_1.21-3.0.39-beta")
-    compileOnly("maven.modrinth:amendments:neoforge_1.21-1.2.24")
+    implementation("maven.modrinth:amendments:neoforge_1.21-1.2.24")
     implementation("maven.modrinth:supplementaries-squared:neoforge_1.21-1.2.3")
 
     // oreganized
@@ -155,7 +157,8 @@ dependencies {
     implementation("maven.modrinth:creeper-overhaul:4.0.6-neoforge")
 
     // biome mods
-    implementation("maven.modrinth:biomes-o-plenty:21.1.0.7-neoforge")
+    compileOnly("maven.modrinth:biomes-o-plenty:21.1.0.7-neoforge")
+    implementation("maven.modrinth:oh-the-biomes-weve-gone:2.4.3-NeoForge")
 
     // fabric-exclusive
     compileOnly("maven.modrinth:cinderscapes:4.0.10")
@@ -189,7 +192,7 @@ dependencies {
 
     compileOnly("maven.modrinth:sullysmod:3.2.1-beta")
 
-    implementation("maven.modrinth:wetland-whimsy:1.0-1.21.1")
+    compileOnly("maven.modrinth:wetland-whimsy:1.0-1.21.1")
 
     implementation("maven.modrinth:rodspawn:1.0.2")
 
