@@ -1,8 +1,8 @@
-materialMask = OSIEBCA * deferredMaterial("supplemental_patches:netherexp/black_ice"); // Intense Fresnel
+materialMask = OSIEBCA; // Intense Fresnel
 
-float factor = 3.0 * pow2(0.4 - color.r);
+float factor = 2.0 * pow2(0.4 - color.r);
 float factor2 = pow2(factor);
-smoothnessG = factor;
+smoothnessG = factor + 0.4;
 smoothnessD = smoothnessG;
 highlightMult = factor2 * 1.5;
 

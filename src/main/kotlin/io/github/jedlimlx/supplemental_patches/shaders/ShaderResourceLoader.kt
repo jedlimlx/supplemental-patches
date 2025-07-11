@@ -472,6 +472,7 @@ object ShaderResourceLoader {
                         Uniform(
                             type = json["type"].asString,
                             name = json["name"].asString,
+                            defaultValue = json["default"]?.asString,
                             code = json["code"]?.asString ?: "",
                             conditions = json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
                         )

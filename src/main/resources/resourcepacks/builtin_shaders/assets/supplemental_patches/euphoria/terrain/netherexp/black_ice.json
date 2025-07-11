@@ -4,7 +4,8 @@
   "mat0": [
     "netherexp:black_ice",
     "netherexp:grooved_black_ice",
-    "netherexp:soul_permafrost"
+    "netherexp:soul_permafrost",
+    "biomeswevegone:packed_black_ice"
   ],
   "mat1": [
     "netherexp:black_icicle"

@@ -12,6 +12,7 @@
     "biomes.AtmosphericMixin",
     "biomes.AutumnityMixin",
     "biomes.BiomesOPlentyMixin",
+    "biomes.BWGBiomesMixin",
     "biomes.EndergeticMixin",
     "biomes.EnderscapeBiomesMixin",
     "biomes.EnvironmentalMixin",

@@ -117,6 +117,7 @@ dependencies {
     modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-base:6.2.2")
     modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-entity:6.2.2")
     modImplementation("maven.modrinth:cloth-config:17.0.144+fabric")
+    modImplementation("maven.modrinth:corgilib:1.21.4-6.0.0.1-Fabric")
     modImplementation("maven.modrinth:frozenlib:2.0.3-mc1.21.4")
     modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.8.4")
     modImplementation("maven.modrinth:glitchcore:2.3.0.4-fabric")
@@ -127,6 +128,7 @@ dependencies {
     modImplementation("maven.modrinth:resourceful-lib:3.4.5-fabric")
     modImplementation("maven.modrinth:terrablender:4.3.0.2-fabric")
     modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:13.0.0-beta.1")
+    modImplementation("maven.modrinth:oh-the-trees-youll-grow:1.21.4-6.0.8-Fabric")
     modImplementation("maven.modrinth:yacl:3.6.5+1.21.4-fabric")
 
     // abnormals mods
@@ -164,7 +166,8 @@ dependencies {
     compileOnly("maven.modrinth:creeper-overhaul:4.0.6-fabric")
 
     // biome mods
-    modImplementation("maven.modrinth:biomes-o-plenty:21.4.0.23-fabric")
+    compileOnly("maven.modrinth:biomes-o-plenty:21.4.0.23-fabric")
+    modImplementation("maven.modrinth:oh-the-biomes-weve-gone:3.1.1-Fabric")
 
     // fabric-exclusive
     modImplementation("maven.modrinth:cinderscapes:5.2.1")
@@ -176,7 +179,7 @@ dependencies {
     modImplementation("maven.modrinth:pearfection:1.2.6-1.21.4")
 
     modImplementation("maven.modrinth:trailier-tales:1.1.3-mc1.21.4")
-    modImplementation("maven.modrinth:wilder-wild:4.0.3-mc1.21.4")
+    compileOnly("maven.modrinth:wilder-wild:4.0.3-mc1.21.4")
 
     modImplementation("maven.modrinth:thermoo:5.3")
     modCompileOnly("maven.modrinth:frostiful:2.2+1.21.4")
