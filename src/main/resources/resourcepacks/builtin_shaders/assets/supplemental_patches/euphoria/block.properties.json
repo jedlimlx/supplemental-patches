@@ -15,11 +15,10 @@
     "nether_wart_block",
     "warped_wart_block",
     "netherexp:basaltic_geyser",
-    "biomeswevegone:fluorescent_cattail:color=default",
+    "biomeswevegone:fluorescent_cattail:color=(.*?)",
     "biomeswevegone:cyan_pitcher_plant:half=(.*?)",
     "biomeswevegone:magenta_pitcher_plant:half=(.*?)"
   ],
-
   "block.10084": [
     "biomeswevegone:dacite",
     "biomeswevegone:dacite_cobblestone"
