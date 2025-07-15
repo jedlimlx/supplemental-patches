@@ -10,7 +10,7 @@ if (
         DoFoliageColorTweaks(color.rgb, shadowMult, snowMinNdotU, viewPos, nViewPos, lViewPos, dither);
 
         #ifdef COATED_TEXTURES
-        doTileRandomisation = false;
+            doTileRandomisation = false;
         #endif
     #endif
 
@@ -21,6 +21,8 @@ if (
 
     sandNoiseIntensity = 0.8, mossNoiseIntensity = 0.0, isFoliage = true;
 } else {
+    lmCoordM.x = 0.2;
+
     float dotColor = dot(color.rgb, color.rgb);
     emission = 0.3 * dotColor + 0.7;
 
