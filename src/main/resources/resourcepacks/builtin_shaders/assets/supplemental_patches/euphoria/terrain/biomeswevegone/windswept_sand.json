@@ -1,0 +1,7 @@
+{
+  "name": "windswept_sand",
+  "glsl": "windswept_sand.glsl",
+  "mat0": [
+    "biomeswevegone:windswept_sand"
+  ]
+}
