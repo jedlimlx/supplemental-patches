@@ -1,0 +1,9 @@
+{
+  "type": "float",
+  "name": "inWeepingWitchForest",
+  "code": "smooth(54, if(in(biome, BIOME_WEEPING_WITCH_FOREST), 1, 0), 15, 15)",
+  "default": 0.0,
+  "conditions": [
+    "MOD_BIOMESWEVEGONE"
+  ]
+}

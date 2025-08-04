@@ -1,0 +1,9 @@
+{
+  "type": "float",
+  "name": "inEnchantedTangle",
+  "code": "smooth(54, if(in(biome, BIOME_ENCHANTED_TANGLE), 1, 0), 15, 15)",
+  "default": 0.0,
+  "conditions": [
+    "MOD_BIOMESWEVEGONE"
+  ]
+}

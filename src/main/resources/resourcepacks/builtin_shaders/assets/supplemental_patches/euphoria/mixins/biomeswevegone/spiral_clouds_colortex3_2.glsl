@@ -1,0 +1,1 @@
+mix(texture2D(colortex3, GetRoundedCloudCoord(cLightPos.xz, CLOUD_ROUNDNESS)).b, texture2D(spiral_clouds, GetRoundedCloudCoord(cLightPos.xz, CLOUD_ROUNDNESS)).b, inMagicBiome)
