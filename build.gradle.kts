@@ -57,7 +57,6 @@ minecraft {
         create("client") {
             property("log4j.configurationFile", "log4j2.xml")
             args("--username", "Player")
-            jvmArg("-Xms8G")
         }
 
         create("server") {}
@@ -132,12 +131,14 @@ dependencies {
     // general library mods
     implementation(fg.deobf("maven.modrinth:architectury-api:9.2.14+forge"))
     implementation(fg.deobf("maven.modrinth:blueprint:7.1.1-forge"))
+    compileOnly(fg.deobf("maven.modrinth:corgilib:1.20.1-4.0.3.4-forge"))
     implementation(fg.deobf("software.bernie.geckolib:geckolib-forge-${property("minecraft_version")}:4.4.9"))
     implementation(fg.deobf("maven.modrinth:glitchcore:0.0.1.1"))
     implementation(fg.deobf("maven.modrinth:cloth-config:11.1.136+forge"))
     implementation(fg.deobf("maven.modrinth:terrablender:3.0.1.7-forge"))
     implementation(fg.deobf("maven.modrinth:trimmed:1.20.1-2.1.4+forge"))
     implementation(fg.deobf("maven.modrinth:moonlight:forge_1.20-2.13.71"))
+    compileOnly(fg.deobf("maven.modrinth:oh-the-trees-youll-grow:1.20.1-1.3.13-Forge"))
     implementation(fg.deobf("maven.modrinth:resourceful-config:2.1.3-forge"))
     implementation(fg.deobf("maven.modrinth:resourceful-lib:2.1.29-forge"))
 
@@ -176,7 +177,8 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:creeper-overhaul:3.0.2-forge"))
 
     // biome mods
-    implementation(fg.deobf("maven.modrinth:biomes-o-plenty:19.0.0.96-forge"))
+    compileOnly(fg.deobf("maven.modrinth:biomes-o-plenty:19.0.0.96-forge"))
+    compileOnly(fg.deobf("maven.modrinth:oh-the-biomes-weve-gone:1.6.3-Forge"))
 
     // fabric-exclusive
     compileOnly("maven.modrinth:cinderscapes:4.0.10")
@@ -211,8 +213,6 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:sullysmod:3.2.1-beta"))
 
     implementation(fg.deobf("maven.modrinth:wetland-whimsy:1.1.7-1.20.1"))
-
-    compileOnly(fg.deobf("maven.modrinth:rodspawn:1.0.2"))
 
     compileOnly(fg.deobf("maven.modrinth:friends-and-foes-forge:forge-mc1.20.1-3.0.6"))
 

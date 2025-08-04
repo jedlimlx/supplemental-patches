@@ -6,7 +6,7 @@ import kotlin.io.path.absolutePathString
 
 val UNIFORMS: ArrayList<Uniform> = arrayListOf()
 
-data class Uniform(val name: String, val type: String, val code: String, val conditions: List<String>) {
+data class Uniform(val name: String, val type: String, val code: String, val conditions: List<String>, val defaultValue: String? = null) {
     val custom: Boolean = code.isNotEmpty()
 }
 
@@ -30,11 +30,13 @@ fun generateUniforms(directory: Path) {
     val shaderPropertiesCode = StringBuilder("\n\n$BANNER# Uniforms added by Supplemental Patches\n\n").apply {
         val indent = "    ";
         UNIFORMS.filter { it.custom }.forEach {
-            if (it.conditions.isNotEmpty()) {
+            if (it.conditions.isNotEmpty() && it.defaultValue == null) {
                 append("$indent#if ${it.conditions.conditions()}\n")
                 append("${indent}uniform.${it.type}.${it.name} = ${it.code}\n")
                 append("$indent#endif\n")
-            } else append("${indent}uniform ${it.type} ${it.name}\n")
+            } else if (it.defaultValue != null)
+                append("${indent}uniform ${it.type} ${it.name} = ${it.defaultValue}\n")
+            else append("${indent}uniform ${it.type} ${it.name}\n")
         }
 
         append("\n\n")
