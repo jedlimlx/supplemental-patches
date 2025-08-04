@@ -166,7 +166,7 @@ dependencies {
     compileOnly("maven.modrinth:creeper-overhaul:4.0.6-fabric")
 
     // biome mods
-    compileOnly("maven.modrinth:biomes-o-plenty:21.4.0.23-fabric")
+    modImplementation("maven.modrinth:biomes-o-plenty:21.4.0.23-fabric")
     modImplementation("maven.modrinth:oh-the-biomes-weve-gone:3.1.1-Fabric")
 
     // fabric-exclusive

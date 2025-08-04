@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/lighting/mainLighting.glsl",
+  "type": "replace",
+  "key": "texture2D(gaux4, cloudPos1).b",
+  "code": "spiral_clouds_gaux4_3.glsl"
+}
