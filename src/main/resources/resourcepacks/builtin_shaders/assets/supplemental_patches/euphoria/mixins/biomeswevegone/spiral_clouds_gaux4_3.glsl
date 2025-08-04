@@ -1,0 +1,1 @@
+mix(texture2D(gaux4, cloudPos1).b, texture2D(spiral_clouds, cloudPos1).b, inMagicBiome)
