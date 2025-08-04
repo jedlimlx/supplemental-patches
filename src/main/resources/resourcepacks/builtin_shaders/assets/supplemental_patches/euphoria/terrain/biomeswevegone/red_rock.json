@@ -1,0 +1,12 @@
+{
+  "name": "red_rock",
+  "glsl": "red_rock.glsl",
+  "mat0": [
+    "biomeswevegone:red_rock"
+  ],
+  "mat1": [
+    "biomeswevegone:red_rock_slab",
+    "biomeswevegone:red_rock_stairs",
+    "biomeswevegone:red_rock_wall"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/materials/seasons.glsl",
+  "type": "replace",
+  "key": "inPaleGarden",
+  "code": "pale_bog.glsl"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "potted_fairy_slipper",
+  "glsl": "potted_fairy_slipper.glsl",
+  "mat0": [
+    "biomeswevegone:potted_fairy_slipper"
+  ],
+  "color": "supplemental_patches:biomeswevegone/fairy_slipper"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "float",
+  "name": "inPaleBog",
+  "code": "smooth(54, if(in(biome, BIOME_PALE_BOG), 1, 0), 15, 15)",
+  "default": 0.0,
+  "conditions": [
+    "MOD_BIOMESWEVEGONE"
+  ]
+}

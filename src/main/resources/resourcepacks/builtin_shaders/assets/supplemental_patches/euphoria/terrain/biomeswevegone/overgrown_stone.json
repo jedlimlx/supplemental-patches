@@ -1,0 +1,10 @@
+{
+  "name": "overgrown_stone",
+  "glsl": "overgrown_stone.glsl",
+  "mat0": [
+    "biomeswevegone:overgrown_stone:snowy=false"
+  ],
+  "mat2": [
+    "biomeswevegone:overgrown_stone:snowy=true"
+  ]
+}

@@ -132,11 +132,13 @@ dependencies {
     modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.2.2")
     modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.2.2")
     modImplementation("maven.modrinth:cloth-config:11.1.136+fabric")
+    modImplementation("maven.modrinth:corgilib:1.20.1-4.0.3.4-fabric")
     modImplementation("maven.modrinth:frozenlib:1.9.3-mc1.20.1")
     modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.4.9")
     modImplementation("maven.modrinth:glitchcore:0.0.1.1-fabric")
     modImplementation("maven.modrinth:midnightlib:1.4.1-fabric")
     modImplementation("maven.modrinth:moonlight:fabric_1.20-2.13.71")
+    modImplementation("maven.modrinth:oh-the-trees-youll-grow:1.20.1-1.3.13-Fabric")
     modImplementation("maven.modrinth:porting_lib:2.3.8+1.20.1")
     modImplementation("maven.modrinth:resourceful-config:2.1.3-fabric")
     modImplementation("maven.modrinth:resourceful-lib:2.1.29-fabric")
@@ -179,6 +181,7 @@ dependencies {
 
     // biome mods
     modImplementation("maven.modrinth:biomes-o-plenty:19.0.0.96-fabric")
+    modImplementation("maven.modrinth:oh-the-biomes-weve-gone:1.6.3-Fabric")
 
     // fabric-exclusive
     modImplementation("maven.modrinth:cinderscapes:4.0.10")
@@ -213,8 +216,6 @@ dependencies {
     compileOnly("maven.modrinth:sullysmod:3.2.1-beta")
 
     compileOnly("maven.modrinth:wetland-whimsy:1.1.7-1.20.1")
-
-    compileOnly("maven.modrinth:rodspawn:1.0.2")
 
     modImplementation("maven.modrinth:friends-and-foes:fabric-mc1.20.1-3.0.7")
 

@@ -2,6 +2,7 @@
   "name": "thin_black_ice",
   "glsl": "thin_black_ice.glsl",
   "mat0": [
-    "netherexp:thin_black_ice"
+    "netherexp:thin_black_ice",
+    "biomeswevegone:black_ice"
   ]
 }
