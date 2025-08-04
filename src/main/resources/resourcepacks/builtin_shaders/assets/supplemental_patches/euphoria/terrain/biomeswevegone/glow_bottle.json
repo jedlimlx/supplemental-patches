@@ -1,0 +1,27 @@
+{
+  "name": "glow_bottle",
+  "glsl": "glow_bottle.glsl",
+  "mat0": [
+    "biomeswevegone:red_glow_bottle"
+  ],
+  "mat2": [
+    "biomeswevegone:yellow_glow_bottle"
+  ],
+  "mat4": [
+    "biomeswevegone:green_glow_bottle"
+  ],
+  "mat6": [
+    "biomeswevegone:blue_glow_bottle"
+  ],
+  "color": [
+    "supplemental_patches:biomeswevegone/red_glowcane",
+    null,
+    "supplemental_patches:biomeswevegone/yellow_glowcane",
+    null,
+    "supplemental_patches:biomeswevegone/green_glowcane",
+    null,
+    "supplemental_patches:biomeswevegone/blue_glowcane",
+    null
+  ],
+  "block_size": 8
+}

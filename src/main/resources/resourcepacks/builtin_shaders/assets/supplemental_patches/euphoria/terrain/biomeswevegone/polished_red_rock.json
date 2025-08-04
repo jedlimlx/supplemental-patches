@@ -1,0 +1,28 @@
+{
+  "name": "polished_red_rock",
+  "glsl": "polished_red_rock.glsl",
+  "mat0": [
+    "biomeswevegone:red_rock_bricks",
+    "biomeswevegone:cracked_red_rock_bricks",
+    "biomeswevegone:mossy_red_rock_bricks",
+    "biomeswevegone:red_rock_tiles",
+    "biomeswevegone:chiseled_red_rock_bricks"
+  ],
+  "mat1": [
+    "biomeswevegone:red_rock_brick_stairs",
+    "biomeswevegone:red_rock_brick_slab",
+    "biomeswevegone:red_rock_brick_wall",
+    "biomeswevegone:cracked_red_rock_brick_stairs",
+    "biomeswevegone:cracked_red_rock_brick_slab",
+    "biomeswevegone:cracked_red_rock_brick_wall",
+    "biomeswevegone:mossy_red_rock_brick_stairs",
+    "biomeswevegone:mossy_red_rock_brick_slab",
+    "biomeswevegone:mossy_red_rock_brick_wall",
+    "biomeswevegone:red_rock_tile_stairs",
+    "biomeswevegone:red_rock_tile_slab",
+    "biomeswevegone:red_rock_tile_wall",
+    "biomeswevegone:chiseled_red_rock_brick_stairs",
+    "biomeswevegone:chiseled_red_rock_brick_slab",
+    "biomeswevegone:chiseled_red_rock_brick_wall"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "glsl": "waving_sugar_cane.glsl",
+  "conditions": [
+    "WAVING_SUGAR_CANE"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "flowering_spirit_leaves",
+  "glsl": "flowering_spirit_leaves.glsl",
+  "mat0": [
+    "biomeswevegone:flowering_spirit_leaves"
+  ],
+  "color": "supplemental_patches:biomeswevegone/spirit_fruit",
+  "waving": "minecraft:waving_leaves"
+}
