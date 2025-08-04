@@ -14,11 +14,13 @@ const val UNIFORMS_GLSL_FILE = "/shaders/lib/uniforms.glsl"
 fun generateUniforms(directory: Path) {
     val uniformGlslCode = StringBuilder("\n\n${BANNER.replace("#", "//")}// Uniforms added by Supplemental Patches\n\n").apply {
         UNIFORMS.forEach {
-            if (it.conditions.isNotEmpty()) {
+            if (it.conditions.isNotEmpty() && it.defaultValue == null) {
                 append("#if ${it.conditions.conditions()}\n")
                 append("    uniform ${it.type} ${it.name};\n")
                 append("#endif\n")
-            } else append("uniform ${it.type} ${it.name};\n")
+            } else if (it.defaultValue == null)
+                append("uniform ${it.type} ${it.name};\n")
+            else append("uniform ${it.type} ${it.name} = ${it.defaultValue};\n")
         }
 
         append("\n\n")
@@ -30,13 +32,11 @@ fun generateUniforms(directory: Path) {
     val shaderPropertiesCode = StringBuilder("\n\n$BANNER# Uniforms added by Supplemental Patches\n\n").apply {
         val indent = "    ";
         UNIFORMS.filter { it.custom }.forEach {
-            if (it.conditions.isNotEmpty() && it.defaultValue == null) {
+            if (it.conditions.isNotEmpty()) {
                 append("$indent#if ${it.conditions.conditions()}\n")
                 append("${indent}uniform.${it.type}.${it.name} = ${it.code}\n")
                 append("$indent#endif\n")
-            } else if (it.defaultValue != null)
-                append("${indent}uniform ${it.type} ${it.name} = ${it.defaultValue}\n")
-            else append("${indent}uniform ${it.type} ${it.name}\n")
+            } else append("${indent}uniform.${it.type}.${it.name} = ${it.code}\n")
         }
 
         append("\n\n")

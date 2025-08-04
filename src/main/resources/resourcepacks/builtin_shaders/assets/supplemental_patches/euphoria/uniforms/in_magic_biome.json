@@ -1,0 +1,5 @@
+{
+  "type": "float",
+  "name": "inMagicBiome",
+  "code": "max(inMysticGrove, max(max(inSkyriseVale, inWeepingWitchForest), max(inEnchantedTangle, inForgottenForest)))"
+}
