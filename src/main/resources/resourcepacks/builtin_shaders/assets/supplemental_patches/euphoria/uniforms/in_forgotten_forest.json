@@ -1,0 +1,9 @@
+{
+  "type": "float",
+  "name": "inForgottenForest",
+  "code": "smooth(54, if(in(biome, BIOME_FORGOTTEN_FOREST), 1, 0), 15, 15)",
+  "default": 0.0,
+  "conditions": [
+    "MOD_BIOMESWEVEGONE"
+  ]
+}

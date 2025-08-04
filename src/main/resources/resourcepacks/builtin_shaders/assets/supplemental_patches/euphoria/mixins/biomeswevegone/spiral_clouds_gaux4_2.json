@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/atmospherics/clouds/reimaginedClouds.glsl",
+  "type": "replace",
+  "key": "texture2D(gaux4, GetRoundedCloudCoord(cLightPos.xz, CLOUD_ROUNDNESS)).b",
+  "code": "spiral_clouds_gaux4_2.glsl"
+}
