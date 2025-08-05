@@ -96,6 +96,7 @@ object ShaderResourceLoader {
         PARTICLES.clear()
 
         FOGS.clear()
+        ACL_FOGS.clear()
         FOG_FUNCTIONS.clear()
 
         MIXINS.clear()
@@ -187,6 +188,7 @@ object ShaderResourceLoader {
             loadSettingsFiles(backgroundExecutor, resourceManager, "euphoria/settings_files"),
             loadFiles(backgroundExecutor, resourceManager, "euphoria/colors/injects", COLOUR_INJECTIONS),
             loadFiles(backgroundExecutor, resourceManager, "euphoria/atmospherics/fog/fogs", FOGS),
+            loadFiles(backgroundExecutor, resourceManager, "euphoria/atmospherics/fog/acl_fogs", ACL_FOGS),
             loadFiles(backgroundExecutor, resourceManager, "euphoria/atmospherics/fog/functions", FOG_FUNCTIONS),
             loadUniforms(backgroundExecutor, resourceManager, "euphoria/uniforms"),
             loadMixins(backgroundExecutor, resourceManager, "euphoria/mixins"),
