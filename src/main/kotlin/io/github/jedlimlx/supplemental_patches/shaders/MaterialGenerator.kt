@@ -783,7 +783,9 @@ fun generateParticleCode(directory: Path) {
 
 val FOG_FUNCTIONS = arrayListOf<String>()
 val FOGS = arrayListOf<String>()
+val ACL_FOGS = arrayListOf<String>()
 const val MAIN_FOG_PATH = "/shaders/lib/atmospherics/fog/mainFog.glsl"
+const val ACL_FOG_PATH = "/shaders/lib/atmospherics/fog/coloredLightFog.glsl"
 
 fun generateFog(directory: Path) {
     val file = File(directory.absolutePathString() + MAIN_FOG_PATH)
@@ -797,7 +799,17 @@ fun generateFog(directory: Path) {
     file.writeText(
         file.readText().replace(
             temp2, temp2 + "\n\n" + FOGS.joinToString("\n\n") {
-                it.split("\n").joinToString("\n") { "    " + it }
+                it.split("\n").joinToString("\n") { "    $it" }
+            }
+        )
+    )
+
+    val temp3 = "lightSample *= pow2(min1(lTracePos * 0.03125));"
+    val aclFogFile = File(directory.absolutePathString() + ACL_FOG_PATH)
+    aclFogFile.writeText(
+        aclFogFile.readText().replace(
+            temp3, temp3 + "\n\n" + ACL_FOGS.joinToString("\n\n") {
+                it.split("\n").joinToString("\n") { "        $it" }
             }
         )
     )
