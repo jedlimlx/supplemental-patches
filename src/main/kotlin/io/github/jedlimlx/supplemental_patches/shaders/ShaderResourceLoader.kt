@@ -112,6 +112,8 @@ object ShaderResourceLoader {
 
         SKIES.clear()
 
+        LAYER_CHANGES.clear()
+
         // Loading various colours
         val lst = resourceManager.listResources("euphoria/colors") { it.path.endsWith(".json") }
 
@@ -205,6 +207,11 @@ object ShaderResourceLoader {
                         it.matches(Regex("$string.\\d+")) -> {
                             val num = it.replace("$string.", "").toInt()
                             additionaMapping[num] = json[it].asJsonArray.map { it.asString }
+                        }
+                        it.matches(Regex("layer.(.*?)")) -> {
+                            val layer = it.replace("layer.", "")
+                            if (layer !in LAYER_CHANGES) LAYER_CHANGES[layer] = arrayListOf()
+                            LAYER_CHANGES[layer]!!.addAll(json[it].asJsonArray.map { it.asString })
                         }
                         else -> {
                             // Regex("([a-zA-Z\\d_-]+:[a-zA-Z\\d_/-]+).mat\\d+")

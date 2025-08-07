@@ -47,6 +47,7 @@ fun installShader(): String {
     generateSettingsFiles(newInstallation)
     generateSettings(newInstallation)
     generateShaderMixins(newInstallation)
+    modifyLayers(newInstallation)
     modifyGBuffers(newInstallation)
 
     return "Shaders successfully installed at $newInstallation."

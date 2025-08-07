@@ -1,0 +1,16 @@
+{
+  "name": "redstone_dwarf_spruce",
+  "glsl": "redstone_dwarf_spruce.glsl",
+  "mat0": [
+    "environmental:dwarf_spruce_plant_redstone_torch:lit=false"
+  ],
+  "mat2": [
+    "environmental:dwarf_spruce_plant_redstone_torch:lit=true"
+  ],
+  "color": [
+    null,
+    null,
+    "minecraft:redstone_torch",
+    null
+  ]
+}

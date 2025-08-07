@@ -1,0 +1,12 @@
+{
+  "name": "arid_glass",
+  "glsl": "arid_glass.glsl",
+  "mat0": [
+    "atmospheric:arid_glass"
+  ],
+  "mat2": [
+    "atmospheric:arid_glass_pane"
+  ],
+  "color": "supplemental_patches:atmospheric/arid_glass",
+  "needs_voxelization": true
+}
