@@ -25,6 +25,8 @@ val ITEM_REGEX_REPLACES = arrayListOf<Regex>()
 val ENTITY_ADDITIONAL_MAPPING = mutableMapOf<Int, List<String>>()
 val ENTITY_REGEX_REPLACES = arrayListOf<Regex>()
 
+val LAYER_CHANGES = mutableMapOf<String, ArrayList<String>>()
+
 fun modifyBlockProperties(directory: Path) {
     val file = File(directory.absolutePathString() + BLOCK_PROPERTIES)
     BLOCK_REGEX_REPLACES.map {
@@ -34,6 +36,17 @@ fun modifyBlockProperties(directory: Path) {
     var code = file.readText()
     BLOCK_ADDITIONAL_MAPPING.forEach { (id, lst) ->
         code = code.replace("block.$id = ", "block.$id = ${lst.joinToString(" ")} \\\n\\\n")
+    }
+
+    file.writeText(code)
+}
+
+fun modifyLayers(directory: Path) {
+    val file = File(directory.absolutePathString() + BLOCK_PROPERTIES)
+
+    var code = file.readText()
+    LAYER_CHANGES.forEach { (layer, lst) ->
+        code = code.replace("layer.$layer = ", "layer.$layer = ${lst.joinToString(" ")} \\\n\\\n")
     }
 
     file.writeText(code)

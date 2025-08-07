@@ -10,3 +10,7 @@ if (color.g - color.r > 0.1 || color.g > 0.7) {
 }
 
 emission += 0.0001; // No light reducing during noon
+
+#ifdef DISTANT_LIGHT_BOKEH
+    DoDistantLightBokehMaterial(emission, 3.0, lViewPos);
+#endif

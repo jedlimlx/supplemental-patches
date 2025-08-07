@@ -21,3 +21,7 @@ else {
 #endif
 
 emission += 0.0001; // No light reducing during noon
+
+#ifdef DISTANT_LIGHT_BOKEH
+    DoDistantLightBokehMaterial(emission, 5.0, lViewPos);
+#endif
