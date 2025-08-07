@@ -1,0 +1,27 @@
+{
+  "name": "dwarf_spruce",
+  "glsl": "dwarf_spruce.glsl",
+  "mat0": [
+    "environmental:dwarf_spruce_plant_torch"
+  ],
+  "mat2": [
+    "environmental:dwarf_spruce_plant_soul_torch"
+  ],
+  "mat4": [
+    "environmental:dwarf_spruce_plant_ender_torch"
+  ],
+  "mat6": [
+    "environmental:dwarf_spruce_plant_cupric_torch"
+  ],
+  "color": [
+    "minecraft:torch",
+    null,
+    "minecraft:soul_torch",
+    null,
+    "supplemental_patches:endergetic/ender_fire",
+    null,
+    "supplemental_patches:caverns_and_chasms/cupric_fire",
+    null
+  ],
+  "block_size": 8
+}

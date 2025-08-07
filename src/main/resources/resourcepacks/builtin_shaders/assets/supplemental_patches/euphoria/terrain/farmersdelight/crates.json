@@ -5,7 +5,10 @@
     "cratedelight:glowberry_crate"
   ],
   "mat2": [
-    "cratedelight:golden_apple_crate", "cratedelight:golden_carrot_crate"
+    "cratedelight:golden_apple_crate",
+    "cratedelight:golden_carrot_crate",
+    "atmospherics:shimmering_passion_fruit_crate",
+    "atmospherics:golden_dragon_fruit_crate"
   ],
   "color": [
     "minecraft:glow_berries",

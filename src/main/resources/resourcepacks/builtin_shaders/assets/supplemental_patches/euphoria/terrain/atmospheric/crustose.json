@@ -1,0 +1,10 @@
+{
+  "name": "crustose",
+  "glsl": "crustose.glsl",
+  "mat0": [
+    "atmospheric:crustose",
+    "atmospheric:crustose_path",
+    "atmospheric:crustose_log",
+    "atmospheric:crustose_wood"
+  ]
+}
