@@ -19,6 +19,10 @@
     "biomeswevegone:cyan_pitcher_plant:half=(.*?)",
     "biomeswevegone:magenta_pitcher_plant:half=(.*?)"
   ],
+  "layer.translucent": [
+    "atmospheric:arid_glass",
+    "atmospheric:arid_glass_pane"
+  ],
   "block.10084": [
     "biomeswevegone:dacite",
     "biomeswevegone:dacite_cobblestone"
@@ -42,6 +46,14 @@
     "biomeswevegone:white_dacite_cobblestone_slab",
     "biomeswevegone:white_dacite_cobblestone_stairs",
     "biomeswevegone:white_dacite_cobblestone_wall"
+  ],
+  "block.10092": [
+    "atmospheric:dolerite"
+  ],
+  "block.10093": [
+    "atmospheric:dolerite_slab",
+    "atmospheric:dolerite_stairs",
+    "atmospheric:dolerite_wall"
   ],
   "block.10096": [
     "biomeswevegone:dacite_bricks",
@@ -84,6 +96,11 @@
     "biomeswevegone:white_dacite_tile_slab",
     "biomeswevegone:white_dacite_tile_stairs",
     "biomeswevegone:white_dacite_tile_wall"
+  ],
+  "block.10104": [
+    "atmospheric:polished_dolerite",
+    "atmospheric:polished_dolerite_slab",
+    "atmospheric:polished_dolerite_stairs"
   ],
   "block.10233": [
     "scorchful:sand_pile"
