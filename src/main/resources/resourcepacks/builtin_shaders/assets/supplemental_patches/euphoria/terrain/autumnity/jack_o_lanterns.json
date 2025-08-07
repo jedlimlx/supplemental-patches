@@ -1,0 +1,31 @@
+{
+  "name": "jack_o_lanterns",
+  "glsl": "jack_o_lanterns.glsl",
+  "mat0": [
+    "autumnity:large_redstone_jack_o_lantern_slice:lit=true",
+    "autumnity:redstone_jack_o_lantern:lit=true"
+  ],
+  "mat2": [
+    "autumnity:large_soul_jack_o_lantern_slice",
+    "autumnity:soul_jack_o_lantern"
+  ],
+  "mat4": [
+    "autumnity:large_ender_jack_o_lantern_slice",
+    "autumnity:ender_jack_o_lantern"
+  ],
+  "mat6": [
+    "autumnity:large_cupric_jack_o_lantern_slice",
+    "autumnity:cupric_jack_o_lantern"
+  ],
+  "color": [
+    "minecraft:redstone_torch",
+    null,
+    "minecraft:soul_torch",
+    null,
+    "supplemental_patches:endergetic/ender_fire",
+    null,
+    "supplemental_patches:caverns_and_chasms/cupric_fire",
+    null
+  ],
+  "block_size": 8
+}

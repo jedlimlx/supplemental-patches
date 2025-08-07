@@ -8,7 +8,7 @@ if (color.b > 0.5) {
 }
 
 #ifdef DISTANT_LIGHT_BOKEH
-    DoDistantLightBokehMaterial(emission, 3.0, lViewPos);
+    DoDistantLightBokehMaterial(emission, 5.0, lViewPos);
 #endif
 
 #ifdef SNOWY_WORLD
