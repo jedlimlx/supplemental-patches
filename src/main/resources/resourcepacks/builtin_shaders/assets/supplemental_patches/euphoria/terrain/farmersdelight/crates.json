@@ -2,13 +2,14 @@
   "name": "crates",
   "glsl": "crates.glsl",
   "mat0": [
-    "cratedelight:glowberry_crate"
+    "cratedelight:glowberry_crate",
+    "berry_good:glow_berry_basket"
   ],
   "mat2": [
     "cratedelight:golden_apple_crate",
     "cratedelight:golden_carrot_crate",
-    "atmospherics:shimmering_passion_fruit_crate",
-    "atmospherics:golden_dragon_fruit_crate"
+    "atmospheric:shimmering_passion_fruit_crate",
+    "atmospheric:golden_dragon_fruit_crate"
   ],
   "color": [
     "minecraft:glow_berries",
