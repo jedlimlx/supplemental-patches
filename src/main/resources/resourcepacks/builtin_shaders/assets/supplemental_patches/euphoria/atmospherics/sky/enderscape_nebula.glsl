@@ -43,7 +43,7 @@ vec3 snapToCubeSphereGrid(vec3 wpos, int N) {
 #define ES_NEBULA_COLOR_1 vec3(ES_NEBULA_COLOR_1_R, ES_NEBULA_COLOR_1_G, ES_NEBULA_COLOR_1_B)
 #define ES_NEBULA_COLOR_2 vec3(ES_NEBULA_COLOR_2_R, ES_NEBULA_COLOR_2_G, ES_NEBULA_COLOR_2_B)
 
-const float[8] NOISE_AMPS = {
+const float[8] NOISE_AMPS = float[8](
     ES_NEBULA_NOISE_AMP_1,
     ES_NEBULA_NOISE_AMP_2,
     ES_NEBULA_NOISE_AMP_3,
@@ -52,7 +52,7 @@ const float[8] NOISE_AMPS = {
     ES_NEBULA_NOISE_AMP_6,
     ES_NEBULA_NOISE_AMP_7,
     ES_NEBULA_NOISE_AMP_8
-};
+);
 
 vec2 fbm3d_2d(vec3 x) {
     vec2 v = vec2(0.0);
