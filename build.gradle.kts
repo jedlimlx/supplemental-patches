@@ -137,7 +137,7 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:cloth-config:11.1.136+forge"))
     implementation(fg.deobf("maven.modrinth:terrablender:3.0.1.7-forge"))
     implementation(fg.deobf("maven.modrinth:trimmed:1.20.1-2.1.4+forge"))
-    implementation(fg.deobf("maven.modrinth:moonlight:forge_1.20-2.13.71"))
+    implementation(fg.deobf("maven.modrinth:moonlight:1.20-2.16.1-forge"))
     compileOnly(fg.deobf("maven.modrinth:oh-the-trees-youll-grow:1.20.1-1.3.13-Forge"))
     implementation(fg.deobf("maven.modrinth:resourceful-config:2.1.3-forge"))
     implementation(fg.deobf("maven.modrinth:resourceful-lib:2.1.29-forge"))
@@ -158,12 +158,12 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:upgrade-aquatic:6.0.1-forge"))
 
     // supplementaries
-    compileOnly(fg.deobf("maven.modrinth:supplementaries:1.20-3.1.20-forge"))
-    compileOnly(fg.deobf("maven.modrinth:amendments:1.20-1.2.19-forge"))
-    compileOnly(fg.deobf("maven.modrinth:supplementaries-squared:1.20-1.1.18-forge"))
+    compileOnly(fg.deobf("maven.modrinth:supplementaries:1.20-3.1.37-forge"))
+    implementation(fg.deobf("maven.modrinth:amendments:1.20-2.1.2-forge"))
+    compileOnly(fg.deobf("maven.modrinth:supplementaries-squared:1.20-1.1.22-forge"))
 
     // oreganized
-    implementation(fg.deobf("maven.modrinth:oreganized:3.1.2"))
+    implementation(fg.deobf("maven.modrinth:oreganized:4.2.2"))
     implementation(fg.deobf("maven.modrinth:doom-gloom:1.0.2"))
 
     // farmers delight
@@ -198,7 +198,7 @@ dependencies {
 
     // misc
     implementation(fg.deobf("maven.modrinth:galosphere:1.20.1-1.4.1-forge"))
-    implementation(fg.deobf("maven.modrinth:spawn-mod:1.0.2-forge"))
+    implementation(fg.deobf("maven.modrinth:spawn-mod:2.2-forge"))
     implementation(fg.deobf("maven.modrinth:twigs:1.20.1-3.1.1-forge"))
 
     implementation(fg.deobf("maven.modrinth:elysium-api:1.20.1-1.1.0"))
@@ -212,7 +212,7 @@ dependencies {
 
     implementation(fg.deobf("maven.modrinth:sullysmod:3.2.1-beta"))
 
-    implementation(fg.deobf("maven.modrinth:wetland-whimsy:1.1.7-1.20.1"))
+    implementation(fg.deobf("maven.modrinth:wetland-whimsy:1.3.1-1.20.1"))
 
     compileOnly(fg.deobf("maven.modrinth:friends-and-foes-forge:forge-mc1.20.1-3.0.6"))
 
@@ -254,10 +254,10 @@ tasks.withType<Jar> {
                 "Specification-Title" to modid,
                 "Specification-Vendor" to vendor,
                 "Specification-Version" to "1",
-                "Implementation-Title" to project.name,
-                "Implementation-Version" to project.version.toString(),
-                "Implementation-Vendor" to vendor,
-                "Implementation-Timestamp" to SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").format(Date())
+                "compileOnly-Title" to project.name,
+                "compileOnly-Version" to project.version.toString(),
+                "compileOnly-Vendor" to vendor,
+                "compileOnly-Timestamp" to SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").format(Date())
             )
         )
     }

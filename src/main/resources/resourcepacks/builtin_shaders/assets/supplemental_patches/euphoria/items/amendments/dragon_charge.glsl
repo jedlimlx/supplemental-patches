@@ -1,0 +1,1 @@
+emission = max0(color.r + color.b - color.g * 0.5);
