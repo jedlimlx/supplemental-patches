@@ -137,7 +137,7 @@ dependencies {
     modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.4.9")
     modImplementation("maven.modrinth:glitchcore:0.0.1.1-fabric")
     modImplementation("maven.modrinth:midnightlib:1.4.1-fabric")
-    modImplementation("maven.modrinth:moonlight:fabric_1.20-2.13.71")
+    modImplementation("maven.modrinth:moonlight:1.20-2.16.2-fabric")
     modImplementation("maven.modrinth:oh-the-trees-youll-grow:1.20.1-1.3.13-Fabric")
     modImplementation("maven.modrinth:porting_lib:2.3.8+1.20.1")
     modImplementation("maven.modrinth:resourceful-config:2.1.3-fabric")
@@ -162,12 +162,12 @@ dependencies {
     compileOnly("maven.modrinth:upgrade-aquatic:6.0.1-forge")
 
     // supplementaries
-    compileOnly("maven.modrinth:supplementaries:1.20-3.1.16-fabric")
-    compileOnly("maven.modrinth:amendments:1.20-1.2.19-fabric")
-    compileOnly("maven.modrinth:supplementaries-squared:1.20-1.1.18-fabric")
+    compileOnly("maven.modrinth:supplementaries:1.20-3.1.37-fabric")
+    compileOnly("maven.modrinth:amendments:1.20-2.1.2-fabric")
+    compileOnly("maven.modrinth:supplementaries-squared:1.20-1.1.22-fabric")
 
     // oreganized
-    compileOnly("maven.modrinth:oreganized:3.1.2")
+    compileOnly("maven.modrinth:oreganized:4.2.2")
     compileOnly("maven.modrinth:doom-gloom:1.0.2")
 
     // farmers delight
@@ -215,7 +215,7 @@ dependencies {
 
     compileOnly("maven.modrinth:sullysmod:3.2.1-beta")
 
-    compileOnly("maven.modrinth:wetland-whimsy:1.1.7-1.20.1")
+    compileOnly("maven.modrinth:wetland-whimsy:1.3.1-1.20.1")
 
     modImplementation("maven.modrinth:friends-and-foes:fabric-mc1.20.1-3.0.7")
 

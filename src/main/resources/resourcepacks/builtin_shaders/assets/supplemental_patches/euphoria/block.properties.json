@@ -138,6 +138,12 @@
   "block.10332": [
     "galosphere:glinted_amethyst_cluster"
   ],
+  "block.10401": [
+    "spawn:big_sea_pickle:waterlogged=false"
+  ],
+  "block.10404": [
+    "spawn:big_sea_pickle:waterlogged=true"
+  ],
   "block.10452": [
     "mynethersdelight:magma_cake_block"
   ],
