@@ -128,7 +128,7 @@ dependencies {
     modImplementation("maven.modrinth:glitchcore:2.1.0.0-fabric")
     modImplementation("maven.modrinth:midnightlib:1.6.9+1.21-fabric")
     modImplementation("maven.modrinth:mixson:1.3.1-fabric")
-    modImplementation("maven.modrinth:moonlight:fabric_1.21-2.17.32")
+    modImplementation("maven.modrinth:moonlight:1.21-2.20.7-fabric")
     modImplementation("maven.modrinth:oh-the-trees-youll-grow:1.21.1-5.0.14-Fabric")
     modImplementation("maven.modrinth:resourceful-config:3.0.9-fabric")
     modImplementation("maven.modrinth:resourceful-lib:3.0.12-fabric")
@@ -154,12 +154,12 @@ dependencies {
     compileOnly("maven.modrinth:upgrade-aquatic:6.0.1-forge")
 
     // supplementaries
-    compileOnly("maven.modrinth:supplementaries:fabric_1.21-3.0.40-beta")
+    compileOnly("maven.modrinth:supplementaries:fabric_1.21-3.4.4")
     compileOnly("maven.modrinth:amendments:fabric_1.21-1.2.24")
-    compileOnly("maven.modrinth:supplementaries-squared:fabric_1.21-1.2.3")
+    compileOnly("maven.modrinth:supplementaries-squared:fabric_1.21-1.2.10")
 
     // oreganized
-    compileOnly("maven.modrinth:oreganized:3.1.2")
+    compileOnly("maven.modrinth:oreganized:4.2.2")
     compileOnly("maven.modrinth:doom-gloom:1.0.2")
 
     // farmers delight
@@ -173,8 +173,8 @@ dependencies {
     compileOnly("maven.modrinth:creeper-overhaul:4.0.6-fabric")
 
     // biome mods
-    modImplementation("maven.modrinth:biomes-o-plenty:21.1.0.7-fabric")
-    modImplementation("maven.modrinth:oh-the-biomes-weve-gone:2.4.6-NeoForge")
+    compileOnly("maven.modrinth:biomes-o-plenty:21.1.0.7-fabric")
+    modImplementation("maven.modrinth:oh-the-biomes-weve-gone:2.4.6-Fabric")
 
     // fabric-exclusive
     modImplementation("maven.modrinth:cinderscapes:5.0.2")
@@ -186,7 +186,7 @@ dependencies {
     modImplementation("maven.modrinth:pearfection:1.3.1-1.21.1")
 
     modImplementation("maven.modrinth:trailier-tales:1.1.2-mc1.21.1")
-    modImplementation("maven.modrinth:wilder-wild:4.0.2-mc1.21.1")
+    compileOnly("maven.modrinth:wilder-wild:4.0.2-mc1.21.1")
 
     modImplementation("maven.modrinth:thermoo:4.4")
     modImplementation("maven.modrinth:frostiful:2.2-beta.1")
@@ -208,7 +208,7 @@ dependencies {
 
     compileOnly("maven.modrinth:sullysmod:3.2.1-beta")
 
-    compileOnly("maven.modrinth:wetland-whimsy:1.1.7-1.20.1")
+    compileOnly("maven.modrinth:wetland-whimsy:1.3.1-1.20.1")
 
     modImplementation("maven.modrinth:friends-and-foes:fabric-mc1.21.1-3.0.7")
 
