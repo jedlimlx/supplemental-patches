@@ -118,7 +118,7 @@ dependencies {
     implementation("maven.modrinth:cloth-config:15.0.140+neoforge")
     implementation("maven.modrinth:terrablender:4.1.0.8-neoforge")
     implementation("maven.modrinth:trimmed:1.21-3.0.0+neoforge")
-    implementation("maven.modrinth:moonlight:neoforge_1.21-2.17.32")
+    implementation("maven.modrinth:moonlight:1.21-2.22.2-neoforge")
     implementation("maven.modrinth:oh-the-trees-youll-grow:1.21.1-5.0.14-NeoForge")
     implementation("maven.modrinth:resourceful-config:3.0.10-neoforge")
     implementation("maven.modrinth:resourceful-lib:3.0.12-neoforge")
@@ -139,9 +139,9 @@ dependencies {
     compileOnly("maven.modrinth:upgrade-aquatic:6.0.1-forge")
 
     // supplementaries
-    implementation("maven.modrinth:supplementaries:neoforge_1.21-3.0.39-beta")
-    implementation("maven.modrinth:amendments:neoforge_1.21-1.2.24")
-    implementation("maven.modrinth:supplementaries-squared:neoforge_1.21-1.2.3")
+    implementation("maven.modrinth:supplementaries:neoforge_1.21-3.4.9")
+    implementation("maven.modrinth:amendments:neoforge_1.21-2.0.5")
+    implementation("maven.modrinth:supplementaries-squared:neoforge_1.21-1.2.12")
 
     // oreganized
     compileOnly("maven.modrinth:oreganized:3.1.2")
@@ -192,7 +192,7 @@ dependencies {
 
     compileOnly("maven.modrinth:sullysmod:3.2.1-beta")
 
-    compileOnly("maven.modrinth:wetland-whimsy:1.0-1.21.1")
+    compileOnly("maven.modrinth:wetland-whimsy:1.2.4-1.21.1")
 
     implementation("maven.modrinth:friends-and-foes-forge:neoforge-mc1.21.1-3.0.7")
 
