@@ -5,7 +5,8 @@
     "netherexp:banshee_powder",
     "netherexp:banshee_rod",
     "netherexp:will_o_wisp",
-    "netherexp:wisp_bottle"
+    "netherexp:wisp_bottle",
+    "illagerinvasion:primal_essence"
   ],
   "color": "supplemental_patches:netherexp/ectoplasm"
 }

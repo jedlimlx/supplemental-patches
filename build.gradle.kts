@@ -120,6 +120,7 @@ dependencies {
     implementation("maven.modrinth:trimmed:1.21-3.0.0+neoforge")
     implementation("maven.modrinth:moonlight:1.21-2.22.2-neoforge")
     implementation("maven.modrinth:oh-the-trees-youll-grow:1.21.1-5.0.14-NeoForge")
+    implementation("maven.modrinth:puzzles-lib:v21.1.38-1.21.1-NeoForge")
     implementation("maven.modrinth:resourceful-config:3.0.10-neoforge")
     implementation("maven.modrinth:resourceful-lib:3.0.12-neoforge")
 
@@ -198,10 +199,10 @@ dependencies {
 
     implementation("maven.modrinth:enderscape:1.0.5-neoforge")
 
-    compileOnly("maven.modrinth:cobblemon:1.6.1-neoforge")
+    implementation("maven.modrinth:illager-invasion:v21.1.6-1.21.1-NeoForge")
 
-    compileOnly("maven.modrinth:yungs-api:1.20-Forge-4.0.6")
-    compileOnly("maven.modrinth:yungs-cave-biomes:1.20.1-Forge-2.0.1")
+    compileOnly("maven.modrinth:yungs-api:1.20-Fabric-4.0.6")
+    compileOnly("maven.modrinth:yungs-cave-biomes:1.20.1-Fabric-2.0.2")
 
     compileOnly("maven.modrinth:zeta:1.20.1-1.0-24-forge")
     compileOnly("maven.modrinth:quark:1.20.1-4.0-460-forge")
