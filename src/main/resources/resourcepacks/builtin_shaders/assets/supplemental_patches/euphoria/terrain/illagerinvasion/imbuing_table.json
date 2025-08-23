@@ -1,0 +1,7 @@
+{
+  "name": "imbuing_table",
+  "glsl": "imbuing_table.glsl",
+  "mat0": [
+    "illagerinvasion:imbuing_table"
+  ]
+}

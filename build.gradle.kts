@@ -65,6 +65,11 @@ repositories {
         }
     }
 
+    maven {
+        name = "Fuzs Mod Resources"
+        url = uri("https://raw.githubusercontent.com/Fuzss/modresources/main/maven/")
+    }
+
     exclusiveContent {
         forRepository {
             maven {
@@ -106,6 +111,9 @@ dependencies {
     implementation("org.reflections:reflections:0.10.2")
     implementation("net.jodah:typetools:0.6.3")
 
+    modApi("fuzs.extensibleenums:extensibleenums-fabric:21.4.0")
+    modApi("fuzs.neoforgedatapackextensions:neoforgedatapackextensions-fabric:21.4.2")
+
     // rendering / optimisation mods
     modImplementation("maven.modrinth:sodium:mc1.21.4-0.6.10-fabric")
     modImplementation("maven.modrinth:iris:1.8.8+1.21.4-fabric")
@@ -118,6 +126,7 @@ dependencies {
     modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-entity:6.2.2")
     modImplementation("maven.modrinth:cloth-config:17.0.144+fabric")
     modImplementation("maven.modrinth:corgilib:1.21.4-6.0.0.1-Fabric")
+    modImplementation("maven.modrinth:forge-config-api-port:v21.4.2-1.21.4-Fabric")
     modImplementation("maven.modrinth:frozenlib:2.0.3-mc1.21.4")
     modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.8.4")
     modImplementation("maven.modrinth:glitchcore:2.3.0.4-fabric")
@@ -129,6 +138,7 @@ dependencies {
     modImplementation("maven.modrinth:terrablender:4.3.0.2-fabric")
     modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:13.0.0-beta.1")
     modImplementation("maven.modrinth:oh-the-trees-youll-grow:1.21.4-6.0.8-Fabric")
+    modImplementation("maven.modrinth:puzzles-lib:v21.4.13-1.21.4-Fabric")
     modImplementation("maven.modrinth:yacl:3.6.5+1.21.4-fabric")
 
     // abnormals mods
@@ -204,6 +214,8 @@ dependencies {
     compileOnly("maven.modrinth:wetland-whimsy:1.1.7-1.20.1")
 
     modImplementation("maven.modrinth:friends-and-foes:fabric-mc1.21.4-4.0.1")
+
+    modImplementation("maven.modrinth:illager-invasion:v21.4.1-1.21.4-Fabric")
 
     compileOnly("maven.modrinth:yungs-api:1.20-Fabric-4.0.6")
     compileOnly("maven.modrinth:yungs-cave-biomes:1.20.1-Fabric-2.0.2")
