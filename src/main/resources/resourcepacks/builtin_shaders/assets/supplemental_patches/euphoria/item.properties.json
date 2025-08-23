@@ -5,5 +5,12 @@
   "item.45040": [
     "wetland_whimsy:boiling_incense",
     "rodspawn:spear"
+  ],
+  "item.45016": [
+    "illagerinvasion:horn_of_sight"
+  ],
+  "item.45044": [
+    "illagerinvasion:illusionary_dust",
+    "illagerinvasion:unusual_dust"
   ]
 }

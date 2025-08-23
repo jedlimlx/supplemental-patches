@@ -139,6 +139,7 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:trimmed:1.20.1-2.1.4+forge"))
     implementation(fg.deobf("maven.modrinth:moonlight:1.20-2.16.1-forge"))
     compileOnly(fg.deobf("maven.modrinth:oh-the-trees-youll-grow:1.20.1-1.3.13-Forge"))
+    implementation(fg.deobf("maven.modrinth:puzzles-lib:v8.1.33-1.20.1-Forge"))
     implementation(fg.deobf("maven.modrinth:resourceful-config:2.1.3-forge"))
     implementation(fg.deobf("maven.modrinth:resourceful-lib:2.1.29-forge"))
 
@@ -216,7 +217,7 @@ dependencies {
 
     compileOnly(fg.deobf("maven.modrinth:friends-and-foes-forge:forge-mc1.20.1-3.0.6"))
 
-    compileOnly(fg.deobf("maven.modrinth:cobblemon:1.5.2-forge"))
+    implementation(fg.deobf("maven.modrinth:illager-invasion:v8.0.7-1.20.1-Forge"))
 
     implementation(fg.deobf("maven.modrinth:yungs-api:1.20-Forge-4.0.6"))
     implementation(fg.deobf("maven.modrinth:yungs-cave-biomes:1.20.1-Forge-2.0.1"))
