@@ -70,6 +70,11 @@ repositories {
         }
     }
 
+    maven {
+        name = "Fuzs Mod Resources"
+        url = uri("https://raw.githubusercontent.com/Fuzss/modresources/main/maven/")
+    }
+
     exclusiveContent {
         forRepository {
             maven {
@@ -111,6 +116,9 @@ dependencies {
     implementation("org.reflections:reflections:0.10.2")
     implementation("net.jodah:typetools:0.6.3")
 
+    modApi("fuzs.extensibleenums:extensibleenums-fabric:20.1.1")
+    modApi("fuzs.puzzlesaccessapi:puzzlesaccessapi-fabric:20.1.1")
+
     modImplementation("com.github.Chocohead:Fabric-ASM:2.3")
     modImplementation("com.jamieswhiteshirt:reach-entity-attributes:2.4.0")
 
@@ -133,6 +141,7 @@ dependencies {
     modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.2.2")
     modImplementation("maven.modrinth:cloth-config:11.1.136+fabric")
     modImplementation("maven.modrinth:corgilib:1.20.1-4.0.3.4-fabric")
+    modImplementation("maven.modrinth:forge-config-api-port:v8.0.2-1.20.1-Fabric")
     modImplementation("maven.modrinth:frozenlib:1.9.3-mc1.20.1")
     modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.4.9")
     modImplementation("maven.modrinth:glitchcore:0.0.1.1-fabric")
@@ -140,6 +149,7 @@ dependencies {
     modImplementation("maven.modrinth:moonlight:1.20-2.16.2-fabric")
     modImplementation("maven.modrinth:oh-the-trees-youll-grow:1.20.1-1.3.13-Fabric")
     modImplementation("maven.modrinth:porting_lib:2.3.8+1.20.1")
+    modImplementation("maven.modrinth:puzzles-lib:v8.1.32-1.20.1-Fabric")
     modImplementation("maven.modrinth:resourceful-config:2.1.3-fabric")
     modImplementation("maven.modrinth:resourceful-lib:2.1.29-fabric")
     modImplementation("maven.modrinth:terrablender:3.0.1.7-fabric")
@@ -218,6 +228,8 @@ dependencies {
     compileOnly("maven.modrinth:wetland-whimsy:1.3.1-1.20.1")
 
     modImplementation("maven.modrinth:friends-and-foes:fabric-mc1.20.1-3.0.7")
+
+    modImplementation("maven.modrinth:illager-invasion:v8.0.7-1.20.1-Fabric")
 
     modImplementation("maven.modrinth:yungs-api:1.20-Fabric-4.0.6")
     modImplementation("maven.modrinth:yungs-cave-biomes:1.20.1-Fabric-2.0.2")
