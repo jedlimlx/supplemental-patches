@@ -2,6 +2,7 @@
   "name": "dragon_charge",
   "glsl": "dragon_charge.glsl",
   "mat0": [
-    "amendments:dragon_charge"
+    "amendments:dragon_charge",
+    "illagerinvasion:magic_charge"
   ]
 }
