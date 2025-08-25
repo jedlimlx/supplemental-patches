@@ -143,6 +143,7 @@ dependencies {
     implementation("maven.modrinth:supplementaries:neoforge_1.21-3.4.9")
     implementation("maven.modrinth:amendments:neoforge_1.21-2.0.5")
     implementation("maven.modrinth:supplementaries-squared:neoforge_1.21-1.2.12")
+    implementation("maven.modrinth:snowy-spirit:neoforge_1.21.1-3.0.17")
 
     // oreganized
     compileOnly("maven.modrinth:oreganized:3.1.2")
