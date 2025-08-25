@@ -175,6 +175,7 @@ dependencies {
     compileOnly("maven.modrinth:supplementaries:1.20-3.1.37-fabric")
     compileOnly("maven.modrinth:amendments:1.20-2.1.2-fabric")
     compileOnly("maven.modrinth:supplementaries-squared:1.20-1.1.22-fabric")
+    compileOnly("maven.modrinth:snowy-spirit:1.20-3.0.10-fabric")
 
     // oreganized
     compileOnly("maven.modrinth:oreganized:4.2.2")
