@@ -1,0 +1,83 @@
+{
+  "name": "glow_lights",
+  "glsl": "glow_lights.glsl",
+  "mat0": [
+    "snowyspirit:glow_lights_prismatic",
+    "snowyspirit:glow_lights_black",
+    "snowyspirit:glow_lights_gray",
+    "snowyspirit:glow_lights_light_gray",
+    "snowyspirit:glow_lights_white"
+  ],
+  "mat2": [
+    "snowyspirit:glow_lights_blue"
+  ],
+  "mat4": [
+    "snowyspirit:glow_lights_cyan"
+  ],
+  "mat6": [
+    "snowyspirit:glow_lights_green"
+  ],
+  "mat8": [
+    "snowyspirit:glow_lights_light_blue"
+  ],
+  "mat10": [
+    "snowyspirit:glow_lights_lime"
+  ],
+  "mat12": [
+    "snowyspirit:glow_lights_magenta"
+  ],
+  "mat14": [
+    "snowyspirit:glow_lights_orange"
+  ],
+  "mat16": [
+    "snowyspirit:glow_lights_pink"
+  ],
+  "mat18": [
+    "snowyspirit:glow_lights_purple"
+  ],
+  "mat20": [
+    "snowyspirit:glow_lights_red"
+  ],
+  "mat22": [
+    "snowyspirit:glow_lights_yellow"
+  ],
+  "mat24": [
+    "snowyspirit:glow_lights_brown"
+  ],
+  "color": [
+    "supplemental_patches:snowyspirit/white_glow_lights",
+    null,
+    "supplemental_patches:snowyspirit/blue_glow_lights",
+    null,
+    "supplemental_patches:snowyspirit/cyan_glow_lights",
+    null,
+    "supplemental_patches:snowyspirit/green_glow_lights",
+    null,
+    "supplemental_patches:snowyspirit/light_blue_glow_lights",
+    null,
+    "supplemental_patches:snowyspirit/lime_glow_lights",
+    null,
+    "supplemental_patches:snowyspirit/magenta_glow_lights",
+    null,
+    "supplemental_patches:snowyspirit/orange_glow_lights",
+    null,
+    "supplemental_patches:snowyspirit/pink_glow_lights",
+    null,
+    "supplemental_patches:snowyspirit/purple_glow_lights",
+    null,
+    "supplemental_patches:snowyspirit/red_glow_lights",
+    null,
+    "supplemental_patches:snowyspirit/yellow_glow_lights",
+    null,
+    "supplemental_patches:snowyspirit/brown_glow_lights",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "block_size": 32,
+  "waving": "minecraft:waving_leaves"
+}
