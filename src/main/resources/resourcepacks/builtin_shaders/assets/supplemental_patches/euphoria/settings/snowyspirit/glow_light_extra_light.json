@@ -1,0 +1,13 @@
+{
+  "type": "setting",
+  "name": "GLOW_LIGHT_EXTRA_LIGHT",
+  "default": 0.05,
+  "values": [
+    0.05, 0.10, 0.15, 0.20
+  ],
+  "file": "materials.glsl",
+  "en_US": {
+    "option": "Glow Light Extra Light",
+    "comment": "Determines how much extra light (above the pre-defined blocklight) the glow lights should emit."
+  }
+}

@@ -162,6 +162,7 @@ dependencies {
     compileOnly(fg.deobf("maven.modrinth:supplementaries:1.20-3.1.37-forge"))
     implementation(fg.deobf("maven.modrinth:amendments:1.20-2.1.2-forge"))
     compileOnly(fg.deobf("maven.modrinth:supplementaries-squared:1.20-1.1.22-forge"))
+    implementation(fg.deobf("maven.modrinth:snowy-spirit:1.20-3.0.10-forge"))
 
     // oreganized
     implementation(fg.deobf("maven.modrinth:oreganized:4.2.2"))

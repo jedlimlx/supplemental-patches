@@ -1,0 +1,7 @@
+{
+  "name": "candy_cane",
+  "glsl": "candy_cane.glsl",
+  "mat0": [
+    "snowyspirit:candy_cane_block"
+  ]
+}
