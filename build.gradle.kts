@@ -128,16 +128,17 @@ dependencies {
     compileOnly("maven.modrinth:blueprint:8.0.3")
     modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-base:6.1.2")
     modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-entity:6.1.2")
-    modImplementation("maven.modrinth:cloth-config:11.1.136+fabric")
+    modImplementation("maven.modrinth:cloth-config:15.0.140+fabric")
     modImplementation("maven.modrinth:corgilib:1.21.1-5.0.0.7-Fabric")
     modImplementation("maven.modrinth:forge-config-api-port:v21.1.4-1.21.1-Fabric")
     modImplementation("maven.modrinth:frozenlib:2.0.2-mc1.21.1")
-    modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.7.3")
+    modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.7.7")
     modImplementation("maven.modrinth:glitchcore:2.1.0.0-fabric")
     modImplementation("maven.modrinth:midnightlib:1.6.9+1.21-fabric")
     modImplementation("maven.modrinth:mixson:1.3.1-fabric")
     modImplementation("maven.modrinth:moonlight:1.21-2.20.7-fabric")
     modImplementation("maven.modrinth:oh-the-trees-youll-grow:1.21.1-5.0.14-Fabric")
+//    modRuntimeOnly("maven.modrinth:owo-lib:0.12.15.4+1.21")
     modImplementation("maven.modrinth:puzzles-lib:v21.1.38-1.21.1-Fabric")
     modImplementation("maven.modrinth:resourceful-config:3.0.9-fabric")
     modImplementation("maven.modrinth:resourceful-lib:3.0.12-fabric")
@@ -224,8 +225,8 @@ dependencies {
 
     modImplementation("maven.modrinth:illager-invasion:v21.1.6-1.21.1-Fabric")
 
-    compileOnly("maven.modrinth:yungs-api:1.20-Fabric-4.0.6")
-    compileOnly("maven.modrinth:yungs-cave-biomes:1.20.1-Fabric-2.0.2")
+    modImplementation("maven.modrinth:yungs-api:1.21.1-Fabric-5.1.6")
+    modImplementation("maven.modrinth:yungs-cave-biomes:1.21.1-Fabric-3.1.1")
 
     compileOnly("maven.modrinth:zeta:1.20.1-1.0-24-forge")
     compileOnly("maven.modrinth:quark:1.20.1-4.0-460-forge")
@@ -233,6 +234,9 @@ dependencies {
 
     compileOnly("maven.modrinth:dye-depot:1.0.3-fabric")
     compileOnly("maven.modrinth:dye-the-world:1.1.2-forge")
+
+//    modRuntimeOnly("maven.modrinth:particular:1.1.2+1.21")
+//    modRuntimeOnly("maven.modrinth:effective:2.4.8-1.21.1")
 
     // jei & jade
     modRuntimeOnly("maven.modrinth:jade:15.9.3+fabric")
