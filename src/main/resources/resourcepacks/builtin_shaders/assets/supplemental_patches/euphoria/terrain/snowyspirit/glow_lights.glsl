@@ -1,3 +1,5 @@
+#include "/lib/materials/specificMaterials/terrain/leaves.glsl"
+
 float blockRes = absMidCoordPos.x * atlasSize.x;
 vec2 signMidCoordPosM = (signMidCoordPos + 1) * 8;
 
