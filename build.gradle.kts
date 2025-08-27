@@ -113,7 +113,7 @@ dependencies {
     implementation("maven.modrinth:architectury-api:13.0.8+neoforge")
     compileOnly("maven.modrinth:blueprint:8.0.3")
     implementation("maven.modrinth:corgilib:1.21.1-5.0.0.4-NeoForge")
-    implementation("software.bernie.geckolib:geckolib-neoforge-${property("minecraft_version")}:4.7.3")
+    implementation("software.bernie.geckolib:geckolib-neoforge-${property("minecraft_version")}:4.7.7")
     implementation("maven.modrinth:glitchcore:2.1.0.0-neoforge")
     implementation("maven.modrinth:cloth-config:15.0.140+neoforge")
     implementation("maven.modrinth:terrablender:4.1.0.8-neoforge")
@@ -202,8 +202,8 @@ dependencies {
 
     implementation("maven.modrinth:illager-invasion:v21.1.6-1.21.1-NeoForge")
 
-    compileOnly("maven.modrinth:yungs-api:1.20-Fabric-4.0.6")
-    compileOnly("maven.modrinth:yungs-cave-biomes:1.20.1-Fabric-2.0.2")
+    implementation("maven.modrinth:yungs-api:1.21.1-NeoForge-5.1.6")
+    implementation("maven.modrinth:yungs-cave-biomes:1.21.1-NeoForge-3.1.1")
 
     compileOnly("maven.modrinth:zeta:1.20.1-1.0-24-forge")
     compileOnly("maven.modrinth:quark:1.20.1-4.0-460-forge")
