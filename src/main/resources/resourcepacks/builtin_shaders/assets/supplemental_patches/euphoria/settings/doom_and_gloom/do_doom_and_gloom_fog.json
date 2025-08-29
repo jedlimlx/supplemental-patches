@@ -1,0 +1,10 @@
+{
+  "type": "setting",
+  "name": "DO_DOOM_AND_GLOOM_FOG",
+  "priority": 1,
+  "default": false,
+  "en_US": {
+    "option": "Do Doom & Gloom Fog",
+    "comment": "Enables the Doom & Gloom Fog, regardless of whether or not the mod is installed or if the player has the effect."
+  }
+}
