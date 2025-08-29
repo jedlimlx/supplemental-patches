@@ -1,6 +1,7 @@
 {
   "type": "directory",
   "name": "DOOM_AND_GLOOM_FOG",
+  "priority": 2,
   "folder": "fog",
   "en_US": {
     "screen": "Fog",
