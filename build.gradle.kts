@@ -8,8 +8,8 @@ plugins {
     `java-library`
     `maven-publish`
     id("net.neoforged.gradle.userdev") version "7.0.173"
-    id("org.jetbrains.kotlin.jvm") version "2.1.0"
-    id("org.jetbrains.kotlin.plugin.serialization") version "2.1.0"
+    id("org.jetbrains.kotlin.jvm") version "2.1.20"
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.1.20"
 }
 
 val modid = "supplemental_patches"
@@ -104,8 +104,8 @@ dependencies {
     jarJar(group = "com.github.Fallen-Breath.conditional-mixin", name = "conditional-mixin-neoforge", version = "[0.6.0,)")
 
     // rendering / optimisation mods
-    implementation("maven.modrinth:sodium:mc1.21.1-0.6.9-neoforge")
-    implementation("maven.modrinth:iris:1.8.8+1.21.1-neoforge")
+    implementation("maven.modrinth:sodium:mc1.21.1-0.6.13-neoforge")
+    implementation("maven.modrinth:iris:1.8.12+1.21.1-neoforge")
     implementation("maven.modrinth:lithium:mc1.21.1-0.15.0-neoforge")
     runtimeOnly("maven.modrinth:euphoria-patches:1.6.4-r5.5.1-neoforge")
 
@@ -118,7 +118,7 @@ dependencies {
     implementation("maven.modrinth:cloth-config:15.0.140+neoforge")
     implementation("maven.modrinth:terrablender:4.1.0.8-neoforge")
     implementation("maven.modrinth:trimmed:1.21-3.0.0+neoforge")
-    implementation("maven.modrinth:moonlight:1.21-2.22.2-neoforge")
+    implementation("maven.modrinth:moonlight:1.21-2.22.4-neoforge")
     implementation("maven.modrinth:oh-the-trees-youll-grow:1.21.1-5.0.14-NeoForge")
     implementation("maven.modrinth:puzzles-lib:v21.1.38-1.21.1-NeoForge")
     implementation("maven.modrinth:resourceful-config:3.0.10-neoforge")
@@ -194,7 +194,7 @@ dependencies {
 
     compileOnly("maven.modrinth:sullysmod:3.2.1-beta")
 
-    compileOnly("maven.modrinth:wetland-whimsy:1.2.4-1.21.1")
+    implementation("maven.modrinth:wetland-whimsy:1.2.4-1.21.1")
 
     implementation("maven.modrinth:friends-and-foes-forge:neoforge-mc1.21.1-3.0.7")
 

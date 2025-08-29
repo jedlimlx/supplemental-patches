@@ -1,0 +1,9 @@
+{
+  "name": "bloodcap_mushroom",
+  "glsl": "bloodcap_mushroom.glsl",
+  "mat0": [
+    "wetland_whimsy:bloodcap_mushroom_block"
+  ],
+  "color": "supplemental_patches:wetland_whimsy/bloodcap_mushroom",
+  "heldLighting": true
+}
