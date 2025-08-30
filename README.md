@@ -1,115 +1,52 @@
 # Supplemental Patches
 
+<p>
+<a class="no-svg" href="https://modrinth.com/mod/supplemental-patches" target="_blank" rel="noopener noreferrer"><img class="not-clickable" src="https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/cozy/available/modrinth_vector.svg" alt="Modrinth" style="padding-right:5px; padding-left:5px; margin: 0 0;"></a>
+<a class="no-svg" href="https://www.curseforge.com/minecraft/mc-mods/supplemental-patches" target="_blank" rel="noopener noreferrer"><img class="not-clickable"  src="https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/cozy/available/curseforge_vector.svg" alt="CurseForge" style="padding-right:5px ;padding-left:5px; margin: 0 0;"></a>
+<a class="no-svg" href="https://github.com/jedlimlx/supplemental-patches/issues" target="_blank" rel="noopener noreferrer"><img class="not-clickable"  src="https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/cozy/documentation/issues_vector.svg" alt="Issue Tracker" style="padding-right:5px; padding-left:5px; margin: 0 0;"></a>
+</p>
+
+<img src="https://supplemental-patches.pages.dev/assets/banner.png">
+
 Supplemental Patches enables users to create custom shaders for modded blocks, entities, items, particles, etc,
-through a resource-pack. The mod by default, comes with a built-in resource pack which supports the following mods either partially or fully:
+through a resource-pack. The mod by default, comes with a built-in resource pack with supports many popular mods (see [gallery](https://supplemental-patches.pages.dev/gallery)).
 
-- Quark
-- Supplementaries
-- Twigs
-- Dye Depot
-- Galosphere
-- Buzzier Bees
-- Caverns & Chasms
-- Endergetic Expansion
-- Savage & Ravage
-- Upgrade Aquatic
-- Oreganized
-- Doom & Gloom
-- Wetland Whimsy
-- YUNG's Cave Biomes
-- Friends & Foes
-- Enderman Overhaul
-- Farmer's Delight
-- My Nether's Delight
-- Pearfection
-- Trailier Tales
-- Rodspawn
-- Soulful Nether
-- Jaden's Nether Expansion
-- Pigsteel
-- Nears
-- Gipples Galore
-- Frostiful
-- Scorchful
-- Enderscape
-- Biomes O Plenty
+These additional shaders are patched into [Euphoria Patches](https://www.euphoriapatches.com/), if it is installed.
 
-These additional shaders are patched into Euphoria Patches, if it is installed. The custom patcher supports the customisation the following features of Euphoria Patches:
+## Features
 
-- Settings
-- Block (Opaque & Translucent) Shaders
-- Block Entity Shaders
-- Item Shaders
-- Entity Shaders
-- Particle Shaders
-- Deferred Materials
-- Blocklight Colors (ACL)
-- Tint Colors (ACL)
-- Block Waving
+Some of the most _exciting_ features of the mod include (for players):
+
+- Over 500 high-quality shaders for custom materials from a variety of popular mods (e.g. [Supplementaries](https://modrinth.com/mod/supplementaries), [Quark](https://modrinth.com/mod/quark), [Jaden's Nether Expansion](https://modrinth.com/mod/jadens-nether-expansion)). See full list [here](mod_list).
+- A custom End nebula skybox based on [Enderscape's](https://modrinth.com/mod/enderscape) End atmosphere
+- A cool fog effect based on the effect from [Doom and Gloom](https://modrinth.com/mod/doom-gloom)
+- Fixes to shader issues for many mods (e.g. [Endergetic Expansion](https://modrinth.com/mod/endergetic), [Upgrade Aquatic](https://modrinth.com/mod/upgrade-aquatic), [Doom and Gloom](https://modrinth.com/mod/doom-gloom))
+- Fixed rendering of item shaders when displayed on block entities (e.g. [Supplementaries](https://modrinth.com/mod/supplementaries) Pedestals, Item Shelves)
+
+For details on the supported areas that can be patched onto Euphoria Patches, check out this [tutorial](https://supplemental-patches.pages.dev/tutorials/getting_started).
 
 ## FAQ
 
-Q: Will there be ports to loaders other than (Neo)Forge and Fabric? <br>
-A: Probably not.
+**Q:** Will there be ports to loaders other than (Neo)Forge and Fabric? <br>
+**A:** Probably not.
 
-Q: Will there be backports? <br>
-A: Probably not.
+**Q:** Will there be backports? <br>
+**A:** Probably not.
 
-Q: Can you support XXX mod? <br>
-A: All in due time. Alternatively, you could do it yourself. See the [documentation](https://github.com/jedlimlx/supplemental-patches/wiki) for more details.
+**Q:** Can you support XXX mod? <br>
+**A:** All in due time. Alternatively, you could do it yourself. Have a look at this [tutorial](https://supplemental-patches.pages.dev/tutorials/getting_started) for more details.
 
-Q: I found a bug. <br>
-A: Please report it to me first, do not bother the developers of Complementary Shaders / Euphoria Patches.
+**Q:** I found a bug. <br>
+**A:** Please report it to me first, do not bother the developers of Complementary Shaders / Euphoria Patches.
 
-Q: The shaders I added aren't showing. <br>
-A: Try reloading the shaderpack, after ensuring that the resource-pack is loaded.
+**Q:** The shaders I added aren't showing. <br>
+**A:** Try reloading the shaderpack, after ensuring that the resource-pack is loaded. Alternatively, check which layer the block is being rendered in using the [Euphoria Companion](https://modrinth.com/mod/euphoria-companion) mod. Certain blocks (e.g. certain glass blocks) may be rendered as cutouts rather than translucent blocks. You will need to change the layer they are rendered under using [block.properties.json](documentation/properties.json).
 
-Q: The built-in shaders aren't working. <br>
-A: Similarly, try reloading the shaderpack and ensuring that the built-in resource-pack is loaded.
+**Q:** The built-in shaders aren't working. <br>
+**A:** Similarly, try reloading the shaderpack and ensuring that the built-in resource-pack is loaded.
 
-Q: Does this work with Optifine? <br>
-A: No. This only works with Oculus / Iris.
+**Q:** Does this work with Optifine? <br>
+**A:** No. This only works with Oculus / Iris.
 
-Q: Can I include this my modpack? <br>
-A: Yes, go ahead.
-
-## Gallery
-
-![Prismarine Coral Crystal (Upgrade Aquatic)](images/prismarine_coral.png)
-![Elder Prismarine Coral Crystal (Upgrade Aquatic)](images/elder_prismarine_coral.png)
-![Thrasher (Upgrade Aquatic)](images/thrasher.png)
-![Glimmering Weald (Quark)](images/glimmering_weald.png)
-![Foxhound (Quark)](images/foxhound.png)
-![Oretortoise (Quark)](images/oretortoise.png)
-![Pink Salt Shrine (Galosphere)](images/pink_salt_shrine.png)
-![Lichen Caves (Galosphere)](images/lichen_caves.png)
-![Confusion Bolt (Savage & Ravage)](images/confusion_bolt.png)
-![Rune Prison (Savage & Ravage)](images/rune_prison.png)
-![Poise Forest (Endergetic Expansion)](images/poise_forest.png)
-![Fog (Doom & Gloom)](images/doom_and_gloom_fog_1.png)
-![Fog (Doom & Gloom)](images/doom_and_gloom_fog_2.png)
-![Fog (Doom & Gloom)](images/doom_and_gloom_fog_3.png)
-![Lampear Tree (Pearfection)](images/lampear_tree.png)
-![Copper Lampear (Pearfection)](images/copper_lampear.png)
-![Coffins (Trailier Tales)](images/coffins.png)
-![Apparition (Trailier Tales)](images/apparition.png)
-![Icy Ominous Vault (Frostiful)](images/icy_ominous_vault.png)
-![Fright Forest (Soulful Nether)](images/fright_forest.png)
-![Fright Forest 2 (Soulful Nether)](images/fright_forest_2.png)
-![Ashen Deltas (Soulful Nether)](images/ashen_deltas.png)
-![Brazier Chest (Jaden's Nether Expansion)](images/brazier_chest.png)
-![Sanctum (Jaden's Nether Expansion)](images/sanctum.png)
-![Ectoplasm Pool (Jaden's Nether Expansion)](images/ectoplasm_pool.png)
-![Vessel (Jaden's Nether Expansion)](images/vessel.png)
-![Black Ice Glaciers (Jaden's Nether Expansion)](images/black_ice_glaciers.png)
-![Black Ice Glaciers 2 (Jaden's Nether Expansion)](images/black_ice_glaciers_2.png)
-![Basaltic Geyser (Jaden's Nether Expansion)](images/basaltic_geyser.png)
-![Porkslag (Pigsteel)](images/porkslag.png)
-![Powdery Cane (My Nether's Delight)](images/powdery_cane.png)
-![Enderscape Nebula 1 (Enderscape)](images/enderscape_nebula_1.png)
-![Enderscape Nebula 2 (Enderscape)](images/enderscape_nebula_2.png)
-![Corrupt Growth (Enderscape)](images/corrupt_growth.png)
-![Celestial Grove (Enderscape)](images/celestial_grove.png)
-![Glowing Grotto (Enderscape)](images/glowing_grotto.png)
-![Undergrowth (Enderscape)](images/undergrowth.png)
-![Visceral Heap (Enderscape)](images/visceral_heap.png)
+**Q:** Can I include this my modpack? <br>
+**A:** Yes, go ahead.
