@@ -142,6 +142,7 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:puzzles-lib:v8.1.33-1.20.1-Forge"))
     implementation(fg.deobf("maven.modrinth:resourceful-config:2.1.3-forge"))
     implementation(fg.deobf("maven.modrinth:resourceful-lib:2.1.29-forge"))
+    implementation(fg.deobf("maven.modrinth:runiclib:4.3.4-forge"))
 
     // abnormals mods
     implementation(fg.deobf("maven.modrinth:abnormals-delight:5.0.0-forge"))
@@ -173,6 +174,8 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:rustic-delight:1.4.0-forge"))
     implementation(fg.deobf("maven.modrinth:crate-delight:24.11.22-1.20-forge"))
     implementation(fg.deobf("maven.modrinth:my-nethers-delight:1.20.1-1.7.6"))
+    implementation(fg.deobf("maven.modrinth:ends-delight:2.4-forge"))
+    implementation(fg.deobf("maven.modrinth:dungeons_delight:1.2.6"))
 
     // mob overhauls
     implementation(fg.deobf("maven.modrinth:enderman-overhaul:1.0.4-forge"))
