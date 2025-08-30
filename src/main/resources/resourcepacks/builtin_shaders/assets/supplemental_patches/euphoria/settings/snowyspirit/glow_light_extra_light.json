@@ -9,5 +9,9 @@
   "en_US": {
     "option": "Glow Light Extra Light",
     "comment": "Determines how much extra light (above the pre-defined blocklight) the glow lights should emit."
+  },
+  "ru_RU": {
+    "option": "Дополнительный свет гирлянды",
+    "comment": "Определяет, сколько дополнительного света (сверх предустановленного уровня блочного освещения) должны излучать гирлянды."
   }
 }
