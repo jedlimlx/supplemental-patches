@@ -1,5 +1,9 @@
 void DoDoomAndGloomFog(inout vec3 color, float lViewPos) {
-    float fog = lViewPos * FOG_INTENSITY * doomAndGloomFog;
+    #ifdef DO_DOOM_AND_GLOOM_FOG
+        float fog = lViewPos * FOG_INTENSITY;
+    #else
+        float fog = lViewPos * FOG_INTENSITY * doomAndGloomFog;
+    #endif
     fog *= fog;
     fog = 1.0 - exp(-fog);
 

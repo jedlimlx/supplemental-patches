@@ -1,0 +1,17 @@
+{
+  "name": "pale_pumpkin",
+  "glsl": "pale_pumpkin.glsl",
+  "mat0": [
+    "biomeswevegone:pale_pumpkin",
+    "biomeswevegone:carved_pale_pumpkin"
+  ],
+  "mat2": [
+    "biomeswevegone:pale_jack_o_lantern"
+  ],
+  "color": [
+    null,
+    null,
+    "minecraft:soul_lantern",
+    null
+  ]
+}

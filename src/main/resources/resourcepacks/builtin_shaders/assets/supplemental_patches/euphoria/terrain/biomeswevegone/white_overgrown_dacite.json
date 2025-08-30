@@ -1,0 +1,14 @@
+{
+  "name": "white_overgrown_dacite",
+  "glsl": "white_overgrown_dacite.glsl",
+  "mat0": [
+    "biomeswevegone:white_overgrown_dacite:snowy=false"
+  ],
+  "mat2": [
+    "biomeswevegone:white_overgrown_dacite:snowy=true"
+  ],
+  "mat4": [
+    "biomeswevegone:white_podzol_dacite"
+  ],
+  "block_size": 8
+}

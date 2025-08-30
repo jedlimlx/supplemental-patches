@@ -1,0 +1,28 @@
+{
+  "name": "glowcane",
+  "glsl": "glowcane.glsl",
+  "mat0": [
+    "biomeswevegone:red_glowcane"
+  ],
+  "mat2": [
+    "biomeswevegone:yellow_glowcane"
+  ],
+  "mat4": [
+    "biomeswevegone:green_glowcane"
+  ],
+  "mat6": [
+    "biomeswevegone:blue_glowcane"
+  ],
+  "color": [
+    "supplemental_patches:biomeswevegone/red_glowcane",
+    null,
+    "supplemental_patches:biomeswevegone/yellow_glowcane",
+    null,
+    "supplemental_patches:biomeswevegone/green_glowcane",
+    null,
+    "supplemental_patches:biomeswevegone/blue_glowcane",
+    null
+  ],
+  "block_size": 8,
+  "waving": "minecraft:waving_sugar_cane"
+}

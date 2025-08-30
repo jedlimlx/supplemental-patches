@@ -14,7 +14,93 @@
     "twisting_vines_plant",
     "nether_wart_block",
     "warped_wart_block",
-    "netherexp:basaltic_geyser"
+    "netherexp:basaltic_geyser",
+    "biomeswevegone:fluorescent_cattail:color=(.*?)",
+    "biomeswevegone:cyan_pitcher_plant:half=(.*?)",
+    "biomeswevegone:magenta_pitcher_plant:half=(.*?)"
+  ],
+  "layer.translucent": [
+    "atmospheric:arid_glass",
+    "atmospheric:arid_glass_pane"
+  ],
+  "block.10084": [
+    "biomeswevegone:dacite",
+    "biomeswevegone:dacite_cobblestone"
+  ],
+  "block.10085": [
+    "biomeswevegone:dacite_slab",
+    "biomeswevegone:dacite_stairs",
+    "biomeswevegone:dacite_wall",
+    "biomeswevegone:dacite_cobblestone_slab",
+    "biomeswevegone:dacite_cobblestone_stairs",
+    "biomeswevegone:dacite_cobblestone_wall"
+  ],
+  "block.10088": [
+    "biomeswevegone:white_dacite",
+    "biomeswevegone:white_dacite_cobblestone"
+  ],
+  "block.10089": [
+    "biomeswevegone:white_dacite_slab",
+    "biomeswevegone:white_dacite_stairs",
+    "biomeswevegone:white_dacite_wall",
+    "biomeswevegone:white_dacite_cobblestone_slab",
+    "biomeswevegone:white_dacite_cobblestone_stairs",
+    "biomeswevegone:white_dacite_cobblestone_wall"
+  ],
+  "block.10092": [
+    "atmospheric:dolerite"
+  ],
+  "block.10093": [
+    "atmospheric:dolerite_slab",
+    "atmospheric:dolerite_stairs",
+    "atmospheric:dolerite_wall"
+  ],
+  "block.10096": [
+    "biomeswevegone:dacite_bricks",
+    "biomeswevegone:cracked_dacite_bricks",
+    "biomeswevegone:mossy_dacite_bricks",
+    "biomeswevegone:dacite_tiles",
+    "biomeswevegone:dacite_pillar",
+    "biomeswevegone:chiseled_dacite_bricks"
+  ],
+  "block.10097": [
+    "biomeswevegone:chiseled_dacite_brick_slab",
+    "biomeswevegone:chiseled_dacite_brick_stairs",
+    "biomeswevegone:chiseled_dacite_brick_wall",
+    "biomeswevegone:dacite_brick_slab",
+    "biomeswevegone:dacite_brick_stairs",
+    "biomeswevegone:dacite_brick_wall",
+    "biomeswevegone:cracked_dacite_brick_slab",
+    "biomeswevegone:cracked_dacite_brick_stairs",
+    "biomeswevegone:cracked_dacite_brick_wall",
+    "biomeswevegone:mossy_dacite_brick_slab",
+    "biomeswevegone:mossy_dacite_brick_stairs",
+    "biomeswevegone:mossy_dacite_brick_wall",
+    "biomeswevegone:dacite_tile_slab",
+    "biomeswevegone:dacite_tile_stairs",
+    "biomeswevegone:dacite_tile_wall"
+  ],
+  "block.10100": [
+    "biomeswevegone:white_dacite_bricks",
+    "biomeswevegone:white_dacite_tiles",
+    "biomeswevegone:white_dacite_pillar",
+    "biomeswevegone:chiseled_white_dacite_bricks"
+  ],
+  "block.10101": [
+    "biomeswevegone:chiseled_white_dacite_brick_slab",
+    "biomeswevegone:chiseled_white_dacite_brick_stairs",
+    "biomeswevegone:chiseled_white_dacite_brick_wall",
+    "biomeswevegone:white_dacite_brick_slab",
+    "biomeswevegone:white_dacite_brick_stairs",
+    "biomeswevegone:white_dacite_brick_wall",
+    "biomeswevegone:white_dacite_tile_slab",
+    "biomeswevegone:white_dacite_tile_stairs",
+    "biomeswevegone:white_dacite_tile_wall"
+  ],
+  "block.10104": [
+    "atmospheric:polished_dolerite",
+    "atmospheric:polished_dolerite_slab",
+    "atmospheric:polished_dolerite_stairs"
   ],
   "block.10233": [
     "scorchful:sand_pile"
@@ -51,6 +137,12 @@
   ],
   "block.10332": [
     "galosphere:glinted_amethyst_cluster"
+  ],
+  "block.10401": [
+    "spawn:big_sea_pickle:waterlogged=false"
+  ],
+  "block.10404": [
+    "spawn:big_sea_pickle:waterlogged=true"
   ],
   "block.10452": [
     "mynethersdelight:magma_cake_block"

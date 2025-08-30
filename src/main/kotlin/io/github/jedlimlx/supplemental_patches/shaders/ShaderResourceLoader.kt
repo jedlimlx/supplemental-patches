@@ -96,6 +96,7 @@ object ShaderResourceLoader {
         PARTICLES.clear()
 
         FOGS.clear()
+        ACL_FOGS.clear()
         FOG_FUNCTIONS.clear()
 
         MIXINS.clear()
@@ -111,6 +112,8 @@ object ShaderResourceLoader {
         TEXTURES.clear()
 
         SKIES.clear()
+
+        LAYER_CHANGES.clear()
 
         // Loading various colours
         val lst = resourceManager.listResources("euphoria/colors") { it.path.endsWith(".json") }
@@ -187,6 +190,7 @@ object ShaderResourceLoader {
             loadSettingsFiles(backgroundExecutor, resourceManager, "euphoria/settings_files"),
             loadFiles(backgroundExecutor, resourceManager, "euphoria/colors/injects", COLOUR_INJECTIONS),
             loadFiles(backgroundExecutor, resourceManager, "euphoria/atmospherics/fog/fogs", FOGS),
+            loadFiles(backgroundExecutor, resourceManager, "euphoria/atmospherics/fog/acl_fogs", ACL_FOGS),
             loadFiles(backgroundExecutor, resourceManager, "euphoria/atmospherics/fog/functions", FOG_FUNCTIONS),
             loadUniforms(backgroundExecutor, resourceManager, "euphoria/uniforms"),
             loadMixins(backgroundExecutor, resourceManager, "euphoria/mixins"),
@@ -205,6 +209,11 @@ object ShaderResourceLoader {
                         it.matches(Regex("$string.\\d+")) -> {
                             val num = it.replace("$string.", "").toInt()
                             additionaMapping[num] = json[it].asJsonArray.map { it.asString }
+                        }
+                        it.matches(Regex("layer.(.*?)")) -> {
+                            val layer = it.replace("layer.", "")
+                            if (layer !in LAYER_CHANGES) LAYER_CHANGES[layer] = arrayListOf()
+                            LAYER_CHANGES[layer]!!.addAll(json[it].asJsonArray.map { it.asString })
                         }
                         else -> {
                             // Regex("([a-zA-Z\\d_-]+:[a-zA-Z\\d_/-]+).mat\\d+")
@@ -474,6 +483,7 @@ object ShaderResourceLoader {
                         Uniform(
                             type = json["type"].asString,
                             name = json["name"].asString,
+                            defaultValue = json["default"]?.asString,
                             code = json["code"]?.asString ?: "",
                             conditions = json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
                         )

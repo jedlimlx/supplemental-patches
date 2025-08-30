@@ -25,6 +25,8 @@ val ITEM_REGEX_REPLACES = arrayListOf<Regex>()
 val ENTITY_ADDITIONAL_MAPPING = mutableMapOf<Int, List<String>>()
 val ENTITY_REGEX_REPLACES = arrayListOf<Regex>()
 
+val LAYER_CHANGES = mutableMapOf<String, ArrayList<String>>()
+
 fun modifyBlockProperties(directory: Path) {
     val file = File(directory.absolutePathString() + BLOCK_PROPERTIES)
     BLOCK_REGEX_REPLACES.map {
@@ -34,6 +36,17 @@ fun modifyBlockProperties(directory: Path) {
     var code = file.readText()
     BLOCK_ADDITIONAL_MAPPING.forEach { (id, lst) ->
         code = code.replace("block.$id = ", "block.$id = ${lst.joinToString(" ")} \\\n\\\n")
+    }
+
+    file.writeText(code)
+}
+
+fun modifyLayers(directory: Path) {
+    val file = File(directory.absolutePathString() + BLOCK_PROPERTIES)
+
+    var code = file.readText()
+    LAYER_CHANGES.forEach { (layer, lst) ->
+        code = code.replace("layer.$layer = ", "layer.$layer = ${lst.joinToString(" ")} \\\n\\\n")
     }
 
     file.writeText(code)
@@ -783,7 +796,9 @@ fun generateParticleCode(directory: Path) {
 
 val FOG_FUNCTIONS = arrayListOf<String>()
 val FOGS = arrayListOf<String>()
+val ACL_FOGS = arrayListOf<String>()
 const val MAIN_FOG_PATH = "/shaders/lib/atmospherics/fog/mainFog.glsl"
+const val ACL_FOG_PATH = "/shaders/lib/atmospherics/fog/coloredLightFog.glsl"
 
 fun generateFog(directory: Path) {
     val file = File(directory.absolutePathString() + MAIN_FOG_PATH)
@@ -797,7 +812,17 @@ fun generateFog(directory: Path) {
     file.writeText(
         file.readText().replace(
             temp2, temp2 + "\n\n" + FOGS.joinToString("\n\n") {
-                it.split("\n").joinToString("\n") { "    " + it }
+                it.split("\n").joinToString("\n") { "    $it" }
+            }
+        )
+    )
+
+    val temp3 = "lightSample *= pow2(min1(lTracePos * 0.03125));"
+    val aclFogFile = File(directory.absolutePathString() + ACL_FOG_PATH)
+    aclFogFile.writeText(
+        aclFogFile.readText().replace(
+            temp3, temp3 + "\n\n" + ACL_FOGS.joinToString("\n\n") {
+                it.split("\n").joinToString("\n") { "        $it" }
             }
         )
     )

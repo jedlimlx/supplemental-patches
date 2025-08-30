@@ -14,6 +14,9 @@
     "caverns_and_chasms:necronium_shovel",
     "caverns_and_chasms:necronium_hoe",
     "caverns_and_chasms:necronium_pickaxe",
-    "caverns_and_chasms:necronium_sword"
+    "caverns_and_chasms:necronium_sword",
+    "illagerinvasion:platinum_infused_hatchet",
+    "illagerinvasion:platinum_sheet",
+    "illagerinvasion:platinum_chunk"
   ]
 }

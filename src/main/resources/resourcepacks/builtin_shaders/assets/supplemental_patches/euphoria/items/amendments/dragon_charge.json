@@ -1,0 +1,8 @@
+{
+  "name": "dragon_charge",
+  "glsl": "dragon_charge.glsl",
+  "mat0": [
+    "amendments:dragon_charge",
+    "illagerinvasion:magical_fire_charge"
+  ]
+}

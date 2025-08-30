@@ -6,7 +6,7 @@ import kotlin.io.path.absolutePathString
 
 val UNIFORMS: ArrayList<Uniform> = arrayListOf()
 
-data class Uniform(val name: String, val type: String, val code: String, val conditions: List<String>) {
+data class Uniform(val name: String, val type: String, val code: String, val conditions: List<String>, val defaultValue: String? = null) {
     val custom: Boolean = code.isNotEmpty()
 }
 
@@ -14,11 +14,13 @@ const val UNIFORMS_GLSL_FILE = "/shaders/lib/uniforms.glsl"
 fun generateUniforms(directory: Path) {
     val uniformGlslCode = StringBuilder("\n\n${BANNER.replace("#", "//")}// Uniforms added by Supplemental Patches\n\n").apply {
         UNIFORMS.forEach {
-            if (it.conditions.isNotEmpty()) {
+            if (it.conditions.isNotEmpty() && it.defaultValue == null) {
                 append("#if ${it.conditions.conditions()}\n")
                 append("    uniform ${it.type} ${it.name};\n")
                 append("#endif\n")
-            } else append("uniform ${it.type} ${it.name};\n")
+            } else if (it.defaultValue == null)
+                append("uniform ${it.type} ${it.name};\n")
+            else append("uniform ${it.type} ${it.name} = ${it.defaultValue};\n")
         }
 
         append("\n\n")
@@ -33,8 +35,10 @@ fun generateUniforms(directory: Path) {
             if (it.conditions.isNotEmpty()) {
                 append("$indent#if ${it.conditions.conditions()}\n")
                 append("${indent}uniform.${it.type}.${it.name} = ${it.code}\n")
+                append("$indent#else\n")
+                append("${indent}uniform.${it.type}.${it.name} = ${it.defaultValue}\n")
                 append("$indent#endif\n")
-            } else append("${indent}uniform ${it.type} ${it.name}\n")
+            } else append("${indent}uniform.${it.type}.${it.name} = ${it.code}\n")
         }
 
         append("\n\n")

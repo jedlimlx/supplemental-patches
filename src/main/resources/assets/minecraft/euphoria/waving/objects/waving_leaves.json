@@ -1,0 +1,6 @@
+{
+  "glsl": "waving_leaves.glsl",
+  "conditions": [
+    "WAVING_LEAVES_ENABLED"
+  ]
+}
