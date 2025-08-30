@@ -140,6 +140,7 @@ dependencies {
     modImplementation("maven.modrinth:oh-the-trees-youll-grow:1.21.4-6.0.8-Fabric")
     modImplementation("maven.modrinth:puzzles-lib:v21.4.13-1.21.4-Fabric")
     modImplementation("maven.modrinth:yacl:3.6.5+1.21.4-fabric")
+    compileOnly("maven.modrinth:runiclib:4.3.4-forge")
 
     // abnormals mods
     compileOnly("maven.modrinth:abnormals-delight:5.0.0-forge")
@@ -171,6 +172,8 @@ dependencies {
     compileOnly("maven.modrinth:rustic-delight:1.3.3-fabric,1.21.1")
     compileOnly("maven.modrinth:crate-delight:24.11.22-1.21-fabric")
     compileOnly("maven.modrinth:my-nethers-delight-refabricated:2.0.3+1.7.8")
+    compileOnly("maven.modrinth:ends-delight:2.5.2+refabricated.1.21.1")
+    compileOnly("maven.modrinth:dungeons_delight:1.2.6")
 
     // mob overhauls
     compileOnly("maven.modrinth:enderman-overhaul:2.0.2-neoforge")

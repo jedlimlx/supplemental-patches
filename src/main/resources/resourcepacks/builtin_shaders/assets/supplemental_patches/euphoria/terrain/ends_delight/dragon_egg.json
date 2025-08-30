@@ -1,0 +1,12 @@
+{
+  "name": "dragon_egg",
+  "glsl": "dragon_egg.glsl",
+  "mat0": [
+    "ends_delight:steamed_dragon_egg_block",
+    "ends_delight:dragon_meat_stew_block"
+  ],
+  "color": "minecraft:dragon_egg",
+  "conditions": [
+    "EMISSIVE_DRAGON_EGG"
+  ]
+}
