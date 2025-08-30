@@ -17,7 +17,7 @@ These additional shaders are patched into [Euphoria Patches](https://www.euphori
 
 Some of the most _exciting_ features of the mod include (for players):
 
-- Over 500 high-quality shaders for custom materials from a variety of popular mods (e.g. [Supplementaries](https://modrinth.com/mod/supplementaries), [Quark](https://modrinth.com/mod/quark), [Jaden's Nether Expansion](https://modrinth.com/mod/jadens-nether-expansion)). See full list [here](mod_list).
+- Over 500 high-quality shaders for custom materials from a variety of popular mods (e.g. [Supplementaries](https://modrinth.com/mod/supplementaries), [Quark](https://modrinth.com/mod/quark), [Jaden's Nether Expansion](https://modrinth.com/mod/jadens-nether-expansion)). See full list [here](https://supplemental-patches.pages.dev/mod_list).
 - A custom End nebula skybox based on [Enderscape's](https://modrinth.com/mod/enderscape) End atmosphere
 - A cool fog effect based on the effect from [Doom and Gloom](https://modrinth.com/mod/doom-gloom)
 - Fixes to shader issues for many mods (e.g. [Endergetic Expansion](https://modrinth.com/mod/endergetic), [Upgrade Aquatic](https://modrinth.com/mod/upgrade-aquatic), [Doom and Gloom](https://modrinth.com/mod/doom-gloom))
