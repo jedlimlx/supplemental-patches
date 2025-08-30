@@ -1,0 +1,12 @@
+{
+  "name": "chorus_crate",
+  "glsl": "chorus_crate.glsl",
+  "mat0": [
+    "ends_delight:chorus_fruit_crate"
+  ],
+  "color": "minecraft:chorus_flower",
+  "conditions": [
+    "DO_IPBR_LIGHTS",
+    "!(defined NOT_GLOWING_CHORUS_FLOWER)"
+  ]
+}

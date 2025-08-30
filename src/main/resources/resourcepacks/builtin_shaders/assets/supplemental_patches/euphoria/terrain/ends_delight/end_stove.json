@@ -1,0 +1,8 @@
+{
+  "name": "end_stove",
+  "glsl": "end_stove.glsl",
+  "mat0": [
+    "ends_delight:end_stove"
+  ],
+  "color": "minecraft:furnace"
+}

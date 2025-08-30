@@ -123,6 +123,7 @@ dependencies {
     implementation("maven.modrinth:puzzles-lib:v21.1.38-1.21.1-NeoForge")
     implementation("maven.modrinth:resourceful-config:3.0.10-neoforge")
     implementation("maven.modrinth:resourceful-lib:3.0.12-neoforge")
+    compileOnly("maven.modrinth:runiclib:4.3.4-forge")
 
     // abnormals mods
     compileOnly("maven.modrinth:abnormals-delight:5.0.0-forge")
@@ -153,6 +154,9 @@ dependencies {
     implementation("maven.modrinth:farmers-delight:1.21.1-1.2.7")
     implementation("maven.modrinth:rustic-delight:1.4.1-neoforge")
     implementation("maven.modrinth:crate-delight:24.11.22-1.21-neoforge")
+    implementation("maven.modrinth:my-nethers-delight:1.8")
+    implementation("maven.modrinth:ends-delight:2.5.1+neoforge.1.21.1")
+    compileOnly("maven.modrinth:dungeons_delight:1.2.6")
 
     // mob overhauls
     implementation("maven.modrinth:enderman-overhaul:2.0.2-neoforge")
@@ -189,8 +193,6 @@ dependencies {
     compileOnly("maven.modrinth:soulfulnether:1.0.0-forge")
 
     implementation("maven.modrinth:pigsteel-forge:7.1.0")
-
-    implementation("maven.modrinth:my-nethers-delight:1.8")
 
     compileOnly("maven.modrinth:sullysmod:3.2.1-beta")
 
