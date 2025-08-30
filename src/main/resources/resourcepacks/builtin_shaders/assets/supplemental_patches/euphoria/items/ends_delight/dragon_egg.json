@@ -1,0 +1,9 @@
+{
+  "name": "dragon_egg [ends_delight]",
+  "glsl": "dragon_egg.glsl",
+  "mat0": [
+    "ends_delight:dragon_egg_shell_knife",
+    "ends_delight:half_dragon_egg_shell",
+    "ends_delight:non_hatchable_dragon_egg"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "chorus_succulent",
+  "glsl": "chorus_succulent.glsl",
+  "mat0": [
+    "ends_delight:chorus_succulent"
+  ],
+  "color": "minecraft:chorus_flower"
+}

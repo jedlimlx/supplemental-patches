@@ -152,6 +152,7 @@ dependencies {
     modImplementation("maven.modrinth:puzzles-lib:v8.1.32-1.20.1-Fabric")
     modImplementation("maven.modrinth:resourceful-config:2.1.3-fabric")
     modImplementation("maven.modrinth:resourceful-lib:2.1.29-fabric")
+    compileOnly("maven.modrinth:runiclib:4.3.4-forge")
     modImplementation("maven.modrinth:terrablender:3.0.1.7-fabric")
     modImplementation("maven.modrinth:trimmed:1.20.1-2.1.4+fabric")
     modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:7.0.0-beta.1")
@@ -185,6 +186,8 @@ dependencies {
     modImplementation("maven.modrinth:farmers-delight-refabricated:1.20.1-2.3.0")
     modImplementation("maven.modrinth:rustic-delight:1.3.2-fabric")
     modImplementation("maven.modrinth:crate-delight:24.11.22-1.20-fabric")
+    modImplementation("maven.modrinth:ends-delight:refabricated-1.20.1-2.5")
+    compileOnly("maven.modrinth:dungeons_delight:1.2.6")
 
     // mob overhauls
     modImplementation("maven.modrinth:enderman-overhaul:1.0.4-fabric")
