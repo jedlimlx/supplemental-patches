@@ -147,6 +147,7 @@ dependencies {
     modImplementation("org.ladysnake:satin:2.0.0")
     modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0-alpha.1")
     modImplementation("dev.isxander:yet-another-config-lib:3.6.6+1.21.1-fabric")
+    compileOnly("maven.modrinth:runiclib:4.3.4-forge")
 
     // abnormals mods
     compileOnly("maven.modrinth:abnormals-delight:5.0.0-forge")
@@ -178,6 +179,8 @@ dependencies {
     compileOnly("maven.modrinth:rustic-delight:1.3.3-fabric,1.21.1")
     compileOnly("maven.modrinth:crate-delight:24.11.22-1.21-fabric")
     compileOnly("maven.modrinth:my-nethers-delight-refabricated:2.0.3+1.7.8")
+    compileOnly("maven.modrinth:ends-delight:2.5.2+refabricated.1.21.1")
+    compileOnly("maven.modrinth:dungeons_delight:1.2.6")
 
     // mob overhauls
     compileOnly("maven.modrinth:enderman-overhaul:2.0.2-neoforge")

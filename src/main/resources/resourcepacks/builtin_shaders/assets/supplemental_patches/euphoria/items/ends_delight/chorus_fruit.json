@@ -1,0 +1,11 @@
+{
+  "name": "chorus_fruit",
+  "glsl": "chorus_fruit.glsl",
+  "mat0": [
+    "chorus_fruit",
+    "ends_delight:chorus_fruit_grain",
+    "ends_delight:chorus_sauce",
+    "ends_delight:chorus_succulent",
+    "ends_delight:dragon_breath_and_chorus_soup"
+  ]
+}
