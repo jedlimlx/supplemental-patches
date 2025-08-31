@@ -6,5 +6,9 @@
   "en_US": {
     "option": "Do Doom & Gloom Fog",
     "comment": "Enables the Doom & Gloom Fog, regardless of whether or not the mod is installed or if the player has the effect."
+  },
+  "ru_RU": {
+    "option": "Туман Doom & Gloom",
+    "comment": "Включает туман из мода Doom & Gloom, независимо от того, установлен ли мод или есть ли эффект у игрока."
   }
 }
