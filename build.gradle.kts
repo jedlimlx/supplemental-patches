@@ -142,7 +142,7 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:puzzles-lib:v8.1.33-1.20.1-Forge"))
     implementation(fg.deobf("maven.modrinth:resourceful-config:2.1.3-forge"))
     implementation(fg.deobf("maven.modrinth:resourceful-lib:2.1.29-forge"))
-    implementation(fg.deobf("maven.modrinth:runiclib:4.3.4-forge"))
+    runtimeOnly(fg.deobf("maven.modrinth:runiclib:4.3.4-forge"))
 
     // abnormals mods
     implementation(fg.deobf("maven.modrinth:abnormals-delight:5.0.0-forge"))
@@ -163,23 +163,23 @@ dependencies {
     compileOnly(fg.deobf("maven.modrinth:supplementaries:1.20-3.1.37-forge"))
     implementation(fg.deobf("maven.modrinth:amendments:1.20-2.1.2-forge"))
     compileOnly(fg.deobf("maven.modrinth:supplementaries-squared:1.20-1.1.22-forge"))
-    implementation(fg.deobf("maven.modrinth:snowy-spirit:1.20-3.0.10-forge"))
+    runtimeOnly(fg.deobf("maven.modrinth:snowy-spirit:1.20-3.0.10-forge"))
 
     // oreganized
     implementation(fg.deobf("maven.modrinth:oreganized:4.2.2"))
     implementation(fg.deobf("maven.modrinth:doom-gloom:1.0.2"))
 
     // farmers delight
-    implementation(fg.deobf("maven.modrinth:farmers-delight:1.20.1-1.2.7"))
-    implementation(fg.deobf("maven.modrinth:rustic-delight:1.4.0-forge"))
-    implementation(fg.deobf("maven.modrinth:crate-delight:24.11.22-1.20-forge"))
-    implementation(fg.deobf("maven.modrinth:my-nethers-delight:1.20.1-1.7.6"))
-    implementation(fg.deobf("maven.modrinth:ends-delight:2.4-forge"))
-    implementation(fg.deobf("maven.modrinth:dungeons_delight:1.2.6"))
+    runtimeOnly(fg.deobf("maven.modrinth:farmers-delight:1.20.1-1.2.7"))
+    runtimeOnly(fg.deobf("maven.modrinth:rustic-delight:1.4.0-forge"))
+    runtimeOnly(fg.deobf("maven.modrinth:crate-delight:24.11.22-1.20-forge"))
+    runtimeOnly(fg.deobf("maven.modrinth:my-nethers-delight:1.20.1-1.7.6"))
+    runtimeOnly(fg.deobf("maven.modrinth:ends-delight:2.4-forge"))
+    runtimeOnly(fg.deobf("maven.modrinth:dungeons_delight:1.2.6"))
 
     // mob overhauls
-    implementation(fg.deobf("maven.modrinth:enderman-overhaul:1.0.4-forge"))
-    implementation(fg.deobf("maven.modrinth:creeper-overhaul:3.0.2-forge"))
+    runtimeOnly(fg.deobf("maven.modrinth:enderman-overhaul:1.0.4-forge"))
+    runtimeOnly(fg.deobf("maven.modrinth:creeper-overhaul:3.0.2-forge"))
 
     // biome mods
     compileOnly(fg.deobf("maven.modrinth:biomes-o-plenty:19.0.0.96-forge"))
@@ -221,7 +221,7 @@ dependencies {
 
     compileOnly(fg.deobf("maven.modrinth:friends-and-foes-forge:forge-mc1.20.1-3.0.6"))
 
-    implementation(fg.deobf("maven.modrinth:illager-invasion:v8.0.7-1.20.1-Forge"))
+    runtimeOnly(fg.deobf("maven.modrinth:illager-invasion:v8.0.7-1.20.1-Forge"))
 
     implementation(fg.deobf("maven.modrinth:yungs-api:1.20-Forge-4.0.6"))
     implementation(fg.deobf("maven.modrinth:yungs-cave-biomes:1.20.1-Forge-2.0.1"))
@@ -230,8 +230,8 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:quark:1.20.1-4.0-460-forge"))
     implementation(fg.deobf("maven.modrinth:quark-oddities:1.20.1-forge"))
 
-    implementation(fg.deobf("maven.modrinth:dye-depot:1.0.0-forge"))
-    implementation(fg.deobf("maven.modrinth:dye-the-world:1.1.2-forge"))
+    runtimeOnly(fg.deobf("maven.modrinth:dye-depot:1.0.0-forge"))
+    runtimeOnly(fg.deobf("maven.modrinth:dye-the-world:1.1.2-forge"))
 
     // jei & jade
     runtimeOnly(fg.deobf("maven.modrinth:jade:11.12.3+forge"))
