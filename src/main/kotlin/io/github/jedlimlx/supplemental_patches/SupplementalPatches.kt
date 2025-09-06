@@ -61,7 +61,9 @@ object SupplementalPatches: ClientModInitializer {
 
         TextureStitchEvent.EVENT.register(TextureStitchEvent {
             if (it.location() == Minecraft.getInstance().particleEngine.textureAtlas.location()) {
-                LOGGER.info(installShader())
+                val string = installShader()
+                LOGGER.info(string)
+                Minecraft.getInstance().player?.sendSystemMessage(Component.nullToEmpty(string))
             }
         })
 
