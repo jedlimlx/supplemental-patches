@@ -66,11 +66,11 @@ object SupplementalPatches: ClientModInitializer {
         })
 
         ClientTickEvents.END_CLIENT_TICK.register(ClientTickEvents.EndTick {
-            while (KB_REGENERATE_SHADERS.isDown) {
+            if (KB_REGENERATE_SHADERS.isDown) {
                 KB_REGENERATE_SHADERS.consumeClick()
 
-                val player = Minecraft.getInstance().player ?: break
-                player.sendSystemMessage(Component.nullToEmpty(installShader()))
+                val player = Minecraft.getInstance().player
+                player?.sendSystemMessage(Component.nullToEmpty(installShader()))
             }
         })
 
