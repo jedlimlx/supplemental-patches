@@ -1,6 +1,6 @@
 package io.github.jedlimlx.supplemental_patches.mixins.biomes;
 
-import com.teamabnormals.neapolitan.core.registry.NeapolitanBiomes;
+import com.teamabnormals.neapolitan.core.registry.datapack.NeapolitanBiomes;
 import me.fallenbreath.conditionalmixin.api.annotation.Condition;
 import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import net.irisshaders.iris.uniforms.BiomeUniforms;

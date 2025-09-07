@@ -9,6 +9,8 @@
     "IrisMixin",
     "IrisDefinesMixin",
     "BiomeUniformsMixin",
+    "SonarWaveRendererMixin",
+    "ThrasherRenderLayerMixin",
     "biomes.AtmosphericMixin",
     "biomes.AutumnityMixin",
     "biomes.BiomesOPlentyMixin",

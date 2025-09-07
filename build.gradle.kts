@@ -111,7 +111,7 @@ dependencies {
 
     // general library mods
     implementation("maven.modrinth:architectury-api:13.0.8+neoforge")
-    compileOnly("maven.modrinth:blueprint:8.0.3")
+    implementation("maven.modrinth:blueprint:8.0.6")
     implementation("maven.modrinth:corgilib:1.21.1-5.0.0.4-NeoForge")
     implementation("software.bernie.geckolib:geckolib-neoforge-${property("minecraft_version")}:4.7.7")
     implementation("maven.modrinth:glitchcore:2.1.0.0-neoforge")
@@ -127,18 +127,18 @@ dependencies {
 
     // abnormals mods
     compileOnly("maven.modrinth:abnormals-delight:5.0.0-forge")
-    compileOnly("maven.modrinth:atmospheric:6.1.0-forge")
-    compileOnly("maven.modrinth:autumnity:5.0.1-forge")
-    compileOnly("maven.modrinth:berry-good:8.0.0")
-    compileOnly("maven.modrinth:buzzier-bees:7.0.0")
+    implementation("maven.modrinth:atmospheric:7.0.0")
+    implementation("maven.modrinth:autumnity:6.0.0")
+    implementation("maven.modrinth:berry-good:8.0.0")
+    implementation("maven.modrinth:buzzier-bees:7.0.0")
     compileOnly("maven.modrinth:caverns-and-chasms:2.0.0-forge")
-    compileOnly("maven.modrinth:clayworks:4.0.0")
+    implementation("maven.modrinth:clayworks:4.0.0")
     compileOnly("maven.modrinth:endergetic:5.0.0-forge")
     compileOnly("maven.modrinth:environmental:4.0.0-forge")
-    compileOnly("maven.modrinth:neapolitan:5.1.0-forge")
+    implementation("maven.modrinth:neapolitan:6.0.0")
     compileOnly("maven.modrinth:savage-and-ravage:6.0.0-forge")
-    compileOnly("maven.modrinth:woodworks:4.0.0")
-    compileOnly("maven.modrinth:upgrade-aquatic:6.0.1-forge")
+    implementation("maven.modrinth:woodworks:4.0.0")
+    implementation("maven.modrinth:upgrade-aquatic:7.0.0")
 
     // supplementaries
     implementation("maven.modrinth:supplementaries:neoforge_1.21-3.4.9")
@@ -196,7 +196,7 @@ dependencies {
 
     compileOnly("maven.modrinth:sullysmod:3.2.1-beta")
 
-    implementation("maven.modrinth:wetland-whimsy:1.2.4-1.21.1")
+    compileOnly("maven.modrinth:wetland-whimsy:1.2.4-1.21.1")
 
     implementation("maven.modrinth:friends-and-foes-forge:neoforge-mc1.21.1-3.0.7")
 
