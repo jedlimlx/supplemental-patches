@@ -1,6 +1,0 @@
-{
-  "glsl": "grounded_waving_foliage.glsl",
-  "conditions": [
-    "WAVING_FOLIAGE"
-  ]
-}
