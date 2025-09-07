@@ -1,1 +1,0 @@
-DoWave_Foliage(playerPos.xyz, worldPos, 1.0);
