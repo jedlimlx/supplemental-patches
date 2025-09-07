@@ -28,7 +28,9 @@ object ClientEvents {
     fun textureStitchedEvent(event: TextureStitchEvent.Post) {
         val textureAtlas = Minecraft.getInstance().particleEngine.textureAtlas
         if (event.atlas.location() == textureAtlas.location()) {
-            SupplementalPatches.LOGGER.info(installShader())
+            val string = installShader()
+            SupplementalPatches.LOGGER.info(string)
+            Minecraft.getInstance().player?.sendSystemMessage(Component.nullToEmpty(string))
             Iris.loadShaderpackWhenPossible()
         }
     }
