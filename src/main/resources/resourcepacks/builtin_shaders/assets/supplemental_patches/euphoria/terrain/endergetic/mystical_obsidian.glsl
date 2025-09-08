@@ -1,5 +1,5 @@
 if (color.g > 0.4 && abs(color.r - color.g) < 0.16) {  // endstone
-    #include "/lib/materials/specificMaterials/terrain/endstone.glsl"
+    #include "/lib/materials/specificMaterials/terrain/endStone.glsl"
 } else {  // obsidian
     #include "/lib/materials/specificMaterials/terrain/obsidian.glsl"
 
