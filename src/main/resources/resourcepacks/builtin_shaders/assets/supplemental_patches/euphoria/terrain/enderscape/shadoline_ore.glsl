@@ -2,7 +2,7 @@ if (color.g < 0.42 || CheckForColor(color.rgb, vec3(120, 146, 140))) {  // Raw S
     #include "/lib/materials/specificMaterials/terrain/rawShadolineBlock.glsl"
 } else {  // Endstone / Mirestone Part
     if (mat % 4 == 0) {
-        #include "/lib/materials/specificMaterials/terrain/endstone.glsl"
+        #include "/lib/materials/specificMaterials/terrain/endStone.glsl"
     } else {
         #include "/lib/materials/specificMaterials/terrain/mirestone.glsl"
     }

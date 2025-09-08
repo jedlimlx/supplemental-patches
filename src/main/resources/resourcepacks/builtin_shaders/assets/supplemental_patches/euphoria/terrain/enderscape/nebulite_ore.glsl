@@ -16,7 +16,7 @@ if (color.r > color.g * 1.5) {  // Raw Nebulite Part
     #endif
 } else {  // Endstone / Mirestone Part
     if (mat % 4 == 0) {
-        #include "/lib/materials/specificMaterials/terrain/endstone.glsl"
+        #include "/lib/materials/specificMaterials/terrain/endStone.glsl"
     } else {
         #include "/lib/materials/specificMaterials/terrain/mirestone.glsl"
     }
