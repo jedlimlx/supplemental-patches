@@ -60,7 +60,7 @@ object SupplementalPatches: ClientModInitializer {
             if (it.location() == Minecraft.getInstance().particleEngine.textureAtlas.location()) {
                 val string = installShader()
                 LOGGER.info(string)
-                Minecraft.getInstance().player?.sendSystemMessage(Component.nullToEmpty(string))
+                Minecraft.getInstance().player?.displayClientMessage(Component.nullToEmpty(string), false)
             }
         })
 
@@ -69,7 +69,7 @@ object SupplementalPatches: ClientModInitializer {
                 KB_REGENERATE_SHADERS.consumeClick()
 
                 val player = Minecraft.getInstance().player
-                player?.sendSystemMessage(Component.nullToEmpty(installShader()))
+                player?.displayClientMessage(Component.nullToEmpty(installShader()), false)
             }
         })
 
