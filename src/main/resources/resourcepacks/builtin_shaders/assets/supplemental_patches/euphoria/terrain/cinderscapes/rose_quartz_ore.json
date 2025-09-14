@@ -1,0 +1,12 @@
+{
+  "name": "rose_quartz_ore",
+  "glsl": "rose_quartz_ore.glsl",
+  "mat0": [
+    "cinderscapes:rose_quartz_ore"
+  ],
+  "color": "supplemental_patches:cinderscapes/rose_quartz_ore",
+  "conditions": [
+    "GLOWING_ORE_ROSE_QUARTZ",
+    "DO_IPBR_LIGHTS"
+  ]
+}

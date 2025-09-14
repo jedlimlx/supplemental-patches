@@ -1,0 +1,8 @@
+{
+  "name": "umbral_wart",
+  "glsl": "umbral_wart.glsl",
+  "mat0": [
+    "cinderscapes:umbral_wart_block"
+  ],
+  "tint": "supplemental_patches:cinderscape/umbral_wart"
+}

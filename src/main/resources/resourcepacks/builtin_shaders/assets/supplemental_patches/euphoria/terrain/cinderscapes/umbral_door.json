@@ -1,0 +1,10 @@
+{
+  "name": "umbral_door",
+  "glsl": "umbral_door.glsl",
+  "mat1": [
+    "cinderscapes:umbral_door:powered=false"
+  ],
+  "mat3": [
+    "cinderscapes:umbral_door:powered=true"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "scorched_hyphae",
+  "glsl": "scorched_hyphae.glsl",
+  "mat0": [
+    "cinderscapes:scorched_planks",
+    "cinderscapes:scorched_boards",
+    "cinderscapes:stripped_scorched_stem",
+    "cinderscapes:stripped_scorched_hyphae",
+    "cinderscapes:scorched_bookshelf",
+    "cinderscapes:chiseled_scorched_bookshelf",
+    "cinderscapes:scorched_beehive",
+    "cinderscapes:scorched_cabinet"
+  ],
+  "mat1": [
+    "cinderscapes:scorched_fence",
+    "cinderscapes:scorched_fence_gate:powered=false",
+    "cinderscapes:scorched_button:powered=false",
+    "cinderscapes:scorched_pressure_plate:powered=false",
+    "cinderscapes:scorched_plank_slab",
+    "cinderscapes:scorched_plank_stairs",
+    "cinderscapes:scorched_trapdoor:powered=false",
+    "cinderscapes:scorched_ladder",
+    "cinderscapes:scorched_sign",
+    "cinderscapes:scorched_wall_sign",
+    "cinderscapes:scorched_wall_hanging_sign"
+  ],
+  "mat2": [
+    "cinderscapes:scorched_hyphae",
+    "cinderscapes:scorched_stem"
+  ],
+  "mat3": [
+    "cinderscapes:scorched_fence_gate:powered=true",
+    "cinderscapes:scorched_button:powered=true",
+    "cinderscapes:scorched_pressure_plate:powered=true",
+    "cinderscapes:scorched_trapdoor:powered=true"
+  ],
+  "color": [
+    null,
+    null,
+    "minecraft:magma_block",
+    null
+  ]
+}
