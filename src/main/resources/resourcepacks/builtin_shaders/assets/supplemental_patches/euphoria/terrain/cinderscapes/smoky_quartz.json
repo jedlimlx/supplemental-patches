@@ -1,0 +1,15 @@
+{
+  "name": "smoky_quartz",
+  "glsl": "smoky_quartz.glsl",
+  "mat0": [
+    "cinderscapes:smoky_quartz_block",
+    "cinderscapes:smoky_quartz_bricks",
+    "cinderscapes:smoky_quartz_pillar",
+    "cinderscapes:chiseled_smoky_quartz"
+  ],
+  "mat1": [
+    "cinderscapes:smoky_quartz_slab",
+    "cinderscapes:smoky_quartz_stairs",
+    "cinderscapes:polypite_smoky_quartz"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "smoky_quartz_ore",
+  "glsl": "smoky_quartz_ore.glsl",
+  "mat0": [
+    "cinderscapes:smoky_quartz_ore"
+  ],
+  "color": "supplemental_patches:cinderscapes/smoky_quartz_ore",
+  "conditions": [
+    "GLOWING_ORE_SMOKY_QUARTZ",
+    "DO_IPBR_LIGHTS"
+  ]
+}

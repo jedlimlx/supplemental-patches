@@ -1,0 +1,1 @@
+if (color.b > 0.95) emission = 2.0;

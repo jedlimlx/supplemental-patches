@@ -1,0 +1,9 @@
+{
+  "name": "pyracinth",
+  "glsl": "pyracinth.glsl",
+  "mat0": [
+    "cinderscapes:pyracinth"
+  ],
+  "waving": "minecraft:grounded_waving_foliage",
+  "color": "minecraft:magma_block"
+}

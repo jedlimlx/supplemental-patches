@@ -1,0 +1,12 @@
+{
+  "name": "sulfur_quartz_ore",
+  "glsl": "sulfur_quartz_ore.glsl",
+  "mat0": [
+    "cinderscapes:sulfur_quartz_ore"
+  ],
+  "color": "supplemental_patches:cinderscapes/sulfur_quartz_ore",
+  "conditions": [
+    "GLOWING_ORE_SULFUR",
+    "DO_IPBR_LIGHTS"
+  ]
+}

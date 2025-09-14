@@ -1,0 +1,9 @@
+{
+  "name": "photofern",
+  "glsl": "photofern.glsl",
+  "mat0": [
+    "cinderscapes:photofern",
+    "cinderscapes:tall_photofern"
+  ],
+  "waving": "minecraft:grounded_waving_foliage"
+}

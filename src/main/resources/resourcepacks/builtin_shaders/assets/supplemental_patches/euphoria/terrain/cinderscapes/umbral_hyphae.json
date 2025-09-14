@@ -1,0 +1,43 @@
+{
+  "name": "umbral_hyphae",
+  "glsl": "umbral_hyphae.glsl",
+  "mat0": [
+    "cinderscapes:umbral_planks",
+    "cinderscapes:umbral_boards",
+    "cinderscapes:stripped_umbral_stem",
+    "cinderscapes:stripped_umbral_hyphae",
+    "cinderscapes:umbral_bookshelf",
+    "cinderscapes:chiseled_umbral_bookshelf",
+    "cinderscapes:umbral_beehive",
+    "cinderscapes:umbral_cabinet"
+  ],
+  "mat1": [
+    "cinderscapes:umbral_fence",
+    "cinderscapes:umbral_fence_gate:powered=false",
+    "cinderscapes:umbral_button:powered=false",
+    "cinderscapes:umbral_pressure_plate:powered=false",
+    "cinderscapes:umbral_plank_slab",
+    "cinderscapes:umbral_plank_stairs",
+    "cinderscapes:umbral_trapdoor:powered=false",
+    "cinderscapes:umbral_ladder",
+    "cinderscapes:umbral_sign",
+    "cinderscapes:umbral_wall_sign",
+    "cinderscapes:umbral_wall_hanging_sign"
+  ],
+  "mat2": [
+    "cinderscapes:umbral_hyphae",
+    "cinderscapes:umbral_stem"
+  ],
+  "mat3": [
+    "cinderscapes:umbral_fence_gate:powered=true",
+    "cinderscapes:umbral_button:powered=true",
+    "cinderscapes:umbral_pressure_plate:powered=true",
+    "cinderscapes:umbral_trapdoor:powered=true"
+  ],
+  "color": [
+    null,
+    null,
+    "supplemental_patches:cinderscapes/umbral_hyphae",
+    null
+  ]
+}
