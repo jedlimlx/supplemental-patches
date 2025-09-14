@@ -1,0 +1,8 @@
+{
+  "name": "twilight_vine_block",
+  "glsl": "twilight_vine_block.glsl",
+  "mat0": [
+    "cinderscapes:twilight_vine_block"
+  ],
+  "waving": "minecraft:waving_leaves"
+}

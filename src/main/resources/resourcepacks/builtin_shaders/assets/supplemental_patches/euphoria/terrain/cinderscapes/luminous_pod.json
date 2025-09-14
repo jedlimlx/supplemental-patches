@@ -1,0 +1,10 @@
+{
+  "name": "luminous_pod",
+  "glsl": "luminous_pod.glsl",
+  "mat0": [
+    "cinderscapes:luminous_pod",
+    "cinderscapes:twilight_tendrils"
+  ],
+  "color": "supplemental_patches:cinderscapes/luminous_pod",
+  "waving": "minecraft:grounded_waving_foliage"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "umbral_nylium",
+  "glsl": "umbral_nylium.glsl",
+  "mat0": [
+    "cinderscapes:umbral_nylium"
+  ]
+}

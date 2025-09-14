@@ -1,0 +1,8 @@
+{
+  "name": "ghastly_ectoplasm",
+  "glsl": "ghastly_ectoplasm.glsl",
+  "mat0": [
+    "cinderscapes:ghastly_ectoplasm"
+  ],
+  "waving": "minecraft:waving_leaves"
+}

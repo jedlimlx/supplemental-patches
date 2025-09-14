@@ -1,0 +1,10 @@
+{
+  "name": "scorched_door",
+  "glsl": "scorched_door.glsl",
+  "mat1": [
+    "cinderscapes:scorched_door:powered=false"
+  ],
+  "mat3": [
+    "cinderscapes:scorched_door:powered=true"
+  ]
+}
