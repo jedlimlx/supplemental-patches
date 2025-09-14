@@ -1,0 +1,9 @@
+{
+  "name": "umbral_fungus",
+  "glsl": "umbral_fungus.glsl",
+  "mat0": [
+    "cinderscapes:umbral_fungus"
+  ],
+  "color": "supplemental_patches:cinderscapes/umbral_fungus",
+  "held_lighting": true
+}

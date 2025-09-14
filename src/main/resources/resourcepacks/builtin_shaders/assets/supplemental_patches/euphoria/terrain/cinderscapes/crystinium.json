@@ -1,0 +1,8 @@
+{
+  "name": "crystinium",
+  "glsl": "crystinium.glsl",
+  "mat0": [
+    "cinderscapes:crystinium"
+  ],
+  "waving": "minecraft:grounded_waving_foliage"
+}
