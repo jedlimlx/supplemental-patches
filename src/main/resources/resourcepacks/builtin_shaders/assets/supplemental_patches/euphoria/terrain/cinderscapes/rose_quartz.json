@@ -1,0 +1,15 @@
+{
+  "name": "rose_quartz",
+  "glsl": "rose_quartz.glsl",
+  "mat0": [
+    "cinderscapes:rose_quartz_block",
+    "cinderscapes:rose_quartz_bricks",
+    "cinderscapes:rose_quartz_pillar",
+    "cinderscapes:chiseled_rose_quartz"
+  ],
+  "mat1": [
+    "cinderscapes:rose_quartz_slab",
+    "cinderscapes:rose_quartz_stairs",
+    "cinderscapes:polypite_rose_quartz"
+  ]
+}

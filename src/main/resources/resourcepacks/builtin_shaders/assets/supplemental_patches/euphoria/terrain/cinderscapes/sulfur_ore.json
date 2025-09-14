@@ -1,0 +1,12 @@
+{
+  "name": "sulfur_ore",
+  "glsl": "sulfur_ore.glsl",
+  "mat0": [
+    "cinderscapes:sulfur_ore"
+  ],
+  "color": "supplemental_patches:cinderscapes/sulfur_ore",
+  "conditions": [
+    "GLOWING_ORE_SULFUR",
+    "DO_IPBR_LIGHTS"
+  ]
+}
