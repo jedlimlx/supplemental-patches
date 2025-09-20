@@ -99,15 +99,29 @@ fun createPropertiesMap(materialType: String, text: String): HashMap<Int, HashSe
     return properties
 }
 
-fun updatePropertiesMap(
-    banner: String,
-    materialType: String,
-    materials: Map<Int, ShaderBuilder>,
-    properties: HashMap<Int, HashSet<String>>,
-    changedProperties: HashMap<Int, HashSet<String>>
-): StringBuilder {
-    val builder = StringBuilder(banner)
+fun updateExistingMaterials(materialType: String, text: String, changedProperties: HashMap<Int, HashSet<String>>): String {
+    var updatedText = text
 
+    changedProperties.forEach { (id, entrySet) ->
+        updatedText = Regex("(?<!#)$materialType.$id *= *(?<entries>(?:[^\\n\\r\\\\]*(?:\\\\\\r?\\n?)?)+)")
+            .replace(updatedText) { result ->
+                var replacement = result.value
+                entrySet.forEach { entry -> replacement = removeId(entry, replacement) }
+                return@replace replacement
+            }
+    }
+
+    return updatedText
+}
+
+fun updatePropertiesFile(path: String, materials: Map<Int, ShaderBuilder>, materialType: String, banner: String) {
+    val propertiesFile = File(path)
+    val text = propertiesFile.readText()
+
+    val properties = createPropertiesMap(materialType, text)
+    val changedProperties = HashMap<Int, HashSet<String>>()
+
+    val builder = StringBuilder(banner)
     materials.forEach { (id, material) ->
         builder.apply {
             var count = 0
@@ -133,22 +147,9 @@ fun updatePropertiesMap(
         }
     }
 
-    return builder
-}
-
-fun updateExistingMaterials(materialType: String, text: String, changedProperties: HashMap<Int, HashSet<String>>): String {
-    var updatedText = text
-
-    changedProperties.forEach { (id, entrySet) ->
-        updatedText = Regex("(?<!#)$materialType.$id *= *(?<entries>(?:[^\\n\\r\\\\]*(?:\\\\\\r?\\n?)?)+)")
-            .replace(updatedText) { result ->
-                var replacement = result.value
-                entrySet.forEach { entry -> replacement = removeId(entry, replacement) }
-                return@replace replacement
-            }
-    }
-
-    return updatedText
+    propertiesFile.writeText(
+        updateExistingMaterials(materialType, text, changedProperties) + builder
+    )
 }
 
 val MATERIALS = mutableListOf<ShaderBuilder>()
@@ -180,22 +181,11 @@ fun generateTerrainMaterials(directory: Path) {
     file.writeText(Regex("#endif\\r?\\n}").replace(oldCode, "#endif\n} else $code"))
 
     // writing the list of blocks to block.properties
-    val blockPropertiesFile = File(directory.absolutePathString() + BLOCK_PROPERTIES)
-    val text = blockPropertiesFile.readText()
-
-    val blockProperties = createPropertiesMap("block", text)
-    val changedBlockProperties = HashMap<Int, HashSet<String>>()
-
-    val builder = updatePropertiesMap(
-        "\n$BANNER# Blocks added by Supplemental Patches\n\n",
-        "block",
+    updatePropertiesFile(
+        directory.absolutePathString() + BLOCK_PROPERTIES,
         MATERIALS_MAP,
-        blockProperties,
-        changedBlockProperties
-    )
-
-    blockPropertiesFile.writeText(
-        updateExistingMaterials("block", text, changedBlockProperties) + builder
+        "block",
+        "\n$BANNER# Blocks added by Supplemental Patches\n\n"
     )
 }
 
@@ -229,23 +219,12 @@ fun generateEntityMaterials(directory: Path) {
     val newCode = lines.joinToString("\n") + " else $code"
     file.writeText(newCode)
 
-    // writing the list of blocks to block.properties
-    val entityPropertiesFile = File(directory.absolutePathString() + ENTITY_PROPERTIES)
-    val text = entityPropertiesFile.readText()
-
-    val entityProperties = createPropertiesMap("entity", text)
-    val changedEntityProperties = HashMap<Int, HashSet<String>>()
-
-    val builder = updatePropertiesMap(
-        "\n$BANNER# Entities added by Supplemental Patches\n\n",
-        "entity",
+    // writing the list of entities to entity.properties
+    updatePropertiesFile(
+        directory.absolutePathString() + ENTITY_PROPERTIES,
         ENTITY_MAP,
-        entityProperties,
-        changedEntityProperties
-    )
-
-    entityPropertiesFile.writeText(
-        updateExistingMaterials("entity", text, changedEntityProperties) + builder
+        "entity",
+        "\n$BANNER# Entities added by Supplemental Patches\n\n"
     )
 }
 
@@ -279,23 +258,12 @@ fun generateIrisMaterials(directory: Path) {
     val newCode = lines.joinToString("\n") + " else $code"
     file.writeText(newCode)
 
-    // writing the list of blocks to item.properties
-    val itemPropertiesFile = File(directory.absolutePathString() + ITEM_PROPERTIES)
-    val text = itemPropertiesFile.readText()
-
-    val itemProperties = createPropertiesMap("item", text)
-    val changedItemProperties = HashMap<Int, HashSet<String>>()
-
-    val builder = updatePropertiesMap(
-        "\n",
-        "item",
+    // writing the list of items to item.properties
+    updatePropertiesFile(
+        directory.absolutePathString() + ITEM_PROPERTIES,
         ITEM_MAP,
-        itemProperties,
-        changedItemProperties
-    )
-
-    itemPropertiesFile.writeText(
-        updateExistingMaterials("block", text, changedItemProperties) + builder
+        "item",
+        "\n"
     )
 }
 
@@ -332,22 +300,11 @@ fun generateTranslucentMaterials(directory: Path) {
     file.writeText(newCode)
 
     // writing the list of blocks to block.properties
-    val blockPropertiesFile = File(directory.absolutePathString() + BLOCK_PROPERTIES)
-    val text = blockPropertiesFile.readText()
-
-    val blockProperties = createPropertiesMap("block", text)
-    val changedBlockProperties = HashMap<Int, HashSet<String>>()
-
-    val builder = updatePropertiesMap(
-        "\n# Translucent materials added by Supplemental Patches\n\n",
-        "block",
+    updatePropertiesFile(
+        directory.absolutePathString() + BLOCK_PROPERTIES,
         TRANSLUCENTS_MAP,
-        blockProperties,
-        changedBlockProperties
-    )
-
-    blockPropertiesFile.writeText(
-        updateExistingMaterials("block", text, changedBlockProperties) + builder
+        "block",
+        "\n# Translucent materials added by Supplemental Patches\n\n"
     )
 }
 
@@ -382,22 +339,11 @@ fun generateBlockEntityMaterials(directory: Path) {
     file.writeText(newCode)
 
     // writing the list of blocks to block.properties
-    val blockPropertiesFile = File(directory.absolutePathString() + BLOCK_PROPERTIES)
-    val text = blockPropertiesFile.readText()
-
-    val blockProperties = createPropertiesMap("block", text)
-    val changedBlockProperties = HashMap<Int, HashSet<String>>()
-
-    val builder = updatePropertiesMap(
-        "\n# Block entities added by Supplemental Patches\n\n",
-        "block",
+    updatePropertiesFile(
+        directory.absolutePathString() + BLOCK_PROPERTIES,
         BLOCK_ENTITIES_MAP,
-        blockProperties,
-        changedBlockProperties
-    )
-
-    blockPropertiesFile.writeText(
-        updateExistingMaterials("block", text, changedBlockProperties) + builder
+        "block",
+        "\n# Block entities added by Supplemental Patches\n\n"
     )
 }
 
