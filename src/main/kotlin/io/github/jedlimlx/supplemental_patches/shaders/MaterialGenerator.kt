@@ -1,6 +1,5 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
-import io.github.jedlimlx.supplemental_patches.SupplementalPatches
 import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation
 import java.io.File
@@ -144,14 +143,7 @@ fun updateExistingMaterials(materialType: String, text: String, changedPropertie
         updatedText = Regex("(?<!#)$materialType.$id *= *(?<entries>(?:[^\\n\\r\\\\]*(?:\\\\\\r?\\n?)?)+)")
             .replace(updatedText) { result ->
                 var replacement = result.value
-                if (id == 10512) {
-                    SupplementalPatches.LOGGER.info(replacement)
-                }
                 entrySet.forEach { entry -> replacement = removeId(entry, replacement) }
-                if (id == 10512) {
-                    SupplementalPatches.LOGGER.info(entrySet)
-                    SupplementalPatches.LOGGER.info(replacement)
-                }
                 return@replace replacement
             }
     }
