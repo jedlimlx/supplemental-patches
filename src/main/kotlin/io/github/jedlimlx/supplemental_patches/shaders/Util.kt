@@ -1,5 +1,8 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
+import net.minecraft.client.Minecraft
+import net.minecraft.network.chat.Component
+
 const val BLOCK_PROPERTIES = "/shaders/block.properties"
 const val ENTITY_PROPERTIES = "/shaders/entity.properties"
 const val ITEM_PROPERTIES = "/shaders/item.properties"
@@ -202,4 +205,16 @@ fun split(rectangles: List<Rectangle>, depth: Int = 0, splitX: Boolean = true): 
         append(split(second, depth + 1, !splitX))
         append("${indent}}\n")
     }.toString()
+}
+
+// error output
+fun <T>catchAndPrintError(f: () -> T): T {
+    try {
+        return f()
+    } catch (e: Exception) {
+        val stackTraceString = e.stackTraceToString()  // inform user about the exception
+        Minecraft.getInstance().player?.sendSystemMessage(Component.nullToEmpty(stackTraceString))
+
+        throw e  // throw the same exception anyway
+    }
 }
