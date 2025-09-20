@@ -51,7 +51,7 @@ object ShaderResourceLoader {
         reloadProfiler: ProfilerFiller,
         backgroundExecutor: Executor,
         gameExecutor: Executor
-    ): CompletableFuture<Void> {
+    ): CompletableFuture<Void> = catchAndPrintError {
         // Clear all lists
         COLOURS.clear()
         TINTS.clear()
@@ -177,7 +177,7 @@ object ShaderResourceLoader {
             )
         }
 
-        return CompletableFuture.allOf(
+        return@catchAndPrintError CompletableFuture.allOf(
             loadMaterialShaders(backgroundExecutor, resourceManager, "euphoria/terrain", BLOCK_MAP),
             loadMaterialShaders(backgroundExecutor, resourceManager, "euphoria/translucent", BLOCK_MAP),
             loadMaterialShaders(backgroundExecutor, resourceManager, "euphoria/block_entity", BLOCK_MAP),
@@ -206,15 +206,18 @@ object ShaderResourceLoader {
                                 regexReplaces.add(Regex(it.asString))
                             }
                         }
+
                         it.matches(Regex("$string.\\d+")) -> {
                             val num = it.replace("$string.", "").toInt()
                             additionaMapping[num] = json[it].asJsonArray.map { it.asString }
                         }
+
                         it.matches(Regex("layer.(.*?)")) -> {
                             val layer = it.replace("layer.", "")
                             if (layer !in LAYER_CHANGES) LAYER_CHANGES[layer] = arrayListOf()
                             LAYER_CHANGES[layer]!!.addAll(json[it].asJsonArray.map { it.asString })
                         }
+
                         else -> {
                             // Regex("([a-zA-Z\\d_-]+:[a-zA-Z\\d_/-]+).mat\\d+")
                             val tokens = it.split(".")
