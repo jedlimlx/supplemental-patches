@@ -1,10 +1,14 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
+import io.github.jedlimlx.supplemental_patches.SupplementalPatches
 import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation
 import java.io.File
 import java.nio.file.Path
+import kotlin.collections.component1
+import kotlin.collections.component2
 import kotlin.collections.flatten
+import kotlin.collections.set
 import kotlin.io.path.absolutePathString
 
 
@@ -80,6 +84,81 @@ fun modifyEntityProperties(directory: Path) {
     file.writeText(code)
 }
 
+fun createPropertiesMap(materialType: String, text: String): HashMap<Int, HashSet<String>> {
+    val properties = HashMap<Int, HashSet<String>>()
+
+    Regex("(?<!#)$materialType.(?<id>\\d+) *= *(?<entries>(?:[^\\n\\r\\\\]*(?:\\\\\\r?\\n?)?)+)")
+        .findAll(text).forEach { result ->
+            val id = result.groups["id"]?.value?.toInt() ?: return@forEach
+            val entriesString = result.groups["entries"]?.value ?: return@forEach
+
+            val entrySet = properties.getOrDefault(id, HashSet())
+            entrySet.addAll(Regex("[^\\n\\r\\\\ ]+").findAll(entriesString).map { entry -> entry.value.replace("minecraft:", "") })
+            properties[id] = entrySet
+        }
+
+    return properties
+}
+
+fun updatePropertiesMap(
+    banner: String,
+    materialType: String,
+    materials: Map<Int, ShaderBuilder>,
+    properties: HashMap<Int, HashSet<String>>,
+    changedProperties: HashMap<Int, HashSet<String>>
+): StringBuilder {
+    val builder = StringBuilder(banner)
+
+    materials.forEach { (id, material) ->
+        builder.apply {
+            var count = 0
+            material.mat.forEach {
+                if (it.isNotEmpty()) {
+                    // Removing from their existing materials
+                    it.forEach { entry ->
+                        properties.replaceAll { id, entrySet ->
+                            val entry = entry.replace("minecraft:", "")
+                            if (entrySet.remove(entry)) {
+                                val changedSet = changedProperties.getOrDefault(id, HashSet())
+                                changedSet.add(entry)
+                                changedProperties[id] = changedSet
+                            }
+                            return@replaceAll entrySet
+                        }
+                    }
+                    // Adding to new materials
+                    append("$materialType.${id + count} = ${it.joinToString(" ")}\n")
+                }
+                count++
+            }
+        }
+    }
+
+    return builder
+}
+
+fun updateExistingMaterials(materialType: String, text: String, changedProperties: HashMap<Int, HashSet<String>>): String {
+    var updatedText = text
+
+    changedProperties.forEach { (id, entrySet) ->
+        updatedText = Regex("(?<!#)$materialType.$id *= *(?<entries>(?:[^\\n\\r\\\\]*(?:\\\\\\r?\\n?)?)+)")
+            .replace(updatedText) { result ->
+                var replacement = result.value
+                if (id == 10512) {
+                    SupplementalPatches.LOGGER.info(replacement)
+                }
+                entrySet.forEach { entry -> replacement = removeId(entry, replacement) }
+                if (id == 10512) {
+                    SupplementalPatches.LOGGER.info(entrySet)
+                    SupplementalPatches.LOGGER.info(replacement)
+                }
+                return@replace replacement
+            }
+    }
+
+    return updatedText
+}
+
 val MATERIALS = mutableListOf<ShaderBuilder>()
 val MATERIALS_MAP = mutableMapOf<Int, ShaderBuilder>()
 
@@ -110,25 +189,22 @@ fun generateTerrainMaterials(directory: Path) {
 
     // writing the list of blocks to block.properties
     val blockPropertiesFile = File(directory.absolutePathString() + BLOCK_PROPERTIES)
+    val text = blockPropertiesFile.readText()
 
-    var text = blockPropertiesFile.readText()
-    val builder = StringBuilder("\n$BANNER# Blocks added by Supplemental Patches\n\n")
-    MATERIALS_MAP.forEach { (id, material) ->
-        // Removing from their existing materials
-        material.mat.forEach { it.forEach { text = removeId(it, text) } }
+    val blockProperties = createPropertiesMap("block", text)
+    val changedBlockProperties = HashMap<Int, HashSet<String>>()
 
-        // Adding to new materials
-        builder.apply {
-            var count = 0
-            material.mat.forEach {
-                if (it.isNotEmpty())
-                    append("block.${id + count} = ${it.joinToString(" ")}\n")
-                count++
-            }
-        }
-    }
+    val builder = updatePropertiesMap(
+        "\n$BANNER# Blocks added by Supplemental Patches\n\n",
+        "block",
+        MATERIALS_MAP,
+        blockProperties,
+        changedBlockProperties
+    )
 
-    blockPropertiesFile.writeText(text + builder)
+    blockPropertiesFile.writeText(
+        updateExistingMaterials("block", text, changedBlockProperties) + builder
+    )
 }
 
 val ENTITIES = mutableListOf<ShaderBuilder>()
@@ -163,25 +239,22 @@ fun generateEntityMaterials(directory: Path) {
 
     // writing the list of blocks to block.properties
     val entityPropertiesFile = File(directory.absolutePathString() + ENTITY_PROPERTIES)
+    val text = entityPropertiesFile.readText()
 
-    var text = entityPropertiesFile.readText()
-    val builder = StringBuilder("\n$BANNER# Entities added by Supplemental Patches\n\n")
-    ENTITY_MAP.forEach { (id, material) ->
-        // Removing from their existing entity ids
-        material.mat.forEach { it.forEach { text = removeId(it, text) } }
+    val entityProperties = createPropertiesMap("entity", text)
+    val changedEntityProperties = HashMap<Int, HashSet<String>>()
 
-        // Adding to new materials
-        builder.apply {
-            var count = 0
-            material.mat.forEach {
-                if (it.isNotEmpty())
-                    append("entity.${id + count} = ${it.joinToString(" ")}\n")
-                count++
-            }
-        }
-    }
+    val builder = updatePropertiesMap(
+        "\n$BANNER# Entities added by Supplemental Patches\n\n",
+        "entity",
+        ENTITY_MAP,
+        entityProperties,
+        changedEntityProperties
+    )
 
-    entityPropertiesFile.writeText(text + builder)
+    entityPropertiesFile.writeText(
+        updateExistingMaterials("entity", text, changedEntityProperties) + builder
+    )
 }
 
 val ITEMS = mutableListOf<ShaderBuilder>()
@@ -216,25 +289,22 @@ fun generateIrisMaterials(directory: Path) {
 
     // writing the list of blocks to item.properties
     val itemPropertiesFile = File(directory.absolutePathString() + ITEM_PROPERTIES)
+    val text = itemPropertiesFile.readText()
 
-    var text = itemPropertiesFile.readText()
-    val builder = StringBuilder("\n")
-    ITEM_MAP.forEach { (id, material) ->
-        // Removing from their existing item ids
-        material.mat.forEach { it.forEach { text = removeId(it, text) } }
+    val itemProperties = createPropertiesMap("item", text)
+    val changedItemProperties = HashMap<Int, HashSet<String>>()
 
-        // Adding to new materials
-        builder.apply {
-            var count = 0
-            material.mat.forEach {
-                if (it.isNotEmpty())
-                    append("item.${id + count} = ${it.joinToString(" ")}\n")
-                count++
-            }
-        }
-    }
+    val builder = updatePropertiesMap(
+        "\n",
+        "item",
+        ITEM_MAP,
+        itemProperties,
+        changedItemProperties
+    )
 
-    itemPropertiesFile.writeText(text + builder)
+    itemPropertiesFile.writeText(
+        updateExistingMaterials("block", text, changedItemProperties) + builder
+    )
 }
 
 val TRANSLUCENTS = mutableListOf<ShaderBuilder>()
@@ -271,25 +341,22 @@ fun generateTranslucentMaterials(directory: Path) {
 
     // writing the list of blocks to block.properties
     val blockPropertiesFile = File(directory.absolutePathString() + BLOCK_PROPERTIES)
+    val text = blockPropertiesFile.readText()
 
-    var text = blockPropertiesFile.readText()
-    val builder = StringBuilder("\n# Translucent materials added by Supplemental Patches\n\n")
-    TRANSLUCENTS_MAP.forEach { (id, material) ->
-        // Removing from their existing materials
-        material.mat.forEach { it.forEach { text = removeId(it, text) } }
+    val blockProperties = createPropertiesMap("block", text)
+    val changedBlockProperties = HashMap<Int, HashSet<String>>()
 
-        // Adding to new materials
-        builder.apply {
-            var count = 0
-            material.mat.forEach {
-                if (it.isNotEmpty())
-                    append("block.${id + count} = ${it.joinToString(" ")}\n")
-                count++
-            }
-        }
-    }
+    val builder = updatePropertiesMap(
+        "\n# Translucent materials added by Supplemental Patches\n\n",
+        "block",
+        TRANSLUCENTS_MAP,
+        blockProperties,
+        changedBlockProperties
+    )
 
-    blockPropertiesFile.writeText(text + builder)
+    blockPropertiesFile.writeText(
+        updateExistingMaterials("block", text, changedBlockProperties) + builder
+    )
 }
 
 val BLOCK_ENTITIES = mutableListOf<ShaderBuilder>()
@@ -324,25 +391,22 @@ fun generateBlockEntityMaterials(directory: Path) {
 
     // writing the list of blocks to block.properties
     val blockPropertiesFile = File(directory.absolutePathString() + BLOCK_PROPERTIES)
+    val text = blockPropertiesFile.readText()
 
-    var text = blockPropertiesFile.readText()
-    val builder = StringBuilder("\n# Block entities added by Supplemental Patches\n\n")
-    BLOCK_ENTITIES_MAP.forEach { (id, material) ->
-        // Removing from their existing materials
-        material.mat.forEach { it.forEach { text = removeId(it, text) } }
+    val blockProperties = createPropertiesMap("block", text)
+    val changedBlockProperties = HashMap<Int, HashSet<String>>()
 
-        // Adding to new materials
-        builder.apply {
-            var count = 0
-            material.mat.forEach {
-                if (it.isNotEmpty())
-                    append("block.${id + count} = ${it.joinToString(" ")}\n")
-                count++
-            }
-        }
-    }
+    val builder = updatePropertiesMap(
+        "\n# Block entities added by Supplemental Patches\n\n",
+        "block",
+        BLOCK_ENTITIES_MAP,
+        blockProperties,
+        changedBlockProperties
+    )
 
-    blockPropertiesFile.writeText(text + builder)
+    blockPropertiesFile.writeText(
+        updateExistingMaterials("block", text, changedBlockProperties) + builder
+    )
 }
 
 const val VOXELISATION_INITIAL_ID = 100

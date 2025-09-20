@@ -139,7 +139,7 @@ fun _computeAllPivots(lst: List<Int>, depth: Int, variable: String, builder: Str
 // removing id
 fun removeId(id: String, string: String): String {
     val id = id.replace("minecraft:", "")
-    val newString = Regex("(minecraft:)?$id( |\\r\\n|\\n|\\r)").replace(string, "")
+    val newString = Regex("(minecraft:)?$id( |\\r\\n|\\n|\\r|$)").replace(string, "")
     return Regex("\\\\( |\\r\\n|\\n|\\r)\\\\( |\\r\\n|\\n|\\r)( |\\r\\n|\\n|\\r)").replace(newString, "")
 }
 
