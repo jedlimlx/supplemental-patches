@@ -8,11 +8,11 @@ import kotlin.io.path.*
 val SHADERS_DIRECTORY: Path = FabricLoader.getInstance().gameDir.resolve("shaderpacks")
 
 @OptIn(ExperimentalPathApi::class)
-fun installShader(): String {
+fun installShader(): String = catchAndPrintError {
     val installation = detectInstallation()
     if (installation == null) {
         LOGGER.warn("No Complementary Shaders + Euphoria Patches installation detected.")
-        return "No Complementary Shaders + Euphoria Patches installation detected."
+        return@catchAndPrintError "No Complementary Shaders + Euphoria Patches installation detected."
     }
 
     LOGGER.info("Detected shader installation at $installation.")
@@ -50,12 +50,12 @@ fun installShader(): String {
     modifyLayers(newInstallation)
     modifyGBuffers(newInstallation)
 
-    return "Shaders successfully installed at $newInstallation."
+    return@catchAndPrintError "Shaders successfully installed at $newInstallation."
 }
 
 fun detectInstallation(): Path? =
-    SHADERS_DIRECTORY.listDirectoryEntries().filter {
+    SHADERS_DIRECTORY.listDirectoryEntries().firstOrNull {
         it.isDirectory() && it.name.matches(
             Regex("Complementary(Unbound|Reimagined)_r(\\d+.?)+ \\+ EuphoriaPatches_(\\d+.?)+")
         )
-    }.firstOrNull()
+    }
