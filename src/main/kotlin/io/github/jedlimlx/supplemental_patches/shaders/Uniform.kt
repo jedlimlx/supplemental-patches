@@ -35,8 +35,10 @@ fun generateUniforms(directory: Path) {
             if (it.conditions.isNotEmpty()) {
                 append("$indent#if ${it.conditions.conditions()}\n")
                 append("${indent}uniform.${it.type}.${it.name} = ${it.code}\n")
-                append("$indent#else\n")
-                append("${indent}uniform.${it.type}.${it.name} = ${it.defaultValue}\n")
+                if (it.defaultValue != null) {
+                    append("$indent#else\n")
+                    append("${indent}uniform.${it.type}.${it.name} = ${it.defaultValue}\n")
+                }
                 append("$indent#endif\n")
             } else append("${indent}uniform.${it.type}.${it.name} = ${it.code}\n")
         }
