@@ -22,13 +22,13 @@ enum class SettingType(val string: String) {
     DIVIDER("divider");
 
     companion object {
-        fun fromString(string: String): SettingType {
+        fun fromString(string: String, file: String): SettingType {
             return when (string) {
                 "directory" -> DIRECTORY
                 "info" -> INFORMATION
                 "setting" -> SETTING
                 "divider" -> DIVIDER
-                else -> throw IllegalArgumentException("No setting type $string.")
+                else -> throw MinecraftError("\"$string\" is not a valid setting type. Valid types are [directory, info, setting, divider].", file)
             }
         }
     }

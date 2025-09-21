@@ -1,10 +1,8 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-import com.google.gson.JsonNull
-import com.google.gson.JsonObject
+import com.google.gson.*
 import io.github.jedlimlx.supplemental_patches.SupplementalPatches.LOGGER
+import io.github.jedlimlx.supplemental_patches.shaders.ShaderResourceLoader.getFileContents
 import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.resources.PreparableReloadListener.PreparationBarrier
@@ -15,13 +13,19 @@ import net.minecraft.util.profiling.ProfilerFiller
 import java.io.FileNotFoundException
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.Executor
-import kotlin.collections.flatten
-import kotlin.collections.forEach
 import kotlin.math.ceil
 import kotlin.math.log10
 
 
 val GSON: Gson = GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create()
+
+fun loadJson(location: ResourceLocation, manager: ResourceManager): JsonObject {
+    try {
+        return GsonHelper.fromJson(GSON, getFileContents(location, manager), JsonObject::class.java)
+    } catch (e: JsonParseException) {
+        throw MinecraftError(e.message ?: "Error parsing JSON file", location.toString())
+    }
+}
 
 object ShaderResourceLoader {
     val COLOURS_MAP: HashMap<String, Colour> = hashMapOf()
@@ -119,8 +123,8 @@ object ShaderResourceLoader {
         val lst = resourceManager.listResources("euphoria/colors") { it.path.endsWith(".json") }
 
         LOGGER.info("Loading ${lst.entries.size} colors...")
-        lst.forEach { (loc, _) ->
-            val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
+        lst.forEachWithErrorHandling { (loc, _) ->
+            val json = loadJson(loc, resourceManager)
             val colour = if ("index" in json.keySet()) Colour(index = json["index"].asInt, code = json["code"]?.asString ?: "")
             else Colour(code = json["code"].asString)
 
@@ -132,8 +136,8 @@ object ShaderResourceLoader {
         val tintLst = resourceManager.listResources("euphoria/tints") { it.path.endsWith(".json") }
 
         LOGGER.info("Loading ${tintLst.entries.size} tints...")
-        tintLst.forEach { (loc, _) ->
-            val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
+        tintLst.forEachWithErrorHandling { (loc, _) ->
+            val json = loadJson(loc, resourceManager)
             val colour = if ("index" in json.keySet()) Colour(index = json["index"].asInt, tint = true)
             else Colour(code = json["code"].asString, tint = true)
 
@@ -148,13 +152,13 @@ object ShaderResourceLoader {
         val lst2 = resourceManager.listResources("euphoria/waving/objects") { it.path.endsWith(".json") }
 
         LOGGER.info("Loading ${lst2.entries.size} waving objects...")
-        lst2.forEach { (loc, _) ->
-            val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
+        lst2.forEachWithErrorHandling { (loc, _) ->
+            val json = loadJson(loc, resourceManager)
             val key = loc.toString().replace("euphoria/waving/objects/", "").replace(".json", "")
             WAVING_MAP[key] = WavingObject(
                 code = map[
-                    json["glsl"].asString ?: throw IllegalArgumentException(".glsl file not specified.")
-                ] ?: throw FileNotFoundException("${json["glsl"]} not found!"),
+                    json["glsl"].asString ?: throw MinecraftError(".glsl file not specified.", loc.toString())
+                ] ?: throw MinecraftError("${json["glsl"]} not found!", loc.toString()),
                 conditions = json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
             )
         }
@@ -166,14 +170,14 @@ object ShaderResourceLoader {
         val lst3 = resourceManager.listResources("euphoria/deferred") { it.path.endsWith(".json") }
 
         LOGGER.info("Loading ${lst3.entries.size} deferred materials...")
-        lst3.forEach { (loc, _) ->
-            val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
+        lst3.forEachWithErrorHandling { (loc, _) ->
+            val json = loadJson(loc, resourceManager)
             val key = loc.toString().replace("euphoria/deferred/", "").replace(".json", "")
             DEFERRED_MAP[key] = DeferredMaterial(
                 name = json["name"].asString,
                 glsl = map2[
-                    json["glsl"].asString ?: throw IllegalArgumentException(".glsl file not specified.")
-                ] ?: throw FileNotFoundException("${json["glsl"]} not found!")
+                    json["glsl"].asString ?: throw MinecraftError(".glsl file not specified.", loc.toString())
+                ] ?: throw MinecraftError("${json["glsl"]} not found!", loc.toString())
             )
         }
 
@@ -230,7 +234,7 @@ object ShaderResourceLoader {
                 }
             }
 
-            resourceManager.listResources("euphoria") { it.path.endsWith(".properties.json") }.forEach { (loc, _) ->
+            resourceManager.listResources("euphoria") { it.path.endsWith(".properties.json") }.forEachWithErrorHandling { (loc, _) ->
                 if (loc.path.startsWith("euphoria/block")) {
                     val blockProperties = GsonHelper.fromJson(
                         GSON,
@@ -271,16 +275,16 @@ object ShaderResourceLoader {
                 val lst = resourceManager.listResources(type) { it.path.endsWith(".json") }
 
                 LOGGER.info("Loading ${lst.entries.size} unique $type materials...")
-                lst.forEach { (loc, _) ->
+                lst.forEachWithErrorHandling { (loc, _) ->
                     val tokens = loc.path.replace("$type/", "").split("/")
                     val path = tokens.subList(0, tokens.size - 1).joinToString("/")
-                    val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
+                    val json = loadJson(loc, resourceManager)
                     val builder = ShaderBuilder(
-                        name = json["name"].asString ?: throw IllegalArgumentException("Name of material not specified"),
+                        name = json["name"].asString ?: throw MinecraftError("Name of material not specified", loc.toString()),
                         glsl = it[
                             "$path${if (path.isEmpty()) "" else "/"}" +
-                                    (json["glsl"].asString ?: throw IllegalArgumentException(".glsl file not specified."))
-                        ] ?: throw FileNotFoundException("$path/${json["glsl"].asString} not found!"),
+                                    (json["glsl"].asString ?: throw MinecraftError(".glsl file not specified.", loc.toString()))
+                        ] ?: throw MinecraftError("$path/${json["glsl"].asString} not found!", loc.toString()),
                         blockSize = json["block_size"]?.asInt ?: 4
                     )
 
@@ -294,7 +298,7 @@ object ShaderResourceLoader {
                                     if (it != JsonNull.INSTANCE) {
                                         COLOURS_MAP[it.asString] ?:
                                         TINTS_MAP[it.asString] ?:
-                                        throw IllegalArgumentException("Color / tint $it does not exist!")
+                                        throw MinecraftError("Color / tint $it does not exist!", loc.toString())
                                     } else null
                                 },
                                 conditions = json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
@@ -303,7 +307,7 @@ object ShaderResourceLoader {
                             builder.lightColour(
                                 COLOURS_MAP[json["color"].asString] ?:
                                 TINTS_MAP[json["color"].asString] ?:
-                                throw IllegalArgumentException("Color / tint ${json["color"]} does not exist!"),
+                                throw MinecraftError("Color / tint ${json["color"]} does not exist!", loc.toString()),
                                 conditions = json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
                             )
                         }
@@ -315,7 +319,7 @@ object ShaderResourceLoader {
                     if (json["waving"] != null) {
                         builder.wavingObject(
                             WAVING_MAP[json["waving"].asString] ?:
-                            throw IllegalArgumentException("Waving object ${json["waving"]} does not exist!")
+                            throw MinecraftError("Waving object ${json["waving"]} does not exist!", loc.toString())
                         )
                     }
 
@@ -354,13 +358,13 @@ object ShaderResourceLoader {
                 val lst = resourceManager.listResources(type) { it.path.endsWith(".json") }
 
                 LOGGER.info("Loading ${lst.entries.size} specific materials...")
-                lst.forEach { (loc, _) ->
-                    val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
+                lst.forEachWithErrorHandling { (loc, _) ->
+                    val json = loadJson(loc, resourceManager)
                     SpecificMaterial(
                         path = json["path"].asString,
                         glsl = it[
-                            json["glsl"].asString ?: throw IllegalArgumentException(".glsl file not specified.")
-                        ] ?: throw FileNotFoundException("${json["glsl"]} not found!")
+                            json["glsl"].asString ?: throw MinecraftError(".glsl file not specified.", loc.toString())
+                        ] ?: throw MinecraftError("${json["glsl"]} not found!", loc.toString())
                     )
                 }
             }, executor
@@ -377,13 +381,15 @@ object ShaderResourceLoader {
                     return resourceManager.listResources("$type$path") {
                         it.path.endsWith(".json") &&
                                 it.path.split("$type$path/").last().count { it == '/' } == 0
-                    }.map { (loc, _) ->
-                        val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
-                        val settingType = SettingType.fromString(json["type"].asString)
+                    }.mapWithErrorHandling { (loc, _) ->
+                        val json = loadJson(loc, resourceManager)
+                        val settingType = SettingType.fromString(
+                            json["type"].asString, loc.toString()
+                        )
 
-                        val languages = json.keySet().filter { it.matches(Regex("[a-z][a-z]_[A-Z][A-Z]")) }.associate {
+                        val languages = json.keySet().filter { it.matches(Regex("[a-z][a-z]_[A-Z][A-Z]")) }.associateWith {
                             val temp = json[it].asJsonObject
-                            it to temp.keySet().associateWith { temp[it].asString }
+                            temp.keySet().associateWith { temp[it].asString }
                         }
                         when (settingType) {
                             SettingType.DIVIDER -> Settings(
@@ -392,12 +398,16 @@ object ShaderResourceLoader {
                                 dividers = json["dividers"]?.asInt ?: 2
                             )
                             SettingType.INFORMATION -> Settings(
-                                SettingType.INFORMATION, json["name"].asString, json["priority"]?.asInt ?: 0,
+                                SettingType.INFORMATION,
+                                json["name"].asString ?: throw MinecraftError("Setting name is not specified.", loc.toString()),
+                                json["priority"]?.asInt ?: 0,
                                 languages, listOf(), listOf()
                             )
                             SettingType.DIRECTORY -> {
                                 val output = Settings(
-                                    SettingType.DIRECTORY, json["name"].asString, json["priority"]?.asInt ?: 0,
+                                    SettingType.DIRECTORY,
+                                    json["name"].asString ?: throw MinecraftError("Setting name is not specified.", loc.toString()),
+                                    json["priority"]?.asInt ?: 0,
                                     languages, listOf(), listOf()
                                 )
                                 output.children.addAll(recurse("$path/${json["folder"].asString}"))
@@ -429,13 +439,13 @@ object ShaderResourceLoader {
                                             }
 
                                             lst
-                                        } else throw IllegalArgumentException("type is not known")
+                                        } else throw MinecraftError("${output["type"]} is not a valid type.", loc.toString())
                                     } else mutableListOf(it.asString)
                                 }.flatten()
 
                                 Settings(
                                     SettingType.SETTING,
-                                    json["name"].asString,
+                                    json["name"].asString ?: throw MinecraftError("Setting name is not specified.", loc.toString()),
                                     json["priority"]?.asInt ?: 0,
                                     languages,
                                     conditionsLst,
@@ -480,8 +490,8 @@ object ShaderResourceLoader {
         ).thenAcceptAsync(
             {
                 LOGGER.info("Loading ${it.size} uniforms...")
-                it.forEach { (loc, _) ->
-                    val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
+                it.forEachWithErrorHandling { (loc, _) ->
+                    val json = loadJson(loc, resourceManager)
                     UNIFORMS.add(
                         Uniform(
                             type = json["type"].asString,
@@ -510,20 +520,20 @@ object ShaderResourceLoader {
                 val lst = resourceManager.listResources(type) { it.path.endsWith(".json") }
 
                 LOGGER.info("Loading ${lst.entries.size} shader mixins...")
-                lst.forEach { (loc, _) ->
+                lst.forEachWithErrorHandling { (loc, _) ->
                     val tokens = loc.path.replace("$type/", "").split("/")
                     val path = tokens.subList(0, tokens.size - 1).joinToString("/")
-                    val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
+                    val json = loadJson(loc, resourceManager)
 
                     MIXINS.add(
                         ShaderMixin(
-                            path = json["file"].asString ?: throw IllegalArgumentException("Path of file to modify is not specified"),
-                            type = ShaderMixinType.fromString(json["type"].asString ?: throw IllegalArgumentException("Injection type is not specified")),
-                            key = json["key"].asString ?: throw IllegalArgumentException("Key to identify modification location is not specified"),
+                            path = json["file"].asString ?: throw MinecraftError("Path of file to modify is not specified", loc.toString()),
+                            type = ShaderMixinType.fromString(json["type"].asString ?: throw MinecraftError("Injection type is not specified", loc.toString())),
+                            key = json["key"].asString ?: throw MinecraftError("Key to identify modification location is not specified", loc.toString()),
                             code = it[
                                 "$path${if (path.isEmpty()) "" else "/"}" +
-                                    (json["code"].asString ?: throw IllegalArgumentException(".glsl file not specified."))
-                            ] ?: throw FileNotFoundException("$path/${json["code"].asString} not found!")
+                                    (json["code"].asString ?: throw MinecraftError(".glsl file not specified.", loc.toString()))
+                            ] ?: throw MinecraftError("$path/${json["code"].asString} not found!", loc.toString())
                         )
                     )
                 }
@@ -545,22 +555,22 @@ object ShaderResourceLoader {
                 val lst = resourceManager.listResources(type) { it.path.endsWith(".json") }
 
                 LOGGER.info("Loading ${lst.entries.size} volumetric atmospherics...")
-                lst.forEach { (loc, _) ->
+                lst.forEachWithErrorHandling { (loc, _) ->
                     val tokens = loc.path.replace("$type/", "").split("/")
                     val path = tokens.subList(0, tokens.size - 1).joinToString("/")
-                    val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
+                    val json = loadJson(loc, resourceManager)
 
                     ATMOSPHERICS.add(
                         Atmospherics(
-                            libPath = json["lib"].asJsonObject["name"].asString ?: throw IllegalArgumentException("Path to place library file is not specified"),
+                            libPath = json["lib"].asJsonObject["name"].asString ?: throw MinecraftError("Path to place library file is not specified", loc.toString()),
                             libCode = it[
                                 "$path${if (path.isEmpty()) "" else "/"}" +
-                                        (json["lib"].asJsonObject["glsl"].asString ?: throw IllegalArgumentException(".glsl file not specified."))
-                            ] ?: throw FileNotFoundException("$path/${json["lib"].asJsonObject["glsl"].asString} not found!"),
+                                        (json["lib"].asJsonObject["glsl"].asString ?: throw MinecraftError(".glsl file not specified.", loc.toString()))
+                            ] ?: throw MinecraftError("$path/${json["lib"].asJsonObject["glsl"].asString} not found!", loc.toString()),
                             mainCode = it[
                                 "$path${if (path.isEmpty()) "" else "/"}" +
-                                        (json["main"].asString ?: throw IllegalArgumentException(".glsl file not specified."))
-                            ] ?: throw FileNotFoundException("$path/${json["main"].asString} not found!"),
+                                        (json["main"].asString ?: throw MinecraftError(".glsl file not specified.", loc.toString()))
+                            ] ?: throw MinecraftError("$path/${json["main"].asString} not found!", loc.toString()),
                             conditions = json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
                         )
                     )
@@ -583,21 +593,21 @@ object ShaderResourceLoader {
                 val lst = resourceManager.listResources(type) { it.path.endsWith(".json") }
 
                 LOGGER.info("Loading ${lst.entries.size} skies...")
-                lst.forEach { (loc, _) ->
+                lst.forEachWithErrorHandling { (loc, _) ->
                     val tokens = loc.path.replace("$type/", "").split("/")
                     val path = tokens.subList(0, tokens.size - 1).joinToString("/")
-                    val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
+                    val json = loadJson(loc, resourceManager)
 
                     SKIES.add(
                         Sky(
-                            json["name"].asString ?: throw IllegalArgumentException("Name of main GLSL file is not specified"),
+                            json["name"].asString ?: throw MinecraftError("Name of main GLSL file is not specified", loc.toString()),
                             it[
                                 "$path${if (path.isEmpty()) "" else "/"}" +
-                                        (json["code"].asString ?: throw IllegalArgumentException(".glsl file not specified."))
-                            ] ?: throw FileNotFoundException("$path/${json["code"].asString} not found!"),
-                            json["dimension"].asString ?: throw IllegalArgumentException("Dimension in which sky should be rendered is not specified."),
-                            json["deferred"].asString ?: throw IllegalArgumentException("Code to be inserted into deferred1.glsl not specified."),
-                            json["reflection"].asString ?: throw IllegalArgumentException("Code to be inserted into reflectionImpl.glsl is not specified."),
+                                        (json["code"].asString ?: throw MinecraftError(".glsl file not specified.", loc.toString()))
+                            ] ?: throw MinecraftError("$path/${json["code"].asString} not found!", loc.toString()),
+                            json["dimension"].asString ?: throw MinecraftError("Dimension in which sky should be rendered is not specified.", loc.toString()),
+                            json["deferred"].asString ?: throw MinecraftError("Code to be inserted into deferred1.glsl not specified.", loc.toString()),
+                            json["reflection"].asString ?: throw MinecraftError("Code to be inserted into reflectionImpl.glsl is not specified.", loc.toString()),
                             json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
                         )
                     )
@@ -611,13 +621,13 @@ object ShaderResourceLoader {
     ): CompletableFuture<Void> {
         return CompletableFuture.supplyAsync (
             {
-                resourceManager.listResources(type) { it.path.endsWith(".json") }.forEach { (loc, _) ->
-                    val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
+                resourceManager.listResources(type) { it.path.endsWith(".json") }.forEachWithErrorHandling { (loc, _) ->
+                    val json = loadJson(loc, resourceManager)
                     SETTINGS_FILES.add(
                         SettingsFile(
-                            json["name"]?.asString ?: throw IllegalArgumentException("Name not specified."),
+                            json["name"]?.asString ?: throw MinecraftError("Name of setting file not specified.", loc.toString()),
                             json["files"]?.asJsonArray?.map { it.asString } ?:
-                            throw IllegalArgumentException("No shader files for settings to be placed in specified.")
+                            throw MinecraftError("No shader files for settings to be placed in specified.", loc.toString())
                         )
                     )
                 }
@@ -630,12 +640,12 @@ object ShaderResourceLoader {
     ): CompletableFuture<Void> {
         return CompletableFuture.supplyAsync (
             {
-                resourceManager.listResources(type) { it.path.endsWith(".json") }.forEach { (loc, _) ->
-                    val json = GsonHelper.fromJson(GSON, getFileContents(loc, resourceManager), JsonObject::class.java)
+                resourceManager.listResources(type) { it.path.endsWith(".json") }.forEachWithErrorHandling { (loc, _) ->
+                    val json = loadJson(loc, resourceManager)
                     TEXTURES.add(
                         Texture(
-                            json["texture"]?.asString ?: throw IllegalArgumentException("Path to texture file not specified."),
-                            json["name"]?.asString ?: throw IllegalArgumentException("Name of texture is not specified."),
+                            json["texture"]?.asString ?: throw MinecraftError("Path to texture file not specified.", loc.toString()),
+                            json["name"]?.asString ?: throw MinecraftError("Name of texture is not specified.", loc.toString()),
                             json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
                         )
                     )
