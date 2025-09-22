@@ -450,8 +450,7 @@ fun generateVoxelsAndBlocklight(directory: Path) {
                             if (material.heldLighting && idx % material.blockSize == 0) {
                                 // Removing from their existing item ids
                                 material.allIds().forEach {
-                                    val tokens = it.split(":")
-                                    text = text.replace("${tokens[0]}:${tokens[1]}", "")
+                                    text = removeId(it, text)
                                 }
 
                                 // Adding to new materials
@@ -485,8 +484,7 @@ fun generateVoxelsAndBlocklight(directory: Path) {
                             if (material.heldLighting && idx % material.blockSize == 0) {
                                 // Removing from their existing item ids
                                 material.allIds().forEach {
-                                    val tokens = it.split(":")
-                                    text = text.replace("${tokens[0]}:${tokens[1]}", "")
+                                    text = removeId(it, text)
                                 }
 
                                 // Adding to new materials
