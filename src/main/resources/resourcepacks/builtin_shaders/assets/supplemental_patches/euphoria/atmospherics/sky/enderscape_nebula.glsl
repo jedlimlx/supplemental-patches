@@ -58,7 +58,7 @@ vec2 fbm3d_2d(vec3 x) {
     vec2 v = vec2(0.0);
     float a = 1.0;
 
-    #ifdef ES_NEBULA_DISTORATION_QUALITY == 1
+    #if defined ES_NEBULA_DISTORATION_QUALITY && ES_NEBULA_DISTORATION_QUALITY == 1
         int octaves = 3;
     #elif ES_NEBULA_DISTORTION_QUALITY == 2
         int octaves = 5;
