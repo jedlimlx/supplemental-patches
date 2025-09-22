@@ -872,6 +872,11 @@ fun modifyGBuffers(directory: Path) {
                         "    flat in vec2 midCoord;"
             )
             .replace(
+                "flat out vec2 absMidCoordPos;",
+                "flat out vec2 absMidCoordPos;\n" +
+                        "    flat out vec2 midCoord;"
+            )
+            .replace(
                 "#include \"/lib/materials/materialHandling/blockEntityMaterials.glsl\"",
                 "#include \"/lib/materials/materialHandling/blockEntityMaterials.glsl\"\n" +
                 "\n" +
