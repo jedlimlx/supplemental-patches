@@ -7,7 +7,12 @@ import net.minecraft.network.chat.Component
 import kotlin.collections.ArrayList
 
 
-class MinecraftError(override val message: String, val fileName: String): RuntimeException(message) {
+// for errors by Iris and within the resource-pack
+class MinecraftError(
+    override val message: String,
+    val fileName: String?,
+    val errorType: String = "ERROR"
+): RuntimeException(message) {
     val index: Int
         get() {
             var count = 0
@@ -17,26 +22,28 @@ class MinecraftError(override val message: String, val fileName: String): Runtim
         }
 
     // formatting is as such
-    // [ERROR]: <message>
-    // --> Error found in <filename>, this file will not be loaded.
-    // --> Thrown by <method>(<kotlin file>:<line number>)
+    // [ERROR]: $message
+    // --> Error found in $filename, this file will not be loaded.
+    // --> Thrown by ${method}(${kotlin file}:${line number})
     fun sendInChat(): Boolean {
         SupplementalPatches.LOGGER.warn(stackTrace.toList())
 
         val player = Minecraft.getInstance().player
         if (player != null) {
             player.sendSystemMessage(
-                Component.literal("[ERROR]: $message")
+                Component.literal("[$errorType]: $message")
                     .withStyle(ChatFormatting.RED)
                     .withStyle(ChatFormatting.BOLD)
             )
-            player.sendSystemMessage(
-                Component.literal("")
-                    .withStyle(ChatFormatting.RED)
-                    .append(Component.literal("--> Error found in "))
-                    .append(Component.literal(fileName).withStyle(ChatFormatting.ITALIC))
-                    .append(Component.literal(", this file will not be loaded."))
-            )
+            if (fileName != null) {
+                player.sendSystemMessage(
+                    Component.literal("")
+                        .withStyle(ChatFormatting.RED)
+                        .append(Component.literal("--> Error found in "))
+                        .append(Component.literal(fileName).withStyle(ChatFormatting.ITALIC))
+                        .append(Component.literal(", this file will not be loaded."))
+                )
+            }
             player.sendSystemMessage(
                 Component.literal("")
                     .withStyle(ChatFormatting.RED)
@@ -58,7 +65,7 @@ class MinecraftError(override val message: String, val fileName: String): Runtim
     fun log() {
         SupplementalPatches.LOGGER.warn(
             "[ERROR] $message\n" +
-            "--> Error found in $fileName, this file will not be loaded.\n" +
+            if (fileName != null) "--> Error found in $fileName, this file will not be loaded.\n" else "" +
             "--> Thrown by ${stackTrace[index].methodName}(${stackTrace[index].fileName ?: "Unknown"}:${stackTrace[index].lineNumber})"
         )
     }
@@ -84,4 +91,58 @@ inline fun <K, V, R> Map<out K, V>.mapWithErrorHandling(crossinline transform: (
     val lst = ArrayList<R>(size)
     forEachWithErrorHandling { lst.add(transform(it)) }
     return lst
+}
+
+
+// for OpenGL debugging errors
+// [$type]: $message
+// --> Source: $source
+// --> Severity: $severity
+// --> Debug message by OpenGL
+data class ShaderError(
+    val source: String?,
+    val type: String?,
+    val severity: String?,
+    val message: String,
+    val origin: String
+) {
+    fun sendInChat() {
+        val message = message.split("\n").last { it.isNotEmpty() }
+
+        val player = Minecraft.getInstance().player
+        if (player != null) {
+            player.sendSystemMessage(
+                Component.literal("** caused by **")
+            )
+            player.sendSystemMessage(
+                Component.literal("[$type]: $message")
+                    .withStyle(ChatFormatting.RED)
+                    .withStyle(ChatFormatting.BOLD)
+            )
+            player.sendSystemMessage(
+                Component.literal("")
+                    .withStyle(ChatFormatting.RED)
+                    .append(Component.literal("--> Source: $source"))
+            )
+            player.sendSystemMessage(
+                Component.literal("")
+                    .withStyle(ChatFormatting.RED)
+                    .append(Component.literal("--> Severity: $severity"))
+            )
+            player.sendSystemMessage(
+                Component.literal("")
+                    .withStyle(ChatFormatting.RED)
+                    .append(Component.literal("--> Debug message by $origin"))
+            )
+        }
+    }
+
+    companion object {
+        @JvmField
+        val shaderErrors = arrayListOf<ShaderError>()
+    }
+}
+
+fun sendShaderErrorInChat(source: String?, type: String?, severity: String?, message: String, origin: String) {
+    ShaderError.shaderErrors.add(ShaderError(source, type, severity, message, origin))
 }

@@ -7,14 +7,17 @@
   "plugin": "io.github.jedlimlx.supplemental_patches.mixins.SupplementalPatchesMixinPlugin",
   "client": [
     "IrisDefinesMixin",
+    "IrisExceptionHandlerMixin",
+    "GLDebugMixin",
     "BiomeUniformsMixin",
-    "TextureAtlasMixin",
+    "SonarWaveRendererMixin",
+    "EERenderTypesMixin",
+    "ORenderTypesMixin",
     "biomes.AtmosphericMixin",
     "biomes.AutumnityMixin",
     "biomes.BiomesOPlentyMixin",
     "biomes.BWGBiomesMixin",
     "biomes.EndergeticMixin",
-    "biomes.EnderscapeBiomesMixin",
     "biomes.EnvironmentalMixin",
     "biomes.GalosphereMixin",
     "biomes.JNEMixin",
@@ -22,10 +25,10 @@
     "biomes.SpawnMixin",
     "biomes.WetlandWhimsyMixin",
     "biomes.YungsCaveBiomesMixin",
-    "uniforms.HauntUniforms",
-    "uniforms.YUNGSandstormUniforms",
-    "uniforms.ScorchfulSandstormUniforms",
-    "uniforms.EnderscapeAtmosphereUniforms"
+    "uniforms.DoomAndGloomUniforms",
+    "uniforms.OreganizedUniforms",
+    "uniforms.JNEUniforms",
+    "uniforms.YUNGSandstormUniforms"
   ],
   "injectors": {
     "defaultRequire": 1
