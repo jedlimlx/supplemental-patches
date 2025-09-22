@@ -7,6 +7,8 @@
   "plugin": "io.github.jedlimlx.supplemental_patches.mixins.SupplementalPatchesMixinPlugin",
   "client": [
     "IrisDefinesMixin",
+    "IrisExceptionHandlerMixin",
+    "GLDebugMixin",
     "BiomeUniformsMixin",
     "TextureAtlasMixin",
     "biomes.AtmosphericMixin",
