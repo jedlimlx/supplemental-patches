@@ -1,0 +1,8 @@
+{
+    "name": "spectralibur",
+    "glsl": "spectralibur.glsl",
+    "mat0": [
+        "species:spectralibur",
+        "species:speclight"
+    ]
+}

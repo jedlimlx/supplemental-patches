@@ -1,6 +1,5 @@
 package io.github.jedlimlx.supplemental_patches.mixins;
 
-import com.mojang.blaze3d.platform.GlDebug;
 import io.github.jedlimlx.supplemental_patches.shaders.ErrorHandlingKt;
 import net.irisshaders.iris.gl.GLDebug;
 import org.lwjgl.opengl.GLDebugMessageCallback;

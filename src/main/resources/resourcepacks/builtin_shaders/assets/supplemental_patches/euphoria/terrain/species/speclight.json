@@ -1,0 +1,22 @@
+{
+    "name": "speclight",
+    "glsl": "speclight.glsl",
+    "mat0": [
+        "species:speclight:powered=true"
+    ],
+    "mat1": [
+        "species:speclight:powered=false"
+    ],
+    "mat2": [
+      "species:chaindelier"
+    ],
+    "color": [
+      "supplemental_patches:species/speclight",
+      null,
+      "supplemental_patches:species/chaindelier",
+      null
+    ],
+    "conditions": [
+        "SPECLIGHT_ACL"
+    ]
+}

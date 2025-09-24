@@ -1,0 +1,8 @@
+{
+    "name": "quake",
+    "glsl": "quake.glsl",
+    "mat0": [
+        "species:quake",
+        "species:deflector_dummy"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "name": "ricoshield",
+    "glsl": "ricoshield.glsl",
+    "mat0": [
+        "species:quake"
+    ]
+}
