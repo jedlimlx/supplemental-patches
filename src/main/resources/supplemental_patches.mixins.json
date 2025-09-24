@@ -10,9 +10,6 @@
     "IrisExceptionHandlerMixin",
     "GLDebugMixin",
     "BiomeUniformsMixin",
-    "SonarWaveRendererMixin",
-    "EERenderTypesMixin",
-    "ORenderTypesMixin",
     "biomes.AtmosphericMixin",
     "biomes.AutumnityMixin",
     "biomes.BiomesOPlentyMixin",
@@ -25,9 +22,6 @@
     "biomes.SpawnMixin",
     "biomes.WetlandWhimsyMixin",
     "biomes.YungsCaveBiomesMixin",
-    "uniforms.DoomAndGloomUniforms",
-    "uniforms.OreganizedUniforms",
-    "uniforms.JNEUniforms",
     "uniforms.YUNGSandstormUniforms"
   ],
   "injectors": {
