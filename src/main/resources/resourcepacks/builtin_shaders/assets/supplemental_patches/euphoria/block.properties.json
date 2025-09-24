@@ -19,6 +19,10 @@
     "biomeswevegone:cyan_pitcher_plant:half=(.*?)",
     "biomeswevegone:magenta_pitcher_plant:half=(.*?)"
   ],
+  "layer.solid": [
+    "species:speclight",
+    "species:chaindelier"
+  ],
   "layer.translucent": [
     "atmospheric:arid_glass",
     "atmospheric:arid_glass_pane"
