@@ -1,0 +1,1 @@
+vec3 speclightColor = vec3(SPECLIGHT_R, SPECLIGHT_G, SPECLIGHT_B) / 255;
