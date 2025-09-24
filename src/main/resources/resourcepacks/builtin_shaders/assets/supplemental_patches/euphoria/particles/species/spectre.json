@@ -1,0 +1,14 @@
+{
+    "name": "spectre",
+    "glsl": "spectre.glsl",
+    "mat0": [
+        "species:collected_soul",
+        "species:spectralibur",
+        "species:spectralibur_release",
+        "species:spectralibur_pop",
+        "species:spectralibur_smoke1",
+        "species:spectralibur_smoke2",
+        "species:spectralibur_smoke3",
+        "species:spectralibur_smoke4"
+    ]
+}

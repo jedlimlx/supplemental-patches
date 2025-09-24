@@ -1,0 +1,8 @@
+{
+  "type": "directory",
+  "name": "SPECIES",
+  "folder": "species",
+  "en_US": {
+    "screen": "Species"
+  }
+}

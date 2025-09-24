@@ -1,0 +1,11 @@
+{
+  "type": "setting",
+  "name": "SPECLIGHT_ACL",
+  "default": true,
+  "file": "materials.glsl",
+  "activation": true,
+  "en_US": {
+    "option": "Speclight ACL",
+    "comment": "Determines if the Speclight uses ACL lighting. Euphoria Coloured Lighting is recommended for speclights of colours other than the default."
+  }
+}
