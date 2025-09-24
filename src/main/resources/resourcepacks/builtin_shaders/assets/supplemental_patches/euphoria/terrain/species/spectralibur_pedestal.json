@@ -1,0 +1,8 @@
+{
+    "name": "spectralibur_pedestal",
+    "glsl": "spectralibur_pedestal.glsl",
+    "mat0": [
+        "species:spectralibur_pedestal"
+    ],
+    "color": "supplemental_patches:species/speclight"
+}
