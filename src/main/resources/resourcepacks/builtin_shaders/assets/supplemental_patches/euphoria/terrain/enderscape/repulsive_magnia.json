@@ -6,10 +6,15 @@
     "enderscape:etched_repulsive_magnia"
   ],
   "mat1": [
-    "enderscape:repulsive_magnia_sprout:powered=false"
+    "enderscape:repulsive_magnia_sprout:powered=false",
+    "enderscape:etched_repulsive_magnia_stairs",
+    "enderscape:etched_repulsive_magnia_slab",
+    "enderscape:etched_repulsive_magnia_wall"
   ],
   "mat2": [
-    "enderscape:repulsive_magnia_sprout:powered=true"
+    "enderscape:repulsive_magnia_sprout:powered=true",
+    "enderscape:blistering_magnia:polarity=repulsive",
+    "enderscape:polarized_magnia:polarity=repulsive"
   ],
   "color": [
     null,
