@@ -10,6 +10,7 @@
     "IrisExceptionHandlerMixin",
     "GLDebugMixin",
     "BiomeUniformsMixin",
+    "TextureAtlasMixin",
     "biomes.AtmosphericMixin",
     "biomes.AutumnityMixin",
     "biomes.BiomesOPlentyMixin",
@@ -22,7 +23,10 @@
     "biomes.SpawnMixin",
     "biomes.WetlandWhimsyMixin",
     "biomes.YungsCaveBiomesMixin",
-    "uniforms.YUNGSandstormUniforms"
+    "uniforms.HauntUniforms",
+    "uniforms.YUNGSandstormUniforms",
+    "uniforms.ScorchfulSandstormUniforms",
+    "uniforms.EnderscapeAtmosphereUniforms"
   ],
   "injectors": {
     "defaultRequire": 1
