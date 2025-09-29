@@ -1,0 +1,7 @@
+{
+    "name": "heart_beet",
+    "glsl": "heart_beet.glsl",
+    "mat0": [
+        "beeten:heart_beet"
+    ]
+}
