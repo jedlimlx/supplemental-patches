@@ -1,0 +1,8 @@
+{
+  "name": "heart_beet_crate",
+  "glsl": "heart_beet_crate.glsl",
+  "mat0": [
+    "beeten:heart_beet_crate"
+  ],
+  "color": "supplemental_patches:beeten/heart_of_beetroot"
+}
