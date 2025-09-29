@@ -1,0 +1,12 @@
+{
+  "name": "obsidian_diamond_ore",
+  "glsl": "obsidian_diamond_ore.glsl",
+  "mat0": [
+    "ditr:obsidian_diamond_ore"
+  ],
+  "color": "minecraft:diamond_ore",
+  "conditions": [
+    "DO_IPBR_LIGHTS",
+    "GLOWING_ORE_DIAMOND"
+  ]
+}
