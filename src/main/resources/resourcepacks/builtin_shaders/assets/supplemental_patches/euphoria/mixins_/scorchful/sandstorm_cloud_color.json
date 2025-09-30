@@ -1,5 +1,5 @@
 {
-  "file": "/shaders/lib/colors/skyColors.glsl",
+  "file": "/shaders/lib/atmospherics/sky.glsl",
   "type": "replace",
   "key": "mix(nightMiddleSkyColor, dayMiddleSkyColor, sunFactor)",
   "code": "sandstorm_cloud_color.glsl"

@@ -8,5 +8,11 @@
     "twigs:rhyolite_stairs",
     "twigs:rhyolite_slab",
     "twigs:rhyolite_wall"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

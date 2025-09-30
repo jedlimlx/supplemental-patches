@@ -5,5 +5,6 @@
     "upgrade_aquatic:tooth_lantern"
   ],
   "color": "supplemental_patches:upgrade_aquatic/tooth_lantern",
-  "held_lighting": true
+  "held_lighting": true,
+  "reflection_handlers": "minecraft:discard"
 }

@@ -29,5 +29,11 @@
     "wetland_whimsy:bald_cypress_button:powered=true",
     "wetland_whimsy:bald_cypress_pressure_plate:powered=true",
     "wetland_whimsy:bald_cypress_trapdoor:powered=true"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

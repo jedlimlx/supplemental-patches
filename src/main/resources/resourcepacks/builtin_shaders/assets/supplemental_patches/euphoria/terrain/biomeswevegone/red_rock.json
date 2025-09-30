@@ -8,5 +8,11 @@
     "biomeswevegone:red_rock_slab",
     "biomeswevegone:red_rock_stairs",
     "biomeswevegone:red_rock_wall"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

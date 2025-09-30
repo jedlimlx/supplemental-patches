@@ -4,5 +4,6 @@
   "mat0": [
     "ends_delight:chorus_succulent"
   ],
-  "color": "minecraft:chorus_flower"
+  "color": "minecraft:chorus_flower",
+  "reflection_handlers": "minecraft:discard"
 }

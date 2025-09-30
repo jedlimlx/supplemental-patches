@@ -21,5 +21,6 @@
   ],
   "color": [
     "supplemental_patches:supplementaries/lumisene_fire"
-  ]
+  ],
+  "reflection_handlers": "minecraft:fire"
 }

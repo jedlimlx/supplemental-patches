@@ -24,5 +24,11 @@
     null,
     "supplemental_patches:enderscape/alluring_magnia_sprout",
     null
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

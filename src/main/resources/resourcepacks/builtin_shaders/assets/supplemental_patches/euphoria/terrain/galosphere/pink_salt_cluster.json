@@ -7,5 +7,6 @@
   "color": "supplemental_patches:galosphere/pink_salt",
   "conditions": [
     "GLOWING_PINK_SALT"
-  ]
+  ],
+  "reflection_handlers": "minecraft:discard"
 }

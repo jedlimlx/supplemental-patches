@@ -9,5 +9,11 @@
     "quark:jasper_slab",
     "quark:jasper_wall",
     "quark:jasper_vertical_slab"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

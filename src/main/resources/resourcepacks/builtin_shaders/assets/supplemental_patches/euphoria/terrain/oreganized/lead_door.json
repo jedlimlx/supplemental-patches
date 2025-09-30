@@ -21,5 +21,11 @@
     null,
     "supplemental_patches:oreganized/molten_lead",
     null
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

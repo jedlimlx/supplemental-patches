@@ -18,5 +18,11 @@
     null,
     "minecraft:crying_obsidian",
     null
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

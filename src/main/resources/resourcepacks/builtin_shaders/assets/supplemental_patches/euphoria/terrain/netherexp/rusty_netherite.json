@@ -11,5 +11,11 @@
     "netherexp:rusty_cut_netherite_stairs",
     "netherexp:rusty_netherite_grate:fluidlogged=air",
     "netherexp:rusty_netherite_grate:fluidlogged=water"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:non_solid",
+    null,
+    null
   ]
 }

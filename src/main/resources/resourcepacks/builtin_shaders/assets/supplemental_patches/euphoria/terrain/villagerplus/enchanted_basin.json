@@ -16,5 +16,6 @@
     null,
     "supplemental_patches:experience",
     null
-  ]
+  ],
+  "reflection_handlers": "minecraft:discard"
 }

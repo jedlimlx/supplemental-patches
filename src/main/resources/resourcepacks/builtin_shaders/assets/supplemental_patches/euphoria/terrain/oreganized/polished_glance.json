@@ -12,5 +12,11 @@
     "oreganized:glance_brick_slab",
     "oreganized:glance_brick_stairs",
     "oreganized:glance_brick_wall"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

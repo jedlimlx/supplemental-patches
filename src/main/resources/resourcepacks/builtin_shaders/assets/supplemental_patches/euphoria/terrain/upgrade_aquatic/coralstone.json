@@ -99,5 +99,11 @@
     "upgrade_aquatic:rock_coralstone_wall",
     "upgrade_aquatic:silk_coralstone_wall",
     "upgrade_aquatic:tube_coralstone_wall"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

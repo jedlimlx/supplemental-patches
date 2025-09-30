@@ -9,5 +9,6 @@
   "conditions": [
     "DO_IPBR_LIGHTS",
     "!(defined NOT_GLOWING_CHORUS_FLOWER)"
-  ]
+  ],
+  "reflection_handlers": "minecraft:discard"
 }

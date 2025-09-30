@@ -34,5 +34,11 @@
     "gipples_galore:sweet_jelly:halved=true",
     "gipples_galore:symphonic_jelly:halved=true",
     "gipples_galore:warp_jelly:halved=true"
+  ],
+  "reflection_handler": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

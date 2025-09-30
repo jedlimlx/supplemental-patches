@@ -4,7 +4,6 @@
   "mat0": [
     "quark:polished_shale",
     "quark:shale_bricks",
-    "supplemental_patches:shale_tiles",
     "quark:chiseled_shale_bricks"
   ],
   "mat1": [
@@ -15,10 +14,12 @@
     "quark:shale_bricks_stairs",
     "quark:shale_bricks_slab",
     "quark:shale_bricks_wall",
-    "quark:shale_bricks_vertical_slab",
-    "supplemental_patches:shale_tile_stairs",
-    "supplemental_patches:shale_tile_slab",
-    "supplemental_patches:shale_tile_wall",
-    "supplemental_patches:shale_column"
+    "quark:shale_bricks_vertical_slab"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

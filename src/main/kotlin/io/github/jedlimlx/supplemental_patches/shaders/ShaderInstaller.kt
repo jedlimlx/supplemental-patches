@@ -38,6 +38,7 @@ fun installShader(): String = catchAndPrintError {
     generateBlockEntityMaterials(newInstallation)
     generateVoxelsAndBlocklight(newInstallation)
     generateWavingCode(newInstallation)
+    generateReflectionHanders(newInstallation)
     generateParticleCode(newInstallation)
     generateUniforms(newInstallation)
     generateFog(newInstallation)

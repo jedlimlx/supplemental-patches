@@ -4,5 +4,6 @@
   "mat0": [
     "cinderscapes:crystinium"
   ],
-  "waving": "minecraft:grounded_waving_foliage"
+  "waving": "minecraft:grounded_waving_foliage",
+  "reflection_handler": "minecraft:discard"
 }

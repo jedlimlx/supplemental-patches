@@ -6,5 +6,6 @@
     "cinderscapes:twilight_tendrils"
   ],
   "color": "supplemental_patches:cinderscapes/luminous_pod",
-  "waving": "minecraft:grounded_waving_foliage"
+  "waving": "minecraft:grounded_waving_foliage",
+  "reflection_handler": "minecraft:discard"
 }
