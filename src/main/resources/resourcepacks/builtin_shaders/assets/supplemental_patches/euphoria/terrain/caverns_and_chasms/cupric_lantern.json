@@ -5,5 +5,6 @@
     "caverns_and_chasms:cupric_lantern"
   ],
   "color": "supplemental_patches:caverns_and_chasms/cupric_fire",
-  "held_lighting": true
+  "held_lighting": true,
+  "reflection_handler": "minecraft:discard"
 }

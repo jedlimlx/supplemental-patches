@@ -10,5 +10,6 @@
   "conditions": [
     "DO_IPBR_LIGHTS",
     "GLOWING_CELESTIAL_GROWTHS"
-  ]
+  ],
+  "reflection_handlers": "minecraft:discard"
 }

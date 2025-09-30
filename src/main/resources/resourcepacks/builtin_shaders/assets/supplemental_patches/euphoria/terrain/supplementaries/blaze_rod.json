@@ -6,5 +6,6 @@
   ],
   "color": [
     "minecraft:brewing_stand"
-  ]
+  ],
+  "reflection_handlers": "minecraft:discard"
 }

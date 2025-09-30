@@ -6,7 +6,7 @@
   "values": [
     0, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80
   ],
-  "file": "composite.glsl",
+  "file": "composite1.glsl",
   "en_US": {
     "option": "Sandstorm Lower Altitude",
     "comment": "Determines the lower starting point of the volumetric sandstorm. The fog won't appear below this altitude, and it will look the most bright right above this altitude.\n"

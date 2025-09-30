@@ -8,5 +8,11 @@
     "twigs:bloodstone_stairs",
     "twigs:bloodstone_slab",
     "twigs:bloodstone_wall"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

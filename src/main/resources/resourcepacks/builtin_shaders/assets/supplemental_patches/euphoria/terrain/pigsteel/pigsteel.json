@@ -52,5 +52,11 @@
     "pigsteel:waxed_infected_cut_pigsteel_stairs",
     "pigsteel:waxed_corrupted_cut_pigsteel_stairs",
     "pigsteel:waxed_zombified_cut_pigsteel_stairs"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

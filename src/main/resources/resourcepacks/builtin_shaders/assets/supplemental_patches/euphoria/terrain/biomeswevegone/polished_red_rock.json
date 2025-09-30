@@ -24,5 +24,11 @@
     "biomeswevegone:chiseled_red_rock_brick_stairs",
     "biomeswevegone:chiseled_red_rock_brick_slab",
     "biomeswevegone:chiseled_red_rock_brick_wall"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

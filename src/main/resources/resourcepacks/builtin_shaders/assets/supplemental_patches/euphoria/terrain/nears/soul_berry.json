@@ -15,5 +15,6 @@
     "supplemental_patches:nears/soul_berry_bush",
     null
   ],
-  "waving": "minecraft:grounded_waving_foliage"
+  "waving": "minecraft:grounded_waving_foliage",
+  "reflection_handlers": "minecraft:discard"
 }

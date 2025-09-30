@@ -5,38 +5,30 @@
     "twigs:polished_schist",
     "twigs:polished_schist_bricks",
     "twigs:cracked_polished_schist_bricks",
-    "adjustments:chiseled_polished_schist",
-    "adjustments:polished_schist_tiles",
     "quark:polished_limestone",
     "quark:limestone_bricks",
-    "adjustments:limestone_tiles",
     "quark:chiseled_limestone_bricks"
   ],
   "mat1": [
     "twigs:polished_schist_slab",
     "twigs:polished_schist_brick_slab",
-    "adjustments:cracked_polished_schist_brick_slab",
-    "adjustments:polished_schist_tile_slab",
     "quark:polished_limestone_slab",
     "quark:limestone_bricks_slab",
-    "adjustments:limestone_tile_slab",
     "twigs:polished_schist_stairs",
     "twigs:polished_schist_brick_stairs",
-    "adjustments:cracked_polished_schist_brick_stairs",
-    "adjustments:polished_schist_tile_stairs",
     "quark:polished_limestone_stairs",
     "quark:limestone_bricks_stairs",
-    "adjustments:limestone_tile_stairs",
     "twigs:polished_schist_wall",
     "twigs:polished_schist_brick_wall",
-    "adjustments:cracked_polished_schist_brick_wall",
-    "adjustments:polished_schist_tile_wall",
     "quark:polished_limestone_wall",
     "quark:limestone_bricks_wall",
-    "adjustments:limestone_tile_wall",
     "quark:polished_limestone_vertical_slab",
-    "quark:limestone_bricks_vertical_slab",
-    "adjustments:schist_column",
-    "adjustments:limestone_column"
+    "quark:limestone_bricks_vertical_slab"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

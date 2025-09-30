@@ -13,5 +13,11 @@
     "biomesoplenty:cut_black_sandstone_slab",
     "biomesoplenty:cut_black_sandstone_stairs",
     "biomesoplenty:cut_black_sandstone_wall"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

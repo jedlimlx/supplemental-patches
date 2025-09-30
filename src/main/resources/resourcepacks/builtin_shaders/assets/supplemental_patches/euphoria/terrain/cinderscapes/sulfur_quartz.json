@@ -11,5 +11,11 @@
     "cinderscapes:sulfur_quartz_slab",
     "cinderscapes:sulfur_quartz_stairs",
     "cinderscapes:polypite_sulfur_quartz"
+  ],
+  "reflection_handler": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

@@ -3,5 +3,6 @@
   "glsl": "cerebrage_skull.glsl",
   "mat0": [
     "netherexp:cerebrage_skull"
-  ]
+  ],
+  "reflection_handlers": "minecraft:discard"
 }

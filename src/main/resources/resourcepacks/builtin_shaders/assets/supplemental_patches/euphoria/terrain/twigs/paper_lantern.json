@@ -12,5 +12,6 @@
     "quark:paper_lantern",
     "quark:paper_lantern_sakura"
   ],
-  "color": "minecraft:lantern"
+  "color": "minecraft:lantern",
+  "reflection_handlers": "minecraft:discard"
 }

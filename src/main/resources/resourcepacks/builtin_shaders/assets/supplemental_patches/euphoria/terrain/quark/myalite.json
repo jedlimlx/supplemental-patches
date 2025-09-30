@@ -25,5 +25,11 @@
     "supplemental_patches:myalite_tile_slab",
     "supplemental_patches:myalite_tile_wall",
     "supplemental_patches:myalite_column"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

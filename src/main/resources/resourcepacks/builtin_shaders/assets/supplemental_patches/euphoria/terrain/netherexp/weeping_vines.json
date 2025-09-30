@@ -11,5 +11,6 @@
   "waving": "minecraft:waving_nether_vines",
   "conditions": [
     "DO_IPBR_LIGHTS"
-  ]
+  ],
+  "reflection_handlers": "minecraft:discard"
 }

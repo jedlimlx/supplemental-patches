@@ -34,5 +34,11 @@
     null,
     "minecraft:magma_block",
     null
+  ],
+  "reflection_handler": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

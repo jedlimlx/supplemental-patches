@@ -12,5 +12,6 @@
     null,
     "minecraft:glow_lichen",
     null
-  ]
+  ],
+  "reflection_handlers": "minecraft:discard"
 }

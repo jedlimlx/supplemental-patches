@@ -14,5 +14,11 @@
   "mat3": [
     "snowyspirit:gingerbread_trapdoor:powered=true",
     "snowyspirit:gingerbread_door:powered=true"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

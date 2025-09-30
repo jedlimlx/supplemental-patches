@@ -4,5 +4,6 @@
   "mat0": [
     "biomesoplenty:potted_burning_blossom"
   ],
-  "color": "minecraft:magma_block"
+  "color": "minecraft:magma_block",
+  "reflection_handlers": "minecraft:discard"
 }

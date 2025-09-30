@@ -23,5 +23,11 @@
     "netherexp:claret_button:powered=true",
     "netherexp:claret_pressure_plate:powered=true",
     "netherexp:claret_trapdoor:powered=true"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:non_solid",
+    null,
+    null
   ]
 }

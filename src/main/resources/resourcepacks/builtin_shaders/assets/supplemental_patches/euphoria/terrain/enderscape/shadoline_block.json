@@ -13,5 +13,11 @@
     "enderscape:cut_shadoline_block_slab",
     "enderscape:cut_shadoline_block_stairs",
     "enderscape:cut_shadoline_block_wall"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

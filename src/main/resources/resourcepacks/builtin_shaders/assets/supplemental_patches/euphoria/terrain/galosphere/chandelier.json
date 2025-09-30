@@ -5,5 +5,6 @@
     "galosphere:chandelier"
   ],
   "color": "supplemental_patches:galosphere/spectre",
-  "held_lighting": true
+  "held_lighting": true,
+  "reflection_handlers": "minecraft:discard"
 }

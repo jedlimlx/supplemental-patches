@@ -12,5 +12,6 @@
     null,
     "minecraft:redstone_torch",
     null
-  ]
+  ],
+  "reflection_handler": "minecraft:discard"
 }

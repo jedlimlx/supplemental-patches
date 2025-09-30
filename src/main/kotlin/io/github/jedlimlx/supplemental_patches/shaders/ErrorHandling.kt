@@ -5,6 +5,7 @@ import net.minecraft.ChatFormatting
 import net.minecraft.client.Minecraft
 import net.minecraft.network.chat.Component
 import kotlin.collections.ArrayList
+import kotlin.collections.iterator
 
 
 // for errors by Iris and within the resource-pack
@@ -87,12 +88,19 @@ inline fun <K, V> Map<out K, V>.forEachWithErrorHandling(crossinline action: (Ma
     }
 }
 
+inline fun <T> Iterable<T>.forEachWithErrorHandling(crossinline action: (T) -> Unit): Unit {
+    for (element in this) {
+        withErrorHandling {
+            action(element)
+        }
+    }
+}
+
 inline fun <K, V, R> Map<out K, V>.mapWithErrorHandling(crossinline transform: (Map.Entry<K, V>) -> R): List<R> {
     val lst = ArrayList<R>(size)
     forEachWithErrorHandling { lst.add(transform(it)) }
     return lst
 }
-
 
 // for OpenGL debugging errors
 // [$type]: $message

@@ -11,5 +11,6 @@
     "pigsteel:waxed_corrupted_pigsteel_lantern",
     "pigsteel:waxed_zombified_pigsteel_lantern"
   ],
-  "color": "minecraft:lantern"
+  "color": "minecraft:lantern",
+  "reflection_handlers": "minecraft:discard"
 }

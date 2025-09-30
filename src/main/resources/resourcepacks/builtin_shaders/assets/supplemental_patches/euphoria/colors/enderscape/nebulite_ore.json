@@ -1,3 +1,3 @@
 {
-  "code": "vec4(vec3(0.75, 0.15, 1.0) * 0.9, 0.1 * ACL_ORE_INTENSITY)"
+  "code": "vec4(vec3(0.75, 0.15, 1.0) * 0.9, 0.1 * ACT_ORE_INTENSITY) * GLOWING_ORE_MULT"
 }
