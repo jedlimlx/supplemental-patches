@@ -14,5 +14,11 @@
     "quark:limestone_slab",
     "quark:limestone_wall",
     "quark:limestone_vertical_slab"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

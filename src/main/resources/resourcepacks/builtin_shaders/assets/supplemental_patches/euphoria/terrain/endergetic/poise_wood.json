@@ -29,5 +29,11 @@
     "endergetic:poise_button:powered=true",
     "endergetic:poise_pressure_plate:powered=true",
     "endergetic:poise_trapdoor:powered=true"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

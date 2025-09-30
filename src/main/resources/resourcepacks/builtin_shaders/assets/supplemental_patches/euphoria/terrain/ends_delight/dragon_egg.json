@@ -8,5 +8,6 @@
   "color": "minecraft:dragon_egg",
   "conditions": [
     "EMISSIVE_DRAGON_EGG"
-  ]
+  ],
+  "reflection_handlers": "minecraft:discard"
 }

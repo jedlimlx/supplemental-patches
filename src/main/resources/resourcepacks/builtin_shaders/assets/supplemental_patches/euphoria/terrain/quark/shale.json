@@ -9,5 +9,11 @@
     "quark:shale_slab",
     "quark:shale_wall",
     "quark:shale_vertical_slab"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

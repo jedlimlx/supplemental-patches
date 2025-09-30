@@ -29,5 +29,11 @@
     "caverns_and_chasms:azalea_button:powered=true",
     "caverns_and_chasms:azalea_pressure_plate:powered=true",
     "caverns_and_chasms:azalea_trapdoor:powered=true"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

@@ -8,5 +8,6 @@
     "netherexp:soul_swirls:cooldown=true"
   ],
   "color": "supplemental_patches:netherexp/soul_glow",
-  "waving": "minecraft:grounded_waving_foliage"
+  "waving": "minecraft:grounded_waving_foliage",
+  "reflection_handlers": "minecraft:discard"
 }

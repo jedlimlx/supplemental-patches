@@ -7,5 +7,6 @@
   "mat1": [
     "netherexp:soul_candle:lit=false"
   ],
-  "color": "supplemental_patches:buzzier_bees/soul_candle"
+  "color": "supplemental_patches:buzzier_bees/soul_candle",
+  "reflection_handlers": "minecraft:discard"
 }

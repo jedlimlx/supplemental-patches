@@ -17,5 +17,11 @@
     "galosphere:pink_salt_wall",
     "galosphere:pastel_pink_salt_wall",
     "galosphere:rose_pink_salt_wall"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

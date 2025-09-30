@@ -12,5 +12,6 @@
     null,
     null,
     null
-  ]
+  ],
+  "reflection_handlers": "minecraft:discard"
 }

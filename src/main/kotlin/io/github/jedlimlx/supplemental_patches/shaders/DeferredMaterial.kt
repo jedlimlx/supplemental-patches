@@ -15,7 +15,7 @@ class DeferredMaterial(val name: String, val glsl: String) {
 
 
 const val DEFERRED_INITIAL_ID = 16
-const val DEFERRED_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/deferredMaterials.glsl"
+const val DEFERRED_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/deferredIPBR.glsl"
 
 fun generatedDeferredMaterials(directory: Path) {
     val file = File(directory.absolutePathString() + DEFERRED_MATERIALS_PATH)

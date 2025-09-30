@@ -23,5 +23,11 @@
     "soulfulnether:fright_button:powered=true",
     "soulfulnether:fright_pressure_plate:powered=true",
     "soulfulnether:fright_trapdoor:powered=true"
+  ],
+  "reflection_handler": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

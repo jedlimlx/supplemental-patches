@@ -4,5 +4,6 @@
   "mat0": [
     "enderscape:corrupt_growth",
     "enderscape:potted_corrupt_growth"
-  ]
+  ],
+  "reflection_handlers": "minecraft:discard"
 }

@@ -1,7 +1,7 @@
 {
     "name": "kinetic_core",
     "glsl": "kinetic_core.glsl",
-    "mat0": [
+    "mat1": [
         "species:kinetic_core",
         "species:quake_head"
     ]

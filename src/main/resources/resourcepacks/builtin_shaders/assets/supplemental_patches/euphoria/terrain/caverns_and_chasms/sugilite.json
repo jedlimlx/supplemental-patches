@@ -15,5 +15,11 @@
     "caverns_and_chasms:polished_sugilite_stairs",
     "caverns_and_chasms:polished_sugilite_slab",
     "caverns_and_chasms:polished_sugilite_wall"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    "minecraft:half_blocks"
   ]
 }

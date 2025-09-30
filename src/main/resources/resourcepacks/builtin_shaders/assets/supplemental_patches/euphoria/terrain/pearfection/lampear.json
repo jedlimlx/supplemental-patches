@@ -8,5 +8,6 @@
     "pearfection:copper_lampear"
   ],
   "color": "supplemental_patches:pearfection/lampear",
-  "held_lighting": true
+  "held_lighting": true,
+  "reflection_handlers": "minecraft:discard"
 }

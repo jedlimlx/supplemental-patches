@@ -10,7 +10,6 @@ import net.minecraft.server.packs.resources.ReloadableResourceManager
 import net.minecraft.server.packs.resources.ResourceManager
 import net.minecraft.util.GsonHelper
 import net.minecraft.util.profiling.ProfilerFiller
-import java.io.FileNotFoundException
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.Executor
 import kotlin.math.ceil
@@ -36,6 +35,8 @@ object ShaderResourceLoader {
     val BLOCK_MAP: HashMap<String, ShaderBuilder> = hashMapOf()
     val ITEM_MAP: HashMap<String, ShaderBuilder> = hashMapOf()
     val ENTITY_MAP: HashMap<String, ShaderBuilder> = hashMapOf()
+
+    val REFLECTION_HANDLERS: HashMap<String, String> = hashMapOf()
 
     fun registerListener() {
         val mc = Minecraft.getInstance()
@@ -100,7 +101,7 @@ object ShaderResourceLoader {
         PARTICLES.clear()
 
         FOGS.clear()
-        ACL_FOGS.clear()
+        ACT_FOGS.clear()
         FOG_FUNCTIONS.clear()
 
         MIXINS.clear()
@@ -118,6 +119,8 @@ object ShaderResourceLoader {
         SKIES.clear()
 
         LAYER_CHANGES.clear()
+
+        REFLECTION_HANDLERS.clear()
 
         // Loading various colours
         val lst = resourceManager.listResources("euphoria/colors") { it.path.endsWith(".json") }
@@ -181,6 +184,13 @@ object ShaderResourceLoader {
             )
         }
 
+        // Loading reflection handlers
+        resourceManager.listResources("euphoria/reflection_handlers") { it.path.endsWith(".glsl") }.map { (loc, _) ->
+            val key = loc.toString().replace("euphoria/reflection_handlers/", "")
+                .replace(".glsl", "")
+            REFLECTION_HANDLERS[key] = getFileContents(loc, resourceManager)
+        }
+
         return@catchAndPrintError CompletableFuture.allOf(
             loadMaterialShaders(backgroundExecutor, resourceManager, "euphoria/terrain", BLOCK_MAP),
             loadMaterialShaders(backgroundExecutor, resourceManager, "euphoria/translucent", BLOCK_MAP),
@@ -194,7 +204,7 @@ object ShaderResourceLoader {
             loadSettingsFiles(backgroundExecutor, resourceManager, "euphoria/settings_files"),
             loadFiles(backgroundExecutor, resourceManager, "euphoria/colors/injects", COLOUR_INJECTIONS),
             loadFiles(backgroundExecutor, resourceManager, "euphoria/atmospherics/fog/fogs", FOGS),
-            loadFiles(backgroundExecutor, resourceManager, "euphoria/atmospherics/fog/acl_fogs", ACL_FOGS),
+            loadFiles(backgroundExecutor, resourceManager, "euphoria/atmospherics/fog/act_fogs", ACT_FOGS),
             loadFiles(backgroundExecutor, resourceManager, "euphoria/atmospherics/fog/functions", FOG_FUNCTIONS),
             loadUniforms(backgroundExecutor, resourceManager, "euphoria/uniforms"),
             loadMixins(backgroundExecutor, resourceManager, "euphoria/mixins"),
@@ -325,6 +335,24 @@ object ShaderResourceLoader {
 
                     if (json["light_level"] != null)
                         builder.lightLevel(json["light_level"].asInt)
+
+                    if (json["reflection_handlers"] != null) {
+                        if (json["reflection_handlers"].isJsonArray) {
+                            builder.reflectionHandlers(
+                                json["reflection_handlers"].asJsonArray.map {
+                                    if (it != JsonNull.INSTANCE) {
+                                        REFLECTION_HANDLERS[it.asString] ?:
+                                        throw MinecraftError("Reflection handler $it does not exist!", loc.toString())
+                                    } else null
+                                }
+                            )
+                        } else {
+                            builder.reflectionHandler(
+                                REFLECTION_HANDLERS[json["reflection_handlers"].asString] ?:
+                                throw MinecraftError("Reflection handler ${json["reflection_handlers"]} does not exist!", loc.toString())
+                            )
+                        }
+                    }
 
                     builder.register(
                         when (type) {
@@ -528,12 +556,13 @@ object ShaderResourceLoader {
                     MIXINS.add(
                         ShaderMixin(
                             path = json["file"].asString ?: throw MinecraftError("Path of file to modify is not specified", loc.toString()),
-                            type = ShaderMixinType.fromString(json["type"].asString ?: throw MinecraftError("Injection type is not specified", loc.toString())),
+                            type = ShaderMixinType.fromString(json["type"].asString ?: throw MinecraftError("Injection type is not specified", loc.toString()), loc.toString()),
                             key = json["key"].asString ?: throw MinecraftError("Key to identify modification location is not specified", loc.toString()),
                             code = it[
                                 "$path${if (path.isEmpty()) "" else "/"}" +
                                     (json["code"].asString ?: throw MinecraftError(".glsl file not specified.", loc.toString()))
-                            ] ?: throw MinecraftError("$path/${json["code"].asString} not found!", loc.toString())
+                            ] ?: throw MinecraftError("$path/${json["code"].asString} not found!", loc.toString()),
+                            mixinFile = loc.toString()
                         )
                     )
                 }

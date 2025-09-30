@@ -39,8 +39,8 @@ fun generateSkies(directory: Path) {
     val deferredFile = File(directory.absolutePathString() + DEFERRED_PATH)
     deferredFile.writeText(
         deferredFile.readText().replace(
-            Regex("#ifdef PBR_REFLECTIONS\\r?\\n    #include \"/lib/materials/materialMethods/reflections.glsl\""),
-            "$importCode\n#ifdef PBR_REFLECTIONS\n    #include \"/lib/materials/materialMethods/reflections.glsl\""
+            Regex("#if defined END && defined END_STARS\r?\n    #include \"/lib/atmospherics/enderStars.glsl\""),
+            "$importCode\n#if defined END && defined END_STARS\n    #include \"/lib/atmospherics/enderStars.glsl\""
         )
     )
 

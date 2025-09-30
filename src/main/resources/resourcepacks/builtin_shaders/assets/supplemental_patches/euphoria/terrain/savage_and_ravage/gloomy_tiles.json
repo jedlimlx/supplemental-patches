@@ -20,5 +20,11 @@
     null,
     "supplemental_patches:savage_and_ravage/runes",
     null
+  ],
+  "reflection_handler": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

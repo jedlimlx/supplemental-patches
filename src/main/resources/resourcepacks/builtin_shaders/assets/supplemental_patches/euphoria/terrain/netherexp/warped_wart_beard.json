@@ -4,5 +4,6 @@
   "mat1": [
     "netherexp:warped_wart_beard"
   ],
-  "waving": "minecraft:hanging_waving_foliage"
+  "waving": "minecraft:hanging_waving_foliage",
+  "reflection_handlers": "minecraft:discard"
 }

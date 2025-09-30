@@ -14,5 +14,11 @@
     "galosphere:allurite_block_stairs",
     "galosphere:smooth_allurite_stairs",
     "galosphere:allurite_brick_stairs"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

@@ -1,0 +1,1 @@
+doSolidBlockCheck = false;

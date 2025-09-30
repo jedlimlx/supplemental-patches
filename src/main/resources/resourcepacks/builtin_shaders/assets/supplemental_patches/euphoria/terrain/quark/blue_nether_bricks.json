@@ -10,5 +10,11 @@
     "quark:blue_nether_bricks_wall",
     "quark:blue_nether_bricks_stairs",
     "quark:blue_nether_bricks_vertical_slab"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

@@ -7,5 +7,6 @@
   "color": "supplemental_patches:biomesoplenty/blackstone_bulb",
   "conditions": [
     "DO_IPBR_LIGHTS"
-  ]
+  ],
+  "reflection_handlers": "minecraft:discard"
 }

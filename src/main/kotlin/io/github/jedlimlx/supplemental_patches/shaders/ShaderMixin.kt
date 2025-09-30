@@ -12,19 +12,22 @@ enum class ShaderMixinType {
     REPLACE;
 
     companion object {
-        fun fromString(type: String): ShaderMixinType = when (type) {
+        fun fromString(type: String, file: String): ShaderMixinType = when (type) {
             "before" -> BEFORE
             "after" -> AFTER
             "replace" -> REPLACE
-            else -> throw IllegalArgumentException("Unknown shader mixin type '$type'")
+            else -> throw MinecraftError("Unknown shader mixin type '$type'", file)
         }
     }
 }
 
-data class ShaderMixin(val path: String, val type: ShaderMixinType, val key: String, val code: String) {
+data class ShaderMixin(val path: String, val type: ShaderMixinType, val key: String, val code: String, val mixinFile: String) {
     fun inject(directory: Path) {
         val file = File(directory.absolutePathString() + path)
         val tokens = file.readText().split(key)
+        if (tokens.size == 1) {
+            throw MinecraftError("$type Mixin targetted @ ${path} unable to find injection point @ ${key}", mixinFile)
+        }
 
         val indents = tokens.subList(0, tokens.size - 1).map {
             val temp = it.split("\n").last()
@@ -65,4 +68,4 @@ data class ShaderMixin(val path: String, val type: ShaderMixinType, val key: Str
     }
 }
 
-fun generateShaderMixins(directory: Path) = MIXINS.forEach { it.inject(directory) }
+fun generateShaderMixins(directory: Path) = MIXINS.forEachWithErrorHandling { it.inject(directory) }
