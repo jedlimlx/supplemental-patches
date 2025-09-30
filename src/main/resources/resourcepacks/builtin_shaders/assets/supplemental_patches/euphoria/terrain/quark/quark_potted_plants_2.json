@@ -12,5 +12,6 @@
     null,
     "minecraft:weeping_vines",
     null
-  ]
+  ],
+  "reflection_handlers": "minecraft:discard"
 }

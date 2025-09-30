@@ -3,5 +3,6 @@
   "glsl": "shadow_frame.glsl",
   "mat1": [
     "galosphere:shadow_frame:filled=false"
-  ]
+  ],
+  "reflection_handlers": "minecraft:non_solid"
 }

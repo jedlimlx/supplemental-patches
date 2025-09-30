@@ -31,5 +31,11 @@
     "endergetic:eumus_brick_stairs",
     "endergetic:eumus_brick_slab",
     "endergetic:eumus_brick_wall"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    "minecraft:half_blocks"
   ]
 }

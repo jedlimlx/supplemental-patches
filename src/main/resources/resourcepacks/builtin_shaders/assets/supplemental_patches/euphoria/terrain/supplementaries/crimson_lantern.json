@@ -8,5 +8,6 @@
   "color": [
     "supplemental_patches:supplementaries/crimson_lantern"
   ],
-  "held_lighting": true
+  "held_lighting": true,
+  "reflection_handlers": "minecraft:discard"
 }

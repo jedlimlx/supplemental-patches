@@ -6,5 +6,6 @@
   ],
   "mat3": [
     "netherexp:claret_door:powered=true"
-  ]
+  ],
+  "reflection_handlers": "minecraft:half_blocks"
 }

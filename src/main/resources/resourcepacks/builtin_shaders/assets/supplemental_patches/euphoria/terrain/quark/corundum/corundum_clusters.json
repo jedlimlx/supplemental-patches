@@ -43,5 +43,6 @@
     "supplemental_patches:quark/corundum/black",
     null
   ],
-  "block_size": 16
+  "block_size": 16,
+  "reflection_handlers": "minecraft:discard"
 }

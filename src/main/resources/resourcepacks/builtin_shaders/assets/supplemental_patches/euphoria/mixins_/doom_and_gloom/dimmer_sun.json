@@ -1,6 +1,6 @@
 {
   "file": "/shaders/program/gbuffers_skytextured.glsl",
   "type": "before",
-  "key": "color.rgb *= dot(color.rgb, color.rgb) * normalize(lightColor) * sunBrightness;",
+  "key": "color.rgb = vec3(pow(dot(color.rgb, color.rgb) * 0.45, 6.0 - 5.0 * rainFactor));",
   "code": "dimmer_sun.glsl"
 }

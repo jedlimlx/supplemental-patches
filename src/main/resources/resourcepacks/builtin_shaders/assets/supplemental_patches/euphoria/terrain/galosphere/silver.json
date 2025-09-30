@@ -17,5 +17,11 @@
   ],
   "mat3": [
     "caverns_and_chasms:medium_weighted_pressure_plate"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

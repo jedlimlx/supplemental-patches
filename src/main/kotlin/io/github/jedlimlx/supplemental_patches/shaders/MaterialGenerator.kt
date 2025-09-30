@@ -156,7 +156,7 @@ val MATERIALS = mutableListOf<ShaderBuilder>()
 val MATERIALS_MAP = mutableMapOf<Int, ShaderBuilder>()
 
 const val TERRAIN_INITIAL_ID = 12288
-const val TERRAIN_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/terrainMaterials.glsl"
+const val TERRAIN_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/terrainIPBR.glsl"
 
 fun generateTerrainMaterials(directory: Path) {
     val file = File(directory.absolutePathString() + TERRAIN_MATERIALS_PATH)
@@ -193,7 +193,7 @@ val ENTITIES = mutableListOf<ShaderBuilder>()
 val ENTITY_MAP = mutableMapOf<Int, ShaderBuilder>()
 
 const val ENTITY_INITIAL_ID = 51200
-const val ENTITY_PATH = "/shaders/lib/materials/materialHandling/entityMaterials.glsl"
+const val ENTITY_PATH = "/shaders/lib/materials/materialHandling/entityIPBR.glsl"
 
 fun generateEntityMaterials(directory: Path) {
     val file = File(directory.absolutePathString() + ENTITY_PATH)
@@ -232,7 +232,7 @@ val ITEMS = mutableListOf<ShaderBuilder>()
 val ITEM_MAP = mutableMapOf<Int, ShaderBuilder>()
 
 const val IRIS_MATERIALS_INITIAL_ID = 46080
-const val IRIS_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/irisMaterials.glsl"
+const val IRIS_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/irisIPBR.glsl"
 
 fun generateIrisMaterials(directory: Path) {
     val file = File(directory.absolutePathString() + IRIS_MATERIALS_PATH)
@@ -271,7 +271,7 @@ val TRANSLUCENTS = mutableListOf<ShaderBuilder>()
 val TRANSLUCENTS_MAP = mutableMapOf<Int, ShaderBuilder>()
 
 const val TRANSLUCENT_INITIAL_ID = 32128
-const val TRANSLUCENT_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/translucentMaterials.glsl"
+const val TRANSLUCENT_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/translucentIPBR.glsl"
 
 fun generateTranslucentMaterials(directory: Path) {
     val file = File(directory.absolutePathString() + TRANSLUCENT_MATERIALS_PATH)
@@ -312,7 +312,7 @@ val BLOCK_ENTITIES = mutableListOf<ShaderBuilder>()
 val BLOCK_ENTITIES_MAP = mutableMapOf<Int, ShaderBuilder>()
 
 const val BLOCK_ENTITY_INITIAL_ID = 5056
-const val BLOCK_ENTITY_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/blockEntityMaterials.glsl"
+const val BLOCK_ENTITY_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/blockEntityIPBR.glsl"
 
 fun generateBlockEntityMaterials(directory: Path) {
     val file = File(directory.absolutePathString() + BLOCK_ENTITY_MATERIALS_PATH)
@@ -348,19 +348,19 @@ fun generateBlockEntityMaterials(directory: Path) {
 }
 
 const val VOXELISATION_INITIAL_ID = 100
-const val VOXELISATION_PATH = "/shaders/lib/misc/voxelization.glsl"
+const val VOXELISATION_PATH = "/shaders/lib/voxelization/lightVoxelization.glsl"
 
 const val TOTAL_COLOURED_VOXELS = 256 + VOXELISATION_INITIAL_ID
-const val TRANSLUCENT_VOXEL_INITIAL_ID = 60000
-const val NEW_TINTS_INITIAL_ID = 60020
+const val TRANSLUCENT_VOXEL_INITIAL_ID = 30000
+const val NEW_TINTS_INITIAL_ID = 30020
 
-const val BLOCKLIGHT_PATH = "/shaders/lib/colors/blocklightColorsACL.glsl"
+const val BLOCKLIGHT_PATH = "/shaders/lib/colors/blocklightColorsACT.glsl"
 const val MAIN_LIGHTING_PATH = "/shaders/lib/lighting/mainLighting.glsl"
 
 const val GET_TINT_CODE = """
 
 vec3 GetSpecialTintColor(uint mat) {
-    if (mat < 60019u) return specialTintColor[mat - 60000u];
+    if (mat < 30019u) return specialTintColor[mat - 30000u];
     else {
 <insert>
     }
@@ -515,7 +515,7 @@ fun generateVoxelsAndBlocklight(directory: Path) {
             }
         )
 
-        append("        if (mat < 10564) {")
+        append("        if (mat < 10604) {")
     }.toString()
 
     heldLightingMap.forEach { (k, v) ->
@@ -540,7 +540,7 @@ fun generateVoxelsAndBlocklight(directory: Path) {
 
     // Inserting code
     voxelisationFile.writeText(
-        voxelisationFile.readText().replace("        if (mat < 10564) {", voxelisationCode)
+        voxelisationFile.readText().replace("        if (mat < 10604) {", voxelisationCode)
     )
     itemPropertiesFile.writeText(text + builder)
 
@@ -706,6 +706,37 @@ fun generateWavingCode(directory: Path) {
     file.writeText(file.readText().replace("void DoWave(inout vec3 playerPos, int mat) {", newBuilder.toString()))
 }
 
+const val REFLECTION_VOXELISATION_DIRECTORY = "/shaders/lib/voxelization/reflectionVoxelization.glsl"
+fun generateReflectionHanders(directory: Path) {
+    val temp = "vec2 origin = mc_midTexCoord.xy - textureRad;"
+    val file = File(directory.absolutePathString() + REFLECTION_VOXELISATION_DIRECTORY)
+
+    val lst = arrayListOf<Int>()
+    val map = hashMapOf<Int, String>()
+    MATERIALS_MAP.forEach { (idx, it) ->
+        var count = 0
+        it.reflectionHandlers.forEach {
+            if (it != null) {
+                map[idx + count] = it
+                lst.add(idx + count++)
+            }
+        }
+    }
+
+    file.writeText(
+        file.readText().replace(temp,
+            temp + "\n" + computeAllPivots(lst, 3, "mat", 1) { idx, depth ->
+                val indent = "    ".repeat(depth)
+                StringBuilder().apply {
+                    append("${indent}if (mat == $idx) {\n")
+                    append(map[idx]!!.prependIndent("$indent    "))
+                    append("\n$indent}\n")
+                }.toString()
+            }
+        )
+    )
+}
+
 val PARTICLES = mutableListOf<ShaderBuilder>()
 
 const val PARTICLES_PATH = "/shaders/program/gbuffers_textured.glsl"
@@ -796,12 +827,14 @@ fun generateParticleCode(directory: Path) {
 
 val FOG_FUNCTIONS = arrayListOf<String>()
 val FOGS = arrayListOf<String>()
+val ACT_FOGS = arrayListOf<String>()
 const val MAIN_FOG_PATH = "/shaders/lib/atmospherics/fog/mainFog.glsl"
+const val ACT_FOG_PATH = "/shaders/lib/atmospherics/fog/coloredLightFog.glsl"
 
 fun generateFog(directory: Path) {
     val file = File(directory.absolutePathString() + MAIN_FOG_PATH)
 
-    val temp = "void DoFog(inout vec3 color"
+    val temp = "void DoFog(inout vec4 color"
     file.writeText(
         file.readText().replace(temp, FOG_FUNCTIONS.joinToString("\n\n") + "\n\n" + temp)
     )
@@ -810,7 +843,17 @@ fun generateFog(directory: Path) {
     file.writeText(
         file.readText().replace(
             temp2, temp2 + "\n\n" + FOGS.joinToString("\n\n") {
-                it.split("\n").joinToString("\n") { "    " + it }
+                it.split("\n").joinToString("\n") { "    $it" }
+            }
+        )
+    )
+
+    val temp3 = "lightSample *= pow2(min1(lTracePos * 0.03125));"
+    val actFogFile = File(directory.absolutePathString() + ACT_FOG_PATH)
+    actFogFile.writeText(
+        actFogFile.readText().replace(
+            temp3, temp3 + "\n\n" + ACT_FOGS.joinToString("\n\n") {
+                it.split("\n").joinToString("\n") { "        $it" }
             }
         )
     )
@@ -821,15 +864,7 @@ const val GBUFFER_BLOCK_DIRECTORY = "/shaders/program/gbuffers_block.glsl"
 const val SHADOW_COMP_DIRECTORY = "/shaders/program/shadowcomp.glsl"
 
 fun modifyGBuffers(directory: Path) {
-    var file = File(directory.absolutePathString() + SHADER_PROPERTIES_FILE)
-    file.writeText(
-        file.readText().replace(
-            "voxel_sampler red_integer r8ui",
-            "voxel_sampler red_integer r16ui"
-        )
-    )
-
-    file = File(directory.absolutePathString() + SHADOW_DIRECTORY)
+    var file = File(directory.absolutePathString() + SHADOW_DIRECTORY)
     file.writeText(
         file.readText().replace(
             "        DoWave(position.xyz, mat);",
@@ -863,11 +898,11 @@ fun modifyGBuffers(directory: Path) {
                         "    flat out vec2 midCoord;"
             )
             .replace(
-                "#include \"/lib/materials/materialHandling/blockEntityMaterials.glsl\"",
-                "#include \"/lib/materials/materialHandling/blockEntityMaterials.glsl\"\n" +
+                "#include \"/lib/materials/materialHandling/blockEntityIPBR.glsl\"",
+                "#include \"/lib/materials/materialHandling/blockEntityIPBR.glsl\"\n" +
                 "\n" +
                 "        #ifdef IS_IRIS\n" +
-                "            #include \"/lib/materials/materialHandling/irisMaterials.glsl\"\n" +
+                "            #include \"/lib/materials/materialHandling/irisIPBR.glsl\"\n" +
                 "        #endif"
             )
             .replace(
@@ -892,13 +927,13 @@ fun modifyGBuffers(directory: Path) {
     file = File(directory.absolutePathString() + IRIS_MATERIALS_PATH)
     file.writeText(
         file.readText().replace(
-            "#include \"/lib/materials/materialHandling/terrainMaterials.glsl\"",
+            "#include \"/lib/materials/materialHandling/terrainIPBR.glsl\"",
             "#ifdef DISTANT_LIGHT_BOKEH\n" +
             "        #undef DISTANT_LIGHT_BOKEH\n" +
-            "        #include \"/lib/materials/materialHandling/terrainMaterials.glsl\"\n" +
+            "        #include \"/lib/materials/materialHandling/terrainIPBR.glsl\"\n" +
             "        #define DISTANT_LIGHT_BOKEH\n" +
             "    #else\n" +
-            "        #include \"/lib/materials/materialHandling/terrainMaterials.glsl\"\n" +
+            "        #include \"/lib/materials/materialHandling/terrainIPBR.glsl\"\n" +
             "    #endif"
         )
         .replace(

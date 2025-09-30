@@ -28,5 +28,11 @@
     "quark:azalea_button:powered=true",
     "quark:azalea_pressure_plate:powered=true",
     "quark:azalea_trapdoor:powered=true"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

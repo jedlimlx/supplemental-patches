@@ -18,5 +18,11 @@
   ],
   "mat2": [
     "buzzier_bees:crystallized_honey_block"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

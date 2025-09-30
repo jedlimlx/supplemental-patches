@@ -23,5 +23,6 @@
     "supplemental_patches:caverns_and_chasms/cupric_fire",
     null
   ],
-  "block_size": 8
+  "block_size": 8,
+  "reflection_handler": "minecraft:discard"
 }

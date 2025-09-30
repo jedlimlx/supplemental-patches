@@ -19,5 +19,11 @@
     "enderscape:polished_mirestone_wall",
     "enderscape:polished_mirestone_button",
     "enderscape:polished_mirestone_pressure_plate"
+  ],
+  "reflection_handler": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

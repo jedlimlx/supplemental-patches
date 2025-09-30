@@ -9,5 +9,11 @@
     "oreganized:glance_stairs",
     "oreganized:glance_slab",
     "oreganized:glance_wall"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

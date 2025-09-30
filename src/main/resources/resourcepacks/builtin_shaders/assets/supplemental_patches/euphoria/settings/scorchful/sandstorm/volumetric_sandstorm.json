@@ -4,7 +4,7 @@
   "values": [0, 1, 2],
   "default": 0,
   "priority": 2,
-  "file": "composite.glsl",
+  "file": "composite1.glsl",
   "en_US": {
     "option": "Volumetric Sandstorm §e[*]§r",
     "comment": "Enables a volumetric fog effect during Scorchful's sandstorms. §c[-]§r This effect can impact performance. §e[*]§r This setting is experimental.",

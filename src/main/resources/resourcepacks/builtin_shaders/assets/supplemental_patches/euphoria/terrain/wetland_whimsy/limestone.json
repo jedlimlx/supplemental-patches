@@ -24,5 +24,11 @@
     "wetland_whimsy:polished_limestone_stairs",
     "wetland_whimsy:polished_limestone_slab",
     "wetland_whimsy:polished_limestone_wall"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    "minecraft:half_blocks"
   ]
 }

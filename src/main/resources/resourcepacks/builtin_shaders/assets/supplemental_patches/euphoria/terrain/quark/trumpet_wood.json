@@ -28,5 +28,11 @@
     "quark:blossom_button:powered=true",
     "quark:blossom_pressure_plate:powered=true",
     "quark:blossom_trapdoor:powered=true"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

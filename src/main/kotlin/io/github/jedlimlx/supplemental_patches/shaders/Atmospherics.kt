@@ -7,7 +7,7 @@ import kotlin.io.path.absolutePathString
 val ATMOSPHERICS = mutableListOf<Atmospherics>()
 data class Atmospherics(val libPath: String, val libCode: String, val mainCode: String, val conditions: List<String>)
 
-const val COMPOSITE_PATH = "/shaders/program/composite.glsl"
+const val COMPOSITE_PATH = "/shaders/program/composite1.glsl"
 fun generateAtmospherics(directory: Path) {
     val file = File(directory.absolutePathString() + COMPOSITE_PATH)
 

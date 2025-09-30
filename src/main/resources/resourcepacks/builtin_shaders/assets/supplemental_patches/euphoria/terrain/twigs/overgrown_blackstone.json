@@ -2,8 +2,7 @@
   "name": "overgrown_blackstone",
   "glsl": "overgrown_blackstone.glsl",
   "mat0": [
-    "twigs:twisting_polished_blackstone_bricks",
-    "adjustments:twisting_chiseled_polished_blackstone"
+    "twigs:twisting_polished_blackstone_bricks"
   ],
   "mat1": [
     "twigs:twisting_polished_blackstone_brick_stairs",
@@ -14,13 +13,18 @@
     "twigs:weeping_polished_blackstone_bricks",
     "twigs:weeping_polished_blackstone_brick_stairs",
     "twigs:weeping_polished_blackstone_brick_slab",
-    "twigs:weeping_polished_blackstone_brick_wall",
-    "adjustments:weeping_chiseled_polished_blackstone"
+    "twigs:weeping_polished_blackstone_brick_wall"
   ],
   "color": [
     null,
     null,
     "minecraft:weeping_vines",
+    null
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
     null
   ]
 }

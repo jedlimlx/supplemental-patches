@@ -11,5 +11,6 @@
     "pigsteel:waxed_corrupted_pigsteel_soul_lantern",
     "pigsteel:waxed_zombified_pigsteel_soul_lantern"
   ],
-  "color": "minecraft:soul_lantern"
+  "color": "minecraft:soul_lantern",
+  "reflection_handlers": "minecraft:discard"
 }

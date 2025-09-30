@@ -5,5 +5,6 @@
     "yungscavebiomes:prickly_vines",
     "yungscavebiomes:prickly_vines_plant"
   ],
-  "waving": "minecraft:waving_tall_foliage"
+  "waving": "minecraft:waving_tall_foliage",
+  "reflection_handlers": "minecraft:discard"
 }

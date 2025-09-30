@@ -5,5 +5,6 @@
     "wetland_whimsy:cupric_brazier:lit=true"
   ],
   "color": "supplemental_patches:caverns_and_chasms/cupric_fire",
-  "held_lighting": true
+  "held_lighting": true,
+  "reflection_handlers": "minecraft:campfire"
 }

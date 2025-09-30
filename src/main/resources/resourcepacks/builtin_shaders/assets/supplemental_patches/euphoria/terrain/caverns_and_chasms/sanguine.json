@@ -13,5 +13,11 @@
     "caverns_and_chasms:fortified_sanguine_tile_stairs",
     "caverns_and_chasms:fortified_sanguine_tile_slab",
     "caverns_and_chasms:fortified_sanguine_tile_wall"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }
