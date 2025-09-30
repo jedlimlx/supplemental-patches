@@ -6,5 +6,6 @@
   ],
   "mat3": [
     "wetland_whimsy:bald_cypress_door:powered=true"
-  ]
+  ],
+  "reflection_handlers": "minecraft:half_blocks"
 }

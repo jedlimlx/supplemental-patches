@@ -10,5 +10,11 @@
     "caverns_and_chasms:spinel_brick_slab",
     "caverns_and_chasms:spinel_brick_stairs",
     "caverns_and_chasms:spinel_brick_wall"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

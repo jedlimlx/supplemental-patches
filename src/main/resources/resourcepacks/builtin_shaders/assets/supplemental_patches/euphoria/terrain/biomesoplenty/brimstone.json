@@ -13,5 +13,11 @@
     "biomesoplenty:brimstone_brick_wall",
     "biomesoplenty:brimstone_cluster",
     "biomesoplenty:brimstone_bud"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

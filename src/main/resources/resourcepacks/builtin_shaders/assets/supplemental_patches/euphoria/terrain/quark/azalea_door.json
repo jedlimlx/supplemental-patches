@@ -6,5 +6,6 @@
   ],
   "mat3": [
     "quark:azalea_door:powered=true"
-  ]
+  ],
+  "reflection_handlers": "minecraft:half_blocks"
 }

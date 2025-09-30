@@ -34,5 +34,11 @@
     "enderscape:polished_kurodite_wall",
     "enderscape:polished_kurodite_button",
     "enderscape:polished_kurodite_pressure_plate"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

@@ -12,5 +12,6 @@
     "GLOWING_BLOODCAP_MUSHROOM >= 1",
     "DO_IPBR_LIGHTS"
   ],
-  "waving": "minecraft:waving_foliage"
+  "waving": "minecraft:waving_foliage",
+  "reflection_handlers": "minecraft:discard"
 }

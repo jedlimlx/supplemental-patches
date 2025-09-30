@@ -27,5 +27,6 @@
     "supplemental_patches:biomeswevegone/blue_glowcane",
     null
   ],
-  "block_size": 8
+  "block_size": 8,
+  "reflection_handlers": "minecraft:discard"
 }

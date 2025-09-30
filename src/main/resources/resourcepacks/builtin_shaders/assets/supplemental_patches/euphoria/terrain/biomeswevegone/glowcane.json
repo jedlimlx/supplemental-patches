@@ -24,5 +24,6 @@
     null
   ],
   "block_size": 8,
-  "waving": "minecraft:waving_sugar_cane"
+  "waving": "minecraft:waving_sugar_cane",
+  "reflection_handlers": "minecraft:discard"
 }

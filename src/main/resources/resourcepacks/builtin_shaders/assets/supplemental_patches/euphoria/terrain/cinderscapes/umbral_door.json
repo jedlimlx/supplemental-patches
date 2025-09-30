@@ -6,5 +6,6 @@
   ],
   "mat3": [
     "cinderscapes:umbral_door:powered=true"
-  ]
+  ],
+  "reflection_handler": "minecraft:half_blocks"
 }

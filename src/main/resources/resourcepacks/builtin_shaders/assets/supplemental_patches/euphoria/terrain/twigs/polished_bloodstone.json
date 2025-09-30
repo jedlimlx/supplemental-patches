@@ -22,5 +22,11 @@
     "adjustments:cracked_polished_bloodstone_brick_wall",
     "adjustments:polished_bloodstone_tile_wall",
     "adjustments:bloodstone_column"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

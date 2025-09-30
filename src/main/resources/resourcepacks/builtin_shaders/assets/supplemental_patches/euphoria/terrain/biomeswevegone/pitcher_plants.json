@@ -12,5 +12,6 @@
     null,
     "supplemental_patches:biomeswevegone/cyan_pitcher_plant",
     null
-  ]
+  ],
+  "reflection_handlers": "minecraft:discard"
 }

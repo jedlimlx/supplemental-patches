@@ -6,5 +6,6 @@
   ],
   "mat3": [
     "quark:blossom_door:powered=true"
-  ]
+  ],
+  "reflection_handlers": "minecraft:half_blocks"
 }

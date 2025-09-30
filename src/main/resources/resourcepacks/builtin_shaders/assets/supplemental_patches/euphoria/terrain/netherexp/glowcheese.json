@@ -3,5 +3,6 @@
   "glsl": "glowcheese.glsl",
   "mat0": [
     "netherexp:nether_pizza"
-  ]
+  ],
+  "reflection_handlers": "minecraft:discard"
 }

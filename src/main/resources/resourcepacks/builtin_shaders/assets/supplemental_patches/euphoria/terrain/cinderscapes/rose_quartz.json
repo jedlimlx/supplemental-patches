@@ -11,5 +11,11 @@
     "cinderscapes:rose_quartz_slab",
     "cinderscapes:rose_quartz_stairs",
     "cinderscapes:polypite_rose_quartz"
+  ],
+  "reflection_handler": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

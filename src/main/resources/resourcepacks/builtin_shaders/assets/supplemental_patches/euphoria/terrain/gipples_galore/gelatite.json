@@ -30,5 +30,11 @@
   "mat3": [
     "gipples_galore:gelatinous_growth",
     "gipples_galore:gipplepad"
+  ],
+  "reflection_handler": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    "minecraft:half_blocks"
   ]
 }

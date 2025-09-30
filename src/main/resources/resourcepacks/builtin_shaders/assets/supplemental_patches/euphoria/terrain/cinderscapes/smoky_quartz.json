@@ -11,5 +11,11 @@
     "cinderscapes:smoky_quartz_slab",
     "cinderscapes:smoky_quartz_stairs",
     "cinderscapes:polypite_smoky_quartz"
+  ],
+  "reflection_handler": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

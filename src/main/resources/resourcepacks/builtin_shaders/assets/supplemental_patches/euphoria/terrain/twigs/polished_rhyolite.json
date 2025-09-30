@@ -22,5 +22,11 @@
     "adjustments:cracked_polished_rhyolite_brick_wall",
     "adjustments:polished_rhyolite_tile_wall",
     "adjustments:rhyolite_column"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

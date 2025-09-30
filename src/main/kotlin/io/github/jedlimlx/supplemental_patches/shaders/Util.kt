@@ -39,6 +39,8 @@ class ShaderBuilder(
     var wavingObject: WavingObject? = null
     var colourConditions: List<String> = listOf()
 
+    var reflectionHandlers: List<String?> = listOf()
+
     fun allIds() = mat.toList().flatten()
 
     fun needsVoxelisation(): ShaderBuilder {
@@ -75,6 +77,16 @@ class ShaderBuilder(
 
     fun wavingObject(code: WavingObject): ShaderBuilder {
         wavingObject = code
+        return this
+    }
+
+    fun reflectionHandler(handler: String?): ShaderBuilder {
+        reflectionHandlers = List(blockSize) { handler }
+        return this
+    }
+
+    fun reflectionHandlers(lst: List<String?>): ShaderBuilder {
+        reflectionHandlers = lst
         return this
     }
 

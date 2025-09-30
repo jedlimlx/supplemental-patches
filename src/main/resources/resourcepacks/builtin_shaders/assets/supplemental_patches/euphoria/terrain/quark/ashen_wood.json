@@ -28,5 +28,11 @@
     "quark:ancient_button:powered=true",
     "quark:ancient_pressure_plate:powered=true",
     "quark:ancient_trapdoor:powered=true"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

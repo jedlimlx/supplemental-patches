@@ -4,5 +4,6 @@
   "mat0": [
     "oreganized:molten_lead_cauldron"
   ],
-  "color": "supplemental_patches:oreganized/molten_lead"
+  "color": "supplemental_patches:oreganized/molten_lead",
+  "reflection_handlers": "minecraft:discard"
 }
