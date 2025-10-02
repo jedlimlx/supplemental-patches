@@ -50,6 +50,7 @@ fun installShader(): String = catchAndPrintError {
     generateShaderMixins(newInstallation)
     modifyLayers(newInstallation)
     modifyGBuffers(newInstallation)
+    injectCommonFunctions(newInstallation)
 
     return@catchAndPrintError "Shaders successfully installed at $newInstallation."
 }

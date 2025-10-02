@@ -1,0 +1,20 @@
+{
+  "type": "setting",
+  "name": "CIRRUS_DISTORTION_SCALE",
+  "default": 0.8,
+  "priority": 3,
+  "values": [
+    {
+      "type": "range",
+      "start": 0,
+      "stop": 3,
+      "step": 0.05
+    }
+  ],
+  "slider": true,
+  "file": "cloudsAndLighting.glsl",
+  "en_US": {
+    "option": "Cirrus Distortion Scale",
+    "comment": "Changes the rate at which the direction of distortion changes across the sky for the second layer of unbound clouds."
+  }
+}

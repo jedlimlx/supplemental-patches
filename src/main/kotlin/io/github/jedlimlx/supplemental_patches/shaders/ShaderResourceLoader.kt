@@ -122,6 +122,8 @@ object ShaderResourceLoader {
 
         REFLECTION_HANDLERS.clear()
 
+        COMMON_FUNCTIONS.clear()
+
         // Loading various colours
         val lst = resourceManager.listResources("euphoria/colors") { it.path.endsWith(".json") }
 
@@ -210,7 +212,8 @@ object ShaderResourceLoader {
             loadMixins(backgroundExecutor, resourceManager, "euphoria/mixins"),
             loadVolumetricAtmospherics(backgroundExecutor, resourceManager, "euphoria/atmospherics/volumetric"),
             loadSkies(backgroundExecutor, resourceManager, "euphoria/atmospherics/sky"),
-            loadTextures(backgroundExecutor, resourceManager, "euphoria/textures")
+            loadTextures(backgroundExecutor, resourceManager, "euphoria/textures"),
+            loadFiles(backgroundExecutor, resourceManager, "euphoria/common", COMMON_FUNCTIONS)
         ).thenAcceptAsync {
             fun process(json: JsonObject, string: String, map: HashMap<String, ShaderBuilder>, regexReplaces: MutableList<Regex>, additionaMapping: MutableMap<Int, List<String>>) {
                 json.keySet().forEach {
