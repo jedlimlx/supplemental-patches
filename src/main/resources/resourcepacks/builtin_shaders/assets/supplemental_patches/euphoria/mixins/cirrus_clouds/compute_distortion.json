@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/atmospherics/clouds/unboundClouds.glsl",
+  "type": "before",
+  "key": "#if CLOUD_DIRECTION == 2",
+  "code": "compute_distortion.glsl"
+}

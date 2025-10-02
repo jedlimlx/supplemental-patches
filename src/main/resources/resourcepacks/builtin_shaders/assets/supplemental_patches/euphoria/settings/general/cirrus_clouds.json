@@ -1,0 +1,12 @@
+{
+  "type": "setting",
+  "name": "CIRRUS_CLOUDS",
+  "priority": 3,
+  "default": false,
+  "file": "cloudsAndLighting.glsl",
+  "activation": true,
+  "en_US": {
+    "option": "Cirrus Clouds",
+    "comment": "Converts the second layer of unbound clouds into wispy, cirrus clouds."
+  }
+}
