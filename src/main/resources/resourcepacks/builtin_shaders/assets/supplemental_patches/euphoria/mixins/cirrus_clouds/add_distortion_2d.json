@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/atmospherics/clouds/unboundClouds.glsl",
+  "type": "replace",
+  "key": "tracePosM.xz + vec2(wind, 0.0)",
+  "code": "add_distortion_2d.glsl"
+}
