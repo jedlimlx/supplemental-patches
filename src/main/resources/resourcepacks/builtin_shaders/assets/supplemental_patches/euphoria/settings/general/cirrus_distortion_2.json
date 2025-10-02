@@ -1,0 +1,20 @@
+{
+  "type": "setting",
+  "name": "CIRRUS_DISTORTION_INTENSITY_2",
+  "default": 2.5,
+  "priority": 3,
+  "values": [
+    {
+      "type": "range",
+      "start": 0,
+      "stop": 5,
+      "step": 0.1
+    }
+  ],
+  "slider": true,
+  "file": "cloudsAndLighting.glsl",
+  "en_US": {
+    "option": "Cirrus Distortion Intensity 2",
+    "comment": "Changes the magnitude of distortion applied to higher octaves of cloud noise."
+  }
+}

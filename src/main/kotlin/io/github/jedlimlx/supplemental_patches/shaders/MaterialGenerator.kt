@@ -952,3 +952,11 @@ fun modifyGBuffers(directory: Path) {
         )
     )
 }
+
+val COMMON_FUNCTIONS = arrayListOf<String>()
+const val COMMON_FUNCTIONS_PATH = "/shaders/lib/util/commonFunctions.glsl"
+
+fun injectCommonFunctions(directory: Path) {
+    val file = File(directory.absolutePathString() + COMMON_FUNCTIONS_PATH)
+    file.appendText(COMMON_FUNCTIONS.joinToString("\n"))
+}
