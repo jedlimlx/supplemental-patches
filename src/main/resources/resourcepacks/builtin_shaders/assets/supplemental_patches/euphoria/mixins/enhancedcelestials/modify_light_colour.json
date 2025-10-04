@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/colors/lightAndAmbientColors.glsl",
+  "type": "replace",
+  "key": "mix(nightClearLightColor, dayLightColor, sunVisibility2);",
+  "code": "modify_light_colour.glsl"
+}

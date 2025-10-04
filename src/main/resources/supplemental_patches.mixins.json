@@ -26,7 +26,8 @@
     "uniforms.HauntUniforms",
     "uniforms.YUNGSandstormUniforms",
     "uniforms.ScorchfulSandstormUniforms",
-    "uniforms.EnderscapeAtmosphereUniforms"
+    "uniforms.EnderscapeAtmosphereUniforms",
+    "uniforms.EnhancedCelestialsUniforms"
   ],
   "injectors": {
     "defaultRequire": 1

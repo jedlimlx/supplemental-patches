@@ -1,6 +1,6 @@
 if (color.b > 0.4) { // Diamond
     #include "/lib/materials/specificMaterials/terrain/diamondBlock.glsl"
-    #ifdef GLOWING_ORE_DIAMOND
+    #ifdef GLOWING_ORE_OBSIDIAN_DIAMOND
         emission = 0.8 * color.g + 1.5;
 
         overlayNoiseIntensity = 0.75, overlayNoiseEmission = 0.4;

@@ -1,0 +1,8 @@
+{
+  "name": "enhancedCelestials.glsl",
+  "files": [
+    "lib/colors/lightAndAmbientColors.glsl",
+    "lib/colors/skyColors.glsl",
+    "program/gbuffers_skybasic.glsl"
+  ]
+}

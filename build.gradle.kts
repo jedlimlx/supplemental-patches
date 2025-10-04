@@ -130,6 +130,7 @@ dependencies {
     modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-entity:6.1.2")
     modImplementation("maven.modrinth:cloth-config:15.0.140+fabric")
     modImplementation("maven.modrinth:corgilib:1.21.1-5.0.0.7-Fabric")
+    modImplementation("maven.modrinth:data-anchor:2.0.0.12-fabric")
     modImplementation("maven.modrinth:forge-config-api-port:v21.1.4-1.21.1-Fabric")
     modImplementation("maven.modrinth:frozenlib:2.0.2-mc1.21.1")
     modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.7.7")
@@ -227,6 +228,8 @@ dependencies {
     modImplementation("maven.modrinth:friends-and-foes:fabric-mc1.21.1-3.0.7")
 
     modImplementation("maven.modrinth:illager-invasion:v21.1.6-1.21.1-Fabric")
+
+    modImplementation("maven.modrinth:enhanced-celestials:6.0.2.4-fabric")
 
     modImplementation("maven.modrinth:yungs-api:1.21.1-Fabric-5.1.6")
     modImplementation("maven.modrinth:yungs-cave-biomes:1.21.1-Fabric-3.1.1")
