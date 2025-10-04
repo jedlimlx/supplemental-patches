@@ -1,0 +1,9 @@
+{
+  "type": "vec3",
+  "name": "moonColorSmooth",
+  "code": "vec3(smooth(54, moonColor.r, 15, 15), smooth(54, moonColor.g, 15, 15), smooth(54, moonColor.b, 15, 15))",
+  "default": "vec3(1.0)",
+  "conditions": [
+    "MOD_ENHANCEDCELESTIALS"
+  ]
+}

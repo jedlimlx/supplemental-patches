@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/colors/skyColors.glsl",
+  "type": "before",
+  "key": "vec3 nightColFactor      = ",
+  "code": "lunar_event_sky_factor.glsl"
+}
