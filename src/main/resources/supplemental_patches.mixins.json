@@ -30,6 +30,7 @@
     "uniforms.OreganizedUniforms",
     "uniforms.JNEUniforms",
     "uniforms.YUNGSandstormUniforms"
+    "uniforms.EnhancedCelestialsUniforms"
   ],
   "injectors": {
     "defaultRequire": 1

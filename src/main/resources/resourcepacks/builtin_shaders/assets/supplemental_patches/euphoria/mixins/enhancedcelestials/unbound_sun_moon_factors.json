@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/program/gbuffers_skybasic.glsl",
+  "type": "before",
+  "key": "if (absVdotS > sunSizeFactor1) {",
+  "code": "unbound_sun_moon_factors.glsl"
+}

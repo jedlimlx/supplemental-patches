@@ -1,0 +1,19 @@
+{
+  "type": "setting",
+  "name": "LUNAR_EVENT_MOON_SATURATION",
+  "default": 0.70,
+  "values": [
+    {
+      "type": "range",
+      "start": 0.0,
+      "stop": 2.05,
+      "step": 0.05
+    }
+  ],
+  "slider": true,
+  "file": "enhancedCelestials.glsl",
+  "en_US": {
+    "option": "Lunar Event Moon Saturation §e[*]§r",
+    "comment": "Controls saturation of moon during lunar events. §e[*]§r This only applies to the Unbound moon."
+  }
+}

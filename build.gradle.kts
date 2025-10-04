@@ -132,7 +132,8 @@ dependencies {
     implementation(fg.deobf("maven.modrinth:architectury-api:9.2.14+forge"))
     implementation(fg.deobf("maven.modrinth:blueprint:7.1.1-forge"))
     compileOnly(fg.deobf("maven.modrinth:corgilib:1.20.1-4.0.3.4-forge"))
-    implementation(fg.deobf("software.bernie.geckolib:geckolib-forge-${property("minecraft_version")}:4.4.9"))
+    implementation(fg.deobf("maven.modrinth:data-anchor:1.0.0.19-forge"))
+    implementation(fg.deobf("software.bernie.geckolib:geckolib-forge-${property("minecraft_version")}:4.8.2"))
     implementation(fg.deobf("maven.modrinth:glitchcore:0.0.1.1"))
     implementation(fg.deobf("maven.modrinth:cloth-config:11.1.136+forge"))
     implementation(fg.deobf("maven.modrinth:terrablender:3.0.1.7-forge"))
@@ -222,6 +223,8 @@ dependencies {
     compileOnly(fg.deobf("maven.modrinth:friends-and-foes-forge:forge-mc1.20.1-3.0.6"))
 
     runtimeOnly(fg.deobf("maven.modrinth:illager-invasion:v8.0.7-1.20.1-Forge"))
+
+    implementation(fg.deobf("maven.modrinth:enhanced-celestials:1.20.1-5.0.3.1-forge"))
 
     implementation(fg.deobf("maven.modrinth:yungs-api:1.20-Forge-4.0.6"))
     implementation(fg.deobf("maven.modrinth:yungs-cave-biomes:1.20.1-Forge-2.0.1"))

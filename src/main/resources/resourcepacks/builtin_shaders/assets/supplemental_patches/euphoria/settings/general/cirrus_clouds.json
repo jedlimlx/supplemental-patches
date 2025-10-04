@@ -6,7 +6,7 @@
   "file": "cloudsAndLighting.glsl",
   "activation": true,
   "en_US": {
-    "option": "Cirrus Clouds",
-    "comment": "Converts the second layer of unbound clouds into wispy, cirrus clouds."
+    "option": "Cirrus Clouds §e[*]§r",
+    "comment": "Converts the second layer of unbound clouds into wispy, cirrus clouds. §e[*]§r Requires option for second layer of unbound clouds to be enabled."
   }
 }
