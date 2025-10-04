@@ -7,7 +7,7 @@ plugins {
     idea
     `java-library`
     `maven-publish`
-    id("net.neoforged.gradle.userdev") version "7.0.173"
+    id("net.neoforged.gradle.userdev") version "7.0.180"
     id("org.jetbrains.kotlin.jvm") version "2.1.20"
     id("org.jetbrains.kotlin.plugin.serialization") version "2.1.20"
 }
@@ -112,7 +112,8 @@ dependencies {
     // general library mods
     implementation("maven.modrinth:architectury-api:13.0.8+neoforge")
     implementation("maven.modrinth:blueprint:8.0.6")
-    implementation("maven.modrinth:corgilib:1.21.1-5.0.0.4-NeoForge")
+    implementation("maven.modrinth:corgilib:1.21.1-5.0.0.5-NeoForge")
+    implementation("maven.modrinth:data-anchor:2.0.0.12-neoforge")
     implementation("software.bernie.geckolib:geckolib-neoforge-${property("minecraft_version")}:4.7.7")
     implementation("maven.modrinth:glitchcore:2.1.0.0-neoforge")
     implementation("maven.modrinth:cloth-config:15.0.140+neoforge")
@@ -203,6 +204,8 @@ dependencies {
     implementation("maven.modrinth:enderscape:1.0.5-neoforge")
 
     implementation("maven.modrinth:illager-invasion:v21.1.6-1.21.1-NeoForge")
+
+    implementation("maven.modrinth:enhanced-celestials:6.0.2.4-neoforge")
 
     implementation("maven.modrinth:yungs-api:1.21.1-NeoForge-5.1.6")
     implementation("maven.modrinth:yungs-cave-biomes:1.21.1-NeoForge-3.1.1")

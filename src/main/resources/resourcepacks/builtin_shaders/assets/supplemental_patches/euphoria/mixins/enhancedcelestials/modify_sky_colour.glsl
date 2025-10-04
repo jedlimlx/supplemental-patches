@@ -1,0 +1,1 @@
+vec3 nightColFactor      = lunarEventSkyFactor * 0.9

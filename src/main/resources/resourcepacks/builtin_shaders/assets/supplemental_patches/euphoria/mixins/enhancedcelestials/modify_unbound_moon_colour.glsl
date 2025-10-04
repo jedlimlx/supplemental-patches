@@ -1,0 +1,1 @@
+vec3 moonColor = saturateColors(moonColorSmooth, LUNAR_EVENT_MOON_SATURATION) * moonColorSpooky

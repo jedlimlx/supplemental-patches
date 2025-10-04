@@ -1,0 +1,1 @@
+mix(lunarEventFactor * nightClearLightColor, dayLightColor, sunVisibility2);

@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/colors/skyColors.glsl",
+  "type": "replace",
+  "key": "vec3 nightColFactor      = 0.9",
+  "code": "modify_sky_colour.glsl"
+}

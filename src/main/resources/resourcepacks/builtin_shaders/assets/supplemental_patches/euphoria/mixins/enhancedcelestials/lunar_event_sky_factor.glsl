@@ -1,0 +1,1 @@
+vec3 lunarEventSkyFactor = pow(moonSizeSmooth / 20, SUPER_MOON_INFLUENCE) * saturateColors(moonColorSmooth / maxAll(moonColorSmooth), LUNAR_EVENT_SKY_SATURATION);
