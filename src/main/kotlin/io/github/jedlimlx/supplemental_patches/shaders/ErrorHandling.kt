@@ -115,7 +115,7 @@ data class ShaderError(
     val origin: String
 ) {
     fun sendInChat() {
-        val message = message.split("\n").last { it.isNotEmpty() }
+        val message = message.split("\n").filter { it.isNotEmpty() }.joinToString("\n")
 
         val player = Minecraft.getInstance().player
         if (player != null) {
