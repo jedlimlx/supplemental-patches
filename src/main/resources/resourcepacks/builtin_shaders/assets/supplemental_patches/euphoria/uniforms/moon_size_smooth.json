@@ -1,0 +1,9 @@
+{
+  "type": "float",
+  "name": "moonSizeSmooth",
+  "code": "smooth(54, moonSize, 15, 15)",
+  "default": "20.0",
+  "conditions": [
+    "MOD_ENHANCEDCELESTIALS"
+  ]
+}

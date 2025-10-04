@@ -141,6 +141,7 @@ dependencies {
     modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.2.2")
     modImplementation("maven.modrinth:cloth-config:11.1.136+fabric")
     modImplementation("maven.modrinth:corgilib:1.20.1-4.0.3.4-fabric")
+    modImplementation("maven.modrinth:data-anchor:2.0.0.12-fabric")
     modImplementation("maven.modrinth:forge-config-api-port:v8.0.2-1.20.1-Fabric")
     modImplementation("maven.modrinth:frozenlib:1.9.3-mc1.20.1")
     modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.4.9")
@@ -234,6 +235,8 @@ dependencies {
     modImplementation("maven.modrinth:friends-and-foes:fabric-mc1.20.1-3.0.7")
 
     modImplementation("maven.modrinth:illager-invasion:v8.0.7-1.20.1-Fabric")
+
+    modImplementation("maven.modrinth:enhanced-celestials:1.20.1-5.0.3.1-fabric")
 
     modImplementation("maven.modrinth:yungs-api:1.20-Fabric-4.0.6")
     modImplementation("maven.modrinth:yungs-cave-biomes:1.20.1-Fabric-2.0.2")

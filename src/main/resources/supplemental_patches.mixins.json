@@ -24,7 +24,8 @@
     "biomes.WetlandWhimsyMixin",
     "biomes.YungsCaveBiomesMixin",
     "uniforms.YUNGSandstormUniforms",
-    "uniforms.ScorchfulSandstormUniforms"
+    "uniforms.ScorchfulSandstormUniforms",
+    "uniforms.EnhancedCelestialsUniforms"
   ],
   "injectors": {
     "defaultRequire": 1
