@@ -16,9 +16,8 @@ data class Sky(
 )
 
 const val DEFERRED_PATH = "/shaders/program/deferred1.glsl"
-const val REFLECTION_PATH = "/shaders/lib/materials/materialMethods/reflectionImpl.glsl"
-const val GBUFFERS_WATER_PATH = "/shaders/program/gbuffers_water.glsl"
-const val DH_WATER_PATH = "/shaders/program/dh_water.glsl"
+const val REFLECTION_PATH = "/shaders/lib/materials/materialMethods/reflectionBackground.glsl"
+const val REFLECTION_PATH_2 = "/shaders/lib/materials/materialMethods/reflections.glsl"
 fun generateSkies(directory: Path) {
     // generate atmospheric libraries within atmospherics folder
     SKIES.forEach {
@@ -45,19 +44,11 @@ fun generateSkies(directory: Path) {
     )
 
     // injecting code into gbuffers_water.glsl / dh_water.glsl
-    val gbuffersWaterFile = File(directory.absolutePathString() + GBUFFERS_WATER_PATH)
-    gbuffersWaterFile.writeText(
-        gbuffersWaterFile.readText().replace(
-            "    #include \"/lib/materials/materialMethods/reflections.glsl\"",
-            importCode.prependIndent("    ") + "    #include \"/lib/materials/materialMethods/reflections.glsl\""
-        )
-    )
-
-    val dhWaterFile = File(directory.absolutePathString() + DH_WATER_PATH)
-    dhWaterFile.writeText(
-        dhWaterFile.readText().replace(
-            "    #include \"/lib/materials/materialMethods/reflections.glsl\"",
-            importCode.prependIndent("    ") + "    #include \"/lib/materials/materialMethods/reflections.glsl\""
+    val reflectionPath = File(directory.absolutePathString() + REFLECTION_PATH_2)
+    reflectionPath.writeText(
+        reflectionPath.readText().replace(
+            "#ifdef ATM_COLOR_MULTS",
+            importCode.prependIndent("    ") + "\n#ifdef ATM_COLOR_MULTS"
         )
     )
 
