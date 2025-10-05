@@ -141,7 +141,7 @@ dependencies {
     modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.2.2")
     modImplementation("maven.modrinth:cloth-config:11.1.136+fabric")
     modImplementation("maven.modrinth:corgilib:1.20.1-4.0.3.4-fabric")
-    modImplementation("maven.modrinth:data-anchor:2.0.0.12-fabric")
+    modImplementation("maven.modrinth:data-anchor:1.0.0.19-fabric")
     modImplementation("maven.modrinth:forge-config-api-port:v8.0.2-1.20.1-Fabric")
     modImplementation("maven.modrinth:frozenlib:1.9.3-mc1.20.1")
     modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.4.9")
