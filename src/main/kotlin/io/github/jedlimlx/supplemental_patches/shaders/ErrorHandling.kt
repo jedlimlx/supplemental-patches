@@ -31,21 +31,23 @@ class MinecraftError(
 
         val player = Minecraft.getInstance().player
         if (player != null) {
-            player.sendSystemMessage(
+            player.displayClientMessage(
                 Component.literal("[$errorType]: $message")
                     .withStyle(ChatFormatting.RED)
-                    .withStyle(ChatFormatting.BOLD)
+                    .withStyle(ChatFormatting.BOLD),
+                false
             )
             if (fileName != null) {
-                player.sendSystemMessage(
+                player.displayClientMessage(
                     Component.literal("")
                         .withStyle(ChatFormatting.RED)
                         .append(Component.literal("--> Error found in "))
                         .append(Component.literal(fileName).withStyle(ChatFormatting.ITALIC))
-                        .append(Component.literal(", this file will not be loaded."))
+                        .append(Component.literal(", this file will not be loaded.")),
+                    false
                 )
             }
-            player.sendSystemMessage(
+            player.displayClientMessage(
                 Component.literal("")
                     .withStyle(ChatFormatting.RED)
                     .append(Component.literal("--> Thrown by "))
@@ -54,7 +56,8 @@ class MinecraftError(
                     .append(Component.literal(stackTrace[index].fileName ?: "Unknown").withStyle(ChatFormatting.ITALIC))
                     .append(Component.literal(":"))
                     .append(Component.literal(stackTrace[index].lineNumber.toString()).withStyle(ChatFormatting.ITALIC))
-                    .append(Component.literal(")"))
+                    .append(Component.literal(")")),
+                false
             )
 
             return true
@@ -119,28 +122,33 @@ data class ShaderError(
 
         val player = Minecraft.getInstance().player
         if (player != null) {
-            player.sendSystemMessage(
-                Component.literal("** caused by **")
+            player.displayClientMessage(
+                Component.literal("** caused by **"),
+                false
             )
-            player.sendSystemMessage(
+            player.displayClientMessage(
                 Component.literal("[$type]: $message")
                     .withStyle(ChatFormatting.RED)
-                    .withStyle(ChatFormatting.BOLD)
+                    .withStyle(ChatFormatting.BOLD),
+                false
             )
-            player.sendSystemMessage(
+            player.displayClientMessage(
                 Component.literal("")
                     .withStyle(ChatFormatting.RED)
-                    .append(Component.literal("--> Source: $source"))
+                    .append(Component.literal("--> Source: $source")),
+                false
             )
-            player.sendSystemMessage(
+            player.displayClientMessage(
                 Component.literal("")
                     .withStyle(ChatFormatting.RED)
-                    .append(Component.literal("--> Severity: $severity"))
+                    .append(Component.literal("--> Severity: $severity")),
+                false
             )
-            player.sendSystemMessage(
+            player.displayClientMessage(
                 Component.literal("")
                     .withStyle(ChatFormatting.RED)
-                    .append(Component.literal("--> Debug message by $origin"))
+                    .append(Component.literal("--> Debug message by $origin")),
+                false
             )
         }
     }

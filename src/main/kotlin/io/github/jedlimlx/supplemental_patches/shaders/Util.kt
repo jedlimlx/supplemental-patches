@@ -225,7 +225,7 @@ fun <T>catchAndPrintError(f: () -> T): T {
         return f()
     } catch (e: Exception) {
         val stackTraceString = e.stackTraceToString()  // inform user about the exception
-        Minecraft.getInstance().player?.sendSystemMessage(Component.nullToEmpty(stackTraceString))
+        Minecraft.getInstance().player?.displayClientMessage(Component.nullToEmpty(stackTraceString), false)
 
         throw e  // throw the same exception anyway
     }
