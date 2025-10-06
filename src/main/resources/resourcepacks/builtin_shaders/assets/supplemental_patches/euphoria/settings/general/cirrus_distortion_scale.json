@@ -1,7 +1,7 @@
 {
   "type": "setting",
   "name": "CIRRUS_DISTORTION_SCALE",
-  "default": 0.8,
+  "default": 0.80,
   "priority": 3,
   "values": [
     {

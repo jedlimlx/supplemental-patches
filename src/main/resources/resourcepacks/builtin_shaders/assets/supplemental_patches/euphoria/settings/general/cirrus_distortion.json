@@ -1,7 +1,7 @@
 {
   "type": "setting",
   "name": "CIRRUS_DISTORTION_INTENSITY",
-  "default": 0.8,
+  "default": 1.0,
   "priority": 3,
   "values": [
     {
