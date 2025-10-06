@@ -26,8 +26,7 @@
     "biomes.YungsCaveBiomesMixin",
     "uniforms.HauntUniforms",
     "uniforms.YUNGSandstormUniforms",
-    "uniforms.ScorchfulSandstormUniforms",
-    "uniforms.EnderscapeAtmosphereUniforms"
+    "uniforms.ScorchfulSandstormUniforms"
   ],
   "injectors": {
     "defaultRequire": 1

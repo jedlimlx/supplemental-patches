@@ -3,13 +3,10 @@ package io.github.jedlimlx.supplemental_patches.shaders
 import com.google.gson.*
 import io.github.jedlimlx.supplemental_patches.SupplementalPatches.LOGGER
 import io.github.jedlimlx.supplemental_patches.shaders.ShaderResourceLoader.getFileContents
-import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.resources.PreparableReloadListener.PreparationBarrier
-import net.minecraft.server.packs.resources.ReloadableResourceManager
 import net.minecraft.server.packs.resources.ResourceManager
 import net.minecraft.util.GsonHelper
-import net.minecraft.util.profiling.ProfilerFiller
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.Executor
 import kotlin.math.ceil
@@ -37,17 +34,6 @@ object ShaderResourceLoader {
     val ENTITY_MAP: HashMap<String, ShaderBuilder> = hashMapOf()
 
     val REFLECTION_HANDLERS: HashMap<String, String> = hashMapOf()
-
-    fun registerListener() {
-        val mc = Minecraft.getInstance()
-
-        if (mc != null && mc.resourceManager is ReloadableResourceManager) {
-            val resourceManager = (mc.resourceManager as ReloadableResourceManager)
-            resourceManager.registerReloadListener(ShaderResourceLoader::reload)
-
-            LOGGER.info("Registered listener for shader patches into Euphoria Patches.")
-        }
-    }
 
     fun reload(
         stage: PreparationBarrier,

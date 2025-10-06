@@ -2,13 +2,14 @@ package io.github.jedlimlx.supplemental_patches.shaders
 
 import io.github.jedlimlx.supplemental_patches.SupplementalPatches.LOGGER
 import net.fabricmc.loader.api.FabricLoader
+import net.minecraft.client.renderer.texture.TextureAtlas
 import java.nio.file.Path
 import kotlin.io.path.*
 
 val SHADERS_DIRECTORY: Path = FabricLoader.getInstance().gameDir.resolve("shaderpacks")
 
 @OptIn(ExperimentalPathApi::class)
-fun installShader(): String = catchAndPrintError {
+fun installShader(particleAtlas: TextureAtlas): String = catchAndPrintError {
     val installation = detectInstallation()
     if (installation == null) {
         LOGGER.warn("No Complementary Shaders + Euphoria Patches installation detected.")
@@ -39,7 +40,7 @@ fun installShader(): String = catchAndPrintError {
     generateVoxelsAndBlocklight(newInstallation)
     generateWavingCode(newInstallation)
     generateReflectionHanders(newInstallation)
-    generateParticleCode(newInstallation)
+    generateParticleCode(newInstallation, particleAtlas)
     generateUniforms(newInstallation)
     generateFog(newInstallation)
     generateSkies(newInstallation)

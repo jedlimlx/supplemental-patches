@@ -1,6 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
 import net.minecraft.client.Minecraft
+import net.minecraft.client.renderer.texture.TextureAtlas
 import net.minecraft.resources.ResourceLocation
 import java.io.File
 import java.nio.file.Path
@@ -742,9 +743,7 @@ val PARTICLES = mutableListOf<ShaderBuilder>()
 const val PARTICLES_PATH = "/shaders/program/gbuffers_textured.glsl"
 
 const val SCALE = 16384
-fun generateParticleCode(directory: Path) {
-    val textureAtlas = Minecraft.getInstance().particleEngine.textureAtlas
-
+fun generateParticleCode(directory: Path, textureAtlas: TextureAtlas) {
     val file = File(directory.absolutePathString() + PARTICLES_PATH)
     val code = file.readText()
 
