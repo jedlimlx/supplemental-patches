@@ -5,6 +5,8 @@
       "min_inclusive": 15,
       "max_inclusive": 69
     },
+    "min_format": [15, 0],
+    "max_format": [69, 0],
     "description": [
       {
         "text": "The built-in shaders for Supplemental Patches",
