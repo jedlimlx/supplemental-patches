@@ -224,6 +224,7 @@ dependencies {
 
 tasks.withType<Jar> {
     archiveBaseName.set(modid)
+    archiveVersion.set(project.version.toString())
     manifest {
         attributes(
             mapOf(
