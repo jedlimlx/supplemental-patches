@@ -29,7 +29,7 @@
     "uniforms.DoomAndGloomUniforms",
     "uniforms.OreganizedUniforms",
     "uniforms.JNEUniforms",
-    "uniforms.YUNGSandstormUniforms"
+    "uniforms.YUNGSandstormUniforms",
     "uniforms.EnhancedCelestialsUniforms"
   ],
   "injectors": {
