@@ -164,7 +164,7 @@ fun generateTerrainMaterials(directory: Path) {
     MATERIALS.sortBy { -it.blockSize }
 
     var count = 0
-    val code = generateCode("mat", 2048, TERRAIN_INITIAL_ID) { size, it ->
+    val code = generateCode("mat", 4096, TERRAIN_INITIAL_ID) { size, it ->
         if (count < MATERIALS.size) {
             if (size > MATERIALS[count].blockSize) return@generateCode null
             val material = MATERIALS[count]
@@ -201,7 +201,7 @@ fun generateEntityMaterials(directory: Path) {
     ENTITIES.sortBy { -it.blockSize }
 
     var count = 0
-    val code = generateCode("entityId", 256, ENTITY_INITIAL_ID) { size, it ->
+    val code = generateCode("entityId", 512, ENTITY_INITIAL_ID) { size, it ->
         if (count < ENTITIES.size) {
             if (size > ENTITIES[count].blockSize) return@generateCode null
             val entity = ENTITIES[count]
@@ -240,7 +240,7 @@ fun generateIrisMaterials(directory: Path) {
     ITEMS.sortBy { -it.blockSize }
 
     var count = 0
-    val code = generateCode("currentRenderedItemId", 256, IRIS_MATERIALS_INITIAL_ID) { size, it ->
+    val code = generateCode("currentRenderedItemId", 1024, IRIS_MATERIALS_INITIAL_ID) { size, it ->
         if (count < ITEMS.size) {
             if (size > ITEMS[count].blockSize) return@generateCode null
             val item = ITEMS[count]
@@ -279,7 +279,7 @@ fun generateTranslucentMaterials(directory: Path) {
     TRANSLUCENTS.sortBy { -it.blockSize }
 
     var count = 0
-    val code = generateCode("mat", 256, TRANSLUCENT_INITIAL_ID) { size, it ->
+    val code = generateCode("mat", 512, TRANSLUCENT_INITIAL_ID) { size, it ->
         if (count < TRANSLUCENTS.size) {
             if (size > TRANSLUCENTS[count].blockSize) return@generateCode null
             val translucent = TRANSLUCENTS[count]
@@ -320,7 +320,7 @@ fun generateBlockEntityMaterials(directory: Path) {
     BLOCK_ENTITIES.sortBy { -it.blockSize }
 
     var count = 0
-    val code = generateCode("blockEntityId", 256, BLOCK_ENTITY_INITIAL_ID) { size, it ->
+    val code = generateCode("blockEntityId", 512, BLOCK_ENTITY_INITIAL_ID) { size, it ->
         if (count < BLOCK_ENTITIES.size) {
             if (size > BLOCK_ENTITIES[count].blockSize) return@generateCode null
             val blockEntity = BLOCK_ENTITIES[count]
@@ -747,81 +747,85 @@ fun generateParticleCode(directory: Path, textureAtlas: TextureAtlas) {
     val file = File(directory.absolutePathString() + PARTICLES_PATH)
     val code = file.readText()
 
-    val newCode = "if (atlasSize.x < atlasCheck) {\n" +
+    try {
+        val newCode = "if (atlasSize.x < atlasCheck) {\n" +
                 "        vec2 texCoordScaled = texCoord * $SCALE;\n" + StringBuilder().apply {
-        append(
-            split(
-                PARTICLES.map {
-                    Pair(it, it.mat[0].map { ResourceLocation.parse(it) }.filter { it in textureAtlas.texturesByName.keys })
-                }.filter { it.second.isNotEmpty() }.map { (particle, lst) ->
-                    val rectangles = lst.map {
-                        val sprite = textureAtlas.getSprite(it)
-                        Rectangle(
-                            (sprite.u0 * SCALE).toInt(),
-                            (sprite.v0 * SCALE).toInt(),
-                            (sprite.u1 * SCALE).toInt() - 1,
-                            (sprite.v1 * SCALE).toInt() - 1,
-                            particle.glsl
-                        )
-                    }
-
-                    val sortedRectangles = rectangles.sortedWith { a, b ->
-                        if (a.x1 == b.x1) a.y1.compareTo(b.y1) else a.x1.compareTo(b.x1)
-                    }
-
-                    var currRectangle: Rectangle? = null
-                    val mergedRectangles = arrayListOf<Rectangle>()
-                    for (rectangle in sortedRectangles) {
-                        if (currRectangle == null) {
-                            currRectangle = rectangle
-                            continue
+            append(
+                split(
+                    PARTICLES.map {
+                        Pair(it, it.mat[0].map { ResourceLocation.parse(it) }.filter { it in textureAtlas.texturesByName.keys })
+                    }.filter { it.second.isNotEmpty() }.map { (particle, lst) ->
+                        val rectangles = lst.map {
+                            val sprite = textureAtlas.getSprite(it)
+                            Rectangle(
+                                (sprite.u0 * SCALE).toInt(),
+                                (sprite.v0 * SCALE).toInt(),
+                                (sprite.u1 * SCALE).toInt() - 1,
+                                (sprite.v1 * SCALE).toInt() - 1,
+                                particle.glsl
+                            )
                         }
 
-                        if (currRectangle.canMergeX(rectangle)) {
-                            currRectangle.mergeX(rectangle)
-                        } else {
+                        val sortedRectangles = rectangles.sortedWith { a, b ->
+                            if (a.x1 == b.x1) a.y1.compareTo(b.y1) else a.x1.compareTo(b.x1)
+                        }
+
+                        var currRectangle: Rectangle? = null
+                        val mergedRectangles = arrayListOf<Rectangle>()
+                        for (rectangle in sortedRectangles) {
+                            if (currRectangle == null) {
+                                currRectangle = rectangle
+                                continue
+                            }
+
+                            if (currRectangle.canMergeX(rectangle)) {
+                                currRectangle.mergeX(rectangle)
+                            } else {
+                                mergedRectangles.add(currRectangle)
+                                currRectangle = rectangle
+                            }
+                        }
+
+                        if (currRectangle != null) {
                             mergedRectangles.add(currRectangle)
-                            currRectangle = rectangle
-                        }
-                    }
-
-                    if (currRectangle != null) {
-                        mergedRectangles.add(currRectangle)
-                    }
-
-                    val sortedRectangles2 = mergedRectangles.sortedWith { a, b ->
-                        if (a.y1 == b.y1) a.x1.compareTo(b.x1) else a.y1.compareTo(b.y1)
-                    }
-
-                    mergedRectangles.clear()
-                    currRectangle = null
-                    for (rectangle in sortedRectangles2) {
-                        if (currRectangle == null) {
-                            currRectangle = rectangle
-                            continue
                         }
 
-                        if (currRectangle.canMergeY(rectangle)) {
-                            currRectangle.mergeY(rectangle)
-                        } else {
+                        val sortedRectangles2 = mergedRectangles.sortedWith { a, b ->
+                            if (a.y1 == b.y1) a.x1.compareTo(b.x1) else a.y1.compareTo(b.y1)
+                        }
+
+                        mergedRectangles.clear()
+                        currRectangle = null
+                        for (rectangle in sortedRectangles2) {
+                            if (currRectangle == null) {
+                                currRectangle = rectangle
+                                continue
+                            }
+
+                            if (currRectangle.canMergeY(rectangle)) {
+                                currRectangle.mergeY(rectangle)
+                            } else {
+                                mergedRectangles.add(currRectangle)
+                                currRectangle = rectangle
+                            }
+                        }
+
+                        if (currRectangle != null)
                             mergedRectangles.add(currRectangle)
-                            currRectangle = rectangle
-                        }
-                    }
 
-                    if (currRectangle != null)
-                        mergedRectangles.add(currRectangle)
-
-                    mergedRectangles
-                }.flatten()
+                        mergedRectangles
+                    }.flatten()
+                )
             )
-        )
-        append("    }\n    bool noSmoothLighting = false;\n")
-    }.toString()
+            append("    }\n    bool noSmoothLighting = false;\n")
+        }.toString()
 
-    file.writeText(
-        Regex("if \\(atlasSize.x < atlasCheck\\) \\{[\\s\\S]*bool noSmoothLighting = false;", RegexOption.MULTILINE).replaceFirst(code, newCode)
-    )
+        file.writeText(
+            Regex("if \\(atlasSize.x < atlasCheck\\) \\{[\\s\\S]*bool noSmoothLighting = false;", RegexOption.MULTILINE).replaceFirst(code, newCode)
+        )
+    } catch (e: StackOverflowError) {
+        throw MinecraftError("Particle shaders could not be generated, due to stack overflow. Check if the same particle is listed by more than one *.json file.", null)
+    }
 }
 
 val FOG_FUNCTIONS = arrayListOf<String>()
