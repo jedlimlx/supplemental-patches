@@ -107,7 +107,7 @@ dependencies {
     implementation("maven.modrinth:sodium:mc1.21.1-0.6.13-neoforge")
     implementation("maven.modrinth:iris:1.8.12+1.21.1-neoforge")
     implementation("maven.modrinth:lithium:mc1.21.1-0.15.0-neoforge")
-    runtimeOnly("maven.modrinth:euphoria-patches:1.6.4-r5.5.1-neoforge")
+    runtimeOnly("maven.modrinth:euphoria-patches:1.7.2-r5.6.1-neoforge")
 
     // general library mods
     implementation("maven.modrinth:architectury-api:13.0.8+neoforge")
