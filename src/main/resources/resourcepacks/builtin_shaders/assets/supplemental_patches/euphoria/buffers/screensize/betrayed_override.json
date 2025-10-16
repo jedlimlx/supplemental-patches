@@ -1,0 +1,10 @@
+{
+  "name": "netherexp",
+  "byte_size": 4,
+  "variables": [
+    {
+      "type": "float",
+      "name": "betrayedOverride"
+    }
+  ]
+}

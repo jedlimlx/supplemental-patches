@@ -122,6 +122,8 @@ object ShaderResourceLoader {
 
         COMMON_FUNCTIONS.clear()
 
+        BUFFERS.clear()
+
         // Loading various colours
         val lst = resourceManager.listResources("euphoria/colors") { it.path.endsWith(".json") }
 
@@ -211,7 +213,8 @@ object ShaderResourceLoader {
             loadVolumetricAtmospherics(backgroundExecutor, resourceManager, "euphoria/atmospherics/volumetric"),
             loadSkies(backgroundExecutor, resourceManager, "euphoria/atmospherics/sky"),
             loadTextures(backgroundExecutor, resourceManager, "euphoria/textures"),
-            loadFiles(backgroundExecutor, resourceManager, "euphoria/common", COMMON_FUNCTIONS)
+            loadFiles(backgroundExecutor, resourceManager, "euphoria/common", COMMON_FUNCTIONS),
+            loadBuffers(backgroundExecutor, resourceManager, "euphoria/buffers/screensize")
         ).thenAcceptAsync {
             fun process(json: JsonObject, string: String, map: HashMap<String, ShaderBuilder>, regexReplaces: MutableList<Regex>, additionaMapping: MutableMap<Int, List<String>>) {
                 json.keySet().forEach {
@@ -677,6 +680,34 @@ object ShaderResourceLoader {
                             json["texture"]?.asString ?: throw MinecraftError("Path to texture file not specified.", loc.toString()),
                             json["name"]?.asString ?: throw MinecraftError("Name of texture is not specified.", loc.toString()),
                             json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
+                        )
+                    )
+                }
+            }, executor
+        ).thenAcceptAsync {}
+    }
+
+    fun loadBuffers(
+        executor: Executor, resourceManager: ResourceManager, type: String
+    ): CompletableFuture<Void> {
+        return CompletableFuture.supplyAsync (
+            {
+                resourceManager.listResources(type) { it.path.endsWith(".json") }.forEachWithErrorHandling { (loc, _) ->
+                    val json = loadJson(loc, resourceManager)
+                    BUFFERS.add(
+                        Buffer(
+                            json["name"].asString ?: throw MinecraftError("Buffer name is not specified.", loc.toString()),
+                            (
+                                json["byte_size"].asString ?: throw MinecraftError("Byte size is not specified.", loc.toString())
+                            ).toInt(),
+                            true,
+                            json["variables"].asJsonArray.map {
+                                val obj = it.asJsonObject
+                                Pair(
+                                    obj["type"].asString ?: throw MinecraftError("Variable type for buffer not specified!", loc.toString()),
+                                    obj["name"].asString ?: throw MinecraftError("Variable name for buffer not specified!", loc.toString())
+                                )
+                            }.toList()
                         )
                     )
                 }
