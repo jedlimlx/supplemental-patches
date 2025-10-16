@@ -14,6 +14,7 @@
     "SonarWaveRendererMixin",
     "EERenderTypesMixin",
     "ORenderTypesMixin",
+    "JNEClientEventsMixin",
     "biomes.AtmosphericMixin",
     "biomes.AutumnityMixin",
     "biomes.BiomesOPlentyMixin",

@@ -126,7 +126,7 @@ dependencies {
     // rendering / optimisation mods
     implementation(fg.deobf("maven.modrinth:xenon-forge:0.3.31"))
     implementation(fg.deobf("maven.modrinth:oculus:1.20.1-1.8.0-forge"))
-    runtimeOnly(fg.deobf("maven.modrinth:euphoria-patches:1.6.4-r5.5.1-forge"))
+    runtimeOnly(fg.deobf("maven.modrinth:euphoria-patches:1.7.2-r5.6.1-forge"))
 
     // general library mods
     implementation(fg.deobf("maven.modrinth:architectury-api:9.2.14+forge"))
@@ -224,7 +224,7 @@ dependencies {
 
     runtimeOnly(fg.deobf("maven.modrinth:illager-invasion:v8.0.7-1.20.1-Forge"))
 
-    implementation(fg.deobf("maven.modrinth:enhanced-celestials:1.20.1-5.0.3.1-forge"))
+    compileOnly(fg.deobf("maven.modrinth:enhanced-celestials:1.20.1-5.0.3.1-forge"))
 
     implementation(fg.deobf("maven.modrinth:yungs-api:1.20-Forge-4.0.6"))
     implementation(fg.deobf("maven.modrinth:yungs-cave-biomes:1.20.1-Forge-2.0.1"))

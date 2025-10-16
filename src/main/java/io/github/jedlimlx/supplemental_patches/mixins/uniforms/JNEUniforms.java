@@ -9,6 +9,7 @@ import net.irisshaders.iris.uniforms.CommonUniforms;
 import net.irisshaders.iris.uniforms.FrameUpdateNotifier;
 import net.jadenxgamer.netherexp.registry.effect.JNEMobEffects;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -34,7 +35,8 @@ public class JNEUniforms {
         if (cameraEntity instanceof LivingEntity) {
             MobEffectInstance betrayed = ((LivingEntity)cameraEntity).getEffect(JNEMobEffects.BETRAYED.get());
             if (betrayed != null) {
-                return betrayed.getAmplifier();
+                if (betrayed.isInfiniteDuration() || betrayed.getDuration() > 10.0F) return 1.0F;
+                else return betrayed.getDuration() / 10.0F;
             } else return 0.0F;
         }
 
