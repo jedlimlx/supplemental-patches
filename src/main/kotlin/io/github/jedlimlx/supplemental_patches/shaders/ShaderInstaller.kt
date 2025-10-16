@@ -52,6 +52,7 @@ fun installShader(particleAtlas: TextureAtlas): String = catchAndPrintError {
     modifyLayers(newInstallation)
     modifyGBuffers(newInstallation)
     injectCommonFunctions(newInstallation)
+    // injectBuffers(newInstallation)
 
     return@catchAndPrintError "Shaders successfully installed at $newInstallation."
 }
