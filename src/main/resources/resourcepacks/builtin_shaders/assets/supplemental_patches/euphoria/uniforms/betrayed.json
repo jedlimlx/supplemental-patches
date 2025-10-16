@@ -1,0 +1,7 @@
+{
+  "type": "float",
+  "name": "betrayed",
+  "conditions": [
+    "MOD_NETHEREXP"
+  ]
+}
