@@ -1,0 +1,1 @@
+color.rgb = mix(color.rgb, vec3(0.5), doomAndGloomFog * pow2(acos(absVdotS) / acos(sunSizeFactor1)));

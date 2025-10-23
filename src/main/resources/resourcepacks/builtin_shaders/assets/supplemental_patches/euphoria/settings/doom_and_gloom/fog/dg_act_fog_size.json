@@ -1,0 +1,20 @@
+{
+  "type": "setting",
+  "name": "DG_ACT_FOG_SIZE",
+  "priority": 3,
+  "default": 0.70,
+  "slider": true,
+  "values": [
+    {
+      "type": "range",
+      "start": 0.40,
+      "stop": 1.02,
+      "step": 0.02
+    }
+  ],
+  "file": "doomAndGloomFog.glsl",
+  "en_US": {
+    "option": "ACT Fog Size §e[*]§r",
+    "comment": "Determines how far the ACT fog will spread when the fog effect is active. §e[*]§r Requires Advanced Color Tracing to be enabled."
+  }
+}

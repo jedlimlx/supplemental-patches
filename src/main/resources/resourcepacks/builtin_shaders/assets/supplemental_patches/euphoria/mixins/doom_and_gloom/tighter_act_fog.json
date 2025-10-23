@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/program/shadowcomp.glsl",
+  "type": "after",
+  "key": "light /= 7.2; // Slightly higher than 7 to prevent the light from travelling too far",
+  "code": "tighter_act_fog.glsl"
+}

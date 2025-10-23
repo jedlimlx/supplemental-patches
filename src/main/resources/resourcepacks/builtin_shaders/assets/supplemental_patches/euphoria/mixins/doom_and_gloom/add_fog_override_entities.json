@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/program/gbuffers_entities.glsl",
+  "type": "after",
+  "key": "float purkinjeOverwrite = 0.0, emission = 0.0, emissionOld = 0.0;",
+  "code": "add_fog_override.glsl"
+}

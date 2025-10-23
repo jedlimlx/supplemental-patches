@@ -1,0 +1,1 @@
+fogOverride = max(fogOverride, min(emission/(1+emission), 0.7));

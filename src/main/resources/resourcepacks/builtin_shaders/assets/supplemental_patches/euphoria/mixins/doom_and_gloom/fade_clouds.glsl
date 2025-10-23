@@ -1,7 +1,7 @@
-#ifdef DO_DOOM_AND_GLOOM_FOG
-    clouds.rgb = mix(clouds.rgb, vec3(0.5), clamp01(lViewPos / 900.0));
-#elif MOD_DOOM_AND_GLOOM
+#if DOOM_AND_GLOOM_FOG == 1
+    clouds.rgb = vec3(0.5);
+#elif defined MOD_DOOM_AND_GLOOM && (DOOM_AND_GLOOM_FOG == 0)
     if (doomAndGloomFog > 0.0001) {
-        clouds.rgb = mix(clouds.rgb, vec3(0.5), clamp01(lViewPos / 900.0) * doomAndGloomFog);
+        clouds.rgb = vec3(0.5);
     }
 #endif

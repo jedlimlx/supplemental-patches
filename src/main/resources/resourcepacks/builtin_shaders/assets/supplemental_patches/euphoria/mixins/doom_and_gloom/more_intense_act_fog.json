@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/program/composite1.glsl",
+  "type": "after",
+  "key": "lightFogLength += length(lightFog);",
+  "code": "more_intense_act_fog.glsl"
+}
