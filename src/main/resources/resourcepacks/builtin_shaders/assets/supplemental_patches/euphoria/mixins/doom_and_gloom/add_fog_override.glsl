@@ -1,0 +1,1 @@
+float fogOverride = 0.0;
