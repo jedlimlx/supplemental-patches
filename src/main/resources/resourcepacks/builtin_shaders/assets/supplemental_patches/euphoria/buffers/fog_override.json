@@ -1,0 +1,14 @@
+{
+  "name": "fogOverride",
+  "image_format": "RGBA8",
+  "conditions": [
+    "DOOM_AND_GLOOM_FOG == 1 || (defined MOD_DOOM_AND_GLOOM && (DOOM_AND_GLOOM_FOG == 0))"
+  ],
+  "read": [
+    "/shaders/program/deferred1.glsl"
+  ],
+  "write": [
+    "/shaders/program/gbuffers_terrain.glsl",
+    "/shaders/program/gbuffers_entities.glsl"
+  ]
+}

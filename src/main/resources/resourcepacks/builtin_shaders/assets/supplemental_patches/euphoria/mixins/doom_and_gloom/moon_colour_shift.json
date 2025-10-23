@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/program/gbuffers_skybasic.glsl",
+  "type": "before",
+  "key": "color.rgb = mix(color.rgb, moonColor, sunMoonMixer);",
+  "code": "moon_colour_shift.glsl"
+}

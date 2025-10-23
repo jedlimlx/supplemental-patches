@@ -214,7 +214,8 @@ object ShaderResourceLoader {
             loadSkies(backgroundExecutor, resourceManager, "euphoria/atmospherics/sky"),
             loadTextures(backgroundExecutor, resourceManager, "euphoria/textures"),
             loadFiles(backgroundExecutor, resourceManager, "euphoria/common", COMMON_FUNCTIONS),
-            loadBuffers(backgroundExecutor, resourceManager, "euphoria/buffers/screensize")
+            loadBuffers(backgroundExecutor, resourceManager, "euphoria/buffers"),
+            loadRefactors(backgroundExecutor, resourceManager, "euphoria/refactors")
         ).thenAcceptAsync {
             fun process(json: JsonObject, string: String, map: HashMap<String, ShaderBuilder>, regexReplaces: MutableList<Regex>, additionaMapping: MutableMap<Int, List<String>>) {
                 json.keySet().forEach {
@@ -696,18 +697,42 @@ object ShaderResourceLoader {
                     val json = loadJson(loc, resourceManager)
                     BUFFERS.add(
                         Buffer(
-                            json["name"].asString ?: throw MinecraftError("Buffer name is not specified.", loc.toString()),
-                            (
-                                json["byte_size"].asString ?: throw MinecraftError("Byte size is not specified.", loc.toString())
-                            ).toInt(),
-                            true,
-                            json["variables"].asJsonArray.map {
+                            json["name"]?.asString ?: throw MinecraftError("Buffer name is not specified.", loc.toString()),
+                            json["image_format"]?.asString ?: throw MinecraftError("Image format is not specified", loc.toString()),
+                            (json["conditions"]?.asJsonArray ?: listOf()).map { it.asString }.toList(),
+                            (json["read"]?.asJsonArray ?: listOf()).map { it.asString }.toList(),
+                            (json["write"]?.asJsonArray ?: listOf()).map { it.asString }.toList()
+                        )
+                    )
+                }
+            }, executor
+        ).thenAcceptAsync {}
+    }
+
+    fun loadRefactors(
+        executor: Executor, resourceManager: ResourceManager, type: String
+    ): CompletableFuture<Void> {
+        return CompletableFuture.supplyAsync (
+            {
+                resourceManager.listResources(type) { it.path.endsWith(".json") }.forEachWithErrorHandling { (loc, _) ->
+                    val json = loadJson(loc, resourceManager)
+                    REFACTORS.add(
+                        Refactor(
+                            json["function"]?.asString ?: throw MinecraftError("Function header is not specified.", loc.toString()),
+                            json["original_file"]?.asString ?: throw MinecraftError("File containing the original function is not specified.", loc.toString()),
+                            (json["changes"]?.asJsonArray ?: listOf()).map {
                                 val obj = it.asJsonObject
-                                Pair(
-                                    obj["type"].asString ?: throw MinecraftError("Variable type for buffer not specified!", loc.toString()),
-                                    obj["name"].asString ?: throw MinecraftError("Variable name for buffer not specified!", loc.toString())
-                                )
-                            }.toList()
+                                when (it.asJsonObject["type"].asString) {
+                                    "new_param" -> {
+                                        NewParameter(
+                                            obj["name"]?.asString ?: throw MinecraftError("New parameter name / data type is not specified.", loc.toString()),
+                                            obj["default"]?.asString ?: throw MinecraftError("Default value for new parameter is not specified.", loc.toString())
+                                        )
+                                    }
+                                    else -> throw MinecraftError("Unknown type specified for refactoring changes.", loc.toString())
+                                }
+                            }.toList(),
+                            (json["files"]?.asJsonArray ?: listOf()).map { it.asString }.toList()
                         )
                     )
                 }

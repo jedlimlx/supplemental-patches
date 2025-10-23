@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/program/gbuffers_terrain.glsl",
+  "type": "after",
+  "key": "float purkinjeOverwrite = 0.0;",
+  "code": "add_fog_override.glsl"
+}

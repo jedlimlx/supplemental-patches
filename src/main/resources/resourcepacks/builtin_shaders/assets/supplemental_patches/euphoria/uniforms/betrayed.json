@@ -1,6 +1,7 @@
 {
   "type": "float",
-  "name": "betrayed",
+  "name": "betrayedSmooth",
+  "code": "smooth(104, if(in(betrayed, 1), 1, 0), 20, 10)",
   "conditions": [
     "MOD_NETHEREXP"
   ]

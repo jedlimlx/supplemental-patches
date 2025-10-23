@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/program/gbuffers_terrain.glsl",
+  "type": "before",
+  "key": "/* DRAWBUFFERS:06 */",
+  "code": "set_fog_override.glsl"
+}
