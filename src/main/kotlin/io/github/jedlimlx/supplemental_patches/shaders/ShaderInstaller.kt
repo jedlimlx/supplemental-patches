@@ -41,6 +41,7 @@ fun installShader(particleAtlas: TextureAtlas): String = catchAndPrintError {
     generateWavingCode(newInstallation)
     generateReflectionHanders(newInstallation)
     generateParticleCode(newInstallation, particleAtlas)
+    injectBuffers(newInstallation)
     generateUniforms(newInstallation)
     generateFog(newInstallation)
     generateSkies(newInstallation)
@@ -48,11 +49,11 @@ fun installShader(particleAtlas: TextureAtlas): String = catchAndPrintError {
     generateAtmospherics(newInstallation)
     generateSettingsFiles(newInstallation)
     generateSettings(newInstallation)
+    refactorFunctions(newInstallation)
     generateShaderMixins(newInstallation)
     modifyLayers(newInstallation)
     modifyGBuffers(newInstallation)
     injectCommonFunctions(newInstallation)
-    // injectBuffers(newInstallation)
 
     return@catchAndPrintError "Shaders successfully installed at $newInstallation."
 }

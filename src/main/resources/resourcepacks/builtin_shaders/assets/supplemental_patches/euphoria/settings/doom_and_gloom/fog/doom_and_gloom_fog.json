@@ -1,0 +1,16 @@
+{
+  "type": "setting",
+  "name": "DOOM_AND_GLOOM_FOG",
+  "priority": 10,
+  "default": 0,
+  "values": [0, 1, 2],
+  "en_US": {
+    "option": "Doom & Gloom Fog",
+    "value.0": "ON - with Effect",
+    "value.1": "ON",
+    "value.2": "§aOFF"
+  },
+  "ru_RU": {
+    "option": "Туман Doom & Gloom"
+  }
+}

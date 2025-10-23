@@ -1,0 +1,20 @@
+{
+  "function": "void DoFog(inout vec4 color, inout float skyFade, float lViewPos, vec3 playerPos, float VdotU, float VdotS, float dither)",
+  "original_file": "/shaders/lib/atmospherics/fog/mainFog.glsl",
+  "changes": [
+    {
+      "type": "new_param",
+      "name": "float fogOverride",
+      "default": 0.0
+    }
+  ],
+  "files": [
+    "/shaders/lib/materials/materialMethods/reflections.glsl",
+    "/shaders/lib/materials/materialMethods/worldSpaceRef.glsl",
+    "/shaders/program/deferred1.glsl",
+    "/shaders/program/dh_water.glsl",
+    "/shaders/program/gbuffers_beaconbeam.glsl",
+    "/shaders/program/gbuffers_textured.glsl",
+    "/shaders/program/gbuffers_water.glsl"
+  ]
+}
