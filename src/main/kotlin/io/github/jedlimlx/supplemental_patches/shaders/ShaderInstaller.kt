@@ -40,6 +40,7 @@ fun installShader(): String = catchAndPrintError {
     generateWavingCode(newInstallation)
     generateReflectionHanders(newInstallation)
     generateParticleCode(newInstallation)
+    injectBuffers(newInstallation)
     generateUniforms(newInstallation)
     generateFog(newInstallation)
     generateSkies(newInstallation)
@@ -47,11 +48,11 @@ fun installShader(): String = catchAndPrintError {
     generateAtmospherics(newInstallation)
     generateSettingsFiles(newInstallation)
     generateSettings(newInstallation)
+    refactorFunctions(newInstallation)
     generateShaderMixins(newInstallation)
     modifyLayers(newInstallation)
     modifyGBuffers(newInstallation)
     injectCommonFunctions(newInstallation)
-    // injectBuffers(newInstallation)
 
     return@catchAndPrintError "Shaders successfully installed at $newInstallation."
 }

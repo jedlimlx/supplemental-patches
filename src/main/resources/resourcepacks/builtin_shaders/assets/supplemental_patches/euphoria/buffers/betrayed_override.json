@@ -1,0 +1,7 @@
+{
+  "name": "betrayedOverride",
+  "image_format": "RGBA8",
+  "conditions": [
+    "MOD_NETHEREXP"
+  ]
+}
