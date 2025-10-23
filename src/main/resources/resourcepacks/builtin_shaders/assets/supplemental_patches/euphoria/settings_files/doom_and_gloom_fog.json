@@ -1,0 +1,8 @@
+{
+  "name": "doomAndGloomFog.glsl",
+  "files": [
+    "program/gbuffers_skybasic.glsl",
+    "program/shadowcomp.glsl",
+    "program/composite1.glsl"
+  ]
+}
