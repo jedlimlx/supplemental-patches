@@ -124,6 +124,8 @@ object ShaderResourceLoader {
 
         BUFFERS.clear()
 
+        REFACTORS.clear()
+
         // Loading various colours
         val lst = resourceManager.listResources("euphoria/colors") { it.path.endsWith(".json") }
 
