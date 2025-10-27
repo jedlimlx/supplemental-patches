@@ -3,6 +3,8 @@ void DoDoomAndGloomFog(inout vec4 color, float lViewPos, float fogOverride) {
         float fog = lViewPos * FOG_INTENSITY;
     #elif defined MOD_DOOM_AND_GLOOM && (DOOM_AND_GLOOM_FOG == 0)
         float fog = lViewPos * FOG_INTENSITY * doomAndGloomFog;
+    #else
+        float fog = 0.0;
     #endif
 
     fog *= fog;
