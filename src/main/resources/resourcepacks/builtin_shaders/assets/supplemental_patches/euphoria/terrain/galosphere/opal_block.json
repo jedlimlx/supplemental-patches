@@ -1,0 +1,25 @@
+{
+    "name": "opal_block",
+    "glsl": "opal_block.glsl",
+    "mat0": [
+        "galosphere:opal_block",
+        "galosphere:chiseled_opal_bricks",
+        "galosphere:opal_bricks",
+        "galosphere:opal_log"
+    ],
+    "mat1": [
+        "galosphere:opal_sapling",
+        "galosphere:opal_brick_stairs",
+        "galosphere:opal_brick_stab",
+        "galosphere:opal_brick_wall"
+    ],
+    "mat3": [
+        "galosphere:opal_leaves"
+    ],
+    "reflection_handlers": [
+        null,
+        "minecraft:half_blocks",
+        null,
+        "minecraft:non_solid"
+    ]
+}

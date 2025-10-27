@@ -1,0 +1,7 @@
+{
+    "name": "block_comparator",
+    "glsl": "block_comparator.glsl",
+    "mat0": [
+        "galosphere:block_comparator"
+    ]
+}
