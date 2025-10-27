@@ -1,8 +1,9 @@
 {
-  "name": "aura_rings",
-  "glsl": "aura_rings.glsl",
+  "name": "monstrometer_indicator",
+  "glsl": "monstrometer_indicator.glsl",
   "mat0": [
     "galosphere:aura_ringer_indicator",
+    "galosphere:monstrometer_indicator",
     "galosphere:aura_particle1",
     "galosphere:aura_particle2",
     "galosphere:aura_particle3",
