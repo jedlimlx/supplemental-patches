@@ -2,7 +2,8 @@
   "name": "silver_ore",
   "glsl": "silver_ore.glsl",
   "mat0": [
-    "galosphere:silver_ore"
+    "galosphere:silver_ore",
+    "galosphere:palladium_ore"
   ],
   "color": "supplemental_patches:galosphere/silver_ore",
   "conditions": [
