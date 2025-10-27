@@ -23,6 +23,8 @@ public class IrisExceptionHandlerMixin {
         (new MinecraftError(t.getMessage(), null, "IRIS ERROR")).sendInChat();
         instance.error("Failed to create shader rendering pipeline, disabling shaders!", t);
 
-        shaderErrors.get(shaderErrors.size() - 1).sendInChat();
+        if (Iris.getIrisConfig().areDebugOptionsEnabled()) {
+            shaderErrors.get(shaderErrors.size() - 1).sendInChat();
+        }
     }
 }
