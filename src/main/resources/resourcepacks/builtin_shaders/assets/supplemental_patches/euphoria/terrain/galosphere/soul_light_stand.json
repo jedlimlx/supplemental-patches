@@ -1,0 +1,17 @@
+{
+    "name": "soul_light_stand",
+    "glsl": "soul_light_stand.glsl",
+    "mat0": [
+        "galosphere:soul_light_stand:lit=true:half=upper"
+    ],
+    "mat1": [
+        "galosphere:soul_light_stand:half=lower",
+        "galosphere:soul_light_stand:lit=false"
+    ],
+    "mat2": [
+        "galosphere:soul_chandelier"
+    ],
+    "color": "minecraft:soul_fire",
+    "held_lighting": true,
+    "reflection_handlers": "minecraft:discard"
+}

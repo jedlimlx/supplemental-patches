@@ -5,6 +5,9 @@
     "galosphere:silver_block",
     "galosphere:silver_panel",
     "galosphere:silver_tiles",
+    "galosphere:palladium_block",
+    "galosphere:palladium_panel",
+    "galosphere:palladium_tiles",
     "oreganized:silver_block",
     "caverns_and_chasms:silver_block"
   ],
@@ -13,7 +16,12 @@
     "galosphere:silver_panel_slab",
     "galosphere:silver_tiles_stairs",
     "galosphere:silver_tiles_slab",
-    "galosphere:silver_balance"
+    "galosphere:silver_balance",
+    "galosphere:palladium_panel_stairs",
+    "galosphere:palladium_panel_slab",
+    "galosphere:palladium_tiles_stairs",
+    "galosphere:palladium_tiles_slab",
+    "galosphere:palladium_balance"
   ],
   "mat3": [
     "caverns_and_chasms:medium_weighted_pressure_plate"

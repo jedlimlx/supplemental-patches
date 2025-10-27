@@ -2,7 +2,8 @@
   "name": "raw_silver",
   "glsl": "raw_silver.glsl",
   "mat0": [
-    "galosphere:raw_silver_block"
+    "galosphere:raw_silver_block",
+    "galosphere:raw_palladium_block"
   ],
   "color": "supplemental_patches:galosphere/silver_ore",
   "conditions": [
