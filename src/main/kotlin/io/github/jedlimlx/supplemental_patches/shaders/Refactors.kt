@@ -37,7 +37,6 @@ fun findFunctionCalls(text: String, functionName: String): List<String> {
 
 val REFACTORS = arrayListOf<Refactor>()
 fun refactorFunctions(directory: Path) {
-    println("asd asd asd asd asd asd")
     REFACTORS.map {
         val originalFile = File(directory.absolutePathString() + it.originalFile)
         var newHeader = it.function
@@ -51,7 +50,6 @@ fun refactorFunctions(directory: Path) {
         it.files.map { path ->
             val file = File(directory.absolutePathString() + path)
             var code = file.readText()
-            println("asd asd " + it.function.split("(").first().split(" ").last())
             findFunctionCalls(code, it.function.split("(").first().split(" ").last()).forEach { call ->
                 var newCall = call
                 it.changes.forEach {
