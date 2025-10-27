@@ -1,0 +1,8 @@
+{
+    "name": "burrow_anchor",
+    "glsl": "burrow_anchor.glsl",
+    "mat0": [
+        "galosphere:burrow_anchor"
+    ],
+    "reflection_handlers": "minecraft:discard"
+}
