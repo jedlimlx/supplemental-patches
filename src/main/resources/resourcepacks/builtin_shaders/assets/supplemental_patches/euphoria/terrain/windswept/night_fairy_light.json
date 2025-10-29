@@ -1,0 +1,10 @@
+{
+  "name": "night_fairy_light",
+  "glsl": "night_fairy_light.glsl",
+  "mat0": [
+    "windswept:night_fairy_light:lit=true"
+  ],
+  "color": "supplemental_patches:windswept/night_fairy_light",
+  "held_lighting": true,
+  "reflection_handlers": "minecraft:discard"
+}

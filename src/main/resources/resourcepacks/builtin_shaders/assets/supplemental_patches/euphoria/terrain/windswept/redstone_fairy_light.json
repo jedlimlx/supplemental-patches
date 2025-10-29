@@ -1,0 +1,10 @@
+{
+  "name": "redstone_fairy_light",
+  "glsl": "redstone_fairy_light.glsl",
+  "mat0": [
+    "windswept:redstone_fairy_light:lit=true"
+  ],
+  "color": "minecraft:redstone_torch",
+  "held_lighting": true,
+  "reflection_handlers": "minecraft:discard"
+}

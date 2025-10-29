@@ -1,0 +1,7 @@
+{
+  "name": "gelisol",
+  "glsl": "gelisol.glsl",
+  "mat0": [
+    "windswept:gelisol"
+  ]
+}

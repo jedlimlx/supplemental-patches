@@ -1,0 +1,17 @@
+{
+  "name": "living_candle",
+  "glsl": "living_candle.glsl",
+  "mat0": [
+    "dungeonsdelight:living_candle:lit=true"
+  ],
+  "mat1": [
+    "dungeonsdelight:living_candle:lit=false"
+  ],
+  "color": [
+    "supplemental_patches:dungeonsdelight/living_candle",
+    null,
+    null,
+    null
+  ],
+  "reflection_handlers": "minecraft:discard"
+}

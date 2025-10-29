@@ -1,0 +1,8 @@
+{
+    "name": "stained_scrap",
+    "glsl": "stained_scrap.glsl",
+    "mat0": [
+        "dungeonsdelight:stained_scrap",
+        "dungeonsdelight:stained_scrap_fragment"
+    ]
+}
