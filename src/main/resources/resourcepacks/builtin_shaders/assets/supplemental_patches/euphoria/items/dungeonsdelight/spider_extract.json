@@ -1,0 +1,7 @@
+{
+    "name": "spider_extract",
+    "glsl": "spider_extract.glsl",
+    "mat0": [
+        "dungeonsdelight:spider_extract"
+    ]
+}

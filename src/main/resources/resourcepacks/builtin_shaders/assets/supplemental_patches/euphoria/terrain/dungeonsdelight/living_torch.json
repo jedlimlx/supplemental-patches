@@ -1,0 +1,10 @@
+{
+  "name": "living_torch",
+  "glsl": "living_torch.glsl",
+  "mat0": [
+    "dungeonsdelight:living_torch",
+    "dungeonsdelight:wall_living_torch"
+  ],
+  "color": "supplemental_patches:dungeonsdelight/living_fire",
+  "reflection_handlers": "minecraft:discard"
+}

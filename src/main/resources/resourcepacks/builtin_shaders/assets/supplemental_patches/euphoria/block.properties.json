@@ -17,7 +17,8 @@
     "netherexp:basaltic_geyser",
     "biomeswevegone:fluorescent_cattail:color=(.*?)",
     "biomeswevegone:cyan_pitcher_plant:half=(.*?)",
-    "biomeswevegone:magenta_pitcher_plant:half=(.*?)"
+    "biomeswevegone:magenta_pitcher_plant:half=(.*?)",
+    "bountifulfares:(.*?)_jack_o_straw"
   ],
   "layer.solid": [
     "species:speclight",
@@ -127,7 +128,10 @@
   ],
   "block.10384": [
     "quark:permafrost_bricks",
-    "quark:permafrost"
+    "quark:permafrost",
+    "windswept:chiseled_packed_ice_bricks",
+    "windswept:packed_ice_bricks",
+    "windswept:icicle_block"
   ],
   "block.10385": [
     "quark:permafrost_slab",
@@ -137,7 +141,39 @@
     "quark:permafrost_bricks_slab",
     "quark:permafrost_bricks_vertical_slab",
     "quark:permafrost_bricks_stairs",
-    "quark:permafrost_bricks_wall"
+    "quark:permafrost_bricks_wall",
+    "windswept:ice_chain",
+    "windswept:icicle_bars",
+    "windswept:icicle_door",
+    "windswept:icicle_trapdoor",
+    "windswept:icicles",
+    "windswept:packed_ice_brick_slab",
+    "windswept:packed_ice_brick_stairs",
+    "windswept:packed_ice_brick_wall",
+    "windswept:packed_ice_slab",
+    "windswept:packed_ice_stairs"
+  ],
+  "block.10388": [
+    "windswept:chiseled_blue_ice_bricks",
+    "windswept:chiseled_icicle_block",
+    "windswept:blue_ice_bricks"
+  ],
+  "block.10389": [
+    "windswept:blue_ice_brick_slab",
+    "windswept:blue_ice_brick_stairs",
+    "windswept:blue_ice_brick_wall",
+    "windswept:blue_ice_slab",
+    "windswept:blue_ice_stairs"
+  ],
+  "block.10380": [
+    "windswept:suspicious_snow"
+  ],
+  "block.10381": [
+    "windswept:snow_stairs",
+    "windswept:snow_slab",
+    "windswept:snow_brick_stairs",
+    "windswept:snow_brick_slab",
+    "windswept:snow_brick_wall"
   ],
   "block.10332": [
     "galosphere:glinted_amethyst_cluster"

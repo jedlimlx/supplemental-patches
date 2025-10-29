@@ -1,0 +1,9 @@
+{
+  "name": "will_o_the_wisp",
+  "glsl": "will_o_the_wisp.glsl",
+  "mat0": [
+    "windswept:will_o_the_wisp_0",
+    "windswept:will_o_the_wisp_1",
+    "windswept:will_o_the_wisp_2"
+  ]
+}

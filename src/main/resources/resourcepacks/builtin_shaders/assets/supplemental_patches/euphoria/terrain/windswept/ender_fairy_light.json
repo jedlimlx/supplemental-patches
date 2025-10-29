@@ -1,0 +1,10 @@
+{
+  "name": "ender_fairy_light",
+  "glsl": "ender_fairy_light.glsl",
+  "mat0": [
+    "windswept:ender_fairy_light"
+  ],
+  "color": "supplemental_patches:endergetic/ender_fire",
+  "held_lighting": true,
+  "reflection_handlers": "minecraft:discard"
+}
