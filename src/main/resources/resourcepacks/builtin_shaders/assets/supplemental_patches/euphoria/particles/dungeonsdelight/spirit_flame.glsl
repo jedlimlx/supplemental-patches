@@ -1,0 +1,2 @@
+emission = 1.50;
+color.rgb = pow1_5(color.rgb);
