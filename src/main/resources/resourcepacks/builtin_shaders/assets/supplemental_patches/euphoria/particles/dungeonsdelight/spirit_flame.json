@@ -1,0 +1,7 @@
+{
+  "name": "spirit_flame",
+  "glsl": "living_flame.glsl",
+  "mat0": [
+    "dungeonsdelight:spirit_flame"
+  ]
+}

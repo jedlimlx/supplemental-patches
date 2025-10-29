@@ -1,0 +1,10 @@
+{
+    "name": "feldspar_lantern",
+    "glsl": "feldspar_lantern.glsl",
+    "mat0": [
+        "bountifulfares:feldspar_lantern"
+    ],
+    "color": "supplemental_patches:bountifulfares/feldspar_lantern",
+    "held_lighting": true,
+    "reflection_handlers": "minecraft:discard"
+}

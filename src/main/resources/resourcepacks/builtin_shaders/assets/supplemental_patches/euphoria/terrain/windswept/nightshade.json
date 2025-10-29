@@ -1,0 +1,9 @@
+{
+  "name": "nightshade",
+  "glsl": "nightshade",
+  "mat0": [
+    "windswept:nightshade"
+  ],
+  "color": "supplemental_patches:windswept/night_fairy_light",
+  "reflection_handlers": "minecraft:discard"
+}

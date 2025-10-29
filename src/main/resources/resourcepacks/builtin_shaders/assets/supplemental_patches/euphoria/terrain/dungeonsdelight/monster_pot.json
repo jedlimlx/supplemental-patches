@@ -1,0 +1,8 @@
+{
+  "name": "monster_pot",
+  "glsl": "monster_pot.glsl",
+  "mat1": [
+    "dungeonsdelight:monster_pot"
+  ],
+  "reflection_handlers": "minecraft:discard"
+}
