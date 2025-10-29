@@ -1,0 +1,21 @@
+{
+    "name": "feldspar",
+    "glsl": "feldspar.glsl",
+    "mat0": [
+        "bountifulfares:feldspar_block",
+        "bountifulfares:cut_feldspar_block",
+        "bountifulfares:feldspar_bricks",
+        "bountifulfares:polished_feldspar_block"
+    ],
+    "mat1": [
+        "bountifulfares:feldspar_brick_slab",
+        "bountifulfares:feldspar_brick_stairs",
+        "bountifulfares:feldspar_brick_wall"
+    ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
+  ]
+}

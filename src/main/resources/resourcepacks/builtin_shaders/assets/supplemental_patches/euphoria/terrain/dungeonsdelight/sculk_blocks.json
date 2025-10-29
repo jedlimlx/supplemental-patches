@@ -1,0 +1,12 @@
+{
+  "name": "sculk_blocks",
+  "glsl": "sculk_blocks.glsl",
+  "mat0": [
+    "dungeonsdelight:embedded_eggs",
+    "dungeonsdelight:heap_of_ancient_eggs",
+    "dungeonsdelight:sculk_mayo_block"
+  ],
+  "mat1": [
+    "dungeonsdelight:sculk_tart"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "living_fire",
+  "glsl": "living_fire.glsl",
+  "mat0": [
+    "dungeonsdelight:living_fire"
+  ],
+  "color": "supplemental_patches:dungeonsdelight/living_fire",
+  "reflection_handler": "minecraft:fire"
+}

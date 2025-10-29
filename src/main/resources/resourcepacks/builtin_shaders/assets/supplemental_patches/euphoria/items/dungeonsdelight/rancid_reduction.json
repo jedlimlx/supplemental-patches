@@ -1,0 +1,7 @@
+{
+    "name": "rancid_reduction",
+    "glsl": "rancid_reduction.glsl",
+    "mat0": [
+        "dungeonsdelight:rancid_reduction"
+    ]
+}
