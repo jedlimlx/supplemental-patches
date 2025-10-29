@@ -1,0 +1,16 @@
+{
+    "name": "candles [bountiful]",
+    "glsl": "candles.glsl",
+    "mat0": [
+        "bountifulfares:bellflower_candle:lit=true",
+        "bountifulfares:black_tea_candle:lit=true",
+        "bountifulfares:chamomile_candle:lit=true",
+        "bountifulfares:coconut_candle:lit=true",
+        "bountifulfares:green_tea_candle:lit=true",
+        "bountifulfares:honeysuckle_candle:lit=true",
+        "bountifulfares:torchflower_candle:lit=true",
+        "bountifulfares:walnut_candle:lit=true"
+    ],
+    "color": "minecraft:standard_candle",
+    "reflection_handlers": "minecraft:discard"
+}

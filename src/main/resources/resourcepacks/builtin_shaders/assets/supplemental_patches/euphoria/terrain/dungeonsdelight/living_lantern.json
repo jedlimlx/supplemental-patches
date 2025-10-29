@@ -1,0 +1,17 @@
+{
+  "name": "living_lantern",
+  "glsl": "living_lantern.glsl",
+  "mat0": [
+    "dungeonsdelight:living_lantern"
+  ],
+  "mat2": [
+    "dungeonsdelight:stained_lantern"
+  ],
+  "color": "supplemental_patches:dungeonsdelight/living_fire",
+  "reflection_handlers": [
+    null,
+    null,
+    "minecraft:discard",
+    null
+  ]
+}

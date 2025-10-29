@@ -1,0 +1,10 @@
+{
+  "name": "cupric_fairy_light",
+  "glsl": "cupric_fairy_light.glsl",
+  "mat0": [
+    "windswept:cupric_fairy_light"
+  ],
+  "color": "supplemental_patches:caverns_and_chasms/cupric_fire",
+  "held_lighting": true,
+  "reflection_handlers": "minecraft:discard"
+}

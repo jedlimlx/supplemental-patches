@@ -1,0 +1,10 @@
+{
+  "name": "ice_lantern",
+  "glsl": "ice_lantern.glsl",
+  "mat0": [
+    "windswept:ice_lantern"
+  ],
+  "color": "supplemental_patches:windswept/ice_lantern",
+  "held_lighting": true,
+  "reflection_handlers": "minecraft:discard"
+}

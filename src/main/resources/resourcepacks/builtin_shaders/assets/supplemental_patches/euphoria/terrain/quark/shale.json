@@ -2,13 +2,28 @@
   "name": "shale",
   "glsl": "shale.glsl",
   "mat0": [
-    "quark:shale"
+    "quark:shale",
+    "windswept:shale",
+    "windswept:knobby_shale",
+    "windswept:polished_shale",
+    "windswept:icy_polished_shale",
+    "windswept:polished_shale_bricks",
+    "windswept:chiseled_polished_shale_bricks"
   ],
   "mat1": [
     "quark:shale_stairs",
     "quark:shale_slab",
     "quark:shale_wall",
-    "quark:shale_vertical_slab"
+    "quark:shale_vertical_slab",
+    "windswept:shale_slab",
+    "windswept:shale_stairs",
+    "windswept:shale_wall",
+    "windswept:polished_shale_slab",
+    "windswept:polished_shale_stairs",
+    "windswept:polished_shale_wall",
+    "windswept:polished_shale_slab",
+    "windswept:polished_shale_brick_stairs",
+    "windswept:polished_shale_brick_wall"
   ],
   "reflection_handlers": [
     null,
