@@ -1,0 +1,19 @@
+{
+  "type": "setting",
+  "name": "ES_FLASH_GRAININESS",
+  "default": 0.60,
+  "priority": 4,
+  "values": [
+    {
+      "type": "range",
+      "start": 0.05,
+      "stop": 1.05,
+      "step": 0.05
+    }
+  ],
+  "slider": true,
+  "file": "enderscapeNebula.glsl",
+  "en_US": {
+    "option": "Flash Graininess"
+  }
+}
