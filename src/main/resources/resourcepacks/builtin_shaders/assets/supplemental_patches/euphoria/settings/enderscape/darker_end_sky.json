@@ -1,15 +1,14 @@
 {
   "type": "setting",
   "name": "DARKER_END_SKY",
-  "conditions": [
-    {
-      "if": "defined ENDERSCAPE_ATMOSPHERE || defined MOD_ENDERSCAPE",
-      "then": true
-    }
-  ],
+  "values": [0, 1, 2],
+  "default": 1,
   "en_US": {
     "option": "Darker End Sky §e[*]§r",
-    "comment": "Darkens the end sky, to better mimic Enderscape's built-in custom skybox. §e[*]§r This setting requires ATM_COLOR_MULT to be enabled to work."
+    "comment": "Darkens the end sky, to better mimic Enderscape's built-in custom skybox. §e[*]§r This setting requires ATM_COLOR_MULT to be enabled to work.",
+    "value.0": "§aOFF",
+    "value.1": "If Mod Installed",
+    "value.2": "ON"
   },
   "ru_RU": {
     "option": "Тёмное небо Энда §e[*]§r",

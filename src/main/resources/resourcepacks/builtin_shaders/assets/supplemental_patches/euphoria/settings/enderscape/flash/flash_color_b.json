@@ -1,0 +1,19 @@
+{
+  "type": "setting",
+  "name": "ES_FLASH_B",
+  "default": 255,
+  "values": [
+    {
+      "type": "range",
+      "start": 0,
+      "stop": 256,
+      "step": 1
+    }
+  ],
+  "slider": true,
+  "priority": -1,
+  "file": "enderscapeNebula.glsl",
+  "en_US": {
+    "option": "Flash Color - Blue"
+  }
+}

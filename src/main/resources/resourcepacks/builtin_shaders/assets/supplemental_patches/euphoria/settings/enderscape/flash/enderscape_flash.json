@@ -1,0 +1,14 @@
+{
+  "type": "setting",
+  "name": "ES_FLASH",
+  "default": 1,
+  "values": [0, 1, 2],
+  "file": "enderscapeNebula.glsl",
+  "priority": 6,
+  "en_US": {
+    "option": "End Flash",
+    "value.0": "§aOFF",
+    "value.1": "If Mod Installed",
+    "value.2": "ON"
+  }
+}

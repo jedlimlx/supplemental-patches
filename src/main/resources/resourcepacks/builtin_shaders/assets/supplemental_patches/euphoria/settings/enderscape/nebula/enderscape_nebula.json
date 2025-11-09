@@ -1,17 +1,16 @@
 {
   "type": "setting",
   "name": "ES_NEBULA",
-  "conditions": [
-    {
-      "if": "defined ENDERSCAPE_ATMOSPHERE || defined MOD_ENDERSCAPE",
-      "then": true
-    }
-  ],
+  "values": [0, 1, 2],
+  "default": 1,
   "priority": 3,
   "activation": true,
   "en_US": {
     "option": "Enderscape Nebula",
-    "comment": "Enables a procedurally-generated nebula skybox, similar to the one built into the Enderscape mod. §c[-]§r This effect can impact performance."
+    "comment": "Enables a procedurally-generated nebula skybox, similar to the one built into the Enderscape mod. §c[-]§r This effect can impact performance.",
+    "value.0": "§aOFF",
+    "value.1": "If Mod Installed",
+    "value.2": "ON"
   },
   "ru_RU": {
     "option": "Туманность Enderscape",
