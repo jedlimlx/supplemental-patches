@@ -1,0 +1,12 @@
+{
+  "type": "setting",
+  "name": "BIOME_COLORED_ES_FLASH",
+  "default": true,
+  "file": "enderscapeNebula.glsl",
+  "activation": true,
+  "priority": 1,
+  "en_US": {
+    "option": "Biome Colored Flash §e[*]§r",
+    "comment": "Gives the End Flash different colors based on which Enderscape biome the player is in. §e[*]§r Requires Enderscape to be installed."
+  }
+}
