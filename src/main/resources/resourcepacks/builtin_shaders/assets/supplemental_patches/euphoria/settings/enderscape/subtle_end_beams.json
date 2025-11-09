@@ -1,16 +1,15 @@
 {
   "type": "setting",
   "name": "SUBTLER_END_BEAMS",
-  "conditions": [
-    {
-      "if": "defined ENDERSCAPE_ATMOSPHERE || defined MOD_ENDERSCAPE",
-      "then": true
-    }
-  ],
+  "values": [0, 1, 2],
+  "default": 1,
   "file": "endBeams.glsl",
   "en_US": {
     "option": "Subtler End Beams",
-    "comment": "Dims end beams to make them more subtle and give prominence to the Enderscape Nebula."
+    "comment": "Dims end beams to make them more subtle and give prominence to the Enderscape Nebula.",
+    "value.0": "§aOFF",
+    "value.1": "If Mod Installed",
+    "value.2": "ON"
   },
   "ru_RU": {
     "option": "Приглушённые лучи Энда",

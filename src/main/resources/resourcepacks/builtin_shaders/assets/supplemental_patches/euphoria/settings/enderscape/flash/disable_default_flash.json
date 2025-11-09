@@ -1,0 +1,12 @@
+{
+  "type": "setting",
+  "name": "DISABLE_DEFAULT_FLASH",
+  "default": true,
+  "activation": true,
+  "file": "lightAndAmbientColors.glsl",
+  "priority": 5,
+  "en_US": {
+    "option": "Disable Default Flash",
+    "comment": "Disables Complementary Shader's default End Flash."
+  }
+}

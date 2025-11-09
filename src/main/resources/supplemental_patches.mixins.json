@@ -24,6 +24,7 @@
     "biomes.SpawnMixin",
     "biomes.WetlandWhimsyMixin",
     "biomes.YungsCaveBiomesMixin",
+    "uniforms.EnderscapeAtmosphereUniforms",
     "uniforms.HauntUniforms",
     "uniforms.YUNGSandstormUniforms",
     "uniforms.ScorchfulSandstormUniforms"

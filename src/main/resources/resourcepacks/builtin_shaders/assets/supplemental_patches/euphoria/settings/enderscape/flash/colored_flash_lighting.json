@@ -1,0 +1,11 @@
+{
+  "type": "setting",
+  "name": "COLORED_ES_FLASH_LIGHTING",
+  "default": true,
+  "file": "mainLighting.glsl",
+  "priority": 1,
+  "en_US": {
+    "option": "Colored Flash Lighting",
+    "comment": "Applies the End Flash's color to the increase in lighting during the End Flash."
+  }
+}

@@ -70,6 +70,11 @@ repositories {
         url = uri("https://raw.githubusercontent.com/Fuzss/modresources/main/maven/")
     }
 
+    maven {
+        name = "Xander Maven"
+        url = uri("https://maven.isxander.dev/releases")
+    }
+
     exclusiveContent {
         forRepository {
             maven {
@@ -117,7 +122,7 @@ dependencies {
     // rendering / optimisation mods
     modImplementation("maven.modrinth:sodium:mc1.21.9-0.7.0-fabric")
     modImplementation("maven.modrinth:iris:1.9.3+1.21.9-fabric")
-    modRuntimeOnly("maven.modrinth:euphoria-patches:1.7.0-r5.6-fabric")
+    modRuntimeOnly("maven.modrinth:euphoria-patches:1.7.3-r5.6.1-fabric")
 
     // general library mods
     modImplementation("maven.modrinth:architectury-api:18.0.3+fabric")
@@ -131,7 +136,7 @@ dependencies {
 //    modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.8.4")
     modImplementation("maven.modrinth:glitchcore:21.9.0.1-fabric")
     modImplementation("maven.modrinth:midnightlib:1.8.3+1.21.9-fabric")
-    compileOnly("maven.modrinth:mixson:1.3.1-fabric")
+    modImplementation("maven.modrinth:mixson:1.3.1-fabric")
     compileOnly("maven.modrinth:moonlight:fabric_1.21-2.17.32")
     modImplementation("maven.modrinth:resourceful-config:3.9.1-fabric")
     modImplementation("maven.modrinth:resourceful-lib:3.9.1-fabric")
@@ -139,7 +144,7 @@ dependencies {
 //    modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:13.0.0-beta.1")
     compileOnly("maven.modrinth:oh-the-trees-youll-grow:1.21.4-6.0.8-Fabric")
 //    modImplementation("maven.modrinth:puzzles-lib:21.9.3-fabric")
-//    modImplementation("maven.modrinth:yacl:3.8.0+1.21.9-fabric")
+    modImplementation("dev.isxander:yet-another-config-lib:3.8.0+1.21.9-fabric")
     compileOnly("maven.modrinth:runiclib:4.3.4-forge")
 
     // abnormals mods
@@ -186,7 +191,7 @@ dependencies {
     // fabric-exclusive
     compileOnly("maven.modrinth:cinderscapes:5.2.1")
 
-    compileOnly("maven.modrinth:enderscape:1.0.4+1.21.4")
+    modImplementation("maven.modrinth:enderscape:zgU3W5P9")
 
     compileOnly("maven.modrinth:gipples-galore:1.1.8-1.21.4")
     compileOnly("maven.modrinth:nears:2.1.5")

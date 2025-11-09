@@ -1,0 +1,9 @@
+{
+  "type": "directory",
+  "name": "ES_FLASH_FOLDER",
+  "folder": "flash",
+  "priority": 1,
+  "en_US": {
+    "screen": "Flash"
+  }
+}
