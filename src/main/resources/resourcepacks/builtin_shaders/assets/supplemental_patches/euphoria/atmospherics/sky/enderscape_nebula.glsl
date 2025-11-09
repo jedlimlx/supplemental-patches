@@ -75,6 +75,46 @@ vec2 fbm3d_2d(vec3 x) {
     return v;
 }
 
+#define ES_FLASH_SIZE 1
+#define ES_FLASH 1  // 0 - No, 1 - If mod is installed, 2 - Always
+#define ES_FLASH_GRAININESS 0.6
+
+vec4 GetEnderscapeFlash(vec3 worldPos) {
+    vec3 worldEndFlashPosition = mat3(gbufferModelViewInverse) * endFlashPosition;
+    worldEndFlashPosition = normalize(worldEndFlashPosition);
+
+    // get angle about worldEndFlashPosition
+    vec3 other;
+    if (abs(worldEndFlashPosition.x) > abs(worldEndFlashPosition.z))
+        other = vec3(-worldEndFlashPosition.y, worldEndFlashPosition.x, 0.0);
+    else other = vec3(0.0, -worldEndFlashPosition.z, worldEndFlashPosition.y);
+
+    vec3 basis1 = normalize(other);
+    vec3 basis2 = cross(worldEndFlashPosition.xyz, basis1);
+    float angle = atan(dot(worldPos, basis1), dot(worldPos, basis2));
+
+    // add rays
+    float rayFactor = pow2(sin(5 * angle));
+
+    // define how the end flash brightness should fall off with angle to worldEndFlashPosition
+    float dist = acos(dot(worldEndFlashPosition, worldPos));
+    float dirFactor = 1.5 * exp(-(20.0 + 3.0 * rayFactor) / ES_FLASH_SIZE * pow2(max0(dist)));
+
+    float endFlashFactor = dirFactor;
+    if (endFlashFactor < 0.001) return vec4(0.0);
+
+    // compute hash for graininess
+    float hash = hash13(ES_NEBULA_RESOLUTION * worldPos + 100);
+    float noise = mix(1, hash, ES_FLASH_GRAININESS);
+
+    #if defined BIOME_COLORED_ES_FLASH && defined MOD_ENDERSCAPE
+        vec3 flashColor = enderscapeFlashColor;
+    #else
+        vec3 flashColor = vec3(ES_FLASH_R, ES_FLASH_G, ES_FLASH_B);
+    #endif
+    return vec4(clamp01(flashColor / maxOf(flashColor)), clamp01(noise * endFlashIntensity * endFlashFactor));
+}
+
 vec3 GetEnderscapeNebula(vec3 viewPos, float VdotU) {
     // get world position and snap to square coordinates
     vec3 wpos = normalize((gbufferModelViewInverse * vec4(viewPos * 1000.0, 1.0)).xyz);
@@ -122,11 +162,21 @@ vec3 GetEnderscapeNebula(vec3 viewPos, float VdotU) {
     #else
         float intensityFactor = 1.0;
     #endif
-    vec4 nebulaTexture = vec4(vec3(noise) * colour, ES_NEBULA_INTENSITY * intensityFactor);
+
+    vec4 nebulaTexture = vec4(colour, ES_NEBULA_INTENSITY * intensityFactor);
+    #if MC_VERSION >= 12109 && ES_FLASH > 0
+        vec4 flashTexture = GetEnderscapeFlash(wpos);
+    #else
+        vec4 flashTexture = vec4(0.0);
+    #endif
 
     #if defined ATM_COLOR_MULTS || defined SPOOKY
         nebulaTexture.rgb *= sqrtAtmColorMult; // C72380KD - Reduced atmColorMult impact on some things
+        flashTexture.rgb *= sqrtAtmColorMult;
     #endif
 
-    return max(nebulaTexture.rgb * nebulaTexture.a, vec3(0.0));
+    return max(
+        mix(noise * nebulaTexture.rgb * nebulaTexture.a, flashTexture.rgb, flashTexture.a),
+        vec3(0.0)
+    );
 }

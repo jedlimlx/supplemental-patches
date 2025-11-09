@@ -1,0 +1,8 @@
+{
+  "type": "vec3",
+  "name": "enderscapeFlashColor",
+  "conditions": [
+    "MOD_ENDERSCAPE",
+    "MC_VERSION >= 12109"
+  ]
+}
