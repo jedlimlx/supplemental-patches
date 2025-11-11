@@ -2,9 +2,11 @@
   "name": "bloodcap_mushroom",
   "glsl": "bloodcap_mushroom.glsl",
   "mat0": [
-    "wetland_whimsy:bloodcap_mushroom"
+    "wetland_whimsy:bloodcap_mushroom",
+    "wetland_whimsy:fellcap_mushroom"
   ],
   "mat2": [
+    "wetland_whimsy:potted_fellcap_mushroom",
     "wetland_whimsy:potted_bloodcap_mushroom"
   ],
   "color": "supplemental_patches:wetland_whimsy/bloodcap_mushroom",
