@@ -2,6 +2,7 @@
   "name": "swamp_spider",
   "glsl": "swamp_spider.glsl",
   "mat0": [
-    "wetland_whimsy:swamp_spider"
+    "wetland_whimsy:swamp_spider",
+    "wetland_whimsy:infected_spider"
   ]
 }
