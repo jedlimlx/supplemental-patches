@@ -197,7 +197,7 @@ dependencies {
 
     compileOnly("maven.modrinth:sullysmod:3.2.1-beta")
 
-    compileOnly("maven.modrinth:wetland-whimsy:1.2.4-1.21.1")
+    implementation("maven.modrinth:wetland-whimsy:2.0-1.21.1")
 
     implementation("maven.modrinth:friends-and-foes-forge:neoforge-mc1.21.1-3.0.7")
 
