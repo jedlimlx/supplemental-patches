@@ -2,20 +2,28 @@
   "name": "limestone [wetland_whimsy]",
   "glsl": "limestone.glsl",
   "mat0": [
-    "wetland_whimsy:limestone"
+    "wetland_whimsy:limestone",
+    "wetland_whimsy:lemonstone"
   ],
   "mat1": [
     "wetland_whimsy:limestone_brazier:lit=false",
+    "wetland_whimsy:lemonstone_brazier:lit=false",
     "wetland_whimsy:soul_brazier:lit=false",
     "wetland_whimsy:ancient_brazier:flame=unlit",
     "wetland_whimsy:limestone_slab",
     "wetland_whimsy:limestone_stairs",
-    "wetland_whimsy:limestone_wall"
+    "wetland_whimsy:limestone_wall",
+    "wetland_whimsy:lemonstone_slab",
+    "wetland_whimsy:lemonstone_stairs",
+    "wetland_whimsy:lemonstone_wall"
   ],
   "mat2": [
     "wetland_whimsy:polished_limestone",
     "wetland_whimsy:limestone_bricks",
-    "wetland_whimsy:limestone_pillar"
+    "wetland_whimsy:limestone_pillar",
+    "wetland_whimsy:polished_lemonstone",
+    "wetland_whimsy:lemonstone_bricks",
+    "wetland_whimsy:lemonstone_pillar"
   ],
   "mat3": [
     "wetland_whimsy:limestone_brick_stairs",
@@ -23,7 +31,13 @@
     "wetland_whimsy:limestone_brick_wall",
     "wetland_whimsy:polished_limestone_stairs",
     "wetland_whimsy:polished_limestone_slab",
-    "wetland_whimsy:polished_limestone_wall"
+    "wetland_whimsy:polished_limestone_wall",
+    "wetland_whimsy:lemonstone_brick_stairs",
+    "wetland_whimsy:lemonstone_brick_slab",
+    "wetland_whimsy:lemontone_brick_wall",
+    "wetland_whimsy:polished_lemonstone_stairs",
+    "wetland_whimsy:polished_lemonstone_slab",
+    "wetland_whimsy:polished_lemonstone_wall"
   ],
   "reflection_handlers": [
     null,
