@@ -1,6 +1,6 @@
 {
   "name": "nightshade",
-  "glsl": "nightshade",
+  "glsl": "nightshade.glsl",
   "mat0": [
     "windswept:nightshade"
   ],

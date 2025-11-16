@@ -1,6 +1,6 @@
 {
   "file": "/shaders/program/gbuffers_skybasic.glsl",
-  "type": "replace",
-  "key": "vec3 moonColor = moonColorSpooky",
+  "type": "after",
+  "key": "moonColor *= (1.2 - (0.2 + 0.2 * sqrt1(nightFactor)) * moonNoise * moonNoiseIntensity);",
   "code": "modify_unbound_moon_colour.glsl"
 }
