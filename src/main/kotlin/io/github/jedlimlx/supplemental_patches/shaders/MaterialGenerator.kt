@@ -164,7 +164,7 @@ fun generateTerrainMaterials(directory: Path) {
     MATERIALS.sortBy { -it.blockSize }
 
     var count = 0
-    val code = generateCode("mat", 4096, TERRAIN_INITIAL_ID) { size, it ->
+    val code = generateCode("mat", MATERIALS.sumOf { it.blockSize }, TERRAIN_INITIAL_ID) { size, it ->
         if (count < MATERIALS.size) {
             if (size > MATERIALS[count].blockSize) return@generateCode null
             val material = MATERIALS[count]
@@ -179,7 +179,7 @@ fun generateTerrainMaterials(directory: Path) {
     val oldCode = file.readText()
 
     // injecting code into the old code
-    file.writeText(Regex("#endif\\r?\\n}").replace(oldCode, "#endif\n} else $code"))
+    file.writeText(Regex("#endif\\r?\\n}").replace(oldCode, "#endif\n} else if (mat != 0 && mat != 65535) {\n${code.prependIndent("    ")}\n}\n"))
 
     // writing the list of blocks to block.properties
     updatePropertiesFile(
@@ -199,9 +199,10 @@ const val ENTITY_PATH = "/shaders/lib/materials/materialHandling/entityIPBR.glsl
 fun generateEntityMaterials(directory: Path) {
     val file = File(directory.absolutePathString() + ENTITY_PATH)
     ENTITIES.sortBy { -it.blockSize }
+    ENTITIES.retainAll { it.required() }
 
     var count = 0
-    val code = generateCode("entityId", 512, ENTITY_INITIAL_ID) { size, it ->
+    val code = generateCode("entityId", ENTITIES.sumOf { it.blockSize }, ENTITY_INITIAL_ID) { size, it ->
         if (count < ENTITIES.size) {
             if (size > ENTITIES[count].blockSize) return@generateCode null
             val entity = ENTITIES[count]
@@ -217,7 +218,7 @@ fun generateEntityMaterials(directory: Path) {
 
     // injecting code into the old code
     val lines = oldCode.replace("\n} else {", "\n} else if (entityId < 50128) {").split("\n")
-    val newCode = lines.joinToString("\n") + " else $code"
+    val newCode = lines.joinToString("\n") + " else if (entityId != 65535) {\n${code.prependIndent("    ")}\n}\n"
     file.writeText(newCode)
 
     // writing the list of entities to entity.properties
@@ -238,9 +239,10 @@ const val IRIS_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/irisIPB
 fun generateIrisMaterials(directory: Path) {
     val file = File(directory.absolutePathString() + IRIS_MATERIALS_PATH)
     ITEMS.sortBy { -it.blockSize }
+    ITEMS.retainAll { it.required() }
 
     var count = 0
-    val code = generateCode("currentRenderedItemId", 1024, IRIS_MATERIALS_INITIAL_ID) { size, it ->
+    val code = generateCode("currentRenderedItemId", ITEMS.sumOf { it.blockSize }, IRIS_MATERIALS_INITIAL_ID) { size, it ->
         if (count < ITEMS.size) {
             if (size > ITEMS[count].blockSize) return@generateCode null
             val item = ITEMS[count]
@@ -256,7 +258,7 @@ fun generateIrisMaterials(directory: Path) {
 
     // injecting code into the old code
     val lines = oldCode.replace("\n} else {", "\n} else if (currentRenderedItemId < 45128) {").split("\n")
-    val newCode = lines.joinToString("\n") + " else $code"
+    val newCode = lines.joinToString("\n") + " else if (currentRenderedItemId != 65535) {\n${code.prependIndent("    ")}\n}\n"
     file.writeText(newCode)
 
     // writing the list of items to item.properties
@@ -279,7 +281,7 @@ fun generateTranslucentMaterials(directory: Path) {
     TRANSLUCENTS.sortBy { -it.blockSize }
 
     var count = 0
-    val code = generateCode("mat", 512, TRANSLUCENT_INITIAL_ID) { size, it ->
+    val code = generateCode("mat", TRANSLUCENTS.sumOf { it.blockSize }, TRANSLUCENT_INITIAL_ID) { size, it ->
         if (count < TRANSLUCENTS.size) {
             if (size > TRANSLUCENTS[count].blockSize) return@generateCode null
             val translucent = TRANSLUCENTS[count]
@@ -297,7 +299,7 @@ fun generateTranslucentMaterials(directory: Path) {
 
     // injecting code into the old code
     val lines = oldCode.replace("\n} else {", "\n} else if (mat < 32064) {").split("\n")
-    val newCode = lines.joinToString("\n") + " else $code"
+    val newCode = lines.joinToString("\n") + " else if (mat != 65535) {\n${code.prependIndent("    ")}\n}\n"
     file.writeText(newCode)
 
     // writing the list of blocks to block.properties
@@ -320,7 +322,7 @@ fun generateBlockEntityMaterials(directory: Path) {
     BLOCK_ENTITIES.sortBy { -it.blockSize }
 
     var count = 0
-    val code = generateCode("blockEntityId", 512, BLOCK_ENTITY_INITIAL_ID) { size, it ->
+    val code = generateCode("blockEntityId", BLOCK_ENTITIES.sumOf { it.blockSize }, BLOCK_ENTITY_INITIAL_ID) { size, it ->
         if (count < BLOCK_ENTITIES.size) {
             if (size > BLOCK_ENTITIES[count].blockSize) return@generateCode null
             val blockEntity = BLOCK_ENTITIES[count]
@@ -335,8 +337,8 @@ fun generateBlockEntityMaterials(directory: Path) {
     val oldCode = file.readText()
 
     // injecting code into the old code
-    val lines = oldCode.replace("\n} else {", "\n} else if (blockEntityId < 60064) {").split("\n")
-    val newCode = lines.joinToString("\n") + " else $code"
+    val lines = oldCode.replace("\n} else {", "\n} else if (blockEntityId < 5056 || blockEntityId == 10548) {").split("\n")
+    val newCode = lines.joinToString("\n") + " else if (blockEntityId != 65535) {\n${code.prependIndent("    ")}\n}\n"
     file.writeText(newCode)
 
     // writing the list of blocks to block.properties
@@ -371,6 +373,10 @@ vec3 GetSpecialTintColor(uint mat) {
 """
 
 fun assignVoxelNumbers() {
+    MATERIALS.retainAll { it.required() }
+    TRANSLUCENTS.retainAll { it.required() }
+    BLOCK_ENTITIES.retainAll { it.required() }
+
     val colourIndex = (TINTS + COLOURS).filter { it.index == -1 }.mapIndexed { idx, colour ->
         colour to ((if (colour.tint) NEW_TINTS_INITIAL_ID else VOXELISATION_INITIAL_ID) + idx)
     }.toMap()
