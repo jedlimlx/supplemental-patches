@@ -1,7 +1,10 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
+import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.client.Minecraft
 import net.minecraft.network.chat.Component
+import kotlin.math.floor
+import kotlin.math.log
 
 const val BLOCK_PROPERTIES = "/shaders/block.properties"
 const val ENTITY_PROPERTIES = "/shaders/entity.properties"
@@ -90,34 +93,43 @@ class ShaderBuilder(
         return this
     }
 
+    fun required(): Boolean = mat.any {
+        it.any {
+            val tokens = it.split(":")
+            if (tokens.size == 1) true
+            else FabricLoader.getInstance().isModLoaded(tokens[0])
+        }
+    }
+
     fun register(lst: MutableList<ShaderBuilder>) = lst.add(this)
 }
 
 fun generateCode(
-    variable: String, blockSize: Int, initialId: Int,
+    variable: String, size: Int, initialId: Int,
     suffix: String = "", shaderProvider: (Int, Int) -> String? = { size, id -> "$id" }
 ): String = StringBuilder().apply {
-    val output = shaderProvider(blockSize, initialId)
+    val blockSize = 1 shl floor(log(size.toDouble() - 0.1, 2.0)).toInt()
+    val output = shaderProvider(size, initialId)
     if (output != null) {
         append("$output\n")
         return@apply
     }
 
-    append("if ($variable < ${blockSize / 2 + initialId}$suffix) {\n")
+    append("if ($variable < ${blockSize + initialId}$suffix) {\n")
     append(
-        generateCode(variable, blockSize / 2, initialId, suffix, shaderProvider).split("\n")
+        generateCode(variable, blockSize, initialId, suffix, shaderProvider).split("\n")
             .joinToString("\n") { if (it.isNotEmpty()) "    $it" else it })
-    append("} else /*if ($variable < ${blockSize + initialId}$suffix)*/ {\n")
+    append("} else /*if ($variable < ${size + initialId}$suffix)*/ {\n")
     append(
-        generateCode(variable, blockSize / 2, initialId + blockSize / 2, suffix, shaderProvider).split("\n")
+        generateCode(variable, size - blockSize, blockSize + initialId, suffix, shaderProvider).split("\n")
             .joinToString("\n") { if (it.isNotEmpty()) "    $it" else it })
     append("}\n")
 }.toString()
 
 fun generateCode(
-    variable: String, blockSize: Int, initialId: Int,
+    variable: String, size: Int, initialId: Int,
     smallestBlock: Int, suffix: String = "", shaderProvider: (Int) -> String = { "$it" }
-): String = generateCode(variable, blockSize, initialId, suffix) { size, it ->
+): String = generateCode(variable, size, initialId, suffix) { size, it ->
     if (size > smallestBlock) null else shaderProvider(it)
 }
 
