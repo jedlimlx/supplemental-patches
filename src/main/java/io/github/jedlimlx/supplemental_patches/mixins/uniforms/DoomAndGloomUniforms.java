@@ -31,7 +31,7 @@ public class DoomAndGloomUniforms {
     private static float getDoomAndGloomFog() {
         Entity cameraEntity = Minecraft.getInstance().getCameraEntity();
         if (cameraEntity instanceof LivingEntity) {
-            MobEffectInstance fog = ((LivingEntity)cameraEntity).getEffect(galena.doom_and_gloom.index.OEffects.FOG.get());
+            MobEffectInstance fog = ((LivingEntity)cameraEntity).getEffect(galena.doom_and_gloom.index.DGEffects.FOG.get());
             if (fog != null) {
                 if (fog.isInfiniteDuration() || fog.getDuration() > 10.0F) return 1.0F;
                 else return fog.getDuration() / 10.0F;

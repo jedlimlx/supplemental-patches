@@ -130,7 +130,7 @@ dependencies {
 
     // general library mods
     implementation(fg.deobf("maven.modrinth:architectury-api:9.2.14+forge"))
-    implementation(fg.deobf("maven.modrinth:blueprint:7.1.1-forge"))
+    implementation(fg.deobf("maven.modrinth:blueprint:7.1.3-forge"))
     compileOnly(fg.deobf("maven.modrinth:corgilib:1.20.1-4.0.3.4-forge"))
     implementation(fg.deobf("maven.modrinth:data-anchor:1.0.0.19-forge"))
     implementation(fg.deobf("software.bernie.geckolib:geckolib-forge-${property("minecraft_version")}:4.8.2"))
@@ -167,8 +167,10 @@ dependencies {
     runtimeOnly(fg.deobf("maven.modrinth:snowy-spirit:1.20-3.0.10-forge"))
 
     // oreganized
-    implementation(fg.deobf("maven.modrinth:oreganized:4.2.2"))
-    implementation(fg.deobf("maven.modrinth:doom-gloom:1.0.2"))
+    implementation(fg.deobf("maven.modrinth:oreganized:4.3.1"))
+    implementation(fg.deobf("maven.modrinth:doom-gloom:2.0.0-forge"))
+
+    implementation(fg.deobf("maven.modrinth:windswept:3.0.3"))
 
     // farmers delight
     runtimeOnly(fg.deobf("maven.modrinth:farmers-delight:1.20.1-1.2.7"))
