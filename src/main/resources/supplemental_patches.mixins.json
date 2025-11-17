@@ -11,6 +11,7 @@
     "GLDebugMixin",
     "BiomeUniformsMixin",
     "TextureAtlasMixin",
+    "DGRenderTypesMixin",
     "biomes.AtmosphericMixin",
     "biomes.AutumnityMixin",
     "biomes.BiomesOPlentyMixin",
@@ -22,7 +23,9 @@
     "biomes.NeapolitanMixin",
     "biomes.SpawnMixin",
     "biomes.WetlandWhimsyMixin",
+    "biomes.WindsweptMixin",
     "biomes.YungsCaveBiomesMixin",
+    "uniforms.DoomAndGloomUniforms",
     "uniforms.YUNGSandstormUniforms",
     "uniforms.ScorchfulSandstormUniforms",
     "uniforms.EnhancedCelestialsUniforms"

@@ -180,8 +180,10 @@ dependencies {
     compileOnly("maven.modrinth:snowy-spirit:1.20-3.0.10-fabric")
 
     // oreganized
-    compileOnly("maven.modrinth:oreganized:4.2.2")
-    compileOnly("maven.modrinth:doom-gloom:1.0.2")
+    compileOnly("maven.modrinth:oreganized:4.3.1")
+    modImplementation("maven.modrinth:doom-gloom:2.0.0-fabric")
+
+    compileOnly("maven.modrinth:windswept:3.0.3")
 
     // farmers delight
     modImplementation("maven.modrinth:farmers-delight-refabricated:1.20.1-2.3.0")
