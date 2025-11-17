@@ -148,8 +148,10 @@ dependencies {
     implementation("maven.modrinth:snowy-spirit:neoforge_1.21.1-3.0.17")
 
     // oreganized
-    compileOnly("maven.modrinth:oreganized:3.1.2")
-    compileOnly("maven.modrinth:doom-gloom:1.0.2")
+    implementation("maven.modrinth:oreganized:5.1.1")
+    compileOnly("maven.modrinth:doom-gloom:2.0.0-forge")
+
+    compileOnly("maven.modrinth:windswept:3.0.3")
 
     // farmers delight
     implementation("maven.modrinth:farmers-delight:1.21.1-1.2.7")
