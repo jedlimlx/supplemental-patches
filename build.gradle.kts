@@ -126,7 +126,7 @@ dependencies {
     // rendering / optimisation mods
     implementation(fg.deobf("maven.modrinth:xenon-forge:0.3.31"))
     implementation(fg.deobf("maven.modrinth:oculus:1.20.1-1.8.0-forge"))
-    runtimeOnly(fg.deobf("maven.modrinth:euphoria-patches:1.7.2-r5.6.1-forge"))
+    runtimeOnly(fg.deobf("maven.modrinth:euphoria-patches:1.7.6-r5.6.1-forge"))
 
     // general library mods
     implementation(fg.deobf("maven.modrinth:architectury-api:9.2.14+forge"))
