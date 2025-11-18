@@ -1,8 +1,8 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
-import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.client.Minecraft
 import net.minecraft.network.chat.Component
+import net.neoforged.fml.ModList
 import kotlin.math.floor
 import kotlin.math.log
 
@@ -97,7 +97,7 @@ class ShaderBuilder(
         it.any {
             val tokens = it.split(":")
             if (tokens.size == 1) true
-            else FabricLoader.getInstance().isModLoaded(tokens[0])
+            else ModList.get().isLoaded(tokens[0])
         }
     }
 
