@@ -184,7 +184,7 @@ dependencies {
     compileOnly("maven.modrinth:scorchful:0.15-beta.1")
 
     // misc
-    compileOnly("maven.modrinth:galosphere:1.20.1-1.4.1-forge")
+    implementation("maven.modrinth:galosphere:1.21.1-1.5.0-neoforge")
     compileOnly("maven.modrinth:spawn-mod:1.0.2-forge")
     compileOnly("maven.modrinth:twigs:1.20.1-3.1.1-forge")
 
