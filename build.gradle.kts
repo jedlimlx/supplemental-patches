@@ -149,7 +149,7 @@ dependencies {
     modImplementation("maven.modrinth:midnightlib:1.4.1-fabric")
     modImplementation("maven.modrinth:moonlight:1.20-2.16.2-fabric")
     modImplementation("maven.modrinth:oh-the-trees-youll-grow:1.20.1-1.3.13-Fabric")
-    modImplementation("maven.modrinth:porting_lib:2.3.8+1.20.1")
+    modImplementation("maven.modrinth:porting_lib:2.3.14+1.20.1")
     modImplementation("maven.modrinth:puzzles-lib:v8.1.32-1.20.1-Fabric")
     modImplementation("maven.modrinth:resourceful-config:2.1.3-fabric")
     modImplementation("maven.modrinth:resourceful-lib:2.1.29-fabric")
