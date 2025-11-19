@@ -117,7 +117,7 @@ dependencies {
     // rendering / optimisation mods
     modImplementation("maven.modrinth:sodium:mc1.21.4-0.6.10-fabric")
     modImplementation("maven.modrinth:iris:1.8.8+1.21.4-fabric")
-    modRuntimeOnly("maven.modrinth:euphoria-patches:1.7.6-r5.5.1-fabric")
+    modRuntimeOnly("maven.modrinth:euphoria-patches:1.7.6-r5.6.1-fabric")
 
     // general library mods
     modImplementation("maven.modrinth:architectury-api:15.0.3+fabric")
@@ -200,7 +200,7 @@ dependencies {
     modCompileOnly("maven.modrinth:scorchful:0.15.1+1.21.4")
 
     // misc
-    compileOnly("maven.modrinth:galosphere:1.21-1.4.2-fabric")
+    modImplementation("maven.modrinth:galosphere:1.21.4-1.5.0-fabric")
     compileOnly("maven.modrinth:spawn-mod:1.0.3-fabric")
     compileOnly("maven.modrinth:twigs:3.1.0-fabric")
 
