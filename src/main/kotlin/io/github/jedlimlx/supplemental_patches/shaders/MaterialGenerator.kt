@@ -154,6 +154,7 @@ fun updatePropertiesFile(path: String, materials: Map<Int, ShaderBuilder>, mater
 }
 
 val MATERIALS = mutableListOf<ShaderBuilder>()
+var FILTERED_MATERIALS = mutableListOf<ShaderBuilder>()
 val MATERIALS_MAP = mutableMapOf<Int, ShaderBuilder>()
 
 const val TERRAIN_INITIAL_ID = 12288
@@ -161,13 +162,13 @@ const val TERRAIN_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/terr
 
 fun generateTerrainMaterials(directory: Path) {
     val file = File(directory.absolutePathString() + TERRAIN_MATERIALS_PATH)
-    MATERIALS.sortBy { -it.blockSize }
+    FILTERED_MATERIALS.sortBy { -it.blockSize }
 
     var count = 0
-    val code = generateCode("mat", MATERIALS.sumOf { it.blockSize }, TERRAIN_INITIAL_ID) { size, it ->
-        if (count < MATERIALS.size) {
-            if (size > MATERIALS[count].blockSize) return@generateCode null
-            val material = MATERIALS[count]
+    val code = generateCode("mat", FILTERED_MATERIALS.sumOf { it.blockSize }, TERRAIN_INITIAL_ID) { size, it ->
+        if (count < FILTERED_MATERIALS.size) {
+            if (size > FILTERED_MATERIALS[count].blockSize) return@generateCode null
+            val material = FILTERED_MATERIALS[count]
             MATERIALS_MAP[it] = material
 
             val code = "// block.$it = ${material.name}\n${material.glsl}"
@@ -191,6 +192,7 @@ fun generateTerrainMaterials(directory: Path) {
 }
 
 val ENTITIES = mutableListOf<ShaderBuilder>()
+var FILTERED_ENTITIES = mutableListOf<ShaderBuilder>()
 val ENTITY_MAP = mutableMapOf<Int, ShaderBuilder>()
 
 const val ENTITY_INITIAL_ID = 51200
@@ -198,14 +200,14 @@ const val ENTITY_PATH = "/shaders/lib/materials/materialHandling/entityIPBR.glsl
 
 fun generateEntityMaterials(directory: Path) {
     val file = File(directory.absolutePathString() + ENTITY_PATH)
-    ENTITIES.sortBy { -it.blockSize }
-    ENTITIES.retainAll { it.required() }
+    FILTERED_ENTITIES = ENTITIES.filter { it.required() }.toMutableList()
+    FILTERED_ENTITIES.sortBy { -it.blockSize }
 
     var count = 0
-    val code = generateCode("entityId", ENTITIES.sumOf { it.blockSize }, ENTITY_INITIAL_ID) { size, it ->
-        if (count < ENTITIES.size) {
-            if (size > ENTITIES[count].blockSize) return@generateCode null
-            val entity = ENTITIES[count]
+    val code = generateCode("entityId", FILTERED_ENTITIES.sumOf { it.blockSize }, ENTITY_INITIAL_ID) { size, it ->
+        if (count < FILTERED_ENTITIES.size) {
+            if (size > FILTERED_ENTITIES[count].blockSize) return@generateCode null
+            val entity = FILTERED_ENTITIES[count]
             ENTITY_MAP[it] = entity
 
             val code = "// entity.$it = ${entity.name}\n${entity.glsl}"
@@ -231,6 +233,7 @@ fun generateEntityMaterials(directory: Path) {
 }
 
 val ITEMS = mutableListOf<ShaderBuilder>()
+var FILTERED_ITEMS = mutableListOf<ShaderBuilder>()
 val ITEM_MAP = mutableMapOf<Int, ShaderBuilder>()
 
 const val IRIS_MATERIALS_INITIAL_ID = 46080
@@ -238,14 +241,14 @@ const val IRIS_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/irisIPB
 
 fun generateIrisMaterials(directory: Path) {
     val file = File(directory.absolutePathString() + IRIS_MATERIALS_PATH)
-    ITEMS.sortBy { -it.blockSize }
-    ITEMS.retainAll { it.required() }
+    FILTERED_ITEMS = ITEMS.filter { it.required() }.toMutableList()
+    FILTERED_ITEMS.sortBy { -it.blockSize }
 
     var count = 0
-    val code = generateCode("currentRenderedItemId", ITEMS.sumOf { it.blockSize }, IRIS_MATERIALS_INITIAL_ID) { size, it ->
-        if (count < ITEMS.size) {
-            if (size > ITEMS[count].blockSize) return@generateCode null
-            val item = ITEMS[count]
+    val code = generateCode("currentRenderedItemId", FILTERED_ITEMS.sumOf { it.blockSize }, IRIS_MATERIALS_INITIAL_ID) { size, it ->
+        if (count < FILTERED_ITEMS.size) {
+            if (size > FILTERED_ITEMS[count].blockSize) return@generateCode null
+            val item = FILTERED_ITEMS[count]
             ITEM_MAP[it] = item
 
             val code = "// item.$it = ${item.name}\n${item.glsl}"
@@ -271,6 +274,7 @@ fun generateIrisMaterials(directory: Path) {
 }
 
 val TRANSLUCENTS = mutableListOf<ShaderBuilder>()
+var FILTERED_TRANSLUCENTS = mutableListOf<ShaderBuilder>()
 val TRANSLUCENTS_MAP = mutableMapOf<Int, ShaderBuilder>()
 
 const val TRANSLUCENT_INITIAL_ID = 32128
@@ -278,13 +282,13 @@ const val TRANSLUCENT_MATERIALS_PATH = "/shaders/lib/materials/materialHandling/
 
 fun generateTranslucentMaterials(directory: Path) {
     val file = File(directory.absolutePathString() + TRANSLUCENT_MATERIALS_PATH)
-    TRANSLUCENTS.sortBy { -it.blockSize }
+    FILTERED_TRANSLUCENTS.sortBy { -it.blockSize }
 
     var count = 0
-    val code = generateCode("mat", TRANSLUCENTS.sumOf { it.blockSize }, TRANSLUCENT_INITIAL_ID) { size, it ->
-        if (count < TRANSLUCENTS.size) {
-            if (size > TRANSLUCENTS[count].blockSize) return@generateCode null
-            val translucent = TRANSLUCENTS[count]
+    val code = generateCode("mat", FILTERED_TRANSLUCENTS.sumOf { it.blockSize }, TRANSLUCENT_INITIAL_ID) { size, it ->
+        if (count < FILTERED_TRANSLUCENTS.size) {
+            if (size > FILTERED_TRANSLUCENTS[count].blockSize) return@generateCode null
+            val translucent = FILTERED_TRANSLUCENTS[count]
             TRANSLUCENTS_MAP[it] = translucent
 
             val code = "// block.$it = ${translucent.name}\n${translucent.glsl}"
@@ -312,6 +316,7 @@ fun generateTranslucentMaterials(directory: Path) {
 }
 
 val BLOCK_ENTITIES = mutableListOf<ShaderBuilder>()
+var FILTERED_BLOCK_ENTITIES = mutableListOf<ShaderBuilder>()
 val BLOCK_ENTITIES_MAP = mutableMapOf<Int, ShaderBuilder>()
 
 const val BLOCK_ENTITY_INITIAL_ID = 5056
@@ -319,13 +324,13 @@ const val BLOCK_ENTITY_MATERIALS_PATH = "/shaders/lib/materials/materialHandling
 
 fun generateBlockEntityMaterials(directory: Path) {
     val file = File(directory.absolutePathString() + BLOCK_ENTITY_MATERIALS_PATH)
-    BLOCK_ENTITIES.sortBy { -it.blockSize }
+    FILTERED_BLOCK_ENTITIES.sortBy { -it.blockSize }
 
     var count = 0
-    val code = generateCode("blockEntityId", BLOCK_ENTITIES.sumOf { it.blockSize }, BLOCK_ENTITY_INITIAL_ID) { size, it ->
-        if (count < BLOCK_ENTITIES.size) {
-            if (size > BLOCK_ENTITIES[count].blockSize) return@generateCode null
-            val blockEntity = BLOCK_ENTITIES[count]
+    val code = generateCode("blockEntityId", FILTERED_BLOCK_ENTITIES.sumOf { it.blockSize }, BLOCK_ENTITY_INITIAL_ID) { size, it ->
+        if (count < FILTERED_BLOCK_ENTITIES.size) {
+            if (size > FILTERED_BLOCK_ENTITIES[count].blockSize) return@generateCode null
+            val blockEntity = FILTERED_BLOCK_ENTITIES[count]
             BLOCK_ENTITIES_MAP[it] = blockEntity
 
             val code = "// block.$it = ${blockEntity.name}\n${blockEntity.glsl}"
@@ -373,16 +378,16 @@ vec3 GetSpecialTintColor(uint mat) {
 """
 
 fun assignVoxelNumbers() {
-    MATERIALS.retainAll { it.required() }
-    TRANSLUCENTS.retainAll { it.required() }
-    BLOCK_ENTITIES.retainAll { it.required() }
+    FILTERED_MATERIALS = MATERIALS.filter { it.required() }.toMutableList()
+    FILTERED_TRANSLUCENTS = TRANSLUCENTS.filter { it.required() }.toMutableList()
+    FILTERED_BLOCK_ENTITIES = BLOCK_ENTITIES.filter { it.required() }.toMutableList()
 
     val colourIndex = (TINTS + COLOURS).filter { it.index == -1 }.mapIndexed { idx, colour ->
         colour to ((if (colour.tint) NEW_TINTS_INITIAL_ID else VOXELISATION_INITIAL_ID) + idx)
     }.toMap()
 
     var count = 0
-    (MATERIALS + BLOCK_ENTITIES + TRANSLUCENTS).forEach { material ->
+    (FILTERED_MATERIALS + FILTERED_BLOCK_ENTITIES + FILTERED_TRANSLUCENTS).forEach { material ->
         if (material.lightColour.size == 1) {
             val colour = material.lightColour[0]!!
             (0..< material.blockSize).forEach {
