@@ -122,7 +122,7 @@ dependencies {
     // rendering / optimisation mods
     modImplementation("maven.modrinth:sodium:mc1.21.9-0.7.0-fabric")
     modImplementation("maven.modrinth:iris:1.9.3+1.21.9-fabric")
-    modRuntimeOnly("maven.modrinth:euphoria-patches:1.7.3-r5.6.1-fabric")
+    modRuntimeOnly("maven.modrinth:euphoria-patches:1.7.6-r5.6.1-fabric")
 
     // general library mods
     modImplementation("maven.modrinth:architectury-api:18.0.3+fabric")
