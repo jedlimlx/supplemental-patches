@@ -208,7 +208,7 @@ dependencies {
     modImplementation("maven.modrinth:scorchful:0.15-beta.1")
 
     // misc
-    modImplementation("maven.modrinth:galosphere:1.21-1.4.2-fabric")
+    modImplementation("maven.modrinth:galosphere:1.21.1-1.5.0-fabric")
     compileOnly("maven.modrinth:spawn-mod:1.0.3-fabric")
     compileOnly("maven.modrinth:twigs:3.1.0-fabric")
 
