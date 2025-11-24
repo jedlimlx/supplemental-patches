@@ -97,6 +97,7 @@ class ShaderBuilder(
         it.any {
             val tokens = it.split(":")
             if (tokens.size == 1) true
+            else if (tokens[0] == "chorus_flower") true
             else FabricLoader.getInstance().isModLoaded(tokens[0])
         }
     }
