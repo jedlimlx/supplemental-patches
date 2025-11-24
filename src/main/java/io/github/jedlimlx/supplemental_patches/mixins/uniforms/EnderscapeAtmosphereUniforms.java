@@ -2,7 +2,7 @@ package io.github.jedlimlx.supplemental_patches.mixins.uniforms;
 
 import me.fallenbreath.conditionalmixin.api.annotation.Condition;
 import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
-import net.bunten.enderscape.biome.util.SkyParameters;
+import net.bunten.enderscape.biome.util.BiomeParameters;
 import net.irisshaders.iris.gl.uniform.UniformHolder;
 import net.irisshaders.iris.gl.uniform.UniformUpdateFrequency;
 import net.irisshaders.iris.uniforms.BiomeUniforms;
@@ -23,7 +23,7 @@ import static net.bunten.enderscape.registry.EnderscapeBiomes.DEFAULT_NEBULA_COL
 @Mixin(value = BiomeUniforms.class, remap = false)
 public abstract class EnderscapeAtmosphereUniforms {
     private static Color getNebulaColor(LocalPlayer player) {
-        Optional<SkyParameters> temp = SkyParameters.getSkyParametersFor(player.level().getBiome(player.blockPosition()));
+        Optional<BiomeParameters> temp = BiomeParameters.findFor(player.level().getBiome(player.blockPosition()));
         return temp.map(skyParameters -> new Color(skyParameters.nebulaColor())).orElse(new Color(DEFAULT_NEBULA_COLOR));
     }
 
@@ -49,8 +49,8 @@ public abstract class EnderscapeAtmosphereUniforms {
             () -> {
                 LocalPlayer player = Minecraft.getInstance().player;
                 if (player != null) {
-                    Optional<SkyParameters> temp = SkyParameters.getSkyParametersFor(player.level().getBiome(player.blockPosition()));
-                    return temp.map(SkyParameters::nebulaAlpha).orElse(DEFAULT_NEBULA_ALPHA);
+                    Optional<BiomeParameters> temp = BiomeParameters.findFor(player.level().getBiome(player.blockPosition()));
+                    return temp.map(BiomeParameters::nebulaAlpha).orElse(DEFAULT_NEBULA_ALPHA);
                 } else return DEFAULT_NEBULA_ALPHA;
             }
         );
