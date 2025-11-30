@@ -1,5 +1,6 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
+import io.github.jedlimlx.supplemental_patches.SupplementalPatches
 import java.io.File
 import java.nio.file.Path
 import kotlin.collections.flatten
@@ -161,15 +162,17 @@ val BUFFERS = arrayListOf<Buffer>()
 fun injectBuffers(directory: Path) {
     // TODO generate full list of conditions to check for and locations to inject buffers
     val images = BUFFERS.groupBy { it.imageFormat }.map { it.value.chunked(4) }.flatten().toList()
-    for (i in 0..images.size) {
-        UNIFORMS.add(
-            Uniform(
-                "colortex${15 - i}",
-                "sampler2D",
-                "",
-                listOf()
+    for (i in 0..<images.size) {
+        if (!UNIFORMS.any { it.name == "colortex${15 - i}" }) {
+            UNIFORMS.add(
+                Uniform(
+                    "colortex${15 - i}",
+                    "sampler2D",
+                    "",
+                    listOf()
+                )
             )
-        )
+        }
     }
 
     // read
