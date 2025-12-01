@@ -678,7 +678,10 @@ object ShaderResourceLoader {
     ): CompletableFuture<Void> {
         return CompletableFuture.supplyAsync (
             {
-                resourceManager.listResources(type) { it.path.endsWith(".json") }.forEachWithErrorHandling { (loc, _) ->
+                val lst = resourceManager.listResources(type) { it.path.endsWith(".json") }
+                LOGGER.info("Loading ${lst.size} custom textures...")
+
+                lst.forEachWithErrorHandling { (loc, _) ->
                     val json = loadJson(loc, resourceManager)
                     TEXTURES.add(
                         Texture(
@@ -697,7 +700,10 @@ object ShaderResourceLoader {
     ): CompletableFuture<Void> {
         return CompletableFuture.supplyAsync (
             {
-                resourceManager.listResources(type) { it.path.endsWith(".json") }.forEachWithErrorHandling { (loc, _) ->
+                val lst = resourceManager.listResources(type) { it.path.endsWith(".json") }
+                LOGGER.info("Loading ${lst.size} custom buffers...")
+
+                lst.forEachWithErrorHandling { (loc, _) ->
                     val json = loadJson(loc, resourceManager)
                     BUFFERS.add(
                         Buffer(
