@@ -55,12 +55,10 @@ object SupplementalPatches: ClientModInitializer {
             }
 
         TextureStitchEvent.EVENT.register(TextureStitchEvent {
-            LOGGER.info("asd asd asd ${it.location()}")
             if ("particles" in it.location().toString()) {
                 val string = installShader(it)
                 particleAtlas = it
 
-                LOGGER.info(string)
                 Minecraft.getInstance().player?.displayClientMessage(Component.nullToEmpty(string), false)
             }
         })
