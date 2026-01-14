@@ -224,6 +224,8 @@ dependencies {
     compileOnly("maven.modrinth:yungs-api:1.20-Fabric-4.0.6")
     compileOnly("maven.modrinth:yungs-cave-biomes:1.20.1-Fabric-2.0.2")
 
+    compileOnly("maven.modrinth:cobblemon:1.7.1-fabric")
+
     compileOnly("maven.modrinth:zeta:1.20.1-1.0-24-forge")
     compileOnly("maven.modrinth:quark:1.20.1-4.0-460-forge")
     compileOnly("maven.modrinth:quark-oddities:1.20.1-forge")
