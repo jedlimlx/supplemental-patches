@@ -29,7 +29,8 @@
     "biomes.YungsCaveBiomesMixin",
     "uniforms.YUNGSandstormUniforms",
     "uniforms.EnderscapeAtmosphereUniforms",
-    "uniforms.EnhancedCelestialsUniforms"
+    "uniforms.EnhancedCelestialsUniforms",
+    "uniforms.PokemonRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
