@@ -1,0 +1,14 @@
+{
+  "type": "setting",
+  "name": "ES_LIGHTMAP",
+  "values": [0, 1, 2],
+  "default": 1,
+  "activation": true,
+  "en_US": {
+    "option": "Enderscape Lightmap",
+    "comment": "Enables the modified lightmap used by Enderscape, in place of the default one.",
+    "value.0": "§aOFF",
+    "value.1": "If Mod Installed",
+    "value.2": "ON"
+  }
+}
