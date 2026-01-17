@@ -2,7 +2,7 @@
   "type": "setting",
   "name": "ANIMATED_END_LAMP",
   "priority": 3,
-  "default": true,
+  "default": false,
   "file": "materials.glsl",
   "en_US": {
     "option": "Animated End Lamp",
