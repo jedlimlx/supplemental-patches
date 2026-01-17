@@ -1,6 +1,7 @@
 {
   "type": "setting",
   "name": "GLOWING_PINK_SALT",
+  "activation": true,
   "default": 2,
   "values": [0, 1, 2, 3],
   "file": "materials.glsl",

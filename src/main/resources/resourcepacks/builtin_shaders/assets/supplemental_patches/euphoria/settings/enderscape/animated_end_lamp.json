@@ -1,6 +1,7 @@
 {
   "type": "setting",
   "name": "ANIMATED_END_LAMP",
+  "activation": true,
   "priority": 3,
   "default": true,
   "file": "materials.glsl",

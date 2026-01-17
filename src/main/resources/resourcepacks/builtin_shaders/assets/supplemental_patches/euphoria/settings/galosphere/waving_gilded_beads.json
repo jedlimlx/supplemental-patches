@@ -1,6 +1,7 @@
 {
   "type": "setting",
   "name": "WAVING_GILDED_BEADS",
+  "activation": true,
   "default": 1,
   "values": [0, 1, 2, 3],
   "file": "wavingBlocks.glsl",

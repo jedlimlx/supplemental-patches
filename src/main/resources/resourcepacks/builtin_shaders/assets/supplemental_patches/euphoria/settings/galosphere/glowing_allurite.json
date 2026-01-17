@@ -1,6 +1,7 @@
 {
   "type": "setting",
   "name": "GLOWING_ALLURITE",
+  "activation": true,
   "priority": 1,
   "default": 1,
   "values": [0, 1, 2],
