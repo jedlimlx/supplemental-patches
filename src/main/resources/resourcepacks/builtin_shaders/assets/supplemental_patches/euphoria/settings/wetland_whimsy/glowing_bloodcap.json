@@ -1,6 +1,7 @@
 {
   "type": "setting",
   "name": "GLOWING_BLOODCAP_MUSHROOM",
+  "activation": true,
   "default": 0,
   "values": [0, 1, 2, 3],
   "file": "materials.glsl",

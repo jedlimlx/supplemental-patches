@@ -1,6 +1,7 @@
 {
   "type": "setting",
   "name": "GLOWING_ORETORTOISE",
+  "activation": true,
   "default": true,
   "file": "entityMaterials.glsl",
   "en_US": {
