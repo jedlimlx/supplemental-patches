@@ -1,6 +1,7 @@
 {
   "type": "setting",
   "name": "GLOWING_ORE_OBSIDIAN_DIAMOND",
+  "activation": true,
   "priority": 4,
   "conditions": [
     {
