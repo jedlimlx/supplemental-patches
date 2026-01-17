@@ -1,6 +1,7 @@
 {
   "type": "setting",
   "name": "GLOWING_ORE_LEAD",
+  "activation": true,
   "priority": 1,
   "conditions": [
     {
