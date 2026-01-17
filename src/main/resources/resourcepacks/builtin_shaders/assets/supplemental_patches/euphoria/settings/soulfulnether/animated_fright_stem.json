@@ -1,6 +1,7 @@
 {
   "type": "setting",
   "name": "ANIMATED_FRIGHT_STEM",
+  "activation": true,
   "default": true,
   "file": "materials.glsl",
   "en_US": {

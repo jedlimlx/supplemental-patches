@@ -1,6 +1,7 @@
 {
   "type": "setting",
   "name": "NOT_GLOWING_CHORUS_FLOWER",
+  "activation": true,
   "priority": 4,
   "conditions": [
     {

@@ -1,6 +1,7 @@
 {
   "type": "setting",
   "name": "GLOWING_CORALSTONE",
+  "activation": true,
   "default": false,
   "file": "materials.glsl",
   "en_US": {
