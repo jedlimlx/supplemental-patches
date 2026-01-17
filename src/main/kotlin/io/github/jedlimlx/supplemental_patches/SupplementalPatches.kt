@@ -15,16 +15,11 @@ import net.minecraft.client.KeyMapping
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.texture.TextureAtlas
 import net.minecraft.network.chat.Component
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.server.packs.PackType
-import net.minecraft.server.packs.resources.PreparableReloadListener
-import net.minecraft.server.packs.resources.PreparableReloadListener.PreparationBarrier
-import net.minecraft.server.packs.resources.ResourceManager
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 import org.lwjgl.glfw.GLFW
-import java.util.concurrent.CompletableFuture
-import java.util.concurrent.Executor
 
 
 object SupplementalPatches: ClientModInitializer {
@@ -44,7 +39,8 @@ object SupplementalPatches: ClientModInitializer {
 
     override fun onInitializeClient() {
         ResourceLoader.get(PackType.CLIENT_RESOURCES)
-            .registerReloader(ResourceLocation.parse("supplemental_patches:euphoria")
+            .registerReloader(
+                Identifier.parse("supplemental_patches:euphoria")
             ) { sharedState, backgroundExecutor, stage, gameExecutor ->
                 ShaderResourceLoader.reload(
                     stage,
@@ -74,7 +70,7 @@ object SupplementalPatches: ClientModInitializer {
 
         FabricLoader.getInstance().getModContainer("supplemental_patches").ifPresent {
             ResourceManagerHelper.registerBuiltinResourcePack(
-                ResourceLocation.parse("supplemental_patches:builtin_shaders"),
+                Identifier.parse("supplemental_patches:builtin_shaders"),
                 it,
                 Component.translatable("key.supplemental_patches.builtin_shaders"),
                 ResourcePackActivationType.DEFAULT_ENABLED

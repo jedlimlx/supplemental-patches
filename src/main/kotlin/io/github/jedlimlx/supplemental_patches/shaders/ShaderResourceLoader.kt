@@ -3,7 +3,7 @@ package io.github.jedlimlx.supplemental_patches.shaders
 import com.google.gson.*
 import io.github.jedlimlx.supplemental_patches.SupplementalPatches.LOGGER
 import io.github.jedlimlx.supplemental_patches.shaders.ShaderResourceLoader.getFileContents
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.server.packs.resources.PreparableReloadListener.PreparationBarrier
 import net.minecraft.server.packs.resources.ResourceManager
 import net.minecraft.util.GsonHelper
@@ -15,7 +15,7 @@ import kotlin.math.log10
 
 val GSON: Gson = GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create()
 
-fun loadJson(location: ResourceLocation, manager: ResourceManager): JsonObject {
+fun loadJson(location: Identifier, manager: ResourceManager): JsonObject {
     try {
         return GsonHelper.fromJson(GSON, getFileContents(location, manager), JsonObject::class.java)
     } catch (e: JsonParseException) {
@@ -734,7 +734,7 @@ object ShaderResourceLoader {
         ).thenAcceptAsync {}
     }
 
-    fun getFileContents(location: ResourceLocation, manager: ResourceManager): String {
+    fun getFileContents(location: Identifier, manager: ResourceManager): String {
         return manager.getResourceOrThrow(location).open().use { it.bufferedReader().readText() }
     }
 }

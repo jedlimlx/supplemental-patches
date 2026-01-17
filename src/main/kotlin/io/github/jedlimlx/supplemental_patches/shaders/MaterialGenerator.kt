@@ -2,7 +2,7 @@ package io.github.jedlimlx.supplemental_patches.shaders
 
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.texture.TextureAtlas
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import java.io.File
 import java.nio.file.Path
 import kotlin.collections.component1
@@ -759,7 +759,7 @@ fun generateParticleCode(directory: Path, textureAtlas: TextureAtlas) {
             append(
                 split(
                     PARTICLES.map {
-                        Pair(it, it.mat[0].map { ResourceLocation.parse(it) }.filter { it in textureAtlas.texturesByName.keys })
+                        Pair(it, it.mat[0].map { Identifier.parse(it) }.filter { it in textureAtlas.texturesByName.keys })
                     }.filter { it.second.isNotEmpty() }.map { (particle, lst) ->
                         val rectangles = lst.map {
                             val sprite = textureAtlas.getSprite(it)

@@ -29,7 +29,7 @@ public class IrisDefinesMixin {
         BiomeUniformsKt.getBiomeMap().forEach(
             (biome, id) -> lst.add(
                 new StringPair(
-                    "MOD_BIOME_" + biome.location().getPath().toUpperCase(Locale.ROOT),
+                    "MOD_BIOME_" + biome.identifier().getPath().toUpperCase(Locale.ROOT),
                     String.valueOf(id)
                 )
             )

@@ -15,9 +15,6 @@ repositories {
     maven {
         name = "ParchmentMC"
         url = uri("https://maven.parchmentmc.org")
-        content {
-            includeGroupAndSubgroups("org.parchmentmc")
-        }
     }
     maven {
         name = "Progwml6's maven"
@@ -42,7 +39,10 @@ repositories {
         name = "CurseForge"
         url = uri("https://cursemaven.com")
     }
-    maven { url = uri("https://maven.jaackson.me") }
+//    maven {
+//        url = uri("https://maven.jaackson.me")
+//        isAllowInsecureProtocol = true
+//    }
     maven { url = uri("https://jitpack.io") }
     maven { url = uri("https://mvn.devos.one/releases/") }
 
@@ -107,8 +107,9 @@ dependencies {
     include("com.github.Fallen-Breath.conditional-mixin:conditional-mixin-fabric:0.6.4")
 
     localRuntime("org.joml:joml:1.10.4")
+    localRuntime("org.antlr:antlr4-runtime:4.13.1")
+    localRuntime("io.github.douira:glsl-transformer:3.0.0-pre3")
     localRuntime("org.anarres:jcpp:1.4.14")
-    localRuntime("io.github.douira:glsl-transformer:2.0.2")
 
     implementation("io.sigpipe:jbsdiff:1.0")
     implementation("com.eliotlash.mclib:mclib:20")
@@ -117,34 +118,35 @@ dependencies {
     implementation("net.jodah:typetools:0.6.3")
 
 //    modApi("fuzs.extensibleenums:extensibleenums-fabric:21.4.0")
-    modApi("fuzs.neoforgedatapackextensions:neoforgedatapackextensions-fabric:21.9.3")
+//    modApi("fuzs.neoforgedatapackextensions:neoforgedatapackextensions-fabric:21.9.3")
 
     // rendering / optimisation mods
-    modImplementation("maven.modrinth:sodium:mc1.21.9-0.7.0-fabric")
-    modImplementation("maven.modrinth:iris:1.9.3+1.21.9-fabric")
+    modImplementation("maven.modrinth:sodium:mc1.21.11-0.8.2-fabric")
+    modImplementation("maven.modrinth:iris:1.10.4+1.21.11-fabric")
     modRuntimeOnly("maven.modrinth:euphoria-patches:1.7.6-r5.6.1-fabric")
 
     // general library mods
-    modImplementation("maven.modrinth:architectury-api:18.0.3+fabric")
+    modImplementation("maven.modrinth:architectury-api:19.0.1+fabric")
     compileOnly("maven.modrinth:blueprint:8.0.3")
-    modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-base:7.1.0-beta.1")
-    modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-entity:7.1.0-beta.1")
-    modImplementation("maven.modrinth:cloth-config:20.0.148+fabric")
-    compileOnly("maven.modrinth:corgilib:1.21.4-6.0.0.1-Fabric")
-    modImplementation("maven.modrinth:forge-config-api-port:21.9.8-fabric")
-    modImplementation("maven.modrinth:frozenlib:2.2-mc1.21.9")
-//    modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.8.4")
-    modImplementation("maven.modrinth:glitchcore:21.9.0.1-fabric")
-    modImplementation("maven.modrinth:midnightlib:1.8.3+1.21.9-fabric")
+    modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-base:7.3.0")
+    modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-entity:7.3.0")
+    modImplementation("maven.modrinth:cloth-config:21.11.153+fabric")
+    modImplementation("maven.modrinth:corgilib:1.21.11-9.0.0.0-Fabric")
+    modImplementation("maven.modrinth:forge-config-api-port:21.11.1-fabric")
+    modImplementation("maven.modrinth:frozenlib:2.3-mc1.21.11")
+    modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:5.4")
+    modImplementation("maven.modrinth:glitchcore:21.11.0.2-fabric")
+    modImplementation("maven.modrinth:lithostitched:1.5.7-fabric-1.21.11")
+    modImplementation("maven.modrinth:midnightlib:1.9.2+1.21.11-fabric")
     modImplementation("maven.modrinth:mixson:1.3.1-fabric")
     compileOnly("maven.modrinth:moonlight:fabric_1.21-2.17.32")
-    modImplementation("maven.modrinth:resourceful-config:3.9.1-fabric")
-    modImplementation("maven.modrinth:resourceful-lib:3.9.1-fabric")
-    modImplementation("maven.modrinth:terrablender:21.9.0.1-fabric")
-//    modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:13.0.0-beta.1")
-    compileOnly("maven.modrinth:oh-the-trees-youll-grow:1.21.4-6.0.8-Fabric")
-//    modImplementation("maven.modrinth:puzzles-lib:21.9.3-fabric")
-    modImplementation("dev.isxander:yet-another-config-lib:3.8.0+1.21.9-fabric")
+    modImplementation("maven.modrinth:resourceful-config:3.11.2-fabric")
+    modImplementation("maven.modrinth:resourceful-lib:3.11.0-fabric")
+    modImplementation("maven.modrinth:terrablender:21.11.0.0-fabric")
+    modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:16.0.0")
+    modImplementation("maven.modrinth:oh-the-trees-youll-grow:1.21.11-9.0.0-Fabric")
+    modImplementation("maven.modrinth:puzzles-lib:21.11.6-fabric")
+    modImplementation("dev.isxander:yet-another-config-lib:3.8.2+1.21.11-fabric")
     compileOnly("maven.modrinth:runiclib:4.3.4-forge")
 
     // abnormals mods
@@ -186,23 +188,23 @@ dependencies {
 
     // biome mods
     compileOnly("maven.modrinth:biomes-o-plenty:21.4.0.23-fabric")
-    compileOnly("maven.modrinth:oh-the-biomes-weve-gone:3.1.1-Fabric")
+    modCompileOnly("maven.modrinth:oh-the-biomes-weve-gone:4.3.0-Fabric")
 
     // fabric-exclusive
     compileOnly("maven.modrinth:cinderscapes:5.2.1")
 
-    modImplementation("maven.modrinth:enderscape:zgU3W5P9")
+    modImplementation("maven.modrinth:enderscape:2.1.0-1.21.11")
 
     compileOnly("maven.modrinth:gipples-galore:1.1.8-1.21.4")
     compileOnly("maven.modrinth:nears:2.1.5")
-    modImplementation("maven.modrinth:pearfection:1.3.2")
+    compileOnly("maven.modrinth:pearfection:1.3.2")
 
-    modImplementation("maven.modrinth:trailier-tales:1.1.11-mc1.21.9")
-    compileOnly("maven.modrinth:wilder-wild:4.1-mc1.21.9")
+    modCompileOnly("maven.modrinth:trailier-tales:1.2.2-mc1.21.11")
+    modCompileOnly("maven.modrinth:wilder-wild:4.2.2-mc1.21.11")
 
-    modImplementation("maven.modrinth:thermoo:8.0.1")
-    modCompileOnly("maven.modrinth:frostiful:2.2+1.21.4")
-    modCompileOnly("maven.modrinth:scorchful:0.15.1+1.21.4")
+    modCompileOnly("maven.modrinth:thermoo:9.0.0")
+    modCompileOnly("maven.modrinth:frostiful:2.2.14+1.21.11")
+    modCompileOnly("maven.modrinth:scorchful:0.16.6+1.21.11")
 
     // misc
     compileOnly("maven.modrinth:galosphere:1.21-1.4.2-fabric")
