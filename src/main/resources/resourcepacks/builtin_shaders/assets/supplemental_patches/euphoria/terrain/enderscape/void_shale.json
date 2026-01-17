@@ -1,0 +1,7 @@
+{
+  "name": "void_shale",
+  "glsl": "void_shale.glsl",
+  "mat0": [
+    "enderscape:void_shale"
+  ]
+}
