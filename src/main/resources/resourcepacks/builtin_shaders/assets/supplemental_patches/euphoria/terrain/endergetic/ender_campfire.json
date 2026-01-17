@@ -2,7 +2,8 @@
   "name": "ender_campfire",
   "glsl": "ender_campfire.glsl",
   "mat0": [
-    "endergetic:ender_campfire:lit=true"
+    "endergetic:ender_campfire:lit=true",
+    "enderscape:void_campfire:lit=true"
   ],
   "color": "supplemental_patches:endergetic/ender_fire",
   "held_lighting": true,

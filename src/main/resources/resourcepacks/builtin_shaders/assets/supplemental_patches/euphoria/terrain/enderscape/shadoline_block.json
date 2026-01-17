@@ -14,10 +14,14 @@
     "enderscape:cut_shadoline_block_stairs",
     "enderscape:cut_shadoline_block_wall"
   ],
+  "mat3": [
+    "enderscape:shadoline_bars",
+    "enderscape:shadoline_chain"
+  ],
   "reflection_handlers": [
     null,
     "minecraft:half_blocks",
     null,
-    null
+    "minecraft:discard"
   ]
 }
