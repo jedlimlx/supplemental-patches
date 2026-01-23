@@ -79,41 +79,43 @@ vec2 fbm3d_2d(vec3 x) {
 #define ES_FLASH 1  // 0 - No, 1 - If mod is installed, 2 - Always
 #define ES_FLASH_GRAININESS 0.6
 
-vec4 GetEnderscapeFlash(vec3 worldPos) {
-    vec3 worldEndFlashPosition = mat3(gbufferModelViewInverse) * endFlashPosition;
-    worldEndFlashPosition = normalize(worldEndFlashPosition);
+#if MC_VERSION >= 12109
+    vec4 GetEnderscapeFlash(vec3 worldPos) {
+        vec3 worldEndFlashPosition = mat3(gbufferModelViewInverse) * endFlashPosition;
+        worldEndFlashPosition = normalize(worldEndFlashPosition);
 
-    // get angle about worldEndFlashPosition
-    vec3 other;
-    if (abs(worldEndFlashPosition.x) > abs(worldEndFlashPosition.z))
-        other = vec3(-worldEndFlashPosition.y, worldEndFlashPosition.x, 0.0);
-    else other = vec3(0.0, -worldEndFlashPosition.z, worldEndFlashPosition.y);
+        // get angle about worldEndFlashPosition
+        vec3 other;
+        if (abs(worldEndFlashPosition.x) > abs(worldEndFlashPosition.z))
+            other = vec3(-worldEndFlashPosition.y, worldEndFlashPosition.x, 0.0);
+        else other = vec3(0.0, -worldEndFlashPosition.z, worldEndFlashPosition.y);
 
-    vec3 basis1 = normalize(other);
-    vec3 basis2 = cross(worldEndFlashPosition.xyz, basis1);
-    float angle = atan(dot(worldPos, basis1), dot(worldPos, basis2));
+        vec3 basis1 = normalize(other);
+        vec3 basis2 = cross(worldEndFlashPosition.xyz, basis1);
+        float angle = atan(dot(worldPos, basis1), dot(worldPos, basis2));
 
-    // add rays
-    float rayFactor = pow2(sin(5 * angle));
+        // add rays
+        float rayFactor = pow2(sin(5 * angle));
 
-    // define how the end flash brightness should fall off with angle to worldEndFlashPosition
-    float dist = acos(dot(worldEndFlashPosition, worldPos));
-    float dirFactor = 1.5 * exp(-(20.0 + 3.0 * rayFactor) / ES_FLASH_SIZE * pow2(max0(dist)));
+        // define how the end flash brightness should fall off with angle to worldEndFlashPosition
+        float dist = acos(dot(worldEndFlashPosition, worldPos));
+        float dirFactor = 1.5 * exp(-(20.0 + 3.0 * rayFactor) / ES_FLASH_SIZE * pow2(max0(dist)));
 
-    float endFlashFactor = dirFactor;
-    if (endFlashFactor < 0.001) return vec4(0.0);
+        float endFlashFactor = dirFactor;
+        if (endFlashFactor < 0.001) return vec4(0.0);
 
-    // compute hash for graininess
-    float hash = hash13(ES_NEBULA_RESOLUTION * worldPos + 100);
-    float noise = mix(1, hash, ES_FLASH_GRAININESS);
+        // compute hash for graininess
+        float hash = hash13(ES_NEBULA_RESOLUTION * worldPos + 100);
+        float noise = mix(1, hash, ES_FLASH_GRAININESS);
 
-    #if defined BIOME_COLORED_ES_FLASH && defined MOD_ENDERSCAPE
-        vec3 flashColor = enderscapeFlashColor;
-    #else
-        vec3 flashColor = vec3(ES_FLASH_R, ES_FLASH_G, ES_FLASH_B);
-    #endif
-    return vec4(clamp01(flashColor / maxOf(flashColor)), clamp01(noise * endFlashIntensity * endFlashFactor));
-}
+        #if defined BIOME_COLORED_ES_FLASH && defined MOD_ENDERSCAPE
+            vec3 flashColor = enderscapeFlashColor;
+        #else
+            vec3 flashColor = vec3(ES_FLASH_R, ES_FLASH_G, ES_FLASH_B);
+        #endif
+        return vec4(clamp01(flashColor / maxOf(flashColor)), clamp01(noise * endFlashIntensity * endFlashFactor));
+    }
+#endif
 
 vec3 GetEnderscapeNebula(vec3 viewPos, float VdotU) {
     // get world position and snap to square coordinates
