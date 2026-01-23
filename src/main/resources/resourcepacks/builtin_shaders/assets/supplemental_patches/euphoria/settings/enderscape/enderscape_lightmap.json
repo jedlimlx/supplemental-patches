@@ -3,6 +3,7 @@
   "name": "ES_LIGHTMAP",
   "values": [0, 1, 2],
   "default": 1,
+  "file": "mainLighting.glsl",
   "activation": true,
   "en_US": {
     "option": "Enderscape Lightmap",

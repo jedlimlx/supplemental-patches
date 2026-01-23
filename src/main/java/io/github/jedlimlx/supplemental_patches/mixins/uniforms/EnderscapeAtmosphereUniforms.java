@@ -20,16 +20,6 @@ import java.awt.*;
 @Restriction(require = @Condition("enderscape"))
 @Mixin(value = BiomeUniforms.class, remap = false)
 public abstract class EnderscapeAtmosphereUniforms {
-    private static Color getNebulaColor() {
-        EnvironmentAttributeProbe probe = Minecraft.getInstance().gameRenderer.getMainCamera().attributeProbe();
-        return new Color(probe.getValue(EnderscapeEnvironmentAttributes.NEBULA_COLOR, 1.0f));
-    }
-
-    private static Color getFlashColor() {
-        EnvironmentAttributeProbe probe = Minecraft.getInstance().gameRenderer.getMainCamera().attributeProbe();
-        return new Color(probe.getValue(EnvironmentAttributes.SKY_LIGHT_COLOR, 1.0f));
-    }
-
     @Inject(
         method = "addBiomeUniforms",
         at = @At("TAIL"),
@@ -40,14 +30,16 @@ public abstract class EnderscapeAtmosphereUniforms {
             UniformUpdateFrequency.PER_TICK,
             "enderscapeNebulaColor",
             () -> {
-                Color color = getNebulaColor();
+                EnvironmentAttributeProbe probe = Minecraft.getInstance().gameRenderer.getMainCamera().attributeProbe();
+                Color color = new Color(probe.getValue(EnderscapeEnvironmentAttributes.NEBULA_COLOR, 1.0f));
                 return new Vector3f(color.getRed(), color.getGreen(), color.getBlue());
             }
         ).uniform3f(
             UniformUpdateFrequency.PER_TICK,
             "enderscapeFlashColor",
             () -> {
-                Color color = getFlashColor();
+                EnvironmentAttributeProbe probe = Minecraft.getInstance().gameRenderer.getMainCamera().attributeProbe();
+                Color color = new Color(probe.getValue(EnvironmentAttributes.SKY_LIGHT_COLOR, 1.0f));
                 return new Vector3f(color.getRed(), color.getGreen(), color.getBlue());
             }
         ).uniform1f(
@@ -56,6 +48,21 @@ public abstract class EnderscapeAtmosphereUniforms {
             () -> {
                 EnvironmentAttributeProbe probe = Minecraft.getInstance().gameRenderer.getMainCamera().attributeProbe();
                 return probe.getValue(EnderscapeEnvironmentAttributes.NEBULA_ALPHA, 1.0f);
+            }
+        ).uniform3f(
+            UniformUpdateFrequency.PER_TICK,
+            "enderscapeStarColor",
+            () -> {
+                EnvironmentAttributeProbe probe = Minecraft.getInstance().gameRenderer.getMainCamera().attributeProbe();
+                Color color = new Color(probe.getValue(EnderscapeEnvironmentAttributes.STAR_COLOR, 1.0f));
+                return new Vector3f(color.getRed(), color.getGreen(), color.getBlue());
+            }
+        ).uniform1f(
+            UniformUpdateFrequency.PER_TICK,
+            "enderscapeStarAlpha",
+            () -> {
+                EnvironmentAttributeProbe probe = Minecraft.getInstance().gameRenderer.getMainCamera().attributeProbe();
+                return probe.getValue(EnderscapeEnvironmentAttributes.STAR_ALPHA, 1.0f);
             }
         );
     }
