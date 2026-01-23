@@ -1,0 +1,14 @@
+{
+  "type": "setting",
+  "name": "ES_STAR_COLOR",
+  "values": [0, 1, 2],
+  "default": 1,
+  "file": "enderStars.glsl",
+  "en_US": {
+    "option": "Biome Colored End Stars",
+    "comment": "Changes the color of End Stars to match that the colors defined by Enderscape.",
+    "value.0": "§aOFF",
+    "value.1": "If Mod Installed",
+    "value.2": "ON"
+  }
+}

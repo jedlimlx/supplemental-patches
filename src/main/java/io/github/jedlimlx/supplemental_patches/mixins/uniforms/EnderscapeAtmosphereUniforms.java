@@ -17,14 +17,19 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.awt.*;
 import java.util.Optional;
 
-import static net.bunten.enderscape.registry.EnderscapeBiomes.DEFAULT_NEBULA_ALPHA;
-import static net.bunten.enderscape.registry.EnderscapeBiomes.DEFAULT_NEBULA_COLOR;
+import static net.bunten.enderscape.registry.EnderscapeBiomes.*;
+
 @Restriction(require = @Condition("enderscape"))
 @Mixin(value = BiomeUniforms.class, remap = false)
 public abstract class EnderscapeAtmosphereUniforms {
     private static Color getNebulaColor(LocalPlayer player) {
         Optional<BiomeParameters> temp = BiomeParameters.findFor(player.level().getBiome(player.blockPosition()));
         return temp.map(skyParameters -> new Color(skyParameters.nebulaColor())).orElse(new Color(DEFAULT_NEBULA_COLOR));
+    }
+
+    private static Color getStarColor(LocalPlayer player) {
+        Optional<SkyParameters> temp = SkyParameters.getSkyParametersFor(player.level().getBiome(player.blockPosition()));
+        return temp.map(skyParameters -> new Color(skyParameters.starColor())).orElse(new Color(DEFAULT_STAR_COLOR));
     }
 
     @Inject(
@@ -52,6 +57,26 @@ public abstract class EnderscapeAtmosphereUniforms {
                     Optional<BiomeParameters> temp = BiomeParameters.findFor(player.level().getBiome(player.blockPosition()));
                     return temp.map(BiomeParameters::nebulaAlpha).orElse(DEFAULT_NEBULA_ALPHA);
                 } else return DEFAULT_NEBULA_ALPHA;
+            }
+        ).uniform3f(
+            UniformUpdateFrequency.PER_TICK,
+            "enderscapeStarColor",
+            () -> {
+                LocalPlayer player = Minecraft.getInstance().player;
+                Color color;
+                if (player != null) color = getStarColor(player);
+                else color = new Color(DEFAULT_STAR_COLOR);
+                return new Vector3f(color.getRed(), color.getGreen(), color.getBlue());
+            }
+        ).uniform1f(
+            UniformUpdateFrequency.PER_TICK,
+            "enderscapeStarAlpha",
+            () -> {
+                LocalPlayer player = Minecraft.getInstance().player;
+                if (player != null) {
+                    Optional<SkyParameters> temp = SkyParameters.getSkyParametersFor(player.level().getBiome(player.blockPosition()));
+                    return temp.map(SkyParameters::starAlpha).orElse(DEFAULT_STAR_ALPHA);
+                } else return DEFAULT_STAR_ALPHA;
             }
         );
     }
