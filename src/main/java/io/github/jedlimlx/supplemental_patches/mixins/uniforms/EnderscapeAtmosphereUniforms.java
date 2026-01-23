@@ -32,6 +32,11 @@ public abstract class EnderscapeAtmosphereUniforms {
         return temp.map(skyParameters -> new Color(skyParameters.flashColor())).orElse(new Color(DEFAULT_FLASH_COLOR));
     }
 
+    private static Color getStarColor(LocalPlayer player) {
+        Optional<BiomeParameters> temp = BiomeParameters.findFor(player.level().getBiome(player.blockPosition()));
+        return temp.map(skyParameters -> new Color(skyParameters.starColor())).orElse(new Color(DEFAULT_STAR_COLOR));
+    }
+
     @Inject(
         method = "addBiomeUniforms",
         at = @At("TAIL"),
@@ -67,6 +72,26 @@ public abstract class EnderscapeAtmosphereUniforms {
                     Optional<BiomeParameters> temp = BiomeParameters.findFor(player.level().getBiome(player.blockPosition()));
                     return temp.map(BiomeParameters::nebulaAlpha).orElse(DEFAULT_NEBULA_ALPHA);
                 } else return DEFAULT_NEBULA_ALPHA;
+            }
+        ).uniform3f(
+            UniformUpdateFrequency.PER_TICK,
+            "enderscapeStarColor",
+            () -> {
+                LocalPlayer player = Minecraft.getInstance().player;
+                Color color;
+                if (player != null) color = getStarColor(player);
+                else color = new Color(DEFAULT_STAR_COLOR);
+                return new Vector3f(color.getRed(), color.getGreen(), color.getBlue());
+            }
+        ).uniform1f(
+            UniformUpdateFrequency.PER_TICK,
+            "enderscapeStarAlpha",
+            () -> {
+                LocalPlayer player = Minecraft.getInstance().player;
+                if (player != null) {
+                    Optional<BiomeParameters> temp = BiomeParameters.findFor(player.level().getBiome(player.blockPosition()));
+                    return temp.map(BiomeParameters::starAlpha).orElse(DEFAULT_STAR_ALPHA);
+                } else return DEFAULT_STAR_ALPHA;
             }
         );
     }

@@ -1,0 +1,7 @@
+{
+  "type": "vec3",
+  "name": "enderscapeStarColor",
+  "conditions": [
+    "MOD_ENDERSCAPE"
+  ]
+}
