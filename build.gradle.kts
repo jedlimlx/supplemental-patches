@@ -212,7 +212,7 @@ dependencies {
     implementation("maven.modrinth:yungs-api:1.21.1-NeoForge-5.1.6")
     implementation("maven.modrinth:yungs-cave-biomes:1.21.1-NeoForge-3.1.1")
 
-    implementation("maven.modrinth:cobblemon:1.7.1-neoforge")
+    implementation("maven.modrinth:cobblemon:1.7.2-neoforge")
 
     compileOnly("maven.modrinth:zeta:1.20.1-1.0-24-forge")
     compileOnly("maven.modrinth:quark:1.20.1-4.0-460-forge")

@@ -1,0 +1,15 @@
+{
+  "name": "fire_stone_ore",
+  "glsl": "fire_stone_ore.glsl",
+  "mat0": [
+    "cobblemon:fire_stone_ore"
+  ],
+  "mat2": [
+    "cobblemon:deepslate_fire_stone_ore"
+  ],
+  "mat4": [
+    "cobblemon:nether_fire_stone_ore"
+  ],
+  "color": "supplemental_patches:cobblemon/fire_stone_ore",
+  "block_size": 8
+}

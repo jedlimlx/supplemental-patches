@@ -1,0 +1,15 @@
+{
+  "name": "ice_stone_ore",
+  "glsl": "ice_stone_ore.glsl",
+  "mat0": [
+    "cobblemon:ice_stone_ore"
+  ],
+  "mat2": [
+    "cobblemon:deepslate_ice_stone_ore"
+  ],
+  "color": "supplemental_patches:cobblemon/ice_stone_ore",
+  "conditions": [
+    "GLOWING_ORE_ICE_STONE",
+    "DO_IPBR_LIGHTS"
+  ]
+}
