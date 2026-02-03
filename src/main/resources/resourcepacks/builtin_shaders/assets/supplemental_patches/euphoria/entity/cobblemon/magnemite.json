@@ -1,0 +1,20 @@
+{
+  "name": "magnemite",
+  "glsl": "magnemite.glsl",
+  "mat0": [
+    "cobblemon:magnemite",
+    "cobblemon:magneton",
+    "cobblemon:magnezone",
+    "cobblemon:skarmory",
+    "cobblemon:forretress",
+    "cobblemon:scizor",
+    "cobblemon:klink",
+    "cobblemon:klang",
+    "cobblemon:klinklang",
+    "cobblemon:bronzor",
+    "cobblemon:bronzong"
+  ],
+  "mat2": [
+    "cobblemon:steelix"
+  ]
+}

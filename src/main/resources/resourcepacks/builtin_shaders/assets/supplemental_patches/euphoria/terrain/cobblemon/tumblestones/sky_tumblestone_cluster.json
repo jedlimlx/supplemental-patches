@@ -1,0 +1,12 @@
+{
+  "name": "sky_tumblestone_cluster",
+  "glsl": "sky_tumblestone_cluster.glsl",
+  "mat0": [
+    "cobblemon:small_budding_sky_tumblestone",
+    "cobblemon:medium_budding_sky_tumblestone",
+    "cobblemon:large_budding_sky_tumblestone",
+    "cobblemon:sky_tumblestone_cluster"
+  ],
+  "color": "supplemental_patches:cobblemon/sky_tumblestone",
+  "reflection_handlers": "minecraft:discard"
+}

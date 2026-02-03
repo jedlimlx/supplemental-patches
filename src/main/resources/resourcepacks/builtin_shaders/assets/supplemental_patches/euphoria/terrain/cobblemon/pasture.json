@@ -1,0 +1,12 @@
+{
+  "name": "pasture",
+  "glsl": "pasture.glsl",
+  "mat0": [
+    "cobblemon:pasture:on=true"
+  ],
+  "mat1": [
+    "cobblemon:pasture:on=false"
+  ],
+  "color": "supplemental_patches:cobblemon/machine",
+  "reflection_handlers": "minecraft:discard"
+}

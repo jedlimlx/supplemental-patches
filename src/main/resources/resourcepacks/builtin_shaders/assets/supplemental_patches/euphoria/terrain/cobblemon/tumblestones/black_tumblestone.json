@@ -1,0 +1,30 @@
+{
+  "name": "black_tumblestone",
+  "glsl": "black_tumblestone.glsl",
+  "mat0": [
+    "cobblemon:black_tumblestone_block",
+    "cobblemon:black_tumblestone_bricks",
+    "cobblemon:smooth_black_tumblestone",
+    "cobblemon:polished_black_tumblestone",
+    "cobblemon:chiseled_black_tumblestone",
+    "cobblemon:chiseled_black_tumblestone_bricks",
+    "cobblemon:chiseled_polished_black_tumblestone",
+    "cobblemon:chiseled_polished_black_tumblestone_bricks"
+  ],
+  "mat1": [
+    "cobblemon:black_tumblestone_brick_slab",
+    "cobblemon:black_tumblestone_brick_stairs",
+    "cobblemon:black_tumblestone_brick_wall",
+    "cobblemon:polished_black_tumblestone_stairs",
+    "cobblemon:polished_black_tumblestone_slab",
+    "cobblemon:polished_black_tumblestone_wall",
+    "cobblemon:smooth_black_tumblestone_slab",
+    "cobblemon:smooth_black_tumblestone_stairs"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
+  ]
+}

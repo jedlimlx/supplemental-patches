@@ -1,0 +1,11 @@
+{
+  "name": "dawn_stone_ore",
+  "glsl": "dawn_stone_ore.glsl",
+  "mat0": [
+    "cobblemon:dawn_stone_ore"
+  ],
+  "mat2": [
+    "cobblemon:deepslate_dawn_stone_ore"
+  ],
+  "color": "supplemental_patches:cobblemon/dawn_stone_ore"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "mrmime",
+  "glsl": "mrmime.glsl",
+  "mat0": [
+    "cobblemon:mrmime",
+    "cobblemon:mrrime"
+  ]
+}

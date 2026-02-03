@@ -1,0 +1,33 @@
+{
+  "name": "healing_machine",
+  "glsl": "healing_machine.glsl",
+  "mat0": [
+    "cobblemon:healing_machine:charge=5:natural=false"
+  ],
+  "mat1": [
+    "cobblemon:healing_machine:charge=0",
+    "cobblemon:healing_machine:charge=1",
+    "cobblemon:healing_machine:charge=2",
+    "cobblemon:healing_machine:charge=3",
+    "cobblemon:healing_machine:charge=4"
+  ],
+  "mat2": [
+    "cobblemon:healing_machine:charge=6:natural=false",
+    "cobblemon:healing_machine:charge=6:natural=true"
+  ],
+  "mat4": [
+    "cobblemon:healing_machine:charge=5:natural=true"
+  ],
+  "color": [
+    "supplemental_patches:cobblemon/machine",
+    null,
+    "supplemental_patches:cobblemon/active_healing_machine",
+    null,
+    "supplemental_patches:cobblemon/limited_healing_machine",
+    null,
+    null,
+    null
+  ],
+  "reflection_handlers": "minecraft:discard",
+  "block_size": 8
+}
