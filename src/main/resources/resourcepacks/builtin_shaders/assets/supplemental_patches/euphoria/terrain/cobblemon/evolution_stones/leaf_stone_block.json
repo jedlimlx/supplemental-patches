@@ -1,0 +1,12 @@
+{
+  "name": "leaf_stone_block",
+  "glsl": "leaf_stone_block.glsl",
+  "mat0": [
+    "cobblemon:leaf_stone_block"
+  ],
+  "color": "supplemental_patches:cobblemon/leaf_stone_ore",
+  "conditions": [
+    "GLOWING_RAW_BLOCKS",
+    "DO_IPBR_LIGHTS"
+  ]
+}
