@@ -757,7 +757,8 @@ fun generateParticleCode(directory: Path) {
     val textureAtlas = Minecraft.getInstance().particleEngine.textureAtlas
 
     val file = File(directory.absolutePathString() + PARTICLES_PATH)
-    val code = file.readText()
+    var code = file.readText()
+    code = code.replace("float atlasCheck = 1100.0; //", "float atlasCheck = 4096.0; //")
 
     try {
         val newCode = "if (atlasSize.x < atlasCheck) {\n" +
