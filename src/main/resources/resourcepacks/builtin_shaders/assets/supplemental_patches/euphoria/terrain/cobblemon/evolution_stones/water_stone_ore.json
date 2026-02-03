@@ -1,0 +1,15 @@
+{
+  "name": "water_stone_ore",
+  "glsl": "water_stone_ore.glsl",
+  "mat0": [
+    "cobblemon:water_stone_ore"
+  ],
+  "mat2": [
+    "cobblemon:deepslate_water_stone_ore"
+  ],
+  "color": "supplemental_patches:cobblemon/water_stone_ore",
+  "conditions": [
+    "GLOWING_ORE_WATER_STONE",
+    "DO_IPBR_LIGHTS"
+  ]
+}

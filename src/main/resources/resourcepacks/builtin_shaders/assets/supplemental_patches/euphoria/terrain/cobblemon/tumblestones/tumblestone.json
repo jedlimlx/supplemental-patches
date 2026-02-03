@@ -1,0 +1,30 @@
+{
+  "name": "tumblestone",
+  "glsl": "tumblestone.glsl",
+  "mat0": [
+    "cobblemon:tumblestone_block",
+    "cobblemon:tumblestone_bricks",
+    "cobblemon:smooth_tumblestone",
+    "cobblemon:polished_tumblestone",
+    "cobblemon:chiseled_tumblestone",
+    "cobblemon:chiseled_tumblestone_bricks",
+    "cobblemon:chiseled_polished_tumblestone",
+    "cobblemon:chiseled_polished_tumblestone_bricks"
+  ],
+  "mat1": [
+    "cobblemon:tumblestone_brick_slab",
+    "cobblemon:tumblestone_brick_stairs",
+    "cobblemon:tumblestone_brick_wall",
+    "cobblemon:polished_tumblestone_stairs",
+    "cobblemon:polished_tumblestone_slab",
+    "cobblemon:polished_tumblestone_wall",
+    "cobblemon:smooth_tumblestone_slab",
+    "cobblemon:smooth_tumblestone_stairs"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
+  ]
+}

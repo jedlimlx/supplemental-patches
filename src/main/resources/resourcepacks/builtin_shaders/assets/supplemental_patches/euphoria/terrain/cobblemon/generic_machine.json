@@ -1,0 +1,14 @@
+{
+  "name": "generic_machine [cobblemon]",
+  "glsl": "generic_machine.glsl",
+  "mat0": [
+    "cobblemon:monitor:active=true",
+    "cobblemon:pc:on=true"
+  ],
+  "mat1": [
+    "cobblemon:monitor:active=false",
+    "cobblemon:pc:on=false"
+  ],
+  "color": "supplemental_patches:cobblemon/machine",
+  "reflection_handlers": "minecraft:discard"
+}

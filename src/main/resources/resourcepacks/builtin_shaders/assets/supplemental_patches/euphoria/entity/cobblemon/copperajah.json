@@ -1,0 +1,8 @@
+{
+  "name": "copperajah",
+  "glsl": "copperajah.glsl",
+  "mat0": [
+    "cobblemon:cufant",
+    "cobblemon:copperajah"
+  ]
+}

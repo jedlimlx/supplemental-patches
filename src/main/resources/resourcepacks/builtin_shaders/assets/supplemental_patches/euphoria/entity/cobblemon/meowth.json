@@ -1,0 +1,7 @@
+{
+  "name": "meowth",
+  "glsl": "meowth.glsl",
+  "mat0": [
+    "cobblemon:meowth"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "setting",
+  "name": "GLOWING_ORE_LEAF_STONE",
+  "activation": true,
+  "conditions": [
+    {
+      "if": "GLOWING_ORE_MASTER == 2 || SHADER_STYLE == 4 && GLOWING_ORE_MASTER == 1",
+      "then": true
+    }
+  ],
+  "file": "materials.glsl",
+  "en_US": {
+    "option": "Glowing Leaf Stone Ore"
+  }
+}
