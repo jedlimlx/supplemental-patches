@@ -1,0 +1,19 @@
+{
+  "name": "sun_stone_ore",
+  "glsl": "sun_stone_ore.glsl",
+  "mat0": [
+    "cobblemon:sun_stone_ore"
+  ],
+  "mat2": [
+    "cobblemon:deepslate_sun_stone_ore"
+  ],
+  "mat4": [
+    "cobblemon:terracotta_sun_stone_ore"
+  ],
+  "color": "supplemental_patches:cobblemon/sun_stone_ore",
+  "conditions": [
+    "GLOWING_ORE_SUN_STONE",
+    "DO_IPBR_LIGHTS"
+  ],
+  "block_size": 8
+}

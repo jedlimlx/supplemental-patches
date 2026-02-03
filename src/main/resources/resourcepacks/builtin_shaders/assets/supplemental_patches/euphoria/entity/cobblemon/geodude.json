@@ -1,0 +1,10 @@
+{
+  "name": "geodude",
+  "glsl": "geodude.glsl",
+  "mat0": [
+    "cobblemon:geodude",
+    "cobblemon:graveler",
+    "cobblemon:golem",
+    "cobblemon:onix"
+  ]
+}

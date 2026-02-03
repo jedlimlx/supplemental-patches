@@ -1,0 +1,11 @@
+{
+  "name": "shiny_stone_ore",
+  "glsl": "shiny_stone_ore.glsl",
+  "mat0": [
+    "cobblemon:shiny_stone_ore"
+  ],
+  "mat2": [
+    "cobblemon:deepslate_shiny_stone_ore"
+  ],
+  "color": "supplemental_patches:cobblemon/shiny_stone_ore"
+}

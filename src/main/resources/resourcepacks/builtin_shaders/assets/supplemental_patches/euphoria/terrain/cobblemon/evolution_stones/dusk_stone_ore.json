@@ -1,0 +1,15 @@
+{
+  "name": "dusk_stone_ore",
+  "glsl": "dusk_stone_ore.glsl",
+  "mat0": [
+    "cobblemon:dusk_stone_ore"
+  ],
+  "mat2": [
+    "cobblemon:deepslate_dusk_stone_ore"
+  ],
+  "color": "supplemental_patches:cobblemon/dusk_stone_ore",
+  "conditions": [
+    "GLOWING_ORE_DUSK_STONE",
+    "DO_IPBR_LIGHTS"
+  ]
+}
