@@ -1,0 +1,15 @@
+{
+  "name": "leaf_stone_ore",
+  "glsl": "leaf_stone_ore.glsl",
+  "mat0": [
+    "cobblemon:leaf_stone_ore"
+  ],
+  "mat2": [
+    "cobblemon:deepslate_leaf_stone_ore"
+  ],
+  "color": "supplemental_patches:cobblemon/leaf_stone_ore",
+  "conditions": [
+    "GLOWING_ORE_LEAF_STONE",
+    "DO_IPBR_LIGHTS"
+  ]
+}

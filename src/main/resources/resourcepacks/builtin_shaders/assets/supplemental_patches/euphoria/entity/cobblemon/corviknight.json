@@ -1,0 +1,7 @@
+{
+  "name": "corviknight",
+  "glsl": "corviknight.glsl",
+  "mat0": [
+    "cobblemon:corviknight"
+  ]
+}

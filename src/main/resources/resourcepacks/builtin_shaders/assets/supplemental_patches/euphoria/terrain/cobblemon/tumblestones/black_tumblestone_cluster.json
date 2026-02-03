@@ -1,0 +1,12 @@
+{
+  "name": "black_tumblestone_cluster",
+  "glsl": "black_tumblestone_cluster.glsl",
+  "mat0": [
+    "cobblemon:small_budding_black_tumblestone",
+    "cobblemon:medium_budding_black_tumblestone",
+    "cobblemon:large_budding_black_tumblestone",
+    "cobblemon:black_tumblestone_cluster"
+  ],
+  "color": "supplemental_patches:cobblemon/black_tumblestone",
+  "reflection_handlers": "minecraft:discard"
+}
