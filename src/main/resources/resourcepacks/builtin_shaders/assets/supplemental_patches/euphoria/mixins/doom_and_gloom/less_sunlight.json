@@ -1,6 +1,6 @@
 {
   "file": "/shaders/lib/colors/lightAndAmbientColors.glsl",
   "type": "after",
-  "key": "vec3 rainAmbientColor = mix(nightRainAmbientColor, dayRainAmbientColor, sunVisibility2);",
+  "key": "vec3 rainAmbientColor = mix(nightRainAmbientColor, dayRainAmbientColor * (1.0 + rainShadowVisReduce), sunVisibility2);",
   "code": "less_sunlight.glsl"
 }

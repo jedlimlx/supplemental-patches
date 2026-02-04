@@ -1,5 +1,5 @@
 {
-  "function": "void DoFog(inout vec4 color, inout float skyFade, float lViewPos, vec3 playerPos, float VdotU, float VdotS, float dither)",
+  "function": "void DoFog(inout vec4 color, inout float skyFade, float lViewPos, vec3 playerPos, float VdotU, float VdotS, float dither, bool isReflection, float lBlockPos)",
   "original_file": "/shaders/lib/atmospherics/fog/mainFog.glsl",
   "changes": [
     {
