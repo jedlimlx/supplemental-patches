@@ -1,1 +1,1 @@
-VdotU, VdotS, dither, fogOverride);
+VdotU, VdotS, dither, false, 0.0, fogOverride);

@@ -131,7 +131,7 @@ dependencies {
     modImplementation("maven.modrinth:sodium:mc1.20.1-0.5.13-fabric")
     modImplementation("maven.modrinth:indium:1.0.36+mc1.20.1")
     modImplementation("maven.modrinth:iris:1.7.6+1.20.1")
-    modRuntimeOnly("maven.modrinth:euphoria-patches:1.7.6-r5.6.1-fabric")
+    modRuntimeOnly("maven.modrinth:euphoria-patches:1.8.1-r5.7.1-fabric")
 
     // general library mods
     modImplementation("maven.modrinth:athena-ctm:3.1.2-fabric")
