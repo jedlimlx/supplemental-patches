@@ -147,8 +147,8 @@ fun generateSettings(directory: Path) {
     val shaderProperties = File(directory.absolutePathString() + SHADER_PROPERTIES_FILE)
     shaderProperties.writeText(
         shaderProperties.readText().replace(
-            "<empty> <empty> [EUPHORIA_SETTINGS]",
-            "<empty> <empty> [SUPPLEMENTAL_SETTINGS] [SUPPLEMENTAL_VERSION] [EUPHORIA_SETTINGS]"
+            "<empty> <empty> [EP_VERSION] [EUPHORIA_SETTINGS]",
+            "<empty> <empty> [SUPPLEMENTAL_SETTINGS] [SUPPLEMENTAL_VERSION] [EP_VERSION] [EUPHORIA_SETTINGS]"
         ).replace(
             "screen.EP_VERSION.columns=1",
             "screen.EP_VERSION.columns=1\n$shaderPropertiesCode"
