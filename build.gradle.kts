@@ -107,12 +107,12 @@ dependencies {
     implementation("maven.modrinth:sodium:mc1.21.1-0.6.13-neoforge")
     implementation("maven.modrinth:iris:1.8.12+1.21.1-neoforge")
     implementation("maven.modrinth:lithium:mc1.21.1-0.15.0-neoforge")
-    runtimeOnly("maven.modrinth:euphoria-patches:1.7.6-r5.6.1-neoforge")
+    runtimeOnly("maven.modrinth:euphoria-patches:1.8.1-r5.7.1-neoforge")
 
     // general library mods
     implementation("maven.modrinth:architectury-api:13.0.8+neoforge")
     implementation("maven.modrinth:blueprint:8.0.6")
-    implementation("maven.modrinth:corgilib:1.21.1-5.0.0.5-NeoForge")
+    compileOnly("maven.modrinth:corgilib:1.21.1-5.0.0.5-NeoForge")
     implementation("maven.modrinth:data-anchor:2.0.0.12-neoforge")
     implementation("software.bernie.geckolib:geckolib-neoforge-${property("minecraft_version")}:4.7.7")
     implementation("maven.modrinth:glitchcore:2.1.0.0-neoforge")
@@ -120,7 +120,7 @@ dependencies {
     implementation("maven.modrinth:terrablender:4.1.0.8-neoforge")
     implementation("maven.modrinth:trimmed:1.21-3.0.0+neoforge")
     implementation("maven.modrinth:moonlight:1.21-2.22.4-neoforge")
-    implementation("maven.modrinth:oh-the-trees-youll-grow:1.21.1-5.0.14-NeoForge")
+    compileOnly("maven.modrinth:oh-the-trees-youll-grow:1.21.1-5.0.14-NeoForge")
     implementation("maven.modrinth:puzzles-lib:v21.1.38-1.21.1-NeoForge")
     implementation("maven.modrinth:resourceful-config:3.0.10-neoforge")
     implementation("maven.modrinth:resourceful-lib:3.0.12-neoforge")
@@ -133,7 +133,7 @@ dependencies {
     implementation("maven.modrinth:berry-good:8.0.0")
     implementation("maven.modrinth:buzzier-bees:7.0.0")
     compileOnly("maven.modrinth:caverns-and-chasms:2.0.0-forge")
-    implementation("maven.modrinth:clayworks:4.0.0")
+    implementation("maven.modrinth:clayworks:4.0.2")
     compileOnly("maven.modrinth:endergetic:5.0.0-forge")
     compileOnly("maven.modrinth:environmental:4.0.0-forge")
     implementation("maven.modrinth:neapolitan:6.0.0")
@@ -167,7 +167,7 @@ dependencies {
 
     // biome mods
     compileOnly("maven.modrinth:biomes-o-plenty:21.1.0.7-neoforge")
-    implementation("maven.modrinth:oh-the-biomes-weve-gone:2.4.3-NeoForge")
+    compileOnly("maven.modrinth:oh-the-biomes-weve-gone:2.4.3-NeoForge")
 
     // fabric-exclusive
     compileOnly("maven.modrinth:cinderscapes:4.0.10")
@@ -207,12 +207,12 @@ dependencies {
 
     implementation("maven.modrinth:illager-invasion:v21.1.6-1.21.1-NeoForge")
 
-    implementation("maven.modrinth:enhanced-celestials:6.0.2.4-neoforge")
+    compileOnly("maven.modrinth:enhanced-celestials:6.0.2.4-neoforge")
 
     implementation("maven.modrinth:yungs-api:1.21.1-NeoForge-5.1.6")
     implementation("maven.modrinth:yungs-cave-biomes:1.21.1-NeoForge-3.1.1")
 
-    implementation("maven.modrinth:cobblemon:1.7.2-neoforge")
+    compileOnly("maven.modrinth:cobblemon:1.7.2-neoforge")
 
     compileOnly("maven.modrinth:zeta:1.20.1-1.0-24-forge")
     compileOnly("maven.modrinth:quark:1.20.1-4.0-460-forge")
