@@ -1,0 +1,30 @@
+{
+  "name": "sky_tumblestone",
+  "glsl": "sky_tumblestone.glsl",
+  "mat0": [
+    "cobblemon:sky_tumblestone_block",
+    "cobblemon:sky_tumblestone_bricks",
+    "cobblemon:smooth_sky_tumblestone",
+    "cobblemon:polished_sky_tumblestone",
+    "cobblemon:chiseled_sky_tumblestone",
+    "cobblemon:chiseled_sky_tumblestone_bricks",
+    "cobblemon:chiseled_polished_sky_tumblestone",
+    "cobblemon:chiseled_polished_sky_tumblestone_bricks"
+  ],
+  "mat1": [
+    "cobblemon:sky_tumblestone_brick_slab",
+    "cobblemon:sky_tumblestone_brick_stairs",
+    "cobblemon:sky_tumblestone_brick_wall",
+    "cobblemon:polished_sky_tumblestone_stairs",
+    "cobblemon:polished_sky_tumblestone_slab",
+    "cobblemon:polished_sky_tumblestone_wall",
+    "cobblemon:smooth_sky_tumblestone_slab",
+    "cobblemon:smooth_sky_tumblestone_stairs"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
+  ]
+}

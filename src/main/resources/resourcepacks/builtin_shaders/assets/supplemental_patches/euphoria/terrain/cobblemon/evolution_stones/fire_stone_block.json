@@ -1,0 +1,9 @@
+{
+  "name": "fire_stone_block",
+  "glsl": "fire_stone_block.glsl",
+  "mat0": [
+    "cobblemon:fire_stone_block"
+  ],
+  "color": "supplemental_patches:cobblemon/fire_stone_ore",
+  "held_lighting": true
+}

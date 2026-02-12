@@ -234,6 +234,8 @@ dependencies {
     modImplementation("maven.modrinth:yungs-api:1.21.1-Fabric-5.1.6")
     modImplementation("maven.modrinth:yungs-cave-biomes:1.21.1-Fabric-3.1.1")
 
+    modImplementation("maven.modrinth:cobblemon:1.7.2-fabric")
+
     compileOnly("maven.modrinth:zeta:1.20.1-1.0-24-forge")
     compileOnly("maven.modrinth:quark:1.20.1-4.0-460-forge")
     compileOnly("maven.modrinth:quark-oddities:1.20.1-forge")

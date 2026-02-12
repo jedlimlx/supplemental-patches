@@ -1,0 +1,7 @@
+{
+  "name": "relic_coin_sack",
+  "glsl": "relic_coin_sack.glsl",
+  "mat0": [
+    "cobblemon:relic_coin_sack"
+  ]
+}

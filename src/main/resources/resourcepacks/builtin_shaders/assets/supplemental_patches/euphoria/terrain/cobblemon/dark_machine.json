@@ -1,0 +1,9 @@
+{
+  "name": "dark_machine [cobblemon]",
+  "glsl": "dark_machine.glsl",
+  "mat0": [
+    "cobblemon:restoration_tank",
+    "cobblemon:fossil_analyzer"
+  ],
+  "reflection_handlers": "minecraft:discard"
+}

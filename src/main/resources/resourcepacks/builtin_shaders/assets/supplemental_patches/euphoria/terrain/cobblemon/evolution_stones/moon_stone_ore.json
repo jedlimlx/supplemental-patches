@@ -1,0 +1,19 @@
+{
+  "name": "moon_stone_ore",
+  "glsl": "moon_stone_ore.glsl",
+  "mat0": [
+    "cobblemon:moon_stone_ore"
+  ],
+  "mat2": [
+    "cobblemon:deepslate_moon_stone_ore"
+  ],
+  "mat4": [
+    "cobblemon:dripstone_moon_stone_ore"
+  ],
+  "color": "supplemental_patches:cobblemon/moon_stone_ore",
+  "conditions": [
+    "GLOWING_ORE_MOON_STONE",
+    "DO_IPBR_LIGHTS"
+  ],
+  "block_size": 8
+}
