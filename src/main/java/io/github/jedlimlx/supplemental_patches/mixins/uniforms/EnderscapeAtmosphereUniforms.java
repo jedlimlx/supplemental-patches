@@ -28,7 +28,7 @@ public abstract class EnderscapeAtmosphereUniforms {
     }
 
     private static Color getStarColor(LocalPlayer player) {
-        Optional<SkyParameters> temp = SkyParameters.getSkyParametersFor(player.level().getBiome(player.blockPosition()));
+        Optional<BiomeParameters> temp = BiomeParameters.findFor(player.level().getBiome(player.blockPosition()));
         return temp.map(skyParameters -> new Color(skyParameters.starColor())).orElse(new Color(DEFAULT_STAR_COLOR));
     }
 
@@ -74,8 +74,8 @@ public abstract class EnderscapeAtmosphereUniforms {
             () -> {
                 LocalPlayer player = Minecraft.getInstance().player;
                 if (player != null) {
-                    Optional<SkyParameters> temp = SkyParameters.getSkyParametersFor(player.level().getBiome(player.blockPosition()));
-                    return temp.map(SkyParameters::starAlpha).orElse(DEFAULT_STAR_ALPHA);
+                    Optional<BiomeParameters> temp = BiomeParameters.findFor(player.level().getBiome(player.blockPosition()));
+                    return temp.map(BiomeParameters::starAlpha).orElse(DEFAULT_STAR_ALPHA);
                 } else return DEFAULT_STAR_ALPHA;
             }
         );
