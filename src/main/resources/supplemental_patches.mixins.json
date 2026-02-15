@@ -27,7 +27,8 @@
     "uniforms.YUNGSandstormUniforms",
     "uniforms.ScorchfulSandstormUniforms",
     "uniforms.EnderscapeAtmosphereUniforms",
-    "uniforms.EnhancedCelestialsUniforms"
+    "uniforms.EnhancedCelestialsUniforms",
+    "uniforms.PokemonRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
