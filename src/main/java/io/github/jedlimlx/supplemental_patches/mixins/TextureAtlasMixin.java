@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(TextureAtlas.class)
 public class TextureAtlasMixin {
     @Inject(
-        method = "method_45848",  // TODO find a better workaround than replacing this with method_45848 when building JAR
+        method = "upload",  // TODO find a better workaround than replacing this with method_45848 when building JAR
         at = @At("RETURN")
     )
     public void upload(SpriteLoader.Preparations preparations, CallbackInfo ci) {

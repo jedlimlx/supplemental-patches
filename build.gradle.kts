@@ -135,6 +135,7 @@ dependencies {
     modImplementation("maven.modrinth:frozenlib:2.0.2-mc1.21.1")
     modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:4.7.7")
     modImplementation("maven.modrinth:glitchcore:2.1.0.0-fabric")
+    modImplementation("maven.modrinth:lithostitched:1.5.7-fabric-1.21.1")
     modImplementation("maven.modrinth:midnightlib:1.6.9+1.21-fabric")
     modImplementation("maven.modrinth:mixson:1.3.1-fabric")
     modImplementation("maven.modrinth:moonlight:1.21-2.20.7-fabric")
@@ -234,7 +235,7 @@ dependencies {
     modImplementation("maven.modrinth:yungs-api:1.21.1-Fabric-5.1.6")
     modImplementation("maven.modrinth:yungs-cave-biomes:1.21.1-Fabric-3.1.1")
 
-    modImplementation("maven.modrinth:cobblemon:1.7.2-fabric")
+    modImplementation("maven.modrinth:cobblemon:1.7.3-fabric")
 
     compileOnly("maven.modrinth:zeta:1.20.1-1.0-24-forge")
     compileOnly("maven.modrinth:quark:1.20.1-4.0-460-forge")
