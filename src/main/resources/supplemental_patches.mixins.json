@@ -23,7 +23,7 @@
     "biomes.NeapolitanMixin",
     "biomes.SpawnMixin",
     "biomes.WetlandWhimsyMixin",
-    "biomes.YungsCaveBiomesMixin",
+    "biomes.YUNGSCaveBiomesMixin",
     "uniforms.EnderscapeAtmosphereUniforms",
     "uniforms.HauntUniforms",
     "uniforms.YUNGSandstormUniforms",

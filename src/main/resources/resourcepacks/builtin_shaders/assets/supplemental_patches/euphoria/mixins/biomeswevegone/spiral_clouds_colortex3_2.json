@@ -1,6 +1,6 @@
 {
   "file": "/shaders/lib/atmospherics/clouds/reimaginedClouds.glsl",
   "type": "replace",
-  "key": "texture2D(colortex3, GetRoundedCloudCoord(cLightPos.xz, CLOUD_ROUNDNESS)).b",
+  "key": "texture2D(colortex3, GetRoundedCloudCoord(pos, cloudRoundness)).b",
   "code": "spiral_clouds_colortex3_2.glsl"
 }
