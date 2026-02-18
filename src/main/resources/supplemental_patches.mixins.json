@@ -26,7 +26,7 @@
     "biomes.SpawnMixin",
     "biomes.WetlandWhimsyMixin",
     "biomes.WindsweptMixin",
-    "biomes.YungsCaveBiomesMixin",
+    "biomes.YUNGSCaveBiomesMixin",
     "uniforms.YUNGSandstormUniforms",
     "uniforms.EnderscapeAtmosphereUniforms",
     "uniforms.EnhancedCelestialsUniforms",

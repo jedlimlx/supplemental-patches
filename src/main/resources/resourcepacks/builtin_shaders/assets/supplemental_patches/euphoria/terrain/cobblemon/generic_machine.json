@@ -2,11 +2,19 @@
   "name": "generic_machine [cobblemon]",
   "glsl": "generic_machine.glsl",
   "mat0": [
-    "cobblemon:monitor:active=true",
+    "cobblemon:monitor:screen=blue_progress_1",
+    "cobblemon:monitor:screen=blue_progress_2",
+    "cobblemon:monitor:screen=blue_progress_3",
+    "cobblemon:monitor:screen=blue_progress_4",
+    "cobblemon:monitor:screen=blue_progress_5",
+    "cobblemon:monitor:screen=blue_progress_6",
+    "cobblemon:monitor:screen=blue_progress_7",
+    "cobblemon:monitor:screen=blue_progress_8",
+    "cobblemon:monitor:screen=green_progress_9",
     "cobblemon:pc:on=true"
   ],
   "mat1": [
-    "cobblemon:monitor:active=false",
+    "cobblemon:monitor:screen=false",
     "cobblemon:pc:on=false"
   ],
   "color": "supplemental_patches:cobblemon/machine",
