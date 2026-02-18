@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Restriction(require = @Condition("yungscavebiomes"))
 @Mixin(value = BiomeModule.class, remap = false)
-public class YungsCaveBiomesMixin {
+public class YUNGSCaveBiomesMixin {
     @Inject(method = "register", at = @At("TAIL"))
     private static void registerBiome(String string, CallbackInfoReturnable<ResourceKey<Biome>> cir) {
         BiomeUniforms.getBiomeMap().put(cir.getReturnValue(), BiomeUniforms.getBiomeMap().size() + 1);

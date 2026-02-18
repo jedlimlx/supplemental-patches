@@ -1,6 +1,6 @@
 {
   "file": "/shaders/lib/materials/materialMethods/wavingBlocks.glsl",
   "type": "after",
-  "key": "wave *= vec3(8.0, 3.0, 4.0);",
+  "key": "wave *= vec3(4.0, 3.0, 8.0);",
   "code": "sandstorm_waving_leaves.glsl"
 }
