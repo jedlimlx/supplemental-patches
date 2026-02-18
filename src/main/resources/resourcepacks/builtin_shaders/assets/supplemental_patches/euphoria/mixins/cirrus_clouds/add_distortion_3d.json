@@ -1,6 +1,6 @@
 {
   "file": "/shaders/lib/atmospherics/clouds/unboundClouds.glsl",
   "type": "replace",
-  "key": "tracePosM + vec3(wind, 0.0, 0.0)",
+  "key": "tracePosM - vec3(0.0, 0.0, wind)",
   "code": "add_distortion_3d.glsl"
 }

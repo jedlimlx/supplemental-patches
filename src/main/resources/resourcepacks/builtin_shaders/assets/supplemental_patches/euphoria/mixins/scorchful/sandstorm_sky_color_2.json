@@ -1,6 +1,6 @@
 {
   "file": "/shaders/lib/colors/skyColors.glsl",
   "type": "replace",
-  "key": "vec3(0.07, 0.14, 0.24) * (1.0 - 0.5 * rainFactorM) + skyColor",
+  "key": "vec3(0.07, 0.14, 0.24) * (1.0 - 0.5 * rainFactor) + skyColor",
   "code": "sandstorm_sky_color_2.glsl"
 }
