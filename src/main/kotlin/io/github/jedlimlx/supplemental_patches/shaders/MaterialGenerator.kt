@@ -758,10 +758,10 @@ fun generateParticleCode(directory: Path) {
 
     val file = File(directory.absolutePathString() + PARTICLES_PATH)
     var code = file.readText()
-    code = code.replace("float atlasCheck = 1100.0; //", "float atlasCheck = 4096.0; //")
+    code = code.replace("float atlasCheck = 1100.0; //", "float atlasCheck = 5000.0; //")
 
     try {
-        val newCode = "if (atlasSize.x < atlasCheck) {\n" +
+        val newCode = "if (tSize.x < atlasCheck) {\n" +
                 "        vec2 texCoordScaled = texCoord * $SCALE;\n" + StringBuilder().apply {
             append(
                 split(
@@ -834,7 +834,7 @@ fun generateParticleCode(directory: Path) {
         }.toString()
 
         file.writeText(
-            Regex("if \\(atlasSize.x < atlasCheck\\) \\{[\\s\\S]*bool noSmoothLighting = false;", RegexOption.MULTILINE).replaceFirst(code, newCode)
+            Regex("if \\(tSize.x < atlasCheck\\) \\{[\\s\\S]*bool noSmoothLighting = false;", RegexOption.MULTILINE).replaceFirst(code, newCode)
         )
     } catch (e: StackOverflowError) {
         throw MinecraftError("Particle shaders could not be generated, due to stack overflow. Check if the same particle is listed by more than one *.json file.", null)
