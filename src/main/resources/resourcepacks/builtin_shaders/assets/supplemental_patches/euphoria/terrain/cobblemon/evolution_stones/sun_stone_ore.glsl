@@ -1,4 +1,4 @@
-if ((mat % 8 == 4 && color.r > 0.63) || (mat % 8 < 4 && color.r - color.b > 0.1)) {  // Fire Stone Part
+if ((mat % 8 == 4 && color.r > 0.65) || (mat % 8 < 4 && color.r - color.b > 0.1)) {  // Fire Stone Part
     #include "/lib/materials/specificMaterials/terrain/evolutionStoneBlock.glsl"
     emission = pow2(color.r) + 0.3;
 

@@ -1,6 +1,6 @@
 {
   "file": "/shaders/program/deferred1.glsl",
   "type": "replace",
-  "key": "VdotU, VdotS, dither, false, 0.0);",
+  "key": "VdotU, VdotS, dither, false, 0.0, 0.0);",
   "code": "do_fog_override.glsl"
 }

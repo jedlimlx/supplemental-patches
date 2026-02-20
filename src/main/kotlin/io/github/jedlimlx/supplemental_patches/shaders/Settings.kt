@@ -148,7 +148,7 @@ fun generateSettings(directory: Path) {
     shaderProperties.writeText(
         shaderProperties.readText().replace(
             "<empty> <empty> [EP_VERSION] [EUPHORIA_SETTINGS]",
-            "<empty> <empty> [SUPPLEMENTAL_SETTINGS] [SUPPLEMENTAL_VERSION] [EP_VERSION] [EUPHORIA_SETTINGS]"
+            "<empty> <empty> [SUPPLEMENTAL_VERSION] [SUPPLEMENTAL_SETTINGS] [EP_VERSION] [EUPHORIA_SETTINGS]"
         ).replace(
             "screen.EP_VERSION.columns=1",
             "screen.EP_VERSION.columns=1\n$shaderPropertiesCode"
@@ -161,7 +161,7 @@ fun generateSettings(directory: Path) {
     val langFile = File(directory.absolutePathString() + LANGUAGE_FILE)
     langFile.appendText(
         StringBuilder("\n$BANNER# Settings added by Supplemental Patches\n").apply {
-            append("screen.SUPPLEMENTAL_SETTINGS=§dSupplemental Settings\n\n")
+            append("screen.SUPPLEMENTAL_SETTINGS=§dConfigure Supplemental Patches\n\n")
             fun recurse(setting: Settings) {
                 val output = setting.language("en_US")
                 if (output.isNotEmpty()) append(output + "\n")
