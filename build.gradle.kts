@@ -191,7 +191,7 @@ dependencies {
     // fabric-exclusive
     compileOnly("maven.modrinth:cinderscapes:5.2.1")
 
-    modImplementation("maven.modrinth:enderscape:zgU3W5P9")
+    modImplementation("maven.modrinth:enderscape:6ItoYnSD")
 
     compileOnly("maven.modrinth:gipples-galore:1.1.8-1.21.4")
     compileOnly("maven.modrinth:nears:2.1.5")
