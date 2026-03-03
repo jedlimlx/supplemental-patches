@@ -87,7 +87,6 @@ repositories {
         name = "CurseForge"
         url = uri("https://cursemaven.com")
     }
-    maven { url = uri("https://maven.jaackson.me") }
     maven { url = uri("https://jitpack.io") }
 
     maven {
