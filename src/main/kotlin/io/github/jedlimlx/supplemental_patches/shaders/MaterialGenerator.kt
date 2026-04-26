@@ -1,13 +1,8 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
-import net.minecraft.client.Minecraft
-import net.minecraft.resources.ResourceLocation
+import io.github.jedlimlx.supplemental_patches.PLATFORM
 import java.io.File
 import java.nio.file.Path
-import kotlin.collections.component1
-import kotlin.collections.component2
-import kotlin.collections.flatten
-import kotlin.collections.set
 import kotlin.io.path.absolutePathString
 
 
@@ -754,7 +749,7 @@ const val PARTICLES_PATH = "/shaders/program/gbuffers_textured.glsl"
 
 const val SCALE = 16384
 fun generateParticleCode(directory: Path) {
-    val textureAtlas = Minecraft.getInstance().particleEngine.textureAtlas
+    val textureAtlas = PLATFORM.particleAtlas!!
 
     val file = File(directory.absolutePathString() + PARTICLES_PATH)
     var code = file.readText()
@@ -766,7 +761,7 @@ fun generateParticleCode(directory: Path) {
             append(
                 split(
                     PARTICLES.map {
-                        Pair(it, it.mat[0].map { ResourceLocation.parse(it) }.filter { it in textureAtlas.textures })
+                        Pair(it, it.mat[0].map { PLATFORM.getResourceLocation(it) }.filter { it in PLATFORM.particleAtlasTextures })
                     }.filter { it.second.isNotEmpty() }.map { (particle, lst) ->
                         val rectangles = lst.map {
                             val sprite = textureAtlas.getSprite(it)

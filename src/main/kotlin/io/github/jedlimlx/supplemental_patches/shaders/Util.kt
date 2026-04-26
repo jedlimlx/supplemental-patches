@@ -1,8 +1,6 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
-import net.minecraft.client.Minecraft
-import net.minecraft.network.chat.Component
-import net.neoforged.fml.ModList
+import io.github.jedlimlx.supplemental_patches.PLATFORM
 import kotlin.math.floor
 import kotlin.math.log
 
@@ -98,7 +96,7 @@ class ShaderBuilder(
             val tokens = it.split(":")
             if (tokens.size == 1) true
             else if (tokens[0] == "chorus_flower") true
-            else ModList.get().isLoaded(tokens[0])
+            else PLATFORM.isModLoaded(tokens[0])
         }
     }
 
@@ -238,7 +236,7 @@ fun <T>catchAndPrintError(f: () -> T): T {
         return f()
     } catch (e: Exception) {
         val stackTraceString = e.stackTraceToString()  // inform user about the exception
-        Minecraft.getInstance().player?.sendSystemMessage(Component.nullToEmpty(stackTraceString))
+        PLATFORM.sendSystemMessage(stackTraceString)
 
         throw e  // throw the same exception anyway
     }

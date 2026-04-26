@@ -1,15 +1,15 @@
 package io.github.jedlimlx.supplemental_patches.mixins;
 
+//? neoforge || forge {
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import com.teamabnormals.upgrade_aquatic.client.renderer.entity.SonarWaveRenderer;
-import me.fallenbreath.conditionalmixin.api.annotation.Condition;
-import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-@Restriction(require = @Condition("upgrade_aquatic"))
+@IfModLoaded(value = "upgrade_aquatic")
 @Mixin(SonarWaveRenderer.class)
 public class SonarWaveRendererMixin {
     @Redirect(
@@ -25,3 +25,4 @@ public class SonarWaveRendererMixin {
         return RenderType.entityTranslucent(texture);
     }
 }
+//?}

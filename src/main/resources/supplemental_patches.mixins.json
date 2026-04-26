@@ -1,38 +1,12 @@
 {
+  "package": "io.github.jedlimlx.supplemental_patches.mixins",
   "required": true,
   "minVersion": "0.8",
-  "package": "io.github.jedlimlx.supplemental_patches.mixins",
-  "compatibilityLevel": "JAVA_17",
-  "refmap": "supplemental_patches.refmap.json",
+  "compatibilityLevel": "${java}",
   "plugin": "io.github.jedlimlx.supplemental_patches.mixins.SupplementalPatchesMixinPlugin",
-  "client": [
-    "IrisMixin",
-    "IrisExceptionHandlerMixin",
-    "GLDebugMixin",
-    "IrisDefinesMixin",
-    "BiomeUniformsMixin",
-    "SonarWaveRendererMixin",
-    "ThrasherRenderLayerMixin",
-    "biomes.AtmosphericMixin",
-    "biomes.AutumnityMixin",
-    "biomes.BiomesOPlentyMixin",
-    "biomes.BWGBiomesMixin",
-    "biomes.EndergeticMixin",
-    "biomes.EnderscapeBiomesMixin",
-    "biomes.EnvironmentalMixin",
-    "biomes.GalosphereMixin",
-    "biomes.JNEMixin",
-    "biomes.NeapolitanMixin",
-    "biomes.SpawnMixin",
-    "biomes.WetlandWhimsyMixin",
-    "biomes.WindsweptMixin",
-    "biomes.YUNGSCaveBiomesMixin",
-    "uniforms.YUNGSandstormUniforms",
-    "uniforms.EnderscapeAtmosphereUniforms",
-    "uniforms.EnhancedCelestialsUniforms",
-    "uniforms.PokemonRendererMixin"
-  ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "client": [
+  ]
 }

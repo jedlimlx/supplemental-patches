@@ -1,15 +1,15 @@
 package io.github.jedlimlx.supplemental_patches.mixins;
 
-import com.teamabnormals.upgrade_aquatic.client.renderer.entity.layers.ThrasherRenderLayer;
-import me.fallenbreath.conditionalmixin.api.annotation.Condition;
-import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
+//? neoforge || forge {
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import com.teamabnormals.upgrade_aquatic.client.renderer.entity.layers.ThrasherRenderLayer;
 
-@Restriction(require = @Condition("upgrade_aquatic"))
+@IfModLoaded(value = "upgrade_aquatic")
 @Mixin(ThrasherRenderLayer.class)
 public class ThrasherRenderLayerMixin {
     @Redirect(
@@ -25,3 +25,4 @@ public class ThrasherRenderLayerMixin {
         return RenderType.entityTranslucent(texture);
     }
 }
+//?}

@@ -9,7 +9,6 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 import static io.github.jedlimlx.supplemental_patches.shaders.ShaderError.shaderErrors;
 
-
 @Mixin(value = Iris.class, remap = false)
 public class IrisExceptionHandlerMixin {
     @Redirect(

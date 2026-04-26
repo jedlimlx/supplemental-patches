@@ -1,11 +1,9 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
-import io.github.jedlimlx.supplemental_patches.SupplementalPatches.LOGGER
-import net.neoforged.fml.loading.FMLPaths
+import io.github.jedlimlx.supplemental_patches.LOGGER
+import io.github.jedlimlx.supplemental_patches.PLATFORM
 import java.nio.file.Path
 import kotlin.io.path.*
-
-val SHADERS_DIRECTORY: Path = FMLPaths.GAMEDIR.get().resolve("shaderpacks")
 
 @OptIn(ExperimentalPathApi::class)
 fun installShader(): String = catchAndPrintError {
@@ -17,7 +15,7 @@ fun installShader(): String = catchAndPrintError {
 
     LOGGER.info("Detected shader installation at $installation.")
 
-    val newInstallation = Path(SHADERS_DIRECTORY.toString() + "/${installation.name} + Supplemental Patches")
+    val newInstallation = Path(PLATFORM.shaderDirectory.toString() + "/${installation.name} + Supplemental Patches")
     newInstallation.deleteRecursively()
     newInstallation.createDirectory()
     installation.copyToRecursively(newInstallation, overwrite = true, followLinks = false)
@@ -58,7 +56,7 @@ fun installShader(): String = catchAndPrintError {
 }
 
 fun detectInstallation(): Path? =
-    SHADERS_DIRECTORY.listDirectoryEntries().firstOrNull {
+    PLATFORM.shaderDirectory.listDirectoryEntries().firstOrNull {
         it.isDirectory() && it.name.matches(
             Regex("Complementary(Unbound|Reimagined)_r(\\d+.?)+ \\+ EuphoriaPatches_(\\d+.?)+")
         )

@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
 import com.google.gson.*
-import io.github.jedlimlx.supplemental_patches.SupplementalPatches.LOGGER
+import io.github.jedlimlx.supplemental_patches.LOGGER
 import io.github.jedlimlx.supplemental_patches.shaders.ShaderResourceLoader.getFileContents
 import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation

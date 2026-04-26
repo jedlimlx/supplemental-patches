@@ -1,10 +1,9 @@
 package io.github.jedlimlx.supplemental_patches.mixins.uniforms;
 
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import dev.corgitaco.enhancedcelestials.EnhancedCelestials;
 import dev.corgitaco.enhancedcelestials.api.lunarevent.LunarEvent;
 import dev.corgitaco.enhancedcelestials.lunarevent.EnhancedCelestialsLunarForecastWorldData;
-import me.fallenbreath.conditionalmixin.api.annotation.Condition;
-import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import net.irisshaders.iris.gl.uniform.UniformHolder;
 import net.irisshaders.iris.gl.uniform.UniformUpdateFrequency;
 import net.irisshaders.iris.shaderpack.properties.PackDirectives;
@@ -19,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Optional;
 
-@Restriction(require = @Condition("enhancedcelestials"))
+@IfModLoaded(value = "enhancedcelestials")
 @Mixin(CommonUniforms.class)
 public class EnhancedCelestialsUniforms {
     @Inject(

@@ -1,11 +1,10 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
-import io.github.jedlimlx.supplemental_patches.SupplementalPatches
+import io.github.jedlimlx.supplemental_patches.LOGGER
+import io.github.jedlimlx.supplemental_patches.PLATFORM
 import net.minecraft.ChatFormatting
 import net.minecraft.client.Minecraft
 import net.minecraft.network.chat.Component
-import kotlin.collections.ArrayList
-import kotlin.collections.iterator
 
 
 // for errors by Iris and within the resource-pack
@@ -27,17 +26,16 @@ class MinecraftError(
     // --> Error found in $filename, this file will not be loaded.
     // --> Thrown by ${method}(${kotlin file}:${line number})
     fun sendInChat(): Boolean {
-        SupplementalPatches.LOGGER.warn(stackTrace.toList())
+        LOGGER.warn(stackTrace.toList().toString())
 
-        val player = Minecraft.getInstance().player
-        if (player != null) {
-            player.sendSystemMessage(
+        if (Minecraft.getInstance().player != null) {
+            PLATFORM.sendSystemMessage(
                 Component.literal("[$errorType]: $message")
                     .withStyle(ChatFormatting.RED)
                     .withStyle(ChatFormatting.BOLD)
             )
             if (fileName != null) {
-                player.sendSystemMessage(
+                PLATFORM.sendSystemMessage(
                     Component.literal("")
                         .withStyle(ChatFormatting.RED)
                         .append(Component.literal("--> Error found in "))
@@ -45,7 +43,7 @@ class MinecraftError(
                         .append(Component.literal(", this file will not be loaded."))
                 )
             }
-            player.sendSystemMessage(
+            PLATFORM.sendSystemMessage(
                 Component.literal("")
                     .withStyle(ChatFormatting.RED)
                     .append(Component.literal("--> Thrown by "))
@@ -64,7 +62,7 @@ class MinecraftError(
     }
 
     fun log() {
-        SupplementalPatches.LOGGER.warn(
+        LOGGER.warn(
             "[ERROR] $message\n" +
             if (fileName != null) "--> Error found in $fileName, this file will not be loaded.\n" else "" +
             "--> Thrown by ${stackTrace[index].methodName}(${stackTrace[index].fileName ?: "Unknown"}:${stackTrace[index].lineNumber})"
@@ -117,32 +115,29 @@ data class ShaderError(
     fun sendInChat() {
         val message = message.split("\n").filter { it.isNotEmpty() }.joinToString("\n")
 
-        val player = Minecraft.getInstance().player
-        if (player != null) {
-            player.sendSystemMessage(
-                Component.literal("** caused by **")
-            )
-            player.sendSystemMessage(
-                Component.literal("[$type]: $message")
-                    .withStyle(ChatFormatting.RED)
-                    .withStyle(ChatFormatting.BOLD)
-            )
-            player.sendSystemMessage(
-                Component.literal("")
-                    .withStyle(ChatFormatting.RED)
-                    .append(Component.literal("--> Source: $source"))
-            )
-            player.sendSystemMessage(
-                Component.literal("")
-                    .withStyle(ChatFormatting.RED)
-                    .append(Component.literal("--> Severity: $severity"))
-            )
-            player.sendSystemMessage(
-                Component.literal("")
-                    .withStyle(ChatFormatting.RED)
-                    .append(Component.literal("--> Debug message by $origin"))
-            )
-        }
+		PLATFORM.sendSystemMessage(
+			Component.literal("** caused by **")
+		)
+		PLATFORM.sendSystemMessage(
+			Component.literal("[$type]: $message")
+				.withStyle(ChatFormatting.RED)
+				.withStyle(ChatFormatting.BOLD)
+		)
+		PLATFORM.sendSystemMessage(
+			Component.literal("")
+				.withStyle(ChatFormatting.RED)
+				.append(Component.literal("--> Source: $source"))
+		)
+		PLATFORM.sendSystemMessage(
+			Component.literal("")
+				.withStyle(ChatFormatting.RED)
+				.append(Component.literal("--> Severity: $severity"))
+		)
+		PLATFORM.sendSystemMessage(
+			Component.literal("")
+				.withStyle(ChatFormatting.RED)
+				.append(Component.literal("--> Debug message by $origin"))
+		)
     }
 
     companion object {

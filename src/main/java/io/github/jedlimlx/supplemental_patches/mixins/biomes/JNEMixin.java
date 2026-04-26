@@ -1,7 +1,8 @@
 package io.github.jedlimlx.supplemental_patches.mixins.biomes;
 
-import me.fallenbreath.conditionalmixin.api.annotation.Condition;
-import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
+//? forge {
+/*import com.moulberry.mixinconstraints.annotations.IfMinecraftVersion;
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import net.irisshaders.iris.uniforms.BiomeUniforms;
 import net.jadenxgamer.netherexp.registry.worldgen.JNEBiomes;
 import net.minecraft.resources.ResourceKey;
@@ -11,7 +12,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Restriction(require = @Condition("netherexp"))
+@IfModLoaded(value = "netherexp")
+@IfMinecraftVersion(minVersion = "1.20.1", maxVersion = "1.20.1")
 @Mixin(value = JNEBiomes.class, remap = false)
 public class JNEMixin {
     @Inject(method = "register", at = @At("TAIL"))
@@ -19,3 +21,4 @@ public class JNEMixin {
         BiomeUniforms.getBiomeMap().put(cir.getReturnValue(), BiomeUniforms.getBiomeMap().size() + 1);
     }
 }
+*///?}

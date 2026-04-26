@@ -1,9 +1,10 @@
 package io.github.jedlimlx.supplemental_patches.mixins.uniforms;
 
+//? =1.20.1 || =1.21.1 {
+import com.moulberry.mixinconstraints.annotations.IfMinecraftVersion;
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import com.yungnickyoung.minecraft.yungscavebiomes.client.render.sandstorm.ISandstormClientDataProvider;
 import com.yungnickyoung.minecraft.yungscavebiomes.client.render.sandstorm.SandstormClientData;
-import me.fallenbreath.conditionalmixin.api.annotation.Condition;
-import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import net.irisshaders.iris.gl.uniform.UniformHolder;
 import net.irisshaders.iris.gl.uniform.UniformUpdateFrequency;
 import net.irisshaders.iris.shaderpack.properties.PackDirectives;
@@ -18,7 +19,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Restriction(require = @Condition("yungscavebiomes"))
+@IfModLoaded(value = "yungscavebiomes")
+@IfMinecraftVersion(minVersion = "1.20.1", maxVersion="1.21.1")
 @Mixin(CommonUniforms.class)
 public class YUNGSandstormUniforms {
     @Inject(
@@ -28,8 +30,8 @@ public class YUNGSandstormUniforms {
     )
     private static void generalCommonUniforms(UniformHolder uniforms, FrameUpdateNotifier updateNotifier, PackDirectives directives, CallbackInfo ci) {
         uniforms
-                .uniform1f(UniformUpdateFrequency.PER_FRAME, "yungSandstorm", YUNGSandstormUniforms::getSandstorm)
-                .uniform3f(UniformUpdateFrequency.PER_FRAME, "yungSandstormWindDirection", YUNGSandstormUniforms::getSandstormWindDirection);
+			.uniform1f(UniformUpdateFrequency.PER_FRAME, "yungSandstorm", YUNGSandstormUniforms::getSandstorm)
+			.uniform3f(UniformUpdateFrequency.PER_FRAME, "yungSandstormWindDirection", YUNGSandstormUniforms::getSandstormWindDirection);
     }
 
     private static float getSandstorm() {
@@ -49,3 +51,4 @@ public class YUNGSandstormUniforms {
         return new Vector3f(0, 0, 0);
     }
 }
+//?}

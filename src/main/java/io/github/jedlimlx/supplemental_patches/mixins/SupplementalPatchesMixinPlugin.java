@@ -1,23 +1,52 @@
 package io.github.jedlimlx.supplemental_patches.mixins;
 
-import me.fallenbreath.conditionalmixin.api.mixin.RestrictiveMixinConfigPlugin;
+import com.moulberry.mixinconstraints.MixinConstraints;
+import com.moulberry.mixinconstraints.mixin.MixinConstraintsBootstrap;
+import org.objectweb.asm.tree.ClassNode;
+import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
+import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
 import java.util.List;
 import java.util.Set;
 
-public final class SupplementalPatchesMixinPlugin extends RestrictiveMixinConfigPlugin {
-    @Override
-    public String getRefMapperConfig() {
-        return null;
-    }
+public class SupplementalPatchesMixinPlugin implements IMixinConfigPlugin {
+	private String mixinPackage;
 
-    @Override
-    public void acceptTargets(Set<String> set, Set<String> set1) {
+	@Override
+	public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
+		if (this.mixinPackage != null && !mixinClassName.startsWith(this.mixinPackage)) {
+			return true;
+		}
 
-    }
+		return MixinConstraints.shouldApplyMixin(mixinClassName);
+	}
 
-    @Override
-    public List<String> getMixins() {
-        return List.of();
-    }
+	@Override
+	public void onLoad(String mixinPackage) {
+		this.mixinPackage = mixinPackage;
+		MixinConstraintsBootstrap.init(mixinPackage);
+	}
+
+	@Override
+	public String getRefMapperConfig() {
+		return null;
+	}
+
+
+	@Override
+	public void acceptTargets(Set<String> myTargets, Set<String> otherTargets) {
+	}
+
+	@Override
+	public List<String> getMixins() {
+		return null;
+	}
+
+	@Override
+	public void preApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo mixinInfo) {
+	}
+
+	@Override
+	public void postApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo mixinInfo) {
+	}
 }

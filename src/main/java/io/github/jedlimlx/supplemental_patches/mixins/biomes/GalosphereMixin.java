@@ -1,7 +1,8 @@
 package io.github.jedlimlx.supplemental_patches.mixins.biomes;
 
-import me.fallenbreath.conditionalmixin.api.annotation.Condition;
-import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
+//? <=1.21.5 {
+import com.moulberry.mixinconstraints.annotations.IfMinecraftVersion;
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import net.irisshaders.iris.uniforms.BiomeUniforms;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
@@ -11,7 +12,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Restriction(require = @Condition("galosphere"))
+@IfModLoaded(value = "galosphere")
+@IfMinecraftVersion(minVersion = "1.20.1", maxVersion = "1.21.5")
 @Mixin(value = GBiomes.class, remap = false)
 public class GalosphereMixin {
     @Inject(method = "register", at = @At("TAIL"))
@@ -19,3 +21,4 @@ public class GalosphereMixin {
         BiomeUniforms.getBiomeMap().put(cir.getReturnValue(), BiomeUniforms.getBiomeMap().size() + 1);
     }
 }
+//?}
