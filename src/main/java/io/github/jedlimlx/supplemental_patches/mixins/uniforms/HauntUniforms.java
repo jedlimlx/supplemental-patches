@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.mixins.uniforms;
 
 //? fabric && >= 1.21.1 {
-/*import com.moulberry.mixinconstraints.annotations.IfModLoaded;
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import net.frozenblock.trailiertales.registry.TTMobEffects;
 import net.irisshaders.iris.gl.uniform.UniformHolder;
 import net.irisshaders.iris.gl.uniform.UniformUpdateFrequency;
@@ -57,4 +57,4 @@ public class HauntUniforms {
         return 0.0F;
     }
 }
-*///?}
+//?}

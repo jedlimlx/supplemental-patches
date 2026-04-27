@@ -3,22 +3,23 @@ package io.github.jedlimlx.supplemental_patches.shaders
 import com.google.gson.*
 import io.github.jedlimlx.supplemental_patches.LOGGER
 import io.github.jedlimlx.supplemental_patches.shaders.ShaderResourceLoader.getFileContents
-import net.minecraft.client.Minecraft
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.server.packs.resources.PreparableReloadListener.PreparationBarrier
-import net.minecraft.server.packs.resources.ReloadableResourceManager
 import net.minecraft.server.packs.resources.ResourceManager
 import net.minecraft.util.GsonHelper
-import net.minecraft.util.profiling.ProfilerFiller
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.Executor
 import kotlin.math.ceil
 import kotlin.math.log10
 
+//? <=1.21.8 {
+/*import net.minecraft.client.Minecraft
+import net.minecraft.server.packs.resources.ReloadableResourceManager
+*///?}
 
 val GSON: Gson = GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create()
 
-fun loadJson(location: ResourceLocation, manager: ResourceManager): JsonObject {
+fun loadJson(location: Identifier, manager: ResourceManager): JsonObject {
     try {
         return GsonHelper.fromJson(GSON, getFileContents(location, manager), JsonObject::class.java)
     } catch (e: JsonParseException) {
@@ -38,7 +39,8 @@ object ShaderResourceLoader {
 
     val REFLECTION_HANDLERS: HashMap<String, String> = hashMapOf()
 
-    fun registerListener() {
+	//? <=1.21.8 {
+    /*fun registerListener() {
         val mc = Minecraft.getInstance()
 
         if (mc != null && mc.resourceManager is ReloadableResourceManager) {
@@ -48,12 +50,11 @@ object ShaderResourceLoader {
             LOGGER.info("Registered listener for shader patches into Euphoria Patches.")
         }
     }
+	*///?}
 
     fun reload(
         stage: PreparationBarrier,
         resourceManager: ResourceManager,
-        preparationsProfiler: ProfilerFiller,
-        reloadProfiler: ProfilerFiller,
         backgroundExecutor: Executor,
         gameExecutor: Executor
     ): CompletableFuture<Void> = catchAndPrintError {
@@ -750,7 +751,7 @@ object ShaderResourceLoader {
         ).thenAcceptAsync {}
     }
 
-    fun getFileContents(location: ResourceLocation, manager: ResourceManager): String {
+    fun getFileContents(location: Identifier, manager: ResourceManager): String {
         return manager.getResourceOrThrow(location).open().use { it.bufferedReader().readText() }
     }
 }

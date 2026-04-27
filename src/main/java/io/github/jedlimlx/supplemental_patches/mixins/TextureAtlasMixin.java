@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.mixins;
 
 //? fabric {
-/*import io.github.jedlimlx.supplemental_patches.platforms.fabric.TextureStitchEvent;
+import io.github.jedlimlx.supplemental_patches.platforms.fabric.TextureStitchEvent;
 import net.minecraft.client.renderer.texture.SpriteLoader;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,4 +19,4 @@ public class TextureAtlasMixin {
 		TextureStitchEvent.Companion.getEVENT().invoker().afterStitched((TextureAtlas) (Object) this);
 	}
 }
-*///?}
+//?}

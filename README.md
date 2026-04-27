@@ -25,6 +25,28 @@ Some of the most _exciting_ features of the mod include (for players):
 
 For details on the supported areas that can be patched onto Euphoria Patches, check out this [tutorial](https://supplemental-patches.pages.dev/tutorials/getting_started).
 
+## Building the Mod
+
+This projects uses the [Stonecutter](https://stonecutter.kikugie.dev/) Gradle Plugin, building off [Rotgruengelb's template](https://github.com/rotgruengelb/stonecutter-mod-template) 
+to handle multiloader. To run the mod on the client, use the command (modify it to the relevant minecraft version)
+
+```
+./gradlew 1.21.1-neoForge:runClient
+```
+
+To build the mod, run (the minecraft version can be removed to build the mod for all targets)
+```
+./gradlew 1.21.1-neoForge:build
+```
+
+If you have access to a development version of Euphoria Patches, it can be loaded by creating a secrets.properties and placing the 
+link to the shaderpack as such
+```properties
+deps.euphoria-dev=[LINK HERE]
+```
+
+The mod will automatically patch onto the development version.
+
 ## FAQ
 
 **Q:** Will there be ports to loaders other than (Neo)Forge and Fabric? <br>

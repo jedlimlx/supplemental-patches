@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.platforms.neoforge
 
 //? neoforge {
-import io.github.jedlimlx.supplemental_patches.LOGGER
+/*import io.github.jedlimlx.supplemental_patches.LOGGER
 import io.github.jedlimlx.supplemental_patches.MOD_ID
 import io.github.jedlimlx.supplemental_patches.PLATFORM
 import io.github.jedlimlx.supplemental_patches.shaders.installShader
@@ -47,4 +47,4 @@ object NeoForgeClientEvents {
 		)
 	}
 }
-//?}
+*///?}

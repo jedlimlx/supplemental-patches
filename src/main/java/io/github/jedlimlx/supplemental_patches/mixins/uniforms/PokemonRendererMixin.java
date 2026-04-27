@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.mixins.uniforms;
 
 //? =1.20.1 || =1.21.1 {
-import com.cobblemon.mod.common.client.render.pokemon.PokemonRenderer;
+/*import com.cobblemon.mod.common.client.render.pokemon.PokemonRenderer;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import com.cobblemon.mod.common.pokemon.Species;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -49,4 +49,4 @@ public class PokemonRendererMixin {
         }
     }
 }
-//?}
+*///?}

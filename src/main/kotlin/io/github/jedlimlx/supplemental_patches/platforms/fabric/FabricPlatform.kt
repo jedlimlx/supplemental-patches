@@ -1,12 +1,12 @@
 package io.github.jedlimlx.supplemental_patches.platforms.fabric
 
 //? fabric {
-/*import io.github.jedlimlx.supplemental_patches.platforms.Platform
+import io.github.jedlimlx.supplemental_patches.platforms.Platform
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.texture.TextureAtlas
 import net.minecraft.network.chat.Component
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import java.nio.file.Path
 
 object FabricPlatform : Platform {
@@ -17,32 +17,40 @@ object FabricPlatform : Platform {
 	override val shaderDirectory: Path = FabricLoader.getInstance().gameDir.resolve("shaderpacks")
 
 	override var particleAtlas: TextureAtlas? = null
-	override val particleAtlasTextures: Collection<ResourceLocation>
+	override val particleAtlasTextures: Collection<Identifier>
 		get() = particleAtlas!!.texturesByName.keys
 
 	override fun modList(): List<String> = FabricLoader.getInstance().allMods.map { it.metadata.id }
 	override fun isModLoaded(modId: String) = FabricLoader.getInstance().isModLoaded(modId)
 
 	override fun sendSystemMessage(message: String) {
-		Minecraft.getInstance().player?.sendSystemMessage(Component.nullToEmpty(message))
+		//? >=1.21.4 {
+		Minecraft.getInstance().player?.displayClientMessage(Component.nullToEmpty(message), false)
+		//?} else {
+		/*Minecraft.getInstance().player?.sendSystemMessage(Component.nullToEmpty(message))
+		*///?}
 	}
 	override fun sendSystemMessage(message: Component) {
-		Minecraft.getInstance().player?.sendSystemMessage(message)
+		//? >=1.21.4 {
+		Minecraft.getInstance().player?.displayClientMessage(message, false)
+		//?} else {
+		/*Minecraft.getInstance().player?.sendSystemMessage(message)
+		*///?}
 	}
 
-	override fun getResourceLocation(path: String): ResourceLocation {
+	override fun getIdentifier(path: String): Identifier {
 		//? if =1.20.1 {
 		/*return ResourceLocation(path)
 		*///?} elif >=1.21{
-		return ResourceLocation.parse(path)
+		return Identifier.parse(path)
 		//?}
 	}
 
-	override fun getResourceLocation(namespace: String, path: String): ResourceLocation {
+	override fun getIdentifier(namespace: String, path: String): Identifier {
 		//? if =1.20.1 {
 		/*return ResourceLocation(namespace, path)
 		*///?} elif >=1.21{
-		return ResourceLocation.fromNamespaceAndPath(namespace, path)
+		return Identifier.fromNamespaceAndPath(namespace, path)
 		//?}
 	}
-} *///?}
+} //?}

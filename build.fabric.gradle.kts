@@ -100,31 +100,38 @@ dependencies {
 
 	// libraries
 	localRuntime("org.anarres:jcpp:1.4.14")
-	localRuntime("io.github.douira:glsl-transformer:2.0.2")
+	localRuntime("io.github.douira:glsl-transformer:${prop("deps.glsl-transformer")}")
 
 	implementation("com.eliotlash.mclib:mclib:20")
 	implementation("com.electronwill.night-config:toml:3.8.1")
 	implementation("org.reflections:reflections:0.10.2")
 	implementation("net.jodah:typetools:0.6.3")
 
-	when (minecraftVersion) {
-		"1.20.1" -> {
-			modApi("fuzs.puzzlesaccessapi:puzzlesaccessapi-fabric:20.1.1")
-			modImplementation("com.github.Chocohead:Fabric-ASM:2.3")
-			modImplementation("com.jamieswhiteshirt:reach-entity-attributes:2.4.0")
-			modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-base:${prop("deps.cardinal")}")
-			modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${prop("deps.cardinal")}")
-		}
-		else -> {
-			modImplementation("dev.isxander:yet-another-config-lib:3.6.6+1.21.1-fabric")
-			modImplementation("org.ladysnake:satin:2.0.0")
-			modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-base:${prop("deps.cardinal")}")
-			modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-entity:${prop("deps.cardinal")}")
-		}
+	if (minecraftVersion == "1.20.1") {
+		modApi("fuzs.puzzlesaccessapi:puzzlesaccessapi-fabric:20.1.1")
+		modImplementation("com.jamieswhiteshirt:reach-entity-attributes:2.4.0")
+		modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-base:${prop("deps.cardinal")}")
+		modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${prop("deps.cardinal")}")
+	} else {
+		if (minecraftVersion in listOf("1.21.1", "1.21.10", "1.21.11")) addMods(listOf("lithostitched"))
+
+		modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-base:${prop("deps.cardinal")}")
+		modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-entity:${prop("deps.cardinal")}")
 	}
 
-	modApi("fuzs.extensibleenums:extensibleenums-fabric:${prop("deps.extensibleenums")}")
-	modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:${prop("deps.wood-api")}")
+	modImplementation("com.github.Chocohead:Fabric-ASM:2.3")
+	if (prop("deps.yacl").isNotEmpty())
+		modImplementation("dev.isxander:yet-another-config-lib:${prop("deps.yacl")}")
+	if (prop("deps.extensibleenums").isNotEmpty())
+		modApi("fuzs.extensibleenums:extensibleenums-fabric:${prop("deps.extensibleenums")}")
+	if (prop("deps.neoforgedatapackextensions").isNotEmpty())
+		modApi("fuzs.neoforgedatapackextensions:neoforgedatapackextensions-fabric:${prop("deps.neoforgedatapackextensions")}")
+	if (prop("deps.wood-api").isNotEmpty())
+		modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:${prop("deps.wood-api")}")
+	if (prop("deps.mixson").isNotEmpty())
+		modImplementation("maven.modrinth:mixson:${prop("deps.mixson")}")
+	if (prop("deps.satin").isNotEmpty())
+		modImplementation("org.ladysnake:satin:${prop("deps.satin")}")
 
 	// jei / jade
 	addMods(listOf("jade!"))
@@ -145,7 +152,6 @@ dependencies {
 			"forge-config-api-port",
 			"geckolib",
 			"glitchcore",
-			"lithostitched",
 			"mixson",
 			"moonlight",
 			"oh-the-trees-youll-grow",
@@ -223,6 +229,7 @@ dependencies {
 	addMods(
 		listOf(
 			"thermoo",
+			"immersive-storms",
 			"scorchful",
 			"frostiful"
 		)
@@ -255,6 +262,5 @@ stonecutter {
 	replacements.string(current.parsed >= "1.21.11") {
 		replace("resourceIdentifier", "resourceIdentifier")
 		replace("ResourceLocation", "Identifier")
-		replace("location()", "identifier()")
 	}
 }

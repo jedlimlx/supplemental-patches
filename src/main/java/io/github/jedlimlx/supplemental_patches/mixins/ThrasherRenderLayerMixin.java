@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.mixins;
 
 //? neoforge || forge {
-import com.moulberry.mixinconstraints.annotations.IfModLoaded;
+/*import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import org.spongepowered.asm.mixin.Mixin;
@@ -25,4 +25,4 @@ public class ThrasherRenderLayerMixin {
         return RenderType.entityTranslucent(texture);
     }
 }
-//?}
+*///?}

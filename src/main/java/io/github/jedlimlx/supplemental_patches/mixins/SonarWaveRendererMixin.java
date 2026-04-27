@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.mixins;
 
 //? neoforge || forge {
-import com.moulberry.mixinconstraints.annotations.IfModLoaded;
+/*import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import com.teamabnormals.upgrade_aquatic.client.renderer.entity.SonarWaveRenderer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
@@ -25,4 +25,4 @@ public class SonarWaveRendererMixin {
         return RenderType.entityTranslucent(texture);
     }
 }
-//?}
+*///?}

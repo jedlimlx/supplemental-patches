@@ -63,6 +63,7 @@ fun RepositoryHandler.strictMaven(
 
 abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 	var project: Project? = null
+	var euphoriaDev: Boolean = false
 
 	override fun apply(project: Project) = with(project) {
 		val project = this
@@ -174,6 +175,7 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 		if (euphoriaDevLink.isNotEmpty()) {
 			val target = File("run/shaderpacks/euphoria_dev")
 			if (!target.exists()) {
+				euphoriaDev = true
 				tasks.register<Download>("downloadEuphoriaDev") {
 					logger.info("Downloading ${euphoriaDevLink.split("/").last().split("?").first()}...")
 
@@ -219,7 +221,7 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 		tasks.named<ProcessResources>("processResources") {
 			dependsOn(tasks.named("stonecutterGenerate"))
 			dependsOn(tasks.named("downloadComplementaryShaders"))
-			dependsOn(tasks.named("downloadEuphoriaDev"))
+			if (euphoriaDev) dependsOn(tasks.named("downloadEuphoriaDev"))
 			dependsOn("kspKotlin")
 
 			filesMatching("*.mixins.json") { expand("java" to "JAVA_${requiredJava.majorVersion}") }
@@ -253,6 +255,7 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 				"dependencies" to dependencies
 			)
 
+			filesMatching("**/euphoria/pack.json") { expand(props) }
 			when {
 				isFabric -> {
 					filesMatching("fabric.mod.json") { expand(props) }

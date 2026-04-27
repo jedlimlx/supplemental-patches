@@ -1,6 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.mixins.uniforms;
 
-import com.moulberry.mixinconstraints.annotations.IfModLoaded;
+//? 1.20.1 || 1.21.1 {
+/*import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import dev.corgitaco.enhancedcelestials.EnhancedCelestials;
 import dev.corgitaco.enhancedcelestials.api.lunarevent.LunarEvent;
 import dev.corgitaco.enhancedcelestials.lunarevent.EnhancedCelestialsLunarForecastWorldData;
@@ -69,3 +70,4 @@ public class EnhancedCelestialsUniforms {
         }
     }
 }
+*///?}
