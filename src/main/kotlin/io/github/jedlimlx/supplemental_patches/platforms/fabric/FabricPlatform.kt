@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.platforms.fabric
 
 //? fabric {
-import io.github.jedlimlx.supplemental_patches.platforms.Platform
+/*import io.github.jedlimlx.supplemental_patches.platforms.Platform
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.texture.TextureAtlas
@@ -25,17 +25,17 @@ object FabricPlatform : Platform {
 
 	override fun sendSystemMessage(message: String) {
 		//? >=1.21.4 {
-		Minecraft.getInstance().player?.displayClientMessage(Component.nullToEmpty(message), false)
-		//?} else {
-		/*Minecraft.getInstance().player?.sendSystemMessage(Component.nullToEmpty(message))
-		*///?}
+		/*Minecraft.getInstance().player?.displayClientMessage(Component.nullToEmpty(message), false)
+		*///?} else {
+		Minecraft.getInstance().player?.sendSystemMessage(Component.nullToEmpty(message))
+		//?}
 	}
 	override fun sendSystemMessage(message: Component) {
 		//? >=1.21.4 {
-		Minecraft.getInstance().player?.displayClientMessage(message, false)
-		//?} else {
-		/*Minecraft.getInstance().player?.sendSystemMessage(message)
-		*///?}
+		/*Minecraft.getInstance().player?.displayClientMessage(message, false)
+		*///?} else {
+		Minecraft.getInstance().player?.sendSystemMessage(message)
+		//?}
 	}
 
 	override fun getResourceLocation(path: String): ResourceLocation {
@@ -53,4 +53,4 @@ object FabricPlatform : Platform {
 		return ResourceLocation.fromNamespaceAndPath(namespace, path)
 		//?}
 	}
-} //?}
+} *///?}

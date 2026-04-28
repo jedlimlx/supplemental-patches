@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.mixins.biomes;
 
 //? forge || neoforge {
-/*import com.moulberry.mixinconstraints.annotations.IfModLoaded;
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import com.ninni.spawn.registry.SpawnBiomes;
 import net.irisshaders.iris.uniforms.BiomeUniforms;
 import net.minecraft.resources.ResourceKey;
@@ -19,4 +19,4 @@ public class SpawnMixin {
         BiomeUniforms.getBiomeMap().put(cir.getReturnValue(), BiomeUniforms.getBiomeMap().size() + 1);
     }
 }
-*///?}
+//?}

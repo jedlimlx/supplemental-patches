@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.mixins.uniforms;
 
 //? neoforge || forge {
-/*import com.moulberry.mixinconstraints.annotations.IfMinecraftVersion;
+import com.moulberry.mixinconstraints.annotations.IfMinecraftVersion;
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import galena.oreganized.index.OEffects;
 import net.irisshaders.iris.gl.uniform.UniformHolder;
@@ -35,10 +35,10 @@ public class OreganizedUniforms {
         Entity cameraEntity = Minecraft.getInstance().getCameraEntity();
         if (cameraEntity instanceof LivingEntity) {
 			//? neoforge {
-			/^MobEffectInstance brainDamage = ((LivingEntity)cameraEntity).getEffect(OEffects.STUNNING);
-			^///?} forge {
-			/^MobEffectInstance brainDamage = ((LivingEntity)cameraEntity).getEffect(OEffects.STUNNING.get());
-			 ^///?}
+			MobEffectInstance brainDamage = ((LivingEntity)cameraEntity).getEffect(OEffects.STUNNING);
+			//?} forge {
+			/*MobEffectInstance brainDamage = ((LivingEntity)cameraEntity).getEffect(OEffects.STUNNING.get());
+			 *///?}
             if (brainDamage != null) {
                 return brainDamage.getAmplifier();
             } else return 0.0F;
@@ -47,4 +47,4 @@ public class OreganizedUniforms {
         return 0.0F;
     }
 }
-*///?}
+//?}

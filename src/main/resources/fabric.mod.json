@@ -25,5 +25,10 @@
   },
   "mixins": [
     "${id}.mixins.json"
-  ],${dependencies}
+  ],
+  "custom": {
+    "modmenu": {
+      "badges": [ "client" ]
+    }
+  },${dependencies}
 }

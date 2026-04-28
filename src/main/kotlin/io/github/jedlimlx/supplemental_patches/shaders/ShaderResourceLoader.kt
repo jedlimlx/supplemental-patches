@@ -57,9 +57,9 @@ object ShaderResourceLoader {
 		stage: PreparationBarrier,
 		resourceManager: ResourceManager,
 		//? <=1.21.4 {
-		/*preparationsProfiler: ProfilerFiller,
+		preparationsProfiler: ProfilerFiller,
 		reloadProfiler: ProfilerFiller,
-		*///?}
+		//?}
 		backgroundExecutor: Executor,
 		gameExecutor: Executor
     ): CompletableFuture<Void> = catchAndPrintError {

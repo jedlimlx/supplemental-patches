@@ -57,6 +57,7 @@ repositories {
 	strictMaven("https://api.modrinth.com/maven", "maven.modrinth") { name = "Modrinth" }
 
 	maven("https://thedarkcolour.github.io/KotlinForForge/") { name = "Kotlin for Forge" }
+	maven("https://maven.isxander.dev/releases") { name = "Xander Maven" }
 }
 
 dependencies {
@@ -84,6 +85,9 @@ dependencies {
 	jarJar(libs.moulberry.mixinconstraints)
 
 	implementation("thedarkcolour:kotlinforforge:${prop("deps.kotlinforforge")}")
+
+	modImplementation("maven.modrinth:better-modlist:${prop("deps.modmenu")}")
+	modImplementation("dev.isxander:yet-another-config-lib:${prop("deps.yacl")}")
 
 	// jei / jade
 	addMods(listOf("jei!", "jade!"))

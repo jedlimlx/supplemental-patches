@@ -97,6 +97,7 @@ dependencies {
 	modImplementation("net.fabricmc:fabric-language-kotlin:${prop("deps.fabric-lang-kotlin")}")
 
 	modLocalRuntime("com.terraformersmc:modmenu:${prop("deps.modmenu")}")
+	modImplementation("dev.isxander:yet-another-config-lib:${prop("deps.yacl")}")
 
 	// libraries
 	localRuntime("org.anarres:jcpp:1.4.14")
@@ -120,8 +121,6 @@ dependencies {
 	}
 
 	modImplementation("com.github.Chocohead:Fabric-ASM:2.3")
-	if (prop("deps.yacl").isNotEmpty())
-		modImplementation("dev.isxander:yet-another-config-lib:${prop("deps.yacl")}")
 	if (prop("deps.extensibleenums").isNotEmpty())
 		modApi("fuzs.extensibleenums:extensibleenums-fabric:${prop("deps.extensibleenums")}")
 	if (prop("deps.neoforgedatapackextensions").isNotEmpty())

@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.platforms.fabric
 
 //? fabric {
-import com.mojang.blaze3d.platform.InputConstants
+/*import com.mojang.blaze3d.platform.InputConstants
 import dev.kikugie.fletching_table.annotation.fabric.Entrypoint
 import io.github.jedlimlx.supplemental_patches.LOGGER
 import io.github.jedlimlx.supplemental_patches.PLATFORM
@@ -104,4 +104,4 @@ class FabricClientEntrypoint : ClientModInitializer {
 			)
 		}
 	}
-} //?}
+} *///?}

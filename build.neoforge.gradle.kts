@@ -80,6 +80,9 @@ dependencies {
 
 	implementation("thedarkcolour:kotlinforforge-neoforge:${prop("deps.kotlinforforge")}")
 
+	implementation("maven.modrinth:better-modlist:${prop("deps.modmenu")}")
+	implementation("dev.isxander:yet-another-config-lib:${prop("deps.yacl")}")
+
 	// jei / jade
 	addMods(listOf("jei!", "jade!"))
 
@@ -112,7 +115,7 @@ dependencies {
 	// abnormals mods
 	addMods(
 		listOf(
-			"abnormals-delight*",
+//			"abnormals-delight*",
 			"atmospheric",
 			"autumnity",
 			"berry-good",
@@ -148,15 +151,15 @@ dependencies {
 	)
 
 	// farmers delight
-	addMods(
-		listOf(
-			"farmers-delight!",
-			"rustic-delight!",
-			"my-nethers-delight!",
-			"ends-delight!",
-			"dungeons-delight!"
-		)
-	)
+//	addMods(
+//		listOf(
+//			"farmers-delight!",
+//			"rustic-delight!",
+//			"my-nethers-delight!",
+//			"ends-delight!",
+//			"dungeons-delight!"
+//		)
+//	)
 
 	// biome mods
 	addMods(

@@ -16,10 +16,10 @@ fun getBiomeMap(): Object2IntOpenHashMap<ResourceKey<Biome>> {
     val connection: ClientPacketListener? = Minecraft.getInstance().connection
     if (connection != null) {
 		//? >=1.21.4 {
-        val biomes = connection.registryAccess().lookup(Registries.BIOME).orElseThrow()
-		//?} else {
-		/*val biomes = connection.registryAccess().registry(Registries.BIOME).orElseThrow()
-		*///?}
+        /*val biomes = connection.registryAccess().lookup(Registries.BIOME).orElseThrow()
+		*///?} else {
+		val biomes = connection.registryAccess().registry(Registries.BIOME).orElseThrow()
+		//?}
 
         var currentId = 0
         biomes.entrySet().sortedWith(
