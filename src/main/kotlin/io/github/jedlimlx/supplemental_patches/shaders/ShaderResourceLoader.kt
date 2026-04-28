@@ -764,6 +764,9 @@ object ShaderResourceLoader {
 			{
 				resourceManager.listResources(type) { it.path.endsWith("pack.json") }.forEach { (loc, _) ->
 					PACK_JSON = getFileContents(loc, resourceManager)
+
+					val json = loadJson(loc, resourceManager)
+					SHADERPACK_NAME = json["name"]!!.asString
 				}
 			}, executor
 		).thenAcceptAsync {}

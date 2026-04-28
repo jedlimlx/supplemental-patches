@@ -1,5 +1,5 @@
 {
   "name": "${name} ${version}",
-  "shaderDescription": "${description}",
+  "shaderDescription": "${description} \u00A7d${homepage_url}\u00A7r",
   "version": "${version}"
 }
