@@ -23,7 +23,7 @@ fun getBiomeMap(): Object2IntOpenHashMap<ResourceKey<Biome>> {
 
         var currentId = 0
         biomes.entrySet().sortedWith(
-            compareBy({ it.key.identifier().path }, { it.key.identifier().namespace })
+            compareBy({ it.key.location().path }, { it.key.location().namespace })
         ).forEach { _biomeMap[it.key] = currentId++ }
     }
 

@@ -107,9 +107,7 @@ fun writeToSettingsFile(directory: Path, fileName: String, text: String) {
         val lines = file.readText().lines()
 
         var count = 0
-        while (lines[lines.size - count++ - 1].isEmpty()) {
-            println(count)
-        }
+        while (lines[lines.size - count++ - 1].isEmpty()) { }
 
         val newText = lines.subList(0, lines.size - count).joinToString("\n") + "\n$text#endif"
         if (fileName !in visited) file.writeText(SETTINGS_BANNER + newText)

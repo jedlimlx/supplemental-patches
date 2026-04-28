@@ -21,15 +21,17 @@ import java.util.Optional;
 import static net.bunten.enderscape.registry.EnderscapeBiomes.*;
 
 //? neoforge {
-/*import net.bunten.enderscape.biome.util.SkyParameters as BiomeParemeters;
+/*import net.bunten.enderscape.biome.util.SkyParameters;
  *///?} fabric && <=1.21.10 {
-/*import net.bunten.enderscape.biome.util.BiomeParameters;
-*///?} else {
-import net.bunten.enderscape.registry.EnderscapeEnvironmentAttributes;
+import net.bunten.enderscape.biome.util.BiomeParameters;
+//?} else {
+/*import net.bunten.enderscape.registry.EnderscapeEnvironmentAttributes;
 import net.minecraft.world.attribute.EnvironmentAttributeProbe;
 import net.minecraft.world.attribute.EnvironmentAttributes;
-//?}
+*///?}
 
+//~ if neoforge 'BiomeParameters' -> 'SkyParameters' {
+//~ if neoforge 'findFor' -> 'getSkyParametersFor' {
 @IfModLoaded(value = "enderscape")
 @IfMinecraftVersion(minVersion = "1.21.1")
 @Mixin(value = BiomeUniforms.class, remap = false)
@@ -41,7 +43,7 @@ public abstract class EnderscapeAtmosphereUniforms {
     )
     private static void addBiomeUniforms(UniformHolder uniforms, CallbackInfo ci) {
 		//? >=1.21.11 {
-		uniforms.uniform3f(
+		/*uniforms.uniform3f(
 			UniformUpdateFrequency.PER_TICK,
 			"enderscapeNebulaColor",
 			() -> {
@@ -80,8 +82,8 @@ public abstract class EnderscapeAtmosphereUniforms {
 				return probe.getValue(EnderscapeEnvironmentAttributes.STAR_ALPHA, 1.0f);
 			}
 		);
-		//?} else {
-        /*uniforms.uniform3f(
+		*///?} else {
+        uniforms.uniform3f(
             UniformUpdateFrequency.PER_TICK,
             "enderscapeNebulaColor",
             () -> {
@@ -89,7 +91,7 @@ public abstract class EnderscapeAtmosphereUniforms {
                 Color color;
                 if (player != null) {
 					Optional<BiomeParameters> temp = BiomeParameters.findFor(player.level().getBiome(player.blockPosition()));
-					return temp.map(it -> new Color(it.nebulaColor())).orElse(new Color(DEFAULT_NEBULA_COLOR));
+					color = temp.map(it -> new Color(it.nebulaColor())).orElse(new Color(DEFAULT_NEBULA_COLOR));
 				} else color = new Color(DEFAULT_NEBULA_COLOR);
                 return new Vector3f(color.getRed(), color.getGreen(), color.getBlue());
             }
@@ -110,8 +112,8 @@ public abstract class EnderscapeAtmosphereUniforms {
                 LocalPlayer player = Minecraft.getInstance().player;
                 Color color;
                 if (player != null) {
-					Optional<BiomeParameters> temp = BiomeParameters.getSkyParametersFor(player.level().getBiome(player.blockPosition()));
-					return temp.map(it -> new Color(it.starColor())).orElse(new Color(DEFAULT_STAR_COLOR));
+					Optional<BiomeParameters> temp = BiomeParameters.findFor(player.level().getBiome(player.blockPosition()));
+					color = temp.map(it -> new Color(it.starColor())).orElse(new Color(DEFAULT_STAR_COLOR));
 				} else color = new Color(DEFAULT_STAR_COLOR);
                 return new Vector3f(color.getRed(), color.getGreen(), color.getBlue());
             }
@@ -126,7 +128,9 @@ public abstract class EnderscapeAtmosphereUniforms {
                 } else return DEFAULT_STAR_ALPHA;
             }
         );
-		*///?}
+		//?}
     }
 }
+//~}
+//~}
 //?}

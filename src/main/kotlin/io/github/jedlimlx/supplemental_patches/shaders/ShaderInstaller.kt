@@ -1,6 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
 import io.github.jedlimlx.supplemental_patches.LOGGER
+import io.github.jedlimlx.supplemental_patches.MOD_VERSION
 import io.github.jedlimlx.supplemental_patches.PLATFORM
 import java.nio.file.Path
 import kotlin.io.path.*
@@ -15,7 +16,7 @@ fun installShader(): String = catchAndPrintError {
 
     LOGGER.info("Detected shader installation at $installation.")
 
-    val newInstallation = Path(PLATFORM.shaderDirectory.toString() + "/${installation.name} + Supplemental Patches")
+    val newInstallation = Path(PLATFORM.shaderDirectory.toString() + "/Supplemental Patches $MOD_VERSION")
     newInstallation.deleteRecursively()
     newInstallation.createDirectory()
     installation.copyToRecursively(newInstallation, overwrite = true, followLinks = false)
@@ -26,6 +27,7 @@ fun installShader(): String = catchAndPrintError {
     modifyBlockProperties(newInstallation)
     modifyEntityProperties(newInstallation)
     modifyItemProperties(newInstallation)
+	injectPackJson(newInstallation)
     generatedDeferredMaterials(newInstallation)
     generateSpecificMaterials(newInstallation)
     assignVoxelNumbers()

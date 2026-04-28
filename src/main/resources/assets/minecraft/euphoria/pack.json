@@ -1,0 +1,5 @@
+{
+  "name": "${name} ${version}",
+  "shaderDescription": "${description}",
+  "version": "${version}"
+}

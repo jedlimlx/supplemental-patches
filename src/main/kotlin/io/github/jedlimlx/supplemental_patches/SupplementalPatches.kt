@@ -21,7 +21,7 @@ import net.minecraftforge.fml.loading.FMLEnvironment
 *///?}
 
 const val MOD_ID: String =  /*$ mod_id*/ "supplemental_patches";
-const val MOD_VERSION: String =  /*$ mod_version*/ "1.0.0";
+const val MOD_VERSION: String =  /*$ mod_version*/ "1.0.0-beta";
 const val MOD_FRIENDLY_NAME: String =  /*$ mod_name*/ "Supplemental Patches";
 
 @JvmField

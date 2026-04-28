@@ -14,6 +14,13 @@ const val BANNER = """
 #           |_|  |_|
 """
 
+var PACK_JSON = ""
+val PACK_JSON_PATH = "/shaders/pack.json"
+fun injectPackJson(directory: Path) {
+	val file = File(directory.absolutePathString() + PACK_JSON_PATH)
+	file.writeText(PACK_JSON)
+}
+
 val BLOCK_ADDITIONAL_MAPPING = mutableMapOf<Int, List<String>>()
 val BLOCK_REGEX_REPLACES = arrayListOf<Regex>()
 
@@ -761,7 +768,7 @@ fun generateParticleCode(directory: Path) {
             append(
                 split(
                     PARTICLES.map {
-                        Pair(it, it.mat[0].map { PLATFORM.getIdentifier(it) }.filter { it in PLATFORM.particleAtlasTextures })
+                        Pair(it, it.mat[0].map { PLATFORM.getResourceLocation(it) }.filter { it in PLATFORM.particleAtlasTextures })
                     }.filter { it.second.isNotEmpty() }.map { (particle, lst) ->
                         val rectangles = lst.map {
                             val sprite = textureAtlas.getSprite(it)
