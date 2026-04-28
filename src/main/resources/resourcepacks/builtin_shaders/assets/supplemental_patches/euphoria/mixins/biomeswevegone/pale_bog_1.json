@@ -1,5 +1,5 @@
 {
-  "file": "/shaders/lib/atmospherics/volumetricLight.glsl",
+  "file": "/shaders/lib/atmospherics/volumetricLight/volumetricLight.glsl",
   "type": "replace",
   "key": "inPaleGarden",
   "code": "pale_bog.glsl"

@@ -1,6 +1,6 @@
 {
   "file": "/shaders/lib/colors/skyColors.glsl",
   "type": "after",
-  "key": "vec3 skyColorSqrt = sqrt(skyColor);",
+  "key": "vec3 skyColorSqrt = sqrt(skyColorTweaked);",
   "code": "sandstorm_sky_color_3.glsl"
 }

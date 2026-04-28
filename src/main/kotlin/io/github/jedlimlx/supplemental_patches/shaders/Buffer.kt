@@ -50,12 +50,12 @@ fun injectBuffersIntoShaderCode(shaderCode: String, newBuffers: List<Pair<Int, S
                 }
             }
             line.startsWith("/* DRAWBUFFERS") -> {
-                val buffers = Regex("DRAWBUFFERS:(\\d+)").find(line)!!.groupValues[1]
+                val buffers = Regex("DRAWBUFFERS:[ ]*(\\d+)").find(line)!!.groupValues[1]
                 stack[stack.size - 1] = buffers.map { it.digitToInt() }.filter { it !in stack.flatten() }
                 stackSize += stack.last().size
             }
             line.startsWith("/* RENDERTARGETS") -> {
-                val buffers = Regex("RENDERTARGETS: ((\\d+,)*\\d+)").find(line)!!.groupValues[1]
+                val buffers = Regex("RENDERTARGETS:[ ]*((\\d+,)*\\d+)").find(line)!!.groupValues[1]
                 stack[stack.size - 1] = buffers.split(",").map { it.toInt() }.filter { it !in stack.flatten() }
                 stackSize += stack.last().size
             }
@@ -161,7 +161,7 @@ val BUFFERS = arrayListOf<Buffer>()
 fun injectBuffers(directory: Path) {
     // TODO generate full list of conditions to check for and locations to inject buffers
     val images = BUFFERS.groupBy { it.imageFormat }.map { it.value.chunked(4) }.flatten().toList()
-    for (i in 0..images.size) {
+    for (i in 0..<images.size) {
         UNIFORMS.add(
             Uniform(
                 "colortex${15 - i}",

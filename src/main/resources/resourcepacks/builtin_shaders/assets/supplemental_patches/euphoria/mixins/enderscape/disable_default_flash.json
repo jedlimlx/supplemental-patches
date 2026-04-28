@@ -1,5 +1,5 @@
 {
-  "file": "/shaders/lib/atmospherics/enderBeams.glsl",
+  "file": "/shaders/lib/atmospherics/endFlash.glsl",
   "type": "replace",
   "key": "#if defined IS_IRIS && MC_VERSION >= 12109 && EP_END_FLASH % 2 == 0",
   "code": "disable_default_flash.glsl"

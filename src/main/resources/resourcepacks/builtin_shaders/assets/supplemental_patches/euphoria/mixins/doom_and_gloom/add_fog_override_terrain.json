@@ -1,6 +1,6 @@
 {
   "file": "/shaders/program/gbuffers_terrain.glsl",
-  "type": "after",
-  "key": "float purkinjeOverwrite = 0.0;",
+  "type": "before",
+  "key": "#include \"/lib/materials/materialHandling/terrainMaterials.glsl\"",
   "code": "add_fog_override.glsl"
 }

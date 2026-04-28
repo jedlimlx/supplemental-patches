@@ -25,6 +25,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 import java.io.File
 import java.util.*
 import javax.inject.Inject
+import kotlin.io.path.Path
+import kotlin.io.path.createDirectory
+import kotlin.io.path.isDirectory
+import kotlin.io.path.listDirectoryEntries
+import kotlin.io.path.name
 
 fun Project.prop(name: String): String = (findProperty(name) ?: "") as String
 
@@ -156,16 +161,16 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 	}
 
 	private fun Project.configureShaderpackDownloads() {
-		File("run/shaderpacks").mkdir()
+		val shaderDirectoryPath = "run/shaderpacks"
+		val shaderDirectory = File(shaderDirectoryPath)
+		shaderDirectory.mkdir()
 
 		val complementaryShadersLink = prop("deps.complementary")
 		if (complementaryShadersLink.isNotEmpty()) {
 			tasks.register<Download>("downloadComplementaryShaders") {
-				logger.info("Downloading ${complementaryShadersLink.split("/").last()}...")
-
 				src(complementaryShadersLink)
 				overwrite(false)
-				dest("run/shaderpacks/${complementaryShadersLink.split("/").last()}")
+				dest("${shaderDirectoryPath}/${complementaryShadersLink.split("/").last()}")
 			}
 		} else {
 			logger.warn("No link to Complementary development version specified!")
@@ -173,34 +178,39 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 
 		val euphoriaDevLink = prop("deps.euphoria-dev")
 		if (euphoriaDevLink.isNotEmpty()) {
-			val target = File("run/shaderpacks/euphoria_dev")
+			val euphoriaDevName = euphoriaDevLink.split("/").last().split("?").first().split(".").first()
+			val target = File("${shaderDirectoryPath}/${euphoriaDevName}")
 			if (!target.exists()) {
 				euphoriaDev = true
+				tasks.register<Delete>("clearPreviousEuphoriaDev") {
+					// removing all previous development versions
+					val devRegex = Regex("(EuphoriaPatches_earlyDev_\\d+-\\d+-\\d+|Comp\\d.\\dd\\dEuphoriaPatches_\\d.\\d.\\d-dev\\d+)")
+					if (shaderDirectory.listFiles() != null) {
+						shaderDirectory.listFiles().filter {
+							it.isDirectory() && it.name.matches(devRegex)
+						}.forEach { delete(it) }
+					}
+				}
+
 				tasks.register<Download>("downloadEuphoriaDev") {
-					logger.info("Downloading ${euphoriaDevLink.split("/").last().split("?").first()}...")
+					dependsOn("clearPreviousEuphoriaDev")
 
 					src(prop("deps.euphoria-dev"))
 					overwrite(true)
-					dest("run/shaderpacks/euphoria_dev.zip")
+					dest("${shaderDirectoryPath}/${euphoriaDevName}.zip")
 
 					finalizedBy("unzipEuphoriaDev")
 				}
 
 				tasks.register<Copy>("unzipEuphoriaDev") {
-					val shaderLink = prop("deps.euphoria-dev")
-					if (shaderLink.isNotEmpty()) {
-						from(zipTree("run/shaderpacks/euphoria_dev.zip"))
-						into("run/shaderpacks/euphoria_dev")
+					from(zipTree("${shaderDirectoryPath}/${euphoriaDevName}.zip"))
+					into("${shaderDirectoryPath}/${euphoriaDevName}")
 
-						finalizedBy("deleteEuphoriaDevZip")
-					}
+					finalizedBy("deleteEuphoriaDevZip")
 				}
 
 				tasks.register<Delete>("deleteEuphoriaDevZip") {
-					val shaderLink = prop("deps.euphoria-dev")
-					if (shaderLink.isNotEmpty()) {
-						delete("run/shaderpacks/euphoria_dev.zip")
-					}
+					delete("${shaderDirectoryPath}/${euphoriaDevName}.zip")
 				}
 			}
 		} else {
