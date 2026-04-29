@@ -1,4 +1,4 @@
-if (color.r > 0.95) {
+if (color.r > 0.9 && color.g > 0.62) {
     noSmoothLighting = true;
     lmCoordM.x = 0.77;
 

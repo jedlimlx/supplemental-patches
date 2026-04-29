@@ -16,8 +16,8 @@
     "doom_and_gloom:gray_vigil_candle:lit=false",
     "doom_and_gloom:light_gray_vigil_candle:lit=false",
     "doom_and_gloom:white_vigil_candle:lit=false",
-    "doom_and_gloom:brown_vigil_candle:lit=true",
-    "doom_and_gloom:beige_vigil_candle:lit=true"
+    "doom_and_gloom:brown_vigil_candle:lit=false",
+    "doom_and_gloom:beige_vigil_candle:lit=false"
   ],
   "mat2": [
     "doom_and_gloom:amber_vigil_candle:lit=true"

@@ -1,0 +1,30 @@
+{
+  "name": "cog",
+  "glsl": "cog.glsl",
+  "mat0": [
+    "supplementaries:cog_block:power=0",
+    "supplementaries:cog_block:power=1"
+  ],
+  "mat2": [
+    "supplementaries:cog_block:power=2",
+    "supplementaries:cog_block:power=3",
+    "supplementaries:cog_block:power=4",
+    "supplementaries:cog_block:power=5",
+    "supplementaries:cog_block:power=6",
+    "supplementaries:cog_block:power=7",
+    "supplementaries:cog_block:power=8",
+    "supplementaries:cog_block:power=9",
+    "supplementaries:cog_block:power=10",
+    "supplementaries:cog_block:power=11",
+    "supplementaries:cog_block:power=12",
+    "supplementaries:cog_block:power=13",
+    "supplementaries:cog_block:power=14",
+    "supplementaries:cog_block:power=15"
+  ],
+  "color": [
+    null,
+    null,
+    "minecraft:redstone_wire",
+    null
+  ]
+}
