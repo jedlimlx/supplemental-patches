@@ -178,23 +178,11 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 
 		val euphoriaDevLink = prop("deps.euphoria-dev")
 		if (euphoriaDevLink.isNotEmpty()) {
-			val euphoriaDevName = euphoriaDevLink.split("/").last().split("?").first().split(".").first()
+			val euphoriaDevName = euphoriaDevLink.split("/").last().split("?").first().split(".zip").first()
 			val target = File("${shaderDirectoryPath}/${euphoriaDevName}")
 			if (!target.exists()) {
 				euphoriaDev = true
-				tasks.register<Delete>("clearPreviousEuphoriaDev") {
-					// removing all previous development versions
-					val devRegex = Regex("(EuphoriaPatches_earlyDev_\\d+-\\d+-\\d+|Comp\\d.\\dd\\dEuphoriaPatches_\\d.\\d.\\d-dev\\d+)")
-					if (shaderDirectory.listFiles() != null) {
-						shaderDirectory.listFiles().filter {
-							it.isDirectory() && it.name.matches(devRegex)
-						}.forEach { delete(it) }
-					}
-				}
-
 				tasks.register<Download>("downloadEuphoriaDev") {
-					dependsOn("clearPreviousEuphoriaDev")
-
 					src(prop("deps.euphoria-dev"))
 					overwrite(true)
 					dest("${shaderDirectoryPath}/${euphoriaDevName}.zip")

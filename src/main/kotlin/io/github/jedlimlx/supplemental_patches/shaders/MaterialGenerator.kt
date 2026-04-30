@@ -220,7 +220,7 @@ fun generateEntityMaterials(directory: Path) {
     val oldCode = file.readText()
 
     // injecting code into the old code
-    val lines = oldCode.replace("\n} else {", "\n} else if (entityId < 50128) {").split("\n")
+    val lines = oldCode.replace("\n} else {", "\n} else if (entityId < 50256) {").split("\n")
     val newCode = lines.joinToString("\n") + " else if (entityId != 65535) {\n${code.prependIndent("    ")}\n}\n"
     file.writeText(newCode)
 
