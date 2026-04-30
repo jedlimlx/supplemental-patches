@@ -205,10 +205,10 @@ object ShaderResourceLoader {
 
         return@catchAndPrintError CompletableFuture.allOf(
             loadMaterialShaders(backgroundExecutor, resourceManager, "euphoria/terrain", BLOCK_MAP),
-            loadMaterialShaders(backgroundExecutor, resourceManager, "euphoria/translucent", BLOCK_MAP),
-            loadMaterialShaders(backgroundExecutor, resourceManager, "euphoria/block_entity", BLOCK_MAP),
+            loadMaterialShaders(backgroundExecutor, resourceManager, "euphoria/translucents", BLOCK_MAP),
+            loadMaterialShaders(backgroundExecutor, resourceManager, "euphoria/block_entities", BLOCK_MAP),
             loadMaterialShaders(backgroundExecutor, resourceManager, "euphoria/items", ITEM_MAP),
-            loadMaterialShaders(backgroundExecutor, resourceManager, "euphoria/entity", ENTITY_MAP),
+            loadMaterialShaders(backgroundExecutor, resourceManager, "euphoria/entities", ENTITY_MAP),
             loadMaterialShaders(backgroundExecutor, resourceManager, "euphoria/particles"),
             loadSpecificMaterials(backgroundExecutor, resourceManager, "euphoria/specific_materials"),
             loadFiles(backgroundExecutor, resourceManager, "euphoria/waving/functions", WAVING_FUNCTIONS),

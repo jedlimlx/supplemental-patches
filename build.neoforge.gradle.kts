@@ -115,7 +115,7 @@ dependencies {
 	// abnormals mods
 	addMods(
 		listOf(
-//			"abnormals-delight*",
+			"abnormals-delight*",
 			"atmospheric",
 			"autumnity",
 			"berry-good",
@@ -151,15 +151,15 @@ dependencies {
 	)
 
 	// farmers delight
-//	addMods(
-//		listOf(
-//			"farmers-delight!",
-//			"rustic-delight!",
-//			"my-nethers-delight!",
-//			"ends-delight!",
-//			"dungeons-delight!"
-//		)
-//	)
+	addMods(
+		listOf(
+			"farmers-delight!",
+			"rustic-delight!",
+			"my-nethers-delight!",
+			"ends-delight!",
+			"dungeons-delight!"
+		)
+	)
 
 	// biome mods
 	addMods(
