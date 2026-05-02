@@ -1,6 +1,6 @@
 {
   "file": "/shaders/lib/atmospherics/sky.glsl",
   "type": "after",
-  "key": "vec3 GetSky(float VdotU, float VdotS, float dither, bool doGlare, bool doGround) {",
+  "key": "vec3 GetSky(float VdotU, float VdotS, float dither, bool doGlare, bool doGround, out bool isCustomSky, bool skipCustomSky) {",
   "code": "gray_sky.glsl"
 }
