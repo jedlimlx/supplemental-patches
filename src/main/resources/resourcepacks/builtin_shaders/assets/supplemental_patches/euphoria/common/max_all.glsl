@@ -1,3 +1,4 @@
+// removed in Complementary Shaders 5.8 / Euphoria Patches 1.9 for some reason
 float maxAll(vec2 x) {
 	return max(x.x, x.y);
 }

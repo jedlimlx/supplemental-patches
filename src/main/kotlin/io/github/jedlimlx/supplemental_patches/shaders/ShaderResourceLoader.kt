@@ -372,10 +372,10 @@ object ShaderResourceLoader {
 
                     builder.register(
                         when (type) {
-                            "euphoria/translucent" -> TRANSLUCENTS
-                            "euphoria/block_entity" -> BLOCK_ENTITIES
+                            "euphoria/translucents" -> TRANSLUCENTS
+                            "euphoria/block_entities" -> BLOCK_ENTITIES
                             "euphoria/items" -> ITEMS
-                            "euphoria/entity" -> ENTITIES
+                            "euphoria/entities" -> ENTITIES
                             "euphoria/particles" -> PARTICLES
                             else -> MATERIALS
                         }

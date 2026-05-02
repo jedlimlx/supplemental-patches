@@ -137,6 +137,22 @@ float simplex(vec3 v) {
     return 105.0 * dot(m * m, vec4(dot(p0, x0), dot(p1, x1), dot(p2, x2), dot(p3, x3)));
 }
 
+float fbm(vec2 p, int octaves) {
+	float sum = 0.0;
+	float amplitude = 1.0;
+	float frequency = 1.0;
+
+	for (int i = 0; i < octaves; i++) {
+		float v = simplex(p * frequency + 100) * 2 - 1;
+		sum += v * amplitude;
+
+		frequency *= 2;
+		amplitude *= 0.5;
+	}
+
+	return sum;
+}
+
 vec2 fbm2d_2d(vec2 p, int octaves) {
     vec2 sum = vec2(0.0);
     float amplitude = 1.0;

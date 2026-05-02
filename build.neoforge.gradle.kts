@@ -60,11 +60,14 @@ dependencies {
 	fun addMods(mods: List<String>) {
 		mods.forEach {
 			try {
-				val id = it.replace("*", "").replace("!", "")
-				val mod = fletchingTable.modrinth(id, prop("deps.minecraft"), "neoforge")
+				val tokens = it.split(":")
+				val id = tokens[0].replace("*", "").replace("!", "")
+				val modString = if (tokens.size == 1) {
+					val mod = fletchingTable.modrinth(id, prop("deps.minecraft"), "neoforge")
+					"${mod.group}:${id}:${mod.version}"
+				} else "maven.modrinth:$id:${tokens[1]}"
 
-				val modString = "${mod.group}:${id}:${mod.version}"
-				when (it.last()) {
+				when (tokens[0].last()) {
 					'*' -> compileOnly(modString)
 					'!' -> runtimeOnly(modString)
 					else -> implementation(modString)
@@ -153,7 +156,7 @@ dependencies {
 	// farmers delight
 	addMods(
 		listOf(
-			"farmers-delight!",
+			"farmers-delight!:1.21.1-1.3.1",
 			"rustic-delight!",
 			"my-nethers-delight!",
 			"ends-delight!",
@@ -179,7 +182,7 @@ dependencies {
 	// peculiar room
 	addMods(
 		listOf(
-			"spawn-mod",
+			"spawn-mod:4.0.4",
 			"whaleborne",
 			"twigs*",
 			"the-between*",
