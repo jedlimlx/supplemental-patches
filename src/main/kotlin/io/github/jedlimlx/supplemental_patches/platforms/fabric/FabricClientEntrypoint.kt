@@ -10,6 +10,7 @@ import io.github.jedlimlx.supplemental_patches.shaders.installShader
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType
 import net.fabricmc.loader.api.FabricLoader
@@ -24,11 +25,12 @@ import org.lwjgl.glfw.GLFW
 
 import net.minecraft.resources.ResourceLocation
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener
+import net.minecraft.client.Minecraft
 import net.minecraft.server.packs.resources.PreparableReloadListener
 import net.minecraft.server.packs.resources.ResourceManager
+import net.minecraft.util.profiling.ProfilerFiller
 import java.util.concurrent.Executor
 //?}
-
 
 @Entrypoint("client")
 class FabricClientEntrypoint : ClientModInitializer {
@@ -64,11 +66,19 @@ class FabricClientEntrypoint : ClientModInitializer {
 				override fun reload(
 					preparationBarrier: PreparableReloadListener.PreparationBarrier,
 					resourceManager: ResourceManager,
+					//? <=1.21.4 {
+					preparationsProfiler: ProfilerFiller,
+					reloadProfiler: ProfilerFiller,
+					//?}
 					backgroundExecutor: Executor,
 					gameExecutor: Executor
 				) = ShaderResourceLoader.reload(
 					preparationBarrier,
 					resourceManager,
+					//? <=1.21.4 {
+					preparationsProfiler,
+					reloadProfiler,
+					//?}
 					backgroundExecutor,
 					gameExecutor
 				)
@@ -94,6 +104,16 @@ class FabricClientEntrypoint : ClientModInitializer {
 				PLATFORM.sendSystemMessage(installShader())
 			}
 		})
+
+		ClientPlayConnectionEvents.JOIN.register { handler, sender, client ->
+			var message: Component?
+			while (true) {
+				message = PLATFORM.messageQueue.removeFirstOrNull()
+				if (message != null)
+					PLATFORM.sendSystemMessage(message)
+				else break
+			}
+		}
 
 		FabricLoader.getInstance().getModContainer("supplemental_patches").ifPresent {
 			ResourceManagerHelper.registerBuiltinResourcePack(

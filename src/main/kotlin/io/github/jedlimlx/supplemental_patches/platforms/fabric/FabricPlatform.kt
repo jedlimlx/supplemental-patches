@@ -20,22 +20,30 @@ object FabricPlatform : Platform {
 	override val particleAtlasTextures: Collection<ResourceLocation>
 		get() = particleAtlas!!.texturesByName.keys
 
+	override val messageQueue: ArrayDeque<Component> = ArrayDeque()
+
 	override fun modList(): List<String> = FabricLoader.getInstance().allMods.map { it.metadata.id }
 	override fun isModLoaded(modId: String) = FabricLoader.getInstance().isModLoaded(modId)
 
 	override fun sendSystemMessage(message: String) {
-		//? >=1.21.4 {
-		/*Minecraft.getInstance().player?.displayClientMessage(Component.nullToEmpty(message), false)
-		*///?} else {
-		Minecraft.getInstance().player?.sendSystemMessage(Component.nullToEmpty(message))
-		//?}
+		val player = Minecraft.getInstance().player
+		if (player != null) {
+			//? >=1.21.4 {
+			/*player.displayClientMessage(Component.nullToEmpty(message), false)
+			*///?} else {
+			player.sendSystemMessage(Component.nullToEmpty(message))
+			//?}
+		} else messageQueue.add(Component.nullToEmpty(message))
 	}
 	override fun sendSystemMessage(message: Component) {
-		//? >=1.21.4 {
-		/*Minecraft.getInstance().player?.displayClientMessage(message, false)
-		*///?} else {
-		Minecraft.getInstance().player?.sendSystemMessage(message)
-		//?}
+		val player = Minecraft.getInstance().player
+		if (player != null) {
+			//? >=1.21.4 {
+			/*player.displayClientMessage(message, false)
+			*///?} else {
+			player.sendSystemMessage(message)
+			//?}
+		} else messageQueue.add(message)
 	}
 
 	override fun getResourceLocation(path: String): ResourceLocation {

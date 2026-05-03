@@ -15,6 +15,7 @@ import net.minecraft.server.packs.repository.Pack
 import net.minecraft.server.packs.repository.PackSource
 import net.minecraft.world.flag.FeatureFlagSet
 import net.minecraftforge.api.distmarker.Dist
+import net.minecraftforge.client.event.ClientPlayerNetworkEvent
 import net.minecraftforge.client.event.TextureStitchEvent
 import net.minecraftforge.event.AddPackFindersEvent
 import net.minecraftforge.eventbus.api.SubscribeEvent
@@ -43,8 +44,8 @@ object ForgeClientEventSubscriber {
 	fun addBuiltInPacks(event: AddPackFindersEvent) {
 		val mod = ModList.get().getModFileById("supplemental_patches")
 		val file = mod.file.findResource(*arrayOf("resourcepacks/builtin_shaders"))
-		event.addRepositorySource { packConsumer: Consumer<Pack?>? ->
-			packConsumer!!.accept(
+		event.addRepositorySource { packConsumer: Consumer<Pack> ->
+			packConsumer.accept(
 				Pack.create(
 					"supplemental_patches:builtin_shaders",
 					Component.translatable("key.supplemental_patches.builtin_shaders"),
@@ -61,6 +62,21 @@ object ForgeClientEventSubscriber {
 					PackSource.BUILT_IN
 				)
 			)
+		}
+	}
+}
+
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE, modid = MOD_ID, value = [Dist.CLIENT])
+object ForgeClientEventSubscriber2 {
+	@SubscribeEvent
+	@JvmStatic
+	fun onPlayerJoin(event: ClientPlayerNetworkEvent.LoggingIn) {
+		var message: Component?
+		while (true) {
+			message = PLATFORM.messageQueue.removeFirstOrNull()
+			if (message != null)
+				PLATFORM.sendSystemMessage(message)
+			else break
 		}
 	}
 } *///?}

@@ -261,5 +261,6 @@ stonecutter {
 	replacements.string(current.parsed >= "1.21.11") {
 		replace("resourceIdentifier", "resourceIdentifier")
 		replace("ResourceLocation", "Identifier")
+		replace("location()", "identifier()")
 	}
 }

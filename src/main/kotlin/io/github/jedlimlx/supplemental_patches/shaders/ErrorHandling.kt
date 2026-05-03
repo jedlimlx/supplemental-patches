@@ -28,37 +28,33 @@ class MinecraftError(
     fun sendInChat(): Boolean {
         LOGGER.warn(stackTrace.toList().toString())
 
-        if (Minecraft.getInstance().player != null) {
-            PLATFORM.sendSystemMessage(
-                Component.literal("[$errorType]: $message")
-                    .withStyle(ChatFormatting.RED)
-                    .withStyle(ChatFormatting.BOLD)
-            )
-            if (fileName != null) {
-                PLATFORM.sendSystemMessage(
-                    Component.literal("")
-                        .withStyle(ChatFormatting.RED)
-                        .append(Component.literal("--> Error found in "))
-                        .append(Component.literal(fileName).withStyle(ChatFormatting.ITALIC))
-                        .append(Component.literal(", this file will not be loaded."))
-                )
-            }
-            PLATFORM.sendSystemMessage(
-                Component.literal("")
-                    .withStyle(ChatFormatting.RED)
-                    .append(Component.literal("--> Thrown by "))
-                    .append(Component.literal(stackTrace[index].methodName).withStyle(ChatFormatting.ITALIC))
-                    .append(Component.literal("("))
-                    .append(Component.literal(stackTrace[index].fileName ?: "Unknown").withStyle(ChatFormatting.ITALIC))
-                    .append(Component.literal(":"))
-                    .append(Component.literal(stackTrace[index].lineNumber.toString()).withStyle(ChatFormatting.ITALIC))
-                    .append(Component.literal(")"))
-            )
+		PLATFORM.sendSystemMessage(
+			Component.literal("[$errorType]: $message")
+				.withStyle(ChatFormatting.RED)
+				.withStyle(ChatFormatting.BOLD)
+		)
+		if (fileName != null) {
+			PLATFORM.sendSystemMessage(
+				Component.literal("")
+					.withStyle(ChatFormatting.RED)
+					.append(Component.literal("--> Error found in "))
+					.append(Component.literal(fileName).withStyle(ChatFormatting.ITALIC))
+					.append(Component.literal(", this file will not be loaded."))
+			)
+		}
+		PLATFORM.sendSystemMessage(
+			Component.literal("")
+				.withStyle(ChatFormatting.RED)
+				.append(Component.literal("--> Thrown by "))
+				.append(Component.literal(stackTrace[index].methodName).withStyle(ChatFormatting.ITALIC))
+				.append(Component.literal("("))
+				.append(Component.literal(stackTrace[index].fileName ?: "Unknown").withStyle(ChatFormatting.ITALIC))
+				.append(Component.literal(":"))
+				.append(Component.literal(stackTrace[index].lineNumber.toString()).withStyle(ChatFormatting.ITALIC))
+				.append(Component.literal(")"))
+		)
 
-            return true
-        }
-
-        return false
+        return Minecraft.getInstance().player != null
     }
 
     fun log() {

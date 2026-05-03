@@ -1,6 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.platforms.neoforge
 
 //? neoforge {
+import io.github.jedlimlx.supplemental_patches.LOGGER
 import io.github.jedlimlx.supplemental_patches.platforms.Platform
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.texture.TextureAtlas
@@ -20,14 +21,22 @@ object NeoForgePlatform : Platform {
 	override val particleAtlasTextures: Collection<ResourceLocation>
 		get() = particleAtlas!!.textures.keys
 
+	override val messageQueue: ArrayDeque<Component> = ArrayDeque()
+
 	override fun modList(): List<String> = ModList.get().mods.map { it.modId }
 	override fun isModLoaded(modId: String) = ModList.get().isLoaded(modId)
 
 	override fun sendSystemMessage(message: String) {
-		Minecraft.getInstance().player?.sendSystemMessage(Component.nullToEmpty(message))
+		val player = Minecraft.getInstance().player
+		if (player != null)
+			player.sendSystemMessage(Component.nullToEmpty(message))
+		else messageQueue.add(Component.nullToEmpty(message))
 	}
 	override fun sendSystemMessage(message: Component) {
-		Minecraft.getInstance().player?.sendSystemMessage(message)
+		val player = Minecraft.getInstance().player
+		if (player != null)
+			player.sendSystemMessage(message)
+		else messageQueue.add(message)
 	}
 
 	override fun getResourceLocation(path: String) = ResourceLocation.parse(path)

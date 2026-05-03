@@ -21,6 +21,8 @@ interface Platform {
         FABRIC, NEOFORGE, FORGE, QUILT
     }
 
+	val messageQueue: ArrayDeque<Component>
+
 	fun modList(): List<String>
 	fun isModLoaded(modId: String): Boolean
 

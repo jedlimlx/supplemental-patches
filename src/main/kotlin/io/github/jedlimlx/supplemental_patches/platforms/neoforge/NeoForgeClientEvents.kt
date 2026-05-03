@@ -17,6 +17,8 @@ import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.client.event.TextureAtlasStitchedEvent
 import net.neoforged.neoforge.event.AddPackFindersEvent
+import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent
+import net.neoforged.neoforge.event.entity.player.PlayerEvent
 
 @EventBusSubscriber(modid = MOD_ID, value = [Dist.CLIENT])
 object NeoForgeClientEvents {
@@ -45,6 +47,21 @@ object NeoForgeClientEvents {
 			true,
 			Pack.Position.TOP
 		)
+	}
+
+	@SubscribeEvent
+	@JvmStatic
+	fun onPlayerJoin(event: EntityJoinLevelEvent) {
+		if (event.level.isClientSide) {
+			var message: Component?
+			while (true) {
+				LOGGER.info("asdasdasd ${PLATFORM.messageQueue.size}")
+				message = PLATFORM.messageQueue.removeFirstOrNull()
+				if (message != null)
+					Minecraft.getInstance().player!!.sendSystemMessage(message)
+				else break
+			}
+		}
 	}
 }
 //?}
