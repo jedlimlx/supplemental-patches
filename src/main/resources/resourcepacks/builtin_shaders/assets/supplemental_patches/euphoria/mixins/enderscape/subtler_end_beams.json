@@ -1,6 +1,6 @@
 {
   "file": "/shaders/lib/atmospherics/volumetricLight/enderBeams.glsl",
   "type": "replace",
-  "key": "return beams.rgb;",
+  "key": "return beams;",
   "code": "subtler_end_beams.glsl"
 }

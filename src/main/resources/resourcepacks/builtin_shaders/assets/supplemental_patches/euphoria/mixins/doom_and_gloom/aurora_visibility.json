@@ -1,6 +1,6 @@
 {
-  "file": "/shaders/lib/atmospherics/auroraBorealis.glsl",
-  "type": "after",
-  "key": "float visibility = sqrt1(clamp01(mix(1.0, VdotU, VdotUAmount) * (AURORA_DRAW_DISTANCE * 1.125 + 0.75) - 0.225)) - sunVisibility - maxBlindnessDarkness;",
+  "file": "/shaders/lib/atmospherics/auroraBorealisVisibility.glsl",
+  "type": "before",
+  "key": "return visibility;",
   "code": "aurora_visibility.glsl"
 }

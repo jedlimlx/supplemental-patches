@@ -3,4 +3,4 @@
 #else
     vec3 ambientColorTint = vec3(1.0);
 #endif
-vec3 ambientColor = ambientColorTint * mix(ambientCol, vec3(END_AMBIENT_R_NEW, END_AMBIENT_G_NEW, END_AMBIENT_B_NEW), END_AMBIENT_INFLUENCE) * END_AMBIENT_I;
+vec3 ambientColor = mbientColorTint * mix(ambientTempC, vec3(END_AMBIENT_R_NEW, END_AMBIENT_G_NEW, END_AMBIENT_B_NEW), END_AMBIENT_INFLUENCE) * END_AMBIENT_I;

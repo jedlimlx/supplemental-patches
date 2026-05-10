@@ -1,6 +1,6 @@
 {
   "file": "/shaders/lib/lighting/mainLighting.glsl",
   "type": "replace",
-  "key": "vec3 endFlashColor = (endOrangeCol + 0.5 * endLightColor) * endFlashIntensity * pow2(lightmapYM);",
+  "key": "vec3 endFlashColor = (endOrangeCol + endLightColor) * endFlashIntensityM * pow2(lightmapYM);",
   "code": "change_end_flash_lighting.glsl"
 }

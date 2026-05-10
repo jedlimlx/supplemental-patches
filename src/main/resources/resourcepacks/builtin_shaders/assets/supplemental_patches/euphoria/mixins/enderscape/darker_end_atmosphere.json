@@ -1,6 +1,6 @@
 {
   "file": "/shaders/lib/colors/lightAndAmbientColors.glsl",
   "type": "replace",
-  "key": "vec3 ambientColor = mix(ambientCol, vec3(END_AMBIENT_R_NEW, END_AMBIENT_G_NEW, END_AMBIENT_B_NEW), END_AMBIENT_INFLUENCE) * END_AMBIENT_I;",
+  "key": "vec3 ambientColor  = mix(ambientTempC, vec3(END_AMBIENT_R_NEW, END_AMBIENT_G_NEW, END_AMBIENT_B_NEW), END_AMBIENT_INFLUENCE) * END_AMBIENT_I;",
   "code": "darker_end_atmosphere.glsl"
 }

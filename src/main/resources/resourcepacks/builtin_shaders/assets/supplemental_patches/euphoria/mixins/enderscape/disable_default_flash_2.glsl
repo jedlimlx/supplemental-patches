@@ -1,0 +1,1 @@
+#if MC_VERSION >= 12109 && defined IS_IRIS && EP_END_FLASH > 0 && !(defined DISABLE_DEFAULT_FLASH)

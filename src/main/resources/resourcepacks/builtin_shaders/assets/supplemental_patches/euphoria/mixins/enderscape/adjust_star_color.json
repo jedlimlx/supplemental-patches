@@ -1,6 +1,6 @@
 {
   "file": "/shaders/lib/atmospherics/enderStars.glsl",
   "type": "before",
-  "key": "vec3 enderStars = star * starColor * 3000.0 * END_STAR_BRIGHTNESS;",
+  "key": "vec3 enderStars = star * starColor * 3000.0 * END_STAR_BRIGHTNESS * starBelowHorizonBrightness;",
   "code": "adjust_star_color.glsl"
 }
