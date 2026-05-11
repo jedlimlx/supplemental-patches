@@ -4,6 +4,6 @@
   "mat0": [
     "twigs:warped_shroomlight"
   ],
-  "color": "minecraft:shroomlight",
+  "blocklight": "minecraft:shroomlight",
   "held_lighting": true
 }

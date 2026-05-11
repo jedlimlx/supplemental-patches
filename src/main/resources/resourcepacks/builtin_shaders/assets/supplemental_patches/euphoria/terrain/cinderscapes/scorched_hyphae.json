@@ -34,7 +34,7 @@
     "cinderscapes:scorched_pressure_plate:powered=true",
     "cinderscapes:scorched_trapdoor:powered=true"
   ],
-  "color": [
+  "blocklight": [
     null,
     null,
     "minecraft:magma_block",

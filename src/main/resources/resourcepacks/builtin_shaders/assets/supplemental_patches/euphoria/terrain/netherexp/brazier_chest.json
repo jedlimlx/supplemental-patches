@@ -7,7 +7,7 @@
   "mat2": [
     "netherexp:brazier_chest:locked=true"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:netherexp/ancient_fire",
     null,
     null,

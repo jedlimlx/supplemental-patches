@@ -4,7 +4,7 @@
   "mat0": [
     "supplementaries:blackstone_lamp"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:supplementaries/blackstone_lamp"
   ],
   "held_lighting": true

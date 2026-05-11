@@ -9,16 +9,18 @@
   "mat2": [
     "twisting_vines:budding=true"
   ],
-  "color": [
-    "supplemental_patches:netherexp/twisting_vines",
-    null,
-    "supplemental_patches:netherexp/warped_fungus",
-    null
-  ],
+  "blocklight": {
+    "color": [
+      "supplemental_patches:netherexp/twisting_vines",
+      null,
+      "supplemental_patches:netherexp/warped_fungus",
+      null
+    ],
+    "conditions": [
+      "DO_IPBR_LIGHTS"
+    ]
+  },
   "needs_voxelization": true,
   "waving": "minecraft:waving_nether_vines",
-  "conditions": [
-    "DO_IPBR_LIGHTS"
-  ],
   "reflection_handlers": "minecraft:discard"
 }

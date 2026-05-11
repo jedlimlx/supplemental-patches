@@ -7,7 +7,7 @@
   "mat2": [
     "netherexp:rusty_netherite_grate:liquidlogged=ectoplasm"
   ],
-  "color": [
+  "blocklight": [
     "minecraft:lava",
     null,
     "supplemental_patches:netherexp/ectoplasm",

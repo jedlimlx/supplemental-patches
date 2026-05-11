@@ -7,6 +7,6 @@
     "enderscape:void_torch",
     "enderscape:void_wall_torch"
   ],
-  "color": "supplemental_patches:endergetic/ender_fire",
+  "blocklight": "supplemental_patches:endergetic/ender_fire",
   "held_lighting": true
 }

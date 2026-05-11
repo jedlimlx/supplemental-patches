@@ -4,6 +4,6 @@
   "mat0": [
     "quark:glowberry_sack"
   ],
-  "color": "minecraft:glow_berries",
+  "blocklight": "minecraft:glow_berries",
   "held_lighting": true
 }

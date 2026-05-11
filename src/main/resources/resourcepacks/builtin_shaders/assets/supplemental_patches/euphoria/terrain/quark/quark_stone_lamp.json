@@ -5,6 +5,6 @@
     "quark:stone_lamp",
     "quark:stone_brick_lamp"
   ],
-  "color": "minecraft:torch",
+  "blocklight": "minecraft:torch",
   "held_lighting": true
 }

@@ -7,7 +7,7 @@
   "mat1": [
     "buzzier_bees:cupric_candle:lit=false"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:buzzier_bees/cupric_candle",
     null,
     null,

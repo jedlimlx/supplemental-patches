@@ -8,7 +8,7 @@
     "galosphere:lichen_cordyceps:bulb=false",
     "galosphere:lichen_cordyceps_plant"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:galosphere/spectre",
     null,
     null,

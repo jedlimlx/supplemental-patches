@@ -17,7 +17,7 @@
     "autumnity:large_cupric_jack_o_lantern_slice",
     "autumnity:cupric_jack_o_lantern"
   ],
-  "color": [
+  "blocklight": [
     "minecraft:redstone_torch",
     null,
     "minecraft:soul_torch",

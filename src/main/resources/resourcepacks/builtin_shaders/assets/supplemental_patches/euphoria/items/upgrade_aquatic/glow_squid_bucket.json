@@ -5,6 +5,6 @@
     "upgrade_aquatic:glow_squid_bucket"
   ],
   "held_lighting": true,
-  "color": "minecraft:soul_lantern",
+  "blocklight": "minecraft:soul_lantern",
   "light_level": 8
 }

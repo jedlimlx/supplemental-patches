@@ -7,7 +7,7 @@
   "mat2": [
     "mynethersdelight:nether_stove:lit=true:soul=true"
   ],
-  "color": [
+  "blocklight": [
     "minecraft:furnace",
     null,
     "minecraft:soul_lantern",

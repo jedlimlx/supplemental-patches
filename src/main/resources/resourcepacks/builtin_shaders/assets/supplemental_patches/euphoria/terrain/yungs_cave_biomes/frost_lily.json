@@ -4,6 +4,6 @@
   "mat0": [
     "yungscavebiomes:frost_lily"
   ],
-  "color": "minecraft:amethyst",
+  "blocklight": "minecraft:amethyst",
   "reflection_handlers": "minecraft:discard"
 }

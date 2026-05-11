@@ -4,7 +4,7 @@
   "mat0": [
     "enderscape:bulb_flower"
   ],
-  "color": "minecraft:lantern",
+  "blocklight": "minecraft:lantern",
   "held_lighting": true,
   "reflection_handlers": "minecraft:discard"
 }

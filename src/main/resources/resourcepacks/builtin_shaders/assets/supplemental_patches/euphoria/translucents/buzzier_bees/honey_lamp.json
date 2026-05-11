@@ -4,5 +4,5 @@
   "mat0": [
     "buzzier_bees:honey_lamp"
   ],
-  "color": "supplemental_patches:buzzier_bees/honey_lamp"
+  "blocklight": "supplemental_patches:buzzier_bees/honey_lamp"
 }

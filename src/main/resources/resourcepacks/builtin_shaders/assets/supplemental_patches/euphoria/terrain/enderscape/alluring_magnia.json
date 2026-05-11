@@ -19,7 +19,7 @@
   "mat3": [
     "enderscape:potted_alluring_magnia_sprout"
   ],
-  "color": [
+  "blocklight": [
     null,
     null,
     "supplemental_patches:enderscape/alluring_magnia_sprout",

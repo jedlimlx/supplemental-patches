@@ -9,7 +9,7 @@
   "mat2": [
     "nears:soul_berry_bush:age=3"
   ],
-  "color": [
+  "blocklight": [
     null,
     null,
     "supplemental_patches:nears/soul_berry_bush",

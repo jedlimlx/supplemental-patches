@@ -5,6 +5,6 @@
     "cinderscapes:pyracinth"
   ],
   "waving": "minecraft:grounded_waving_foliage",
-  "color": "minecraft:magma_block",
+  "blocklight": "minecraft:magma_block",
   "reflection_handler": "minecraft:discard"
 }

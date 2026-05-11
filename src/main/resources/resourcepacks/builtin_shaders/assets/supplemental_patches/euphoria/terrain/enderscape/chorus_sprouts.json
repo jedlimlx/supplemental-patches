@@ -4,11 +4,13 @@
   "mat0": [
     "enderscape:chorus_sprouts"
   ],
-  "color": "supplemental_patches:enderscape/chorus_sprouts",
+  "blocklight": {
+    "color": "supplemental_patches:enderscape/chorus_sprouts",
+    "conditions": [
+      "DO_IPBR_LIGHTS",
+      "!(defined NOT_GLOWING_CHORUS_FLOWER)"
+    ]
+  },
   "waving": "minecraft:grounded_waving_foliage",
-  "conditions": [
-    "DO_IPBR_LIGHTS",
-    "!(defined NOT_GLOWING_CHORUS_FLOWER)"
-  ],
   "reflection_handlers": "minecraft:discard"
 }

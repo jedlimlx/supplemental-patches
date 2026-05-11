@@ -4,6 +4,6 @@
   "mat0": [
     "biomeswevegone:blooming_witch_hazel_leaves"
   ],
-  "color": "supplemental_patches:biomeswevegone/blooming_witch_hazel_leaves",
+  "blocklight": "supplemental_patches:biomeswevegone/blooming_witch_hazel_leaves",
   "waving": "minecraft:waving_leaves"
 }

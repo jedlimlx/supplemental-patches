@@ -4,6 +4,6 @@
   "mat0": [
     "caverns_and_chasms:soul_brazier:lit=true"
   ],
-  "color": "minecraft:soul_campfire",
+  "blocklight": "minecraft:soul_campfire",
   "held_lighting": true
 }

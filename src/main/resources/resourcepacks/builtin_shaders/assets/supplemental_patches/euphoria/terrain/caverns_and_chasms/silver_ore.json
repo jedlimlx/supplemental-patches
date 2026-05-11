@@ -7,9 +7,11 @@
   "mat2": [
     "caverns_and_chasms:deepslate_silver_ore"
   ],
-  "color": "supplemental_patches:oreganized/silver_ore",
-  "conditions": [
-    "GLOWING_ORE_SILVER_C",
-    "DO_IPBR_LIGHTS"
-  ]
+  "blocklight": {
+    "color": "supplemental_patches:oreganized/silver_ore",
+    "conditions": [
+      "GLOWING_ORE_SILVER_C",
+      "DO_IPBR_LIGHTS"
+    ]
+  }
 }

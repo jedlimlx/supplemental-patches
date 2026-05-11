@@ -4,7 +4,7 @@
   "mat0": [
     "wetland_whimsy:soul_brazier:lit=true"
   ],
-  "color": "minecraft:soul_campfire",
+  "blocklight": "minecraft:soul_campfire",
   "held_lighting": true,
   "reflection_handlers": "minecraft:campfire"
 }

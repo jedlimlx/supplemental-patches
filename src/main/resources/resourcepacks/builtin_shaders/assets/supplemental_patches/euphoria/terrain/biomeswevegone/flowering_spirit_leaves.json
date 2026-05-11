@@ -4,6 +4,6 @@
   "mat0": [
     "biomeswevegone:flowering_spirit_leaves"
   ],
-  "color": "supplemental_patches:biomeswevegone/spirit_fruit",
+  "blocklight": "supplemental_patches:biomeswevegone/spirit_fruit",
   "waving": "minecraft:waving_leaves"
 }

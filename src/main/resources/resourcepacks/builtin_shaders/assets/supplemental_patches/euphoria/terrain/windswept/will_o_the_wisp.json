@@ -4,6 +4,6 @@
   "mat0": [
     "windswept:will_o_the_wisp"
   ],
-  "color": "supplemental_patches:windswept/night_fairy_light",
+  "blocklight": "supplemental_patches:windswept/night_fairy_light",
   "held_lighting": true
 }

@@ -7,6 +7,6 @@
     "cobblemon:large_budding_sky_tumblestone",
     "cobblemon:sky_tumblestone_cluster"
   ],
-  "color": "supplemental_patches:cobblemon/sky_tumblestone",
+  "blocklight": "supplemental_patches:cobblemon/sky_tumblestone",
   "reflection_handlers": "minecraft:discard"
 }

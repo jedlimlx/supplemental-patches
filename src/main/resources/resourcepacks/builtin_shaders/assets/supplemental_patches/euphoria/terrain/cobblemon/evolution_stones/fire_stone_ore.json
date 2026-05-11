@@ -10,6 +10,6 @@
   "mat4": [
     "cobblemon:nether_fire_stone_ore"
   ],
-  "color": "supplemental_patches:cobblemon/fire_stone_ore",
+  "blocklight": "supplemental_patches:cobblemon/fire_stone_ore",
   "block_size": 8
 }

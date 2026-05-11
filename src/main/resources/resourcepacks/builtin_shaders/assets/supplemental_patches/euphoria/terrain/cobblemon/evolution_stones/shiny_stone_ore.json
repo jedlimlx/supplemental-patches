@@ -7,5 +7,5 @@
   "mat2": [
     "cobblemon:deepslate_shiny_stone_ore"
   ],
-  "color": "supplemental_patches:cobblemon/shiny_stone_ore"
+  "blocklight": "supplemental_patches:cobblemon/shiny_stone_ore"
 }

@@ -4,6 +4,6 @@
   "mat0": [
     "quark:blaze_lantern"
   ],
-  "color": "supplemental_patches:quark/blaze_lantern",
+  "blocklight": "supplemental_patches:quark/blaze_lantern",
   "held_lighting": true
 }

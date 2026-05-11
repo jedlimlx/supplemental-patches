@@ -7,9 +7,11 @@
   "mat2": [
     "cobblemon:deepslate_ice_stone_ore"
   ],
-  "color": "supplemental_patches:cobblemon/ice_stone_ore",
-  "conditions": [
-    "GLOWING_ORE_ICE_STONE",
-    "DO_IPBR_LIGHTS"
-  ]
+  "blocklight": {
+    "color": "supplemental_patches:cobblemon/ice_stone_ore",
+    "conditions": [
+      "GLOWING_ORE_ICE_STONE",
+      "DO_IPBR_LIGHTS"
+    ]
+  }
 }

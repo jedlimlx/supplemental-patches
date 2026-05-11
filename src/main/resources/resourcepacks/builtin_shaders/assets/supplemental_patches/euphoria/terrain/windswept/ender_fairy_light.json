@@ -4,7 +4,7 @@
   "mat0": [
     "windswept:ender_fairy_light"
   ],
-  "color": "supplemental_patches:endergetic/ender_fire",
+  "blocklight": "supplemental_patches:endergetic/ender_fire",
   "held_lighting": true,
   "reflection_handlers": "minecraft:discard"
 }

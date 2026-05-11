@@ -12,7 +12,7 @@
     "quark:waxed_white_corundum",
     "quark:white_corundum_sheet"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:quark/crystal_lamp/white",
     null,
     "supplemental_patches:quark/corundum/white",

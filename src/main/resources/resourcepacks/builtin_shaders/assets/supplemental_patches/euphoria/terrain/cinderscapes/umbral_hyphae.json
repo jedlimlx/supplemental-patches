@@ -34,7 +34,7 @@
     "cinderscapes:umbral_pressure_plate:powered=true",
     "cinderscapes:umbral_trapdoor:powered=true"
   ],
-  "color": [
+  "blocklight": [
     null,
     null,
     "supplemental_patches:cinderscapes/umbral_hyphae",

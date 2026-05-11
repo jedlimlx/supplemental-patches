@@ -4,9 +4,11 @@
   "mat0": [
     "pigsteel:porkslag"
   ],
-  "color": "supplemental_patches:pigsteel/porkslag",
-  "conditions": [
-    "GLOWING_PORKSLAG",
-    "DO_IPBR_LIGHTS"
-  ]
+  "blocklight": {
+    "color": "supplemental_patches:pigsteel/porkslag",
+    "conditions": [
+      "GLOWING_PORKSLAG",
+      "DO_IPBR_LIGHTS"
+    ]
+  }
 }

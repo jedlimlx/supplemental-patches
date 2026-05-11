@@ -5,6 +5,6 @@
     "dungeonsdelight:living_torch",
     "dungeonsdelight:wall_living_torch"
   ],
-  "color": "supplemental_patches:dungeonsdelight/living_fire",
+  "blocklight": "supplemental_patches:dungeonsdelight/living_fire",
   "reflection_handlers": "minecraft:discard"
 }

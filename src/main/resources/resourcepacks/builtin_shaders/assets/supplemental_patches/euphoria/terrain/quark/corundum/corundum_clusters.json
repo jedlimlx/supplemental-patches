@@ -25,7 +25,7 @@
   "mat14": [
     "quark:black_corundum_cluster"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:quark/corundum/red",
     null,
     "supplemental_patches:quark/corundum/orange",

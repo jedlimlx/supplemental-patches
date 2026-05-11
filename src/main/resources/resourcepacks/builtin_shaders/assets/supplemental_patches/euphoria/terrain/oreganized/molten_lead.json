@@ -4,7 +4,7 @@
   "mat0": [
     "oreganized:molten_lead"
   ],
-  "color": "supplemental_patches:oreganized/molten_lead",
+  "blocklight": "supplemental_patches:oreganized/molten_lead",
   "waving": "supplemental_patches:fluids/waving_molten_lead",
   "needs_voxelization": true
 }

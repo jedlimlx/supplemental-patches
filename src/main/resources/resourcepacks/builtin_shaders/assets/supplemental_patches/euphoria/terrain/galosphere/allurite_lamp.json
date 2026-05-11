@@ -4,6 +4,6 @@
   "mat0": [
     "galosphere:allurite_lamp"
   ],
-  "color": "supplemental_patches:galosphere/allurite_lamp",
+  "blocklight": "supplemental_patches:galosphere/allurite_lamp",
   "held_lighting": true
 }

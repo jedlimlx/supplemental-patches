@@ -1,24 +1,24 @@
 {
-    "name": "jack_o_straw",
-    "glsl": "jack_o_straw.glsl",
-    "mat0": [
-        "bountifulfares:black_jack_o_straw:lit=true",
-        "bountifulfares:blue_jack_o_straw:lit=true",
-        "bountifulfares:brown_jack_o_straw:lit=true",
-        "bountifulfares:cyan_jack_o_straw:lit=true",
-        "bountifulfares:gray_jack_o_straw:lit=true",
-        "bountifulfares:green_jack_o_straw:lit=true",
-        "bountifulfares:light_blue_jack_o_straw:lit=true",
-        "bountifulfares:light_gray_jack_o_straw:lit=true",
-        "bountifulfares:lime_jack_o_straw:lit=true",
-        "bountifulfares:magenta_jack_o_straw:lit=true",
-        "bountifulfares:orange_jack_o_straw:lit=true",
-        "bountifulfares:pink_jack_o_straw:lit=true",
-        "bountifulfares:purple_jack_o_straw:lit=true",
-        "bountifulfares:red_jack_o_straw:lit=true",
-        "bountifulfares:white_jack_o_straw:lit=true",
-        "bountifulfares:yellow_jack_o_straw:lit=true"
-    ],
-    "color": "minecraft:fire",
-    "reflection_handlers": "minecraft:discard"
+  "name": "jack_o_straw",
+  "glsl": "jack_o_straw.glsl",
+  "mat0": [
+    "bountifulfares:black_jack_o_straw:lit=true",
+    "bountifulfares:blue_jack_o_straw:lit=true",
+    "bountifulfares:brown_jack_o_straw:lit=true",
+    "bountifulfares:cyan_jack_o_straw:lit=true",
+    "bountifulfares:gray_jack_o_straw:lit=true",
+    "bountifulfares:green_jack_o_straw:lit=true",
+    "bountifulfares:light_blue_jack_o_straw:lit=true",
+    "bountifulfares:light_gray_jack_o_straw:lit=true",
+    "bountifulfares:lime_jack_o_straw:lit=true",
+    "bountifulfares:magenta_jack_o_straw:lit=true",
+    "bountifulfares:orange_jack_o_straw:lit=true",
+    "bountifulfares:pink_jack_o_straw:lit=true",
+    "bountifulfares:purple_jack_o_straw:lit=true",
+    "bountifulfares:red_jack_o_straw:lit=true",
+    "bountifulfares:white_jack_o_straw:lit=true",
+    "bountifulfares:yellow_jack_o_straw:lit=true"
+  ],
+  "blocklight": "minecraft:fire",
+  "reflection_handlers": "minecraft:discard"
 }

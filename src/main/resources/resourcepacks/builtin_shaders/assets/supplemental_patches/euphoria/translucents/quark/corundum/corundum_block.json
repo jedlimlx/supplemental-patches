@@ -41,7 +41,7 @@
     "quark:waxed_black_corundum",
     "quark:black_corundum_sheet"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:quark/corundum/red",
     "supplemental_patches:quark/corundum/orange",
     "supplemental_patches:quark/corundum/yellow",

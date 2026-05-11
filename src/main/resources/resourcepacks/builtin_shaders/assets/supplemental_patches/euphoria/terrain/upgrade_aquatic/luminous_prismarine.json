@@ -8,7 +8,7 @@
     "upgrade_aquatic:luminous_prismarine_slab",
     "upgrade_aquatic:luminous_prismarine_stairs"
   ],
-  "color": "supplemental_patches:upgrade_aquatic/luminous_prismarine",
+  "blocklight": "supplemental_patches:upgrade_aquatic/luminous_prismarine",
   "reflection_handlers": [
     null,
     null,

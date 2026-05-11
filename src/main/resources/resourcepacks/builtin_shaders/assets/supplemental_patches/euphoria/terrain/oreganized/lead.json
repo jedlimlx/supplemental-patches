@@ -14,7 +14,7 @@
     "oreganized:lead_pillar:goopyness=1",
     "oreganized:lead_bulb:goopyness=2"
   ],
-  "color": [
+  "blocklight": [
     null,
     null,
     "supplemental_patches:oreganized/goopy_lead",

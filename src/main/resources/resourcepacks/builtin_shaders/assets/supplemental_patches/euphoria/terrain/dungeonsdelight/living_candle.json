@@ -7,7 +7,7 @@
   "mat1": [
     "dungeonsdelight:living_candle:lit=false"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:dungeonsdelight/living_candle",
     null,
     null,

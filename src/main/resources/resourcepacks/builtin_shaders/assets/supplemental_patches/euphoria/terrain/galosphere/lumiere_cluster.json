@@ -5,6 +5,6 @@
     "galosphere:lumiere_cluster",
     "galosphere:glinted_lumiere_cluster"
   ],
-  "color": "supplemental_patches:galosphere/lumiere",
+  "blocklight": "supplemental_patches:galosphere/lumiere",
   "reflection_handlers": "minecraft:discard"
 }

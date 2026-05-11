@@ -4,7 +4,7 @@ val COLOURS = arrayListOf<Colour>()
 val TINTS = arrayListOf<Colour>()
 val COLOUR_INJECTIONS = arrayListOf<String>()
 
-class Colour(
+data class Colour(
     val index: Int = -1,
     val code: String = "",
     val tint: Boolean = false

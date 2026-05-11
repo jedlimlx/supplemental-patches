@@ -15,7 +15,7 @@
     "enderscape:blinklight_vines_head:stage=2",
     "enderscape:blinklight_vines_head:stage=4"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:enderscape/blinklamp",
     null,
     "supplemental_patches:enderscape/blinklamp_dim",

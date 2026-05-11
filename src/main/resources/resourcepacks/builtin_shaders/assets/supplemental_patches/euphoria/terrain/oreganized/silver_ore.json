@@ -7,9 +7,11 @@
   "mat2": [
     "oreganized:deepslate_silver_ore"
   ],
-  "color": "supplemental_patches:oreganized/silver_ore",
-  "conditions": [
-    "GLOWING_ORE_SILVER_O",
-    "DO_IPBR_LIGHTS"
-  ]
+  "blocklight": {
+    "color": "supplemental_patches:oreganized/silver_ore",
+    "conditions": [
+      "GLOWING_ORE_SILVER_O",
+      "DO_IPBR_LIGHTS"
+    ]
+  }
 }

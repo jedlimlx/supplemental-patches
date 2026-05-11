@@ -7,7 +7,7 @@
   "mat2": [
     "dungeonsdelight:stained_lantern"
   ],
-  "color": "supplemental_patches:dungeonsdelight/living_fire",
+  "blocklight": "supplemental_patches:dungeonsdelight/living_fire",
   "reflection_handlers": [
     null,
     null,

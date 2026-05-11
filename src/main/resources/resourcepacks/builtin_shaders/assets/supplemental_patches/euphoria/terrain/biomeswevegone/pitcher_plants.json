@@ -7,7 +7,7 @@
   "mat2": [
     "biomeswevegone:cyan_pitcher_plant"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:biomeswevegone/magenta_pitcher_plant",
     null,
     "supplemental_patches:biomeswevegone/cyan_pitcher_plant",

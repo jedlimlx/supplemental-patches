@@ -4,7 +4,7 @@
   "mat0": [
     "quark:white_corundum_cluster"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:quark/corundum/white",
     null,
     null,

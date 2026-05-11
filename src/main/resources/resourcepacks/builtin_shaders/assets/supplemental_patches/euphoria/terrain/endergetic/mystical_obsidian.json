@@ -13,7 +13,7 @@
   "mat2": [
     "endergetic:activated_mystical_obsidian_activation_rune"
   ],
-  "color": [
+  "blocklight": [
     null,
     null,
     "minecraft:crying_obsidian",

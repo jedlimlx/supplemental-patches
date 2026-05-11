@@ -15,7 +15,8 @@
     "supplementaries:candle_holder_brown:lit=true",
     "suppsquared:gold_candle_holder_brown:lit=true",
     "supplementaries:candle_holder_beige:lit=true",
-    "suppsquared:gold_candle_holder_beige:lit=true"
+    "suppsquared:gold_candle_holder_beige:lit=true",
+    "dye_depot:beige_candle:lit=true"
   ],
   "mat1": [
     "supplementaries:candle_holder:lit=false",
@@ -31,23 +32,28 @@
     "supplementaries:candle_holder_brown:lit=false",
     "suppsquared:gold_candle_holder_brown:lit=false",
     "supplementaries:candle_holder_beige:lit=false",
-    "suppsquared:gold_candle_holder_beige:lit=false"
+    "suppsquared:gold_candle_holder_beige:lit=false",
+    "dye_depot:beige_candle:lit=false"
   ],
   "mat2": [
     "supplementaries:candle_holder_amber:lit=true",
-    "suppsquared:gold_candle_holder_amber:lit=true"
+    "suppsquared:gold_candle_holder_amber:lit=true",
+    "dye_depot:amber_candle:lit=true"
   ],
   "mat3": [
     "supplementaries:candle_holder_amber:lit=false",
-    "suppsquared:gold_candle_holder_amber:lit=false"
+    "suppsquared:gold_candle_holder_amber:lit=false",
+    "dye_depot:amber_candle:lit=false"
   ],
   "mat4": [
     "supplementaries:candle_holder_aqua:lit=true",
-    "suppsquared:gold_candle_holder_aqua:lit=true"
+    "suppsquared:gold_candle_holder_aqua:lit=true",
+    "dye_depot:aqua_candle:lit=true"
   ],
   "mat5": [
     "supplementaries:candle_holder_aqua:lit=false",
-    "suppsquared:gold_candle_holder_aqua:lit=false"
+    "suppsquared:gold_candle_holder_aqua:lit=false",
+    "dye_depot:aqua_candle:lit=false"
   ],
   "mat6": [
     "supplementaries:candle_holder_blue:lit=true",
@@ -59,11 +65,13 @@
   ],
   "mat8": [
     "supplementaries:candle_holder_coral:lit=true",
-    "suppsquared:gold_candle_holder_coral:lit=true"
+    "suppsquared:gold_candle_holder_coral:lit=true",
+    "dye_depot:coral_candle:lit=true"
   ],
   "mat9": [
     "supplementaries:candle_holder_coral:lit=false",
-    "suppsquared:gold_candle_holder_coral:lit=false"
+    "suppsquared:gold_candle_holder_coral:lit=false",
+    "dye_depot:coral_candle:lit=false"
   ],
   "mat10": [
     "supplementaries:candle_holder_cyan:lit=true",
@@ -75,19 +83,23 @@
   ],
   "mat12": [
     "supplementaries:candle_holder_forest:lit=true",
-    "suppsquared:gold_candle_holder_forest:lit=true"
+    "suppsquared:gold_candle_holder_forest:lit=true",
+    "dye_depot:forest_candle:lit=true"
   ],
   "mat13": [
     "supplementaries:candle_holder_forest:lit=false",
-    "suppsquared:gold_candle_holder_forest:lit=false"
+    "suppsquared:gold_candle_holder_forest:lit=false",
+    "dye_depot:forest_candle:lit=false"
   ],
   "mat14": [
     "supplementaries:candle_holder_ginger:lit=true",
-    "suppsquared:gold_candle_holder_ginger:lit=true"
+    "suppsquared:gold_candle_holder_ginger:lit=true",
+    "dye_depot:ginger_candle:lit=true"
   ],
   "mat15": [
     "supplementaries:candle_holder_ginger:lit=false",
-    "suppsquared:gold_candle_holder_ginger:lit=false"
+    "suppsquared:gold_candle_holder_ginger:lit=false",
+    "dye_depot:ginger_candle:lit=false"
   ],
   "mat16": [
     "supplementaries:candle_holder_green:lit=true",
@@ -99,11 +111,13 @@
   ],
   "mat18": [
     "supplementaries:candle_holder_indigo:lit=true",
-    "suppsquared:gold_candle_holder_indigo:lit=true"
+    "suppsquared:gold_candle_holder_indigo:lit=true",
+    "dye_depot:indigo_candle:lit=true"
   ],
   "mat19": [
     "supplementaries:candle_holder_indigo:lit=false",
-    "suppsquared:gold_candle_holder_indigo:lit=false"
+    "suppsquared:gold_candle_holder_indigo:lit=false",
+    "dye_depot:indigo_candle:lit=false"
   ],
   "mat20": [
     "supplementaries:candle_holder_light_blue:lit=true",
@@ -126,39 +140,48 @@
     "suppsquared:gold_candle_holder_magenta:lit=true"
   ],
   "mat25": [
-    "doom_and_gloom:magenta_vigil_candle:lit=false"
+    "supplementaries:candle_holder_magenta:lit=false",
+    "suppsquared:gold_candle_holder_magenta:lit=false"
   ],
   "mat26": [
     "supplementaries:candle_holder_maroon:lit=true",
-    "suppsquared:gold_candle_holder_maroon:lit=true"
+    "suppsquared:gold_candle_holder_maroon:lit=true",
+    "dye_depot:maroon_candle:lit=true"
   ],
   "mat27": [
     "supplementaries:candle_holder_maroon:lit=false",
-    "suppsquared:gold_candle_holder_maroon:lit=false"
+    "suppsquared:gold_candle_holder_maroon:lit=false",
+    "dye_depot:maroon_candle:lit=false"
   ],
   "mat28": [
     "supplementaries:candle_holder_mint:lit=true",
-    "suppsquared:gold_candle_holder_mint:lit=true"
+    "suppsquared:gold_candle_holder_mint:lit=true",
+    "dye_depot:mint_candle:lit=true"
   ],
   "mat29": [
     "supplementaries:candle_holder_mint:lit=false",
-    "suppsquared:gold_candle_holder_mint:lit=false"
+    "suppsquared:gold_candle_holder_mint:lit=false",
+    "dye_depot:mint_candle:lit=false"
   ],
   "mat30": [
     "supplementaries:candle_holder_navy:lit=true",
-    "suppsquared:gold_candle_holder_navy:lit=true"
+    "suppsquared:gold_candle_holder_navy:lit=true",
+    "dye_depot:navy_candle:lit=true"
   ],
   "mat31": [
     "supplementaries:candle_holder_navy:lit=false",
-    "suppsquared:gold_candle_holder_navy:lit=false"
+    "suppsquared:gold_candle_holder_navy:lit=false",
+    "dye_depot:navy_candle:lit=false"
   ],
   "mat32": [
     "supplementaries:candle_holder_olive:lit=true",
-    "suppsquared:gold_candle_holder_olive:lit=true"
+    "suppsquared:gold_candle_holder_olive:lit=true",
+    "dye_depot:olive_candle:lit=true"
   ],
   "mat33": [
     "supplementaries:candle_holder_olive:lit=false",
-    "suppsquared:gold_candle_holder_olive:lit=false"
+    "suppsquared:gold_candle_holder_olive:lit=false",
+    "dye_depot:olive_candle:lit=false"
   ],
   "mat34": [
     "supplementaries:candle_holder_orange:lit=true",
@@ -194,43 +217,53 @@
   ],
   "mat42": [
     "supplementaries:candle_holder_rose:lit=true",
-    "suppsquared:gold_candle_holder_rose:lit=true"
+    "suppsquared:gold_candle_holder_rose:lit=true",
+    "dye_depot:rose_candle:lit=true"
   ],
   "mat43": [
     "supplementaries:candle_holder_rose:lit=false",
-    "suppsquared:gold_candle_holder_rose:lit=false"
+    "suppsquared:gold_candle_holder_rose:lit=false",
+    "dye_depot:rose_candle:lit=false"
   ],
   "mat44": [
     "supplementaries:candle_holder_slate:lit=true",
-    "suppsquared:gold_candle_holder_slate:lit=true"
+    "suppsquared:gold_candle_holder_slate:lit=true",
+    "dye_depot:slate_candle:lit=true"
   ],
   "mat45": [
     "supplementaries:candle_holder_slate:lit=false",
-    "suppsquared:gold_candle_holder_slate:lit=false"
+    "suppsquared:gold_candle_holder_slate:lit=false",
+    "dye_depot:slate_candle:lit=false"
   ],
   "mat46": [
     "supplementaries:candle_holder_tan:lit=true",
-    "suppsquared:gold_candle_holder_tan:lit=true"
+    "suppsquared:gold_candle_holder_tan:lit=true",
+    "dye_depot:tan_candle:lit=true"
   ],
   "mat47": [
     "supplementaries:candle_holder_tan:lit=false",
-    "suppsquared:gold_candle_holder_tan:lit=false"
+    "suppsquared:gold_candle_holder_tan:lit=false",
+    "dye_depot:tan_candle:lit=false"
   ],
   "mat48": [
     "supplementaries:candle_holder_teal:lit=true",
-    "suppsquared:gold_candle_holder_teal:lit=true"
+    "suppsquared:gold_candle_holder_teal:lit=true",
+    "dye_depot:teal_candle:lit=true"
   ],
   "mat49": [
     "supplementaries:candle_holder_teal:lit=false",
-    "suppsquared:gold_candle_holder_teal:lit=false"
+    "suppsquared:gold_candle_holder_teal:lit=false",
+    "dye_depot:teal_candle:lit=false"
   ],
   "mat50": [
     "supplementaries:candle_holder_verdant:lit=true",
-    "suppsquared:gold_candle_holder_verdant:lit=true"
+    "suppsquared:gold_candle_holder_verdant:lit=true",
+    "dye_depot:verdant_candle:lit=true"
   ],
   "mat51": [
     "supplementaries:candle_holder_verdant:lit=false",
-    "suppsquared:gold_candle_holder_verdant:lit=false"
+    "suppsquared:gold_candle_holder_verdant:lit=false",
+    "dye_depot:verdant_candle:lit=false"
   ],
   "mat52": [
     "supplementaries:candle_holder_yellow:lit=true",
@@ -264,71 +297,144 @@
     "supplementaries:candle_holder_cupric:lit=false",
     "suppsquared:gold_candle_holder_cupric:lit=false"
   ],
-  "color": [
-    "minecraft:standard_candle",
-    null,
-    "supplemental_patches:doom_and_gloom/amber",
-    null,
-    "supplemental_patches:doom_and_gloom/aqua",
-    null,
-    "minecraft:blue_candle",
-    null,
-    "supplemental_patches:doom_and_gloom/coral",
-    null,
-    "minecraft:cyan_candle",
-    null,
-    "supplemental_patches:doom_and_gloom/forest",
-    null,
-    "supplemental_patches:doom_and_gloom/ginger",
-    null,
-    "minecraft:green_candle",
-    null,
-    "supplemental_patches:doom_and_gloom/indigo",
-    null,
-    "minecraft:light_blue_candle",
-    null,
-    "minecraft:lime_candle",
-    null,
-    "minecraft:magenta_candle",
-    null,
-    "supplemental_patches:doom_and_gloom/maroon",
-    null,
-    "supplemental_patches:doom_and_gloom/mint",
-    null,
-    "supplemental_patches:doom_and_gloom/navy",
-    null,
-    "supplemental_patches:doom_and_gloom/olive",
-    null,
-    "minecraft:orange_candle",
-    null,
-    "minecraft:pink_candle",
-    null,
-    "minecraft:purple_candle",
-    null,
-    "minecraft:red_candle",
-    null,
-    "supplemental_patches:doom_and_gloom/rose",
-    null,
-    "supplemental_patches:doom_and_gloom/slate",
-    null,
-    "supplemental_patches:doom_and_gloom/tan",
-    null,
-    "supplemental_patches:doom_and_gloom/teal",
-    null,
-    "supplemental_patches:doom_and_gloom/verdant",
-    null,
-    "minecraft:yellow_candle",
-    null,
-    "supplemental_patches:buzzier_bees/soul_candle",
-    null,
-    "supplemental_patches:buzzier_bees/ender_candle",
-    null,
-    "supplemental_patches:buzzier_bees/cupric_candle",
-    null,
-    null,
-    null,
-    null,
-    null
+  "blocklight": [
+    {
+      "conditions": ["COLORED_CANDLE_LIGHT"],
+      "color": [
+        "minecraft:standard_candle",
+        null,
+        "supplemental_patches:dye_depot/candles/amber",
+        null,
+        "supplemental_patches:dye_depot/candles/aqua",
+        null,
+        "minecraft:blue_candle",
+        null,
+        "supplemental_patches:dye_depot/candles/coral",
+        null,
+        "minecraft:cyan_candle",
+        null,
+        "supplemental_patches:dye_depot/candles/forest",
+        null,
+        "supplemental_patches:dye_depot/candles/ginger",
+        null,
+        "minecraft:green_candle",
+        null,
+        "supplemental_patches:dye_depot/candles/indigo",
+        null,
+        "minecraft:light_blue_candle",
+        null,
+        "minecraft:lime_candle",
+        null,
+        "minecraft:magenta_candle",
+        null,
+        "supplemental_patches:dye_depot/candles/maroon",
+        null,
+        "supplemental_patches:dye_depot/candles/mint",
+        null,
+        "supplemental_patches:dye_depot/candles/navy",
+        null,
+        "supplemental_patches:dye_depot/candles/olive",
+        null,
+        "minecraft:orange_candle",
+        null,
+        "minecraft:pink_candle",
+        null,
+        "minecraft:purple_candle",
+        null,
+        "minecraft:red_candle",
+        null,
+        "supplemental_patches:dye_depot/candles/rose",
+        null,
+        "supplemental_patches:dye_depot/candles/slate",
+        null,
+        "supplemental_patches:dye_depot/candles/tan",
+        null,
+        "supplemental_patches:dye_depot/candles/teal",
+        null,
+        "supplemental_patches:dye_depot/candles/verdant",
+        null,
+        "minecraft:yellow_candle",
+        null,
+        "supplemental_patches:buzzier_bees/soul_candle",
+        null,
+        "supplemental_patches:buzzier_bees/ender_candle",
+        null,
+        "supplemental_patches:buzzier_bees/cupric_candle",
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "color": [
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "minecraft:standard_candle",
+        null,
+        "supplemental_patches:buzzier_bees/soul_candle",
+        null,
+        "supplemental_patches:buzzier_bees/ender_candle",
+        null,
+        "supplemental_patches:buzzier_bees/cupric_candle",
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    }
   ],
   "block_size": 64
 }

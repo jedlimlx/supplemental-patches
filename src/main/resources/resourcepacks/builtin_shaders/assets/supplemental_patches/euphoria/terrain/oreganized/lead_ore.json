@@ -7,9 +7,11 @@
   "mat2": [
     "oreganized:deepslate_lead_ore"
   ],
-  "color": "supplemental_patches:oreganized/lead_ore",
-  "conditions": [
-    "GLOWING_ORE_LEAD",
-    "DO_IPBR_LIGHTS"
-  ]
+  "blocklight": {
+    "color": "supplemental_patches:oreganized/lead_ore",
+    "conditions": [
+      "GLOWING_ORE_LEAD",
+      "DO_IPBR_LIGHTS"
+    ]
+  }
 }

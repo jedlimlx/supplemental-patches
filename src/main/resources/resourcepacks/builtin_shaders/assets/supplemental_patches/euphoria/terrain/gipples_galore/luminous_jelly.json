@@ -7,7 +7,7 @@
   "mat2": [
     "gipples_galore:luminescent_jelly"
   ],
-  "color": [
+  "blocklight": [
     "minecraft:lantern",
     null,
     "minecraft:soul_lantern",

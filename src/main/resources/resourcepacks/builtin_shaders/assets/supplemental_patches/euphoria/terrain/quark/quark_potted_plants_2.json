@@ -7,7 +7,7 @@
   "mat2": [
     "quark:potted_weeping_vines"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:quark/potted_sea_pickle",
     null,
     "minecraft:weeping_vines",

@@ -4,5 +4,5 @@
   "mat0": [
     "soulfulnether:fright_fungus"
   ],
-  "color": "supplemental_patches:soulfulnether/fright_fungus"
+  "blocklight": "supplemental_patches:soulfulnether/fright_fungus"
 }

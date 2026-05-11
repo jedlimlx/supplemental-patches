@@ -7,6 +7,6 @@
   "mat2": [
     "atmospheric:arid_glass_pane"
   ],
-  "color": "supplemental_patches:atmospheric/arid_glass",
+  "blocklight": "supplemental_patches:atmospheric/arid_glass",
   "needs_voxelization": true
 }

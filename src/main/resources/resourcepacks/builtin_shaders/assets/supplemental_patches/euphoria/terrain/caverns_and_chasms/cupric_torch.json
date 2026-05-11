@@ -5,6 +5,6 @@
     "caverns_and_chasms:cupric_torch",
     "caverns_and_chasms:cupric_wall_torch"
   ],
-  "color": "supplemental_patches:caverns_and_chasms/cupric_fire",
+  "blocklight": "supplemental_patches:caverns_and_chasms/cupric_fire",
   "held_lighting": true
 }

@@ -4,7 +4,7 @@
   "mat0": [
     "dungeonsdelight:living_campfire:lit=true"
   ],
-  "color": "supplemental_patches:dungeonsdelight/living_fire",
+  "blocklight": "supplemental_patches:dungeonsdelight/living_fire",
   "held_lighting": true,
   "reflection_handlers": "minecraft:campfire"
 }

@@ -10,10 +10,12 @@
   "mat4": [
     "cobblemon:terracotta_sun_stone_ore"
   ],
-  "color": "supplemental_patches:cobblemon/sun_stone_ore",
-  "conditions": [
-    "GLOWING_ORE_SUN_STONE",
-    "DO_IPBR_LIGHTS"
-  ],
+  "blocklight": {
+    "color": "supplemental_patches:cobblemon/sun_stone_ore",
+    "conditions": [
+      "GLOWING_ORE_SUN_STONE",
+      "DO_IPBR_LIGHTS"
+    ]
+  },
   "block_size": 8
 }

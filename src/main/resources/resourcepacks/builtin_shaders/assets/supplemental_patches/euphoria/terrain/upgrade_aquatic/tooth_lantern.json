@@ -4,7 +4,7 @@
   "mat0": [
     "upgrade_aquatic:tooth_lantern"
   ],
-  "color": "supplemental_patches:upgrade_aquatic/tooth_lantern",
+  "blocklight": "supplemental_patches:upgrade_aquatic/tooth_lantern",
   "held_lighting": true,
   "reflection_handlers": "minecraft:discard"
 }

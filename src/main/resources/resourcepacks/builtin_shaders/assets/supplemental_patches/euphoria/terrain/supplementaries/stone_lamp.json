@@ -4,7 +4,7 @@
   "mat0": [
     "supplementaries:stone_lamp"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:supplementaries/stone_lamp"
   ],
   "held_lighting": true

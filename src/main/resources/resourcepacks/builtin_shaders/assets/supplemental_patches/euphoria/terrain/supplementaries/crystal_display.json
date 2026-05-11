@@ -21,7 +21,7 @@
   "mat1": [
     "supplementaries:crystal_display:power=0"
   ],
-  "color": [
+  "blocklight": [
     "minecraft:amethyst",
     null,
     null,

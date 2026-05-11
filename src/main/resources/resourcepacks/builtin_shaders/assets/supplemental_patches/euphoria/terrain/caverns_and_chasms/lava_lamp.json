@@ -9,6 +9,6 @@
     "caverns_and_chasms:lava_lamp:facing=east",
     "caverns_and_chasms:lava_lamp:facing=west"
   ],
-  "color": "minecraft:lava",
+  "blocklight": "minecraft:lava",
   "held_lighting": true
 }

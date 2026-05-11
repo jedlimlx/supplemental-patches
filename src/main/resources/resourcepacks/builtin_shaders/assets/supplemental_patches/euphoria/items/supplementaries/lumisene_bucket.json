@@ -5,6 +5,6 @@
     "supplementaries:lumisene_bucket"
   ],
   "held_lighting": true,
-  "color": "supplemental_patches:supplementaries/lumisene_fire",
+  "blocklight": "supplemental_patches:supplementaries/lumisene_fire",
   "light_level": 10
 }

@@ -16,7 +16,7 @@
     "frostiful:icy_vault:ominous=true:vault_state=ejecting",
     "frostiful:icy_vault:ominous=true:vault_state=unlocking"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:frostiful/icy_trial_spawner",
     null,
     "supplemental_patches:frostiful/icy_ominous_trial_spawner",

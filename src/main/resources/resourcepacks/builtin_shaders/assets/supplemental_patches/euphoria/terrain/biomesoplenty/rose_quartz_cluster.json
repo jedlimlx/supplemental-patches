@@ -7,6 +7,6 @@
     "biomesoplenty:medium_rose_quartz_bud",
     "biomesoplenty:large_rose_quartz_bud"
   ],
-  "color": "supplemental_patches:biomesoplenty/rose_quartz",
+  "blocklight": "supplemental_patches:biomesoplenty/rose_quartz",
   "reflection_handlers": "minecraft:discard"
 }

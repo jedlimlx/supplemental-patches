@@ -16,7 +16,7 @@
     "caverns_and_chasms:ender_brazier:lit=false",
     "caverns_and_chasms:cupric_brazier:lit=false"
   ],
-  "color": [
+  "blocklight": [
     "minecraft:glow_berries",
     null,
     null,

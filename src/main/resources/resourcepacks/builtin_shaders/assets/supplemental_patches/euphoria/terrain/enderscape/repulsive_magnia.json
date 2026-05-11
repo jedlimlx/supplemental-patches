@@ -16,7 +16,7 @@
     "enderscape:blistering_magnia:polarity=repulsive",
     "enderscape:polarized_magnia:polarity=repulsive"
   ],
-  "color": [
+  "blocklight": [
     null,
     null,
     "supplemental_patches:enderscape/repulsive_magnia_sprout",

@@ -17,7 +17,7 @@
   "mat6": [
     "biomeswevegone:fluorescent_cattail:color=blue"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:biomeswevegone/red_glowcane",
     null,
     "supplemental_patches:biomeswevegone/yellow_glowcane",

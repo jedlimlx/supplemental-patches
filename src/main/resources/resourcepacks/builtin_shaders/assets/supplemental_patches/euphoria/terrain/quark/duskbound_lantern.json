@@ -13,7 +13,7 @@
   "mat2": [
     "quark:duskbound_lantern"
   ],
-  "color": [
+  "blocklight": [
     null,
     null,
     "supplemental_patches:quark/duskbound_lantern",

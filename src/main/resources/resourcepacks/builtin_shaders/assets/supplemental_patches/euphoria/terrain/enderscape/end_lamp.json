@@ -4,7 +4,7 @@
   "mat0": [
     "enderscape:end_lamp"
   ],
-  "color": [
+  "blocklight": [
     "minecraft:end_rod",
     null,
     null,

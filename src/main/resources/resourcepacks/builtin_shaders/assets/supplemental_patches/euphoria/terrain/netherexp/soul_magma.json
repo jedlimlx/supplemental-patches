@@ -4,8 +4,10 @@
   "mat0": [
     "netherexp:soul_magma"
   ],
-  "color": "supplemental_patches:netherexp/soul_glow",
-  "conditions": [
-    "DO_IPBR_LIGHTS"
-  ]
+  "blocklight": {
+    "color": "supplemental_patches:netherexp/soul_glow",
+    "conditions": [
+      "DO_IPBR_LIGHTS"
+    ]
+  }
 }

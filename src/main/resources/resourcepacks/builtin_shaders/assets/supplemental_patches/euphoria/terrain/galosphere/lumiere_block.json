@@ -18,7 +18,7 @@
   "mat2": [
     "galosphere:charged_lumiere_block"
   ],
-  "color": "supplemental_patches:galosphere/lumiere",
+  "blocklight": "supplemental_patches:galosphere/lumiere",
   "reflection_handlers": [
     null,
     "minecraft:half_blocks",

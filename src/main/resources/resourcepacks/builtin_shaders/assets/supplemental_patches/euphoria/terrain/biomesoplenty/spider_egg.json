@@ -4,6 +4,6 @@
   "mat0": [
     "biomesoplenty:spider_egg"
   ],
-  "color": "supplemental_patches:biomesoplenty/spider_egg",
+  "blocklight": "supplemental_patches:biomesoplenty/spider_egg",
   "reflection_handlers": "minecraft:discard"
 }

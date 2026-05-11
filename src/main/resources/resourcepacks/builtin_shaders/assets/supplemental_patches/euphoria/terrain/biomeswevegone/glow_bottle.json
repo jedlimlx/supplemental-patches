@@ -13,7 +13,7 @@
   "mat6": [
     "biomeswevegone:blue_glow_bottle"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:biomeswevegone/red_glowcane",
     null,
     "supplemental_patches:biomeswevegone/yellow_glowcane",

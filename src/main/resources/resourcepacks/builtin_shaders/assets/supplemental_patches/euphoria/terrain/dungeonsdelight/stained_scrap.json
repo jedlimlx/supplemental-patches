@@ -1,31 +1,33 @@
 {
-    "name": "stained_scrap",
-    "glsl": "stained_scrap.glsl",
-    "mat0": [
-        "dungeonsdelight:chiseled_stained_scrap",
-        "dungeonsdelight:cut_stained_scrap",
-        "dungeonsdelight:stained_scrap_block",
-        "dungeonsdelight:stained_scrap_pillar"
-    ],
-    "mat1": [
-        "dungeonsdelight:cut_stained_scrap_slab",
-        "dungeonsdelight:cut_stained_scrap_stairs",
-        "dungeonsdelight:stained_scrap_bars",
-        "dungeonsdelight:stained_scrap_chain",
-        "dungeonsdelight:stained_scrap_door",
-        "dungeonsdelight:stained_scrap_trapdoor"
-    ],
-    "mat3": [
-        "dungeonsdelight:stained_scrap_grate"
-    ],
+  "name": "stained_scrap",
+  "glsl": "stained_scrap.glsl",
+  "mat0": [
+    "dungeonsdelight:chiseled_stained_scrap",
+    "dungeonsdelight:cut_stained_scrap",
+    "dungeonsdelight:stained_scrap_block",
+    "dungeonsdelight:stained_scrap_pillar"
+  ],
+  "mat1": [
+    "dungeonsdelight:cut_stained_scrap_slab",
+    "dungeonsdelight:cut_stained_scrap_stairs",
+    "dungeonsdelight:stained_scrap_bars",
+    "dungeonsdelight:stained_scrap_chain",
+    "dungeonsdelight:stained_scrap_door",
+    "dungeonsdelight:stained_scrap_trapdoor"
+  ],
+  "mat3": [
+    "dungeonsdelight:stained_scrap_grate"
+  ],
+  "blocklight": {
     "color": "minecraft:spawner",
     "conditions": [
-        "DO_IPBR_LIGHTS"
-    ],
-    "reflection_handlers": [
-        null,
-        "minecraft:half_blocks",
-        null,
-        "minecraft:non_solid"
+      "DO_IPBR_LIGHTS"
     ]
+  },
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    "minecraft:non_solid"
+  ]
 }

@@ -4,7 +4,7 @@
   "mat0": [
     "caverns_and_chasms:brazier:lit=true"
   ],
-  "color": "minecraft:campfire",
+  "blocklight": "minecraft:campfire",
   "held_lighting": true,
   "reflection_handler": "minecraft:campfire"
 }

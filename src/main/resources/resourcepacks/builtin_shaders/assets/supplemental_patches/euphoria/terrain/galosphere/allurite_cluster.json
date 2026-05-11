@@ -5,6 +5,6 @@
     "galosphere:allurite_cluster",
     "galosphere:glinted_allurite_cluster"
   ],
-  "color": "supplemental_patches:galosphere/allurite",
+  "blocklight": "supplemental_patches:galosphere/allurite",
   "reflection_handlers": "minecraft:discard"
 }

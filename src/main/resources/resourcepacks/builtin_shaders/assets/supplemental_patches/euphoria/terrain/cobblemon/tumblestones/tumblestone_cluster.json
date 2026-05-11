@@ -7,6 +7,6 @@
     "cobblemon:large_budding_tumblestone",
     "cobblemon:tumblestone_cluster"
   ],
-  "color": "supplemental_patches:cobblemon/tumblestone",
+  "blocklight": "supplemental_patches:cobblemon/tumblestone",
   "reflection_handlers": "minecraft:discard"
 }

@@ -23,7 +23,7 @@ class ShaderBuilder(
                 )
             }
 
-            var output = (if (needsVoxelisation) "const uint voxelNumbers[$blockSize] = uint[](${voxelNumber.joinToString(", ") { "${it}u" }});\nuint voxelNumber = voxelNumbers[mat % 4];\n" else "") + _glsl
+            var output = (if (needsVoxelisation) "const uint voxelNumbers[$blockSize] = uint[](${voxelNumber[0].joinToString(", ") { "${it}u" }});\nuint voxelNumber = voxelNumbers[mat % 4];\n" else "") + _glsl
             lst.forEach { output = output.replace("deferredMaterial(\"${it.first}\")", it.second.toString()) }
             return output
         }
@@ -31,14 +31,20 @@ class ShaderBuilder(
     val mat: Array<MutableList<String>> = Array(blockSize) { mutableListOf() }
 
     var needsVoxelisation: Boolean = false
-    val voxelNumber: IntArray = IntArray(blockSize) { -1 }
 
-    var lightColour: List<Colour?> = listOf()
+    val _voxelNumber: MutableList<IntArray> = arrayListOf()
+	val voxelNumber: MutableList<IntArray>
+		get() {
+			return if (_voxelNumber.isEmpty()) arrayListOf(IntArray(blockSize) { -1 })
+			else _voxelNumber
+		}
+
+	var blocklight: List<Pair<List<Colour?>, List<String>>> = listOf()
+
     var lightLevel: Int = 0
     var heldLighting: Boolean = false
     var translucent: Boolean = false
     var wavingObject: WavingObject? = null
-    var colourConditions: List<String> = listOf()
 
     var reflectionHandlers: List<String?> = listOf()
 
@@ -49,15 +55,18 @@ class ShaderBuilder(
         return this
     }
 
-    fun lightColour(colour: Colour, conditions: List<String> = listOf()): ShaderBuilder {
-        lightColour = listOf(colour)
-        colourConditions = conditions
+    fun colours(colour: Colour?): ShaderBuilder {
+		this.blocklight = listOf(Pair(listOf(colour), listOf()))
         return this
     }
 
-    fun lightColour(colour: List<Colour?>, conditions: List<String> = listOf()): ShaderBuilder {
-        lightColour = colour
-        colourConditions = conditions
+	fun colours(colours: List<Colour?>): ShaderBuilder {
+		this.blocklight = listOf(Pair(colours, listOf()))
+		return this
+	}
+
+    fun blocklight(lightColours: List<Pair<List<Colour?>, List<String>>>): ShaderBuilder {
+		this.blocklight = lightColours
         return this
     }
 

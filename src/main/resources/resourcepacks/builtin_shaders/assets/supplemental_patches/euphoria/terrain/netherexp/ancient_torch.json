@@ -4,5 +4,5 @@
   "mat0": [
     "netherexp:ancient_torch"
   ],
-  "color": "supplemental_patches:netherexp/ancient_fire"
+  "blocklight": "supplemental_patches:netherexp/ancient_fire"
 }

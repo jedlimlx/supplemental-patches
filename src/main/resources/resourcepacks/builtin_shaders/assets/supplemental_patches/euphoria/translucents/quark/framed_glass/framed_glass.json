@@ -4,5 +4,5 @@
   "mat0": [
     "quark:framed_glass"
   ],
-  "color": "supplemental_patches:transparent"
+  "blocklight": "supplemental_patches:transparent"
 }

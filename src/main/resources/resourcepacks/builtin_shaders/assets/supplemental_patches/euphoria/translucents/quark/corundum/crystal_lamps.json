@@ -49,7 +49,7 @@
   "mat15": [
     "quark:black_crystal_lamp:lit=false"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:quark/crystal_lamp/red",
     null,
     "supplemental_patches:quark/crystal_lamp/orange",

@@ -7,7 +7,7 @@
   "mat2": [
     "quark:blackstone_furnace:lit=true:soul=true"
   ],
-  "color": [
+  "blocklight": [
     "minecraft:furnace",
     null,
     "minecraft:soul_lantern",

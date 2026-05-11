@@ -7,7 +7,7 @@
   "mat2": [
     "pearfection:copper_lampear"
   ],
-  "color": "supplemental_patches:pearfection/lampear",
+  "blocklight": "supplemental_patches:pearfection/lampear",
   "held_lighting": true,
   "reflection_handlers": "minecraft:discard"
 }

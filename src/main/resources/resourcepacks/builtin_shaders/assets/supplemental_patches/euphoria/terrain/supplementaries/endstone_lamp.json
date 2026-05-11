@@ -4,7 +4,7 @@
   "mat0": [
     "supplementaries:end_stone_lamp"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:supplementaries/endstone_lamp"
   ],
   "held_lighting": true

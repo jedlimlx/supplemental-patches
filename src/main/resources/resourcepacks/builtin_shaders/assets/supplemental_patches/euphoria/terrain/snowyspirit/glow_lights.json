@@ -44,7 +44,7 @@
   "mat24": [
     "snowyspirit:glow_lights_brown"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:snowyspirit/white_glow_lights",
     null,
     "supplemental_patches:snowyspirit/blue_glow_lights",

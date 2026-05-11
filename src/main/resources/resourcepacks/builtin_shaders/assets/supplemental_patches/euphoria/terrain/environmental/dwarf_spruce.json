@@ -13,7 +13,7 @@
   "mat6": [
     "environmental:dwarf_spruce_plant_cupric_torch"
   ],
-  "color": [
+  "blocklight": [
     "minecraft:torch",
     null,
     "minecraft:soul_torch",

@@ -4,6 +4,6 @@
   "mat0": [
     "cinderscapes:umbral_flesh"
   ],
-  "color": "supplemental_patches:cinderscapes/umbral_flesh",
+  "blocklight": "supplemental_patches:cinderscapes/umbral_flesh",
   "held_lighting": true
 }

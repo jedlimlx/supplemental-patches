@@ -8,5 +8,5 @@
   "mat2": [
     "wetland_whimsy:potted_aria_mushroom"
   ],
-  "color": "supplemental_patches:wetland_whimsy/small_aria_mushroom"
+  "blocklight": "supplemental_patches:wetland_whimsy/small_aria_mushroom"
 }

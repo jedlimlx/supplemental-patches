@@ -4,5 +4,5 @@
   "mat0": [
     "quark:myalite_crystal"
   ],
-  "color": "minecraft:amethyst"
+  "blocklight": "minecraft:amethyst"
 }

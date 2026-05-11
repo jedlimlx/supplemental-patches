@@ -7,7 +7,7 @@
   "mat2": [
     "netherexp:soul_glass:lit=true"
   ],
-  "color": [
+  "blocklight": [
     null,
     null,
     "minecraft:soul_lantern",

@@ -4,5 +4,5 @@
   "mat0": [
     "biomesoplenty:rose_quartz_block"
   ],
-  "color": "supplemental_patches:biomesoplenty/rose_quartz"
+  "blocklight": "supplemental_patches:biomesoplenty/rose_quartz"
 }

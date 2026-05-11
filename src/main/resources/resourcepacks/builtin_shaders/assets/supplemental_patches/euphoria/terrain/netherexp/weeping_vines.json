@@ -6,11 +6,13 @@
     "weeping_vines_plant",
     "netherexp:weeping_ivy"
   ],
-  "color": "minecraft:weeping_vines",
+  "blocklight": {
+    "color": "minecraft:weeping_vines",
+    "conditions": [
+      "DO_IPBR_LIGHTS"
+    ]
+  },
   "needs_voxelization": true,
   "waving": "minecraft:waving_nether_vines",
-  "conditions": [
-    "DO_IPBR_LIGHTS"
-  ],
   "reflection_handlers": "minecraft:discard"
 }

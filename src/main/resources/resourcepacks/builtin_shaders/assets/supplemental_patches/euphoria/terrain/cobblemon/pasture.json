@@ -7,6 +7,6 @@
   "mat1": [
     "cobblemon:pasture:on=false"
   ],
-  "color": "supplemental_patches:cobblemon/machine",
+  "blocklight": "supplemental_patches:cobblemon/machine",
   "reflection_handlers": "minecraft:discard"
 }

@@ -97,7 +97,7 @@
   "mat31": [
     "dye_depot:verdant_stained_glass_pane"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:dye_depot/stained_glass/amber",
     "supplemental_patches:dye_depot/stained_glass/amber",
     "supplemental_patches:dye_depot/stained_glass/aqua",

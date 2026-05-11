@@ -4,5 +4,5 @@
   "mat0": [
     "ends_delight:end_stove"
   ],
-  "color": "minecraft:furnace"
+  "blocklight": "minecraft:furnace"
 }

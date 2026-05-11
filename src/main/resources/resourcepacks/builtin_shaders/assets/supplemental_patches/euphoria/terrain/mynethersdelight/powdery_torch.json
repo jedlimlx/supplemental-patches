@@ -8,5 +8,5 @@
   "mat2": [
     "mynethersdelight:bullet_pepper:lit=true"
   ],
-  "color": "minecraft:magma_block"
+  "blocklight": "minecraft:magma_block"
 }

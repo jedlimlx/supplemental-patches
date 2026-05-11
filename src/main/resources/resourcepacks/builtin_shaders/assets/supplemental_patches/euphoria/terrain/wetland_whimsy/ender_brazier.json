@@ -4,7 +4,7 @@
   "mat0": [
     "wetland_whimsy:ender_brazier:lit=true"
   ],
-  "color": "supplemental_patches:endergetic/ender_fire",
+  "blocklight": "supplemental_patches:endergetic/ender_fire",
   "held_lighting": true,
   "reflection_handlers": "minecraft:campfire"
 }

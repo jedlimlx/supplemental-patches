@@ -7,6 +7,6 @@
   "mat2": [
     "quark:dirty_glass_pane"
   ],
-  "color": "supplemental_patches:quark/dirty_glass",
+  "blocklight": "supplemental_patches:quark/dirty_glass",
   "needs_voxelization": true
 }

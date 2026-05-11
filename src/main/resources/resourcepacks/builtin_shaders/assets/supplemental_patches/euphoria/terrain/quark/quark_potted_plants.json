@@ -7,7 +7,7 @@
   "mat2": [
     "quark:potted_glow_lichen_growth"
   ],
-  "color": [
+  "blocklight": [
     "minecraft:glow_berries",
     null,
     "minecraft:glow_lichen",

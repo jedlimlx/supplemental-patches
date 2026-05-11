@@ -5,10 +5,12 @@
     "chorus_flower:age=5",
     "chorus_flower:5"
   ],
-  "color": "minecraft:chorus_flower",
-  "conditions": [
-    "DO_IPBR_LIGHTS",
-    "!(defined NOT_GLOWING_CHORUS_FLOWER)"
-  ],
+  "blocklight": {
+    "color": "minecraft:chorus_flower",
+    "conditions": [
+      "DO_IPBR_LIGHTS",
+      "!(defined NOT_GLOWING_CHORUS_FLOWER)"
+    ]
+  },
   "reflection_handlers": "minecraft:discard"
 }

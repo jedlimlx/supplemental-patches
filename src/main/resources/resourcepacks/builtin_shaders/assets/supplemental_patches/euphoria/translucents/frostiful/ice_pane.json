@@ -4,6 +4,6 @@
   "mat0": [
     "frostiful:ice_pane"
   ],
-  "color": "minecraft:light_blue",
+  "blocklight": "minecraft:light_blue",
   "needs_voxelization": true
 }

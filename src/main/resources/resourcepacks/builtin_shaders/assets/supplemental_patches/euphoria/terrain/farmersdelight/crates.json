@@ -11,7 +11,7 @@
     "atmospheric:shimmering_passion_fruit_crate",
     "atmospheric:golden_dragon_fruit_crate"
   ],
-  "color": [
+  "blocklight": [
     "minecraft:glow_berries",
     null,
     null,

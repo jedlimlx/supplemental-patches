@@ -29,7 +29,7 @@
     "mynethersdelight:powdery_cannon:lit=false",
     "mynethersdelight:powdery_chubby_sapling"
   ],
-  "color": [
+  "blocklight": [
     null,
     null,
     "minecraft:magma_block",

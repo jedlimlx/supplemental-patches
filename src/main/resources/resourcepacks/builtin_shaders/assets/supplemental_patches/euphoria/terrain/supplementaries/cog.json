@@ -21,7 +21,7 @@
     "supplementaries:cog_block:power=14",
     "supplementaries:cog_block:power=15"
   ],
-  "color": [
+  "blocklight": [
     null,
     null,
     "minecraft:redstone_wire",

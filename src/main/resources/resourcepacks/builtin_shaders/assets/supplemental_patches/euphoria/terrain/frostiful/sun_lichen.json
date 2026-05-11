@@ -9,6 +9,6 @@
   "mat1": [
     "frostiful:cold_sun_lichen"
   ],
-  "color": "supplemental_patches:frostiful/sun_lichen",
+  "blocklight": "supplemental_patches:frostiful/sun_lichen",
   "reflection_handlers": "minecraft:glow_lichen"
 }

@@ -7,6 +7,6 @@
   "mat1": [
     "netherexp:ancient_candle:lit=false"
   ],
-  "color": "supplemental_patches:netherexp/ancient_candle",
+  "blocklight": "supplemental_patches:netherexp/ancient_candle",
   "reflection_handlers": "minecraft:discard"
 }

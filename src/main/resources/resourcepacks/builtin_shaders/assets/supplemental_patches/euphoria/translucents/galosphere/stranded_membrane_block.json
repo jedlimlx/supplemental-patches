@@ -4,5 +4,5 @@
   "mat0": [
     "galosphere:stranded_membrane_block"
   ],
-  "color": "supplemental_patches:galosphere/stranded_membrane"
+  "blocklight": "supplemental_patches:galosphere/stranded_membrane"
 }

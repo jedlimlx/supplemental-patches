@@ -7,7 +7,7 @@
   "mat1": [
     "buzzier_bees:ender_candle:lit=false"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:buzzier_bees/ender_candle",
     null,
     null,

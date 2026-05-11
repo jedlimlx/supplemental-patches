@@ -7,9 +7,11 @@
   "mat2": [
     "caverns_and_chasms:deepslate_spinel_ore"
   ],
-  "color": "supplemental_patches:caverns_and_chasms/spinel_ore",
-  "conditions": [
-    "GLOWING_ORE_SPINEL",
-    "DO_IPBR_LIGHTS"
-  ]
+  "blocklight": {
+    "color": "supplemental_patches:caverns_and_chasms/spinel_ore",
+    "conditions": [
+      "GLOWING_ORE_SPINEL",
+      "DO_IPBR_LIGHTS"
+    ]
+  }
 }

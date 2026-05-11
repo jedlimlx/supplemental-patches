@@ -4,7 +4,7 @@
   "mat0": [
     "windswept:soul_fairy_light"
   ],
-  "color": "minecraft:soul_fire",
+  "blocklight": "minecraft:soul_fire",
   "held_lighting": true,
   "reflection_handlers": "minecraft:discard"
 }

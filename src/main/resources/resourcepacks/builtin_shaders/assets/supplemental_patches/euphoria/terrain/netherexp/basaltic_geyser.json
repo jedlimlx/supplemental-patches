@@ -7,8 +7,10 @@
   "mat1": [
     "netherexp:basaltic_geyser:cooldown=true"
   ],
-  "color": "minecraft:magma_block",
-  "conditions": [
-    "DO_IPBR_LIGHTS"
-  ]
+  "blocklight": {
+    "color": "minecraft:magma_block",
+    "conditions": [
+      "DO_IPBR_LIGHTS"
+    ]
+  }
 }

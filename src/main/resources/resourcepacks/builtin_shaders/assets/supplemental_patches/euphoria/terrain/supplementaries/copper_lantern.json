@@ -7,7 +7,7 @@
   "mat1": [
     "suppsquared:copper_lantern:lit=false"
   ],
-  "color": [
+  "blocklight": [
     "minecraft:lantern",
     null,
     null,

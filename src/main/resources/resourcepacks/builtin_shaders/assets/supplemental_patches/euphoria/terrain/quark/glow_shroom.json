@@ -8,7 +8,7 @@
   "mat2": [
     "quark:glow_shroom_stem"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:quark/glow_shroom",
     null,
     null,

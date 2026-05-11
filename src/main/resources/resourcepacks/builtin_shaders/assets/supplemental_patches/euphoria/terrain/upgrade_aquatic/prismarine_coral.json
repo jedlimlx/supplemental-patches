@@ -12,5 +12,5 @@
   "mat2": [
     "upgrade_aquatic:prismarine_coral_block"
   ],
-  "color": "supplemental_patches:upgrade_aquatic/prismarine"
+  "blocklight": "supplemental_patches:upgrade_aquatic/prismarine"
 }

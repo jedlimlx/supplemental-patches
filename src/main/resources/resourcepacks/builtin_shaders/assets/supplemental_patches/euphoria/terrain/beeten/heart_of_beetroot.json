@@ -4,5 +4,5 @@
   "mat0": [
     "beeten:beetroot_heart"
   ],
-  "color": "supplemental_patches:beeten/heart_of_beetroot"
+  "blocklight": "supplemental_patches:beeten/heart_of_beetroot"
 }

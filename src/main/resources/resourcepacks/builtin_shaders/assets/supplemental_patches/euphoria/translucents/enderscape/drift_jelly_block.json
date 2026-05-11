@@ -4,5 +4,5 @@
   "mat0": [
     "enderscape:drift_jelly_block"
   ],
-  "color": "supplemental_patches:enderscape/drift_jelly"
+  "blocklight": "supplemental_patches:enderscape/drift_jelly"
 }

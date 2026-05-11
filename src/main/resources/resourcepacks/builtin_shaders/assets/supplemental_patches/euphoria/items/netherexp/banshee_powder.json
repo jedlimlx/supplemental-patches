@@ -8,5 +8,5 @@
     "netherexp:wisp_bottle",
     "illagerinvasion:primal_essence"
   ],
-  "color": "supplemental_patches:netherexp/ectoplasm"
+  "blocklight": "supplemental_patches:netherexp/ectoplasm"
 }

@@ -10,7 +10,7 @@
   "mat1": [
     "galosphere:warped_anchor:warped_charge=0"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:galosphere/allurite",
     null,
     null,

@@ -5,5 +5,5 @@
     "biomesoplenty:glowshroom",
     "biomesoplenty:glowshroom_block"
   ],
-  "color": "supplemental_patches:biomesoplenty/glowworm_silk"
+  "blocklight": "supplemental_patches:biomesoplenty/glowworm_silk"
 }

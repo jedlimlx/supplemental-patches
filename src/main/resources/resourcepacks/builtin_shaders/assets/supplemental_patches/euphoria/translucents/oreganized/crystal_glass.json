@@ -129,7 +129,7 @@
     "oreganized:verdant_crystal_glass",
     "oreganized:verdant_crystal_glass_pane"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:dyes/black",
     "supplemental_patches:dyes/blue",
     "supplemental_patches:dyes/cyan",

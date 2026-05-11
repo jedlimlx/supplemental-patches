@@ -1,17 +1,17 @@
 {
-    "name": "light_stand",
-    "glsl": "light_stand.glsl",
-    "mat0": [
-        "galosphere:light_stand:lit=true:half=upper"
-    ],
-    "mat1": [
-        "galosphere:light_stand:half=lower",
-        "galosphere:light_stand:lit=false"
-    ],
-    "mat2": [
-        "galosphere:chandelier"
-    ],
-    "color": "minecraft:fire",
-    "held_lighting": true,
-    "reflection_handlers": "minecraft:discard"
+  "name": "light_stand",
+  "glsl": "light_stand.glsl",
+  "mat0": [
+    "galosphere:light_stand:lit=true:half=upper"
+  ],
+  "mat1": [
+    "galosphere:light_stand:half=lower",
+    "galosphere:light_stand:lit=false"
+  ],
+  "mat2": [
+    "galosphere:chandelier"
+  ],
+  "blocklight": "minecraft:fire",
+  "held_lighting": true,
+  "reflection_handlers": "minecraft:discard"
 }

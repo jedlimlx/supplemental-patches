@@ -15,7 +15,7 @@
     "savage_and_ravage:runed_gloomy_tiles:powered=true",
     "savage_and_ravage:chiseled_gloomy_tiles:powered=true"
   ],
-  "color": [
+  "blocklight": [
     null,
     null,
     "supplemental_patches:savage_and_ravage/runes",

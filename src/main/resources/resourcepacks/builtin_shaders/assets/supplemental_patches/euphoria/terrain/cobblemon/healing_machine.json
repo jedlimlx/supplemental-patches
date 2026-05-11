@@ -18,7 +18,7 @@
   "mat4": [
     "cobblemon:healing_machine:charge=5:natural=true"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:cobblemon/machine",
     null,
     "supplemental_patches:cobblemon/active_healing_machine",

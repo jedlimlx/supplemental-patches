@@ -9,11 +9,13 @@
     "wetland_whimsy:potted_fellcap_mushroom",
     "wetland_whimsy:potted_bloodcap_mushroom"
   ],
-  "color": "supplemental_patches:wetland_whimsy/bloodcap_mushroom",
-  "conditions": [
-    "GLOWING_BLOODCAP_MUSHROOM >= 1",
-    "DO_IPBR_LIGHTS"
-  ],
+  "blocklight": {
+    "color": "supplemental_patches:wetland_whimsy/bloodcap_mushroom",
+    "conditions": [
+      "GLOWING_BLOODCAP_MUSHROOM >= 1",
+      "DO_IPBR_LIGHTS"
+    ]
+  },
   "waving": "minecraft:waving_foliage",
   "reflection_handlers": "minecraft:discard"
 }

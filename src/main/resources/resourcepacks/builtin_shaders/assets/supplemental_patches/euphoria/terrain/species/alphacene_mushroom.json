@@ -1,10 +1,10 @@
 {
-    "name": "alphacene_mushroom",
-    "glsl": "alphacene_mushroom.glsl",
-    "mat0": [
-        "species:alphacene_mushroom",
-        "species:alphacene_mushroom_block",
-        "species:alphacene_mushroom_growth"
-    ],
-    "color": "supplemental_patches:species/alphacene_mushroom"
+  "name": "alphacene_mushroom",
+  "glsl": "alphacene_mushroom.glsl",
+  "mat0": [
+    "species:alphacene_mushroom",
+    "species:alphacene_mushroom_block",
+    "species:alphacene_mushroom_growth"
+  ],
+  "blocklight": "supplemental_patches:species/alphacene_mushroom"
 }

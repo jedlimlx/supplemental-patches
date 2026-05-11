@@ -4,7 +4,7 @@
   "mat0": [
     "quark:potted_glow_shroom"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:quark/glow_shroom",
     null,
     null,

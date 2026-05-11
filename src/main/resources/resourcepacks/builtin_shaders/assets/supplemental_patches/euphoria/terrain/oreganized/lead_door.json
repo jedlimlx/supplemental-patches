@@ -16,7 +16,7 @@
     "oreganized:lead_trapdoor:goopyness=2",
     "oreganized:lead_bars:goopyness=2"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:oreganized/molten_lead",
     null,
     "supplemental_patches:oreganized/molten_lead",

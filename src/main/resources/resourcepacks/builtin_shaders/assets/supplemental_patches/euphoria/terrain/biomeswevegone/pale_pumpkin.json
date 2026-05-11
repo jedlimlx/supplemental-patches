@@ -8,7 +8,7 @@
   "mat2": [
     "biomeswevegone:pale_jack_o_lantern"
   ],
-  "color": [
+  "blocklight": [
     null,
     null,
     "minecraft:soul_lantern",

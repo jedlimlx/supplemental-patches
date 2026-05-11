@@ -7,7 +7,7 @@
   "mat2": [
     "biomesoplenty:glowing_moss_block"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:biomesoplenty/glowworm_silk",
     null,
     null,

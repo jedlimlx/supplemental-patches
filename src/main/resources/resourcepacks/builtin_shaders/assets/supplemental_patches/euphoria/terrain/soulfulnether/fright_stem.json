@@ -5,9 +5,11 @@
     "soulfulnether:fright_stem",
     "soulfulnether:fright_hyphae"
   ],
-  "color": "supplemental_patches:soulfulnether/fright_fungus",
-  "conditions": [
-    "GLOWING_NETHER_TREES",
-    "DO_IPBR_LIGHTS"
-  ]
+  "blocklight": {
+    "color": "supplemental_patches:soulfulnether/fright_fungus",
+    "conditions": [
+      "GLOWING_NETHER_TREES",
+      "DO_IPBR_LIGHTS"
+    ]
+  }
 }

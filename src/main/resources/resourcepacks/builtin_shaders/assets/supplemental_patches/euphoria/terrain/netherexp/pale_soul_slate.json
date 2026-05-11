@@ -22,7 +22,7 @@
     "netherexp:etched_soul_slate_tiles:lit=true",
     "netherexp:chiseled_soul_slate_tiles:lit=true"
   ],
-  "color": [
+  "blocklight": [
     null,
     null,
     "minecraft:soul_lantern",

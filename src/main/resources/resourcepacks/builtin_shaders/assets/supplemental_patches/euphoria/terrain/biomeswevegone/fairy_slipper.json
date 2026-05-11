@@ -4,7 +4,7 @@
   "mat0": [
     "biomeswevegone:fairy_slipper"
   ],
-  "color": "supplemental_patches:biomeswevegone/fairy_slipper",
+  "blocklight": "supplemental_patches:biomeswevegone/fairy_slipper",
   "waving": "minecraft:grounded_waving_foliage",
   "reflection_handlers": "minecraft:discard"
 }

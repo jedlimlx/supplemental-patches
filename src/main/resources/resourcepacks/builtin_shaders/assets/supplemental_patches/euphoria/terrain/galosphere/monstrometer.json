@@ -7,7 +7,7 @@
   "mat2": [
     "galosphere:monstrometer:charged=false"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:galosphere/lumiere",
     null,
     null,

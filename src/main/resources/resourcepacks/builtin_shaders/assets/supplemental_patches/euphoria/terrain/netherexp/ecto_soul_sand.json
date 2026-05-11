@@ -4,5 +4,5 @@
   "mat0": [
     "netherexp:ecto_soul_sand"
   ],
-  "color": "supplemental_patches:netherexp/soul_glow"
+  "blocklight": "supplemental_patches:netherexp/soul_glow"
 }

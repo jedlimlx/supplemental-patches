@@ -4,7 +4,7 @@
   "mat0": [
     "netherexp:ancient_campfire"
   ],
-  "color": "supplemental_patches:netherexp/ancient_fire",
+  "blocklight": "supplemental_patches:netherexp/ancient_fire",
   "held_lighting": true,
   "reflection_handlers": "minecraft:campfire"
 }

@@ -5,7 +5,7 @@
     "wetland_whimsy:limestone_brazier:lit=true",
     "wetland_whimsy:lemonstone_brazier:lit=true"
   ],
-  "color": "minecraft:campfire",
+  "blocklight": "minecraft:campfire",
   "held_lighting": true,
   "reflection_handlers": "minecraft:campfire"
 }

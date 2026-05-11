@@ -1,9 +1,9 @@
 {
-    "name": "prismarine_blossom",
-    "glsl": "prismarine_blossom.glsl",
-    "mat0": [
-        "bountifulfares:prismarine_blossom"
-    ],
-    "color": "supplemental_patches:upgrade_aquatic/tooth_lantern",
-    "reflection_handlers": "minecraft:discard"
+  "name": "prismarine_blossom",
+  "glsl": "prismarine_blossom.glsl",
+  "mat0": [
+    "bountifulfares:prismarine_blossom"
+  ],
+  "blocklight": "supplemental_patches:upgrade_aquatic/tooth_lantern",
+  "reflection_handlers": "minecraft:discard"
 }

@@ -15,7 +15,7 @@
     "twigs:weeping_polished_blackstone_brick_slab",
     "twigs:weeping_polished_blackstone_brick_wall"
   ],
-  "color": [
+  "blocklight": [
     null,
     null,
     "minecraft:weeping_vines",

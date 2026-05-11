@@ -7,6 +7,6 @@
   "mat2": [
     "wetland_whimsy:ancient_brazier:flame=smoldering"
   ],
-  "color": "supplemental_patches:wetland_whimsy/ancient_brazier",
+  "blocklight": "supplemental_patches:wetland_whimsy/ancient_brazier",
   "reflection_handlers": "minecraft:campfire"
 }

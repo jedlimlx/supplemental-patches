@@ -9,13 +9,15 @@
     "nether_wart_block:spots=2",
     "nether_wart_block:spots=3"
   ],
-  "color": [
-    null,
-    null,
-    "minecraft:weeping_vines",
-    null
-  ],
-  "conditions": [
-    "DO_IPBR_LIGHTS"
-  ]
+  "blocklight": {
+    "color": [
+      null,
+      null,
+      "minecraft:weeping_vines",
+      null
+    ],
+    "conditions": [
+      "DO_IPBR_LIGHTS"
+    ]
+  }
 }

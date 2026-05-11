@@ -4,6 +4,6 @@
   "mat0": [
     "netherexp:skeleton_skull_candle"
   ],
-  "color": "minecraft:campfire",
+  "blocklight": "minecraft:campfire",
   "held_lighting": true
 }

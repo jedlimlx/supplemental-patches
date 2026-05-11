@@ -9,13 +9,15 @@
     "warped_wart_block:spots=2",
     "warped_wart_block:spots=3"
   ],
-  "color": [
-    null,
-    null,
-    "supplemental_patches:netherexp/warped_fungus",
-    null
-  ],
-  "conditions": [
-    "DO_IPBR_LIGHTS"
-  ]
+  "blocklight": {
+    "color": [
+      null,
+      null,
+      "supplemental_patches:netherexp/warped_fungus",
+      null
+    ],
+    "conditions": [
+      "DO_IPBR_LIGHTS"
+    ]
+  }
 }

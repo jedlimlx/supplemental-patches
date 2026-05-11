@@ -7,6 +7,6 @@
   "mat2": [
     "netherexp:burning_wither_skull_block"
   ],
-  "color": "minecraft:campfire",
+  "blocklight": "minecraft:campfire",
   "held_lighting": true
 }

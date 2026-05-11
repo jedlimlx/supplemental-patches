@@ -4,7 +4,7 @@
   "mat0": [
     "caverns_and_chasms:cupric_lantern"
   ],
-  "color": "supplemental_patches:caverns_and_chasms/cupric_fire",
+  "blocklight": "supplemental_patches:caverns_and_chasms/cupric_fire",
   "held_lighting": true,
   "reflection_handler": "minecraft:discard"
 }

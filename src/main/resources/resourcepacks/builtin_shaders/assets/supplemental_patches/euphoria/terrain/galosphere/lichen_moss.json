@@ -11,7 +11,7 @@
   "mat2": [
     "galosphere:lichen_moss:lit=true"
   ],
-  "color": [
+  "blocklight": [
     null,
     null,
     "minecraft:glow_lichen",

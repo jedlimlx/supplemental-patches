@@ -5,6 +5,6 @@
     "caverns_and_chasms:golden_lava_bucket"
   ],
   "held_lighting": true,
-  "color": "minecraft:lava",
+  "blocklight": "minecraft:lava",
   "light_level": 15
 }

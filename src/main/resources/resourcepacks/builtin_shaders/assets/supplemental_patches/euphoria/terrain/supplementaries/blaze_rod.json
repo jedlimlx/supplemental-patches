@@ -4,7 +4,7 @@
   "mat0": [
     "supplementaries:blaze_rod"
   ],
-  "color": [
+  "blocklight": [
     "minecraft:brewing_stand"
   ],
   "reflection_handlers": "minecraft:discard"

@@ -4,6 +4,6 @@
   "mat0": [
     "twigs:crimson_shroomlight"
   ],
-  "color": "minecraft:shroomlight",
+  "blocklight": "minecraft:shroomlight",
   "held_lighting": true
 }

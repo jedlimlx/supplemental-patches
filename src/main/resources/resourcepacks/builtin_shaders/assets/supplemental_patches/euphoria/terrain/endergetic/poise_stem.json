@@ -9,7 +9,7 @@
     "endergetic:glowing_poise_wood",
     "endergetic:glowing_poise_stem"
   ],
-  "color": [
+  "blocklight": [
     null,
     null,
     "supplemental_patches:endergetic/poise",

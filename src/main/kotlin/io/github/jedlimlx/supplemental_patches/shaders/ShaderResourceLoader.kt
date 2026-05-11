@@ -287,6 +287,8 @@ object ShaderResourceLoader {
         }.thenCompose(stage::wait).thenAcceptAsync({}, gameExecutor)
     }
 
+	fun getColourOrTint(id: String, loc: String) = COLOURS_MAP[id] ?: TINTS_MAP[id] ?: throw MinecraftError("Color / tint $id does not exist!", loc.toString())
+
     fun loadMaterialShaders(
         executor: Executor, resourceManager: ResourceManager, type: String, map: MutableMap<String, ShaderBuilder>? = null
     ): CompletableFuture<Void> {
@@ -317,24 +319,58 @@ object ShaderResourceLoader {
                     for (i in builder.mat.indices)
                         builder.mat[i] = json["mat$i"]?.asJsonArray?.map { it.asString }?.toMutableList() ?: mutableListOf()
 
-                    if (json["color"] != null) {
-                        if (json["color"].isJsonArray) {
-                            builder.lightColour(
-                                json["color"].asJsonArray.map {
-                                    if (it != JsonNull.INSTANCE) {
-                                        COLOURS_MAP[it.asString] ?:
-                                        TINTS_MAP[it.asString] ?:
-                                        throw MinecraftError("Color / tint $it does not exist!", loc.toString())
-                                    } else null
-                                },
-                                conditions = json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
-                            )
-                        } else {
-                            builder.lightColour(
-                                COLOURS_MAP[json["color"].asString] ?:
-                                TINTS_MAP[json["color"].asString] ?:
-                                throw MinecraftError("Color / tint ${json["color"]} does not exist!", loc.toString()),
-                                conditions = json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
+					LOGGER.info(loc.toString())
+                    if (json["blocklight"] != null) {
+                        if (json["blocklight"].isJsonArray) {
+							val coloursArray = json["blocklight"].asJsonArray
+							if (coloursArray.first().isJsonObject) {
+								builder.blocklight(
+									coloursArray.map {
+										if (!it.isJsonObject) throw MinecraftError("Invalid specification of blocklight colors and conditions!", loc.toString())
+										it as JsonObject
+
+										Pair(
+											if (!it["color"].isJsonArray) {
+												listOf(getColourOrTint(it["color"].asString, loc.toString()))
+											} else {
+												it["color"].asJsonArray.map {
+													if (it != JsonNull.INSTANCE) {
+														getColourOrTint(it.asString, loc.toString())
+													} else null
+												}
+											}, it["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
+										)
+									}
+								)
+							} else {  // list of colours with no conditions
+								builder.colours(
+									coloursArray.map {
+										if (it != JsonNull.INSTANCE) {
+											getColourOrTint(it.asString, loc.toString())
+										} else null
+									}
+								)
+							}
+                        } else if (json["blocklight"].isJsonObject) {
+							val it = json["blocklight"].asJsonObject
+							builder.blocklight(
+								listOf(
+									Pair(
+										if (it["color"].isJsonArray) {
+											it["color"].asJsonArray.map {
+												if (it != JsonNull.INSTANCE) {
+													getColourOrTint(it.asString, loc.toString())
+												} else null
+											}
+										} else {
+											listOf(getColourOrTint(it["color"].asString, loc.toString()))
+										}, it["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
+									)
+								)
+							)
+						} else {  // a single colour
+                            builder.colours(
+								getColourOrTint(json["blocklight"].asString, loc.toString())
                             )
                         }
                     }

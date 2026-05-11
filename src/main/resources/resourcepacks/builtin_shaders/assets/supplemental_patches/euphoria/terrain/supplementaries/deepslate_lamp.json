@@ -4,7 +4,7 @@
   "mat0": [
     "supplementaries:deepslate_lamp"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:supplementaries/deepslate_lamp"
   ],
   "held_lighting": true

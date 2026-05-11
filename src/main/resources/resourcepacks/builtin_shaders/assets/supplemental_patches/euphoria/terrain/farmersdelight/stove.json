@@ -4,5 +4,5 @@
   "mat0": [
     "farmersdelight:stove"
   ],
-  "color": "minecraft:furnace"
+  "blocklight": "minecraft:furnace"
 }

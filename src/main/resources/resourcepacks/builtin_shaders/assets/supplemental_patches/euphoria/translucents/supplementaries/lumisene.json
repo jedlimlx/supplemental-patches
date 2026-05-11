@@ -4,7 +4,7 @@
   "mat0": [
     "supplementaries:lumisene"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:supplementaries/lumisene_fluid"
   ],
   "waving": "supplemental_patches:fluids/waving_water"

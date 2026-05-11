@@ -4,7 +4,7 @@
   "mat0": [
     "biomesoplenty:burning_blossom"
   ],
-  "color": "minecraft:magma_block",
+  "blocklight": "minecraft:magma_block",
   "waving": "minecraft:grounded_waving_foliage",
   "reflection_handlers": "minecraft:discard"
 }

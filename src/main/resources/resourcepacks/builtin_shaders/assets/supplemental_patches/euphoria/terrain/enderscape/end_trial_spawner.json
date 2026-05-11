@@ -10,7 +10,7 @@
     "enderscape:end_vault:vault_state=ejecting",
     "enderscape:end_vault:vault_state=unlocking"
   ],
-  "color": [
+  "blocklight": [
     "supplemental_patches:enderscape/end_trial_spawner",
     null,
     null,

@@ -4,9 +4,11 @@
   "mat0": [
     "ditr:obsidian_diamond_ore"
   ],
-  "color": "minecraft:diamond_ore",
-  "conditions": [
-    "DO_IPBR_LIGHTS",
-    "GLOWING_ORE_OBSIDIAN_DIAMOND"
-  ]
+  "blocklight": {
+    "color": "minecraft:diamond_ore",
+    "conditions": [
+      "DO_IPBR_LIGHTS",
+      "GLOWING_ORE_OBSIDIAN_DIAMOND"
+    ]
+  }
 }

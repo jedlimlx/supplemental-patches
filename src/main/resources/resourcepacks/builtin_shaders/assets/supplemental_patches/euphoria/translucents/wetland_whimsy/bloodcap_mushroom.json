@@ -5,6 +5,6 @@
     "wetland_whimsy:bloodcap_mushroom_block",
     "wetland_whimsy:fellcap_mushroom_block"
   ],
-  "color": "supplemental_patches:wetland_whimsy/bloodcap_mushroom",
+  "blocklight": "supplemental_patches:wetland_whimsy/bloodcap_mushroom",
   "heldLighting": true
 }

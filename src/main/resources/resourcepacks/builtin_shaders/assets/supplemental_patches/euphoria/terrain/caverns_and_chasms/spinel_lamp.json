@@ -4,6 +4,6 @@
   "mat0": [
     "caverns_and_chasms:spinel_lamp"
   ],
-  "color": "supplemental_patches:caverns_and_chasms/spinel_lamp",
+  "blocklight": "supplemental_patches:caverns_and_chasms/spinel_lamp",
   "held_lighting": true
 }

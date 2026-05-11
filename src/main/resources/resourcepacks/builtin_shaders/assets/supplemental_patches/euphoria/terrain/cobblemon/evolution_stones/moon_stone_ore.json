@@ -10,10 +10,12 @@
   "mat4": [
     "cobblemon:dripstone_moon_stone_ore"
   ],
-  "color": "supplemental_patches:cobblemon/moon_stone_ore",
-  "conditions": [
-    "GLOWING_ORE_MOON_STONE",
-    "DO_IPBR_LIGHTS"
-  ],
+  "blocklight": {
+    "color": "supplemental_patches:cobblemon/moon_stone_ore",
+    "conditions": [
+      "GLOWING_ORE_MOON_STONE",
+      "DO_IPBR_LIGHTS"
+    ]
+  },
   "block_size": 8
 }

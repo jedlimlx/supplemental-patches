@@ -1,6 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
 import io.github.jedlimlx.supplemental_patches.PLATFORM
+import io.github.jedlimlx.supplemental_patches.LOGGER
 import java.io.File
 import java.nio.file.Path
 import kotlin.io.path.absolutePathString
@@ -389,20 +390,30 @@ fun assignVoxelNumbers() {
 
     var count = 0
     (FILTERED_MATERIALS + FILTERED_BLOCK_ENTITIES + FILTERED_TRANSLUCENTS).forEach { material ->
-        if (material.lightColour.size == 1) {
-            val colour = material.lightColour[0]!!
+		if (material.blocklight.isNotEmpty()) {
+			material.blocklight.forEach { (colours, _) ->
+				val voxels = IntArray(material.blockSize) { -1 }
+				if (colours.size == 1) {
+					val colour = colours[0]!!
+					(0..<material.blockSize).forEach {
+						voxels[it] =
+							colourIndex[colour] ?: (colour.index + (if (colour.tint) NEW_TINTS_INITIAL_ID else 0))
+					}
+				} else if (colours.isNotEmpty()) {
+					colours.forEachIndexed { it, colour ->
+						colour ?: return@forEachIndexed
+						voxels[it] =
+							colourIndex[colour] ?: (colour.index + (if (colour.tint) NEW_TINTS_INITIAL_ID else 0))
+					}
+				}
+
+				material.voxelNumber.add(voxels)
+			}
+		} else if (material.needsVoxelisation)
             (0..< material.blockSize).forEach {
-                material.voxelNumber[it] =
-                    colourIndex[colour] ?: (colour.index + (if (colour.tint) NEW_TINTS_INITIAL_ID else 0))
-            }
-        } else if (material.lightColour.isNotEmpty()) {
-            material.lightColour.forEachIndexed { it, colour ->
-                colour ?: return@forEachIndexed
-                material.voxelNumber[it] =
-                    colourIndex[colour] ?: (colour.index + (if (colour.tint) NEW_TINTS_INITIAL_ID else 0))
-            }
-        } else if (material.needsVoxelisation)
-            (0..< material.blockSize).forEach { material.voxelNumber[it] = TOTAL_COLOURED_VOXELS + count++ }
+				val voxels = IntArray(material.blockSize) { TOTAL_COLOURED_VOXELS + count++ }
+				material.voxelNumber.add(voxels)
+			}
     }
 }
 
@@ -424,10 +435,12 @@ fun generateVoxelsAndBlocklight(directory: Path) {
     val voxelisationCode = StringBuilder().apply {
         val temp = MATERIALS_MAP + BLOCK_ENTITIES_MAP + TRANSLUCENTS_MAP
         val output = (temp.map { (id, material) ->
-            if (material.lightColour.size == 1) id ..< id + material.blockSize
-            else if (material.lightColour.isNotEmpty())
-                (0 ..< material.blockSize).filter { material.lightColour[it] != null }.map { it + id }
-            else if (material.needsVoxelisation) {
+			if (material.blocklight.isNotEmpty()) {
+				if (material.blocklight.all { it.first.size == 1 }) id ..< id + material.blockSize
+				else  (0 ..< material.blockSize).filter {
+					material.blocklight.all { (lst, _) -> lst[minOf(it, lst.size - 1)] != null }
+				}.map { it + id }
+			} else if (material.needsVoxelisation) {
                 id ..< id + material.blockSize
             } else listOf()
         }.flatten()).sorted()
@@ -445,84 +458,90 @@ fun generateVoxelsAndBlocklight(directory: Path) {
                         }
                     }
 
-                    if (material.needsVoxelisation && material.lightColour.isEmpty()) {
-                        append("    ".repeat(depth) + "if (mat == $idx) return ${material.voxelNumber[0]};\n")
+                    if (material.needsVoxelisation && material.blocklight.isEmpty()) {
+                        append("    ".repeat(depth) + "if (mat == $idx) return ${material.voxelNumber[0][0]};\n")
                     } else {
-                        val colour = material.lightColour[idx % material.lightColour.size]!!
-                        val conditions = material.colourConditions.isNotEmpty()
-                        if (conditions) append(
-                            "    ".repeat(depth) +
-                            "#if ${material.colourConditions.conditions()}\n"
-                        )
-                        append("    ".repeat(depth))
+						val hasConditions = material.blocklight.first().second.isNotEmpty()
+						material.blocklight.forEachIndexed { it, (colours, conditions) ->
+							val colour = colours[idx % colours.size]!!
+							if (hasConditions) {
+								append(
+									"    ".repeat(depth) + "#" + if (it == 0) "if" else {
+										if (conditions.isEmpty()) "else"
+										else "elif"
+									} + " ${conditions.conditions()}\n"
+								)
+							}
+							append("    ".repeat(depth))
 
-                        if (colour.index != -1) {
-                            val index = colour.index + (if (colour.tint) NEW_TINTS_INITIAL_ID else 0)
-                            append("if (mat == $idx) return $index;\n")
+							if (colour.index != -1) {
+								val index = colour.index + (if (colour.tint) NEW_TINTS_INITIAL_ID else 0)
+								append("if (mat == $idx) return $index;\n")
 
-                            if (material.heldLighting && idx % material.blockSize == 0) {
-                                // Removing from their existing item ids
-                                material.allIds().forEach {
-                                    text = removeId(it, text)
-                                }
+								if (material.heldLighting && idx % material.blockSize == 0) {
+									// Removing from their existing item ids
+									material.allIds().forEach {
+										text = removeId(it, text)
+									}
 
-                                // Adding to new materials
-                                if (material.lightColour.size == 1) {
-                                    val temp = material.allIds().joinToString(" ") {
-                                        val tokens = it.split(":")
-                                        "${tokens[0]}:${tokens[1]}"
-                                    }
-                                    text = text.replace(
-                                        "item.${44000 + index} =",
-                                        "item.${44000 + index} = " + temp
-                                    )
-                                } else {
-                                    material.lightColour.forEachIndexed { idx, colour ->
-                                        if (colour?.tint != false) return@forEachIndexed
+									// Adding to new materials
+									if (colours.size == 1) {
+										val temp = material.allIds().joinToString(" ") {
+											val tokens = it.split(":")
+											"${tokens[0]}:${tokens[1]}"
+										}
+										text = text.replace(
+											"item.${44000 + index} =",
+											"item.${44000 + index} = " + temp
+										)
+									} else {
+										colours.forEachIndexed { idx, colour ->
+											if (colour?.tint != false) return@forEachIndexed
 
-                                        val mat = material.mat[idx]
-                                        text = text.replace(
-                                            "item.${44000 + index} =",
-                                            "item.${44000 + index} = " + mat.joinToString(" ") {
-                                                val tokens = it.split(":")
-                                                "${tokens[0]}:${tokens[1]}"
-                                            }
-                                        )
-                                    }
-                                }
-                            }
-                        } else {
-                            append("if (mat == $idx) return ${colourIndex[colour]};\n")
+											val mat = material.mat[idx]
+											text = text.replace(
+												"item.${44000 + index} =",
+												"item.${44000 + index} = " + mat.joinToString(" ") {
+													val tokens = it.split(":")
+													"${tokens[0]}:${tokens[1]}"
+												}
+											)
+										}
+									}
+								}
+							} else {
+								append("if (mat == $idx) return ${colourIndex[colour]};\n")
 
-                            if (material.heldLighting && idx % material.blockSize == 0) {
-                                // Removing from their existing item ids
-                                material.allIds().forEach {
-                                    text = removeId(it, text)
-                                }
+								if (material.heldLighting && idx % material.blockSize == 0) {
+									// Removing from their existing item ids
+									material.allIds().forEach {
+										text = removeId(it, text)
+									}
 
-                                // Adding to new materials
-                                if (material.lightColour.size == 1) {
-                                    heldLightingMap[44000 + colourIndex[colour]!!] = (heldLightingMap[44000 + colourIndex[colour]!!] ?: "") + " " +
-                                            material.allIds().joinToString(" ") {
-                                        val tokens = it.split(":")
-                                        "${tokens[0]}:${tokens[1]}"
-                                    }
-                                } else {
-                                    material.lightColour.forEachIndexed { idx, colour ->
-                                        if (colour?.tint != false) return@forEachIndexed
+									// Adding to new materials
+									if (colours.size == 1) {
+										heldLightingMap[44000 + colourIndex[colour]!!] = (heldLightingMap[44000 + colourIndex[colour]!!] ?: "") + " " +
+											material.allIds().joinToString(" ") {
+												val tokens = it.split(":")
+												"${tokens[0]}:${tokens[1]}"
+											}
+									} else {
+										colours.forEachIndexed { idx, colour ->
+											if (colour?.tint != false) return@forEachIndexed
 
-                                        val mat = material.mat[idx]
-                                        heldLightingMap[44000 + colourIndex[colour]!!] = (heldLightingMap[44000 + colourIndex[colour]!!] ?: "") + " " +
-                                                mat.joinToString(" ") {
-                                            val tokens = it.split(":")
-                                            "${tokens[0]}:${tokens[1]}"
-                                        }
-                                    }
-                                }
-                            }
-                        }
+											val mat = material.mat[idx]
+											heldLightingMap[44000 + colourIndex[colour]!!] = (heldLightingMap[44000 + colourIndex[colour]!!] ?: "") + " " +
+												mat.joinToString(" ") {
+													val tokens = it.split(":")
+													"${tokens[0]}:${tokens[1]}"
+												}
+										}
+									}
+								}
+							}
 
-                        if (conditions) append("    ".repeat(depth) + "#endif\n")
+							if (hasConditions && it == material.blocklight.size - 1) append("    ".repeat(depth) + "#endif\n")
+						}
                     }
                 }.toString()
             }
@@ -623,9 +642,9 @@ fun generateVoxelsAndBlocklight(directory: Path) {
         ITEM_MAP.forEach { (id, shader) ->
             if (!shader.heldLighting) return@forEach
             append(" ".repeat(12))
-            append("if (heldItemId == $id) { heldLightCol = ${shader.lightColour[0]}.rgb; heldLight = ${shader.lightLevel}; };  // ${shader.name}\n")
+            append("if (heldItemId == $id) { heldLightCol = ${shader.blocklight[0].first[0]}.rgb; heldLight = ${shader.lightLevel}; };  // ${shader.name}\n")
             append(" ".repeat(12))
-            append("if (heldItemId2 == $id) { heldLightCol2 = ${shader.lightColour[0]}.rgb; heldLight2 = ${shader.lightLevel}; };\n")
+            append("if (heldItemId2 == $id) { heldLightCol2 = ${shader.blocklight[0].first[0]}.rgb; heldLight2 = ${shader.lightLevel}; };\n")
         }
     }.toString()
 
@@ -666,7 +685,7 @@ fun generateWavingCode(directory: Path) {
                     val indent = "    ".repeat(depth)
                     if (conditions) append("$indent#if ${wavingObject.conditions.conditions()}\n")
                     append("${indent}if (blockEntityId >= $idx && blockEntityId < ${idx + entity.blockSize}) {\n")
-                    append("$indent    const int voxelNumber = ${entity.voxelNumber[0]};\n")
+                    append("$indent    const int voxelNumber = ${entity.voxelNumber[0][0]};\n")
                     append(
                         wavingObject.code.split("\n").joinToString("\n") { "$indent    $it" }
                     )
@@ -701,7 +720,7 @@ fun generateWavingCode(directory: Path) {
                     val indent = "    ".repeat(depth)
                     if (conditions) append("$indent#if ${wavingObject.conditions.conditions()}\n")
                     append("${indent}if (mat >= $idx && mat < ${idx + material.blockSize}) {\n")
-                    append("$indent    const int voxelNumber = ${material.voxelNumber[0]};\n")
+                    append("$indent    const int voxelNumber = ${material.voxelNumber[0][0]};\n")
                     append(
                         wavingObject.code.split("\n").joinToString("\n") { "$indent    $it" }
                     )

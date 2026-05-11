@@ -1,8 +1,8 @@
 {
-    "name": "dungeon_stove",
-    "glsl": "dungeon_stove.glsl",
-    "mat0": [
-        "dungeonsdelight:dungeon_stove"
-    ],
-    "color": "supplemental_patches:dungeonsdelight/living_fire"
+  "name": "dungeon_stove",
+  "glsl": "dungeon_stove.glsl",
+  "mat0": [
+    "dungeonsdelight:dungeon_stove"
+  ],
+  "blocklight": "supplemental_patches:dungeonsdelight/living_fire"
 }

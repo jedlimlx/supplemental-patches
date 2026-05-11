@@ -4,6 +4,6 @@
   "mat0": [
     "biomesoplenty:potted_glowflower"
   ],
-  "color": "supplemental_patches:biomesoplenty/glowflower",
+  "blocklight": "supplemental_patches:biomesoplenty/glowflower",
   "reflection_handlers": "minecraft:discard"
 }
