@@ -1,12 +1,9 @@
 {
   "type": "info",
-  "name": "info_2",
+  "name": "SP_resourcepack_info_2",
   "en_US": {
-    "option": "Adding New Materials",
-    "comment": "You can find out more by referring to the documentation at https://github.com/jedlimlx/supplemental-patches/wiki."
+    "option": "What mods are supported",
+    "comment": "The list of supported mods can be found in https://supplemental-patches.pages.dev/mod_list."
   },
-  "ru_RU": {
-    "option": "Добавление новых материалов",
-    "comment": "Подробная информация доступна в документации: https://github.com/jedlimlx/supplemental-patches/wiki."
-  }
+  "priority": 9
 }

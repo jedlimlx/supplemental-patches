@@ -1,0 +1,8 @@
+{
+  "type": "directory",
+  "name": "SHADER_PATCHES",
+  "folder": "packs",
+  "en_US": {
+    "screen": "§6Configure Resource Packs"
+  }
+}

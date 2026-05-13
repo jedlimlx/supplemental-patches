@@ -12,6 +12,8 @@ fun generateShaderProperties(lst: List<Settings>): String = "<empty> <empty> " +
         SettingType.INFORMATION -> it.name
         SettingType.DIVIDER -> List(it.dividers) { "<empty>" }.joinToString(" ")
         SettingType.SETTING -> it.name
+		SettingType.LINK -> it.name
+		SettingType.DIRECTORY_LINK -> "[${it.name}]"
     }
 }
 
@@ -19,7 +21,9 @@ enum class SettingType(val string: String) {
     DIRECTORY("directory"),
     INFORMATION("info"),
     SETTING("setting"),
-    DIVIDER("divider");
+    DIVIDER("divider"),
+	LINK("link"),
+	DIRECTORY_LINK("directory_link");
 
     companion object {
         fun fromString(string: String, file: String): SettingType {
@@ -28,7 +32,9 @@ enum class SettingType(val string: String) {
                 "info" -> INFORMATION
                 "setting" -> SETTING
                 "divider" -> DIVIDER
-                else -> throw MinecraftError("\"$string\" is not a valid setting type. Valid types are [directory, info, setting, divider].", file)
+				"link" -> LINK
+				"directory_link" -> DIRECTORY_LINK
+                else -> throw MinecraftError("\"$string\" is not a valid setting type. Valid types are [directory, info, setting, divider, link].", file)
             }
         }
     }
@@ -135,8 +141,8 @@ fun generateSettings(directory: Path) {
         }
 
         val indent = " ".repeat(4)
-        append("${indent}screen.SUPPLEMENTAL_SETTINGS=${generateShaderProperties(SETTINGS)}\n")
-        append("${indent}screen.SUPPLEMENTAL_SETTINGS.columns=2\n")
+//        append("${indent}screen.SUPPLEMENTAL_SETTINGS=${generateShaderProperties(SETTINGS)}\n")
+//        append("${indent}screen.SUPPLEMENTAL_SETTINGS.columns=2\n")
         SETTINGS.forEach {
             if (it.type == SettingType.DIRECTORY) recurse(it, indent + " ".repeat(4))
         }
@@ -145,8 +151,8 @@ fun generateSettings(directory: Path) {
     val shaderProperties = File(directory.absolutePathString() + SHADER_PROPERTIES_FILE)
     shaderProperties.writeText(
         shaderProperties.readText().replace(
-            "<empty> <empty> [EP_VERSION] [EUPHORIA_SETTINGS]",
-            "<empty> <empty> [SUPPLEMENTAL_VERSION] [SUPPLEMENTAL_SETTINGS] [EP_VERSION] [EUPHORIA_SETTINGS]"
+            "[EP_VERSION] [EUPHORIA_SETTINGS]",
+            "[ABOUT_SUPPLEMENTAL_PATCHES] [SHADER_PATCHES] [EP_VERSION] [EUPHORIA_SETTINGS]"
         ).replace(
             "screen.EP_VERSION.columns=1",
             "screen.EP_VERSION.columns=1\n$shaderPropertiesCode"
@@ -159,7 +165,7 @@ fun generateSettings(directory: Path) {
     val langFile = File(directory.absolutePathString() + LANGUAGE_FILE)
     langFile.appendText(
         StringBuilder("\n$BANNER# Settings added by Supplemental Patches\n").apply {
-            append("screen.SUPPLEMENTAL_SETTINGS=§dConfigure Supplemental Patches\n\n")
+//            append("screen.SUPPLEMENTAL_SETTINGS=§dConfigure Supplemental Patches\n\n")
             fun recurse(setting: Settings) {
                 val output = setting.language("en_US")
                 if (output.isNotEmpty()) append(output + "\n")

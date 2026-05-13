@@ -1,14 +1,13 @@
 {
   "type": "directory",
-  "name": "SUPPLEMENTAL_VERSION",
+  "name": "ABOUT_SUPPLEMENTAL_PATCHES",
   "folder": "about",
   "en_US": {
     "screen": "Supplemental Patches §6${version}",
-    "comment": "This is a modification of Euphoria Patches to provide better support for many popular mods."
+    "comment": "This is a Euphoria Patches add-on that enables users to create custom shaders for modded blocks, entities, items, particles, etc, through a resource-pack. A variety of popular mods are supported through the built-in resource-pack."
   },
   "ru_RU": {
     "screen": "Supplemental Patches §6${version}",
     "comment": "Модификация Euphoria Patches для улучшенной совместимости с многими популярными модами."
-  },
-  "priority": 3
+  }
 }

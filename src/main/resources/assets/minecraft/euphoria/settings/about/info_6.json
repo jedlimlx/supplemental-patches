@@ -1,0 +1,9 @@
+{
+  "type": "info",
+  "name": "SP_info_6",
+  "en_US": {
+    "option": "Mod Website",
+    "comment": "For more information, visit the mod website at https://supplemental-patches.pages.dev/"
+  },
+  "priority": 4
+}

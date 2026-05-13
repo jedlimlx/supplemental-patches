@@ -1,0 +1,9 @@
+{
+  "type": "info",
+  "name": "SP_info_5",
+  "en_US": {
+    "option": "Credits",
+    "comment": "EminGT, SpaceEagle17: The main developers of Complementary / Euphoria. Lemon41625: The main developer of Supplemental Patches. Contributors: chililisoup, mpustovoi"
+  },
+  "priority": 5
+}

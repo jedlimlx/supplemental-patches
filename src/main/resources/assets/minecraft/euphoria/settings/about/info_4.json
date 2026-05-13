@@ -1,0 +1,9 @@
+{
+  "type": "info",
+  "name": "SP_info_4",
+  "en_US": {
+    "option": "Found a §4Bug§r",
+    "comment": "Bugs can be reported on the GitHub Issues pages, https://github.com/jedlimlx/supplemental-patches/issues, or in the Euphoria Patches discord server."
+  },
+  "priority": 7
+}

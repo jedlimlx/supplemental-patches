@@ -254,6 +254,8 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 			)
 
 			filesMatching("**/euphoria/pack.json") { expand(props) }
+			filesMatching("**/euphoria/settings/shader_version.json") { expand(props) }
+			filesMatching("**/euphoria/settings/mod_version.json") { expand(props) }
 			when {
 				isFabric -> {
 					filesMatching("fabric.mod.json") { expand(props) }

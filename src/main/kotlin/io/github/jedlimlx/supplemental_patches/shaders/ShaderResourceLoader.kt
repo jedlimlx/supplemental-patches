@@ -319,7 +319,6 @@ object ShaderResourceLoader {
                     for (i in builder.mat.indices)
                         builder.mat[i] = json["mat$i"]?.asJsonArray?.map { it.asString }?.toMutableList() ?: mutableListOf()
 
-					LOGGER.info(loc.toString())
                     if (json["blocklight"] != null) {
                         if (json["blocklight"].isJsonArray) {
 							val coloursArray = json["blocklight"].asJsonArray
@@ -456,11 +455,13 @@ object ShaderResourceLoader {
     ): CompletableFuture<Void> {
         return CompletableFuture.supplyAsync (
             {
-                fun recurse(path: String = ""): List<Settings> {
+                fun recurse(namespace: String, path: String = ""): List<Settings> {
                     LOGGER.info("Loading settings from $type$path...")
                     return resourceManager.listResources("$type$path") {
+						it.namespace == namespace &&
                         it.path.endsWith(".json") &&
-                                it.path.split("$type$path/").last().count { it == '/' } == 0
+						!it.path.endsWith("entrypoint.json") &&
+						it.path.split("$type$path/").last().count { it == '/' } == 0
                     }.mapWithErrorHandling { (loc, _) ->
                         val json = loadJson(loc, resourceManager)
                         val settingType = SettingType.fromString(
@@ -490,7 +491,7 @@ object ShaderResourceLoader {
                                     json["priority"]?.asInt ?: 0,
                                     languages, listOf(), listOf()
                                 )
-                                output.children.addAll(recurse("$path/${json["folder"].asString}"))
+                                output.children.addAll(recurse(namespace, path = "$path/${json["folder"].asString}"))
 
                                 output
                             }
@@ -535,11 +536,62 @@ object ShaderResourceLoader {
                                     json["activation"]?.asBoolean ?: false
                                 )
                             }
+							SettingType.LINK -> {
+								Settings(
+									SettingType.LINK,
+									json["name"].asString ?: throw MinecraftError("Setting name is not specified.", loc.toString()),
+									json["priority"]?.asInt ?: 0,
+									mapOf(), listOf(), listOf()
+								)
+							}
+							SettingType.DIRECTORY_LINK -> {
+								Settings(
+									SettingType.DIRECTORY_LINK,
+									json["name"].asString ?: throw MinecraftError("Setting name is not specified.", loc.toString()),
+									json["priority"]?.asInt ?: 0,
+									mapOf(), listOf(), listOf()
+								)
+							}
                         }
                     }
                 }
 
-                SETTINGS.addAll(recurse())
+				var count = 0
+				val entrypoints = arrayListOf<Settings>()
+				resourceManager.listResources(type) {
+					it.path.endsWith("entrypoint.json") && it.namespace != "minecraft"
+				}.forEach { (loc, _) ->
+					val json = loadJson(loc, resourceManager)
+					val settingsJson = json["settings"]?.asJsonObject ?: throw MinecraftError(
+						"Entrypoint for settings not specified!",
+						loc.toString()
+					)
+					val languages = settingsJson.keySet().filter { it.matches(Regex("[a-z][a-z]_[A-Z][A-Z]")) }.associateWith {
+						val temp = settingsJson[it].asJsonObject
+						temp.keySet().associateWith { temp[it].asString }
+					}
+
+					val settings = Settings(
+						SettingType.DIRECTORY,
+						settingsJson["name"].asString ?: throw MinecraftError("Setting name is not specified.", loc.toString()),
+						count++,
+						languages, listOf(), listOf()
+					)
+					settings.children.addAll(recurse(loc.namespace))
+					entrypoints.add(settings)
+
+					entrypoints.add(
+						Settings(
+							SettingType.DIRECTORY_LINK,
+							json["about"].asString ?: throw MinecraftError("Setting name is not specified.", loc.toString()),
+							count++,
+							mapOf(), listOf(), listOf()
+						)
+					)
+				}
+
+				SETTINGS.addAll(recurse("minecraft"))
+				SETTINGS.find { it.name == "SHADER_PATCHES" }!!.children.addAll(entrypoints)
             }, executor
         ).thenAcceptAsync {}
     }
