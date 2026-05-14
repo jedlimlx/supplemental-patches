@@ -10,6 +10,7 @@ pluginManagement {
 		maven("https://maven.parchmentmc.org") { name = "ParchmentMC" }
 		maven("https://maven.terraformersmc.com/") { name = "TerraformersMC" }
 		maven("https://thedarkcolour.github.io/KotlinForForge/") { name = "Kotlin for Forge" }
+		maven("https://maven.bawnorton.com/releases")
 
 		exclusiveContent {
 			forRepository { maven("https://api.modrinth.com/maven") { name = "Modrinth" } }

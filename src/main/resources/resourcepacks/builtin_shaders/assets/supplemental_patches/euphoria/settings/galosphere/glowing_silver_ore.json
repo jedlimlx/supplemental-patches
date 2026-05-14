@@ -1,6 +1,6 @@
 {
   "type": "setting",
-  "name": "GLOWING_ORE_SILVER_G",
+  "name": "GLOWING_ORE_PALLADIUM",
   "activation": true,
   "conditions": [
     {
@@ -10,8 +10,7 @@
   ],
   "file": "materials.glsl",
   "en_US": {
-    "option": "Glowing Silver Ore §e[*]§r",
-    "comment": "§e[*]§r This setting will only affect the silver ore added by Galosphere."
+    "option": "Glowing Palladium Ore"
   },
   "ru_RU": {
     "option": "Свечение серебряной руды §e[*]§r",

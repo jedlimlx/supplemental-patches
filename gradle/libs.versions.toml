@@ -14,6 +14,7 @@ moulberry-mixinconstraints = "1.1.0"
 vanniktech-maven-publish = "0.35.0"
 mixin = "0.8.7"
 undercouch-download = "5.7.0"
+mixinsquared = "0.3.7-beta.2"
 
 [libraries]
 kikugie-postprocess = { module = "dev.kikugie:postprocess", version.ref = "stonecutter-postprocess" }
@@ -25,6 +26,9 @@ fletching-table = { module = "dev.kikugie:fletching-table", version.ref = "fletc
 moulberry-mixinconstraints = { module = "com.moulberry:mixinconstraints", version.ref = "moulberry-mixinconstraints" }
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin-jvm" }
 undercouch-download = { module = "de.undercouch.download:de.undercouch.download.gradle.plugin", version.ref = "undercouch-download" }
+mixinsquared-fabric = { module = "com.github.bawnorton.mixinsquared:mixinsquared-fabric", version.ref = "mixinsquared" }
+mixinsquared-forge = { module = "com.github.bawnorton.mixinsquared:mixinsquared-forge", version.ref = "mixinsquared" }
+mixinsquared-neoforge = { module = "com.github.bawnorton.mixinsquared:mixinsquared-neoforge", version.ref = "mixinsquared" }
 
 [plugins]
 stonecutter = { id = "dev.kikugie.stonecutter", version.ref = "stonecutter" }

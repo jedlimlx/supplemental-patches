@@ -50,6 +50,8 @@ repositories {
 	mavenCentral()
 	strictMaven("https://api.modrinth.com/maven", "maven.modrinth") { name = "Modrinth" }
 
+	maven("https://maven.bawnorton.com/releases")
+
 	maven("https://maven.ladysnake.org/releases") { name = "Ladysnake Mods" }
 	maven("https://raw.githubusercontent.com/Fuzss/modresources/main/maven/") { name = "Fuzs Mod Resources" }
 	maven("https://maven.isxander.dev/releases") { name = "Xander Maven" }
@@ -91,8 +93,13 @@ dependencies {
 		}
 	)
 	modImplementation(libs.fabric.loader)
+
 	implementation(libs.moulberry.mixinconstraints)
 	include(libs.moulberry.mixinconstraints)
+
+	implementation(libs.mixinsquared.fabric)
+	include(libs.mixinsquared.fabric)
+
 	modImplementation("net.fabricmc.fabric-api:fabric-api:${prop("deps.fabric-api")}")
 	modImplementation("net.fabricmc:fabric-language-kotlin:${prop("deps.fabric-lang-kotlin")}")
 

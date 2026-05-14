@@ -1,7 +1,7 @@
-if (color.b / color.r > 1.1) {  // Raw Silver Part
+if (color.b / color.r > 1.1) {  // Raw Palladium Part
     #include "/lib/materials/specificMaterials/terrain/rawSilverBlock.glsl"
 
-    #ifdef GLOWING_ORE_SILVER_G
+    #ifdef GLOWING_ORE_PALLADIUM
         emission = 0.6 * (sqrt2(color.b) + 1.2 * pow1_5(color.b));
 
         overlayNoiseIntensity = 0.6, overlayNoiseEmission = 0.5;

@@ -56,6 +56,7 @@ repositories {
 	mavenCentral()
 	strictMaven("https://api.modrinth.com/maven", "maven.modrinth") { name = "Modrinth" }
 
+	maven("https://maven.bawnorton.com/releases")
 	maven("https://thedarkcolour.github.io/KotlinForForge/") { name = "Kotlin for Forge" }
 	maven("https://maven.isxander.dev/releases") { name = "Xander Maven" }
 }
@@ -83,6 +84,11 @@ dependencies {
 
 	implementation(libs.moulberry.mixinconstraints)
 	jarJar(libs.moulberry.mixinconstraints)
+
+	annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:${libs.versions.mixinsquared.get()}")
+
+	implementation(libs.mixinsquared.forge)
+	jarJar(libs.mixinsquared.forge)
 
 	implementation("thedarkcolour:kotlinforforge:${prop("deps.kotlinforforge")}")
 

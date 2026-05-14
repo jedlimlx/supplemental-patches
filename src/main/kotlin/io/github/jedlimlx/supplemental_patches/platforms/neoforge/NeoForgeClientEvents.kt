@@ -55,7 +55,6 @@ object NeoForgeClientEvents {
 		if (event.level.isClientSide) {
 			var message: Component?
 			while (true) {
-				LOGGER.info("asdasdasd ${PLATFORM.messageQueue.size}")
 				message = PLATFORM.messageQueue.removeFirstOrNull()
 				if (message != null)
 					Minecraft.getInstance().player!!.sendSystemMessage(message)

@@ -1,12 +1,11 @@
 {
-  "name": "raw_silver",
-  "glsl": "raw_silver.glsl",
+  "name": "raw_palladium",
+  "glsl": "raw_palladium.glsl",
   "mat0": [
-    "galosphere:raw_silver_block",
     "galosphere:raw_palladium_block"
   ],
   "blocklight": {
-    "color": "supplemental_patches:galosphere/silver_ore",
+    "color": "supplemental_patches:galosphere/palladium_ore",
     "conditions": [
       "GLOWING_RAW_BLOCKS",
       "DO_IPBR_LIGHTS"

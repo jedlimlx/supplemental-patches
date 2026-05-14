@@ -1,0 +1,14 @@
+{
+  "name": "deepslate_palladium_ore",
+  "glsl": "deepslate_palladium_ore.glsl",
+  "mat0": [
+    "galosphere:deepslate_palladium_ore"
+  ],
+  "blocklight": {
+    "color": "supplemental_patches:galosphere/palladium_ore",
+    "conditions": [
+      "GLOWING_ORE_PALLADIUM",
+      "DO_IPBR_LIGHTS"
+    ]
+  }
+}

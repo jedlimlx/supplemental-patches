@@ -1,13 +1,10 @@
 {
-  "name": "silver_lattice",
-  "glsl": "silver_lattice.glsl",
+  "name": "palladium_lattice",
+  "glsl": "palladium_lattice.glsl",
   "mat0": [
-    "galosphere:glow_berries_silver_lattice:berries=true",
     "galosphere:glow_berries_palladium_lattice:berries=true"
   ],
   "mat1": [
-    "galosphere:silver_lattice",
-    "galosphere:glow_berries_silver_lattice:berries=false",
     "galosphere:palladium_lattice",
     "galosphere:glow_berries_palladium_lattice:berries=false",
     "caverns_and_chasms:silver_bars",

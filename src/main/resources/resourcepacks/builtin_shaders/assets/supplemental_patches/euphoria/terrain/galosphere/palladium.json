@@ -1,10 +1,7 @@
 {
-  "name": "silver",
-  "glsl": "silver.glsl",
+  "name": "palladium",
+  "glsl": "palladium.glsl",
   "mat0": [
-    "galosphere:silver_block",
-    "galosphere:silver_panel",
-    "galosphere:silver_tiles",
     "galosphere:palladium_block",
     "galosphere:palladium_panel",
     "galosphere:palladium_tiles",
@@ -12,16 +9,12 @@
     "caverns_and_chasms:silver_block"
   ],
   "mat1": [
-    "galosphere:silver_panel_stairs",
-    "galosphere:silver_panel_slab",
-    "galosphere:silver_tiles_stairs",
-    "galosphere:silver_tiles_slab",
-    "galosphere:silver_balance",
     "galosphere:palladium_panel_stairs",
     "galosphere:palladium_panel_slab",
     "galosphere:palladium_tiles_stairs",
     "galosphere:palladium_tiles_slab",
-    "galosphere:palladium_balance"
+    "galosphere:palladium_balance",
+    "galosphere:palladium_dust"
   ],
   "mat3": [
     "caverns_and_chasms:medium_weighted_pressure_plate"
