@@ -15,6 +15,7 @@
     "/shaders/program/dh_water.glsl",
     "/shaders/program/gbuffers_beaconbeam.glsl",
     "/shaders/program/gbuffers_textured.glsl",
-    "/shaders/program/gbuffers_water.glsl"
+    "/shaders/program/gbuffers_water.glsl",
+    "/shaders/program/gbuffers_entities.glsl"
   ]
 }

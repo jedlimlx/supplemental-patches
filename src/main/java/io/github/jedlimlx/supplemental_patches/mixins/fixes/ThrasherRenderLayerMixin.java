@@ -1,4 +1,4 @@
-package io.github.jedlimlx.supplemental_patches.mixins;
+package io.github.jedlimlx.supplemental_patches.mixins.fixes;
 
 //? neoforge || forge {
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;
