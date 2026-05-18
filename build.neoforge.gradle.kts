@@ -97,7 +97,7 @@ dependencies {
 	addMods(listOf("jei!", "jade!"))
 
 	// rendering / optimisation mods
-	addMods(listOf("iris", "sodium!", "lithium!", "iris-shader-folder!"))
+	addMods(listOf("iris", "sodium:mc1.21.1-0.6.13-neoforge", "lithium!", "iris-shader-folder!"))
 	runtimeOnly("maven.modrinth:euphoria-patches:${prop("deps.euphoria-patches")}-neoforge")
 
 	// general library mods

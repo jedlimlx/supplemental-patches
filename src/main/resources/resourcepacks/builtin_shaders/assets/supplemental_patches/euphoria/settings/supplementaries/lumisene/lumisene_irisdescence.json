@@ -1,0 +1,10 @@
+{
+  "type": "setting",
+  "name": "LUMISENE_IRIDESCENCE",
+  "activation": true,
+  "default": true,
+  "file": "materials.glsl",
+  "en_US": {
+    "option": "Lumisene Iridescence"
+  }
+}

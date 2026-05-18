@@ -1,0 +1,9 @@
+{
+  "type": "directory",
+  "name": "SUPPLEMENTARIES",
+  "folder": "supplementaries",
+  "en_US": {
+    "screen": "Supplementaries §e[*]§r",
+    "comment": "§e[*]§r Includes settings for Amendments and Supplementaries Squared"
+  }
+}

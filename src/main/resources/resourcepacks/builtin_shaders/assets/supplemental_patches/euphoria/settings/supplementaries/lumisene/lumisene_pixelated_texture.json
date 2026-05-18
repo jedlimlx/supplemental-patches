@@ -1,0 +1,11 @@
+{
+  "type": "setting",
+  "name": "LUMISENE_PIXELATED_TEXTURE",
+  "activation": true,
+  "default": true,
+  "file": "materials.glsl",
+  "en_US": {
+    "option": "Lumisene Pixelated Texture §e[*]§r",
+    "comment": "Enables a noise-based pixelated texture for the Lumisene. §e[*]§r No irisdescence effect if this is disabled."
+  }
+}
