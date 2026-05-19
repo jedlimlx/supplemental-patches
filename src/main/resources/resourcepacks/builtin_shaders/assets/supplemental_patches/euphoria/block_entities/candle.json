@@ -1,0 +1,14 @@
+{
+  "name": "candle",
+  "glsl": "candle.glsl",
+  "mat0": [
+    "amendments:skull_candle:lit=true",
+    "amendments:skull_candle_wall:lit=true",
+    "amendments:skull_candle_soul:lit=true",
+    "amendments:skull_candle_soul_wall:lit=true",
+    "amendments:skull_candle_ender:lit=true",
+    "amendments:skull_candle_ender_wall:lit=true",
+    "amendments:skull_candle_cupric:lit=true",
+    "amendments:skull_candle_cupric_wall:lit=true"
+  ]
+}

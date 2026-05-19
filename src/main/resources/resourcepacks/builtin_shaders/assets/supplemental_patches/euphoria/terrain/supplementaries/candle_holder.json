@@ -436,5 +436,6 @@
       ]
     }
   ],
-  "block_size": 64
+  "block_size": 64,
+  "reflection_handlers": "minecraft:discard"
 }

@@ -36,10 +36,6 @@ public class BlockEntityRenderDispatcherMixin {
 		switch (blockEntity) {
 			case WallLanternBlockTile lantern ->
 				intId = blockStateIds.getOrDefault(lantern.getHeldBlock().getBlock().defaultBlockState(), -1);
-			case CandleSkullBlockTile skull -> intId = blockStateIds.getOrDefault(
-				skull.getCandle().getBlock().defaultBlockState().setValue(BlockStateProperties.LIT, true),
-				-1
-			);
 			case LiquidCauldronBlockTile cauldron ->
 				//intId = cauldron.getSoftFluidTank().getFluid()
 				intId = -1;
