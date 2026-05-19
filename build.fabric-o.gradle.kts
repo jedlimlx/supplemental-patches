@@ -1,6 +1,15 @@
 plugins {
 	id("mod-platform")
-	id("fabric-loom")
+	id("net.fabricmc.fabric-loom-remap")
+}
+
+stonecutter {
+	replacements.string(current.parsed >= "1.21.11") {
+		replace("\"particles\" in it.location()", "\"particles\" in it.location()")
+		replace("resourceIdentifier", "resourceIdentifier")
+		replace("ResourceLocation", "Identifier")
+		replace("location()", "identifier()")
+	}
 }
 
 platform {
@@ -50,6 +59,7 @@ repositories {
 	mavenCentral()
 	strictMaven("https://api.modrinth.com/maven", "maven.modrinth") { name = "Modrinth" }
 
+	maven("https://maven.parchmentmc.org") { name = "ParchmentMC" }
 	maven("https://maven.bawnorton.com/releases")
 
 	maven("https://maven.ladysnake.org/releases") { name = "Ladysnake Mods" }
@@ -69,11 +79,14 @@ dependencies {
 	fun addMods(mods: List<String>) {
 		mods.forEach {
 			try {
-				val id = it.replace("*", "").replace("!", "")
-				val mod = fletchingTable.modrinth(id, prop("deps.minecraft"), "fabric")
+				val tokens = it.split(":")
+				val id = tokens[0].replace("*", "").replace("!", "")
+				val modString = if (tokens.size == 1) {
+					val mod = fletchingTable.modrinth(id, prop("deps.minecraft"), "fabric")
+					"${mod.group}:${id}:${mod.version}"
+				} else "maven.modrinth:$id:${tokens[1]}"
 
-				val modString = "${mod.group}:${id}:${mod.version}"
-				when (it.last()) {
+				when (tokens[0].last()) {
 					'*' -> modCompileOnly(modString)
 					'!' -> modRuntimeOnly(modString)
 					else -> modImplementation(modString)
@@ -89,7 +102,8 @@ dependencies {
 	mappings(
 		loom.layered {
 			officialMojangMappings()
-			if (hasProperty("deps.parchment")) parchment("org.parchmentmc.data:parchment-${prop("deps.parchment")}@zip")
+			if (hasProperty("deps.parchment"))
+				parchment("org.parchmentmc.data:parchment-${minecraftVersion}:${prop("deps.parchment")}@zip")
 		}
 	)
 	modImplementation(libs.fabric.loader)
@@ -141,12 +155,15 @@ dependencies {
 
 	// jei / jade
 	addMods(listOf("jade!"))
-	if (prop("deps.minecraft") != "1.20.1")
+	if (minecraftVersion != "1.20.1")
 		addMods(listOf("jei!"))
 
 	// rendering / optimisation mods
-	addMods(listOf("iris", "sodium!", "lithium!", "iris-shader-folder!"))
-	runtimeOnly("maven.modrinth:euphoria-patches:${prop("deps.euphoria-patches")}-fabric")
+	addMods(listOf("iris", "lithium!", "iris-shader-folder!"))
+	if (minecraftVersion == "1.21.1")
+		addMods(listOf("sodium:mc1.21.1-0.6.13-fabric"))
+	else addMods(listOf("sodium!"))
+	modRuntimeOnly("maven.modrinth:euphoria-patches:${prop("deps.euphoria-patches")}-fabric")
 
 	// general library mods
 	addMods(
@@ -262,12 +279,4 @@ dependencies {
 			"illager-invasion!"
 		)
 	)
-}
-
-stonecutter {
-	replacements.string(current.parsed >= "1.21.11") {
-		replace("resourceIdentifier", "resourceIdentifier")
-		replace("ResourceLocation", "Identifier")
-		replace("location()", "identifier()")
-	}
 }

@@ -25,11 +25,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 import java.io.File
 import java.util.*
 import javax.inject.Inject
-import kotlin.io.path.Path
-import kotlin.io.path.createDirectory
-import kotlin.io.path.isDirectory
-import kotlin.io.path.listDirectoryEntries
-import kotlin.io.path.name
 
 fun Project.prop(name: String): String = (findProperty(name) ?: "") as String
 

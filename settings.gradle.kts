@@ -28,7 +28,7 @@ plugins {
 stonecutter {
 	create(rootProject) {
 		fun match(version: String, vararg loaders: String) =
-			loaders.forEach { version("$version-$it", version).buildscript = "build.$it.gradle.kts" }
+			loaders.forEach { version("$version-$it", version).buildscript = getBuildscript(it, version) }
 
 		match("1.20.1", "fabric", "forge")
 		match("1.21.1", "fabric", "neoforge")
@@ -38,4 +38,15 @@ stonecutter {
 
 		vcsVersion = "1.21.1-neoforge"
 	}
+}
+
+private fun getBuildscript(loader: String, version: String): String {
+	if (loader == "fabric") {
+		return if (version.startsWith("1.")) {
+			"build.fabric-o.gradle.kts"
+		} else {
+			"build.fabric-m.gradle.kts"
+		}
+	}
+	return "build.$loader.gradle.kts"
 }

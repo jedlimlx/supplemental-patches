@@ -20,7 +20,7 @@ import java.util.Optional;
 
 import static net.bunten.enderscape.registry.EnderscapeBiomes.*;
 
-//? neoforge {
+//? neoforge && 1.21.1 {
 import net.bunten.enderscape.biome.util.SkyParameters;
  //?} fabric && <=1.21.10 {
 /*import net.bunten.enderscape.biome.util.BiomeParameters;

@@ -65,17 +65,20 @@ dependencies {
 	fun addMods(mods: List<String>) {
 		mods.forEach {
 			try {
-				val id = it.replace("*", "").replace("!", "")
-				val mod = fletchingTable.modrinth(id, prop("deps.minecraft"), "forge")
+				val tokens = it.split(":")
+				val id = tokens[0].replace("*", "").replace("!", "")
+				val modString = if (tokens.size == 1) {
+					val mod = fletchingTable.modrinth(id, prop("deps.minecraft"), "forge")
+					"${mod.group}:${id}:${mod.version}"
+				} else "maven.modrinth:$id:${tokens[1]}"
 
-				val modString = "${mod.group}:${id}:${mod.version}"
-				when (it.last()) {
+				when (tokens[0].last()) {
 					'*' -> modCompileOnly(modString)
 					'!' -> modRuntimeOnly(modString)
 					else -> modImplementation(modString)
 				}
 			} catch (e: Exception) {
-				println(e)
+				logger.warn(e.toString())
 			}
 		}
 	}

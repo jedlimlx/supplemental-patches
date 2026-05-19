@@ -3,6 +3,15 @@ plugins {
 	id("net.neoforged.moddev")
 }
 
+stonecutter {
+	replacements.string(current.parsed >= "1.21.11") {
+		replace("\"particles\" in it.location()", "\"particles\" in it.location()")
+		replace("resourceIdentifier", "resourceIdentifier")
+		replace("ResourceLocation", "Identifier")
+		replace("location()", "identifier()")
+	}
+}
+
 platform {
 	loader = "neoforge"
 	dependencies {
@@ -243,12 +252,4 @@ dependencies {
 
 tasks.named("createMinecraftArtifacts") {
 	dependsOn(tasks.named("stonecutterGenerate"))
-}
-
-stonecutter {
-	replacements.string(current.parsed >= "1.21.11") {
-		replace("resourceIdentifier", "resourceIdentifier")
-		replace("ResourceLocation", "Identifier")
-		replace("location()", "identifier()")
-	}
 }
