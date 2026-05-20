@@ -89,6 +89,7 @@ dependencies {
 	jarJar(libs.moulberry.mixinconstraints)
 
 	annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:${libs.versions.mixinsquared.get()}")
+	compileOnly("com.github.bawnorton.mixinsquared:mixinsquared-common:${libs.versions.mixinsquared.get()}")
 
 	implementation(libs.mixinsquared.forge)
 	jarJar(libs.mixinsquared.forge)

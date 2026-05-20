@@ -190,10 +190,17 @@ dependencies {
 	// supplementaries
 	addMods(
 		listOf(
-			"supplementaries",
-			"amendments",
-			"supplementaries-squared",
+			"supplementaries*",
+			"amendments*",
+			"supplementaries-squared*",
 			"snowy-spirit!"
+		)
+	)
+
+	// galena
+	addMods(
+		listOf(
+			"doom-gloom"
 		)
 	)
 

@@ -164,7 +164,7 @@ dependencies {
 	addMods(
 		listOf(
 			"oreganized",
-			"doom-gloom*",
+			"doom-gloom",
 			"windswept*"
 		)
 	)
