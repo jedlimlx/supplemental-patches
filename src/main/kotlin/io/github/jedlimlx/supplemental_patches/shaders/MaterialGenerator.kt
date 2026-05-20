@@ -335,7 +335,14 @@ fun generateBlockEntityMaterials(directory: Path) {
             val blockEntity = FILTERED_BLOCK_ENTITIES[count]
             BLOCK_ENTITIES_MAP[it] = blockEntity
 
-            val code = "// block.$it = ${blockEntity.name}\n${blockEntity.glsl}"
+			val code = if (FILTERED_BLOCK_ENTITIES.size == 1) {
+				"if (blockEntityId == ${it}) {\n" +
+				"// block.$it = ${blockEntity.name}\n${blockEntity.glsl}\n".prependIndent("    ") +
+				"}"
+			} else {
+				"// block.$it = ${blockEntity.name}\n${blockEntity.glsl}"
+			}
+
             count++
 
             code
