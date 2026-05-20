@@ -250,10 +250,13 @@ sourceSets {
 	}
 }
 
-tasks.named("createMinecraftArtifacts") {
-	dependsOn(tasks.named("stonecutterGenerate"))
+tasks.named<ProcessResources>("processResources") {
+	from(rootProject.file("src/main/resources/aw/${stonecutter.current.version}.cfg")) {
+		rename { "accesstransformer.cfg" }
+		into("META-INF")
+	}
 }
 
-stonecutter {
-
+tasks.named("createMinecraftArtifacts") {
+	dependsOn(tasks.named("stonecutterGenerate"))
 }
