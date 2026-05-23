@@ -990,7 +990,6 @@ fun modifyGBuffers(directory: Path) {
             "    float skyLightCheck = 0.0;\n" +
             "    float overlayNoiseEmission;\n" +
             "    vec3 maRecolor;\n" +
-            "    bool noGeneratedNormals;\n" +
             "    bool noVanillaAO;\n" +
             "#endif\n"
         )
