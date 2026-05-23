@@ -32,7 +32,7 @@ fun Project.env(variable: String): String? = providers.environmentVariable(varia
 
 fun Project.envTrue(variable: String): Boolean = env(variable)?.toDefaultLowerCase() == "true"
 
-fun Project.inferredLoader() = project.buildFile.name.substringAfter('.').replace(".gradle.kts", "")
+fun Project.inferredLoader() = project.buildFile.name.substringAfter('.').replace(".gradle.kts", "").replace("-o", "").replace("-m", "")
 
 fun DependencyHandlerScope.modrinthImplementation(project: Project, modName: String) {
 	val propName = project.prop("deps.${modName}")
@@ -356,9 +356,7 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 		tasks.register<Copy>("buildAndCollect") {
 			group = "build"
 			from(
-				tasks.named(extension.jarTask.get()),
-				tasks.named(extension.sourcesJarTask.get()),
-				tasks.named("javadocJar").get()
+				tasks.named(extension.jarTask.get())
 			)
 			into(rootProject.layout.buildDirectory.file("libs/$modVersion"))
 			dependsOn("build")

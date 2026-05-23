@@ -2,6 +2,7 @@ package io.github.jedlimlx.supplemental_patches.mixins;
 
 //? 1.20.1 || 1.21.1 {
 import com.bawnorton.mixinsquared.TargetHandler;
+import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.irisshaders.iris.shaderpack.materialmap.WorldRenderingSettings;
 import net.irisshaders.iris.uniforms.CapturedRenderingState;
@@ -15,6 +16,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+@IfModLoaded(value = "amendments")
 @Mixin(value = BlockEntityRenderDispatcher.class, priority = 1500)
 public class BlockEntityRenderDispatcherMixin {
 	@TargetHandler(
