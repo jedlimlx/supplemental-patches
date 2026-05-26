@@ -1,0 +1,9 @@
+{
+  "name": "sunstone",
+  "glsl": "sunstone.glsl",
+  "mat0": [
+    "spawn:sunstone"
+  ],
+  "blocklight": "minecraft:magma_block",
+  "reflection_handler": "minecraft:discard"
+}

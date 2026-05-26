@@ -1,10 +1,13 @@
 {
-  "name": "black_sand",
-  "glsl": "black_sand.glsl",
+  "name": "black_sandstone",
+  "glsl": "black_sandstone.glsl",
   "mat0": [
     "biomesoplenty:black_sandstone",
     "biomesoplenty:cut_black_sandstone",
-    "biomesoplenty:chiseled_black_sandstone"
+    "biomesoplenty:chiseled_black_sandstone",
+    "spawn:blasted_sandstone",
+    "spawn:cut_blasted_sandstone",
+    "spawn:chiseled_blasted_sandstone"
   ],
   "mat1": [
     "biomesoplenty:black_sandstone_slab",
@@ -12,7 +15,13 @@
     "biomesoplenty:black_sandstone_wall",
     "biomesoplenty:cut_black_sandstone_slab",
     "biomesoplenty:cut_black_sandstone_stairs",
-    "biomesoplenty:cut_black_sandstone_wall"
+    "biomesoplenty:cut_black_sandstone_wall",
+    "spawn:blasted_sandstone_slab",
+    "spawn:blasted_sandstone_stairs",
+    "spawn:blasted_sandstone_wall",
+    "spawn:cut_blasted_sandstone_slab",
+    "spawn:cut_blasted_sandstone_stairs",
+    "spawn:cut_blasted_sandstone_wall"
   ],
   "reflection_handlers": [
     null,

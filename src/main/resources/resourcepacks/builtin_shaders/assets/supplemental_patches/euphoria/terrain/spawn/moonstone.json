@@ -1,0 +1,9 @@
+{
+  "name": "moonstone",
+  "glsl": "sunstone.glsl",
+  "mat0": [
+    "spawn:moonstone"
+  ],
+  "blocklight": "supplemental_patches:spawn/moonstone",
+  "reflection_handler": "minecraft:discard"
+}

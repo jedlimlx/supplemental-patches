@@ -1,0 +1,7 @@
+{
+  "name": "barbed",
+  "glsl": "barbed.glsl",
+  "mat0": [
+    "spawn:barbed"
+  ]
+}

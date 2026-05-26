@@ -1,5 +1,5 @@
-highlightMult = 3.0;
-smoothnessG = 0.8;
+highlightMult = 2.0;
+smoothnessG = 0.4;
 smoothnessD = smoothnessG;
 
 #ifdef COATED_TEXTURES

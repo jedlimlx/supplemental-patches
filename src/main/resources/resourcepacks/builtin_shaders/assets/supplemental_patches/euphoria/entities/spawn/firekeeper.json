@@ -1,0 +1,7 @@
+{
+  "name": "firekeeper",
+  "glsl": "firekeeper.glsl",
+  "mat0": [
+    "spawn:firekeeper"
+  ]
+}
