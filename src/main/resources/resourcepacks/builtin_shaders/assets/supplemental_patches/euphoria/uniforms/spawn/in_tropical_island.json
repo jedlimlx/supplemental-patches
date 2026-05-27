@@ -1,0 +1,9 @@
+{
+  "type": "float",
+  "name": "inTropicalIsland",
+  "code": "smooth(54, if(in(biome, BIOME_TROPICAL_ISLAND), 1, 0), 15, 15)",
+  "default": 0.0,
+  "conditions": [
+    "MOD_SPAWN"
+  ]
+}

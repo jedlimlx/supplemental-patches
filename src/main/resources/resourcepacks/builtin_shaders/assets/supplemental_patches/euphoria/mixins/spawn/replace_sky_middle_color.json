@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/colors/skyColors.glsl",
+  "type": "replace",
+  "key": "mix(noonMiddleSkyColor, sunsetMiddleSkyColor, invNoonFactor2);",
+  "code": "replace_sky_middle_color.glsl"
+}

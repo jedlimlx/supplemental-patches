@@ -1,0 +1,9 @@
+{
+  "type": "float",
+  "name": "inFogColoredBiome",
+  "code": "max(inVolcanicIsland, max(max(inColdIsland, inDodoIsland), max(inSandyIsland, inTropicalIsland)))",
+  "default": 0.0,
+  "conditions": [
+    "MOD_SPAWN"
+  ]
+}
