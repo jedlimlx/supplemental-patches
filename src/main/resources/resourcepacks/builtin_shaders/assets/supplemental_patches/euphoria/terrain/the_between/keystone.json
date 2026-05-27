@@ -1,0 +1,17 @@
+{
+  "name": "keystone",
+  "glsl": "keystone.glsl",
+  "mat0": [
+    "the_between:keystone:lit=false"
+  ],
+  "mat2": [
+    "the_between:keystone:lit=true"
+  ],
+  "blocklight": [
+    null,
+    null,
+    "supplemental_patches:the_between/keystone",
+    null
+  ],
+  "held_lighting": true
+}

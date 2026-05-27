@@ -1,0 +1,12 @@
+{
+  "name": "linked_portal",
+  "glsl": "linked_portal.glsl",
+  "mat0": [
+    "the_between:linked_portal:unstable=false"
+  ],
+  "mat2": [
+    "the_between:linked_portal:unstable=true"
+  ],
+  "blocklight": "supplemental_patches:the_between/keystone",
+  "held_lighting": true
+}
