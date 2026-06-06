@@ -1,0 +1,200 @@
+{
+  "name": "sparklers",
+  "glsl": "sparklers.glsl",
+  "mat0": [
+    "caverns_and_chasms:sparkler:lit=true",
+    "caverns_and_chasms:wall_sparkler:lit=true",
+    "caverns_and_chasms:black_sparkler:lit=true",
+    "caverns_and_chasms:black_wall_sparkler:lit=true",
+    "caverns_and_chasms:gray_sparkler:lit=true",
+    "caverns_and_chasms:gray_wall_sparkler:lit=true",
+    "caverns_and_chasms:light_gray_sparkler:lit=true",
+    "caverns_and_chasms:light_gray_wall_sparkler:lit=true",
+    "caverns_and_chasms:white_sparkler:lit=true",
+    "caverns_and_chasms:white_wall_sparkler:lit=true",
+    "caverns_and_chasms:brown_sparkler:lit=true",
+    "caverns_and_chasms:brown_wall_sparkler:lit=true",
+    "dye_the_world:beige_sparkler:lit=true",
+    "dye_the_world:beige_wall_sparkler:lit=true"
+  ],
+  "mat2": [
+    "dye_the_world:amber_sparkler:lit=true",
+    "dye_the_world:amber_wall_sparkler:lit=true"
+  ],
+  "mat4": [
+    "dye_the_world:aqua_sparkler:lit=true",
+    "dye_the_world:aqua_wall_sparkler:lit=true"
+  ],
+  "mat6": [
+    "caverns_and_chasms:blue_sparkler:lit=true",
+    "caverns_and_chasms:blue_wall_sparkler:lit=true"
+  ],
+  "mat8": [
+    "dye_the_world:coral_sparkler:lit=true",
+    "dye_the_world:coral_wall_sparkler:lit=true"
+  ],
+  "mat10": [
+    "caverns_and_chasms:cyan_sparkler:lit=true",
+    "caverns_and_chasms:cyan_wall_sparkler:lit=true"
+  ],
+  "mat12": [
+    "dye_the_world:forest_sparkler:lit=true",
+    "dye_the_world:forest_wall_sparkler:lit=true"
+  ],
+  "mat14": [
+    "dye_the_world:ginger_sparkler:lit=true",
+    "dye_the_world:ginger_wall_sparkler:lit=true"
+  ],
+  "mat16": [
+    "caverns_and_chasms:green_sparkler:lit=true",
+    "caverns_and_chasms:green_wall_sparkler:lit=true"
+  ],
+  "mat18": [
+    "dye_the_world:indigo_sparkler:lit=true",
+    "dye_the_world:indigo_wall_sparkler:lit=true"
+  ],
+  "mat20": [
+    "caverns_and_chasms:light_blue_sparkler:lit=true",
+    "caverns_and_chasms:light_blue_wall_sparkler:lit=true"
+  ],
+  "mat22": [
+    "caverns_and_chasms:lime_sparkler:lit=true",
+    "caverns_and_chasms:lime_wall_sparkler:lit=true"
+  ],
+  "mat24": [
+    "caverns_and_chasms:magenta_sparkler:lit=true",
+    "caverns_and_chasms:magenta_wall_sparkler:lit=true"
+  ],
+  "mat26": [
+    "dye_the_world:maroon_sparkler:lit=true",
+    "dye_the_world:maroon_wall_sparkler:lit=true"
+  ],
+  "mat28": [
+    "dye_the_world:mint_sparkler:lit=true",
+    "dye_the_world:mint_wall_sparkler:lit=true"
+  ],
+  "mat30": [
+    "dye_the_world:navy_sparkler:lit=true",
+    "dye_the_world:navy_wall_sparkler:lit=true"
+  ],
+  "mat32": [
+    "dye_the_world:olive_sparkler:lit=true",
+    "dye_the_world:olive_wall_sparkler:lit=true"
+  ],
+  "mat34": [
+    "caverns_and_chasms:orange_sparkler:lit=true",
+    "caverns_and_chasms:orange_wall_sparkler:lit=true"
+  ],
+  "mat36": [
+    "caverns_and_chasms:pink_sparkler:lit=true",
+    "caverns_and_chasms:pink_wall_sparkler:lit=true"
+  ],
+  "mat38": [
+    "caverns_and_chasms:purple_sparkler:lit=true",
+    "caverns_and_chasms:purple_wall_sparkler:lit=true"
+  ],
+  "mat40": [
+    "caverns_and_chasms:red_sparkler:lit=true",
+    "caverns_and_chasms:red_wall_sparkler:lit=true"
+  ],
+  "mat42": [
+    "dye_the_world:rose_sparkler:lit=true",
+    "dye_the_world:rose_wall_sparkler:lit=true"
+  ],
+  "mat44": [
+    "dye_the_world:slate_sparkler:lit=true",
+    "dye_the_world:slate_wall_sparkler:lit=true"
+  ],
+  "mat46": [
+    "dye_the_world:tan_sparkler:lit=true",
+    "dye_the_world:tan_wall_sparkler:lit=true"
+  ],
+  "mat48": [
+    "dye_the_world:teal_sparkler:lit=true",
+    "dye_the_world:teal_wall_sparkler:lit=true"
+  ],
+  "mat50": [
+    "dye_the_world:verdant_sparkler:lit=true",
+    "dye_the_world:verdant_wall_sparkler:lit=true"
+  ],
+  "mat52": [
+    "caverns_and_chasms:yellow_sparkler:lit=true",
+    "caverns_and_chasms:yellow_wall_sparkler:lit=true"
+  ],
+  "blocklight": [
+    {
+      "conditions": ["COLORED_SPARKLER_LIGHT"],
+      "color": [
+        "minecraft:standard_candle",
+        null,
+        "supplemental_patches:dye_depot/candles/amber",
+        null,
+        "supplemental_patches:dye_depot/candles/aqua",
+        null,
+        "minecraft:blue_candle",
+        null,
+        "supplemental_patches:dye_depot/candles/coral",
+        null,
+        "minecraft:cyan_candle",
+        null,
+        "supplemental_patches:dye_depot/candles/forest",
+        null,
+        "supplemental_patches:dye_depot/candles/ginger",
+        null,
+        "minecraft:green_candle",
+        null,
+        "supplemental_patches:dye_depot/candles/indigo",
+        null,
+        "minecraft:light_blue_candle",
+        null,
+        "minecraft:lime_candle",
+        null,
+        "minecraft:magenta_candle",
+        null,
+        "supplemental_patches:dye_depot/candles/maroon",
+        null,
+        "supplemental_patches:dye_depot/candles/mint",
+        null,
+        "supplemental_patches:dye_depot/candles/navy",
+        null,
+        "supplemental_patches:dye_depot/candles/olive",
+        null,
+        "minecraft:orange_candle",
+        null,
+        "minecraft:pink_candle",
+        null,
+        "minecraft:purple_candle",
+        null,
+        "minecraft:red_candle",
+        null,
+        "supplemental_patches:dye_depot/candles/rose",
+        null,
+        "supplemental_patches:dye_depot/candles/slate",
+        null,
+        "supplemental_patches:dye_depot/candles/tan",
+        null,
+        "supplemental_patches:dye_depot/candles/teal",
+        null,
+        "supplemental_patches:dye_depot/candles/verdant",
+        null,
+        "minecraft:yellow_candle",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "color": "minecraft:standard_candle"
+    }
+  ],
+  "block_size": 64,
+  "reflection_handlers": "minecraft:discard"
+}

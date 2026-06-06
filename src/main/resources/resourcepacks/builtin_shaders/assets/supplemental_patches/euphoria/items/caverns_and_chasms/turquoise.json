@@ -1,0 +1,9 @@
+{
+  "name": "turquoise",
+  "glsl": "turquoise.glsl",
+  "mat0": [
+    "caverns_and_chasms:turquoise",
+    "caverns_and_chasms:caviar",
+    "caverns_and_chasms:trim_modifier_smithing_template"
+  ]
+}

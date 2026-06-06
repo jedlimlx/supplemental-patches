@@ -1,0 +1,11 @@
+{
+  "name": "false_hope",
+  "glsl": "false_hope.glsl",
+  "mat0": [
+    "caverns_and_chasms:false_hope"
+  ],
+  "waving": "minecraft:grounded_waving_foliage",
+  "blocklight": "minecraft:campfire",
+  "held_lighting": true,
+  "reflection_handler": "minecraft:discard"
+}

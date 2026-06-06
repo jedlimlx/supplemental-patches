@@ -14,5 +14,11 @@
     "netherexp:cut_necronium_stairs",
     "netherexp:necronium_grate:fluidlogged=air",
     "netherexp:necronium_grate:fluidlogged=water"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
   ]
 }

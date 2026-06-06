@@ -1,0 +1,8 @@
+{
+  "name": "zirconia",
+  "glsl": "zirconia.glsl",
+  "mat0": [
+    "caverns_and_chasms:zirconia",
+    "caverns_and_chasms:unicorn_horn"
+  ]
+}

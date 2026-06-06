@@ -1,4 +1,4 @@
-materialMask = OSIEBCA * deferredMaterial("supplemental_patches:caverns_and_chasms/sanguine"); // Lead Fresnel
+materialMask = OSIEBCA * deferredMaterial("supplemental_patches:caverns_and_chasms/sanguine"); // Sanguine Fresnel
 subsurfaceMode = 2;
 
 #ifdef GBUFFERS_TERRAIN

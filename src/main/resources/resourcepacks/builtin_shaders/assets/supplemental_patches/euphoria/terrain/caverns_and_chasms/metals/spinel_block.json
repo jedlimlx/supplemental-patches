@@ -9,7 +9,9 @@
   "mat1": [
     "caverns_and_chasms:spinel_brick_slab",
     "caverns_and_chasms:spinel_brick_stairs",
-    "caverns_and_chasms:spinel_brick_wall"
+    "caverns_and_chasms:spinel_brick_wall",
+    "caverns_and_chasms:bejeweled_anvil",
+    "caverns_and_chasms:atoning_table"
   ],
   "reflection_handlers": [
     null,

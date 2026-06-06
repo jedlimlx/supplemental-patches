@@ -1,0 +1,24 @@
+{
+  "name": "tin_ore",
+  "glsl": "tin_ore.glsl",
+  "mat0": [
+    "caverns_and_chasms:tin_ore"
+  ],
+  "mat2": [
+    "caverns_and_chasms:deepslate_tin_ore"
+  ],
+  "mat4": [
+    "caverns_and_chasms:cassiterite_tin_ore"
+  ],
+  "mat6": [
+    "caverns_and_chasms:cylindrite_tin_ore"
+  ],
+  "blocklight": {
+    "color": "supplemental_patches:caverns_and_chasms/tin_ore",
+    "conditions": [
+      "GLOWING_ORE_TIN",
+      "DO_IPBR_LIGHTS"
+    ]
+  },
+  "block_size": 8
+}

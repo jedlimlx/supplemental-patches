@@ -1,0 +1,12 @@
+{
+  "name": "tin_bulb",
+  "glsl": "tin_bulb.glsl",
+  "mat0": [
+    "caverns_and_chasms:tin_bulb",
+    "caverns_and_chasms:dimmer",
+    "caverns_and_chasms:wall_dimmer"
+  ],
+  "blocklight": "supplemental_patches:caverns_and_chasms/tin_bulb",
+  "held_lighting": false,
+  "reflection_handler": "minecraft:discard"
+}

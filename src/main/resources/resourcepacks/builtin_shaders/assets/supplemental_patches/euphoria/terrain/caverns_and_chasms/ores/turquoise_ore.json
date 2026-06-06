@@ -1,0 +1,17 @@
+{
+  "name": "turquoise_ore",
+  "glsl": "turquoise_ore.glsl",
+  "mat0": [
+    "caverns_and_chasms:turquoise_ore"
+  ],
+  "mat2": [
+    "caverns_and_chasms:deepslate_turquoise_ore"
+  ],
+  "blocklight": {
+    "color": "supplemental_patches:caverns_and_chasms/turquoise_ore",
+    "conditions": [
+      "GLOWING_ORE_TURQUOISE",
+      "DO_IPBR_LIGHTS"
+    ]
+  }
+}

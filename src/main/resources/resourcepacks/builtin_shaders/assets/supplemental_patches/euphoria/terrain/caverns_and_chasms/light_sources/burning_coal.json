@@ -1,0 +1,10 @@
+{
+  "name": "burning_coal",
+  "glsl": "burning_coal.glsl",
+  "mat0": [
+    "caverns_and_chasms:coal:lit=true",
+    "caverns_and_chasms:charcoal:lit=true"
+  ],
+  "blocklight": "minecraft:fire",
+  "reflection_handler": "minecraft:discard"
+}

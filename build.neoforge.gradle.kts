@@ -139,7 +139,7 @@ dependencies {
 			"autumnity",
 			"berry-good",
 			"buzzier-bees",
-			"caverns-and-chasms*",
+			"caverns-and-chasms:3.0.0",
 			"clayworks",
 			"endergetic",
 			"environmental",
@@ -184,7 +184,8 @@ dependencies {
 	addMods(
 		listOf(
 			"biomes-o-plenty*",
-			"oh-the-biomes-weve-gone*"
+			"oh-the-biomes-weve-gone*",
+			"no-mans-land"
 		)
 	)
 

@@ -1,0 +1,28 @@
+{
+  "name": "tin_block",
+  "glsl": "tin_block.glsl",
+  "mat0": [
+    "caverns_and_chasms:tin_block",
+    "caverns_and_chasms:tin_brick",
+    "caverns_and_chasms:chiseled_tin_bricks",
+    "caverns_and_chasms:tinplate_block"
+  ],
+  "mat1": [
+    "caverns_and_chasms:tin_brick_slab",
+    "caverns_and_chasms:tin_brick_stairs",
+    "caverns_and_chasms:tin_brick_wall",
+    "caverns_and_chasms:tin_bars",
+    "caverns_and_chasms:tin_ingot",
+    "caverns_and_chasms:tin_chain",
+    "caverns_and_chasms:hoop",
+    "caverns_and_chasms:storage_duct",
+    "caverns_and_chasms:roller_door",
+    "caverns_and_chasms:roller_window"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
+  ]
+}

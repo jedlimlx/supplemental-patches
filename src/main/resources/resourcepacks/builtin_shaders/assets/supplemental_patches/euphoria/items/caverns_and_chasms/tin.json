@@ -1,0 +1,12 @@
+{
+  "name": "tin",
+  "glsl": "tin.glsl",
+  "mat0": [
+    "caverns_and_chasms:tin_ingot",
+    "caverns_and_chasms:ricochet_arrow",
+    "caverns_and_chasms:packing_container",
+    "caverns_and_chasms:tin_nugget",
+    "caverns_and_chasms:tin_plate",
+    "caverns_and_chasms:solid_tripwire"
+  ]
+}

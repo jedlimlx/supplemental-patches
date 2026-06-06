@@ -1,0 +1,9 @@
+{
+  "name": "zirconia_lamp",
+  "glsl": "zirconia_lamp.glsl",
+  "mat0": [
+    "caverns_and_chasms:zirconia_lamp"
+  ],
+  "blocklight": "supplemental_patches:caverns_and_chasms/zirconia_lamp",
+  "held_lighting": true
+}

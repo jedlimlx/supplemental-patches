@@ -1,0 +1,28 @@
+{
+  "name": "cassiterite",
+  "glsl": "cassiterite.glsl",
+  "mat0": [
+    "caverns_and_chasms:cassiterite",
+    "caverns_and_chasms:polished_cassiterite",
+    "caverns_and_chasms:cassiterite_bricks",
+    "caverns_and_chasms:cassiterite_pillar",
+    "caverns_and_chasms:chiseled_cassiterite_bricks"
+  ],
+  "mat1": [
+    "caverns_and_chasms:cassiterite_slab",
+    "caverns_and_chasms:cassiterite_stairs",
+    "caverns_and_chasms:cassiterite_wall",
+    "caverns_and_chasms:polished_cassiterite_slab",
+    "caverns_and_chasms:polished_cassiterite_stairs",
+    "caverns_and_chasms:polished_cassiterite_wall",
+    "caverns_and_chasms:cassiterite_brick_slab",
+    "caverns_and_chasms:cassiterite_brick_stairs",
+    "caverns_and_chasms:cassiterite_brick_wall"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
+  ]
+}

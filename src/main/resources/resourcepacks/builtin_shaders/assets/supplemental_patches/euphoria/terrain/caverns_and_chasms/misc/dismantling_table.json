@@ -1,0 +1,7 @@
+{
+  "name": "dismantling_table",
+  "glsl": "dismantling_table.glsl",
+  "mat0": [
+    "caverns_and_chasms:dismantling_table"
+  ]
+}

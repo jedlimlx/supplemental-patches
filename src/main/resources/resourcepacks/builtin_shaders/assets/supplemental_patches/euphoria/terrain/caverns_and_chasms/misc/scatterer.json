@@ -1,0 +1,8 @@
+{
+  "name": "scatterer",
+  "glsl": "scatterer.glsl",
+  "mat0": [
+    "caverns_and_chasms:scatterer",
+    "caverns_and_chasms:splurter"
+  ]
+}

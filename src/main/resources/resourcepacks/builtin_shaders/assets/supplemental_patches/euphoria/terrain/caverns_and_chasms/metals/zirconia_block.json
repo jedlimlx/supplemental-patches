@@ -1,0 +1,7 @@
+{
+  "name": "zirconia_block",
+  "glsl": "zirconia_block.glsl",
+  "mat0": [
+    "caverns_and_chasms:zirconia_block"
+  ]
+}

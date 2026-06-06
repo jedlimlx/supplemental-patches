@@ -1,0 +1,17 @@
+{
+  "name": "copper_lantern",
+  "glsl": "copper_lantern.glsl",
+  "mat0": [
+    "caverns_and_chasms:copper_lantern",
+    "caverns_and_chasms:exposed_copper_lantern",
+    "caverns_and_chasms:oxidized_copper_lantern",
+    "caverns_and_chasms:weathered_copper_lantern",
+    "caverns_and_chasms:waxed_copper_lantern",
+    "caverns_and_chasms:waxed_exposed_copper_lantern",
+    "caverns_and_chasms:waxed_oxidized_copper_lantern",
+    "caverns_and_chasms:waxed_weathered_copper_lantern"
+  ],
+  "blocklight": "supplemental_patches:caverns_and_chasms/copper_lantern",
+  "held_lighting": true,
+  "reflection_handler": "minecraft:discard"
+}

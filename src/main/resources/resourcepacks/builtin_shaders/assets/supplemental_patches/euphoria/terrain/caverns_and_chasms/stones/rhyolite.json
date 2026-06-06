@@ -1,0 +1,53 @@
+{
+  "name": "rhyolite",
+  "glsl": "rhyolite.glsl",
+  "mat0": [
+    "caverns_and_chasms:rhyolite",
+    "caverns_and_chasms:polished_rhyolite",
+    "caverns_and_chasms:rhyolite_bricks",
+    "caverns_and_chasms:chiseled_rhyolite_bricks"
+  ],
+  "mat1": [
+    "caverns_and_chasms:rhyolite_slab",
+    "caverns_and_chasms:rhyolite_stairs",
+    "caverns_and_chasms:rhyolite_wall",
+    "caverns_and_chasms:polished_rhyolite_slab",
+    "caverns_and_chasms:polished_rhyolite_stairs",
+    "caverns_and_chasms:polished_rhyolite_wall",
+    "caverns_and_chasms:rhyolite_brick_slab",
+    "caverns_and_chasms:rhyolite_brick_stairs",
+    "caverns_and_chasms:rhyolite_brick_wall"
+  ],
+  "mat2": [
+    "caverns_and_chasms:magmatic_rhyolite",
+    "caverns_and_chasms:magmatic_rhyolite_slab",
+    "caverns_and_chasms:magmatic_rhyolite_stairs",
+    "caverns_and_chasms:magmatic_rhyolite_wall",
+    "caverns_and_chasms:polished_magmatic_rhyolite",
+    "caverns_and_chasms:polished_magmatic_rhyolite_slab",
+    "caverns_and_chasms:polished_magmatic_rhyolite_stairs",
+    "caverns_and_chasms:polished_magmatic_rhyolite_wall",
+    "caverns_and_chasms:magmatic_rhyolite_bricks",
+    "caverns_and_chasms:magmatic_rhyolite_brick_slab",
+    "caverns_and_chasms:magmatic_rhyolite_brick_stairs",
+    "caverns_and_chasms:magmatic_rhyolite_brick_wall",
+    "caverns_and_chasms:chiseled_magmatic_rhyolite_bricks"
+  ],
+  "blocklight": {
+    "color": [
+      null,
+      null,
+      "minecraft:magma_block",
+      null
+    ],
+    "conditions": [
+      "DO_IPBR_LIGHTS"
+    ]
+  },
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    "minecraft:half_blocks"
+  ]
+}

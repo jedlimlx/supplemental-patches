@@ -1,0 +1,20 @@
+{
+  "name": "turquoise_block",
+  "glsl": "turquoise_block.glsl",
+  "mat0": [
+    "caverns_and_chasms:turquoise_block",
+    "caverns_and_chasms:turquoise_tiles",
+    "caverns_and_chasms:turquoise_pillar"
+  ],
+  "mat1": [
+    "caverns_and_chasms:turquoise_tile_slab",
+    "caverns_and_chasms:turquoise_tile_stairs",
+    "caverns_and_chasms:turquoise_tile_wall"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
+  ]
+}

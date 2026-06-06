@@ -1,0 +1,9 @@
+{
+  "name": "diamond_lamp",
+  "glsl": "diamond_lamp.glsl",
+  "mat0": [
+    "caverns_and_chasms:diamond_lamp"
+  ],
+  "blocklight": "supplemental_patches:caverns_and_chasms/diamond_lamp",
+  "held_lighting": true
+}

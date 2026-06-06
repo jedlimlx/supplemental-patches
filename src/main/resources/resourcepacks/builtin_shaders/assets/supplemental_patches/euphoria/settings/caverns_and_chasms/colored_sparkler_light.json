@@ -1,0 +1,10 @@
+{
+  "type": "setting",
+  "name": "COLORED_SPARKLER_LIGHT",
+  "default": false,
+  "activation": true,
+  "file": "materials.glsl",
+  "en_US": {
+    "option": "Colored Sparkler Light"
+  }
+}

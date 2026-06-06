@@ -1,0 +1,9 @@
+{
+  "name": "emerald_lamp",
+  "glsl": "emerald_lamp.glsl",
+  "mat0": [
+    "caverns_and_chasms:emerald_lamp"
+  ],
+  "blocklight": "supplemental_patches:caverns_and_chasms/emerald_lamp",
+  "held_lighting": true
+}

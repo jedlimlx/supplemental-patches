@@ -36,8 +36,8 @@ fun generatedDeferredMaterials(directory: Path) {
     // injecting code into the old code
     file.writeText(
         file.readText().replace(
-            "else /*if (materialMaskInt == \"15 to 255 except 254\")*/ { //",
-            "else /*if (materialMaskInt == \"15 to 255 except 254\")*/ { //\n$code"
+            "else { // materialMaskInt >= 16 && <= 240",
+            "else { // materialMaskInt >= 16 && <= 240\n$code"
         )
     )
 }

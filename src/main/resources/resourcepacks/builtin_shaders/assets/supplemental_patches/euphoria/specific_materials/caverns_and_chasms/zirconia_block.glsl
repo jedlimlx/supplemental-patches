@@ -1,13 +1,13 @@
 materialMask = OSIEBCA; // Intense Fresnel
 
-float factor = GetLuminance(color.rgb) + 0.3;
+float factor = GetLuminance(color.rgb);
 float factor2 = pow2(factor);
 float factor4 = pow2(factor2);
 
-smoothnessG = factor - factor4 * 0.1;
-highlightMult = 3.0 * factor2;
+smoothnessG = factor - factor4;
+highlightMult = 3.0 * factor4;
 
-smoothnessD = factor4 * 0.75;
+smoothnessD = factor4 + 0.2;
 
 #ifdef COATED_TEXTURES
 	noiseFactor = 0.5;

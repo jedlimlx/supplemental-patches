@@ -215,5 +215,17 @@
     "frostiful:icy_trial_spawner:ominous=false:trial_spawner_state=inactive",
     "frostiful:icy_trial_spawner:ominous=true:trial_spawner_state=cooldown",
     "frostiful:icy_trial_spawner:ominous=true:trial_spawner_state=inactive"
+  ],
+  "block.31000": [
+    "caverns_and_chasms:frosted_glass"
+  ],
+  "block.31001": [
+    "caverns_and_chasms:white_stained_glass_pane"
+  ],
+  "block.32008": [
+    "caverns_and_chasms:float_glass"
+  ],
+  "block.32012": [
+    "caverns_and_chasms:float_glass_pane"
   ]
 }

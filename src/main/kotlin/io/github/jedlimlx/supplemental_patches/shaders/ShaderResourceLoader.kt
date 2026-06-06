@@ -287,7 +287,7 @@ object ShaderResourceLoader {
         }.thenCompose(stage::wait).thenAcceptAsync({}, gameExecutor)
     }
 
-	fun getColourOrTint(id: String, loc: String) = COLOURS_MAP[id] ?: TINTS_MAP[id] ?: throw MinecraftError("Color / tint $id does not exist!", loc.toString())
+	fun getColourOrTint(id: String, loc: String) = COLOURS_MAP[id] ?: TINTS_MAP[id] ?: throw MinecraftError("Color / tint $id does not exist!", loc)
 
     fun loadMaterialShaders(
         executor: Executor, resourceManager: ResourceManager, type: String, map: MutableMap<String, ShaderBuilder>? = null

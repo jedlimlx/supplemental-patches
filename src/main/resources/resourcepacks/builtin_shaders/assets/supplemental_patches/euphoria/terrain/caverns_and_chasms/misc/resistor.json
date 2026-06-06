@@ -1,0 +1,18 @@
+{
+  "name": "resistor",
+  "glsl": "resistor.glsl",
+  "mat0": [
+    "caverns_and_chasms:fuse:powered=true",
+    "caverns_and_chasms:resistor:powered=true",
+    "caverns_and_chasms:refractor:powered=left",
+    "caverns_and_chasms:refractor:powered=right",
+    "caverns_and_chasms:refractor:powered=none",
+    "caverns_and_chasms:refractor:powered=center"
+  ],
+  "mat1": [
+    "caverns_and_chasms:resistor:powered=false",
+    "caverns_and_chasms:refractor:powered=off"
+  ],
+  "blocklight": "minecraft:redstone_wire",
+  "reflection_handler": "minecraft:discard"
+}
