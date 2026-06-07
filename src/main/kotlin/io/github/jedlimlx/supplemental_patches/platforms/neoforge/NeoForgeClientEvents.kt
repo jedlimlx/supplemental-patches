@@ -25,9 +25,8 @@ object NeoForgeClientEvents {
 	@SubscribeEvent
 	@JvmStatic
 	fun textureStitchedEvent(event: TextureAtlasStitchedEvent) {
-		val textureAtlas = Minecraft.getInstance().particleEngine.textureAtlas
-		if (event.atlas.location() == textureAtlas.location()) {
-			PLATFORM.particleAtlas = textureAtlas
+		if ("particles" in event.atlas.location().toString()) {
+			PLATFORM.particleAtlas = event.atlas
 
 			val string = installShader()
 			LOGGER.info(string)

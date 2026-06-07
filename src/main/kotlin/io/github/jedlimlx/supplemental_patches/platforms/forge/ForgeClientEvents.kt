@@ -28,8 +28,7 @@ object ForgeClientEventSubscriber {
 	@SubscribeEvent
 	@JvmStatic
 	fun textureStitchedEvent(event: TextureStitchEvent.Post) {
-		val textureAtlas = Minecraft.getInstance().particleEngine.textureAtlas
-		if (event.atlas.location() == textureAtlas.location()) {
+		if ("particles" in event.atlas.location().toString()) {
 			PLATFORM.particleAtlas = textureAtlas
 
 			val string = installShader()
