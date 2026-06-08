@@ -1,1 +1,0 @@
-tracePosM - vec3(0.0, 0.0, wind) + pow(1 + i, CIRRUS_DISTORTION_INTENSITY_2) * totalDistortion

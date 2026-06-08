@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/atmospherics/clouds/unboundClouds.glsl",
+  "type": "after",
+  "key": "noise *= noiseMult * CLOUD_UNBOUND_AMOUNT * nightCloudRemove;",
+  "code": "wispier_clouds.glsl"
+}

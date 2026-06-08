@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/atmospherics/clouds/unboundClouds.glsl",
+  "type": "replace",
+  "key": "vec3 pos = PixelateUnboundCloudPos(tracePosM - windOffset, pixelStepM);",
+  "code": "pixelated_modifications.glsl"
+}
