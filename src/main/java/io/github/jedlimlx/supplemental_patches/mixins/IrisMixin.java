@@ -5,6 +5,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
+//? forge || neoforge {
 @Mixin(value = Iris.class, remap = false)
 public class IrisMixin {
     @Redirect(
@@ -16,3 +17,4 @@ public class IrisMixin {
     )
     private static void method() {}
 }
+//?}
