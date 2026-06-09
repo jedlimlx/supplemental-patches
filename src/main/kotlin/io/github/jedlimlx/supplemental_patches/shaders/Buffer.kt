@@ -6,63 +6,72 @@ import kotlin.collections.flatten
 import kotlin.io.path.absolutePathString
 
 fun injectBuffersIntoShaderCode(shaderCode: String, newBuffers: List<Pair<Int, String>>) = buildString {
-    // find all areas without else branches
-    val lines = shaderCode.lines()
+	// manually replace funky code
+	// TODO remove when SpaceEagle rewrites the section
+	val shaderCode = shaderCode.replace(
+		Regex("#endif\\s+#ifdef PHOTONICS_LIGHTING", RegexOption.MULTILINE),
+		"#elif defined PHOTONICS_LIGHTING"
+	)
 
-    var stackSize = 0  // length of flattened stack
-    val lst = Array(20) { false }  // could fail if there are more than 20 nested #if, #endifs but wtv
-    val stack = arrayListOf<List<Int>>(listOf())  // store all buffers up to that point
-    lines.forEach {
-        val line = it.trimIndent()
-        val indent = it.takeWhile { it.isWhitespace() }
+	// find all areas without else branches
+	val lines = shaderCode.lines()
 
-        when {
-            line.startsWith("#if") -> stack.add(listOf())
-            line.startsWith("#endif") || line.startsWith("#elif") || line.startsWith("#else") -> {
-                if (stack.last().isNotEmpty()) {
-                    appendLine("$indent    /* RENDERTARGETS: ${stack.flatten().joinToString(",")},${newBuffers.joinToString(",") { it.first.toString() }} */")
-                    newBuffers.forEach {
-                        appendLine("$indent    gl_FragData[$stackSize] = ${it.second}")
-                    }
-                }
+	var stackSize = 0  // length of flattened stack
+	val lst = Array(20) { false }  // could fail if there are more than 20 nested #if, #endifs but wtv
+	val stack = arrayListOf<List<Int>>(listOf())  // store all buffers up to that point
+	lines.forEach {
+		val line = it.trimIndent()
+		val indent = it.takeWhile { it.isWhitespace() }
 
-                if (line.startsWith("#endif")) {
-                    if (!lst[stack.size]) {
-                        stackSize -= stack.removeLast().size
+		when {
+			line.startsWith("#if") -> stack.add(listOf())
+			line.startsWith("#endif") || line.startsWith("#elif") || line.startsWith("#else") -> {
+				if (stack.last().isNotEmpty()) {
+					appendLine("$indent    /* RENDERTARGETS: ${stack.flatten().joinToString(",")},${newBuffers.joinToString(",") { it.first.toString() }} */")
+					newBuffers.forEach {
+						appendLine("$indent    gl_FragData[$stackSize] = ${it.second}")
+					}
+				}
 
-                        // inject else before continuing
-                        appendLine("$indent#else")
-                        appendLine("$indent    /* RENDERTARGETS: ${stack.flatten().joinToString(",")},${newBuffers.joinToString(",") { it.first.toString() }} */")
-                        newBuffers.forEach {
-                            appendLine("$indent    gl_FragData[$stackSize] = ${it.second}")
-                        }
-                    } else {
-                        lst[stack.size] = false
-                        stackSize -= stack.removeLast().size
-                    }
-                } else {
-                    stackSize -= stack.removeLast().size
-                    stack.add(listOf())
+				if (line.startsWith("#endif")) {
+					if (!lst[stack.size]) {
+						stackSize -= stack.last().size
+						stack[stack.size - 1] = listOf()
 
-                    // indicate #if ... #endif branch includes #else
-                    if (line.startsWith("#else"))
-                        lst[stack.size] = true
-                }
-            }
-            line.startsWith("/* DRAWBUFFERS") -> {
-                val buffers = Regex("DRAWBUFFERS:[ ]*(\\d+)").find(line)!!.groupValues[1]
-                stack[stack.size - 1] = buffers.map { it.digitToInt() }.filter { it !in stack.flatten() }
-                stackSize += stack.last().size
-            }
-            line.startsWith("/* RENDERTARGETS") -> {
-                val buffers = Regex("RENDERTARGETS:[ ]*((\\d+,)*\\d+)").find(line)!!.groupValues[1]
-                stack[stack.size - 1] = buffers.split(",").map { it.toInt() }.filter { it !in stack.flatten() }
-                stackSize += stack.last().size
-            }
-        }
+						// inject else before continuing
+						appendLine("$indent#else")
+						appendLine("$indent    /* RENDERTARGETS: ${stack.flatten().joinToString(",")},${newBuffers.joinToString(",") { it.first.toString() }} */")
+						newBuffers.forEach {
+							appendLine("$indent    gl_FragData[$stackSize] = ${it.second}")
+						}
+					} else {
+						lst[stack.size] = false
+						stackSize -= stack.last().size
+						stack[stack.size - 1] = listOf()
+					}
+				} else {
+					stackSize -= stack.last().size
+					stack[stack.size - 1] = listOf()
 
-        appendLine(it)
-    }
+					// indicate #if ... #endif branch includes #else
+					if (line.startsWith("#else"))
+						lst[stack.size] = true
+				}
+			}
+			line.startsWith("/* DRAWBUFFERS") -> {
+				val buffers = Regex("DRAWBUFFERS: *(\\d+)").find(line)!!.groupValues[1]
+				stack[stack.size - 1] = buffers.map { it.digitToInt() }.filter { it !in stack.flatten() }
+				stackSize += stack.last().size
+			}
+			line.startsWith("/* RENDERTARGETS") -> {
+				val buffers = Regex("RENDERTARGETS: *((\\d+,)*\\d+)").find(line)!!.groupValues[1]
+				stack[stack.size - 1] = buffers.split(",").map { it.toInt() }.filter { it !in stack.flatten() }
+				stackSize += stack.last().size
+			}
+		}
+
+		appendLine(it)
+	}
 }
 
 fun findMatchingEndif(shaderCode: String, startIndex: Int): Int {
@@ -164,7 +173,7 @@ fun injectBuffers(directory: Path) {
     for (i in 0..<images.size) {
         UNIFORMS.add(
             Uniform(
-                "colortex${15 - i}",
+                "colortex${32 - i}",
                 "sampler2D",
                 "",
                 listOf()
@@ -176,10 +185,10 @@ fun injectBuffers(directory: Path) {
     val selectors = "rgba"
     val readCode = images.mapIndexed { i, it ->
         StringBuilder().apply {
-            append("vec4 texture${15 - i} = texelFetch(colortex${15 - i}, texelCoord, 0);\n")
+            append("vec4 texture${32 - i} = texelFetch(colortex${32 - i}, texelCoord, 0);\n")
 
             it.forEachIndexed { j, it ->
-                append("float ${it.name} = texture${15 - i}.${selectors[j]};\n")
+                append("float ${it.name} = texture${32 - i}.${selectors[j]};\n")
             }
         }.toString()
     }.toList()
@@ -211,7 +220,7 @@ fun injectBuffers(directory: Path) {
 
         var newCode = injectBuffersIntoShaderCode(shaderCode, lst.map {
             Pair(
-                15 - images.indexOf(it),
+                32 - images.indexOf(it),
                 "vec4(${(it.map { it.name } + List(4 - it.size) { "0.0" }).joinToString(", ")});"
             )
         }.toList())
