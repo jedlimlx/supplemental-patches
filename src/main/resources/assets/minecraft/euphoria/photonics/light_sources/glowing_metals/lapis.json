@@ -1,0 +1,9 @@
+{
+  "group": "lapis",
+  "intensity": {
+    "conditions": ["!defined GLOWING_LAPIS_BLOCK"],
+    "value": 0
+  },
+  "color": "#1965B1",
+  "blocks": ["minecraft:lapis_block"]
+}

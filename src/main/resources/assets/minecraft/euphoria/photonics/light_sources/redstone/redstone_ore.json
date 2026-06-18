@@ -1,0 +1,11 @@
+{
+  "group": "ore",
+  "intensity": 16,
+  "radius": "*redstone",
+  "blocks": [
+    "minecraft:redstone_ore[lit=true]",
+    "minecraft:deepslate_redstone_ore[lit=true]",
+    "~PH_REDSTONE_ORE_LIT_ID"
+  ],
+  "overrides": "redstone_ore"
+}

@@ -11,6 +11,13 @@
       "GLOWING_CELESTIAL_GROWTHS"
     ]
   },
+  "light_group": {
+    "light_group": "celestial_growth",
+    "conditions": [
+      "DO_IPBR_LIGHTS",
+      "GLOWING_CELESTIAL_GROWTHS"
+    ]
+  },
   "waving": "minecraft:waving_tall_foliage",
   "needs_voxelization": true,
   "reflection_handlers": "minecraft:discard"

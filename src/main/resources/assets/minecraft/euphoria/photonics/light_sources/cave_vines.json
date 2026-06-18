@@ -1,0 +1,12 @@
+{
+  "group": "cave_vines",
+  "color": "*cave_vines",
+  "intensity": "*cave_vines",
+  "radius": "*cave_vines",
+  "falloff": "*cave_vines",
+  "blocks": [
+    "minecraft:cave_vines[berries=true]",
+    "minecraft:cave_vines_plant[berries=true]",
+    "~PH_CAVE_VINES_ID"
+  ]
+}

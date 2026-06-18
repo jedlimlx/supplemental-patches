@@ -1,0 +1,23 @@
+{
+  "group": "redstone_dust",
+  "intensity": "*redstone",
+  "radius": "*redstone",
+  "is_traced": false,
+  "blocks": [
+    "minecraft:redstone_wire[power=1]",
+    "minecraft:redstone_wire[power=2]",
+    "minecraft:redstone_wire[power=3]",
+    "minecraft:redstone_wire[power=4]",
+    "minecraft:redstone_wire[power=5]",
+    "minecraft:redstone_wire[power=6]",
+    "minecraft:redstone_wire[power=7]",
+    "minecraft:redstone_wire[power=8]",
+    "minecraft:redstone_wire[power=9]",
+    "minecraft:redstone_wire[power=10]",
+    "minecraft:redstone_wire[power=11]",
+    "minecraft:redstone_wire[power=12]",
+    "minecraft:redstone_wire[power=13]",
+    "minecraft:redstone_wire[power=14]",
+    "minecraft:redstone_wire[power=15]"
+  ]
+}

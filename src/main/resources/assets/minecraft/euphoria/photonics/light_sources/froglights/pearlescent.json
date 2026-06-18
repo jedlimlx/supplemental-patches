@@ -1,0 +1,8 @@
+{
+  "group": "pearlescent_froglight",
+  "color": "#b28abd",
+  "blocks": [
+    "minecraft:pearlescent_froglight",
+    "~PH_PEARLESCENT_FROGLIGHT_ID"
+  ]
+}

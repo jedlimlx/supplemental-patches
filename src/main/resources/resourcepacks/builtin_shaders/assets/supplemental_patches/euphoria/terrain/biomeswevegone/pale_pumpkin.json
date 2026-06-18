@@ -13,5 +13,11 @@
     null,
     "minecraft:soul_lantern",
     null
+  ],
+  "light_group": [
+    null,
+    null,
+    "soul_lantern",
+    null
   ]
 }

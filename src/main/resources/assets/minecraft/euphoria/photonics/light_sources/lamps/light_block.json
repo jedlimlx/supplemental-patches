@@ -1,0 +1,21 @@
+{
+  "group": "light_block",
+  "color": "*generic",
+  "blocks": [
+    "minecraft:light[level=1]",
+    "minecraft:light[level=2]",
+    "minecraft:light[level=3]",
+    "minecraft:light[level=4]",
+    "minecraft:light[level=5]",
+    "minecraft:light[level=6]",
+    "minecraft:light[level=7]",
+    "minecraft:light[level=8]",
+    "minecraft:light[level=9]",
+    "minecraft:light[level=10]",
+    "minecraft:light[level=11]",
+    "minecraft:light[level=12]",
+    "minecraft:light[level=13]",
+    "minecraft:light[level=14]",
+    "minecraft:light[level=15]"
+  ]
+}

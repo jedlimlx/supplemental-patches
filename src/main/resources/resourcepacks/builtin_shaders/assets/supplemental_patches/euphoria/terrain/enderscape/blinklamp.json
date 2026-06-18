@@ -25,5 +25,11 @@
     null,
     "supplemental_patches:enderscape/blinklamp_dim",
     null
+  ],
+  "light_group": [
+    "blinklamp",
+    null,
+    "blinklamp_dim",
+    null
   ]
 }

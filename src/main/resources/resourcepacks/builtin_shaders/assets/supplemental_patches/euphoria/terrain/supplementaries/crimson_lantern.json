@@ -4,9 +4,7 @@
   "mat0": [
     "suppsquared:crimson_lantern"
   ],
-  "blocklight": [
-    "supplemental_patches:supplementaries/crimson_lantern"
-  ],
+  "blocklight": "supplemental_patches:supplementaries/crimson_lantern",
   "held_lighting": true,
   "reflection_handlers": "minecraft:discard"
 }

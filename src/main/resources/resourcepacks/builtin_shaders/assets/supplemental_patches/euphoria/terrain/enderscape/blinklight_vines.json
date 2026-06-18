@@ -21,6 +21,12 @@
     "supplemental_patches:enderscape/blinklamp_dim",
     null
   ],
+  "light_group": [
+    "blinklamp",
+    null,
+    "blinklamp_dim",
+    null
+  ],
   "waving": "minecraft:waving_tall_foliage",
   "held_lighting": true,
   "needs_voxelization": true,

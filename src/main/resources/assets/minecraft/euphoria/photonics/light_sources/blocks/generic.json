@@ -1,0 +1,8 @@
+{
+  "group": "generic",
+  "color": "*generic",
+  "blocks": [
+    "minecraft:vault",
+    "minecraft:trial_spawner"
+  ]
+}

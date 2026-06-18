@@ -1,0 +1,11 @@
+{
+  "group": "end_rod",
+  "color": "*end",
+  "intensity": "*end_rod",
+  "radius": "*end_rod",
+  "falloff": "*end_rod",
+  "blocks": [
+    "minecraft:end_rod",
+    "~PH_END_ROD_ID"
+  ]
+}

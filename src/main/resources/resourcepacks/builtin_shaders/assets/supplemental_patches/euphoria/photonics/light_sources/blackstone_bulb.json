@@ -1,0 +1,7 @@
+{
+  "group": "blackstone_bulb",
+  "color": "*obsidian",
+  "intensity": "*dim",
+  "radius": "*small",
+  "falloff": "0.6"
+}

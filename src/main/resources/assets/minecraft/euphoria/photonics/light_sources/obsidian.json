@@ -1,0 +1,11 @@
+{
+  "group": "obsidian",
+  "color": "*obsidian",
+  "intensity": "*full_block",
+  "radius": "*full_block",
+  "falloff": "*full_block",
+  "blocks": [
+    "minecraft:crying_obsidian",
+    "~PH_CRYING_OBSIDIAN_ID"
+  ]
+}

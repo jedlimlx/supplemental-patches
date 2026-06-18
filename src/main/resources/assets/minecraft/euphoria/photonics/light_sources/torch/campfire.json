@@ -1,0 +1,11 @@
+{
+  "group": "campfire",
+  "color": "*campfire",
+  "intensity": "*campfire",
+  "radius": "*campfire",
+  "falloff": "*campfire",
+  "blocks": [
+    "minecraft:campfire[lit=true]",
+    "~PH_CAMPFIRE_ID"
+  ]
+}

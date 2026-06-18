@@ -1,0 +1,14 @@
+{
+  "group": "magenta_candle",
+  "color": [
+    {
+      "conditions": ["COLORED_CANDLE_LIGHT"],
+      "value": "*magenta_candle"
+    }
+  ],
+  "blocks": [
+    "minecraft:magenta_candle[lit=true]",
+    "minecraft:magenta_candle_cake[lit=true]",
+    "~PH_MAGENTA_CANDLE_ID"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "group": "soul_lantern",
+  "radius": "*lantern",
+  "falloff": "*lantern",
+  "blocks": [
+    "minecraft:soul_lantern",
+    "~PH_SOUL_LANTERN_ID"
+  ]
+}

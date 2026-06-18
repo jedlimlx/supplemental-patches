@@ -1,0 +1,11 @@
+{
+  "group": "beacon",
+  "intensity": 45,
+  "radius": 4.5,
+  "falloff": 0.5,
+  "color": "rgb(0.55, 0.9, 1.0)",
+  "blocks": [
+    "minecraft:beacon",
+    "~PH_BEACON_ID"
+  ]
+}

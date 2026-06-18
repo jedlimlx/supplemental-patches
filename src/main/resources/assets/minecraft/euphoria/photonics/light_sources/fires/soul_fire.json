@@ -1,0 +1,8 @@
+{
+  "group": "soul_fire",
+  "color": "*soul_fire",
+  "blocks": [
+    "minecraft:soul_fire",
+    "~PH_SOUL_FIRE_ID"
+  ]
+}

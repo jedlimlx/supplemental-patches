@@ -1,0 +1,12 @@
+{
+  "group": "oxidised_bulb",
+  "intensity": "*oxidized_lamp",
+  "radius": "*oxidized_lamp",
+  "falloff": "*oxidized_lamp",
+  "is_traced": false,
+  "blocks": [
+    "minecraft:oxidized_copper_bulb[lit=true]",
+    "minecraft:waxed_oxidized_copper_bulb[lit=true]",
+    "~PH_COPPER_BULB_OXIDIZED_ID"
+  ]
+}

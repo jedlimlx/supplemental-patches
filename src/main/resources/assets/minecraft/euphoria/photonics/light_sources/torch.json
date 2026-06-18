@@ -1,0 +1,12 @@
+{
+  "group": "torch",
+  "color": "*torch",
+  "blocks": [
+    "minecraft:torch",
+    "minecraft:wall_torch",
+    "minecraft:jack_o_lantern",
+    "~PH_TORCH_ID",
+    "~PH_JACK_O_LANTERN_ID"
+  ],
+  "overrides": "torch"
+}

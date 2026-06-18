@@ -39,7 +39,7 @@ class ShaderBuilder(
 			else _voxelNumber
 		}
 
-	var blocklight: List<Pair<List<Colour?>, List<String>>> = listOf()
+	var blocklight: List<Pair<List<String>, List<Colour?>>> = listOf()
 
     var lightLevel: Int = 0
     var heldLighting: Boolean = false
@@ -55,17 +55,7 @@ class ShaderBuilder(
         return this
     }
 
-    fun colours(colour: Colour?): ShaderBuilder {
-		this.blocklight = listOf(Pair(listOf(colour), listOf()))
-        return this
-    }
-
-	fun colours(colours: List<Colour?>): ShaderBuilder {
-		this.blocklight = listOf(Pair(colours, listOf()))
-		return this
-	}
-
-    fun blocklight(lightColours: List<Pair<List<Colour?>, List<String>>>): ShaderBuilder {
+    fun blocklight(lightColours: List<Pair<List<String>, List<Colour?>>>): ShaderBuilder {
 		this.blocklight = lightColours
         return this
     }

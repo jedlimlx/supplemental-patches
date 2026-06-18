@@ -21,8 +21,6 @@
   "mat1": [
     "supplementaries:redstone_illuminator:power=15"
   ],
-  "blocklight": [
-    "minecraft:redstone_lamp"
-  ],
+  "blocklight": "minecraft:redstone_lamp",
   "held_lighting": true
 }

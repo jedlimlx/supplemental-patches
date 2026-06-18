@@ -1,0 +1,9 @@
+{
+  "group": "unlit_redstone_ore",
+  "intensity": 0,
+  "blocks": [
+    "minecraft:redstone_ore[lit=false]",
+    "minecraft:deepslate_redstone_ore[lit=false]",
+    "~PH_REDSTONE_ORE_UNLIT_ID"
+  ]
+}

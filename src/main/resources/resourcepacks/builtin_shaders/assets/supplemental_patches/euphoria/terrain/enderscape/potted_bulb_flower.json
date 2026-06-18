@@ -5,5 +5,6 @@
     "enderscape:potted_bulb_flower"
   ],
   "blocklight": "minecraft:lantern",
+  "light_group": "lantern",
   "reflection_handlers": "minecraft:discard"
 }

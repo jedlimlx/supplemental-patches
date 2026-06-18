@@ -1,0 +1,9 @@
+{
+  "group": "brewing_stand",
+  "color": "#efef7b",
+  "radius": 1,
+  "blocks": [
+    "minecraft:brewing_stand",
+    "~PH_BREWING_STAND_ID"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "group": "emerald",
+  "intensity": {
+    "conditions": ["!defined GLOWING_EMERALD_BLOCK"],
+    "value": 0
+  },
+  "color": "#1ed760",
+  "blocks": ["minecraft:emerald_block"]
+}

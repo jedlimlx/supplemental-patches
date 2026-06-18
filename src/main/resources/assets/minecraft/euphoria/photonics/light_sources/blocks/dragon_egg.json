@@ -1,0 +1,11 @@
+{
+  "group": "dragon_egg",
+  "color": "#971E8D",
+  "intensity": [
+    {
+      "conditions": ["!defined EMISSIVE_DRAGON_EGG"],
+      "value": 0
+    }
+  ],
+  "blocks": ["minecraft:dragon_egg"]
+}

@@ -5,5 +5,6 @@
     "biomesoplenty:potted_burning_blossom"
   ],
   "blocklight": "minecraft:magma_block",
+  "light_group": "burning_blossom",
   "reflection_handlers": "minecraft:discard"
 }

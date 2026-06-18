@@ -5,6 +5,7 @@
     "enderscape:bulb_lantern"
   ],
   "blocklight": "minecraft:lantern",
+  "light_group": "lantern",
   "held_lighting": true,
   "reflection_handlers": "minecraft:discard"
 }

@@ -1,0 +1,8 @@
+{
+  "group": "verdant_froglight",
+  "color": "#91c382",
+  "blocks": [
+    "minecraft:verdant_froglight",
+    "~PH_VERDANT_FROGLIGHT_ID"
+  ]
+}

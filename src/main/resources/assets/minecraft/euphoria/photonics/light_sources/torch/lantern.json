@@ -1,0 +1,10 @@
+{
+  "group": "lantern",
+  "intensity": "*lantern",
+  "radius": "*lantern",
+  "falloff": "*lantern",
+  "blocks": [
+    "minecraft:lantern",
+    "~PH_LANTERN_ID"
+  ]
+}

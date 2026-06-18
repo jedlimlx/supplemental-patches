@@ -1,0 +1,10 @@
+{
+  "group": "nether_portal",
+  "intensity": "*nether_portal",
+  "radius": "*nether_portal",
+  "falloff": "*nether_portal",
+  "blocks": [
+    "minecraft:nether_portal",
+    "~PH_NETHER_PORTAL_ID"
+  ]
+}

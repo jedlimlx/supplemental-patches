@@ -19,8 +19,6 @@
     "supplementaries:lumisene:age=15",
     "supplementaries:lumisene:age=16"
   ],
-  "blocklight": [
-    "supplemental_patches:supplementaries/lumisene_fire"
-  ],
+  "blocklight": "supplemental_patches:supplementaries/lumisene_fire",
   "reflection_handlers": "minecraft:fire"
 }

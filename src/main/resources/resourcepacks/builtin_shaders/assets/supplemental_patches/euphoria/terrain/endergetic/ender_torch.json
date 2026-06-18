@@ -8,5 +8,6 @@
     "enderscape:void_wall_torch"
   ],
   "blocklight": "supplemental_patches:endergetic/ender_fire",
+  "light_group": "void_torch",
   "held_lighting": true
 }

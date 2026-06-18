@@ -5,6 +5,7 @@
     "biomeswevegone:fairy_slipper"
   ],
   "blocklight": "supplemental_patches:biomeswevegone/fairy_slipper",
+  "light_group": "fairy_slipper",
   "waving": "minecraft:grounded_waving_foliage",
   "reflection_handlers": "minecraft:discard"
 }

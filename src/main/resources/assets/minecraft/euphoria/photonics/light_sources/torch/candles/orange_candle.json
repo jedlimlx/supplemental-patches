@@ -1,0 +1,14 @@
+{
+  "group": "orange_candle",
+  "color": [
+    {
+      "conditions": ["COLORED_CANDLE_LIGHT"],
+      "value": "*orange_candle"
+    }
+  ],
+  "blocks": [
+    "minecraft:orange_candle[lit=true]",
+    "minecraft:orange_candle_cake[lit=true]",
+    "~PH_ORANGE_CANDLE_ID"
+  ]
+}

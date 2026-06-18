@@ -1,0 +1,7 @@
+{
+  "group": "glowcane",
+  "intensity": "*cave_vines",
+  "radius": "*cave_vines",
+  "falloff": "*cave_vines",
+  "overrides": "glowcane"
+}

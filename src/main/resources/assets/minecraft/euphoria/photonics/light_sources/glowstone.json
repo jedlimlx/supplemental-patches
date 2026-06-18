@@ -1,0 +1,11 @@
+{
+  "group": "glowstone",
+  "color": "*torch",
+  "intensity": "*glowstone",
+  "radius": "*glowstone",
+  "falloff": "*glowstone",
+  "blocks": [
+    "minecraft:glowstone",
+    "~PH_GLOWSTONE_ID"
+  ]
+}

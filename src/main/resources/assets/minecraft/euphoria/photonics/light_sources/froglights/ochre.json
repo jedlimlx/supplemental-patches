@@ -1,0 +1,8 @@
+{
+  "group": "ochre_froglight",
+  "color": "*2500k",
+  "blocks": [
+    "minecraft:ochre_froglight",
+    "~PH_OCHRE_FROGLIGHT_ID"
+  ]
+}

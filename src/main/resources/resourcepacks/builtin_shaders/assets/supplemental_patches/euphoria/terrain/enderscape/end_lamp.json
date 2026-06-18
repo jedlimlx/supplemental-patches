@@ -4,11 +4,7 @@
   "mat0": [
     "enderscape:end_lamp"
   ],
-  "blocklight": [
-    "minecraft:end_rod",
-    null,
-    null,
-    null
-  ],
+  "blocklight": "minecraft:end_rod",
+  "light_group": "end_rod",
   "held_lighting": true
 }

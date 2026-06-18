@@ -1,0 +1,11 @@
+{
+  "group": "sea_lantern",
+  "intensity": 70,
+  "radius": 4.5,
+  "falloff": 0.4,
+  "color": "rgb(0.553, 0.748, 0.859)",
+  "blocks": [
+    "minecraft:sea_lantern",
+    "~PH_SEA_LANTERN_ID"
+  ]
+}

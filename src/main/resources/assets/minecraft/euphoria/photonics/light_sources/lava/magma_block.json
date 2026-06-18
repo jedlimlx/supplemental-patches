@@ -1,0 +1,11 @@
+{
+  "group": "magma_block",
+  "color": "*magma",
+  "intensity": "*full_block",
+  "radius": "*full_block",
+  "falloff": "*full_block",
+  "blocks": [
+    "minecraft:magma_block",
+    "~PH_MAGMA_BLOCK_ID"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "group": "sculk",
+  "color": "*sculk",
+  "intensity": 25,
+  "radius": 1.5,
+  "falloff": 0.7,
+  "blocks": [
+    "minecraft:sculk_sensor[sculk_sensor_phase=active]",
+    "minecraft:calibrated_sculk_sensor[sculk_sensor_phase=active]",
+    "minecraft:sculk_catalyst",
+    "minecraft:sculk_shrieker",
+    "~PH_SCULK_ID"
+  ],
+  "overrides": "sculk"
+}

@@ -1,0 +1,14 @@
+{
+  "group": "light_blue_candle",
+  "color": [
+    {
+      "conditions": ["COLORED_CANDLE_LIGHT"],
+      "value": "*light_blue_candle"
+    }
+  ],
+  "blocks": [
+    "minecraft:light_blue_candle[lit=true]",
+    "minecraft:light_blue_candle_cake[lit=true]",
+    "~PH_LIGHT_BLUE_CANDLE_ID"
+  ]
+}

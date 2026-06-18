@@ -10,10 +10,6 @@
     "enderscape:end_vault:vault_state=ejecting",
     "enderscape:end_vault:vault_state=unlocking"
   ],
-  "blocklight": [
-    "supplemental_patches:enderscape/end_trial_spawner",
-    null,
-    null,
-    null
-  ]
+  "blocklight": "supplemental_patches:enderscape/end_trial_spawner",
+  "light_group": "generic"
 }

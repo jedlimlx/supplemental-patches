@@ -1,0 +1,7 @@
+{
+  "group": "plants",
+  "intensity": 6,
+  "radius": 0.7,
+  "falloff": 0.6,
+  "overrides": "plants"
+}

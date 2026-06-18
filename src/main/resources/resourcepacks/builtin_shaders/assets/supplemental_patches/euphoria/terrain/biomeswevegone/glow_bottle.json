@@ -23,6 +23,16 @@
     "supplemental_patches:biomeswevegone/blue_glowcane",
     null
   ],
+  "light_group": [
+    "red_glowcane",
+    null,
+    "yellow_glowcane",
+    null,
+    "green_glowcane",
+    null,
+    "blue_glowcane",
+    null
+  ],
   "block_size": 8,
   "reflection_handlers": "minecraft:discard"
 }

@@ -1,0 +1,11 @@
+{
+  "group": "end",
+  "color": "*end",
+  "intensity": 3.75,
+  "radius": 2.75,
+  "blocks": [
+    "minecraft:end_gateway",
+    "~PH_END_GATEWAY_ID"
+  ],
+  "overrides": "end"
+}

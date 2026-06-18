@@ -1,0 +1,8 @@
+{
+  "group": "blocks",
+  "color": "*torch",
+  "intensity": "*full_block",
+  "radius": "*full_block",
+  "falloff": "*full_block",
+  "overrides": "blocks"
+}

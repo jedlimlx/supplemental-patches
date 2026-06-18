@@ -150,6 +150,7 @@ dependencies {
 	// rendering / optimisation mods
 	addMods(listOf("iris", "sodium!", "lithium!", "iris-shader-folder!"))
 	modRuntimeOnly("maven.modrinth:euphoria-patches:${prop("deps.euphoria-patches")}-fabric")
+	modRuntimeOnly("maven.modrinth:photonics:${prop("deps.photonics")}+${minecraftVersion}")
 
 	// general library mods
 	addMods(

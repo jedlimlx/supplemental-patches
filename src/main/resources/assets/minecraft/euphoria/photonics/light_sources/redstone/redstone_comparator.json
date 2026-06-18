@@ -1,0 +1,10 @@
+{
+  "group": "repeater_comparator",
+  "intensity": "*redstone",
+  "radius": "*redstone",
+  "blocks": [
+    "minecraft:repeater[powered=true]",
+    "minecraft:comparator[powered=true]",
+    "~PH_REPEATER_COMPARATOR_ID"
+  ]
+}

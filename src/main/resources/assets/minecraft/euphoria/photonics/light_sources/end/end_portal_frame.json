@@ -1,0 +1,10 @@
+{
+  "group": "end_portal_frame",
+  "color": "#51B35E",
+  "intensity": 4,
+  "radius": 2,
+  "blocks": [
+    "minecraft:end_portal_frame[eye=true]",
+    "~PH_END_PORTAL_FRAME_ID"
+  ]
+}

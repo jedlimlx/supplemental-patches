@@ -1,0 +1,8 @@
+{
+  "group": "vein",
+  "intensity": "*sculk_vein",
+  "is_traced": false,
+  "blocks": [
+    "minecraft:sculk_vein"
+  ]
+}

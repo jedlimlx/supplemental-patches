@@ -5,6 +5,7 @@
     "biomesoplenty:glowflower"
   ],
   "blocklight": "supplemental_patches:biomesoplenty/glowflower",
+  "light_group": "glowflower",
   "waving": "minecraft:grounded_waving_foliage",
   "reflection_handlers": "minecraft:discard"
 }

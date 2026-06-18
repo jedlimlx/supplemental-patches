@@ -1,0 +1,11 @@
+{
+  "group": "exposed_bulb",
+  "intensity": "*exposed_lamp",
+  "radius": "*exposed_lamp",
+  "falloff": "*exposed_lamp",
+  "blocks": [
+    "minecraft:exposed_copper_bulb[lit=true]",
+    "minecraft:waxed_exposed_copper_bulb[lit=true]",
+    "~PH_COPPER_BULB_EXPOSED_ID"
+  ]
+}

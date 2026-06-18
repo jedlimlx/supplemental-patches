@@ -1,0 +1,11 @@
+{
+  "group": "weathered_lamp",
+  "intensity": "*weathered_lamp",
+  "radius": "*weathered_lamp",
+  "falloff": "*weathered_lamp",
+  "blocks": [
+    "minecraft:weathered_copper_bulb[lit=true]",
+    "minecraft:waxed_weathered_copper_bulb[lit=true]",
+    "~PH_COPPER_BULB_WEATHERED_ID"
+  ]
+}

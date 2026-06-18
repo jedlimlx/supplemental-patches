@@ -1,0 +1,10 @@
+{
+  "group": "copper_torch",
+  "color": "*copper",
+  "blocks": [
+    "minecraft:copper_torch",
+    "minecraft:copper_wall_torch",
+    "~PH_COPPER_TORCH_ID"
+  ],
+  "overrides": "copper_torch"
+}

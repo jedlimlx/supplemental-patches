@@ -1,0 +1,10 @@
+{
+  "group": "amethyst",
+  "color": "*amethyst",
+  "blocks": [
+    "minecraft:budding_amethyst",
+    "minecraft:amethyst_block",
+    "~PH_AMETHYST_BLOCK_ID"
+  ],
+  "overrides": "amethyst"
+}

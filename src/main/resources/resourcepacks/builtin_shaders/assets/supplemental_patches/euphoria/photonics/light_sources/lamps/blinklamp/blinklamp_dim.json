@@ -1,0 +1,6 @@
+{
+  "group": "blinklamp_dim",
+  "intensity": "*oxidized_lamp",
+  "radius": "*oxidized_lamp",
+  "falloff": "*oxidized_lamp"
+}

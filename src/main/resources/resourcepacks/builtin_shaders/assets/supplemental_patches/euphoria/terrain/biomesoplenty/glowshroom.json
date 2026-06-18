@@ -5,5 +5,6 @@
     "biomesoplenty:glowshroom",
     "biomesoplenty:glowshroom_block"
   ],
+  "light_group": "glowshroom",
   "blocklight": "supplemental_patches:biomesoplenty/glowworm_silk"
 }

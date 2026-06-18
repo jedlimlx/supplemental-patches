@@ -1,1 +1,0 @@
-mix(texture2D(gaux4, GetRoundedCloudCoord(pos, cloudRoundness)).b, texture2D(spiral_clouds, GetRoundedCloudCoord(pos, cloudRoundness)).b, inMagicBiome)

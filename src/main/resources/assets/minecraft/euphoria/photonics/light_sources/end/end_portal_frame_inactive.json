@@ -1,0 +1,8 @@
+{
+  "group": "end_portal_frame_inactive",
+  "intensity": 0,
+  "blocks": [
+    "minecraft:end_portal_frame[eye=false]",
+    "~PH_END_PORTAL_FRAME_INACTIVE_ID"
+  ]
+}

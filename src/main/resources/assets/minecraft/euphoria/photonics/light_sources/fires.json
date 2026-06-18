@@ -1,0 +1,7 @@
+{
+  "group": "fires",
+  "intensity": "*fire",
+  "radius": "*fire",
+  "falloff": "*fire",
+  "overrides": "fires"
+}

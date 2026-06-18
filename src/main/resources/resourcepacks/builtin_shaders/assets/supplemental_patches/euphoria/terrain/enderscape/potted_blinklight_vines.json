@@ -5,5 +5,6 @@
     "enderscape:potted_blinklight"
   ],
   "blocklight": "supplemental_patches:enderscape/blinklamp",
+  "light_group": "blinklamp",
   "reflection_handlers": "minecraft:discard"
 }

@@ -1,0 +1,7 @@
+{
+  "group": "glowing_metals",
+  "intensity": "*full_block",
+  "radius": 1,
+  "falloff": 0.5,
+  "overrides": "glowing_metals"
+}

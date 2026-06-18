@@ -1,0 +1,8 @@
+{
+  "group": "light_sources",
+  "intensity": "*default",
+  "radius": "*default",
+  "falloff": "*default",
+  "is_traced": true,
+  "overrides": "light_sources"
+}

@@ -1,0 +1,8 @@
+{
+  "group": "fire",
+  "color": "*magma",
+  "blocks": [
+    "minecraft:fire",
+    "~PH_FIRE_ID"
+  ]
+}

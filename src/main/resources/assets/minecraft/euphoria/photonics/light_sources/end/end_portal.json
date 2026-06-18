@@ -1,0 +1,9 @@
+{
+  "group": "end_portal",
+  "color": "#41E0C6",
+  "intensity": 4.75,
+  "radius": 5,
+  "blocks": [
+    "minecraft:end_portal"
+  ]
+}

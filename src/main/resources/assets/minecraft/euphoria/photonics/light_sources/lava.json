@@ -1,0 +1,12 @@
+{
+  "group": "lava",
+  "color": "*lava",
+  "intensity": "*lava",
+  "radius": "*lava",
+  "falloff": "*lava",
+  "blocks": [
+    "minecraft:lava",
+    "~PH_LAVA_ID"
+  ],
+  "overrides": "lava"
+}

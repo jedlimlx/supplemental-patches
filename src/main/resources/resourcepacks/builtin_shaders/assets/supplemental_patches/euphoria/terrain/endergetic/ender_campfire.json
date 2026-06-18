@@ -6,6 +6,7 @@
     "enderscape:void_campfire:lit=true"
   ],
   "blocklight": "supplemental_patches:endergetic/ender_fire",
+  "light_group": "void_fire",
   "held_lighting": true,
   "reflection_handlers": "minecraft:campfire"
 }

@@ -1,0 +1,10 @@
+{
+  "group": "respawn_anchor",
+  "intensity": "*default",
+  "radius": "*default",
+  "falloff": "*default",
+  "blocks": [
+    "minecraft:respawn_anchor[charges=0]",
+    "~PH_RESPAWN_ANCHOR_NO_CHARGE_ID"
+  ]
+}

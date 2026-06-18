@@ -1,0 +1,15 @@
+{
+  "group": "enchanting_table",
+  "color": "#77CBD1",
+  "radius": 1,
+  "intensity": [
+    {
+      "conditions": ["!defined EMISSIVE_ENCHANTING_TABLE"],
+      "value": 0
+    }
+  ],
+  "blocks": [
+    "minecraft:enchanting_table",
+    "~PH_ENCHANTING_TABLE_ID"
+  ]
+}

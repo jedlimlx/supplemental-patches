@@ -1,0 +1,10 @@
+{
+  "group": "deactivated_sculk_sensor",
+  "intensity": 0,
+  "blocks": [
+    "minecraft:sculk_sensor[sculk_sensor_phase=inactive]",
+    "minecraft:sculk_sensor[sculk_sensor_phase=cooldown]",
+    "minecraft:calibrated_sculk_sensor[sculk_sensor_phase=inactive]",
+    "minecraft:calibrated_sculk_sensor[sculk_sensor_phase=cooldown]"
+  ]
+}

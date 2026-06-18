@@ -1,0 +1,11 @@
+{
+  "group": "charged",
+  "color": "#b873ac",
+  "blocks": [
+    "minecraft:respawn_anchor[charges=1]",
+    "minecraft:respawn_anchor[charges=2]",
+    "minecraft:respawn_anchor[charges=3]",
+    "minecraft:respawn_anchor[charges=4]",
+    "~PH_RESPAWN_ANCHOR_ID"
+  ]
+}

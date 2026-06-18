@@ -11,5 +11,12 @@
       "GLOWING_CELESTIAL_GROWTHS"
     ]
   },
+  "light_group": {
+    "light_group": "celestial_growth",
+    "conditions": [
+      "DO_IPBR_LIGHTS",
+      "GLOWING_CELESTIAL_GROWTHS"
+    ]
+  },
   "reflection_handlers": "minecraft:discard"
 }

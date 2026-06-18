@@ -1,0 +1,14 @@
+{
+  "group": "2500k",
+  "color": "*2500k",
+  "blocks": [
+    "minecraft:shroomlight",
+    "minecraft:lava_cauldron",
+    "minecraft:furnace[lit=true]",
+    "minecraft:blast_furnace[lit=true]",
+    "minecraft:smoker[lit=true]",
+    "~PH_SHROOMLIGHT_ID",
+    "~PH_LAVA_CAULDRON_ID",
+    "~PH_LIT_FURNACE_ID"
+  ]
+}

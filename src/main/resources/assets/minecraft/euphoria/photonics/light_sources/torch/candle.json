@@ -1,0 +1,13 @@
+{
+  "group": "candle",
+  "intensity": "*candle",
+  "radius": "*candle",
+  "falloff": "*candle",
+  "blocks": [
+    "minecraft:candle[lit=true]",
+    "minecraft:candle_cake[lit=true]",
+    "minecraft:brown_candle[lit=true]",
+    "minecraft:brown_candle_cake[lit=true]"
+  ],
+  "overrides": "candles"
+}

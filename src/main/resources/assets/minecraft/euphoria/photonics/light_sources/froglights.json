@@ -1,0 +1,7 @@
+{
+  "group": "froglights",
+  "intensity": "*full_block",
+  "radius": "*full_block",
+  "falloff": "*full_block",
+  "overrides": "froglights"
+}

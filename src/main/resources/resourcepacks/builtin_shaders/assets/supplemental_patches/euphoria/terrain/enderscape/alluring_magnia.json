@@ -25,6 +25,12 @@
     "supplemental_patches:enderscape/alluring_magnia_sprout",
     null
   ],
+  "light_group": [
+    null,
+    null,
+    "alluring_magnia",
+    null
+  ],
   "reflection_handlers": [
     null,
     "minecraft:half_blocks",

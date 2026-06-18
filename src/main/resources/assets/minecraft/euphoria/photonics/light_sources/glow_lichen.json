@@ -1,0 +1,11 @@
+{
+  "group": "glow_lichen",
+  "color": "#8ea499",
+  "intensity": 6,
+  "radius": 0.7,
+  "falloff": 0.6,
+  "blocks": [
+    "minecraft:glow_lichen",
+    "~PH_GLOW_LICHEN_ID"
+  ]
+}

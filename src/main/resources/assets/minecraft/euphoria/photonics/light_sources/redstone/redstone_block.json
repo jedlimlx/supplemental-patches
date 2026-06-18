@@ -1,0 +1,18 @@
+{
+  "group": "redstone_block",
+  "radius": "*full_block",
+  "intensity": [
+    {
+      "conditions": ["EMISSIVE_REDSTONE_BLOCK"],
+      "value": "*full_block"
+    },
+    {
+      "value": "0"
+    }
+  ],
+  "falloff": "*full_block",
+  "blocks": [
+    "minecraft:redstone_block",
+    "~PH_REDSTONE_BLOCK_ID"
+  ]
+}

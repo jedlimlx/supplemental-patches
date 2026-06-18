@@ -398,7 +398,7 @@ fun assignVoxelNumbers() {
     var count = 0
     (FILTERED_MATERIALS + FILTERED_BLOCK_ENTITIES + FILTERED_TRANSLUCENTS).forEach { material ->
 		if (material.blocklight.isNotEmpty()) {
-			material.blocklight.forEach { (colours, _) ->
+			material.blocklight.forEach { (_, colours) ->
 				val voxels = IntArray(material.blockSize) { -1 }
 				if (colours.size == 1) {
 					val colour = colours[0]!!
@@ -443,9 +443,9 @@ fun generateVoxelsAndBlocklight(directory: Path) {
         val temp = MATERIALS_MAP + BLOCK_ENTITIES_MAP + TRANSLUCENTS_MAP
         val output = (temp.map { (id, material) ->
 			if (material.blocklight.isNotEmpty()) {
-				if (material.blocklight.all { it.first.size == 1 }) id ..< id + material.blockSize
+				if (material.blocklight.all { it.second.size == 1 }) id ..< id + material.blockSize
 				else  (0 ..< material.blockSize).filter {
-					material.blocklight.all { (lst, _) -> lst[minOf(it, lst.size - 1)] != null }
+					material.blocklight.all { (_, lst) -> lst[minOf(it, lst.size - 1)] != null }
 				}.map { it + id }
 			} else if (material.needsVoxelisation) {
                 id ..< id + material.blockSize
@@ -468,8 +468,8 @@ fun generateVoxelsAndBlocklight(directory: Path) {
                     if (material.needsVoxelisation && material.blocklight.isEmpty()) {
                         append("    ".repeat(depth) + "if (mat == $idx) return ${material.voxelNumber[0][0]};\n")
                     } else {
-						val hasConditions = material.blocklight.first().second.isNotEmpty()
-						material.blocklight.forEachIndexed { it, (colours, conditions) ->
+						val hasConditions = material.blocklight.first().first.isNotEmpty()
+						material.blocklight.forEachIndexed { it, (conditions, colours) ->
 							val colour = colours[idx % colours.size]!!
 							if (hasConditions) {
 								append(
@@ -649,9 +649,9 @@ fun generateVoxelsAndBlocklight(directory: Path) {
         ITEM_MAP.forEach { (id, shader) ->
             if (!shader.heldLighting) return@forEach
             append(" ".repeat(12))
-            append("if (heldItemId == $id) { heldLightCol = ${shader.blocklight[0].first[0]}.rgb; heldLight = ${shader.lightLevel}; };  // ${shader.name}\n")
+            append("if (heldItemId == $id) { heldLightCol = ${shader.blocklight[0].second[0]}.rgb; heldLight = ${shader.lightLevel}; };  // ${shader.name}\n")
             append(" ".repeat(12))
-            append("if (heldItemId2 == $id) { heldLightCol2 = ${shader.blocklight[0].first[0]}.rgb; heldLight2 = ${shader.lightLevel}; };\n")
+            append("if (heldItemId2 == $id) { heldLightCol2 = ${shader.blocklight[0].second[0]}.rgb; heldLight2 = ${shader.lightLevel}; };\n")
         }
     }.toString()
 

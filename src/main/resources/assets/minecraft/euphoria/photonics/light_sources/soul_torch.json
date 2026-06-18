@@ -1,0 +1,11 @@
+{
+  "group": "soul_torch",
+  "color": "*soul_fire",
+  "intensity": 11,
+  "blocks": [
+    "minecraft:soul_torch",
+    "minecraft:soul_wall_torch",
+    "~PH_SOUL_TORCH_ID"
+  ],
+  "overrides": "soul_torch"
+}

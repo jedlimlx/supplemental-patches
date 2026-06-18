@@ -113,7 +113,7 @@ vec2 fbm3d_2d(vec3 x) {
         #else
             vec3 flashColor = vec3(ES_FLASH_R, ES_FLASH_G, ES_FLASH_B);
         #endif
-        return vec4(clamp01(flashColor / maxOf(flashColor)), clamp01(noise * endFlashIntensity * endFlashFactor));
+        return vec4(clamp01(flashColor / maxOf(flashColor)), clamp01(noise * endFlashIntensityM * endFlashFactor));
     }
 #endif
 

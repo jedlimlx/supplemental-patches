@@ -1,0 +1,6 @@
+{
+  "group": "void_lantern",
+  "intensity": "*lantern",
+  "radius": "*lantern",
+  "falloff": "*lantern"
+}

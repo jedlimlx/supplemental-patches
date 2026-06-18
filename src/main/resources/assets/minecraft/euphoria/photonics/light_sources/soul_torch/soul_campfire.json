@@ -1,0 +1,9 @@
+{
+  "group": "soul_campfire",
+  "radius": "*campfire",
+  "falloff": "*campfire",
+  "blocks": [
+    "minecraft:soul_campfire[lit=true]",
+    "~PH_SOUL_CAMPFIRE_ID"
+  ]
+}

@@ -5,6 +5,7 @@
     "enderscape:wisp_flower"
   ],
   "blocklight": "supplemental_patches:enderscape/wisp_flower",
+  "light_group": "wisp_flower",
   "waving": "minecraft:grounded_waving_foliage",
   "reflection_handler": "minecraft:discard"
 }

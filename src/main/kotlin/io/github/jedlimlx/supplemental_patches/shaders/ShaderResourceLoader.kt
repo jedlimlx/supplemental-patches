@@ -28,11 +28,35 @@ fun loadJson(location: ResourceLocation, manager: ResourceManager): JsonObject {
     }
 }
 
+fun <T> readConditionalValue(json: JsonElement, valueString: String, error: MinecraftError, load: (JsonElement) -> T): List<Pair<List<String>, T>> {
+	return if (json.isJsonObject) {
+		val field = json.asJsonObject
+		listOf(
+			Pair(
+				field["conditions"]?.asJsonArray?.map { it.asString }?.toList() ?: listOf(),
+				load(field[valueString] ?: throw error)
+			)
+		)
+	} else if (json.isJsonArray) {
+		if (json.asJsonArray.any { !it.isJsonObject })
+			return listOf(Pair(listOf(), load(json)))
+
+		json.asJsonArray.map {
+			val field = it.asJsonObject
+			Pair(
+				field["conditions"]?.asJsonArray?.map { it.asString }?.toList() ?: listOf(),
+				load(field[valueString] ?: throw error)
+			)
+		}
+	} else listOf(Pair(listOf(), load(json)))
+}
+
 object ShaderResourceLoader {
     val COLOURS_MAP: HashMap<String, Colour> = hashMapOf()
     val TINTS_MAP: HashMap<String, Colour> = hashMapOf()
     val WAVING_MAP: HashMap<String, WavingObject> = hashMapOf()
     val DEFERRED_MAP: HashMap<String, DeferredMaterial> = hashMapOf()
+	val LIGHT_GROUP_MAP: HashMap<String, LightGroup> = hashMapOf()
 
     val BLOCK_MAP: HashMap<String, ShaderBuilder> = hashMapOf()
     val ITEM_MAP: HashMap<String, ShaderBuilder> = hashMapOf()
@@ -114,8 +138,6 @@ object ShaderResourceLoader {
 
         UNIFORMS.clear()
 
-        ATMOSPHERICS.clear()
-
         SETTINGS.clear()
 
         SETTINGS_FILES.clear()
@@ -133,6 +155,12 @@ object ShaderResourceLoader {
         BUFFERS.clear()
 
         REFACTORS.clear()
+
+		LIGHT_GROUP_MAP.clear()
+
+		DEFINES.clear()
+
+		LIGHT_GROUPS.clear()
 
         // Loading various colours
         val lst = resourceManager.listResources("euphoria/colors") { it.path.endsWith(".json") }
@@ -203,6 +231,9 @@ object ShaderResourceLoader {
             REFLECTION_HANDLERS[key] = getFileContents(loc, resourceManager)
         }
 
+		// Loading light groups
+		loadPhotonicsLightGroups(resourceManager, "euphoria/photonics")
+
         return@catchAndPrintError CompletableFuture.allOf(
             loadMaterialShaders(backgroundExecutor, resourceManager, "euphoria/terrain", BLOCK_MAP),
             loadMaterialShaders(backgroundExecutor, resourceManager, "euphoria/translucents", BLOCK_MAP),
@@ -220,13 +251,13 @@ object ShaderResourceLoader {
             loadFiles(backgroundExecutor, resourceManager, "euphoria/atmospherics/fog/functions", FOG_FUNCTIONS),
             loadUniforms(backgroundExecutor, resourceManager, "euphoria/uniforms"),
             loadMixins(backgroundExecutor, resourceManager, "euphoria/mixins"),
-            loadVolumetricAtmospherics(backgroundExecutor, resourceManager, "euphoria/atmospherics/volumetric"),
             loadSkies(backgroundExecutor, resourceManager, "euphoria/atmospherics/sky"),
             loadTextures(backgroundExecutor, resourceManager, "euphoria/textures"),
             loadFiles(backgroundExecutor, resourceManager, "euphoria/common", COMMON_FUNCTIONS),
             loadBuffers(backgroundExecutor, resourceManager, "euphoria/buffers"),
             loadRefactors(backgroundExecutor, resourceManager, "euphoria/refactors"),
-			loadPackJson(backgroundExecutor, resourceManager, "euphoria")
+			loadPackJson(backgroundExecutor, resourceManager, "euphoria"),
+			loadPhotonicsDefines(backgroundExecutor, resourceManager, "euphoria/photonics/defines")
         ).thenAcceptAsync {
             fun process(json: JsonObject, string: String, map: HashMap<String, ShaderBuilder>, regexReplaces: MutableList<Regex>, additionaMapping: MutableMap<Int, List<String>>) {
                 json.keySet().forEach {
@@ -304,6 +335,8 @@ object ShaderResourceLoader {
 
                 LOGGER.info("Loading ${lst.entries.size} unique $type materials...")
                 lst.forEachWithErrorHandling { (loc, _) ->
+					LOGGER.info(loc.toString())
+
                     val tokens = loc.path.replace("$type/", "").split("/")
                     val path = tokens.subList(0, tokens.size - 1).joinToString("/")
                     val json = loadJson(loc, resourceManager)
@@ -320,58 +353,21 @@ object ShaderResourceLoader {
                         builder.mat[i] = json["mat$i"]?.asJsonArray?.map { it.asString }?.toMutableList() ?: mutableListOf()
 
                     if (json["blocklight"] != null) {
-                        if (json["blocklight"].isJsonArray) {
-							val coloursArray = json["blocklight"].asJsonArray
-							if (coloursArray.first().isJsonObject) {
-								builder.blocklight(
-									coloursArray.map {
-										if (!it.isJsonObject) throw MinecraftError("Invalid specification of blocklight colors and conditions!", loc.toString())
-										it as JsonObject
-
-										Pair(
-											if (!it["color"].isJsonArray) {
-												listOf(getColourOrTint(it["color"].asString, loc.toString()))
-											} else {
-												it["color"].asJsonArray.map {
-													if (it != JsonNull.INSTANCE) {
-														getColourOrTint(it.asString, loc.toString())
-													} else null
-												}
-											}, it["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
-										)
-									}
-								)
-							} else {  // list of colours with no conditions
-								builder.colours(
-									coloursArray.map {
+						builder.blocklight(
+							readConditionalValue(
+								json["blocklight"],
+								"color",
+								MinecraftError("Invalid specification of blocklight color!", loc.toString())
+							) {
+								if (it.isJsonArray) {
+									it.asJsonArray.map {
 										if (it != JsonNull.INSTANCE) {
 											getColourOrTint(it.asString, loc.toString())
 										} else null
-									}
-								)
+									}.toList()
+								} else listOf(getColourOrTint(it.asString, loc.toString()))
 							}
-                        } else if (json["blocklight"].isJsonObject) {
-							val it = json["blocklight"].asJsonObject
-							builder.blocklight(
-								listOf(
-									Pair(
-										if (it["color"].isJsonArray) {
-											it["color"].asJsonArray.map {
-												if (it != JsonNull.INSTANCE) {
-													getColourOrTint(it.asString, loc.toString())
-												} else null
-											}
-										} else {
-											listOf(getColourOrTint(it["color"].asString, loc.toString()))
-										}, it["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
-									)
-								)
-							)
-						} else {  // a single colour
-                            builder.colours(
-								getColourOrTint(json["blocklight"].asString, loc.toString())
-                            )
-                        }
+						)
                     }
                     if (json["held_lighting"]?.asBoolean == true) builder.heldLighting()
                     if (json["translucent"]?.asBoolean == true) builder.translucent()
@@ -404,6 +400,55 @@ object ShaderResourceLoader {
                             )
                         }
                     }
+
+					if (json["light_group"] != null) {
+						builder.mat.indices.forEach { i ->
+							val lightGroups = readConditionalValue(
+								json["light_group"],
+								"light_group",
+								MinecraftError("Did not specify light group", loc.toString())
+							) {
+								if (it.isJsonArray) {
+									val lightGroup = it.asJsonArray[i]
+									if (!lightGroup.isJsonNull) {
+										LIGHT_GROUP_MAP[lightGroup.asString]
+											?: throw MinecraftError(
+												"Light group ${json["light_group"]} does not exist",
+												loc.toString()
+											)
+									} else null
+								} else {
+									LIGHT_GROUP_MAP[it.asString]
+										?: throw MinecraftError(
+											"Light group ${json["light_group"]} does not exist",
+											loc.toString()
+										)
+								}
+							}
+
+							val blocks = builder.mat[i].map {
+								val tokens = it.split(":")
+								if (tokens.size > 2) {
+									val properties = tokens.subList(2, tokens.size)
+									"${tokens[0]}:${tokens[1]}[${properties.joinToString(",")}]"
+								} else it
+							}.toList()
+							lightGroups.forEach { (conditions, lightGroup) ->
+								if (lightGroup != null) {
+									if (conditions.isNotEmpty()) {
+										lightGroup.blocks.add(Pair(conditions, blocks))
+									} else {
+										lightGroup.blocks.add(
+											Pair(
+												lightGroups.filter { it.first.isNotEmpty() }.map { "!(${it.first.conditions()})" },
+												blocks
+											)
+										)
+									}
+								}
+							}
+						}
+					}
 
                     builder.register(
                         when (type) {
@@ -674,44 +719,6 @@ object ShaderResourceLoader {
         ).thenAcceptAsync {}
     }
 
-    fun loadVolumetricAtmospherics(
-        executor: Executor, resourceManager: ResourceManager, type: String
-    ): CompletableFuture<Void> {
-        return CompletableFuture.supplyAsync (
-            {
-                resourceManager.listResources(type) { it.path.endsWith(".glsl") }.map { (loc, _) ->
-                    loc.path.replace("$type/", "") to getFileContents(loc, resourceManager)
-                }.toMap()
-            }, executor
-        ).thenAcceptAsync(
-            {
-                val lst = resourceManager.listResources(type) { it.path.endsWith(".json") }
-
-                LOGGER.info("Loading ${lst.entries.size} volumetric atmospherics...")
-                lst.forEachWithErrorHandling { (loc, _) ->
-                    val tokens = loc.path.replace("$type/", "").split("/")
-                    val path = tokens.subList(0, tokens.size - 1).joinToString("/")
-                    val json = loadJson(loc, resourceManager)
-
-                    ATMOSPHERICS.add(
-                        Atmospherics(
-                            libPath = json["lib"].asJsonObject["name"].asString ?: throw MinecraftError("Path to place library file is not specified", loc.toString()),
-                            libCode = it[
-                                "$path${if (path.isEmpty()) "" else "/"}" +
-                                        (json["lib"].asJsonObject["glsl"].asString ?: throw MinecraftError(".glsl file not specified.", loc.toString()))
-                            ] ?: throw MinecraftError("$path/${json["lib"].asJsonObject["glsl"].asString} not found!", loc.toString()),
-                            mainCode = it[
-                                "$path${if (path.isEmpty()) "" else "/"}" +
-                                        (json["main"].asString ?: throw MinecraftError(".glsl file not specified.", loc.toString()))
-                            ] ?: throw MinecraftError("$path/${json["main"].asString} not found!", loc.toString()),
-                            conditions = json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
-                        )
-                    )
-                }
-            }, executor
-        ).thenAcceptAsync {}
-    }
-
     fun loadSkies(
         executor: Executor, resourceManager: ResourceManager, type: String
     ): CompletableFuture<Void> {
@@ -855,6 +862,80 @@ object ShaderResourceLoader {
 
 					val json = loadJson(loc, resourceManager)
 					SHADERPACK_NAME = json["name"]!!.asString
+				}
+			}, executor
+		).thenAcceptAsync {}
+	}
+
+	fun loadPhotonicsLightGroups(
+		resourceManager: ResourceManager, type: String
+	) {
+		fun recurse(path: String): MutableList<LightGroup> {
+			LOGGER.info("Loading light groups from $type$path...")
+			return resourceManager.listResources("$type$path") {
+				it.path.endsWith(".json") &&
+				it.path.split("$type$path/").last().count { it == '/' } == 0
+			}.mapWithErrorHandling { (loc, _) ->
+				val json = loadJson(loc, resourceManager)
+
+				val properties = json.keySet().filter { it != "group" && it != "overrides" && it != "blocks" }.map {
+					LightGroupProperty(
+						it,
+						readConditionalValue<String>(
+							json[it],
+							"value",
+							MinecraftError(
+								"Did not specify value for light group property $it",
+								loc.toString()
+							)
+						) { it.asString }
+					)
+				}.toList()
+
+				val groupName = json["group"]?.asString ?: throw MinecraftError("Did not specify light group name", loc.toString())
+				val lightGroup = LightGroup(
+					groupName,
+					if (json["blocks"] != null) mutableListOf(Pair(listOf(), json["blocks"].asJsonArray.map { it.asString }.toList())) else mutableListOf(),
+					properties,
+					if (json["overrides"] != null) recurse("$path/${json["overrides"].asString}") else mutableListOf()
+				)
+
+				LIGHT_GROUP_MAP[groupName] = lightGroup
+				lightGroup
+			}.toMutableList()
+		}
+
+		LIGHT_GROUPS.addAll(recurse(""))
+	}
+
+	fun loadPhotonicsDefines(
+		executor: Executor, resourceManager: ResourceManager, type: String
+	): CompletableFuture<Void> {
+		return CompletableFuture.supplyAsync (
+			{
+				resourceManager.listResources(type) { it.path.endsWith(".json") }.forEachWithErrorHandling { (loc, _) ->
+					val json = loadJson(loc, resourceManager)
+
+					DEFINES.colours.addAll(
+						json["colors"]?.asJsonObject?.keySet()?.map {
+							Pair(it, json["colors"].asJsonObject[it].asString)
+						} ?: listOf()
+					)
+					DEFINES.intensities.addAll(
+						json["intensities"]?.asJsonObject?.keySet()?.map {
+							Pair(it, json["intensities"].asJsonObject[it].asDouble)
+						} ?: listOf()
+					)
+					DEFINES.radii.addAll(
+						json["radii"]?.asJsonObject?.keySet()?.map {
+							Pair(it, json["radii"].asJsonObject[it].asDouble)
+						} ?: listOf()
+					)
+					DEFINES.falloffs.addAll(
+						json["falloffs"]?.asJsonObject?.keySet()?.map {
+							Pair(it, json["falloffs"].asJsonObject[it].asDouble)
+						} ?: listOf()
+					)
 				}
 			}, executor
 		).thenAcceptAsync {}

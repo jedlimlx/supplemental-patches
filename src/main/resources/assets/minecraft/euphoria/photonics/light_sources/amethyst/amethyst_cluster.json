@@ -1,0 +1,7 @@
+{
+  "group": "cluster",
+  "intensity": "*amethyst_cluster",
+  "blocks": [
+    "minecraft:amethyst_cluster"
+  ]
+}

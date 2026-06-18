@@ -1,0 +1,15 @@
+{
+  "group": "lamps",
+  "color": "*torch",
+  "intensity": "*lamp",
+  "radius": "*lamp",
+  "falloff": "*lamp",
+  "blocks": [
+    "minecraft:redstone_lamp[lit=true]",
+    "minecraft:copper_bulb[lit=true]",
+    "minecraft:waxed_copper_bulb[lit=true]",
+    "~PH_REDSTONE_LAMP_ID",
+    "~PH_COPPER_BULB_NORMAL_ID"
+  ],
+  "overrides": "lamps"
+}

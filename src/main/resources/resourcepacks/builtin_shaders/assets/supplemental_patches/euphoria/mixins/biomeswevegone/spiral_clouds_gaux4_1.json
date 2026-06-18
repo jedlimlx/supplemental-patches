@@ -1,6 +1,0 @@
-{
-  "file": "/shaders/lib/atmospherics/clouds/reimaginedClouds.glsl",
-  "type": "replace",
-  "key": "texture2D(gaux4, coord).b",
-  "code": "spiral_clouds_gaux4_1.glsl"
-}

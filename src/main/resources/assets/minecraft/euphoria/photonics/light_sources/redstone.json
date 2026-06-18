@@ -1,0 +1,10 @@
+{
+  "group": "redstone",
+  "color": "*redstone",
+  "blocks": [
+    "minecraft:redstone_torch[lit=true]",
+    "minecraft:redstone_wall_torch[lit=true]",
+    "~PH_REDSTONE_TORCH_ID"
+  ],
+  "overrides": "redstone"
+}
