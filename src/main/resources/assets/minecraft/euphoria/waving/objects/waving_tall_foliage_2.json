@@ -1,5 +1,5 @@
 {
-  "glsl": "waving_tall_foliage_2.glsl",
+  "glsl": "waving_tall_emissive_foliage.glsl",
   "conditions": [
     "WAVING_FOLIAGE"
   ]
