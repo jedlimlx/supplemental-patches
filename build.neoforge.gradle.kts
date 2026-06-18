@@ -238,9 +238,12 @@ dependencies {
 	)
 
 	// misc
+	if (prop("deps.enderscape_2_1_0") == "true")
+		implementation(files("libs/enderscape-neoforge-2.1.0+mc1.21.1.jar"))
+	else addMods(listOf("enderscape"))
+
 	addMods(
 		listOf(
-			"enderscape",
 			"cobblemon*",
 			"enhanced-celestials",
 			"friends-and-foes!",

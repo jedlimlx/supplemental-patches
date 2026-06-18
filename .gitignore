@@ -8,7 +8,7 @@ build/
 !**/src/test/**/build/
 
 run/
-#versions/datagen
+libs/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml

@@ -42,5 +42,6 @@ stonecutter parameters {
 	swaps["mod_name"] = "\"" + property("mod.name") + "\";"
 	swaps["mod_group"] = "\"" + property("mod.group") + "\";"
 	swaps["minecraft"] = "\"" + node.metadata.version + "\";"
-	constants["release"] = property("mod.id") != "modtemplate"
+
+	constants["enderscape_2_1_0"] = findProperty("deps.enderscape_2_1_0") == "true"
 }
