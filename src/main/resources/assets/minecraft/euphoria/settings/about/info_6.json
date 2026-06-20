@@ -5,5 +5,9 @@
     "option": "Mod Website",
     "comment": "For more information, visit the mod website at https://supplemental-patches.pages.dev/"
   },
+  "ru_RU": {
+    "option": "Сайт мода",
+    "comment": "Для получения дополнительной информации посетите веб-сайт мода по адресу https://supplemental-patches.pages.dev/"
+  },
   "priority": 4
 }

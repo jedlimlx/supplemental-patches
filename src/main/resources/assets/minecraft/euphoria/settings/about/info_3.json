@@ -6,8 +6,8 @@
     "comment": "A wide variety of popular mods are supported in the built-in resource-pack, including but not limited to Cobblemon, Supplementaries and Enderscape."
   },
   "ru_RU": {
-    "option": "Добавление новых материалов",
-    "comment": "Подробная информация доступна в документации: https://github.com/jedlimlx/supplemental-patches/wiki."
+    "option": "Поддержка модов",
+    "comment": "Встроенный набор ресурсов поддерживает большое множество популярных модов, включая, помимо прочего, Cobblemon, Supplementaries и Enderscape."
   },
   "priority": 8
 }

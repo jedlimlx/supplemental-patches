@@ -4,5 +4,8 @@
   "folder": "packs",
   "en_US": {
     "screen": "§6Configure Resource Packs"
+  },
+  "ru_RU": {
+    "screen": "§6Настроить наборы ресурсов"
   }
 }
