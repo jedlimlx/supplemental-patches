@@ -158,6 +158,8 @@ fun injectIntoFragmentMain(
     return beforeMain + modifiedMainBody + afterMain
 }
 
+const val TOTAL_BUFFERS = 31
+
 data class Buffer(
     val name: String,
     val imageFormat: String,
@@ -173,7 +175,7 @@ fun injectBuffers(directory: Path) {
     for (i in 0..<images.size) {
         UNIFORMS.add(
             Uniform(
-                "colortex${32 - i}",
+                "colortex${TOTAL_BUFFERS - i}",
                 "sampler2D",
                 "",
                 listOf()
@@ -185,10 +187,10 @@ fun injectBuffers(directory: Path) {
     val selectors = "rgba"
     val readCode = images.mapIndexed { i, it ->
         StringBuilder().apply {
-            append("vec4 texture${32 - i} = texelFetch(colortex${32 - i}, texelCoord, 0);\n")
+            append("vec4 texture${TOTAL_BUFFERS - i} = texelFetch(colortex${TOTAL_BUFFERS - i}, texelCoord, 0);\n")
 
             it.forEachIndexed { j, it ->
-                append("float ${it.name} = texture${32 - i}.${selectors[j]};\n")
+                append("float ${it.name} = texture${TOTAL_BUFFERS - i}.${selectors[j]};\n")
             }
         }.toString()
     }.toList()
@@ -220,7 +222,7 @@ fun injectBuffers(directory: Path) {
 
         var newCode = injectBuffersIntoShaderCode(shaderCode, lst.map {
             Pair(
-                32 - images.indexOf(it),
+				TOTAL_BUFFERS - images.indexOf(it),
                 "vec4(${(it.map { it.name } + List(4 - it.size) { "0.0" }).joinToString(", ")});"
             )
         }.toList())
