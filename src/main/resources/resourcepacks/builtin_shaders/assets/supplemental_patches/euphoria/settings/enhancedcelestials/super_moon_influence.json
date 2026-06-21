@@ -15,5 +15,9 @@
   "en_US": {
     "option": "Super Moon Influence",
     "comment": "Controls the extent to which a super moon will increase the ambient and skylight."
+  },
+  "ru_RU": {
+    "option": "Влияние суперлуния",
+    "comment": "Управляет степенью, в которой суперлуние увеличит окружающего и небесного освещения."
   }
 }

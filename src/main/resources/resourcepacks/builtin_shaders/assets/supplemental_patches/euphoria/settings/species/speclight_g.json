@@ -14,5 +14,8 @@
   "file": "materials.glsl",
   "en_US": {
     "option": "Speclight Green"
+  },
+  "ru_RU": {
+    "option": "Зелёный для спектральной лампы"
   }
 }

@@ -17,7 +17,7 @@
     "comment": "Determines the factor by which the sun should be dimmer during the fog effect. §e[*]§r Only applies when Sun / Moon Mode is set to Reimagined."
   },
   "ru_RU": {
-    "option": "Интенсивность солнца",
-    "comment": "Определяет коэффициент затемнения солнца во время тумана."
+    "option": "Интенсивность солнца Reimagined §e[*]§r",
+    "comment": "Определяет коэффициент затемнения солнца во время тумана. §e[*]§r Работает только если стиле солнца и луны Reimagined."
   }
 }

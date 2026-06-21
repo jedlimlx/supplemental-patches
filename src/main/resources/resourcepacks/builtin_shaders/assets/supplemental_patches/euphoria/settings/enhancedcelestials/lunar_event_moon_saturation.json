@@ -15,5 +15,9 @@
   "en_US": {
     "option": "Lunar Event Moon Saturation §e[*]§r",
     "comment": "Controls saturation of moon during lunar events. §e[*]§r This only applies to the Unbound moon."
+  },
+  "ru_RU": {
+    "option": "Насыщенность луны лунного события §e[*]§r",
+    "comment": "Контролирует насыщенность луны во время лунных событий. §e[*]§r Это применимо только к луне Unbound."
   }
 }

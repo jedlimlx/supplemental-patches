@@ -15,5 +15,8 @@
   "file": "enderscapeNebula.glsl",
   "en_US": {
     "option": "Flash Color - Red"
+  },
+  "ru_RU": {
+    "option": "Красный для вспышки"
   }
 }

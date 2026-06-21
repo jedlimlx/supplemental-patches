@@ -11,6 +11,9 @@
     "value.2": "§aOFF"
   },
   "ru_RU": {
-    "option": "Туман Doom & Gloom"
+    "option": "Туман Doom & Gloom",
+    "value.0": "Да, с эффектом",
+    "value.1": "Да",
+    "value.2": "§aНет"
   }
 }

@@ -15,5 +15,9 @@
   "en_US": {
     "option": "Lunar Event Lighting Saturation",
     "comment": "Controls saturation of ambient and skylight during lunar events."
+  },
+  "ru_RU": {
+    "option": "Насыщенность освещения лунного события",
+    "comment": "Контролирует насыщенность окружающего и небесного освещения во время лунных событий."
   }
 }

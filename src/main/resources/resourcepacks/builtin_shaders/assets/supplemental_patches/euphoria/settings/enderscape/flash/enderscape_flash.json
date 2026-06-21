@@ -10,5 +10,11 @@
     "value.0": "§aOFF",
     "value.1": "If Mod Installed",
     "value.2": "ON"
+  },
+  "ru_RU": {
+    "option": "Вспышка Энда",
+    "value.0": "§aНет",
+    "value.1": "Если мод установлен",
+    "value.2": "Да"
   }
 }

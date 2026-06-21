@@ -16,5 +16,9 @@
   "en_US": {
     "option": "Cirrus Distortion Intensity 2",
     "comment": "Changes the magnitude of distortion applied to higher octaves of cloud noise."
+  },
+  "ru_RU": {
+    "option": "Интенсивность перистых искажений 2",
+    "comment": "Изменяет величину искажений, применяемых к более высоким октавам облачного шума."
   }
 }

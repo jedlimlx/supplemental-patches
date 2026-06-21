@@ -8,5 +8,9 @@
   "en_US": {
     "option": "Cirrus Clouds §e[*]§r",
     "comment": "Converts the second layer of unbound clouds into wispy, cirrus clouds. §e[*]§r Requires option for second layer of unbound clouds to be enabled."
+  },
+  "ru_RU": {
+    "option": "Перистые облака §e[*]§r",
+    "comment": "Преобразует второй слой облаков Unbound в тонкие перистые облака. §e[*]§r Требуется включить опцию второго слоя облаков Unbound."
   }
 }

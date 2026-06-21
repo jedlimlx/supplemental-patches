@@ -4,6 +4,9 @@
     "name": "SUPPLEMENTAL_SETTINGS",
     "en_US": {
       "screen": "§6Configure Supplemental Patches"
+    },
+    "ru_RU": {
+      "screen": "§6Настроить Supplemental Patches"
     }
   }
 }

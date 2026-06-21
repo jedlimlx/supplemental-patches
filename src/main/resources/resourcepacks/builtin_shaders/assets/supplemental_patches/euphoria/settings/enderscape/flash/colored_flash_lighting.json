@@ -7,5 +7,9 @@
   "en_US": {
     "option": "Colored Flash Lighting",
     "comment": "Applies the End Flash's color to the increase in lighting during the End Flash."
+  },
+  "ru_RU": {
+    "option": "Цветное освещение вспышки",
+    "comment": "Применяет цвет вспышки Энда к увеличению освещённости во время вспышки."
   }
 }

@@ -11,5 +11,8 @@
   "file": "materials.glsl",
   "en_US": {
     "option": "Glowing Moon Stone Ore"
+  },
+  "ru_RU": {
+    "option": "Свечение лунокаменной руды"
   }
 }

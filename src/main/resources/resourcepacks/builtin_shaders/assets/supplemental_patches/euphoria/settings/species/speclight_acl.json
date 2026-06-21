@@ -7,5 +7,9 @@
   "en_US": {
     "option": "Speclight ACT",
     "comment": "Determines if the Speclight uses ACT lighting. Euphoria Coloured Lighting is recommended for speclights of colours other than the default."
+  },
+  "ru_RU": {
+    "option": "ПЦТ спектральной лампы",
+    "comment": "Определяет, используется ли ПЦТ для света спектральной лампы. Цветная подсветка Euphoria рекомендуется для цветов спектральных ламп, отличных от стандартных."
   }
 }

@@ -8,5 +8,9 @@
   "en_US": {
     "option": "Disable Default Flash",
     "comment": "Disables Complementary Shader's default End Flash."
+  },
+  "ru_RU": {
+    "option": "Отключить стандартную вспышку",
+    "comment": "Отключает стандартную вспышку Энда из шейдера Complementary."
   }
 }

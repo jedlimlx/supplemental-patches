@@ -7,5 +7,9 @@
   "en_US": {
     "option": "Lumisene Pixelated Texture §e[*]§r",
     "comment": "Enables a noise-based pixelated texture for the Lumisene. §e[*]§r No irisdescence effect if this is disabled."
+  },
+  "ru_RU": {
+    "option": "Пиксельная текстура светотна §e[*]§r",
+    "comment": "Включает пиксельную текстуру на основе шума для светона. §e[*]§r Эффект переливчатости отсутствует, если эта функция отключена."
   }
 }

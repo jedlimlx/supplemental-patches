@@ -11,5 +11,8 @@
   "file": "materials.glsl",
   "en_US": {
     "option": "Glowing Sulfur Ore"
+  },
+  "ru_RU": {
+    "option": "Свечение сероносной руды"
   }
 }

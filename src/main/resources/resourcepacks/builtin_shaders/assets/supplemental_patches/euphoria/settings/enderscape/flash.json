@@ -5,5 +5,8 @@
   "priority": 1,
   "en_US": {
     "screen": "Flash"
+  },
+  "ru_RU": {
+    "screen": "Вспышка"
   }
 }

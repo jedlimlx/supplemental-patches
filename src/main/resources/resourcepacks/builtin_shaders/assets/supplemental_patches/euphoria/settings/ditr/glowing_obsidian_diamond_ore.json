@@ -12,5 +12,8 @@
   "file": "materials.glsl",
   "en_US": {
     "option": "Glowing Obsidian Diamond Ore"
+  },
+  "ru_RU": {
+    "option": "Свечение алмазоносного обсидиана"
   }
 }

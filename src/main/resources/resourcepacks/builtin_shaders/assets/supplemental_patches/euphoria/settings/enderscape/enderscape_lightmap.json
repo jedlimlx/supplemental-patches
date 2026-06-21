@@ -11,5 +11,12 @@
     "value.0": "§aOFF",
     "value.1": "If Mod Installed",
     "value.2": "ON"
+  },
+  "ru_RU": {
+    "option": "Карта освещения Enderscape",
+    "comment": "Включает изменённую карту освещения, используемую Enderscape, вместо стандартной.",
+    "value.0": "§aНет",
+    "value.1": "Если мод установлен",
+    "value.2": "Да"
   }
 }

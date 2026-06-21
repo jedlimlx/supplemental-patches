@@ -11,5 +11,8 @@
   "file": "materials.glsl",
   "en_US": {
     "option": "Glowing Leaf Stone Ore"
+  },
+  "ru_RU": {
+    "option": "Свечение листокаменной руды"
   }
 }

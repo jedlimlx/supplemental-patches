@@ -14,5 +14,8 @@
   "file": "materials.glsl",
   "en_US": {
     "option": "Speclight Red"
+  },
+  "ru_RU": {
+    "option": "Красный для спектральной лампы"
   }
 }

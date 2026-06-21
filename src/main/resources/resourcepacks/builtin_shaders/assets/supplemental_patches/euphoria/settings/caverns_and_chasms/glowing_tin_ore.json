@@ -11,5 +11,8 @@
   "file": "materials.glsl",
   "en_US": {
     "option": "Glowing Tin Ore"
+  },
+  "ru_RU": {
+    "option": "Свечение оловоносной руды"
   }
 }

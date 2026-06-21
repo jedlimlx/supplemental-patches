@@ -14,5 +14,8 @@
   "file": "materials.glsl",
   "en_US": {
     "option": "Speclight Blue"
+  },
+  "ru_RU": {
+    "option": "Синий для спектральной лампы"
   }
 }
