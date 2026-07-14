@@ -11,6 +11,7 @@ pluginManagement {
 		maven("https://maven.terraformersmc.com/") { name = "TerraformersMC" }
 		maven("https://thedarkcolour.github.io/KotlinForForge/") { name = "Kotlin for Forge" }
 		maven("https://maven.bawnorton.com/releases")
+		maven("https://maven.covers1624.net/")
 
 		exclusiveContent {
 			forRepository { maven("https://api.modrinth.com/maven") { name = "Modrinth" } }
@@ -42,7 +43,7 @@ stonecutter {
 
 private fun getBuildscript(loader: String, version: String): String {
 	if (loader == "fabric") {
-		return if (version.startsWith("1.")) {
+		return if ("26" !in version) {
 			"build.fabric-o.gradle.kts"
 		} else {
 			"build.fabric-m.gradle.kts"

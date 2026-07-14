@@ -139,7 +139,7 @@ dependencies {
 			"autumnity",
 			"berry-good",
 			"buzzier-bees",
-			"caverns-and-chasms:3.0.0",
+			"caverns-and-chasms",
 			"clayworks",
 			"endergetic",
 			"environmental",
@@ -153,9 +153,9 @@ dependencies {
 	// supplementaries
 	addMods(
 		listOf(
-			"supplementaries",
+			"supplementaries:1.21.1-3.6.8-neoforge",
 			"amendments",
-			"supplementaries-squared",
+			"supplementaries-squared*",
 			"snowy-spirit!"
 		)
 	)
@@ -172,7 +172,7 @@ dependencies {
 	// farmers delight
 	addMods(
 		listOf(
-			"farmers-delight!:1.21.1-1.3.1",
+			"farmers-delight!",
 			"rustic-delight!",
 			"my-nethers-delight!",
 			"ends-delight!",
@@ -199,7 +199,7 @@ dependencies {
 	// peculiar room
 	addMods(
 		listOf(
-			"spawn-mod:4.0.4",
+			"spawn-mod",
 			"whaleborne",
 			"twigs*",
 			"the-between*",

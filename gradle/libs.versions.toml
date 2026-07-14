@@ -15,6 +15,7 @@ vanniktech-maven-publish = "0.35.0"
 mixin = "0.8.7"
 undercouch-download = "5.7.0"
 mixinsquared = "0.3.7-beta.2"
+vfyjxf-production = "0.1.0"
 
 [libraries]
 kikugie-postprocess = { module = "dev.kikugie:postprocess", version.ref = "stonecutter-postprocess" }
@@ -43,3 +44,4 @@ kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-jvm" }
 fletching-table = { id = "dev.kikugie.fletching-table", version.ref = "fletching-table" }
 legacyforge-moddev = { id = "net.neoforged.moddev.legacyforge", version.ref = "neoforge-moddev" }
 undercouch-download = { id = "de.undercouch.download", version.ref = "undercouch-download" }
+vfyjxf-production = { id = "dev.vfyjxf.gradle.production", version.ref = "vfyjxf-production" }

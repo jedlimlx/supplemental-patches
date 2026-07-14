@@ -103,7 +103,7 @@ dependencies {
 	addMods(listOf("jei!", "jade!"))
 
 	// rendering / optimisation mods
-	addMods(listOf("oculus", "xenon-forge!", "radium!", "iris-shader-folder!"))
+	addMods(listOf("oculus", "xenon-forge!", "radium!", "iris-shader-folder!", "irissearch!"))
 	runtimeOnly("maven.modrinth:euphoria-patches:${prop("deps.euphoria-patches")}-forge")
 
 	// general library mods

@@ -11,6 +11,7 @@ plugins {
 	alias(libs.plugins.fletching.table).apply(false)
 	alias(libs.plugins.legacyforge.moddev).apply(false)
 	alias(libs.plugins.undercouch.download).apply(false)
+	alias(libs.plugins.vfyjxf.production).apply(false)
 }
 
 stonecutter active file(".sc_active_version")
