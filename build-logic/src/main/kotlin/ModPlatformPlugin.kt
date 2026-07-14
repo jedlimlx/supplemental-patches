@@ -32,7 +32,7 @@ fun Project.env(variable: String): String? = providers.environmentVariable(varia
 
 fun Project.envTrue(variable: String): Boolean = env(variable)?.toDefaultLowerCase() == "true"
 
-fun Project.inferredLoader() = project.buildFile.name.substringAfter('.').replace(".gradle.kts", "").replace("-o", "").replace("-m", "")
+fun Project.inferredLoader() = project.buildFile.name.substringAfter('.').replace(".gradle.kts", "")
 
 fun DependencyHandlerScope.modrinthImplementation(project: Project, modName: String) {
 	val propName = project.prop("deps.${modName}")
@@ -78,8 +78,7 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 		}
 
 		val inferredLoader = project.inferredLoader()
-		val inferredLoaderIsFabric = inferredLoader == "fabric"
-
+		val inferredLoaderIsFabric = inferredLoader == "fabric-o"
 		val extension = extensions.create("platform", ModPlatformExtension::class.java).apply {
 			loader.convention(inferredLoader)
 			jarTask.convention(if (inferredLoaderIsFabric) "remapJar" else "jar")

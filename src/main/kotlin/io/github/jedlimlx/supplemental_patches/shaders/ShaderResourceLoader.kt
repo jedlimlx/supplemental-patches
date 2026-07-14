@@ -57,6 +57,7 @@ object ShaderResourceLoader {
     val WAVING_MAP: HashMap<String, WavingObject> = hashMapOf()
     val DEFERRED_MAP: HashMap<String, DeferredMaterial> = hashMapOf()
 	val LIGHT_GROUP_MAP: HashMap<String, LightGroup> = hashMapOf()
+	val LIGHT_MODIFIER_MAP: HashMap<String, String> = hashMapOf()
 
     val BLOCK_MAP: HashMap<String, ShaderBuilder> = hashMapOf()
     val ITEM_MAP: HashMap<String, ShaderBuilder> = hashMapOf()
@@ -231,6 +232,12 @@ object ShaderResourceLoader {
             REFLECTION_HANDLERS[key] = getFileContents(loc, resourceManager)
         }
 
+		// Loading light modifiers
+		resourceManager.listResources("euphoria/photonics/light_modifiers") { it.path.endsWith(".glsl") }.forEachWithErrorHandling { (loc, _) ->
+			val key = loc.toString().replace("euphoria/photonics/light_modifiers/", "").replace(".glsl", "")
+			LIGHT_MODIFIER_MAP[key] = getFileContents(loc, resourceManager)
+		}
+
 		// Loading light groups
 		loadPhotonicsLightGroups(resourceManager, "euphoria/photonics")
 
@@ -335,8 +342,6 @@ object ShaderResourceLoader {
 
                 LOGGER.info("Loading ${lst.entries.size} unique $type materials...")
                 lst.forEachWithErrorHandling { (loc, _) ->
-					LOGGER.info(loc.toString())
-
                     val tokens = loc.path.replace("$type/", "").split("/")
                     val path = tokens.subList(0, tokens.size - 1).joinToString("/")
                     val json = loadJson(loc, resourceManager)
@@ -401,11 +406,29 @@ object ShaderResourceLoader {
                         }
                     }
 
-					if (json["light_group"] != null) {
+					if (json["light_modifiers"] != null) {
+						if (json["light_modifiers"].isJsonArray) {
+							builder.lightModifiers(
+								json["light_modifiers"].asJsonArray.map {
+									if (it != JsonNull.INSTANCE) {
+										LIGHT_MODIFIER_MAP[it.asString] ?:
+										throw MinecraftError("Light modifier $it does not exist!", loc.toString())
+									} else null
+								}
+							)
+						} else {
+							builder.lightModifier(
+								LIGHT_MODIFIER_MAP[json["light_modifiers"].asString] ?:
+								throw MinecraftError("Light modifier ${json["light_modifiers"]} does not exist!", loc.toString())
+							)
+						}
+					}
+
+					if (json["light_groups"] != null) {
 						builder.mat.indices.forEach { i ->
 							val lightGroups = readConditionalValue(
-								json["light_group"],
-								"light_group",
+								json["light_groups"],
+								"group",
 								MinecraftError("Did not specify light group", loc.toString())
 							) {
 								if (it.isJsonArray) {
@@ -413,14 +436,14 @@ object ShaderResourceLoader {
 									if (!lightGroup.isJsonNull) {
 										LIGHT_GROUP_MAP[lightGroup.asString]
 											?: throw MinecraftError(
-												"Light group ${json["light_group"]} does not exist",
+												"Light group ${json["group"]} does not exist",
 												loc.toString()
 											)
 									} else null
 								} else {
 									LIGHT_GROUP_MAP[it.asString]
 										?: throw MinecraftError(
-											"Light group ${json["light_group"]} does not exist",
+											"Light group ${json["group"]} does not exist",
 											loc.toString()
 										)
 								}

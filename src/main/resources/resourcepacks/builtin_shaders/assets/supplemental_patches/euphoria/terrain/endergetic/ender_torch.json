@@ -8,6 +8,7 @@
     "enderscape:void_wall_torch"
   ],
   "blocklight": "supplemental_patches:endergetic/ender_fire",
-  "light_group": "void_torch",
+  "light_groups": "void_torch",
+  "light_modifiers":"minecraft:flickering",
   "held_lighting": true
 }

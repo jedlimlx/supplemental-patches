@@ -11,5 +11,5 @@
     "enderscape:end_vault:vault_state=unlocking"
   ],
   "blocklight": "supplemental_patches:enderscape/end_trial_spawner",
-  "light_group": "generic"
+  "light_groups": "generic"
 }

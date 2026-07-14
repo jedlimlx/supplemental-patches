@@ -111,7 +111,7 @@ production {
 	runs.named("client") {
 		type = "client"
 		instanceDir = file("run")
-		jvmArgs("-Xmx2G")
+		jvmArgs("-Xmx4G")
 
 		mods {
 			includeProject = true

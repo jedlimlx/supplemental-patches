@@ -6,7 +6,8 @@
     "enderscape:void_lantern"
   ],
   "blocklight": "supplemental_patches:endergetic/ender_fire",
-  "light_group": "void_lantern",
+  "light_groups": "void_lantern",
+  "light_modifiers":"minecraft:flickering",
   "held_lighting": true,
   "reflection_handlers": "minecraft:discard"
 }

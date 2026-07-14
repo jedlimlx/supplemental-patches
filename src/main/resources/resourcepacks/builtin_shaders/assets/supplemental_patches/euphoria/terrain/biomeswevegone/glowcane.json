@@ -23,7 +23,7 @@
     "supplemental_patches:biomeswevegone/blue_glowcane",
     null
   ],
-  "light_group": [
+  "light_groups": [
     "red_glowcane",
     null,
     "yellow_glowcane",

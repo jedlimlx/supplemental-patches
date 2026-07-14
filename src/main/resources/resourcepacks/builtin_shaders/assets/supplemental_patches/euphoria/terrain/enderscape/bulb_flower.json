@@ -5,7 +5,7 @@
     "enderscape:bulb_flower"
   ],
   "blocklight": "minecraft:lantern",
-  "light_group": "lantern",
+  "light_groups": "lantern",
   "held_lighting": true,
   "reflection_handlers": "minecraft:discard"
 }

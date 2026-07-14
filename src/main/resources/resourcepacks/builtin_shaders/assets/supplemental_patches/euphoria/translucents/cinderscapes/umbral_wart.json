@@ -4,5 +4,5 @@
   "mat0": [
     "cinderscapes:umbral_wart_block"
   ],
-  "tint": "supplemental_patches:cinderscape/umbral_wart"
+  "blocklight": "supplemental_patches:cinderscapes/umbral_wart"
 }
