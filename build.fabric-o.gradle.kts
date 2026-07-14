@@ -147,7 +147,7 @@ production {
 			modrinth("sodium") { version = prop("deps.sodium") }
 			modrinth("iris") { version = prop("deps.iris") }
 			modrinth("euphoria-patches") { version = "${prop("deps.euphoria-patches")}-fabric" }
-			addMods(listOf("lithium", "iris-shader-folder", "irissearch"))
+			addMods(listOf("lithium", "iris-shader-folder", "irissearch", "voxy", "voxy-worldgen"))
 
 			if (minecraftVersion == "1.21.11") {
 				modrinth("photonics") {
