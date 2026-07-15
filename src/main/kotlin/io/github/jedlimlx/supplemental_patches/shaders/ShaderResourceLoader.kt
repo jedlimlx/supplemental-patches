@@ -729,7 +729,7 @@ object ShaderResourceLoader {
                         ShaderMixin(
                             path = json["file"].asString ?: throw MinecraftError("Path of file to modify is not specified", loc.toString()),
                             type = ShaderMixinType.fromString(json["type"].asString ?: throw MinecraftError("Injection type is not specified", loc.toString()), loc.toString()),
-                            key = json["key"].asString ?: throw MinecraftError("Key to identify modification location is not specified", loc.toString()),
+                            key = (if (json["regex"]?.asBoolean ?: false) "regex~" else "") + (json["key"].asString ?: throw MinecraftError("Key to identify modification location is not specified", loc.toString())),
                             code = it[
                                 "$path${if (path.isEmpty()) "" else "/"}" +
                                     (json["code"].asString ?: throw MinecraftError(".glsl file not specified.", loc.toString()))

@@ -1,0 +1,7 @@
+{
+  "file": "/shaders/lib/lighting/mainLighting.glsl",
+  "type": "replace",
+  "regex": true,
+  "key": "worldEndFlashPosition = normalize\\(vec3\\((.|\\s)*?\\)\\);",
+  "code": "change_end_flash_position.glsl"
+}

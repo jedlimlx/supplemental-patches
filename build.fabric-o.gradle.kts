@@ -101,6 +101,10 @@ stonecutter {
 production {
 	val minecraftVersion = prop("deps.minecraft")
 
+	idea {
+		enabled = false
+	}
+
 	runs.configureEach {
 		loader = "fabric"
 		loaderVersion = "${libs.fabric.loader.get().version}"
@@ -147,11 +151,15 @@ production {
 			modrinth("sodium") { version = prop("deps.sodium") }
 			modrinth("iris") { version = prop("deps.iris") }
 			modrinth("euphoria-patches") { version = "${prop("deps.euphoria-patches")}-fabric" }
-			addMods(listOf("lithium", "iris-shader-folder", "irissearch", "voxy", "voxy-worldgen"))
+			addMods(listOf("lithium", "iris-shader-folder", "irissearch")) //, "voxy", "voxy-worldgen"))
 
 			if (minecraftVersion == "1.21.11") {
-				modrinth("photonics") {
-					version = "${prop("deps.photonics")}+${prop("deps.minecraft")}"
+				if (prop("deps.photonics-link").isNotEmpty())
+					add(files("libs/photonics-0.4.0-fabric+MC-${minecraftVersion}.jar"))
+				else {
+					modrinth("photonics") {
+						version = "${prop("deps.photonics")}+${prop("deps.minecraft")}"
+					}
 				}
 			}
 

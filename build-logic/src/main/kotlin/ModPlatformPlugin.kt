@@ -64,6 +64,7 @@ fun RepositoryHandler.strictMaven(
 abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 	var project: Project? = null
 	var euphoriaDev: Boolean = false
+	var photonicsJar: Boolean = false
 
 	override fun apply(project: Project) = with(project) {
 		val project = this
@@ -134,6 +135,7 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 		configureJarTask(modId, loader)
 		configureIdea()
 		configureShaderpackDownloads()
+		configurePhotonicsJarDownloads()
 		configureProcessResources(isFabric, isNeoForge, isForge, modId, "$modVersion$channelTag", mcVersion, extension, extension.requiredJava.get())
 		configureJava(stonecutter, extension.requiredJava.get())
 		configureKotlin(stonecutter, extension.requiredJava.get())
@@ -200,6 +202,28 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 		}
 	}
 
+	private fun Project.configurePhotonicsJarDownloads() {
+		val libsPath = "run/libs"
+		val libsDirectory = File(libsPath)
+		libsDirectory.mkdir()
+
+		val photonicsLink = prop("deps.photonics-link")
+		if (photonicsLink.isNotEmpty()) {
+			val jarName = photonicsLink.split(".jar").first().split("?").last()
+			val target = File(jarName)
+			if (!target.exists()) {
+				photonicsJar = true
+				tasks.register<Download>("downloadPhotonicsJar") {
+					src(photonicsLink)
+					overwrite(true)
+					dest("${libsDirectory}/${jarName}.jar")
+				}
+			}
+		} else {
+			logger.warn("No link to Photonics alpha version specified!")
+		}
+	}
+
 	private fun Project.configureProcessResources(
 		isFabric: Boolean,
 		isNeoForge: Boolean,
@@ -214,6 +238,8 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 			dependsOn(tasks.named("stonecutterGenerate"))
 			dependsOn(tasks.named("downloadComplementaryShaders"))
 			if (euphoriaDev) dependsOn(tasks.named("downloadEuphoriaDev"))
+			if (photonicsJar) dependsOn(tasks.named("downloadPhotonicsJar"))
+
 			dependsOn("kspKotlin")
 
 			filesMatching("*.mixins.json") { expand("java" to "JAVA_${requiredJava.majorVersion}") }
