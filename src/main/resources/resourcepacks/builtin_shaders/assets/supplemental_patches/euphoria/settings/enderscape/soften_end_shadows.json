@@ -1,0 +1,13 @@
+{
+  "type": "setting",
+  "name": "SOFTEN_END_SHADOWS",
+  "values": [0, 1, 2],
+  "default": 1,
+  "en_US": {
+    "option": "Soften End Shadows §e[*]§r",
+    "comment": "Softens shadows created by the vertical light from End Beams in the End",
+    "value.0": "§aOFF",
+    "value.1": "If Mod Installed",
+    "value.2": "ON"
+  }
+}

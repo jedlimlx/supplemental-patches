@@ -1,4 +1,4 @@
-#if ES_FLASH > 0
+#if (ES_FLASH == 1 && defined MOD_ENDERSCAPE) || ES_FLASH == 2
 	worldEndFlashPosition = normalize(worldEndFlashPosition);
 #else
 	worldEndFlashPosition = normalize(vec3(

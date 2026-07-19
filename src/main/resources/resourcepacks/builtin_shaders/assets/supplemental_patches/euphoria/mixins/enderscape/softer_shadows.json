@@ -1,6 +1,6 @@
 {
   "file": "/shaders/lib/lighting/mainLighting.glsl",
   "type": "replace",
-  "key": "GetShadow(shadowPos, lightmap.y, offset, shadowSamples, leaves, playerPos)",
+  "key": "shadowMult *= GetShadow(shadowPos, lightmap.y, offset, shadowSamples, leaves, playerPos);",
   "code": "softer_shadows.glsl"
 }
