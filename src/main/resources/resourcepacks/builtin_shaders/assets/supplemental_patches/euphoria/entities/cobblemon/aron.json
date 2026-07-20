@@ -1,0 +1,9 @@
+{
+  "name": "aron",
+  "glsl": "aron.glsl",
+  "mat0": [
+    "cobblemon:aron",
+    "cobblemon:lairon",
+    "cobblemon:aggron"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "campfire_pot",
+  "glsl": "campfire_pot.glsl",
+  "mat0": [
+    "cobblemon:campfire_pot_red",
+    "cobblemon:campfire_pot_black",
+    "cobblemon:campfire_pot_blue",
+    "cobblemon:campfire_pot_green",
+    "cobblemon:campfire_pot_pink",
+    "cobblemon:campfire_pot_red",
+    "cobblemon:campfire_pot_white",
+    "cobblemon:campfire_pot_yellow"
+  ],
+  "reflection_handlers": "minecraft:discard"
+}

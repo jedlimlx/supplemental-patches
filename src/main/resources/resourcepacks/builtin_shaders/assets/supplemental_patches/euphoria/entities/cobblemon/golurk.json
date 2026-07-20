@@ -1,0 +1,8 @@
+{
+  "name": "golurk",
+  "glsl": "golurk.glsl",
+  "mat0": [
+    "cobblemon:golett",
+    "cobblemon:golurk"
+  ]
+}

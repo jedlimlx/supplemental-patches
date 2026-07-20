@@ -1,0 +1,9 @@
+{
+  "name": "roggenrola",
+  "glsl": "roggenrola.glsl",
+  "mat0": [
+    "cobblemon:roggenrola",
+    "cobblemon:boldore",
+    "cobblemon:gigalith"
+  ]
+}
