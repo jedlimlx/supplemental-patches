@@ -16,24 +16,25 @@ val MODS = listOf(
 	"glitchcore",
 	"lithostitched#",
 	"mixson",
-	"moonlight",
+	"#moonlight",
 	"oh-the-trees-youll-grow",
 	"puzzles-lib",
 	"resourceful-config",
 	"resourceful-lib",
 	"runiclib*",
+	"satin-api#",
 	"terrablender",
 	"trimmed",
 	"yacl",
 
 	// supplementaries
-	"supplementaries*",
-	"amendments*",
-	"supplementaries-squared*",
-	"snowy-spirit!",
+	"#supplementaries*",
+	"#amendments*",
+	"#supplementaries-squared*",
+	"#snowy-spirit!",
 
 	// galena
-	"doom-gloom",
+	"#doom-gloom",
 
 	// farmers delight
 	"farmers-delight-refabricated!",
@@ -79,7 +80,7 @@ val MODS = listOf(
 	"enderscape",
 	"cobblemon*",
 	"enhanced-celestials",
-	"friends-and-foes!",
+	"#friends-and-foes!",
 	"illager-invasion!"
 )
 
@@ -124,17 +125,19 @@ production {
 				mods.forEach {
 					try {
 						val tokens = it.split(":")
-						val id = tokens[0].replace("*", "").replace("!", "").replace("#", "")
-						if (tokens.size == 1) {
-							val client = HttpClient.newBuilder().build()
-							val request = HttpRequest.newBuilder()
-								.uri(URI.create("https://api.modrinth.com/v2/project/$id/version?loaders=[%22fabric%22]&game_versions=[%22${minecraftVersion}%22]"))
-								.build()
+						val id = tokens[0].replace(Regex("[#!*]"), "")
+						if (tokens[0].first() != '#') {
+							if (tokens.size == 1) {
+								val client = HttpClient.newBuilder().build()
+								val request = HttpRequest.newBuilder()
+									.uri(URI.create("https://api.modrinth.com/v2/project/$id/version?loaders=[%22fabric%22]&game_versions=[%22${minecraftVersion}%22]"))
+									.build()
 
-							val response = client.send(request, HttpResponse.BodyHandlers.ofString())
-							val json = Json.decodeFromString<JsonArray>(response.body().toString())[0]
-							modrinthVersion(json.jsonObject["id"].toString().drop(1).dropLast(1))
-						} else modrinth(id) { version = prop(tokens[1]) }
+								val response = client.send(request, HttpResponse.BodyHandlers.ofString())
+								val json = Json.decodeFromString<JsonArray>(response.body().toString())[0]
+								modrinthVersion(json.jsonObject["id"].toString().drop(1).dropLast(1))
+							} else modrinth(id) { version = prop(tokens[1]) }
+						}
 					} catch (e: Exception) {
 						logger.warn(e.toString())
 					}
@@ -235,7 +238,7 @@ dependencies {
 		mods.forEach {
 			try {
 				val tokens = it.split(":")
-				val id = tokens[0].replace("*", "").replace("!", "").replace("#", "")
+				val id = tokens[0].replace(Regex("[#!*]"), "")
 				val modString = if (tokens.size == 1) {
 					val mod = fletchingTable.modrinth(id, prop("deps.minecraft"), "fabric")
 					"${mod.group}:${id}:${mod.version}"

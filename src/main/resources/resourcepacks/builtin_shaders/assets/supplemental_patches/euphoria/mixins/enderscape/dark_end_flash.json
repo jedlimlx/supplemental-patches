@@ -1,6 +1,6 @@
 {
   "file": "/shaders/lib/lighting/mainLighting.glsl",
   "type": "after",
-  "key": "ambientColorM *= 1 - endFlashIntensityM;",
+  "key": "ambientColorM += endFlashColor  * (0.2 * endFlashDirectionFactor);",
   "code": "dark_end_flash.glsl"
 }
