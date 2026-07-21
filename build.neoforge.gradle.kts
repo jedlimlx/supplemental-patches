@@ -1,6 +1,110 @@
+import java.net.URI
+import java.net.http.HttpClient
+import java.net.http.HttpRequest
+import java.net.http.HttpResponse
+import kotlinx.serialization.json.*
+
+val MODS = listOf(
+	// general library mods
+	"architectury-api",
+	"blueprint",
+	"cloth-config",
+	"corgilib",
+	"data-anchor",
+	"geckolib",
+	"glitchcore",
+	"terrablender",
+	"trimmed",
+	"moonlight",
+	"oh-the-trees-youll-grow",
+	"puzzles-lib",
+	"resourceful-config",
+	"resourceful-lib",
+	"runiclib*",
+	"yacl",
+	"zeta#",
+
+	// abnormals mods
+	"abnormals-delight*",
+	"atmospheric",
+	"autumnity",
+	"berry-good",
+	"buzzier-bees",
+	"caverns-and-chasms",
+	"clayworks",
+	"endergetic",
+	"environmental",
+	"neapolitan",
+	"savage-and-ravage",
+	"upgrade-aquatic",
+	"woodworks",
+
+	// supplementaries
+	"supplementaries",
+	"amendments",
+	"supplementaries-squared*",
+	"snowy-spirit!",
+
+	// galena
+	"oreganized",
+	"doom-gloom",
+	"windswept*",
+
+	// farmers delight
+	"farmers-delight!",
+	"rustic-delight!",
+	"my-nethers-delight!",
+	"ends-delight!",
+	"dungeons-delight!",
+
+	// biome mods
+	"#biomes-o-plenty*",
+	"#oh-the-biomes-weve-gone*",
+	"no-mans-land",
+
+	// orcinus
+	"galosphere",
+
+	// peculiar room
+	"spawn-mod",
+	"whaleborne",
+	"twigs*",
+	"the-between*",
+	"the-beyond*",
+	"dye-depot!",
+	"dye-the-world!",
+
+	// jne
+	"elysium-api!",
+	"jadens-nether-expansion",
+	"soulfulnether*",
+	"rubinated-nether",
+
+	// yungs
+	"yungs-api!",
+	"yungs-cave-biomes",
+
+	// mob mods
+	"cryptic-foes*",
+	"inhabitants*",
+	"mowzies-mobs!",
+	"hominid!",
+
+	// misc
+	"quark#",
+	"quark-oddities#",
+	"#cobblemon*",
+	"enhanced-celestials",
+	"friends-and-foes!",
+	"illager-invasion!",
+	"curiosities-syndicate",
+	"#wetland-whimsy"
+)
+
 plugins {
 	id("mod-platform")
 	id("net.neoforged.moddev")
+	id("dev.vfyjxf.gradle.production")
 }
 
 stonecutter {
@@ -29,6 +133,70 @@ platform {
 		}
 	}
 }
+
+production {
+	val minecraftVersion = prop("deps.minecraft")
+
+	idea {
+		enabled = false
+	}
+
+	runs.configureEach {
+		javaVersion = 21
+		userName = "Dev"
+	}
+
+	runs.named("client") {
+		type = "client"
+		instanceDir = file("run")
+		jvmArgs("-Xmx4G")
+
+		mods {
+			includeProject = true
+			includeRequiredDependencies = true
+			fun addMods(mods: List<String>) {
+				mods.forEach {
+					try {
+						val tokens = it.split(":")
+						val id = tokens[0].replace(Regex("[#!*]"), "")
+						if (tokens[0].first() != '#') {
+							if (tokens.size == 1) {
+								val client = HttpClient.newBuilder().build()
+								val request = HttpRequest.newBuilder()
+									.uri(URI.create("https://api.modrinth.com/v2/project/$id/version?loaders=[%22neoforge%22]&game_versions=[%22${minecraftVersion}%22]"))
+									.build()
+
+								val response = client.send(request, HttpResponse.BodyHandlers.ofString())
+								val json = Json.decodeFromString<JsonArray>(response.body().toString())[0]
+								modrinthVersion(json.jsonObject["id"].toString().drop(1).dropLast(1))
+							} else modrinth(id) { version = prop(tokens[1]) }
+						}
+					} catch (e: Exception) {
+						logger.warn(e.toString())
+					}
+				}
+			}
+
+			// important dependencies
+			addMods(listOf("jei", "jade"))
+
+			modrinth("kotlin-for-forge") { version = prop("deps.kotlinforforge") }
+			modrinth("better-modlist") { version = prop("deps.modmenu") }
+
+			modrinth("sodium") { version = prop("deps.sodium") }
+			modrinth("iris") { version = prop("deps.iris") }
+			modrinth("euphoria-patches") { version = "${prop("deps.euphoria-patches")}-neoforge" }
+			addMods(listOf("lithium", "iris-shader-folder", "irissearch"))
+
+			addMods(MODS)
+
+//			if (prop("deps.enderscape_2_1_0") == "true")
+//				add(files("libs/enderscape-neoforge-2.1.0+mc1.21.1.jar"))
+//			else addMods(listOf("enderscape"))
+		}
+	}
+}
+
 
 neoForge {
 	version = property("deps.neoforge") as String
@@ -71,7 +239,7 @@ dependencies {
 		mods.forEach {
 			try {
 				val tokens = it.split(":")
-				val id = tokens[0].replace("*", "").replace("!", "")
+				val id = tokens[0].replace(Regex("[#!*]"), "")
 				val modString = if (tokens.size == 1) {
 					val mod = fletchingTable.modrinth(id, prop("deps.minecraft"), "neoforge")
 					"${mod.group}:${id}:${mod.version}"
@@ -80,6 +248,7 @@ dependencies {
 				when (tokens[0].last()) {
 					'*' -> compileOnly(modString)
 					'!' -> runtimeOnly(modString)
+					'#' -> {}
 					else -> implementation(modString)
 				}
 			} catch (e: Exception) {
@@ -106,152 +275,16 @@ dependencies {
 	addMods(listOf("jei!", "jade!"))
 
 	// rendering / optimisation mods
-	addMods(listOf("iris", "sodium:mc1.21.1-0.6.13-neoforge", "lithium!", "iris-shader-folder!"))
+	addMods(listOf("lithium!", "iris-shader-folder!"))
+	implementation("maven.modrinth:sodium:${prop("deps.sodium")}")
+	implementation("maven.modrinth:iris:${prop("deps.iris")}")
 	runtimeOnly("maven.modrinth:euphoria-patches:${prop("deps.euphoria-patches")}-neoforge")
 
-	// general library mods
-	addMods(
-		listOf(
-			"architectury-api",
-			"blueprint",
-			"cloth-config",
-			"corgilib",
-			"data-anchor",
-			"geckolib",
-			"glitchcore",
-			"terrablender",
-			"trimmed",
-			"moonlight",
-			"oh-the-trees-youll-grow",
-			"puzzles-lib",
-			"resourceful-config",
-			"resourceful-lib",
-			"runiclib*",
-			"yacl"
-		)
-	)
+	addMods(MODS)
 
-	// abnormals mods
-	addMods(
-		listOf(
-			"abnormals-delight*",
-			"atmospheric",
-			"autumnity",
-			"berry-good",
-			"buzzier-bees",
-			"caverns-and-chasms",
-			"clayworks",
-			"endergetic",
-			"environmental",
-			"neapolitan",
-			"savage-and-ravage",
-			"upgrade-aquatic",
-			"woodworks"
-		)
-	)
-
-	// supplementaries
-	addMods(
-		listOf(
-			"supplementaries:1.21.1-3.6.8-neoforge",
-			"amendments",
-			"supplementaries-squared*",
-			"snowy-spirit!"
-		)
-	)
-
-	// galena
-	addMods(
-		listOf(
-			"oreganized",
-			"doom-gloom",
-			"windswept*"
-		)
-	)
-
-	// farmers delight
-	addMods(
-		listOf(
-			"farmers-delight!",
-			"rustic-delight!",
-			"my-nethers-delight!",
-			"ends-delight!",
-			"dungeons-delight!"
-		)
-	)
-
-	// biome mods
-	addMods(
-		listOf(
-			"biomes-o-plenty*",
-			"oh-the-biomes-weve-gone*",
-			"no-mans-land"
-		)
-	)
-
-	// orcinus
-	addMods(
-		listOf(
-			"galosphere"
-		)
-	)
-
-	// peculiar room
-	addMods(
-		listOf(
-			"spawn-mod",
-			"whaleborne",
-			"twigs*",
-			"the-between*",
-			"the-beyond*",
-			"dye-depot!",
-			"dye-the-world!"
-		)
-	)
-
-	// jne
-	addMods(
-		listOf(
-			"elysium-api!",
-			"jadens-nether-expansion",
-			"soulfulnether*",
-			"rubinated-nether"
-		)
-	)
-
-	// yungs
-	addMods(
-		listOf(
-			"yungs-api!",
-			"yungs-cave-biomes"
-		)
-	)
-
-	// mob mods
-	addMods(
-		listOf(
-			"cryptic-foes*",
-			"inhabitants*",
-			"mowzies-mobs!",
-			"hominid!"
-		)
-	)
-
-	// misc
 	if (prop("deps.enderscape_2_1_0") == "true")
 		implementation(files("libs/enderscape-neoforge-2.1.0+mc1.21.1.jar"))
 	else addMods(listOf("enderscape"))
-
-	addMods(
-		listOf(
-			"cobblemon*",
-			"enhanced-celestials",
-			"friends-and-foes!",
-			"illager-invasion!",
-			"curiosities-syndicate",
-			"wetland-whimsy"
-		)
-	)
 }
 
 tasks.named("createMinecraftArtifacts") {
