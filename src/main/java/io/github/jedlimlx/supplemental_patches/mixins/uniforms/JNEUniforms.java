@@ -8,10 +8,15 @@ import net.irisshaders.iris.gl.uniform.UniformUpdateFrequency;
 import net.irisshaders.iris.shaderpack.properties.PackDirectives;
 import net.irisshaders.iris.uniforms.CommonUniforms;
 import net.irisshaders.iris.uniforms.FrameUpdateNotifier;
+import net.jadenxgamer.netherexp.registry.JNEFluids;
+import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -34,6 +39,7 @@ public class JNEUniforms {
     )
     private static void generalCommonUniforms(UniformHolder uniforms, FrameUpdateNotifier updateNotifier, PackDirectives directives, CallbackInfo ci) {
         uniforms.uniform1f(UniformUpdateFrequency.PER_FRAME, "betrayed", JNEUniforms::getBetrayedEffect);
+		uniforms.uniform1f(UniformUpdateFrequency.PER_FRAME, "inEctoplasm", JNEUniforms::checkInEctoplasm);
     }
 
     private static float getBetrayedEffect() {
@@ -52,5 +58,19 @@ public class JNEUniforms {
 
         return 0.0F;
     }
+
+	private static float checkInEctoplasm() {
+		Camera camera = Minecraft.getInstance().gameRenderer.getMainCamera();
+		Vec3 cameraPos = camera.getPosition();
+		BlockPos blockPos = camera.getBlockPosition();
+
+		FluidState fluidState = Minecraft.getInstance().level.getFluidState(blockPos);
+		if (fluidState != null && fluidState.getFluidType() == JNEFluids.ECTOPLASM_TYPE.get()) {
+			double fluidHeight = blockPos.getY() + fluidState.getHeight(Minecraft.getInstance().level, blockPos);
+			if (cameraPos.y() < fluidHeight) return 1.0F;
+		}
+
+		return 0.0F;
+	}
 }
 //?}

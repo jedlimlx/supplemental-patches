@@ -1,5 +1,5 @@
 if (color.b - color.r > 0.1) {
-    emission = 0.3 * pow2(color.b);
+    emission = 0.3 * pow2(color.b) + 0.1;
 
     if (CheckForColor(color.rgb, vec3(1.0)))
         emission += 2.0;

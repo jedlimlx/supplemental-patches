@@ -21,6 +21,7 @@ val MODS = listOf(
 	"resourceful-config",
 	"resourceful-lib",
 	"runiclib*",
+	"teallib",
 	"yacl",
 	"zeta#",
 
@@ -149,7 +150,7 @@ production {
 	runs.named("client") {
 		type = "client"
 		instanceDir = file("run")
-		jvmArgs("-Xmx4G")
+		jvmArgs("-Xmx6G")
 
 		mods {
 			includeProject = true
@@ -190,9 +191,9 @@ production {
 
 			addMods(MODS)
 
-//			if (prop("deps.enderscape_2_1_0") == "true")
-//				add(files("libs/enderscape-neoforge-2.1.0+mc1.21.1.jar"))
-//			else addMods(listOf("enderscape"))
+			if (prop("deps.enderscape_2_1_0") == "true")
+				add(files("libs/enderscape-neoforge-2.1.0+mc1.21.1.jar"))
+			else addMods(listOf("enderscape"))
 		}
 	}
 }

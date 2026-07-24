@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
-import io.github.jedlimlx.supplemental_patches.PLATFORM
 import io.github.jedlimlx.supplemental_patches.LOGGER
+import io.github.jedlimlx.supplemental_patches.PLATFORM
 import java.io.File
 import java.nio.file.Path
 import kotlin.io.path.absolutePathString
@@ -414,12 +414,12 @@ fun assignVoxelNumbers() {
 					}
 				}
 
-				material.voxelNumber.add(voxels)
+				material._voxelNumber.add(voxels)
 			}
 		} else if (material.needsVoxelisation)
             (0..< material.blockSize).forEach {
 				val voxels = IntArray(material.blockSize) { TOTAL_COLOURED_VOXELS + count++ }
-				material.voxelNumber.add(voxels)
+				material._voxelNumber.add(voxels)
 			}
     }
 }
@@ -710,15 +710,18 @@ fun generateWavingCode(directory: Path) {
 
     val newBuilder = StringBuilder()
 
-    val materialIds = MATERIALS_MAP.filter { it.value.wavingObject != null }.map { it.key }
+    val terrainIds = MATERIALS_MAP.filter { it.value.wavingObject != null }.map { it.key }
+	val translucentIds = TRANSLUCENTS_MAP.filter { it.value.wavingObject != null }.map { it.key }
     with(newBuilder) {
         append(WAVING_FUNCTIONS.joinToString("\n"))
 
         append("\n\nvoid DoWave_Block(inout vec3 playerPos, int mat) {\n")
         append("    vec3 worldPos = playerPos.xyz + cameraPosition.xyz;\n")
+
+		// adding terrain shaders
         append("    #if defined GBUFFERS_TERRAIN || defined SHADOW\n")
         append(
-            computeAllPivots(materialIds, 2, "mat", 4) { idx, depth ->
+            computeAllPivots(terrainIds, 2, "mat", 4) { idx, depth ->
                 StringBuilder().apply {
                     val material = MATERIALS_MAP[idx]!!
                     val wavingObject = material.wavingObject!!
@@ -736,8 +739,32 @@ fun generateWavingCode(directory: Path) {
                 }.toString()
             }
         )
-
         append("    #endif\n")
+		append("\n")
+
+		// adding translucent shaders
+		append("    #if defined GBUFFERS_WATER || defined SHADOW\n")
+		append(
+			computeAllPivots(translucentIds, 2, "mat", 4) { idx, depth ->
+				StringBuilder().apply {
+					val material = TRANSLUCENTS_MAP[idx]!!
+					val wavingObject = material.wavingObject!!
+					val conditions = wavingObject.conditions.isNotEmpty()
+
+					val indent = "    ".repeat(depth)
+					if (conditions) append("$indent#if ${wavingObject.conditions.conditions()}\n")
+					append("${indent}if (mat >= $idx && mat < ${idx + material.blockSize}) {\n")
+					append("$indent    const int voxelNumber = ${material.voxelNumber[0][0]};\n")
+					append(
+						wavingObject.code.split("\n").joinToString("\n") { "$indent    $it" }
+					)
+					append("\n$indent}\n")
+					if (conditions) append("$indent#endif\n")
+				}.toString()
+			}
+		)
+		append("    #endif\n")
+
         append("}\n\n")
         append("void DoWave(inout vec3 playerPos, int mat) {")
     }

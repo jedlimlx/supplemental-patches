@@ -1,0 +1,8 @@
+{
+  "name": "magma_cream",
+  "glsl": "magma_cream.glsl",
+  "mat0": [
+    "netherexp:magma_cream_block"
+  ],
+  "blocklight": "minecraft:magma_cream_block"
+}

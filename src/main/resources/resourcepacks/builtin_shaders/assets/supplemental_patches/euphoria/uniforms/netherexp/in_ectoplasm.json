@@ -1,0 +1,7 @@
+{
+  "type": "float",
+  "name": "inEctoplasm",
+  "conditions": [
+    "MOD_NETHEREXP"
+  ]
+}

@@ -2,7 +2,8 @@
   "name": "ancient_torch",
   "glsl": "ancient_torch.glsl",
   "mat0": [
-    "netherexp:ancient_torch"
+    "netherexp:ancient_torch",
+    "netherexp:wall_ancient_torch"
   ],
   "blocklight": "supplemental_patches:netherexp/ancient_fire"
 }
