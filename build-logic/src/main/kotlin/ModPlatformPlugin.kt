@@ -49,7 +49,7 @@ fun Project.getLatestVersionModrinth(
 
 	val client = HttpClient.newBuilder().build()
 	val request = HttpRequest.newBuilder()
-		.uri(URI.create("https://api.modrinth.com/v2/project/$id/version?loaders=[\"$modLoader\"]&game_versions=[\"$minecraftVersion\"]"))
+		.uri(URI.create("https://api.modrinth.com/v2/project/$id/version?loaders=[%22$modLoader%22]&game_versions=[%22$minecraftVersion%22]"))
 		.build()
 
 	val response = client.send(request, HttpResponse.BodyHandlers.ofString())

@@ -63,7 +63,7 @@ fun installShader(): String = catchAndPrintError {
 fun detectInstallation(): Path? {
 	val directories = PLATFORM.shaderDirectory.listDirectoryEntries().filter { it.isDirectory() }
 	return directories.firstOrNull {  // try and look for development versions first
-		it.name.matches(Regex("(EuphoriaPatches_earlyDev_\\d+-\\d+-\\d+|Comp\\d.\\dd\\dEuphoriaPatches_\\d.\\d.\\d-dev\\d+)"))
+		it.name.matches(Regex("(EuphoriaPatches_earlyDev_\\d+-\\d+-\\d+|Comp\\d.\\d+d\\dEuphoriaPatches_\\d.\\d+.\\d-dev\\d+)"))
 	} ?: directories.firstOrNull {
         it.name.matches(Regex("Complementary(Unbound|Reimagined)_r(\\d+.?)+ \\+ EuphoriaPatches_(\\d+.?)+"))
     }

@@ -1,6 +1,5 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
-import io.github.jedlimlx.supplemental_patches.LOGGER
 import io.github.jedlimlx.supplemental_patches.PLATFORM
 import java.io.File
 import java.nio.file.Path
@@ -182,7 +181,7 @@ fun generateTerrainMaterials(directory: Path) {
     val oldCode = file.readText()
 
     // injecting code into the old code
-    file.writeText(Regex("#endif\\r?\\n}").replace(oldCode, "#endif\n} else if (mat != 0 && mat != 65535) {\n${code.prependIndent("    ")}\n}\n"))
+    file.writeText(Regex("emission = 3.0;\\r?\\n        }").replace(oldCode, "emission = 3.0;\n} else if (mat != 0 && mat != 65535) {\n${code.prependIndent("    ")}\n}\n"))
 
     // writing the list of blocks to block.properties
     updatePropertiesFile(

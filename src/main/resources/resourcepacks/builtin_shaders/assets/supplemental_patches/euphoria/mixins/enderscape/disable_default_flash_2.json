@@ -1,6 +1,6 @@
 {
   "file": "/shaders/program/deferred1.glsl",
   "type": "replace",
-  "key": "#if MC_VERSION >= 12109 && defined IS_IRIS && EP_END_FLASH > 0",
-  "code": "disable_default_flash.glsl"
+  "key": "(MC_VERSION >= 12109 || ANGELICA_VERSION >= 20155000) && defined IS_IRIS && EP_END_FLASH > 0",
+  "code": "disable_default_flash_2.glsl"
 }

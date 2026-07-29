@@ -166,7 +166,7 @@ production {
 						val id = tokens[0].replace(Regex("[#!*]"), "")
 						if (tokens[0].first() != '#') {
 							if (tokens.size == 1) {
-								val version = project.getLatestVersionModrinth(id, minecraftVersion, "fabric")
+								val version = project.getLatestVersionModrinth(id, minecraftVersion, "neoforge")
 								modrinthVersion(version)
 							} else modrinth(id) { version = prop(tokens[1]) }
 						}

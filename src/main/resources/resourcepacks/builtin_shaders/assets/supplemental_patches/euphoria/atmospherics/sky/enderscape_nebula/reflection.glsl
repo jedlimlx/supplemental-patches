@@ -1,0 +1,1 @@
+skyReflection += GetEnderscapeNebula(nViewPosR, RVdotU);
