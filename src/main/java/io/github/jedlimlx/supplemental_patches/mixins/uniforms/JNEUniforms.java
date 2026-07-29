@@ -8,7 +8,6 @@ import net.irisshaders.iris.gl.uniform.UniformUpdateFrequency;
 import net.irisshaders.iris.shaderpack.properties.PackDirectives;
 import net.irisshaders.iris.uniforms.CommonUniforms;
 import net.irisshaders.iris.uniforms.FrameUpdateNotifier;
-import net.jadenxgamer.netherexp.registry.JNEFluids;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
@@ -24,8 +23,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 //? neoforge {
 import net.jadenxgamer.netherexp.registry.JNEMobEffects;
+import net.jadenxgamer.netherexp.registry.JNEFluids;
 //?} forge {
 /*import net.jadenxgamer.netherexp.registry.effect.JNEMobEffects;
+import net.jadenxgamer.netherexp.registry.fluid.JNEFluids;
 *///?}
 
 @IfModLoaded(value = "netherexp")

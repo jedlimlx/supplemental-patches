@@ -25,6 +25,10 @@ val MODS = listOf(
 	"yacl",
 	"zeta#",
 
+	// extra optimisation
+	"ferrite-core#",
+	"immediately-fast#",
+
 	// abnormals mods
 	"abnormals-delight*",
 	"atmospheric",
@@ -162,14 +166,8 @@ production {
 						val id = tokens[0].replace(Regex("[#!*]"), "")
 						if (tokens[0].first() != '#') {
 							if (tokens.size == 1) {
-								val client = HttpClient.newBuilder().build()
-								val request = HttpRequest.newBuilder()
-									.uri(URI.create("https://api.modrinth.com/v2/project/$id/version?loaders=[%22neoforge%22]&game_versions=[%22${minecraftVersion}%22]"))
-									.build()
-
-								val response = client.send(request, HttpResponse.BodyHandlers.ofString())
-								val json = Json.decodeFromString<JsonArray>(response.body().toString())[0]
-								modrinthVersion(json.jsonObject["id"].toString().drop(1).dropLast(1))
+								val version = project.getLatestVersionModrinth(id, minecraftVersion, "fabric")
+								modrinthVersion(version)
 							} else modrinth(id) { version = prop(tokens[1]) }
 						}
 					} catch (e: Exception) {

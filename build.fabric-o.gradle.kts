@@ -1,7 +1,3 @@
-import java.net.URI
-import java.net.http.HttpClient
-import java.net.http.HttpRequest
-import java.net.http.HttpResponse
 import kotlinx.serialization.json.*
 
 val MODS = listOf(
@@ -15,6 +11,7 @@ val MODS = listOf(
 	"geckolib",
 	"glitchcore",
 	"lithostitched#",
+	"#lodestonelib",
 	"mixson",
 	"#moonlight",
 	"oh-the-trees-youll-grow",
@@ -26,6 +23,10 @@ val MODS = listOf(
 	"terrablender",
 	"trimmed",
 	"yacl",
+
+	// extra optimisation
+	"ferrite-core#",
+	"immediately-fast#",
 
 	// supplementaries
 	"#supplementaries*",
@@ -128,14 +129,8 @@ production {
 						val id = tokens[0].replace(Regex("[#!*]"), "")
 						if (tokens[0].first() != '#') {
 							if (tokens.size == 1) {
-								val client = HttpClient.newBuilder().build()
-								val request = HttpRequest.newBuilder()
-									.uri(URI.create("https://api.modrinth.com/v2/project/$id/version?loaders=[%22fabric%22]&game_versions=[%22${minecraftVersion}%22]"))
-									.build()
-
-								val response = client.send(request, HttpResponse.BodyHandlers.ofString())
-								val json = Json.decodeFromString<JsonArray>(response.body().toString())[0]
-								modrinthVersion(json.jsonObject["id"].toString().drop(1).dropLast(1))
+								val version = project.getLatestVersionModrinth(id, minecraftVersion, "fabric")
+								modrinthVersion(version)
 							} else modrinth(id) { version = prop(tokens[1]) }
 						}
 					} catch (e: Exception) {

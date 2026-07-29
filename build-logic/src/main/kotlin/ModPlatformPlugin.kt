@@ -3,6 +3,9 @@
 import de.undercouch.gradle.tasks.download.Download
 import dev.kikugie.fletching_table.extension.FletchingTableExtension
 import dev.kikugie.stonecutter.build.StonecutterBuildExtension
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonArray
+import kotlinx.serialization.json.jsonObject
 import me.modmuss50.mpp.ModPublishExtension
 import me.modmuss50.mpp.ReleaseType
 import org.gradle.api.JavaVersion
@@ -23,8 +26,48 @@ import org.gradle.plugins.ide.idea.model.IdeaModel
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 import java.io.File
+import java.net.URI
+import java.net.http.HttpClient
+import java.net.http.HttpRequest
+import java.net.http.HttpResponse
+import java.nio.file.Path
 import java.util.*
 import javax.inject.Inject
+import kotlin.io.path.createDirectories
+import kotlin.io.path.exists
+import kotlin.io.path.readText
+import kotlin.io.path.writeText
+
+fun Project.getLatestVersionModrinth(
+	id: String,
+	minecraftVersion: String,
+	modLoader: String
+): String {
+	val cacheFileName = "${id}_${minecraftVersion}_${modLoader}.txt"
+	val cacheFile = layout.buildDirectory.dir("modrinth-cache").get().asFile.toPath().resolve("modrinth_cache/$cacheFileName")
+	if (cacheFile.exists()) return cacheFile.readText().trim()
+
+	val client = HttpClient.newBuilder().build()
+	val request = HttpRequest.newBuilder()
+		.uri(URI.create("https://api.modrinth.com/v2/project/$id/version?loaders=[\"$modLoader\"]&game_versions=[\"$minecraftVersion\"]"))
+		.build()
+
+	val response = client.send(request, HttpResponse.BodyHandlers.ofString())
+	if (response.statusCode() != 200) {
+		throw RuntimeException("Failed to fetch Modrinth version for $id: HTTP ${response.statusCode()}")
+	}
+
+	val jsonArray = Json.decodeFromString<JsonArray>(response.body())
+	if (jsonArray.isEmpty()) {
+		throw NoSuchElementException("No version found for project $id with loader $modLoader on MC $minecraftVersion")
+	}
+
+	val versionId = jsonArray[0].jsonObject["id"].toString().drop(1).dropLast(1)
+
+	cacheFile.parent.createDirectories()
+	cacheFile.writeText(versionId)
+	return versionId
+}
 
 fun Project.prop(name: String): String = (findProperty(name) ?: "") as String
 
@@ -373,6 +416,10 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 				}
 
 				automatic = true
+			}
+
+			j52j.register("main") {
+				extension("json", "**/*.json5")
 			}
 		}
 	}

@@ -2,8 +2,10 @@
   "name": "ectoplasm",
   "glsl": "ectoplasm.glsl",
   "mat0": [
+    //? neoforge {
     "netherexp:ectoplasm",
     "netherexp:flowing_ectoplasm"
+    //?}
   ],
   "blocklight": "supplemental_patches:netherexp/ectoplasm",
   "waving": "supplemental_patches:fluids/waving_ectoplasm",
