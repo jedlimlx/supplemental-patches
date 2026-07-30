@@ -25,6 +25,10 @@ val MODS = listOf(
 	"yacl",
 	"zeta#",
 
+	// additional world generation
+	"streams-reflowing#",
+	"yungs-better-caves#",
+
 	// extra optimisation
 	"ferrite-core#",
 	"immediately-fast#",
