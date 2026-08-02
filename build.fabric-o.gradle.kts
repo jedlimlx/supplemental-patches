@@ -1,5 +1,3 @@
-import kotlinx.serialization.json.*
-
 val MODS = listOf(
 	// general library mods
 	"architectury-api",
@@ -184,6 +182,9 @@ platform {
 		}
 		required("fabric-language-kotlin") {
 			versionRange = ">=${prop("deps.fabric-lang-kotlin")}"
+		}
+		required("euphoria-patcher") {
+			versionRange = "~${prop("deps.euphoria-patches")}-fabric"
 		}
 		optional("modmenu") {}
 	}

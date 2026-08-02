@@ -1,7 +1,3 @@
-import java.net.URI
-import java.net.http.HttpClient
-import java.net.http.HttpRequest
-import java.net.http.HttpResponse
 import kotlinx.serialization.json.*
 
 val MODS = listOf(
@@ -139,6 +135,9 @@ platform {
 		}
 		required("iris") {
 			forgeVersionRange = "[1.8,)"
+		}
+		required("euphoria_patcher") {
+			forgeVersionRange = "~${prop("deps.euphoria-patches")}-neoforge"
 		}
 	}
 }

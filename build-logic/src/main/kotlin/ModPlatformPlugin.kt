@@ -313,7 +313,8 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 				"homepage_url" to prop("mod.homepage_url"),
 				"sources_url" to prop("mod.sources_url"),
 				"discord_url" to prop("mod.discord_url"),
-				"dependencies" to dependencies
+				"dependencies" to dependencies,
+				"euphoria_version" to prop("deps.euphoria_version"),
 			)
 
 			filesMatching("**/euphoria/pack.json") { expand(props) }

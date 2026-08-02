@@ -1,12 +1,3 @@
-import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonArray
-import kotlinx.serialization.json.jsonObject
-import java.net.URI
-import java.net.http.HttpClient
-import java.net.http.HttpRequest
-import java.net.http.HttpResponse
-import kotlin.toString
-
 val MODS = listOf(
 	// general library mods
 	"architectury-api",
@@ -120,6 +111,9 @@ platform {
 		}
 		required("oculus") {
 			forgeVersionRange = "[1.7,)"
+		}
+		required("euphoria_patcher") {
+			forgeVersionRange = "~${prop("deps.euphoria-patches")}-forge"
 		}
 	}
 }
