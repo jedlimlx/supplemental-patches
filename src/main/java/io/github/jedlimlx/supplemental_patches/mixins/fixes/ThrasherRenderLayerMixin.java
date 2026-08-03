@@ -1,9 +1,9 @@
 package io.github.jedlimlx.supplemental_patches.mixins.fixes;
 
 //? neoforge || forge {
-import com.moulberry.mixinconstraints.annotations.IfModLoaded;
+/*import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -16,13 +16,13 @@ public class ThrasherRenderLayerMixin {
         method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILcom/teamabnormals/upgrade_aquatic/common/entity/monster/Thrasher;FFFFFF)V",
         at = @At(
             value = "INVOKE",
-            target = "com/teamabnormals/blueprint/client/BlueprintRenderTypes.getUnshadedCutoutEntity (Lnet/minecraft/resources/ResourceLocation;Z)Lnet/minecraft/client/renderer/RenderType;"
+            target = "com/teamabnormals/blueprint/client/BlueprintRenderTypes.getUnshadedCutoutEntity (Lnet/minecraft/resources/Identifier;Z)Lnet/minecraft/client/renderer/RenderType;"
         ),
         remap = false
     )
-    public RenderType render(ResourceLocation texture, boolean outline) {
+    public RenderType render(Identifier texture, boolean outline) {
         // TODO revert to Blueprint shaders when no shaderpack is enabled
         return RenderType.entityTranslucent(texture);
     }
 }
-//?}
+*///?}

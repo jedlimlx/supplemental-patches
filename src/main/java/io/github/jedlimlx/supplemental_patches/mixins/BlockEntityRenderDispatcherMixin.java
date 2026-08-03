@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.mixins;
 
 //? 1.20.1 || 1.21.1 {
-import com.bawnorton.mixinsquared.TargetHandler;
+/*import com.bawnorton.mixinsquared.TargetHandler;
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.irisshaders.iris.shaderpack.materialmap.WorldRenderingSettings;
@@ -44,4 +44,4 @@ public class BlockEntityRenderDispatcherMixin {
 		CapturedRenderingState.INSTANCE.setCurrentBlockEntity(intId);
 	}
 }
-//?}
+*///?}

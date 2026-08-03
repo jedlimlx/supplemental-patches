@@ -1,0 +1,11 @@
+{
+  "name": "void_lachryma",
+  "glsl": "void_lachryma.glsl",
+  "mat0": [
+    "enderscape:void_lachryma",
+    "enderscape:void_lachryma_cauldron"
+  ],
+  "blocklight": "supplemental_patches:endergetic/ender_fire",
+  "light_groups": "void_torch",
+  "needs_voxelization": true
+}

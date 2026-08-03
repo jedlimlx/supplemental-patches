@@ -1,6 +1,9 @@
 subsurfaceMode = 1, noDirectionalShading = true, isFoliage = true;
 
-#ifdef GLOWING_CELESTIAL_GROWTHS
+#if GLOWING_CELESTIAL_GROWTHS == 1
+if (color.r > 0.8)
+	emission = 0.2;
+#elif GLOWING_CELESTIAL_GROWTHS == 2
 if (color.r > 0.8)
     emission = 0.9 * sqrt(color.r);
 #endif

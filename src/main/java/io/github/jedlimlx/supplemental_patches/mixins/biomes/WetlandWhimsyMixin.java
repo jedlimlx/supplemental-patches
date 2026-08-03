@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.mixins.biomes;
 
 //? neoforge {
-import com.moulberry.mixinconstraints.annotations.IfModLoaded;
+/*import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import net.irisshaders.iris.uniforms.BiomeUniforms;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
@@ -19,4 +19,4 @@ public class WetlandWhimsyMixin {
         BiomeUniforms.getBiomeMap().put(cir.getReturnValue(), BiomeUniforms.getBiomeMap().size() + 1);
     }
 }
-//?}
+*///?}

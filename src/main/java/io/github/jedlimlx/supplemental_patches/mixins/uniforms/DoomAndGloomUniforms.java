@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.mixins.uniforms;
 
 //? 1.20.1 || 1.21.1 {
-import com.moulberry.mixinconstraints.annotations.IfMinecraftVersion;
+/*import com.moulberry.mixinconstraints.annotations.IfMinecraftVersion;
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import galena.doom_and_gloom.index.DGEffects;
 import net.irisshaders.iris.gl.uniform.UniformHolder;
@@ -39,10 +39,10 @@ public class DoomAndGloomUniforms {
         Entity cameraEntity = Minecraft.getInstance().getCameraEntity();
         if (cameraEntity instanceof LivingEntity) {
 			//? 1.20.1 {
-			/*MobEffectInstance fog = ((LivingEntity)cameraEntity).getEffect(DGEffects.FOG.get());
-			*///?} 1.21.1 {
-            MobEffectInstance fog = ((LivingEntity)cameraEntity).getEffect(DGEffects.FOG);
-			//?}
+			/^MobEffectInstance fog = ((LivingEntity)cameraEntity).getEffect(DGEffects.FOG.get());
+			^///?} 1.21.1 {
+            /^MobEffectInstance fog = ((LivingEntity)cameraEntity).getEffect(DGEffects.FOG);
+			^///?}
             if (fog != null) {
                 if (fog.isInfiniteDuration() || fog.getDuration() > 10.0F) return 1.0F;
                 else return fog.getDuration() / 10.0F;
@@ -52,4 +52,4 @@ public class DoomAndGloomUniforms {
         return 0.0F;
     }
 }
-//?}
+*///?}

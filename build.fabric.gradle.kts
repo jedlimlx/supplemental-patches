@@ -20,6 +20,7 @@ val MODS = listOf(
 	"satin-api#",
 	"terrablender",
 	"trimmed",
+	"trim-patcher",
 	"yacl",
 
 	// extra optimisation
@@ -85,7 +86,7 @@ val MODS = listOf(
 
 plugins {
 	id("mod-platform")
-	id("net.fabricmc.fabric-loom-remap")
+	id("dev.kikugie.loom-back-compat")
 	id("dev.vfyjxf.gradle.production")
 }
 
@@ -108,7 +109,11 @@ production {
 	runs.configureEach {
 		loader = "fabric"
 		loaderVersion = "${libs.fabric.loader.get().version}"
-		javaVersion = 21
+		javaVersion = when {
+			(sc.current.parsed < "1.20.5") -> 17
+			(sc.current.parsed < "26") -> 21
+			else -> 25
+		}
 		userName = "Dev"
 	}
 
@@ -183,7 +188,7 @@ platform {
 		required("fabric-language-kotlin") {
 			versionRange = ">=${prop("deps.fabric-lang-kotlin")}"
 		}
-		required("euphoria-patcher") {
+		required("euphoria_patcher") {
 			versionRange = "~${prop("deps.euphoria-patches")}-fabric"
 		}
 		optional("modmenu") {}
@@ -254,13 +259,14 @@ dependencies {
 
 	val minecraftVersion = prop("deps.minecraft")
 	minecraft("com.mojang:minecraft:${minecraftVersion}")
-	mappings(
-		loom.layered {
+	if ("26" !in minecraftVersion) {
+		mappings(loom.layered {
 			officialMojangMappings()
 			if (hasProperty("deps.parchment"))
-				parchment("org.parchmentmc.data:parchment-${minecraftVersion}:${prop("deps.parchment")}@zip")
-		}
-	)
+				parchment("org.parchmentmc.data:parchment-${prop("deps.parchment")}@zip")
+		})
+	}
+
 	modImplementation(libs.fabric.loader)
 
 	implementation(libs.moulberry.mixinconstraints)
@@ -290,7 +296,7 @@ dependencies {
 		modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-base:${prop("deps.cardinal")}")
 		modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${prop("deps.cardinal")}")
 	} else {
-		if (minecraftVersion in listOf("1.21.1", "1.21.10", "1.21.11")) addMods(listOf("lithostitched"))
+		if (minecraftVersion in listOf("1.21.1", "1.21.10", "1.21.11", "26.1")) addMods(listOf("lithostitched"))
 
 		modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-base:${prop("deps.cardinal")}")
 		modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-entity:${prop("deps.cardinal")}")

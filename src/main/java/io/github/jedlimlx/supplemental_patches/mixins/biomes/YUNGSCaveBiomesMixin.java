@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.mixins.biomes;
 
 //? =1.20.1 || =1.21.1 {
-import com.moulberry.mixinconstraints.annotations.IfMinecraftVersion;
+/*import com.moulberry.mixinconstraints.annotations.IfMinecraftVersion;
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import com.yungnickyoung.minecraft.yungscavebiomes.module.BiomeModule;
 import net.irisshaders.iris.uniforms.BiomeUniforms;
@@ -21,4 +21,4 @@ public class YUNGSCaveBiomesMixin {
         BiomeUniforms.getBiomeMap().put(cir.getReturnValue(), BiomeUniforms.getBiomeMap().size() + 1);
     }
 }
-//?}
+*///?}

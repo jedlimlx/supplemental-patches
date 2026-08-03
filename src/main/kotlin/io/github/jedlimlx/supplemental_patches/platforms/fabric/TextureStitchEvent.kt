@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.platforms.fabric
 
 //? fabric {
-/*import net.fabricmc.fabric.api.event.EventFactory
+import net.fabricmc.fabric.api.event.EventFactory
 import net.minecraft.client.renderer.texture.TextureAtlas
 
 fun interface TextureStitchEvent {
@@ -18,4 +18,4 @@ fun interface TextureStitchEvent {
 		}
 	}
 }
-*///?}
+//?}

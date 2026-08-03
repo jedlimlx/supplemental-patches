@@ -1,6 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.mixins.biomes;
 
-import com.moulberry.mixinconstraints.annotations.IfModLoaded;
+//? <26.1 {
+/*import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import net.irisshaders.iris.uniforms.BiomeUniforms;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
@@ -19,3 +20,4 @@ public class BWGBiomesMixin {
         BiomeUniforms.getBiomeMap().put(cir.getReturnValue(), BiomeUniforms.getBiomeMap().size() + 1);
     }
 }
+*///?}

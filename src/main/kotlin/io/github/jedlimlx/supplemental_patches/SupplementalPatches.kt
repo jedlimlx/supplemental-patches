@@ -5,14 +5,14 @@ import org.slf4j.Logger
 import io.github.jedlimlx.supplemental_patches.platforms.Platform
 
 //? fabric {
-/*import io.github.jedlimlx.supplemental_patches.platforms.fabric.FabricPlatform
-*///?} neoforge {
-import io.github.jedlimlx.supplemental_patches.platforms.neoforge.NeoForgePlatform
+import io.github.jedlimlx.supplemental_patches.platforms.fabric.FabricPlatform
+//?} neoforge {
+/*import io.github.jedlimlx.supplemental_patches.platforms.neoforge.NeoForgePlatform
 import io.github.jedlimlx.supplemental_patches.shaders.ShaderResourceLoader
 import net.neoforged.api.distmarker.Dist
 import net.neoforged.fml.common.Mod
 import net.neoforged.fml.loading.FMLEnvironment
-//?} forge {
+*///?} forge {
 /*import io.github.jedlimlx.supplemental_patches.platforms.forge.ForgePlatform
 import io.github.jedlimlx.supplemental_patches.shaders.ShaderResourceLoader
 import net.minecraftforge.api.distmarker.Dist
@@ -30,15 +30,15 @@ val LOGGER: Logger = LoggerFactory.getLogger("supplemental_patches")
 @JvmField
 val PLATFORM: Platform
 //? fabric {
-/*= FabricPlatform
-*///?} neoforge {
-= NeoForgePlatform
-//?} forge {
+= FabricPlatform
+//?} neoforge {
+/*= NeoForgePlatform
+*///?} forge {
 /*= ForgePlatform
 *///?}
 
 //? neoforge || forge {
-@Mod(MOD_ID)
+/*@Mod(MOD_ID)
 class SupplementalPatches {
 	init {
 		if (FMLEnvironment.dist == Dist.CLIENT) {
@@ -46,4 +46,4 @@ class SupplementalPatches {
 		}
 	}
 }
-//?}
+*///?}

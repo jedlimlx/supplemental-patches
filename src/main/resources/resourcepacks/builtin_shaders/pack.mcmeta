@@ -3,10 +3,10 @@
     "pack_format": 15,
     "supported_formats": {
       "min_inclusive": 15,
-      "max_inclusive": 75
+      "max_inclusive": 88
     },
     "min_format": [15, 0],
-    "max_format": [75, 0],
+    "max_format": [88, 0],
     "description": [
       {
         "text": "The built-in shaders for Supplemental Patches",

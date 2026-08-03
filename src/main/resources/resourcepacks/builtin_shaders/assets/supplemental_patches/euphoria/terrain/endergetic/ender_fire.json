@@ -3,6 +3,7 @@
   "glsl": "ender_fire.glsl",
   "mat0": [
     "endergetic:ender_fire",
+    "enderscape:void_fire",
     "illager_invasion:magic_fire"
   ],
   "blocklight": "supplemental_patches:endergetic/ender_fire",

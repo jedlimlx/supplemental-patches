@@ -2,13 +2,13 @@
 stonecutter = "0.9.2"
 stonecutter-postprocess = "2.1-beta.8"
 mod-publish = "1.1.0"
+loomx = "0.4.1"
 dotenv-gradle = "4.0.0"
-fabric-loom = "1.17-SNAPSHOT"
 neoforge-moddev = "2.0.141"
 foojay = "1.0.0"
-fabric-loader = "0.19.2"
-devtools-ksp = "2.2.10-2.0.2"
-kotlin-jvm = "2.2.10"
+fabric-loader = "0.19.3"
+devtools-ksp = "2.3.10"
+kotlin-jvm = "2.4.0"
 fletching-table = "0.1.0-alpha.22"
 moulberry-mixinconstraints = "1.1.0"
 vanniktech-maven-publish = "0.35.0"
@@ -21,6 +21,7 @@ vfyjxf-production = "0.1.0"
 kikugie-postprocess = { module = "dev.kikugie:postprocess", version.ref = "stonecutter-postprocess" }
 mod-publish-plugin = { module = "me.modmuss50:mod-publish-plugin", version.ref = "mod-publish" }
 kikugie-stonecutter = { module = "dev.kikugie:stonecutter", version.ref = "stonecutter" }
+kikugie-loomx = { module = "dev.kikugie:loomx", version.ref = "loomx" }
 fabric-loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabric-loader" }
 foojay-resolver = { module = "org.gradle.toolchains:foojay-resolver", version.ref = "foojay" }
 fletching-table = { module = "dev.kikugie:fletching-table", version.ref = "fletching-table" }
@@ -33,9 +34,8 @@ mixinsquared-neoforge = { module = "com.github.bawnorton.mixinsquared:mixinsquar
 
 [plugins]
 stonecutter = { id = "dev.kikugie.stonecutter", version.ref = "stonecutter" }
+loom-back-compat = { id = "dev.kikugie.loom-back-compat", version.ref = "loomx" }
 dotenv = { id = "co.uzzu.dotenv.gradle", version.ref = "dotenv-gradle" }
-fabric-loom = { id = "net.fabricmc.fabric-loom", version.ref = "fabric-loom" }
-fabric-loom-remap = { id = "net.fabricmc.fabric-loom-remap", version.ref = "fabric-loom" }
 neoforged-moddev = { id = "net.neoforged.moddev", version.ref = "neoforge-moddev" }
 jsonlang-postprocess = { id = "dev.kikugie.postprocess.jsonlang", version.ref = "stonecutter-postprocess" }
 mod-publish-plugin = { id = "me.modmuss50.mod-publish-plugin", version.ref = "mod-publish" }

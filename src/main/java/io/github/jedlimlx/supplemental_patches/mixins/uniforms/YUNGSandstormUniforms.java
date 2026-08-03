@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.mixins.uniforms;
 
 //? =1.20.1 || =1.21.1 {
-import com.moulberry.mixinconstraints.annotations.IfMinecraftVersion;
+/*import com.moulberry.mixinconstraints.annotations.IfMinecraftVersion;
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import com.yungnickyoung.minecraft.yungscavebiomes.client.render.sandstorm.ISandstormClientDataProvider;
 import com.yungnickyoung.minecraft.yungscavebiomes.client.render.sandstorm.SandstormClientData;
@@ -51,4 +51,4 @@ public class YUNGSandstormUniforms {
         return new Vector3f(0, 0, 0);
     }
 }
-//?}
+*///?}
