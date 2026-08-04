@@ -37,3 +37,7 @@ ij_java_names_count_to_use_import_on_demand = 999
 [*.{yml,yaml}]
 indent_style = space
 indent_size = 2
+
+[*.glsl]
+indent_style = space
+indent_size = 4

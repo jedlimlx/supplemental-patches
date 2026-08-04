@@ -75,10 +75,6 @@ vec2 fbm3d_2d(vec3 x) {
     return v;
 }
 
-#define ES_FLASH_SIZE 1
-#define ES_FLASH 1  // 0 - No, 1 - If mod is installed, 2 - Always
-#define ES_FLASH_GRAININESS 0.6
-
 #if MC_VERSION >= 12109
     vec4 GetEnderscapeFlash(vec3 worldPos) {
         vec3 worldEndFlashPosition = mat3(gbufferModelViewInverse) * endFlashPosition;

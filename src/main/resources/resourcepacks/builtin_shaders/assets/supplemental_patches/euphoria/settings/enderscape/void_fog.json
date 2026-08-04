@@ -1,0 +1,9 @@
+{
+  "type": "directory",
+  "name": "ES_VOID_FOG",
+  "folder": "void_fog",
+  "priority": 1,
+  "en_US": {
+    "screen": "Void Fog"
+  }
+}

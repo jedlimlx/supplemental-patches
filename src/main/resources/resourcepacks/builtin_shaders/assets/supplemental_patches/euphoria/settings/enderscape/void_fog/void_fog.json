@@ -1,0 +1,14 @@
+{
+  "type": "setting",
+  "name": "DO_VOID_FOG",
+  "values": [0, 1, 2],
+  "default": 1,
+  "file": "voidFog.glsl",
+  "en_US": {
+    "option": "Void Fog",
+    "comment": "Enables a void fog that activates above and below a configurable altitude in the End.",
+    "value.0": "§aOFF",
+    "value.1": "If Mod Installed",
+    "value.2": "ON"
+  }
+}

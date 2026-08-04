@@ -760,7 +760,7 @@ object ShaderResourceLoader {
                     val tokens = loc.path.replace("$type/", "").split("/")
                     val path = tokens.subList(0, tokens.size - 1).joinToString("/")
                     val json = loadJson(loc, resourceManager)
-
+ff
                     SKIES.add(
                         Sky(
                             json["name"].asString ?: throw MinecraftError("Name of main GLSL file is not specified", loc.toString()),
@@ -773,10 +773,9 @@ object ShaderResourceLoader {
 								"$path${if (path.isEmpty()) "" else "/"}" +
 									(json["deferred"].asString ?: throw MinecraftError("Code to be inserted into deferred1.glsl not specified.", loc.toString()))
 							] ?: throw MinecraftError("$path/${json["code"].asString} not found!", loc.toString()),
-							it[
-								"$path${if (path.isEmpty()) "" else "/"}" +
-									(json["reflection"].asString ?: throw MinecraftError("Code to be inserted into reflectionImpl.glsl is not specified.", loc.toString()))
-							] ?: throw MinecraftError("$path/${json["code"].asString} not found!", loc.toString()),
+							if (json["reflection"] != null) it[
+								"$path${if (path.isEmpty()) "" else "/"}" + json["reflection"].asString
+							] ?: throw MinecraftError("$path/${json["code"].asString} not found!", loc.toString()) else null,
                             json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
                         )
                     )

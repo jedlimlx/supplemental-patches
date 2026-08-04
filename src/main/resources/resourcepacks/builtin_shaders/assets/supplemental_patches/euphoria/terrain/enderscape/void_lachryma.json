@@ -7,5 +7,6 @@
   ],
   "blocklight": "supplemental_patches:endergetic/ender_fire",
   "light_groups": "void_torch",
+  "waving": "supplemental_patches:fluids/waving_void_lachryma",
   "needs_voxelization": true
 }
