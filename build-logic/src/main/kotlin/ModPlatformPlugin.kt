@@ -126,6 +126,25 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 			loader.convention(inferredLoader)
 			jarTask.convention("jar")
 			sourcesJarTask.convention("sourcesJar")
+
+			when (inferredLoader) {
+				"fabric" -> {
+					jarTask.convention(providers.provider {
+						extensions.getByType<dev.kikugie.loomx.LoomCompatProjectExtension>().modJar.name
+					})
+					sourcesJarTask.convention(providers.provider {
+						extensions.getByType<dev.kikugie.loomx.LoomCompatProjectExtension>().modSourcesJar.name
+					})
+				}
+				"forge" -> {
+					jarTask.convention("reobfJar")
+					sourcesJarTask.convention("sourcesJar")
+				}
+				else -> {
+					jarTask.convention("jar")
+					sourcesJarTask.convention("sourcesJar")
+				}
+			}
 		}
 
 		listOf(
