@@ -760,7 +760,7 @@ object ShaderResourceLoader {
                     val tokens = loc.path.replace("$type/", "").split("/")
                     val path = tokens.subList(0, tokens.size - 1).joinToString("/")
                     val json = loadJson(loc, resourceManager)
-ff
+
                     SKIES.add(
                         Sky(
                             json["name"].asString ?: throw MinecraftError("Name of main GLSL file is not specified", loc.toString()),

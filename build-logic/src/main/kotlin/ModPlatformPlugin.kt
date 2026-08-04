@@ -179,6 +179,7 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 		configureIdea()
 		configureShaderpackDownloads()
 		configurePhotonicsJarDownloads()
+		configureCopyEuphoriaPatchesSubmodule()
 		configureProcessResources(isFabric, isNeoForge, isForge, modId, "$modVersion$channelTag", mcVersion, extension, extension.requiredJava.get())
 		configureJava(stonecutter, extension.requiredJava.get())
 		configureKotlin(stonecutter, extension.requiredJava.get())
@@ -267,6 +268,25 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 		}
 	}
 
+	private fun Project.configureCopyEuphoriaPatchesSubmodule() {
+		val shaderDirectoryPath = "run/shaderpacks"
+		val sourceDir = rootProject.file("euphoria-patches")
+
+		if (sourceDir.exists() && sourceDir.isDirectory) {
+			tasks.register<Copy>("copyEuphoriaPatches") {
+				group = "setup"
+				description = "Copies the euphoria-patches submodule into the run shaderpacks directory."
+				from(sourceDir)
+				into("${shaderDirectoryPath}/EuphoriaPatches_GitHub")
+				eachFile {
+					duplicatesStrategy = org.gradle.api.file.DuplicatesStrategy.INCLUDE
+				}
+			}
+		} else {
+			logger.warn("Root directory 'euphoria-patches' does not exist or is not a directory.")
+		}
+	}
+
 	private fun Project.configureProcessResources(
 		isFabric: Boolean,
 		isNeoForge: Boolean,
@@ -282,6 +302,9 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 			dependsOn(tasks.named("downloadComplementaryShaders"))
 			if (euphoriaDev) dependsOn(tasks.named("downloadEuphoriaDev"))
 			if (photonicsJar) dependsOn(tasks.named("downloadPhotonicsJar"))
+			if (rootProject.file("euphoria-patches").exists()) {
+				dependsOn(tasks.named("copyEuphoriaPatches"))
+			}
 
 			dependsOn("kspKotlin")
 
