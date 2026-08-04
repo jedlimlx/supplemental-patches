@@ -1,12 +1,12 @@
 package io.github.jedlimlx.supplemental_patches.platforms.neoforge
 
 //? neoforge {
-/*import io.github.jedlimlx.supplemental_patches.LOGGER
+import io.github.jedlimlx.supplemental_patches.LOGGER
 import io.github.jedlimlx.supplemental_patches.platforms.Platform
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.texture.TextureAtlas
 import net.minecraft.network.chat.Component
-import net.minecraft.resources.Identifier
+import net.minecraft.resources.ResourceLocation
 import net.neoforged.fml.ModList
 import net.neoforged.fml.loading.FMLPaths
 import java.nio.file.Path
@@ -18,7 +18,7 @@ object NeoForgePlatform : Platform {
 	override val shaderDirectory: Path = FMLPaths.GAMEDIR.get().resolve("shaderpacks")
 
 	override var particleAtlas: TextureAtlas? = null
-	override val particleAtlasTextures: Collection<Identifier>
+	override val particleAtlasTextures: Collection<ResourceLocation>
 		get() = particleAtlas!!.textures.keys
 
 	override val messageQueue: ArrayDeque<Component> = ArrayDeque()
@@ -39,7 +39,7 @@ object NeoForgePlatform : Platform {
 		else messageQueue.add(message)
 	}
 
-	override fun getIdentifier(path: String) = Identifier.parse(path)
-	override fun getIdentifier(namespace: String, path: String) = Identifier.fromNamespaceAndPath(namespace,path)
+	override fun getResourceLocation(path: String) = ResourceLocation.parse(path)
+	override fun getResourceLocation(namespace: String, path: String) = ResourceLocation.fromNamespaceAndPath(namespace,path)
 }
-*///?}
+//?}

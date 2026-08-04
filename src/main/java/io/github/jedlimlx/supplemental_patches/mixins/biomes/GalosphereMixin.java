@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.mixins.biomes;
 
 //? <=1.21.5 {
-/*import com.moulberry.mixinconstraints.annotations.IfMinecraftVersion;
+import com.moulberry.mixinconstraints.annotations.IfMinecraftVersion;
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import net.irisshaders.iris.uniforms.BiomeUniforms;
 import net.minecraft.resources.ResourceKey;
@@ -21,4 +21,4 @@ public class GalosphereMixin {
         BiomeUniforms.getBiomeMap().put(cir.getReturnValue(), BiomeUniforms.getBiomeMap().size() + 1);
     }
 }
-*///?}
+//?}

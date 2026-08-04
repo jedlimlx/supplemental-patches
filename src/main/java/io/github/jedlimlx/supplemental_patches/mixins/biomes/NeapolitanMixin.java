@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.mixins.biomes;
 
 //? forge || neoforge {
-/*import com.moulberry.mixinconstraints.annotations.IfMinecraftVersion;
+import com.moulberry.mixinconstraints.annotations.IfMinecraftVersion;
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import net.irisshaders.iris.uniforms.BiomeUniforms;
 import net.minecraft.resources.ResourceKey;
@@ -12,10 +12,10 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 //? neoforge {
-/^import com.teamabnormals.neapolitan.core.registry.datapack.NeapolitanBiomes;
- ^///?} forge {
-/^import com.teamabnormals.neapolitan.core.registry.NeapolitanBiomes;
-^///?}
+import com.teamabnormals.neapolitan.core.registry.datapack.NeapolitanBiomes;
+ //?} forge {
+/*import com.teamabnormals.neapolitan.core.registry.NeapolitanBiomes;
+*///?}
 
 @IfModLoaded(value = "neapolitan")
 @IfMinecraftVersion(minVersion = "1.20.1", maxVersion = "1.21.1")
@@ -26,4 +26,4 @@ public class NeapolitanMixin {
         BiomeUniforms.getBiomeMap().put(cir.getReturnValue(), BiomeUniforms.getBiomeMap().size() + 1);
     }
 }
-*///?}
+//?}

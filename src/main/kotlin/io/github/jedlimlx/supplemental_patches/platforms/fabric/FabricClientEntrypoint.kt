@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.platforms.fabric
 
 //? fabric {
-import com.mojang.blaze3d.platform.InputConstants
+/*import com.mojang.blaze3d.platform.InputConstants
 import dev.kikugie.fletching_table.annotation.fabric.Entrypoint
 import io.github.jedlimlx.supplemental_patches.LOGGER
 import io.github.jedlimlx.supplemental_patches.PLATFORM
@@ -10,7 +10,7 @@ import io.github.jedlimlx.supplemental_patches.shaders.installShader
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 //~ if >=26.1 'keybinding.v1.KeyBindingHelper' -> 'keymapping.v1.KeyMappingHelper'
-import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType
@@ -21,39 +21,39 @@ import net.minecraft.server.packs.PackType
 import org.lwjgl.glfw.GLFW
 
 //? >=1.21.9 {
-import net.fabricmc.fabric.api.resource.v1.ResourceLoader
-//?} else {
+/*import net.fabricmc.fabric.api.resource.v1.ResourceLoader
+*///?} else {
 
-/*import net.minecraft.resources.Identifier
+import net.minecraft.resources.ResourceLocation
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener
 import net.minecraft.client.Minecraft
 import net.minecraft.server.packs.resources.PreparableReloadListener
 import net.minecraft.server.packs.resources.ResourceManager
 import net.minecraft.util.profiling.ProfilerFiller
 import java.util.concurrent.Executor
-*///?}
+//?}
 
 @Entrypoint("client")
 class FabricClientEntrypoint : ClientModInitializer {
 	//~ if >=26.1 'KeyBindingHelper.registerKeyBinding' -> 'KeyMappingHelper.registerKeyMapping'
-	val KB_REGENERATE_SHADERS = KeyMappingHelper.registerKeyMapping(
+	val KB_REGENERATE_SHADERS = KeyBindingHelper.registerKeyBinding(
 		KeyMapping(
 			"key.supplemental_patches.reload_shaders",
 			InputConstants.Type.KEYSYM,
 			GLFW.GLFW_KEY_INSERT,
 			//? >=1.21.9 {
-			KeyMapping.Category.MISC
-			//?} else {
-			/*KeyMapping.CATEGORY_MISC
-			*///?}
+			/*KeyMapping.Category.MISC
+			*///?} else {
+			KeyMapping.CATEGORY_MISC
+			//?}
 		)
 	)
 
 	override fun onInitializeClient() {
 		//? >=1.21.9 {
-		//~ if >=26.1 'registerReloader' -> 'registerReloadListener'
-		ResourceLoader.get(PackType.CLIENT_RESOURCES).registerReloadListener(
-			PLATFORM.getIdentifier("supplemental_patches:euphoria")
+		/*//~ if >=26.1 'registerReloader' -> 'registerReloadListener'
+		ResourceLoader.get(PackType.CLIENT_RESOURCES).registerReloader(
+			PLATFORM.getResourceLocation("supplemental_patches:euphoria")
 		) { sharedState, backgroundExecutor, stage, gameExecutor ->
 				ShaderResourceLoader.reload(
 					stage,
@@ -62,32 +62,32 @@ class FabricClientEntrypoint : ClientModInitializer {
 					gameExecutor
 				)
 			}
-		//?} else {
-		/*ResourceManagerHelper.get(PackType.CLIENT_RESOURCES)
+		*///?} else {
+		ResourceManagerHelper.get(PackType.CLIENT_RESOURCES)
 			.registerReloadListener(object : IdentifiableResourceReloadListener {
 				override fun reload(
 					preparationBarrier: PreparableReloadListener.PreparationBarrier,
 					resourceManager: ResourceManager,
 					//? <=1.21.4 {
-					/*preparationsProfiler: ProfilerFiller,
+					preparationsProfiler: ProfilerFiller,
 					reloadProfiler: ProfilerFiller,
-					*///?}
+					//?}
 					backgroundExecutor: Executor,
 					gameExecutor: Executor
 				) = ShaderResourceLoader.reload(
 					preparationBarrier,
 					resourceManager,
 					//? <=1.21.4 {
-					/*preparationsProfiler,
+					preparationsProfiler,
 					reloadProfiler,
-					*///?}
+					//?}
 					backgroundExecutor,
 					gameExecutor
 				)
 
-				override fun getFabricId() = PLATFORM.getIdentifier("supplemental_patches:euphoria")
+				override fun getFabricId() = PLATFORM.getResourceLocation("supplemental_patches:euphoria")
 			})
-		 *///?}
+		 //?}
 
 		TextureStitchEvent.EVENT.register(TextureStitchEvent {
 			if ("particles" in it.location().toString()) {
@@ -119,11 +119,11 @@ class FabricClientEntrypoint : ClientModInitializer {
 
 		FabricLoader.getInstance().getModContainer("supplemental_patches").ifPresent {
 			ResourceManagerHelper.registerBuiltinResourcePack(
-				PLATFORM.getIdentifier("supplemental_patches:builtin_shaders"),
+				PLATFORM.getResourceLocation("supplemental_patches:builtin_shaders"),
 				it,
 				Component.translatable("key.supplemental_patches.builtin_shaders"),
 				ResourcePackActivationType.DEFAULT_ENABLED
 			)
 		}
 	}
-} //?}
+} *///?}

@@ -1,14 +1,14 @@
 package io.github.jedlimlx.supplemental_patches.platforms.neoforge
 
 //? neoforge {
-/*import io.github.jedlimlx.supplemental_patches.LOGGER
+import io.github.jedlimlx.supplemental_patches.LOGGER
 import io.github.jedlimlx.supplemental_patches.MOD_ID
 import io.github.jedlimlx.supplemental_patches.PLATFORM
 import io.github.jedlimlx.supplemental_patches.shaders.installShader
 import net.irisshaders.iris.Iris
 import net.minecraft.client.Minecraft
 import net.minecraft.network.chat.Component
-import net.minecraft.resources.Identifier
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.PackType
 import net.minecraft.server.packs.repository.Pack
 import net.minecraft.server.packs.repository.PackSource
@@ -25,7 +25,7 @@ object NeoForgeClientEvents {
 	@SubscribeEvent
 	@JvmStatic
 	fun textureStitchedEvent(event: TextureAtlasStitchedEvent) {
-		if ("particles" in event.atlas.identifier().toString()) {
+		if ("particles" in event.atlas.location().toString()) {
 			PLATFORM.particleAtlas = event.atlas
 
 			val string = installShader()
@@ -39,7 +39,7 @@ object NeoForgeClientEvents {
 	@JvmStatic
 	fun addBuiltInPacks(event: AddPackFindersEvent) {
 		event.addPackFinders(
-			Identifier.parse("supplemental_patches:resourcepacks/builtin_shaders"),
+			ResourceLocation.parse("supplemental_patches:resourcepacks/builtin_shaders"),
 			PackType.CLIENT_RESOURCES,
 			Component.translatable("key.supplemental_patches.builtin_shaders"),
 			PackSource.BUILT_IN,
@@ -62,4 +62,4 @@ object NeoForgeClientEvents {
 		}
 	}
 }
-*///?}
+//?}

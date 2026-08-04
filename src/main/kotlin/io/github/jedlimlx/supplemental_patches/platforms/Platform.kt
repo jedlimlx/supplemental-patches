@@ -2,7 +2,7 @@ package io.github.jedlimlx.supplemental_patches.platforms
 
 import net.minecraft.client.renderer.texture.TextureAtlas
 import net.minecraft.network.chat.Component
-import net.minecraft.resources.Identifier
+import net.minecraft.resources.ResourceLocation
 import java.nio.file.Path
 
 interface Platform {
@@ -12,7 +12,7 @@ interface Platform {
 	val isDevelopmentEnvironment: Boolean
 
 	var particleAtlas: TextureAtlas?
-	val particleAtlasTextures: Collection<Identifier>
+	val particleAtlasTextures: Collection<ResourceLocation>
 
 	val isDebug: Boolean
 		get() = this.isDevelopmentEnvironment
@@ -29,6 +29,6 @@ interface Platform {
 	fun sendSystemMessage(message: String)
 	fun sendSystemMessage(message: Component)
 
-	fun getIdentifier(path: String): Identifier
-	fun getIdentifier(namespace:String, path: String): Identifier
+	fun getResourceLocation(path: String): ResourceLocation
+	fun getResourceLocation(namespace:String, path: String): ResourceLocation
 }

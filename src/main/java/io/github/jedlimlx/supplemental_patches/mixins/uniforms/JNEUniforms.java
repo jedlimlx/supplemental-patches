@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.mixins.uniforms;
 
 //? neoforge || forge {
-/*import com.moulberry.mixinconstraints.annotations.IfMinecraftVersion;
+import com.moulberry.mixinconstraints.annotations.IfMinecraftVersion;
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import net.irisshaders.iris.gl.uniform.UniformHolder;
 import net.irisshaders.iris.gl.uniform.UniformUpdateFrequency;
@@ -22,12 +22,12 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 //? neoforge {
-/^import net.jadenxgamer.netherexp.registry.JNEMobEffects;
+import net.jadenxgamer.netherexp.registry.JNEMobEffects;
 import net.jadenxgamer.netherexp.registry.JNEFluids;
-^///?} forge {
-/^import net.jadenxgamer.netherexp.registry.effect.JNEMobEffects;
+//?} forge {
+/*import net.jadenxgamer.netherexp.registry.effect.JNEMobEffects;
 import net.jadenxgamer.netherexp.registry.fluid.JNEFluids;
-^///?}
+*///?}
 
 @IfModLoaded(value = "netherexp")
 @IfMinecraftVersion(minVersion = "1.20.1", maxVersion="1.21.1")
@@ -47,10 +47,10 @@ public class JNEUniforms {
         Entity cameraEntity = Minecraft.getInstance().getCameraEntity();
         if (cameraEntity instanceof LivingEntity) {
 			//? neoforge {
-			/^MobEffectInstance betrayed = ((LivingEntity)cameraEntity).getEffect(JNEMobEffects.BETRAYED);
-			^///?} forge {
-			/^MobEffectInstance betrayed = ((LivingEntity)cameraEntity).getEffect(JNEMobEffects.BETRAYED.get());
-			 ^///?}
+			MobEffectInstance betrayed = ((LivingEntity)cameraEntity).getEffect(JNEMobEffects.BETRAYED);
+			//?} forge {
+			/*MobEffectInstance betrayed = ((LivingEntity)cameraEntity).getEffect(JNEMobEffects.BETRAYED.get());
+			 *///?}
             if (betrayed != null) {
                 if (betrayed.isInfiniteDuration() || betrayed.getDuration() > 10.0F) return 1.0F;
                 else return betrayed.getDuration() / 10.0F;
@@ -74,4 +74,4 @@ public class JNEUniforms {
 		return 0.0F;
 	}
 }
-*///?}
+//?}

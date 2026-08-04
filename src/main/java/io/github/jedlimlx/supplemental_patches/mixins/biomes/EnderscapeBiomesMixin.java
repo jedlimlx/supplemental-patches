@@ -12,10 +12,10 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 //? >=26.1 {
-import net.penumbra.enderscape.registry.level.EnderscapeBiomes;
-//?} else {
-/*import net.bunten.enderscape.registry.EnderscapeBiomes;
-*///?}
+/*import net.penumbra.enderscape.registry.level.EnderscapeBiomes;
+*///?} else {
+import net.bunten.enderscape.registry.EnderscapeBiomes;
+//?}
 
 @IfModLoaded(value = "enderscape")
 @IfMinecraftVersion(minVersion = "1.21.1")

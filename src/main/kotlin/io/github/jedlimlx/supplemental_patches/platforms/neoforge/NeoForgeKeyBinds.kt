@@ -1,7 +1,7 @@
 package io.github.jedlimlx.supplemental_patches.platforms.neoforge
 
 //? neoforge {
-/*import com.mojang.blaze3d.platform.InputConstants
+import com.mojang.blaze3d.platform.InputConstants
 import io.github.jedlimlx.supplemental_patches.MOD_ID
 import io.github.jedlimlx.supplemental_patches.PLATFORM
 import io.github.jedlimlx.supplemental_patches.platforms.neoforge.KeyBinds.KB_REGENERATE_SHADERS
@@ -43,4 +43,4 @@ object KeyHandler {
             PLATFORM.sendSystemMessage(installShader())
     }
 }
-*///?}
+//?}
