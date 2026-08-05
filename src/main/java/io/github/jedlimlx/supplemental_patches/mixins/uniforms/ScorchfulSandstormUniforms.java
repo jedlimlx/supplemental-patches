@@ -1,8 +1,8 @@
 package io.github.jedlimlx.supplemental_patches.mixins.uniforms;
 
-//? fabric {
+//? fabric && < 26.2 {
 /*//~ if >=26.1 'server' -> 'world'
-import com.github.thedeathlycow.scorchful.server.Sandstorms;
+import com.github.thedeathlycow.scorchful.world.Sandstorms;
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import net.irisshaders.iris.gl.uniform.UniformHolder;
 import net.irisshaders.iris.gl.uniform.UniformUpdateFrequency;

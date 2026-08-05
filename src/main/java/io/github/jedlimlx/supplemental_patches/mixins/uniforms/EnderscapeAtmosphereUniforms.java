@@ -45,7 +45,8 @@ public abstract class EnderscapeAtmosphereUniforms {
     )
     private static void addBiomeUniforms(UniformHolder uniforms, CallbackInfo ci) {
 		//? >=1.21.11 {
-		/*uniforms.uniform3f(
+		/*//~ if >=26.2 'getMainCamera' -> 'mainCamera' {
+		uniforms.uniform3f(
 			UniformUpdateFrequency.PER_TICK,
 			"enderscapeNebulaColor",
 			() -> {
@@ -89,6 +90,7 @@ public abstract class EnderscapeAtmosphereUniforms {
 				//?}
 			}
 		);
+		//~}
 		*///?} else {
         uniforms.uniform3f(
             UniformUpdateFrequency.PER_TICK,
