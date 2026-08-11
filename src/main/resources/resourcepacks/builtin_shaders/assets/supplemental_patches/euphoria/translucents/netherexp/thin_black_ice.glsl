@@ -1,3 +1,4 @@
+color.a = 0.95;
 smoothnessG = pow3(4.5 * color.g);
 highlightMult = pow2(min1(pow2(color.g) * 1.5)) * 3.5;
 

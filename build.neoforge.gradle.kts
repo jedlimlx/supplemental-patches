@@ -9,6 +9,7 @@ val MODS = listOf(
 	"data-anchor",
 	"geckolib",
 	"glitchcore",
+	"lithostitched",
 	"terrablender",
 	"trimmed",
 	"moonlight",
@@ -24,6 +25,7 @@ val MODS = listOf(
 	// additional world generation
 	"streams-reflowing#",
 	"yungs-better-caves#",
+	"tectonic#",
 
 	// extra optimisation
 	"ferrite-core#",
@@ -80,8 +82,8 @@ val MODS = listOf(
 	"dye-the-world!",
 
 	// jne
-	"elysium-api!",
-	"jadens-nether-expansion",
+	"elysium-api",
+	"jadens-nether-expansion:2.4.0-RC.1",
 	"soulfulnether*",
 	"rubinated-nether",
 

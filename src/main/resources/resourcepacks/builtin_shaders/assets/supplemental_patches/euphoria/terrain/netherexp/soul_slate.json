@@ -34,17 +34,34 @@
   "mat2": [
     "netherexp:souled_geyser:cooldown=false",
     "netherexp:etched_soul_slate_bricks:lit=true",
-    "netherexp:chiseled_soul_slate_bricks:lit=true"
+    "netherexp:chiseled_soul_slate_bricks:lit=true",
+    "netherexp:etched_soul_slate_tiles:lit=true",
+    "netherexp:chiseled_soul_slate_tiles:lit=true"
   ],
+  "mat4": [
+    "netherexp:etched_soul_slate_bricks:lit=waxen",
+    "netherexp:chiseled_soul_slate_bricks:lit=waxen",
+    "netherexp:etched_soul_slate_tiles:lit=waxen",
+    "netherexp:chiseled_soul_slate_tiles:lit=waxen"
+  ],
+  "block_size": 8,
   "blocklight": [
     null,
     null,
     "supplemental_patches:netherexp/soul_glow",
+    null,
+    "supplemental_patches:netherexp/ancient_glow",
+    null,
+    null,
     null
   ],
   "reflection_handlers": [
     null,
     "minecraft:half_blocks",
+    null,
+    null,
+    null,
+    null,
     null,
     null
   ]

@@ -2,10 +2,12 @@
   "name": "treacherous_candle",
   "glsl": "treacherous_candle.glsl",
   "mat0": [
-    "netherexp:treacherous_candle:lit=true"
+    "netherexp:treacherous_candle:lit=true",
+    "netherexp:cierge_of_treachry:lit=true"
   ],
   "mat1": [
-    "netherexp:treacherous_candle:lit=false"
+    "netherexp:treacherous_candle:lit=false",
+    "netherexp:cierge_of_treachry:lit=false"
   ],
   "blocklight": "supplemental_patches:netherexp/ancient_fire",
   "reflection_handlers": "minecraft:discard"

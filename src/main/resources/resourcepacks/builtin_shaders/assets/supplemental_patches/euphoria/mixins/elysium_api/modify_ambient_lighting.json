@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/lib/lighting/mainLighting.glsl",
+  "type": "replace",
+  "key": "vec3 sceneLighting = lightColorM * shadowLightMult + ambientColorM * ambientMult;",
+  "code": "modify_ambient_lighting.glsl"
+}
