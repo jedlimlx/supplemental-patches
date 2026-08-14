@@ -11,6 +11,7 @@ pluginManagement {
 		maven("https://maven.terraformersmc.com/") { name = "TerraformersMC" }
 		maven("https://thedarkcolour.github.io/KotlinForForge/") { name = "Kotlin for Forge" }
 		maven("https://maven.bawnorton.com/releases")
+		maven("https://maven.covers1624.net/")
 
 		exclusiveContent {
 			forRepository { maven("https://api.modrinth.com/maven") { name = "Modrinth" } }
@@ -23,30 +24,22 @@ pluginManagement {
 plugins {
 	id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
 	id("dev.kikugie.stonecutter") version "0.9.2"
+	id("dev.kikugie.loom-back-compat") version "0.4.1"
 }
 
 stonecutter {
 	create(rootProject) {
 		fun match(version: String, vararg loaders: String) =
-			loaders.forEach { version("$version-$it", version).buildscript = getBuildscript(it, version) }
+			loaders.forEach { version("$version-$it", version).buildscript = "build.$it.gradle.kts" }
 
 		match("1.20.1", "fabric", "forge")
 		match("1.21.1", "fabric", "neoforge")
 		match("1.21.8", "fabric")
 		match("1.21.10", "fabric")
 		match("1.21.11", "fabric")
+		match("26.1.2", "fabric")
+		match("26.2", "fabric")
 
 		vcsVersion = "1.21.1-neoforge"
 	}
-}
-
-private fun getBuildscript(loader: String, version: String): String {
-	if (loader == "fabric") {
-		return if (version.startsWith("1.")) {
-			"build.fabric-o.gradle.kts"
-		} else {
-			"build.fabric-m.gradle.kts"
-		}
-	}
-	return "build.$loader.gradle.kts"
 }

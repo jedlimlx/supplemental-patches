@@ -9,6 +9,7 @@ import io.github.jedlimlx.supplemental_patches.shaders.ShaderResourceLoader
 import io.github.jedlimlx.supplemental_patches.shaders.installShader
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
+//~ if >=26.1 'keybinding.v1.KeyBindingHelper' -> 'keymapping.v1.KeyMappingHelper'
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
@@ -34,6 +35,7 @@ import java.util.concurrent.Executor
 
 @Entrypoint("client")
 class FabricClientEntrypoint : ClientModInitializer {
+	//~ if >=26.1 'KeyBindingHelper.registerKeyBinding' -> 'KeyMappingHelper.registerKeyMapping'
 	val KB_REGENERATE_SHADERS = KeyBindingHelper.registerKeyBinding(
 		KeyMapping(
 			"key.supplemental_patches.reload_shaders",
@@ -49,10 +51,10 @@ class FabricClientEntrypoint : ClientModInitializer {
 
 	override fun onInitializeClient() {
 		//? >=1.21.9 {
-		/*ResourceLoader.get(PackType.CLIENT_RESOURCES)
-			.registerReloader(
-				PLATFORM.getResourceLocation("supplemental_patches:euphoria")
-			) { sharedState, backgroundExecutor, stage, gameExecutor ->
+		/*//~ if >=26.1 'registerReloader' -> 'registerReloadListener'
+		ResourceLoader.get(PackType.CLIENT_RESOURCES).registerReloader(
+			PLATFORM.getResourceLocation("supplemental_patches:euphoria")
+		) { sharedState, backgroundExecutor, stage, gameExecutor ->
 				ShaderResourceLoader.reload(
 					stage,
 					sharedState.resourceManager(),

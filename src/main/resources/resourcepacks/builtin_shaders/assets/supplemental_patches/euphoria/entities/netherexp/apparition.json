@@ -3,6 +3,7 @@
   "glsl": "apparition.glsl",
   "mat0": [
     "netherexp:apparition",
-    "netherexp:wisp"
+    "netherexp:wisp",
+    "netherexp:will_o_wisp"
   ]
 }

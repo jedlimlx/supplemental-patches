@@ -75,10 +75,6 @@ vec2 fbm3d_2d(vec3 x) {
     return v;
 }
 
-#define ES_FLASH_SIZE 1
-#define ES_FLASH 1  // 0 - No, 1 - If mod is installed, 2 - Always
-#define ES_FLASH_GRAININESS 0.6
-
 #if MC_VERSION >= 12109
     vec4 GetEnderscapeFlash(vec3 worldPos) {
         vec3 worldEndFlashPosition = mat3(gbufferModelViewInverse) * endFlashPosition;
@@ -87,8 +83,8 @@ vec2 fbm3d_2d(vec3 x) {
         // get angle about worldEndFlashPosition
         vec3 other;
         if (abs(worldEndFlashPosition.x) > abs(worldEndFlashPosition.z))
-            other = vec3(-worldEndFlashPosition.y, worldEndFlashPosition.x, 0.0);
-        else other = vec3(0.0, -worldEndFlashPosition.z, worldEndFlashPosition.y);
+            other = vec3(worldEndFlashPosition.y, -worldEndFlashPosition.x, 0.0);
+        else other = vec3(0.0, worldEndFlashPosition.z, -worldEndFlashPosition.y);
 
         vec3 basis1 = normalize(other);
         vec3 basis2 = cross(worldEndFlashPosition.xyz, basis1);
@@ -117,11 +113,25 @@ vec2 fbm3d_2d(vec3 x) {
     }
 #endif
 
+mat3 rotation3d(float angle) {
+	float s = sin(angle);
+	float c = cos(angle);
+
+	return mat3(
+		c, 0.0, -s,
+		0.0, 1.0, 0.0,
+		s, 0.0, c
+	);
+}
+
 vec3 GetEnderscapeNebula(vec3 viewPos, float VdotU) {
-    // get world position and snap to square coordinates
-    vec3 wpos = normalize((gbufferModelViewInverse * vec4(viewPos * 1000.0, 1.0)).xyz);
-    if (ES_NEBULA_RESOLUTION != -1)
-        wpos = snapToCubeSphereGrid(wpos, ES_NEBULA_RESOLUTION);
+	// get world position and snap to square coordinates
+	vec3 wpos = normalize((gbufferModelViewInverse * vec4(viewPos * 1000.0, 1.0)).xyz);
+	if (ES_NEBULA_RESOLUTION != -1)
+
+	// make the nebula rotate over time
+	wpos = rotation3d(frameTimeCounter * 0.005) * wpos;
+	wpos = snapToCubeSphereGrid(wpos, ES_NEBULA_RESOLUTION);
 
     // compute fbm distortion
     vec2 distortion = 0.1 * ES_NEBULA_DISTORTION_INTENSITY * sin(

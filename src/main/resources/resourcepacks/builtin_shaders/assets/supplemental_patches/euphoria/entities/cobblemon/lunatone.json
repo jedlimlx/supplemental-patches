@@ -1,0 +1,9 @@
+{
+  "name": "lunatone",
+  "glsl": "lunatone.glsl",
+  "mat0": [
+    "cobblemon:lunatone",
+    "cobblemon:solrock",
+    "cobblemon:stonjourner"
+  ]
+}

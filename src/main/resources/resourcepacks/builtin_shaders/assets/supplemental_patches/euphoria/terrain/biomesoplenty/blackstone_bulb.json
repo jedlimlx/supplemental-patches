@@ -10,6 +10,6 @@
       "DO_IPBR_LIGHTS"
     ]
   },
-  "light_group": "blackstone_bulb",
+  "light_groups": "blackstone_bulb",
   "reflection_handlers": "minecraft:discard"
 }

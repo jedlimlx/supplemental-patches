@@ -14,7 +14,7 @@
     "minecraft:soul_lantern",
     null
   ],
-  "light_group": [
+  "light_groups": [
     null,
     null,
     "soul_lantern",

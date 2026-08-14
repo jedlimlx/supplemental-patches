@@ -28,7 +28,9 @@ object FabricPlatform : Platform {
 	override fun sendSystemMessage(message: String) {
 		val player = Minecraft.getInstance().player
 		if (player != null) {
-			//? >=1.21.4 {
+			//? >=26.1 {
+			/*player.sendSystemMessage(Component.nullToEmpty(message));
+			*///?} >=1.21.4 {
 			/*player.displayClientMessage(Component.nullToEmpty(message), false)
 			*///?} else {
 			player.sendSystemMessage(Component.nullToEmpty(message))
@@ -38,7 +40,9 @@ object FabricPlatform : Platform {
 	override fun sendSystemMessage(message: Component) {
 		val player = Minecraft.getInstance().player
 		if (player != null) {
-			//? >=1.21.4 {
+			//? >=26.1 {
+			/*player.sendSystemMessage(message)
+			*///?} >=1.21.4 {
 			/*player.displayClientMessage(message, false)
 			*///?} else {
 			player.sendSystemMessage(message)

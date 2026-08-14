@@ -1,0 +1,9 @@
+{
+  "name": "end_haven_core",
+  "glsl": "end_haven_core.glsl",
+  "mat0": [
+    "enderscape:end_haven_core:state=active"
+  ],
+  "blocklight": "minecraft:end_rod",
+  "light_groups": "end_rod"
+}

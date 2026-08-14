@@ -1,0 +1,21 @@
+{
+  "name": "dusk_purpur",
+  "glsl": "dusk_purpur.glsl",
+  "mat0": [
+    "enderscape:dusk_purpur_block",
+    "enderscape:dusk_purpur_pillar",
+    "enderscape:chiseled_dusk_purpur",
+    "enderscape:end_haven_core:state=inactive"
+  ],
+  "mat1": [
+    "enderscape:dusk_purpur_slab",
+    "enderscape:dusk_purpur_stairs",
+    "enderscape:dusk_purpur_wall"
+  ],
+  "reflection_handlers": [
+    null,
+    "minecraft:half_blocks",
+    null,
+    null
+  ]
+}

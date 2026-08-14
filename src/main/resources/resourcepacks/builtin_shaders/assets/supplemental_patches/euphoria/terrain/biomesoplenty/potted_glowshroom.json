@@ -5,6 +5,6 @@
     "biomesoplenty:potted_glowshroom"
   ],
   "blocklight": "supplemental_patches:biomesoplenty/glowworm_silk",
-  "light_group": "glowshroom",
+  "light_groups": "glowshroom",
   "reflection_handlers": "minecraft:discard"
 }

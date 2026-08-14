@@ -5,6 +5,6 @@
     "biomesoplenty:potted_glowflower"
   ],
   "blocklight": "supplemental_patches:biomesoplenty/glowflower",
-  "light_group": "glowflower",
+  "light_groups": "glowflower",
   "reflection_handlers": "minecraft:discard"
 }

@@ -1,0 +1,3 @@
+[submodule "euphoria-patches"]
+	path = euphoria-patches
+	url = https://github.com/EuphoriaPatches/Euphoria-Patches

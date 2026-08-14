@@ -3,8 +3,8 @@ if (
     (color.r > 0.9 && abs(color.g - color.b) < 0.1 && color.r + color.g + color.b < 2.6) ||
     CheckForColor(color.rgb, vec3(251, 244, 207))
 ) {
-    emission = 4.00;
-    color.rgb *= pow(GetLuminance(color.rgb), 0.3);
+    emission = 3.00;
+    color.rgb *= pow(GetLuminance(color.rgb), 0.4);
 } else {
     lmCoordM.x *= 0.88;
 

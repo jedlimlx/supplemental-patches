@@ -1,6 +1,93 @@
+val MODS = listOf(
+	// general library mods
+	"architectury-api",
+	"cardinal-components-api#",
+	"cloth-config",
+	"corgilib",
+	"data-anchor",
+	"forge-config-api-port",
+	"geckolib",
+	"glitchcore",
+	"lithostitched#",
+	"#lodestonelib",
+	"mixson",
+	"#moonlight",
+	"oh-the-trees-youll-grow",
+	"puzzles-lib",
+	"resourceful-config",
+	"resourceful-lib",
+	"runiclib*",
+	"satin-api#",
+	"terrablender",
+	"trimmed",
+	"trim-patcher",
+	"yacl",
+
+	// extra optimisation
+	"ferrite-core#",
+	"immediately-fast#",
+
+	// supplementaries
+	"#supplementaries*",
+	"#amendments*",
+	"#supplementaries-squared*",
+	"#snowy-spirit!",
+
+	// galena
+	"#doom-gloom",
+
+	// farmers delight
+	"farmers-delight-refabricated!",
+	"rustic-delight!",
+	"my-nethers-delight-refabricated!",
+	"ends-delight!",
+
+	// biome mods
+	"biomes-o-plenty*",
+	"oh-the-biomes-weve-gone*",
+
+	// orcinus
+	"galosphere",
+
+	// peculiar room
+	"twigs*",
+	"dye-depot!",
+
+	// yungs
+	"yungs-api!",
+	"yungs-cave-biomes",
+
+	// frozen block
+	"frozenlib",
+	"wilder-wild*",
+	"trailier-tales",
+	"the-copperier-age!",
+
+	// thermoo
+	"thermoo",
+	"immersive-storms",
+	"scorchful",
+	"frostiful",
+
+	// misc fabric-exclusive
+	"cinderscapes*",
+	"nears!",
+	"gipples-galore!",
+	"pearfection!",
+	"beeten!",
+
+	// misc
+	"enderscape",
+	"cobblemon*",
+	"enhanced-celestials",
+	"#friends-and-foes!",
+	"illager-invasion!"
+)
+
 plugins {
 	id("mod-platform")
-	id("net.fabricmc.fabric-loom-remap")
+	id("dev.kikugie.loom-back-compat")
+	id("dev.vfyjxf.gradle.production")
 }
 
 stonecutter {
@@ -9,6 +96,76 @@ stonecutter {
 		replace("resourceIdentifier", "resourceIdentifier")
 		replace("ResourceLocation", "Identifier")
 		replace("location()", "identifier()")
+	}
+}
+
+production {
+	val minecraftVersion = prop("deps.minecraft")
+
+	idea {
+		enabled = false
+	}
+
+	runs.configureEach {
+		loader = "fabric"
+		loaderVersion = "${libs.fabric.loader.get().version}"
+		javaVersion = when {
+			(sc.current.parsed < "1.20.5") -> 17
+			(sc.current.parsed < "26") -> 21
+			else -> 25
+		}
+		userName = "Dev"
+	}
+
+	runs.named("client") {
+		type = "client"
+		instanceDir = file("run")
+		jvmArgs("-Xmx4G")
+
+		mods {
+			includeProject = true
+			includeRequiredDependencies = true
+			fun addMods(mods: List<String>) {
+				mods.forEach {
+					try {
+						val tokens = it.split(":")
+						val id = tokens[0].replace(Regex("[#!*]"), "")
+						if (tokens[0].first() != '#') {
+							if (tokens.size == 1) {
+								val version = project.getLatestVersionModrinth(id, minecraftVersion, "fabric")
+								modrinthVersion(version)
+							} else modrinth(id) { version = prop(tokens[1]) }
+						}
+					} catch (e: Exception) {
+						logger.warn(e.toString())
+					}
+				}
+			}
+
+			// important dependencies
+			addMods(listOf("jei", "jade"))
+
+			modrinth("fabric-api") { version = prop("deps.fabric-api") }
+			modrinth("fabric-language-kotlin") { version = prop("deps.fabric-lang-kotlin") }
+			modrinth("modmenu") { version = prop("deps.modmenu") }
+
+			modrinth("sodium") { version = prop("deps.sodium") }
+			modrinth("iris") { version = prop("deps.iris") }
+			modrinth("euphoria-patches") { version = "${prop("deps.euphoria-patches")}-fabric" }
+			addMods(listOf("lithium", "iris-shader-folder", "irissearch")) //, "voxy", "voxy-worldgen"))
+
+			if (minecraftVersion == "1.21.11") {
+				if (prop("deps.photonics-link").isNotEmpty())
+					add(files("libs/photonics-0.4.0-fabric+MC-${minecraftVersion}.jar"))
+				else {
+					modrinth("photonics") {
+						version = "${prop("deps.photonics")}+${prop("deps.minecraft")}"
+					}
+				}
+			}
+
+			addMods(MODS)
+		}
 	}
 }
 
@@ -31,6 +188,9 @@ platform {
 		required("fabric-language-kotlin") {
 			versionRange = ">=${prop("deps.fabric-lang-kotlin")}"
 		}
+		required("euphoria_patcher") {
+			versionRange = "~${prop("deps.euphoria-patches")}-fabric"
+		}
 		optional("modmenu") {}
 	}
 }
@@ -39,7 +199,6 @@ loom {
 	accessWidenerPath = rootProject.file("src/main/resources/aw/${stonecutter.current.version}.accesswidener")
 	runs.named("client") {
 		client()
-		ideConfigGenerated(true)
 		runDir = "run/"
 		environment = "client"
 		programArgs("--username=Dev")
@@ -80,7 +239,7 @@ dependencies {
 		mods.forEach {
 			try {
 				val tokens = it.split(":")
-				val id = tokens[0].replace("*", "").replace("!", "")
+				val id = tokens[0].replace(Regex("[#!*]"), "")
 				val modString = if (tokens.size == 1) {
 					val mod = fletchingTable.modrinth(id, prop("deps.minecraft"), "fabric")
 					"${mod.group}:${id}:${mod.version}"
@@ -89,6 +248,7 @@ dependencies {
 				when (tokens[0].last()) {
 					'*' -> modCompileOnly(modString)
 					'!' -> modRuntimeOnly(modString)
+					'#' -> {}
 					else -> modImplementation(modString)
 				}
 			} catch (e: Exception) {
@@ -99,13 +259,14 @@ dependencies {
 
 	val minecraftVersion = prop("deps.minecraft")
 	minecraft("com.mojang:minecraft:${minecraftVersion}")
-	mappings(
-		loom.layered {
+	if ("26" !in minecraftVersion) {
+		mappings(loom.layered {
 			officialMojangMappings()
 			if (hasProperty("deps.parchment"))
-				parchment("org.parchmentmc.data:parchment-${minecraftVersion}:${prop("deps.parchment")}@zip")
-		}
-	)
+				parchment("org.parchmentmc.data:parchment-${prop("deps.parchment")}@zip")
+		})
+	}
+
 	modImplementation(libs.fabric.loader)
 
 	implementation(libs.moulberry.mixinconstraints)
@@ -135,7 +296,7 @@ dependencies {
 		modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-base:${prop("deps.cardinal")}")
 		modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${prop("deps.cardinal")}")
 	} else {
-		if (minecraftVersion in listOf("1.21.1", "1.21.10", "1.21.11")) addMods(listOf("lithostitched"))
+		if (minecraftVersion in listOf("1.21.1", "1.21.10", "1.21.11", "26.1")) addMods(listOf("lithostitched"))
 
 		modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-base:${prop("deps.cardinal")}")
 		modImplementation("org.ladysnake.cardinal-components-api:cardinal-components-entity:${prop("deps.cardinal")}")
@@ -159,131 +320,10 @@ dependencies {
 		addMods(listOf("jei!"))
 
 	// rendering / optimisation mods
-	addMods(listOf("iris", "lithium!", "iris-shader-folder!"))
-	if (minecraftVersion == "1.21.1")
-		addMods(listOf("sodium:mc1.21.1-0.6.13-fabric"))
-	else addMods(listOf("sodium!"))
+	addMods(listOf("lithium!", "iris-shader-folder!"))
+	modImplementation("maven.modrinth:sodium:${prop("deps.sodium")}")
+	modImplementation("maven.modrinth:iris:${prop("deps.iris")}")
 	modRuntimeOnly("maven.modrinth:euphoria-patches:${prop("deps.euphoria-patches")}-fabric")
 
-	// general library mods
-	addMods(
-		listOf(
-			"architectury-api",
-			"cloth-config",
-			"corgilib",
-			"data-anchor",
-			"forge-config-api-port",
-			"geckolib",
-			"glitchcore",
-			"mixson",
-			"moonlight",
-			"oh-the-trees-youll-grow",
-			"puzzles-lib",
-			"resourceful-config",
-			"resourceful-lib",
-			"runiclib*",
-			"terrablender",
-			"trimmed"
-		)
-	)
-
-	// supplementaries
-	addMods(
-		listOf(
-			"supplementaries*",
-			"amendments*",
-			"supplementaries-squared*",
-			"snowy-spirit!"
-		)
-	)
-
-	// galena
-	addMods(
-		listOf(
-			"doom-gloom"
-		)
-	)
-
-	// farmers delight
-	addMods(
-		listOf(
-			//"farmers-delight-refabricated!",
-			//"rustic-delight!",
-			//"my-nethers-delight-refabricated!",
-			//"ends-delight!"
-		)
-	)
-
-	// biome mods
-	addMods(
-		listOf(
-			"biomes-o-plenty*",
-			"oh-the-biomes-weve-gone*"
-		)
-	)
-
-	// orcinus
-	addMods(
-		listOf(
-			"galosphere"
-		)
-	)
-
-	// peculiar room
-	addMods(
-		listOf(
-			"twigs*",
-			"dye-depot!"
-		)
-	)
-
-	// yungs
-	addMods(
-		listOf(
-			"yungs-api!",
-			"yungs-cave-biomes"
-		)
-	)
-
-	// frozen block
-	addMods(
-		listOf(
-			"frozenlib",
-			"wilder-wild*",
-			"trailier-tales",
-			"the-copperier-age!"
-		)
-	)
-
-	// thermoo
-	addMods(
-		listOf(
-			"thermoo",
-			"immersive-storms",
-			"scorchful",
-			"frostiful"
-		)
-	)
-
-	// misc fabric-exclusive
-	addMods(
-		listOf(
-			"cinderscapes*",
-			"nears!",
-			"gipples-galore!",
-			"pearfection!",
-			"beeten!"
-		)
-	)
-
-	// misc
-	addMods(
-		listOf(
-			"enderscape",
-			"cobblemon*",
-			"enhanced-celestials",
-			"friends-and-foes!",
-			"illager-invasion!"
-		)
-	)
+	addMods(MODS)
 }

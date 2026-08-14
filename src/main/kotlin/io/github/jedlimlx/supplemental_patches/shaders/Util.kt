@@ -48,6 +48,8 @@ class ShaderBuilder(
 
     var reflectionHandlers: List<String?> = listOf()
 
+	var lightModifiers: List<String?> = listOf()
+
     fun allIds() = mat.toList().flatten()
 
     fun needsVoxelisation(): ShaderBuilder {
@@ -89,6 +91,16 @@ class ShaderBuilder(
         reflectionHandlers = lst
         return this
     }
+
+	fun lightModifier(modifier: String?): ShaderBuilder {
+		lightModifiers = List(blockSize) { modifier }
+		return this
+	}
+
+	fun lightModifiers(lst: List<String?>): ShaderBuilder {
+		lightModifiers = lst
+		return this
+	}
 
     fun required(): Boolean = mat.any {
         it.any {

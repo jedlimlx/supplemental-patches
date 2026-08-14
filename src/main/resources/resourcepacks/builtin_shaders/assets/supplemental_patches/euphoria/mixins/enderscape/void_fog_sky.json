@@ -1,0 +1,7 @@
+{
+  "file": "/shaders/program/deferred1.glsl",
+  "type": "after",
+  "regex": true,
+  "key": "color\\.rgb \\+= blackHole\\.rgb;\r?\n\\s+#endif",
+  "code": "void_fog_sky.glsl"
+}

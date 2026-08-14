@@ -1,0 +1,8 @@
+{
+  "name": "claydol",
+  "glsl": "claydol.glsl",
+  "mat0": [
+    "cobblemon:baltoy",
+    "cobblemon:claydol"
+  ]
+}

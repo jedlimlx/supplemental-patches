@@ -1,0 +1,7 @@
+{
+  "name": "voidFog.glsl",
+  "files": [
+    "program/deferred1.glsl",
+    "lib/atmospherics/fog/mainFog.glsl"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "blazier_block",
+  "glsl": "blazier_block.glsl",
+  "mat0": [
+    "mynethersdelight:blazier_block:lit=true"
+  ],
+  "mat2": [
+    "mynethersdelight:blazier_block:lit=true"
+  ],
+  "blocklight": [
+    "minecraft:campfire",
+    null,
+    null,
+    null
+  ],
+  "reflection_handlers": "minecraft:campfire"
+}

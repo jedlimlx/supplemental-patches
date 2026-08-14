@@ -7,10 +7,21 @@
   "mat2": [
     "netherexp:soul_glass:lit=true"
   ],
+  "mat4": [
+    "netherexp:waxen_soul_glass:lit=false"
+  ],
+  "mat6": [
+    "netherexp:waxen_soul_glass:lit=true"
+  ],
+  "block_size": 8,
   "blocklight": [
     null,
     null,
     "minecraft:soul_lantern",
+    null,
+    null,
+    null,
+    "supplemental_patches:netherexp/ancient_fire",
     null
   ]
 }

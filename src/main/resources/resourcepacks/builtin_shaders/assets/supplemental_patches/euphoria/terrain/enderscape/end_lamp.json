@@ -5,6 +5,6 @@
     "enderscape:end_lamp"
   ],
   "blocklight": "minecraft:end_rod",
-  "light_group": "end_rod",
+  "light_groups": "end_rod",
   "held_lighting": true
 }

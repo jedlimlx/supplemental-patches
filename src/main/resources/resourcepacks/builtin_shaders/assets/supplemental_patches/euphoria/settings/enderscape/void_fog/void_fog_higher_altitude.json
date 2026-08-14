@@ -1,0 +1,20 @@
+{
+  "type": "setting",
+  "name": "VOID_FOG_HIGHER_ALT",
+  "priority": 5,
+  "default": 230,
+  "values": [
+    {
+      "type": "range",
+      "start": 128,
+      "stop": 384,
+      "step": 1
+    }
+  ],
+  "slider": true,
+  "file": "voidFog.glsl",
+  "en_US": {
+    "option": "Void Fog Higher Altitude",
+    "comment": "The higher altitude bound for the void fog."
+  }
+}

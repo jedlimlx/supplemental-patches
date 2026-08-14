@@ -1,7 +1,6 @@
 package io.github.jedlimlx.supplemental_patches.mixins.biomes;
 
-//? =1.20.1 || =1.21.1 {
-import com.moulberry.mixinconstraints.annotations.IfMinecraftVersion;
+//? =1.20.1 || =1.21.1 || ~26.1 {
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import com.yungnickyoung.minecraft.yungscavebiomes.module.BiomeModule;
 import net.irisshaders.iris.uniforms.BiomeUniforms;
@@ -13,7 +12,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @IfModLoaded(value = "yungscavebiomes")
-@IfMinecraftVersion(minVersion = "1.20.1", maxVersion = "1.21.1")
 @Mixin(value = BiomeModule.class, remap = false)
 public class YUNGSCaveBiomesMixin {
     @Inject(method = "register", at = @At("TAIL"))

@@ -173,14 +173,17 @@ fun injectBuffers(directory: Path) {
     // TODO generate full list of conditions to check for and locations to inject buffers
     val images = BUFFERS.groupBy { it.imageFormat }.map { it.value.chunked(4) }.flatten().toList()
     for (i in 0..<images.size) {
-        UNIFORMS.add(
-            Uniform(
-                "colortex${TOTAL_BUFFERS - i}",
-                "sampler2D",
-                "",
-                listOf()
-            )
-        )
+		val uniformName = "colortex${TOTAL_BUFFERS - i}"
+		if (UNIFORMS.all { it.name != uniformName }) {
+			UNIFORMS.add(
+				Uniform(
+					uniformName,
+					"sampler2D",
+					"",
+					listOf()
+				)
+			)
+		}
     }
 
     // read

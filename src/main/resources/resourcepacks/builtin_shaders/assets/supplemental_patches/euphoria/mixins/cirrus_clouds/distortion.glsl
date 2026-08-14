@@ -1,3 +1,4 @@
+vec3 totalDistortion = vec3(0.0);
 #if defined DOUBLE_UNBOUND_CLOUDS && defined CIRRUS_CLOUDS
 	if (cloudAltitude != cloudAlt1i) {  // checking for 2nd layer
 		#if PIXELATED_UNBOUND_CLOUDS > 0
