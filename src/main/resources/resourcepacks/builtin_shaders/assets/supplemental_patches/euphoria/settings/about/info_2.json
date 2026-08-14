@@ -6,8 +6,8 @@
     "comment": "The list of supported mods can be found in https://supplemental-patches.pages.dev/mod_list."
   },
   "ru_RU": {
-    "option": "What mods are supported",
-    "comment": "The list of supported mods can be found in https://supplemental-patches.pages.dev/mod_list."
+    "option": "Поддерживаемые моды",
+    "comment": "Список поддерживаемых модов можно найти в https://supplemental-patches.pages.dev/mod_list."
   },
   "priority": 9
 }
