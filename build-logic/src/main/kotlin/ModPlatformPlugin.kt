@@ -3,6 +3,9 @@
 import de.undercouch.gradle.tasks.download.Download
 import dev.kikugie.fletching_table.extension.FletchingTableExtension
 import dev.kikugie.stonecutter.build.StonecutterBuildExtension
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonArray
+import kotlinx.serialization.json.jsonObject
 import me.modmuss50.mpp.ModPublishExtension
 import me.modmuss50.mpp.ReleaseType
 import org.gradle.api.JavaVersion
@@ -23,8 +26,48 @@ import org.gradle.plugins.ide.idea.model.IdeaModel
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 import java.io.File
+import java.net.URI
+import java.net.http.HttpClient
+import java.net.http.HttpRequest
+import java.net.http.HttpResponse
+import java.nio.file.Path
 import java.util.*
 import javax.inject.Inject
+import kotlin.io.path.createDirectories
+import kotlin.io.path.exists
+import kotlin.io.path.readText
+import kotlin.io.path.writeText
+
+fun Project.getLatestVersionModrinth(
+	id: String,
+	minecraftVersion: String,
+	modLoader: String
+): String {
+	val cacheFileName = "${id}_${minecraftVersion}_${modLoader}.txt"
+	val cacheFile = layout.buildDirectory.dir("modrinth-cache").get().asFile.toPath().resolve("modrinth_cache/$cacheFileName")
+	if (cacheFile.exists()) return cacheFile.readText().trim()
+
+	val client = HttpClient.newBuilder().build()
+	val request = HttpRequest.newBuilder()
+		.uri(URI.create("https://api.modrinth.com/v2/project/$id/version?loaders=[%22$modLoader%22]&game_versions=[%22$minecraftVersion%22]"))
+		.build()
+
+	val response = client.send(request, HttpResponse.BodyHandlers.ofString())
+	if (response.statusCode() != 200) {
+		throw RuntimeException("Failed to fetch Modrinth version for $id: HTTP ${response.statusCode()}")
+	}
+
+	val jsonArray = Json.decodeFromString<JsonArray>(response.body())
+	if (jsonArray.isEmpty()) {
+		throw NoSuchElementException("No version found for project $id with loader $modLoader on MC $minecraftVersion")
+	}
+
+	val versionId = jsonArray[0].jsonObject["id"].toString().drop(1).dropLast(1)
+
+	cacheFile.parent.createDirectories()
+	cacheFile.writeText(versionId)
+	return versionId
+}
 
 fun Project.prop(name: String): String = (findProperty(name) ?: "") as String
 
@@ -32,7 +75,7 @@ fun Project.env(variable: String): String? = providers.environmentVariable(varia
 
 fun Project.envTrue(variable: String): Boolean = env(variable)?.toDefaultLowerCase() == "true"
 
-fun Project.inferredLoader() = project.buildFile.name.substringAfter('.').replace(".gradle.kts", "").replace("-o", "").replace("-m", "")
+fun Project.inferredLoader() = project.buildFile.name.substringAfter('.').replace(".gradle.kts", "")
 
 fun DependencyHandlerScope.modrinthImplementation(project: Project, modName: String) {
 	val propName = project.prop("deps.${modName}")
@@ -64,6 +107,7 @@ fun RepositoryHandler.strictMaven(
 abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 	var project: Project? = null
 	var euphoriaDev: Boolean = false
+	var photonicsJar: Boolean = false
 
 	override fun apply(project: Project) = with(project) {
 		val project = this
@@ -78,12 +122,29 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 		}
 
 		val inferredLoader = project.inferredLoader()
-		val inferredLoaderIsFabric = inferredLoader == "fabric"
-
 		val extension = extensions.create("platform", ModPlatformExtension::class.java).apply {
 			loader.convention(inferredLoader)
-			jarTask.convention(if (inferredLoaderIsFabric) "remapJar" else "jar")
-			sourcesJarTask.convention(if (inferredLoaderIsFabric) "remapSourcesJar" else "sourcesJar")
+			jarTask.convention("jar")
+			sourcesJarTask.convention("sourcesJar")
+
+			when (inferredLoader) {
+				"fabric" -> {
+					jarTask.convention(providers.provider {
+						extensions.getByType<dev.kikugie.loomx.LoomCompatProjectExtension>().modJar.name
+					})
+					sourcesJarTask.convention(providers.provider {
+						extensions.getByType<dev.kikugie.loomx.LoomCompatProjectExtension>().modSourcesJar.name
+					})
+				}
+				"forge" -> {
+					jarTask.convention("reobfJar")
+					sourcesJarTask.convention("sourcesJar")
+				}
+				else -> {
+					jarTask.convention("jar")
+					sourcesJarTask.convention("sourcesJar")
+				}
+			}
 		}
 
 		listOf(
@@ -120,6 +181,7 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 
 		extension.requiredJava.set(
 			when {
+				stonecutter.eval(stonecutter.current.version, ">=26.1") -> JavaVersion.VERSION_25
 				stonecutter.eval(stonecutter.current.version, ">=1.20.6") -> JavaVersion.VERSION_21
 				stonecutter.eval(stonecutter.current.version, ">=1.18") -> JavaVersion.VERSION_17
 				stonecutter.eval(stonecutter.current.version, ">=1.17") -> JavaVersion.VERSION_16
@@ -135,6 +197,8 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 		configureJarTask(modId, loader)
 		configureIdea()
 		configureShaderpackDownloads()
+		configurePhotonicsJarDownloads()
+		configureCopyEuphoriaPatchesSubmodule()
 		configureProcessResources(isFabric, isNeoForge, isForge, modId, "$modVersion$channelTag", mcVersion, extension, extension.requiredJava.get())
 		configureJava(stonecutter, extension.requiredJava.get())
 		configureKotlin(stonecutter, extension.requiredJava.get())
@@ -201,6 +265,47 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 		}
 	}
 
+	private fun Project.configurePhotonicsJarDownloads() {
+		val libsPath = "run/libs"
+		val libsDirectory = File(libsPath)
+		libsDirectory.mkdir()
+
+		val photonicsLink = prop("deps.photonics-link")
+		if (photonicsLink.isNotEmpty()) {
+			val jarName = photonicsLink.split(".jar").first().split("?").last()
+			val target = File(jarName)
+			if (!target.exists()) {
+				photonicsJar = true
+				tasks.register<Download>("downloadPhotonicsJar") {
+					src(photonicsLink)
+					overwrite(true)
+					dest("${libsDirectory}/${jarName}.jar")
+				}
+			}
+		} else {
+			logger.warn("No link to Photonics alpha version specified!")
+		}
+	}
+
+	private fun Project.configureCopyEuphoriaPatchesSubmodule() {
+		val shaderDirectoryPath = "run/shaderpacks"
+		val sourceDir = rootProject.file("euphoria-patches")
+
+		if (sourceDir.exists() && sourceDir.isDirectory) {
+			tasks.register<Copy>("copyEuphoriaPatches") {
+				group = "setup"
+				description = "Copies the euphoria-patches submodule into the run shaderpacks directory."
+				from(sourceDir)
+				into("${shaderDirectoryPath}/EuphoriaPatches_GitHub")
+				eachFile {
+					duplicatesStrategy = org.gradle.api.file.DuplicatesStrategy.INCLUDE
+				}
+			}
+		} else {
+			logger.warn("Root directory 'euphoria-patches' does not exist or is not a directory.")
+		}
+	}
+
 	private fun Project.configureProcessResources(
 		isFabric: Boolean,
 		isNeoForge: Boolean,
@@ -215,6 +320,11 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 			dependsOn(tasks.named("stonecutterGenerate"))
 			dependsOn(tasks.named("downloadComplementaryShaders"))
 			if (euphoriaDev) dependsOn(tasks.named("downloadEuphoriaDev"))
+			if (photonicsJar) dependsOn(tasks.named("downloadPhotonicsJar"))
+			if (rootProject.file("euphoria-patches").exists()) {
+				dependsOn(tasks.named("copyEuphoriaPatches"))
+			}
+
 			dependsOn("kspKotlin")
 
 			filesMatching("*.mixins.json") { expand("java" to "JAVA_${requiredJava.majorVersion}") }
@@ -245,7 +355,8 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 				"homepage_url" to prop("mod.homepage_url"),
 				"sources_url" to prop("mod.sources_url"),
 				"discord_url" to prop("mod.discord_url"),
-				"dependencies" to dependencies
+				"dependencies" to dependencies,
+				"euphoria_version" to prop("deps.euphoria_version"),
 			)
 
 			filesMatching("**/euphoria/pack.json") { expand(props) }
@@ -348,6 +459,10 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 				}
 
 				automatic = true
+			}
+
+			j52j.register("main") {
+				extension("json", "**/*.json5")
 			}
 		}
 	}

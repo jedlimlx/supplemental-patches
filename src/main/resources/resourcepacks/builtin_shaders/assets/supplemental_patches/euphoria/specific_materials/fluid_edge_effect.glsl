@@ -1,5 +1,5 @@
 // adapted from lavaEdgeEffect.glsl
-#if defined GBUFFERS_TERRAIN && !defined WORLD_CURVATURE
+#if (defined GBUFFERS_TERRAIN || defined GBUFFERS_WATER) && !defined WORLD_CURVATURE
     vec3 voxelPos = SceneToVoxel(playerPos);
     if (CheckInsideVoxelVolume(voxelPos)) {
         mat2 isSurroundingFluid = mat2(0, 0, 0, 0); // Thanks to gri for the help!
@@ -30,6 +30,7 @@
         float maxPlayerPos = max(absPlayerPos.x, max(absPlayerPos.y * 2.0, absPlayerPos.z));
         float edgeDecider = pow2(min1(maxPlayerPos / min(effectiveACTdistance, far) * 2.0)); // this is to make the effect fade at the edge of ACT range
 
+		color.a = mix(color.a, 1.0, edge * (1.0 - edgeDecider));
         color.rgb = mix(color.rgb, edgeColor, edge * (1.0 - edgeDecider));
         emission = mix(emission, edgeEmission, edge * (1.0 - edgeDecider));
     }

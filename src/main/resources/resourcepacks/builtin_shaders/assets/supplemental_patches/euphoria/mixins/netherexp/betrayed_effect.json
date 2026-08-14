@@ -1,0 +1,6 @@
+{
+  "file": "/shaders/program/final.glsl",
+  "type": "before",
+  "key": "#if IMAGE_SHARPENING > 0 && PIXELATED_SCREEN_SIZE == 0",
+  "code": "betrayed_effect.glsl"
+}

@@ -22,7 +22,7 @@
     "supplemental_patches:frostiful/icy_ominous_trial_spawner",
     null
   ],
-  "light_group": [
+  "light_groups": [
     "generic",
     null,
     "generic",

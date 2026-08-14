@@ -8,14 +8,14 @@
     "color": "supplemental_patches:enderscape/celestial_growth",
     "conditions": [
       "DO_IPBR_LIGHTS",
-      "GLOWING_CELESTIAL_GROWTHS"
+      "GLOWING_CELESTIAL_GROWTHS == 2"
     ]
   },
-  "light_group": {
-    "light_group": "celestial_growth",
+  "light_groups": {
+    "group": "celestial_growth",
     "conditions": [
       "DO_IPBR_LIGHTS",
-      "GLOWING_CELESTIAL_GROWTHS"
+      "GLOWING_CELESTIAL_GROWTHS == 2"
     ]
   },
   "waving": "minecraft:waving_tall_foliage",

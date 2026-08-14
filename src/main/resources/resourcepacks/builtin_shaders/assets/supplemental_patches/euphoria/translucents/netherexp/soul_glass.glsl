@@ -1,4 +1,4 @@
-if (color.b > color.r) {
+if (color.b > color.r || color.r > 2.0 * color.g) {
     #include "/lib/materials/specificMaterials/translucents/glass.glsl"
     color.a = pow(color.a, 1.0 - fresnel * 0.8);
 

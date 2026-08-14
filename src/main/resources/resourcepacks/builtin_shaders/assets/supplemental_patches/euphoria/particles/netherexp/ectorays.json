@@ -2,6 +2,7 @@
   "name": "ectorays",
   "glsl": "ectorays.glsl",
   "mat0": [
-    "netherexp:ectorays"
+    "netherexp:ectorays",
+    "netherexp:ectoplasm_rays"
   ]
 }

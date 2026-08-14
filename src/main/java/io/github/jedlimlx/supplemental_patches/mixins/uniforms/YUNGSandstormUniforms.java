@@ -1,7 +1,6 @@
 package io.github.jedlimlx.supplemental_patches.mixins.uniforms;
 
-//? =1.20.1 || =1.21.1 {
-import com.moulberry.mixinconstraints.annotations.IfMinecraftVersion;
+//? =1.20.1 || =1.21.1 || ~26.1 {
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import com.yungnickyoung.minecraft.yungscavebiomes.client.render.sandstorm.ISandstormClientDataProvider;
 import com.yungnickyoung.minecraft.yungscavebiomes.client.render.sandstorm.SandstormClientData;
@@ -20,7 +19,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @IfModLoaded(value = "yungscavebiomes")
-@IfMinecraftVersion(minVersion = "1.20.1", maxVersion="1.21.1")
 @Mixin(CommonUniforms.class)
 public class YUNGSandstormUniforms {
     @Inject(

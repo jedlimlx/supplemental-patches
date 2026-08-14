@@ -1,0 +1,10 @@
+{
+  "name": "void_lachryma_bucket",
+  "glsl": "void_lachryma_bucket.glsl",
+  "mat0": [
+    "enderscape:void_lachryma_bucket"
+  ],
+  "held_lighting": true,
+  "blocklight": "supplemental_patches:endergetic/ender_fire",
+  "light_level": 8
+}

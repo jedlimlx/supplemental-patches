@@ -1,8 +1,6 @@
 plugins {
 	alias(libs.plugins.stonecutter)
 	alias(libs.plugins.dotenv)
-	alias(libs.plugins.fabric.loom).apply(false)
-	alias(libs.plugins.fabric.loom.remap).apply(false)
 	alias(libs.plugins.neoforged.moddev).apply(false)
 	alias(libs.plugins.jsonlang.postprocess).apply(false)
 	alias(libs.plugins.mod.publish.plugin).apply(false)
@@ -11,6 +9,7 @@ plugins {
 	alias(libs.plugins.fletching.table).apply(false)
 	alias(libs.plugins.legacyforge.moddev).apply(false)
 	alias(libs.plugins.undercouch.download).apply(false)
+	alias(libs.plugins.vfyjxf.production).apply(false)
 }
 
 stonecutter active file(".sc_active_version")

@@ -3,7 +3,7 @@ lmCoordM.x = min(lmCoordM.x, 0.77); // consistency748523
 
 #include "/lib/materials/specificMaterials/terrain/lanternMetal.glsl"
 
-if (color.r > 1.7 * color.b) {
+if (color.r > 1.6 * color.b) {
     emission = 3.0 * pow2(color.r) + 0.5;
 }
 

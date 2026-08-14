@@ -3,6 +3,6 @@ void DoBetrayedFog(inout vec4 color, float lViewPos) {
         float fog = 0.10 * lViewPos * betrayedSmooth;
         fog = 1.0 - exp(-fog);
 
-        color.rgb = mix(color.rgb, vec3(1.0, 0.0, 0.0), fog);
+        color.rgb = mix(color.rgb, vec3(0.7), fog);
     #endif
 }

@@ -5,5 +5,5 @@
     "biomeswevegone:potted_fairy_slipper"
   ],
   "blocklight": "supplemental_patches:biomeswevegone/fairy_slipper",
-  "light_group": "fairy_slipper"
+  "light_groups": "fairy_slipper"
 }

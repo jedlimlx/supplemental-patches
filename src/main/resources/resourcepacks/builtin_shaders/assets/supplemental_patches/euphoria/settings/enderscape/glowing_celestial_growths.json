@@ -1,12 +1,15 @@
 {
   "type": "setting",
   "name": "GLOWING_CELESTIAL_GROWTHS",
-  "activation": true,
   "priority": 4,
-  "default": false,
+  "default": 1,
+  "values": [0, 1, 2],
   "file": "materials.glsl",
   "en_US": {
-    "option": "Glowing Celestial Growths"
+    "option": "Glowing Celestial Growths",
+    "value.0": "§aOFF",
+    "value.1": "Faint",
+    "value.2": "Bright"
   },
   "ru_RU": {
     "option": "Свечение небесных наростов"

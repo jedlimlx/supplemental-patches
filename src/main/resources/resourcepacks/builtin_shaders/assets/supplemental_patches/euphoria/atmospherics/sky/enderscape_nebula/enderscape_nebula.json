@@ -1,0 +1,10 @@
+{
+  "name": "enderscapeNebula.glsl",
+  "code": "nebula.glsl",
+  "dimension": "END",
+  "deferred": "deferred.glsl",
+  "conditions": [
+    "defined ENDERSCAPE_ATMOSPHERE || defined MOD_ENDERSCAPE",
+    "ES_NEBULA"
+  ]
+}

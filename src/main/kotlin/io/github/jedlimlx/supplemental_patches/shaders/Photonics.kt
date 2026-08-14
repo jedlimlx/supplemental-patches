@@ -149,3 +149,41 @@ fun constructPhLights(directory: Path) {
 
 	file.writeText(newCode)
 }
+
+val LIGHT_MODIFIERS = arrayListOf<String>()
+val LIGHT_MODIFIERS_PATH = "/shaders/photonics/modifiers/light_modifier.glsl"
+fun generateLightModifiers(directory: Path) {
+	val file = File(directory.absolutePathString() + PH_LIGHTS_PATH)
+
+	val lst = arrayListOf<Int>()
+	val map = hashMapOf<Int, String>()
+	MATERIALS_MAP.forEach { (idx, it) ->
+		var count = 0
+		it.lightModifiers.forEach {
+			if (it != null) {
+				map[idx + count] = it
+				lst.add(idx + count++)
+			}
+		}
+	}
+
+	val newCode = Regex(
+		"""if\s*\(\s*mat\s*<\s*10516\s*\)\s*\{[\s\S]*?(?=\n\s*#if\s+BLOCKLIGHT_FLICKERING\s*>\s*0)""",
+		RegexOption.MULTILINE
+	).replace(file.readText()) { match ->
+		buildString {
+			appendLine(match)
+			appendLine()
+			computeAllPivots(lst, 2, "mat", 1) { idx, depth ->
+				val indent = "    ".repeat(depth)
+				StringBuilder().apply {
+					append("${indent}if (mat == $idx) {\n")
+					append(map[idx]!!.prependIndent("$indent    "))
+					append("\n$indent}\n")
+				}.toString()
+			}
+			appendLine()
+		}
+	}
+	file.writeText(newCode)
+}

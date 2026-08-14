@@ -22,7 +22,7 @@
     "supplemental_patches:enderscape/repulsive_magnia_sprout",
     null
   ],
-  "light_group": [
+  "light_groups": [
     null,
     null,
     "repulsive_magnia",

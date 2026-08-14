@@ -1,6 +1,7 @@
 {
   "name": "enderscapeNebula.glsl",
   "files": [
-    "lib/atmospherics/enderscapeNebula.glsl"
+    "lib/atmospherics/enderscapeNebula.glsl",
+    "lib/lighting/mainLighting.glsl"
   ]
 }

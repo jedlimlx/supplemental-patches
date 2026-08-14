@@ -1,0 +1,8 @@
+{
+  "name": "chingling",
+  "glsl": "chingling.glsl",
+  "mat0": [
+    "cobblemon:chingling",
+    "cobblemon:chimecho"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "type": "float",
+  "name": "elysiumAmbientBrightness",
+  "conditions": [
+    "MOD_ELYSIUM_API"
+  ]
+}

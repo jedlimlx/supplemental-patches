@@ -24,47 +24,55 @@ enum class ShaderMixinType {
 data class ShaderMixin(val path: String, val type: ShaderMixinType, val key: String, val code: String, val mixinFile: String) {
     fun inject(directory: Path) {
         val file = File(directory.absolutePathString() + path)
-        val tokens = file.readText().split(key)
-        if (tokens.size == 1) {
-            throw MinecraftError("$type Mixin targetted @ ${path} unable to find injection point @ ${key}", mixinFile)
-        }
+		val oldCode = file.readText()
+		if (key.startsWith("regex~")) {
+			val regex = Regex(key.substring(6), RegexOption.MULTILINE)
+			regex.findAll(oldCode).forEach {
+				ShaderMixin(path, type, it.groupValues[0], code, mixinFile).inject(directory)
+			}
+		} else {
+			val tokens = oldCode.split(key)
+			if (tokens.size == 1) {
+				throw MinecraftError("$type Mixin targetted @ ${path} unable to find injection point @ ${key}", mixinFile)
+			}
 
-        val indents = tokens.subList(0, tokens.size - 1).map {
-            val temp = it.split("\n").last()
-            val indent = " ".repeat(temp.length - temp.trimIndent().length)
-            indent
-        }
-        val modifiedIndent = indents.map {
-            if (type == ShaderMixinType.AFTER && key.matches(Regex("(.*?)\\{.*"))) {
-                "$it    "
-            } else it
-        }
+			val indents = tokens.subList(0, tokens.size - 1).map {
+				val temp = it.split("\n").last()
+				val indent = " ".repeat(temp.length - temp.trimIndent().length)
+				indent
+			}
+			val modifiedIndent = indents.map {
+				if (type == ShaderMixinType.AFTER && key.matches(Regex("(.*?)\\{.*"))) {
+					"$it    "
+				} else it
+			}
 
-        val modifiedTokens = tokens.subList(0, tokens.size - 1).map {
-            val lines = it.split("\n")
-            lines.subList(0, lines.size - 1).joinToString("\n") + "\n"
-        } + tokens.last()
+			val modifiedTokens = tokens.subList(0, tokens.size - 1).map {
+				val lines = it.split("\n")
+				lines.subList(0, lines.size - 1).joinToString("\n") + "\n"
+			} + tokens.last()
 
-        val newCode = when (type) {
-            ShaderMixinType.BEFORE -> modifiedTokens.mapIndexed { idx, it ->
-                if (idx != tokens.size - 1) "$it${code.prependIndent(modifiedIndent[idx])}${indents[idx]}\n" else it
-            }.joinToString(indents[0] + key)
+			val newCode = when (type) {
+				ShaderMixinType.BEFORE -> modifiedTokens.mapIndexed { idx, it ->
+					if (idx != tokens.size - 1) "$it${code.prependIndent(modifiedIndent[idx])}${indents[idx]}\n" else it
+				}.joinToString(indents[0] + key)
 
-            ShaderMixinType.AFTER -> modifiedTokens.mapIndexed { idx, it ->
-                if (idx != 0) "\n${code.prependIndent(modifiedIndent[idx - 1])}$it${indents[idx - 1]}" else it
-            }.joinToString(indents[0] + key)
+				ShaderMixinType.AFTER -> modifiedTokens.mapIndexed { idx, it ->
+					if (idx != 0) "\n${code.prependIndent(modifiedIndent[idx - 1])}$it${indents[idx - 1]}" else it
+				}.joinToString(indents[0] + key)
 
-            ShaderMixinType.REPLACE -> {
-                val temp = tokens[0].lines().last()
-                val useIndent = temp.count { it == ' ' } == temp.length
-                file.readText().replace(
-                    if (useIndent) indents[0] + key else key,
-                    if (useIndent) code.prependIndent(indents[0]) else code
-                )
-            }
-        }
+				ShaderMixinType.REPLACE -> {
+					val temp = tokens[0].lines().last()
+					val useIndent = temp.count { it == ' ' } == temp.length
+					file.readText().replace(
+						if (useIndent) indents[0] + key else key,
+						if (useIndent) code.prependIndent(indents[0]) else code
+					)
+				}
+			}
 
-        file.writeText(newCode)
+			file.writeText(newCode)
+		}
     }
 }
 

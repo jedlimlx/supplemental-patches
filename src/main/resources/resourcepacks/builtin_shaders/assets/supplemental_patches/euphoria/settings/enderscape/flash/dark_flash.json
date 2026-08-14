@@ -1,0 +1,12 @@
+{
+  "type": "setting",
+  "name": "DARK_ES_END_FLASH",
+  "default": false,
+  "file": "enderscapeNebula.glsl",
+  "activation": true,
+  "priority": 1,
+  "en_US": {
+    "option": "Dark End Flash",
+    "comment": "Causes the End Flash to reduce rather than increase the ambient light, in accordance with the default behaviour in Enderscape."
+  }
+}

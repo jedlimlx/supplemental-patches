@@ -1,1 +1,1 @@
-emission = 2.5 * sqrt1(color.b);
+emission = 3.0 * sqrt1(color.b);

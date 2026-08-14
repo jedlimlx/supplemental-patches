@@ -11,7 +11,7 @@ data class Sky(
     val code: String,
     val dimension: String,
     val deferred: String,
-    val reflection: String,
+    val reflection: String?,
     val conditions: List<String>
 )
 
@@ -34,6 +34,16 @@ fun generateSkies(directory: Path) {
         }
     }.toString()
 
+	val importCodeNoReflection = StringBuilder().apply {
+		SKIES.forEach {
+			if (it.reflection == null) return@forEach
+			append("#if ${(it.conditions + listOf("defined ${it.dimension}")).conditions()}\n")
+			append("    #include \"/lib/atmospherics/${it.name}\"\n")
+			append("#endif\n")
+			append("\n")
+		}
+	}.toString()
+
     // injecting code into deferred1.glsl
     val deferredFile = File(directory.absolutePathString() + DEFERRED_PATH)
     deferredFile.writeText(
@@ -48,17 +58,17 @@ fun generateSkies(directory: Path) {
     reflectionPath.writeText(
         reflectionPath.readText().replace(
             "#ifdef ATM_COLOR_MULTS",
-            importCode.prependIndent("    ") + "\n#ifdef ATM_COLOR_MULTS"
+			"$importCodeNoReflection\n#ifdef ATM_COLOR_MULTS"
         )
     )
 
     SKIES.forEach {
         val code = StringBuilder().apply {
-            val indent = " ".repeat(12)
+            val indent = " ".repeat(16)
             if (it.conditions.isNotEmpty()) {
                 append("$indent\n")
                 append("$indent#if ${it.conditions.conditions()}\n")
-                append("$indent    ${it.deferred}\n")
+                append("${it.deferred.prependIndent("$indent    ")}\n")
                 append("$indent#endif\n")
             } else {
                 append("$indent\n")
@@ -87,6 +97,7 @@ fun generateSkies(directory: Path) {
 
     val reflectionFile = File(directory.absolutePathString() + REFLECTION_PATH)
     SKIES.forEach {
+		if (it.reflection == null) return@forEach
         val code = StringBuilder().apply {
             val indent = " ".repeat(if (it.dimension == "END") 8 else 20)
             if (it.conditions.isNotEmpty()) {
@@ -102,13 +113,13 @@ fun generateSkies(directory: Path) {
 
         val regex = when (it.dimension) {
             "OVERWORLD" -> Regex("skyReflection \\+= \\(DrawOverworldBeams\\(RVdotU, playerPos, viewPos\\) \\* 0\\.4 \\+ 0\\.6\\)\\.rgb \\* 0\\.08;\\r?\\n {20}#endif")
-            "END" -> Regex("vec3 skyReflection = endSkyColor \\* shadowMult;\\r?\\n {8}#endif")
+            "END" -> Regex("vec3 skyReflection = \\(endSkyColor \\+ enderNebula \\+ enderStars \\+ volumetricEffect.rgb\\) \\* skyLightFactor;\\r?\\n")
             else -> Regex("^$")
         }
 
         val key = when (it.dimension) {
             "OVERWORLD" -> "skyReflection += (DrawOverworldBeams(RVdotU, playerPos, viewPos) * 0.4 + 0.6).rgb * 0.08;\n                    #endif"
-            "END" -> "vec3 skyReflection = endSkyColor * shadowMult;\n        #endif"
+            "END" -> "vec3 skyReflection = (endSkyColor + enderNebula + enderStars + volumetricEffect.rgb) * skyLightFactor;\n"
             else -> ""
         }
 

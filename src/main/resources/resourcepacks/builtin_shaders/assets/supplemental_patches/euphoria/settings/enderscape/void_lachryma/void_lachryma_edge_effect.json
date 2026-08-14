@@ -1,0 +1,10 @@
+{
+  "type": "setting",
+  "name": "VOID_LACHRYMA_EDGE_EFFECT",
+  "default": false,
+  "file": "materials.glsl",
+  "en_US": {
+    "option": "Void Lachryma Edge Effect",
+    "comment": "Adds an edge to void lachryma when it touches other blocks. §e[*]§r This feature only works if Advanced Colored Lighting is enabled in Performance Settings."
+  }
+}

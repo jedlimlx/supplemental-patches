@@ -25,7 +25,7 @@
     "supplemental_patches:enderscape/alluring_magnia_sprout",
     null
   ],
-  "light_group": [
+  "light_groups": [
     null,
     null,
     "alluring_magnia",
