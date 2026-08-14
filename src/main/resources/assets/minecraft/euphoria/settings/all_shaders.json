@@ -3,9 +3,9 @@
   "name": "SHADER_PATCHES",
   "folder": "packs",
   "en_US": {
-    "screen": "§6Configure Resource Packs"
+    "screen": "§6Configure Resource Packs >"
   },
   "ru_RU": {
-    "screen": "§6Настроить наборы ресурсов"
+    "screen": "§6Настроить наборы ресурсов >"
   }
 }
