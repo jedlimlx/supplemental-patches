@@ -26,7 +26,8 @@
     "bountifulfares:(.*?)_jack_o_straw",
     "cobblemon:healing_machine",
     "cobblemon:monitor",
-    "cobblemon:pc"
+    "cobblemon:pc",
+    "enderscape:void_campfire:lit=true"
   ],
   "layer.solid": [
     "species:speclight",

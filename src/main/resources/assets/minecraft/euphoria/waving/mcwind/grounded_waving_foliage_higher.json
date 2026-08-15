@@ -1,0 +1,6 @@
+{
+  "glsl": "grounded_waving_foliage_higher.glsl",
+  "conditions": [
+    "MCWIND_FOLIAGE"
+  ]
+}

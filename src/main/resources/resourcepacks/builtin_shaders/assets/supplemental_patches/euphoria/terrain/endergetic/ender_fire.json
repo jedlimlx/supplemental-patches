@@ -7,5 +7,6 @@
     "illager_invasion:magic_fire"
   ],
   "blocklight": "supplemental_patches:endergetic/ender_fire",
-  "reflection_handlers": "minecraft:fire"
+  "reflection_handlers": "minecraft:fire",
+  "mcwind": "minecraft:waving_fire"
 }

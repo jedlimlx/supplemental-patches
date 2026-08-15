@@ -681,6 +681,9 @@ fun generateWavingCode(directory: Path) {
         append("void DoWave_BlockEntity(inout vec3 playerPos, int blockEntityId) {\n")
         append("    vec3 worldPos = playerPos.xyz + cameraPosition.xyz;\n")
         append("    #if defined GBUFFERS_BLOCK || defined SHADOW\n")
+		append("        #ifdef MCWIND\n")
+		append("            if (DoWave_BlockEntity_MCWIND(playerPos.xyz, worldPos, mat)) return;\n")
+		append("        #endif\n")
         append(
             computeAllPivots(blockEntityIds, 2, "blockEntityId", 4) { idx, depth ->
                 StringBuilder().apply {
@@ -719,6 +722,9 @@ fun generateWavingCode(directory: Path) {
 
 		// adding terrain shaders
         append("    #if defined GBUFFERS_TERRAIN || defined SHADOW\n")
+		append("        #ifdef MCWIND\n")
+		append("            if (DoWave_Block_MCWIND(playerPos.xyz, worldPos, mat)) return;\n")
+		append("        #endif\n")
         append(
             computeAllPivots(terrainIds, 2, "mat", 4) { idx, depth ->
                 StringBuilder().apply {
@@ -769,6 +775,68 @@ fun generateWavingCode(directory: Path) {
     }
 
     file.writeText(file.readText().replace("void DoWave(inout vec3 playerPos, int mat) {", newBuilder.toString()))
+
+	// adding code for mcWind
+	val terrainIds2 = MATERIALS_MAP.filter { it.value.mcWind != null }.map { it.key }
+	val blockEntityIds2 = BLOCK_ENTITIES_MAP.filter { it.value.mcWind != null }.map { it.key }
+	val mcWindCode = with(StringBuilder()) {
+		appendLine("bool DoWave_Block_MCWIND(inout vec3 playerPos, vec3 worldPos, int mat) {")
+		appendLine("    vec3 blockCenter = worldPos + clamp(at_midBlock.xyz / 64.0, -2.0, 2.0);")
+		append(
+			computeAllPivots(terrainIds2, 1, "mat", 4) { idx, depth ->
+				StringBuilder().apply {
+					val material = MATERIALS_MAP[idx]!!
+					val wavingObject = material.mcWind!!
+					val conditions = wavingObject.conditions.isNotEmpty()
+
+					val indent = "    ".repeat(depth)
+					if (conditions) append("$indent#if ${wavingObject.conditions.conditions()}\n")
+					append("${indent}if (mat >= $idx && mat < ${idx + material.blockSize}) {\n")
+					append(
+						wavingObject.code.split("\n").joinToString("\n") { "$indent    $it" }
+					)
+					append("\n${indent}    return true;\n")
+					append("$indent}\n")
+					if (conditions) append("$indent#endif\n")
+				}.toString()
+			}
+		)
+		appendLine()
+		appendLine("    return false;")
+		appendLine("}")
+		appendLine()
+		appendLine("bool DoWave_BlockEntity_MCWIND(inout vec3 playerPos, vec3 worldPos, int blockEntityId) {")
+		appendLine("    vec3 blockCenter = worldPos + clamp(at_midBlock.xyz / 64.0, -2.0, 2.0);")
+		append(
+			computeAllPivots(blockEntityIds2, 1, "blockEntityId", 4) { idx, depth ->
+				StringBuilder().apply {
+					val material = MATERIALS_MAP[idx]!!
+					val wavingObject = material.mcWind!!
+					val conditions = wavingObject.conditions.isNotEmpty()
+
+					val indent = "    ".repeat(depth)
+					if (conditions) append("$indent#if ${wavingObject.conditions.conditions()}\n")
+					append("${indent}if (blockEntityId >= $idx && blockEntityId < ${idx + material.blockSize}) {\n")
+					append(
+						wavingObject.code.split("\n").joinToString("\n") { "$indent    $it" }
+					)
+					append("\n${indent}    return true;\n")
+					append("$indent}\n")
+					if (conditions) append("$indent#endif\n")
+				}.toString()
+			}
+		)
+		appendLine()
+		appendLine("    return false;")
+		appendLine("}")
+	}.toString()
+
+	file.writeText(
+		file.readText().replace(
+			Regex("#if defined MCWIND && \\(defined GBUFFERS_TERRAIN \\|\\| defined SHADOW\\)\r?\n\\s+#include \"/mcwind/mcwind\\.glsl\""),
+			"#if defined MCWIND && (defined GBUFFERS_TERRAIN || defined GBUFFERS_BLOCK || defined SHADOW)\n#include \"/mcwind/mcwind.glsl\"\n\n${mcWindCode}"
+		)
+	)
 }
 
 const val REFLECTION_VOXELISATION_DIRECTORY = "/shaders/lib/voxelization/reflectionVoxelization.glsl"

@@ -164,6 +164,11 @@ production {
 				}
 			}
 
+			if (minecraftVersion == "26.1.2") {
+				add(files("libs/plunderengine-0.1.13-beta.jar"))
+				add(files("libs/windlink-0.1.3-beta.jar"))
+			}
+
 			addMods(MODS)
 		}
 	}

@@ -2,9 +2,11 @@
   "name": "cupric_campfire",
   "glsl": "cupric_campfire.glsl",
   "mat0": [
-    "caverns_and_chasms:cupric_campfire:lit=true"
+    "caverns_and_chasms:cupric_campfire:lit=true",
+    "thecopperierage:copper_campfire:lit=true"
   ],
   "blocklight": "supplemental_patches:caverns_and_chasms/cupric_fire",
   "held_lighting": true,
-  "reflection_handler": "minecraft:campfire"
+  "reflection_handler": "minecraft:campfire",
+  "mcwind": "minecraft:waving_campfire"
 }

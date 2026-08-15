@@ -9,5 +9,6 @@
   "light_groups": "void_fire",
   "light_modifiers":"minecraft:flickering",
   "held_lighting": true,
-  "reflection_handlers": "minecraft:campfire"
+  "reflection_handlers": "minecraft:campfire",
+  "mcwind": "minecraft:waving_campfire"
 }

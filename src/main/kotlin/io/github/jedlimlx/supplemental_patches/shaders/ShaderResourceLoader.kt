@@ -55,6 +55,7 @@ object ShaderResourceLoader {
     val COLOURS_MAP: HashMap<String, Colour> = hashMapOf()
     val TINTS_MAP: HashMap<String, Colour> = hashMapOf()
     val WAVING_MAP: HashMap<String, WavingObject> = hashMapOf()
+	val MC_WIND_MAP: HashMap<String, WavingObject> = hashMapOf()
     val DEFERRED_MAP: HashMap<String, DeferredMaterial> = hashMapOf()
 	val LIGHT_GROUP_MAP: HashMap<String, LightGroup> = hashMapOf()
 	val LIGHT_MODIFIER_MAP: HashMap<String, String> = hashMapOf()
@@ -97,6 +98,7 @@ object ShaderResourceLoader {
 
         WAVING_FUNCTIONS.clear()
         WAVING_MAP.clear()
+		MC_WIND_MAP.clear()
 
         DEFERRED_MAP.clear()
 
@@ -206,6 +208,24 @@ object ShaderResourceLoader {
                 conditions = json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
             )
         }
+
+		// Loading mc wind
+		val map3 = resourceManager.listResources("euphoria/waving/mcwind") { it.path.endsWith(".glsl") }.map { (loc, _) ->
+			loc.path.split("/").last() to getFileContents(loc, resourceManager)
+		}.toMap()
+		val lst4 = resourceManager.listResources("euphoria/waving/mcwind") { it.path.endsWith(".json") }
+
+		LOGGER.info("Loading ${lst4.entries.size} mcwind objects...")
+		lst4.forEachWithErrorHandling { (loc, _) ->
+			val json = loadJson(loc, resourceManager)
+			val key = loc.toString().replace("euphoria/waving/mcwind/", "").replace(".json", "")
+			MC_WIND_MAP[key] = WavingObject(
+				code = map3[
+					json["glsl"].asString ?: throw MinecraftError(".glsl file not specified.", loc.toString())
+				] ?: throw MinecraftError("${json["glsl"]} not found!", loc.toString()),
+				conditions = json["conditions"]?.asJsonArray?.map { it.asString } ?: listOf()
+			)
+		}
 
         // Loading deferred materials
         val map2 = resourceManager.listResources("euphoria/deferred") { it.path.endsWith(".glsl") }.map { (loc, _) ->
@@ -384,6 +404,13 @@ object ShaderResourceLoader {
                             throw MinecraftError("Waving object ${json["waving"]} does not exist!", loc.toString())
                         )
                     }
+
+					if (json["mcwind"] != null) {
+						builder.mcWind(
+							MC_WIND_MAP[json["mcwind"].asString] ?:
+							throw MinecraftError("MCWIND object ${json["mcwind"]} does not exist!", loc.toString())
+						)
+					}
 
                     if (json["light_level"] != null)
                         builder.lightLevel(json["light_level"].asInt)

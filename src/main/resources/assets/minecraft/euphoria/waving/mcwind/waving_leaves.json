@@ -1,0 +1,6 @@
+{
+  "glsl": "waving_leaves.glsl",
+  "conditions": [
+    "MCWIND_LEAVES"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "glsl": "waving_fire.glsl",
+  "conditions": [
+    "MCWIND_FIRE"
+  ]
+}

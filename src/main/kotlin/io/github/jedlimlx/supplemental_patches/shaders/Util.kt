@@ -45,6 +45,7 @@ class ShaderBuilder(
     var heldLighting: Boolean = false
     var translucent: Boolean = false
     var wavingObject: WavingObject? = null
+	var mcWind: WavingObject? = null
 
     var reflectionHandlers: List<String?> = listOf()
 
@@ -81,6 +82,11 @@ class ShaderBuilder(
         wavingObject = code
         return this
     }
+
+	fun mcWind(code: WavingObject): ShaderBuilder {
+		mcWind = code
+		return this
+	}
 
     fun reflectionHandler(handler: String?): ShaderBuilder {
         reflectionHandlers = List(blockSize) { handler }
