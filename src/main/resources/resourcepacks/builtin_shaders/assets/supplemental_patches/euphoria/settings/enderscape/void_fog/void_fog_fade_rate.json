@@ -15,5 +15,9 @@
   "en_US": {
     "option": "Fade Rate",
     "comment": "The rate at which the fog effect fades off outside of the range."
+  },
+  "ru_RU": {
+    "option": "Скорость затухания",
+    "comment": "Скорость, с которой эффект тумана исчезает за пределами заданного расстояния."
   }
 }

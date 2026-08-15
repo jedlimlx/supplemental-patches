@@ -14,5 +14,9 @@
   "en_US": {
     "option": "Intensity",
     "comment": "Setting this to 0 removes shadows entirely."
+  },
+  "ru_RU": {
+    "option": "Интенсивность",
+    "comment": "Значение 0 полностью убирает тени."
   }
 }

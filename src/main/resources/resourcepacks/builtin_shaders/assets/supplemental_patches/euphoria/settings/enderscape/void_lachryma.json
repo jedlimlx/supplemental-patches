@@ -1,9 +1,12 @@
 {
-	"type": "directory",
-	"name": "ES_VOID_LACHRYMA",
-	"folder": "void_lachryma",
-	"priority": 1,
-	"en_US": {
-		"screen": "Void Lachryma"
-	}
+  "type": "directory",
+  "name": "ES_VOID_LACHRYMA",
+  "folder": "void_lachryma",
+  "priority": 1,
+  "en_US": {
+    "screen": "Void Lachryma"
+  },
+  "ru_RU": {
+    "screen": "Пустотный плач"
+  }
 }

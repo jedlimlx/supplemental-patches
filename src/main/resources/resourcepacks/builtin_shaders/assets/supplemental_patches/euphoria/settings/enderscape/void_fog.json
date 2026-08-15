@@ -5,5 +5,8 @@
   "priority": 1,
   "en_US": {
     "screen": "Void Fog"
+  },
+  "ru_RU": {
+    "screen": "Пустотный туман"
   }
 }
