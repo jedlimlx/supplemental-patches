@@ -1,5 +1,6 @@
 {
   "key.supplemental_patches.reload_shaders": "Regenerate Shaders",
   "key.supplemental_patches.builtin_shaders": "Supplemental Shaders",
-  "key.supplemental_patches.builtin_shaders_description": "Built-in shaders for various mods"
+  "key.supplemental_patches.builtin_shaders_description": "Built-in shaders for various mods",
+  "resourcepack.supplemental_patches.builtin_shaders": "The built-in shaders for Supplemental Patches"
 }

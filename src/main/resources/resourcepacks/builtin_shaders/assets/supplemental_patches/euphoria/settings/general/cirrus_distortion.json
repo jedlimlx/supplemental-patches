@@ -16,5 +16,9 @@
   "en_US": {
     "option": "Cirrus Distortion Intensity",
     "comment": "Changes the amount of distortion applied to the second layer of unbound clouds."
+  },
+  "ru_RU": {
+    "option": "Интенсивность перистых искажений",
+    "comment": "Изменяет количество искажений, применяемых ко второму слою облаков Unbound."
   }
 }

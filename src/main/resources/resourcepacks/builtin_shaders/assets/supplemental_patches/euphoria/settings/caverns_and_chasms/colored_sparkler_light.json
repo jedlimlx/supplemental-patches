@@ -6,5 +6,8 @@
   "file": "materials.glsl",
   "en_US": {
     "option": "Colored Sparkler Light"
+  },
+  "ru_RU": {
+    "option": "Цветной свет бенгальского огня"
   }
 }

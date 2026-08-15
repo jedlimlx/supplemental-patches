@@ -5,5 +5,9 @@
     "option": "Credits",
     "comment": "EminGT, SpaceEagle17: The main developers of Complementary / Euphoria. Lemon41625: The main developer of Supplemental Patches. Contributors: chililisoup, mpustovoi"
   },
+  "ru_RU": {
+    "option": "Авторы",
+    "comment": "EminGT, SpaceEagle17: главные разработчики Complementary / Euphoria. Lemon41625: главный разработчик Supplemental Patches. Участники: chililisoup, mpustovoi"
+  },
   "priority": 5
 }

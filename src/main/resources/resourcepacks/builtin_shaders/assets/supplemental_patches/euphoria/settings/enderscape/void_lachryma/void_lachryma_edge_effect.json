@@ -6,5 +6,9 @@
   "en_US": {
     "option": "Void Lachryma Edge Effect",
     "comment": "Adds an edge to void lachryma when it touches other blocks. §e[*]§r This feature only works if Advanced Colored Lighting is enabled in Performance Settings."
+  },
+  "ru_RU": {
+    "option": "Эффект края пустотного плача.",
+    "comment": "Добавляет границу при соприкосновении пустотного плача с блоками. §e[*]§r Работает только, если «Продвинутая цветовая трассировка» включена в «Настройках производительности»."
   }
 }

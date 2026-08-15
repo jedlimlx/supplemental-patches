@@ -11,5 +11,8 @@
   "file": "materials.glsl",
   "en_US": {
     "option": "Glowing Dusk Stone Ore"
+  },
+  "ru_RU": {
+    "option": "Свечение сумракаменной руды"
   }
 }

@@ -16,5 +16,9 @@
   "en_US": {
     "option": "ACT Fog Size §e[*]§r",
     "comment": "Determines how far the ACT fog will spread when the fog effect is active. §e[*]§r Requires Advanced Color Tracing to be enabled."
+  },
+  "ru_RU": {
+    "option": "Размер тумана ПЦТ §e[*]§r",
+    "comment": "Определяет, насколько далеко будет распространяться туман ПЦТ при активном эффекте тумана. §e[*]§r Работает только, если «Продвинутая цветовая трассировка» включена в «Настройках производительности» и поддерживается вашей системой."
   }
 }

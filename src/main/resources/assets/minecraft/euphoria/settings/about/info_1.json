@@ -1,13 +1,12 @@
 {
   "type": "info",
-  "name": "SP_info_1",
+  "name": "info_1",
   "en_US": {
-    "option": "§6What is Supplemental Patches",
+    "option": "What is Supplemental Patches",
     "comment": "This is a modification of Euphoria Patches to provide better support for many popular mods. Specifically, it allows add new shader materials to Euphoria Patches, via a resource-pack, which enables new detailed shaders to be created for various modded materials."
   },
   "ru_RU": {
-    "option": "§6Что такое Supplemental Patches",
+    "option": "Что такое Supplemental Patches",
     "comment": "Это модификация Euphoria Patches, обеспечивающая лучшую поддержку популярных модов. В частности, она позволяет добавлять новые материалы для шейдеров через набор ресурсов, что даёт возможность создавать детализированные шейдеры для различных материалов из модов."
-  },
-  "priority": 10
+  }
 }

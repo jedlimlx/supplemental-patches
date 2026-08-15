@@ -9,7 +9,8 @@
     "max_format": [88, 0],
     "description": [
       {
-        "text": "The built-in shaders for Supplemental Patches",
+        "translate": "resourcepack.supplemental_patches.builtin_shaders",
+        "fallback": "The built-in shaders for Supplemental Patches",
         "color": "gray"
       }
     ]

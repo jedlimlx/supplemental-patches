@@ -11,5 +11,8 @@
   "file": "materials.glsl",
   "en_US": {
     "option": "Glowing Smoky Quartz Ore"
+  },
+  "ru_RU": {
+    "option": "Свечение руды дымчатого кварца"
   }
 }

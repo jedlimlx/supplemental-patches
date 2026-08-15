@@ -16,5 +16,9 @@
   "en_US": {
     "option": "Cirrus Distortion Scale",
     "comment": "Changes the rate at which the direction of distortion changes across the sky for the second layer of unbound clouds."
+  },
+  "ru_RU": {
+    "option": "Величина перистых искажений",
+    "comment": "Изменяет скорость, с которой изменяется направление искажения по небу для второго слоя облаков Unbound."
   }
 }

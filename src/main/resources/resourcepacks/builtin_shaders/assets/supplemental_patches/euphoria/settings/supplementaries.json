@@ -4,6 +4,10 @@
   "folder": "supplementaries",
   "en_US": {
     "screen": "Supplementaries §e[*]§r",
-    "comment": "§e[*]§r Includes settings for Amendments and Supplementaries Squared"
+    "comment": "§e[*]§r Includes settings for Amendments and Supplementaries Squared."
+  },
+  "ru_RU": {
+    "screen": "Supplementaries §e[*]§r",
+    "comment": "§e[*]§r Включает настройки для Amendments и Supplementaries Squared."
   }
 }

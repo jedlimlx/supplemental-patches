@@ -5,5 +5,9 @@
     "option": "What is this",
     "comment": "This is the built-in resource-pack for Supplemental Patches."
   },
+  "ru_RU": {
+    "option": "Что это",
+    "comment": "Это встроенный набор ресурсов для Supplemental Patches."
+  },
   "priority": 10
 }

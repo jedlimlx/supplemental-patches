@@ -16,5 +16,9 @@
   "en_US": {
     "option": "Void Fog Lower Altitude",
     "comment": "The lower altitude bound for the void fog."
+  },
+  "ru_RU": {
+    "option": "Нижняя граница пустотного тумана",
+    "comment": "Задаёт нижнюю границу пустотного тумана."
   }
 }

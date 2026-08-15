@@ -16,5 +16,9 @@
   "en_US": {
     "option": "ACT Fog Intensity §e[*]§r",
     "comment": "Determines how much stronger ACT fog becomes when the fog effect is active. §e[*]§r Requires Advanced Color Tracing to be enabled."
+  },
+  "ru_RU": {
+    "option": "Интенсивность тумана ПЦТ §e[*]§r",
+    "comment": "Определяет, насколько сильнее становится туман ПЦТ при активном эффекте тумана. §e[*]§r Работает только, если «Продвинутая цветовая трассировка» включена в «Настройках производительности» и поддерживается вашей системой."
   }
 }

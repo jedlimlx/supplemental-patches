@@ -15,5 +15,9 @@
   "en_US": {
     "option": "Lunar Event Sky Saturation",
     "comment": "Controls saturation of sky during lunar events."
+  },
+  "ru_RU": {
+    "option": "Насыщенность неба лунного события",
+    "comment": "Контролирует насыщенность неба во время лунных событий."
   }
 }

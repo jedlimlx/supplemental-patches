@@ -4,5 +4,8 @@
   "folder": "lumisene",
   "en_US": {
     "screen": "Lumisene"
+  },
+  "ru_RU": {
+    "screen": "Светон"
   }
 }

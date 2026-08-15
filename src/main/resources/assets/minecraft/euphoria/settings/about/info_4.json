@@ -5,5 +5,9 @@
     "option": "Found a §4Bug§r",
     "comment": "Bugs can be reported on the GitHub Issues pages, https://github.com/jedlimlx/supplemental-patches/issues, or in the Euphoria Patches discord server."
   },
+  "ru_RU": {
+    "option": "Нашли §4ошибку§r",
+    "comment": "Об ошибках можно сообщать на странице GitHub, https://github.com/jedlimlx/supplemental-patches/issues или в Discord сервере Euphoria Patches."
+  },
   "priority": 7
 }
