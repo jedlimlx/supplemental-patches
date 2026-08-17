@@ -681,7 +681,7 @@ fun generateWavingCode(directory: Path) {
         append("void DoWave_BlockEntity(inout vec3 playerPos, int blockEntityId) {\n")
         append("    vec3 worldPos = playerPos.xyz + cameraPosition.xyz;\n")
         append("    #if defined GBUFFERS_BLOCK || defined SHADOW\n")
-		append("        #ifdef MCWIND\n")
+		append("        #ifdef MCWIND_INTERNAL\n")
 		append("            if (DoWave_BlockEntity_MCWIND(playerPos.xyz, worldPos, mat)) return;\n")
 		append("        #endif\n")
         append(
@@ -722,7 +722,7 @@ fun generateWavingCode(directory: Path) {
 
 		// adding terrain shaders
         append("    #if defined GBUFFERS_TERRAIN || defined SHADOW\n")
-		append("        #ifdef MCWIND\n")
+		append("        #ifdef MCWIND_INTERNAL\n")
 		append("            if (DoWave_Block_MCWIND(playerPos.xyz, worldPos, mat)) return;\n")
 		append("        #endif\n")
         append(
@@ -833,8 +833,8 @@ fun generateWavingCode(directory: Path) {
 
 	file.writeText(
 		file.readText().replace(
-			Regex("#if defined MCWIND && \\(defined GBUFFERS_TERRAIN \\|\\| defined SHADOW\\)\r?\n\\s+#include \"/mcwind/mcwind\\.glsl\""),
-			"#if defined MCWIND && (defined GBUFFERS_TERRAIN || defined GBUFFERS_BLOCK || defined SHADOW)\n#include \"/mcwind/mcwind.glsl\"\n\n${mcWindCode}"
+			Regex("#if defined MCWIND_INTERNAL && \\(defined GBUFFERS_TERRAIN \\|\\| defined SHADOW\\)\r?\n\\s+#include \"/mcwind/mcwind\\.glsl\""),
+			"#if defined MCWIND_INTERNAL && (defined GBUFFERS_TERRAIN || defined GBUFFERS_BLOCK || defined SHADOW)\n#include \"/mcwind/mcwind.glsl\"\n\n${mcWindCode}"
 		)
 	)
 }

@@ -1,0 +1,6 @@
+{
+  "glsl": "waving_lilypad.glsl",
+  "conditions": [
+    "MCWIND_LILY_PAD"
+  ]
+}

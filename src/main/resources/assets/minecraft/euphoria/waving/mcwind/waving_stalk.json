@@ -1,0 +1,6 @@
+{
+  "glsl": "waving_stalk.glsl",
+  "conditions": [
+    "MCWIND_STALKS"
+  ]
+}
