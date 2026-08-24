@@ -19,6 +19,7 @@
     null,
     null
   ],
+  "mcwind": "minecraft:waving_ceiling_vine",
   "reflection_handlers": [
     "minecraft:discard",
     null,

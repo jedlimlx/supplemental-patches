@@ -165,8 +165,8 @@ production {
 			}
 
 			if (minecraftVersion == "26.1.2") {
-				add(files("libs/plunderengine-0.1.14.jar"))
-				add(files("libs/windlink-0.1.4.jar"))
+				add(files("libs/plunderengine-0.1.18.jar"))
+				add(files("libs/windlink-1.1.18.jar"))
 			}
 
 			addMods(MODS)

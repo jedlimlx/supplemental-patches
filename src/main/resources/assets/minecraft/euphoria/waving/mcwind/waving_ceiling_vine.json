@@ -1,5 +1,5 @@
 {
-  "glsl": "waving_vine.glsl",
+  "glsl": "waving_ceiling_vine.glsl",
   "conditions": [
     "MCWIND_VINES"
   ]

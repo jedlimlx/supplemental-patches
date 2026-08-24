@@ -7,5 +7,6 @@
   "blocklight": "minecraft:magma_block",
   "light_groups": "lava",
   "waving": "minecraft:grounded_waving_foliage",
+  "mcwind": "minecraft:grounded_waving_foliage_lower",
   "reflection_handlers": "minecraft:discard"
 }

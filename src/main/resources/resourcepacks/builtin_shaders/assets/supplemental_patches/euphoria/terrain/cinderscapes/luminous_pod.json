@@ -7,5 +7,6 @@
   ],
   "blocklight": "supplemental_patches:cinderscapes/luminous_pod",
   "waving": "minecraft:grounded_waving_foliage",
+  "mcwind": "minecraft:grounded_waving_foliage",
   "reflection_handler": "minecraft:discard"
 }

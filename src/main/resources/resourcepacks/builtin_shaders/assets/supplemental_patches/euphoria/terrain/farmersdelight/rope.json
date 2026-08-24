@@ -9,5 +9,6 @@
     "quark:rope"
   ],
   "waving": "supplemental_patches:misc/waving_rope",
+  "mcwind": "minecraft:waving_pendant",
   "needs_voxelization": true
 }

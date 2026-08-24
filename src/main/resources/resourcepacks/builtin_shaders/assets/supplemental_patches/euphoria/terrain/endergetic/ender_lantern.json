@@ -9,5 +9,6 @@
   "light_groups": "void_lantern",
   "light_modifiers":"minecraft:flickering",
   "held_lighting": true,
+  "mcwind": "minecraft:waving_pendant",
   "reflection_handlers": "minecraft:discard"
 }

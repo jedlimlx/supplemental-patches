@@ -1,6 +1,0 @@
-{
-  "file": "/shaders/lib/materials/materialMethods/reflectionBackground.glsl",
-  "type": "replace",
-  "key": "#ifndef END_BEAMS",
-  "code": "disable_end_beams.glsl"
-}

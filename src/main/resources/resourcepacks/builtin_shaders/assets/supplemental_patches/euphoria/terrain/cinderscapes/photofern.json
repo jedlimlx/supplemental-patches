@@ -6,5 +6,6 @@
     "cinderscapes:tall_photofern"
   ],
   "waving": "minecraft:grounded_waving_foliage",
+  "mcwind": "minecraft:grounded_waving_foliage",
   "reflection_handler": "minecraft:discard"
 }

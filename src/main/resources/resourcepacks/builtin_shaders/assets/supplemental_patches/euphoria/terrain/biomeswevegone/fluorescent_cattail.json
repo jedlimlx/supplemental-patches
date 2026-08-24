@@ -38,5 +38,6 @@
     null
   ],
   "block_size": 8,
+  "mcwind": "minecraft:waving_stalk",
   "reflection_handlers": "minecraft:discard"
 }

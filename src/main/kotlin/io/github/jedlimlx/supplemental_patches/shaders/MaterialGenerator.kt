@@ -833,8 +833,11 @@ fun generateWavingCode(directory: Path) {
 
 	file.writeText(
 		file.readText().replace(
-			Regex("#if defined MCWIND_INTERNAL && \\(defined GBUFFERS_TERRAIN \\|\\| defined SHADOW\\)\r?\n\\s+#include \"/mcwind/mcwind\\.glsl\""),
-			"#if defined MCWIND_INTERNAL && (defined GBUFFERS_TERRAIN || defined GBUFFERS_BLOCK || defined SHADOW)\n#include \"/mcwind/mcwind.glsl\"\n\n${mcWindCode}"
+			"#if defined MCWIND_INTERNAL && (defined GBUFFERS_TERRAIN || defined SHADOW)",
+			"#if defined MCWIND_INTERNAL && (defined GBUFFERS_TERRAIN || defined GBUFFERS_BLOCK || defined SHADOW)"
+		).replace(
+			"#include \"/mcwind/mcwind.glsl\"",
+			"#include \"/mcwind/mcwind.glsl\"\n\n${mcWindCode}"
 		)
 	)
 }

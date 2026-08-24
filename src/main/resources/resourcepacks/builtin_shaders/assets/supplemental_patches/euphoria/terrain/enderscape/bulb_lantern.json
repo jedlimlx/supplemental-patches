@@ -7,5 +7,6 @@
   "blocklight": "minecraft:lantern",
   "light_groups": "lantern",
   "held_lighting": true,
+  "mcwind": "minecraft:waving_pendant",
   "reflection_handlers": "minecraft:discard"
 }

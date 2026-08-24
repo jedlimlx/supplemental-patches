@@ -1,0 +1,6 @@
+{
+  "glsl": "waving_wall_vine.glsl",
+  "conditions": [
+    "MCWIND_VINES"
+  ]
+}

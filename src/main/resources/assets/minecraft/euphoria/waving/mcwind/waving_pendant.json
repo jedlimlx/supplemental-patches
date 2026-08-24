@@ -1,0 +1,6 @@
+{
+  "glsl": "waving_pendant.glsl",
+  "conditions": [
+    "MCWIND_PENDANTS"
+  ]
+}
