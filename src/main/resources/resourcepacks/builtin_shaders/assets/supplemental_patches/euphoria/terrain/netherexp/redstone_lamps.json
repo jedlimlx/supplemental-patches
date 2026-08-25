@@ -1,0 +1,97 @@
+{
+  "name": "redstone_lamps",
+  "glsl": "redstone_lamps.glsl",
+  "mat0": [
+    "netherexp:black_stained_redstone_lamp:lit=true",
+    "netherexp:white_stained_redstone_lamp:lit=true",
+    "netherexp:brown_stained_redstone_lamp:lit=true",
+    "netherexp:gray_stained_redstone_lamp:lit=true",
+    "netherexp:light_gray_stained_redstone_lamp:lit=true"
+  ],
+  "mat2": [
+    "netherexp:blue_stained_redstone_lamp:lit=true"
+  ],
+  "mat4": [
+    "netherexp:cyan_stained_redstone_lamp:lit=true"
+  ],
+  "mat6": [
+    "netherexp:green_stained_redstone_lamp:lit=true"
+  ],
+  "mat8": [
+    "netherexp:light_blue_stained_redstone_lamp:lit=true"
+  ],
+  "mat10": [
+    "netherexp:lime_stained_redstone_lamp:lit=true"
+  ],
+  "mat12": [
+    "netherexp:magenta_stained_redstone_lamp:lit=true"
+  ],
+  "mat14": [
+    "netherexp:orange_stained_redstone_lamp:lit=true"
+  ],
+  "mat16": [
+    "netherexp:pink_stained_redstone_lamp:lit=true"
+  ],
+  "mat18": [
+    "netherexp:purple_stained_redstone_lamp:lit=true"
+  ],
+  "mat20": [
+    "netherexp:red_stained_redstone_lamp:lit=true"
+  ],
+  "mat22": [
+    "netherexp:yellow_stained_redstone_lamp:lit=true"
+  ],
+  "mat24": [
+    "netherexp:black_stained_redstone_lamp:lit=false",
+    "netherexp:white_stained_redstone_lamp:lit=false",
+    "netherexp:brown_stained_redstone_lamp:lit=false",
+    "netherexp:gray_stained_redstone_lamp:lit=false",
+    "netherexp:light_gray_stained_redstone_lamp:lit=false",
+    "netherexp:blue_stained_redstone_lamp:lit=false",
+    "netherexp:cyan_stained_redstone_lamp:lit=false",
+    "netherexp:green_stained_redstone_lamp:lit=false",
+    "netherexp:light_blue_stained_redstone_lamp:lit=false",
+    "netherexp:lime_stained_redstone_lamp:lit=false",
+    "netherexp:magenta_stained_redstone_lamp:lit=false",
+    "netherexp:orange_stained_redstone_lamp:lit=false",
+    "netherexp:pink_stained_redstone_lamp:lit=false",
+    "netherexp:purple_stained_redstone_lamp:lit=false",
+    "netherexp:red_stained_redstone_lamp:lit=false",
+    "netherexp:yellow_stained_redstone_lamp:lit=false"
+  ],
+  "blocklight": [
+    "minecraft:redstone_lamp",
+    null,
+    "supplemental_patches:netherexp/redstone_lamps/blue",
+    null,
+    "supplemental_patches:netherexp/redstone_lamps/cyan",
+    null,
+    "supplemental_patches:netherexp/redstone_lamps/green",
+    null,
+    "supplemental_patches:netherexp/redstone_lamps/light_blue",
+    null,
+    "supplemental_patches:netherexp/redstone_lamps/lime",
+    null,
+    "supplemental_patches:netherexp/redstone_lamps/magenta",
+    null,
+    "supplemental_patches:netherexp/redstone_lamps/orange",
+    null,
+    "supplemental_patches:netherexp/redstone_lamps/pink",
+    null,
+    "supplemental_patches:netherexp/redstone_lamps/purple",
+    null,
+    "supplemental_patches:netherexp/redstone_lamps/red",
+    null,
+    "supplemental_patches:netherexp/redstone_lamps/yellow",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "block_size": 32
+}

@@ -83,7 +83,7 @@ val MODS = listOf(
 
 	// jne
 	"elysium-api",
-	"jadens-nether-expansion:2.4.0-RC.1",
+	"jadens-nether-expansion:2.4.1",
 	"soulfulnether*",
 	"rubinated-nether",
 
