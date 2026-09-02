@@ -1,5 +1,5 @@
 plugins {
-	alias(libs.plugins.stonecutter)
+	id(libs.plugins.stonecutter.get().pluginId)
 	alias(libs.plugins.dotenv)
 	alias(libs.plugins.neoforged.moddev).apply(false)
 	alias(libs.plugins.jsonlang.postprocess).apply(false)
