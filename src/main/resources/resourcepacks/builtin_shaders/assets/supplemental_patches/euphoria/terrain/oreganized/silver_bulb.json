@@ -1,0 +1,8 @@
+{
+  "name": "silver_bulb",
+  "glsl": "silver_bulb.glsl",
+  "mat0": [
+    "oreganized:silver_bulb:lit=true"
+  ],
+  "blocklight": "supplemental_patches:oreganized/silver_bulb"
+}

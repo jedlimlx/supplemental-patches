@@ -53,7 +53,7 @@ val MODS = listOf(
 	"snowy-spirit!",
 
 	// galena
-	"oreganized",
+	"oreganized:5.2.1",
 	"doom-gloom",
 	"windswept*",
 
