@@ -1,7 +1,6 @@
 plugins {
 	`kotlin-dsl`
 	alias(libs.plugins.undercouch.download)
-	alias(libs.plugins.kotlin.jvm).apply(false)
 }
 
 gradlePlugin {
