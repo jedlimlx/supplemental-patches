@@ -9,9 +9,13 @@ fun injectBuffersIntoShaderCode(shaderCode: String, newBuffers: List<Pair<Int, S
 	// manually replace funky code
 	// TODO remove when SpaceEagle rewrites the section
 	val shaderCode = shaderCode.replace(
-		Regex("#endif\\s+#ifdef PHOTONICS_LIGHTING", RegexOption.MULTILINE),
+		Regex("#endif(\\s+|\n|\r)+#ifdef PHOTONICS_LIGHTING", RegexOption.MULTILINE),
 		"#elif defined PHOTONICS_LIGHTING"
 	)
+
+	"gl_FragData[i0] = phAlbedoOut;"
+	"gl_FragData[i1] = vec4(playerPosDelta, 1.0);"
+	"gl_FragData[i2] = vec4(normalize((gbufferModelViewInverse * vec4(normal, 0.0f)).xyz), 1.0);"
 
 	// find all areas without else branches
 	val lines = shaderCode.lines()
@@ -22,6 +26,7 @@ fun injectBuffersIntoShaderCode(shaderCode: String, newBuffers: List<Pair<Int, S
 	lines.forEach {
 		val line = it.trimIndent()
 		val indent = it.takeWhile { it.isWhitespace() }
+		println(it)
 
 		when {
 			line.startsWith("#if") -> stack.add(listOf())
@@ -70,6 +75,7 @@ fun injectBuffersIntoShaderCode(shaderCode: String, newBuffers: List<Pair<Int, S
 			}
 		}
 
+		println(it)
 		appendLine(it)
 	}
 }
@@ -221,7 +227,7 @@ fun injectBuffers(directory: Path) {
 
         val file = File(directory.absolutePathString() + filePath)
         val code = file.readText()
-        val shaderCode = Regex("(/\\* DRAWBUFFERS(.|\\n|\\s)*?)}", RegexOption.MULTILINE).find(code)!!.groupValues[1]
+        val shaderCode = Regex("(/\\* DRAWBUFFERS.*?)}", setOf(RegexOption.DOT_MATCHES_ALL)).find(code)!!.groupValues[1]
 
         var newCode = injectBuffersIntoShaderCode(shaderCode, lst.map {
             Pair(
