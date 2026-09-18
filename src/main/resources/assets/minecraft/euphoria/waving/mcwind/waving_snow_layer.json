@@ -1,0 +1,6 @@
+{
+  "glsl": "waving_snow_layer.glsl",
+  "conditions": [
+    "MCWIND_LEAVES"
+  ]
+}

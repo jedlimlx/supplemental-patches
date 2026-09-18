@@ -164,10 +164,10 @@ production {
 				}
 			}
 
-			if (minecraftVersion == "26.1.2") {
-				add(files("libs/plunderengine-0.1.18.jar"))
-				add(files("libs/windlink-1.1.18.jar"))
-			}
+//			if (minecraftVersion == "1.21.11" || minecraftVersion == "26.1.2" || minecraftVersion == "26.2") {
+//				add(files("libs/plunderengine-0.1.20+mc$minecraftVersion.jar"))
+//				add(files("libs/windlink-1.1.20+mc$minecraftVersion.jar"))
+//			}
 
 			addMods(MODS)
 		}

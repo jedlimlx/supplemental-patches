@@ -1,6 +1,7 @@
 {
   "glsl": "waving_pendant.glsl",
   "conditions": [
-    "MCWIND_PENDANTS"
+    "MCWIND_PENDANTS",
+    "MCWIND_HANGING_SIGN"
   ]
 }

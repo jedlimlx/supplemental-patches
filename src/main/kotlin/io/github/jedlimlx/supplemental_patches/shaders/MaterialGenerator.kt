@@ -836,8 +836,8 @@ fun generateWavingCode(directory: Path) {
 			"#if defined MCWIND_INTERNAL && (defined GBUFFERS_TERRAIN || defined SHADOW)",
 			"#if defined MCWIND_INTERNAL && (defined GBUFFERS_TERRAIN || defined GBUFFERS_BLOCK || defined SHADOW)"
 		).replace(
-			"#include \"/mcwind/mcwind.glsl\"",
-			"#include \"/mcwind/mcwind.glsl\"\n\n${mcWindCode}"
+			"bool DoWave_MCWIND(inout vec3 playerPos, vec3 worldPos, int mat) {",
+			"${mcWindCode}\n\nbool DoWave_MCWIND(inout vec3 playerPos, vec3 worldPos, int mat) {"
 		)
 	)
 }

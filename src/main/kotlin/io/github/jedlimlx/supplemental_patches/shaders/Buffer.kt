@@ -1,5 +1,6 @@
 package io.github.jedlimlx.supplemental_patches.shaders
 
+import io.github.jedlimlx.supplemental_patches.LOGGER
 import java.io.File
 import java.nio.file.Path
 import kotlin.collections.flatten
@@ -13,46 +14,56 @@ fun injectBuffersIntoShaderCode(shaderCode: String, newBuffers: List<Pair<Int, S
 		"#elif defined PHOTONICS_LIGHTING"
 	)
 
-	"gl_FragData[i0] = phAlbedoOut;"
-	"gl_FragData[i1] = vec4(playerPosDelta, 1.0);"
-	"gl_FragData[i2] = vec4(normalize((gbufferModelViewInverse * vec4(normal, 0.0f)).xyz), 1.0);"
-
 	// find all areas without else branches
 	val lines = shaderCode.lines()
 
 	var stackSize = 0  // length of flattened stack
 	val lst = Array(20) { false }  // could fail if there are more than 20 nested #if, #endifs but wtv
+	val injectedElse = Array(20) { false }
 	val stack = arrayListOf<List<Int>>(listOf())  // store all buffers up to that point
 	lines.forEach {
 		val line = it.trimIndent()
 		val indent = it.takeWhile { it.isWhitespace() }
-		println(it)
 
 		when {
 			line.startsWith("#if") -> stack.add(listOf())
 			line.startsWith("#endif") || line.startsWith("#elif") || line.startsWith("#else") -> {
-				if (stack.last().isNotEmpty()) {
-					appendLine("$indent    /* RENDERTARGETS: ${stack.flatten().joinToString(",")},${newBuffers.joinToString(",") { it.first.toString() }} */")
-					newBuffers.forEach {
-						appendLine("$indent    gl_FragData[$stackSize] = ${it.second}")
+				if (stack.last().isNotEmpty() && !injectedElse[stack.size - 1]) {
+					val totalBuffers = stackSize + newBuffers.size
+					val injectNum = minOf(maxOf(9 - totalBuffers, 0), newBuffers.size)
+					val injectedBuffers = newBuffers.take(injectNum)
+					if (injectedBuffers.isNotEmpty()) {
+						appendLine("$indent    // $injectNum/${newBuffers.size} buffers injected here")
+						appendLine("$indent    /* RENDERTARGETS: ${stack.flatten().joinToString(",")},${injectedBuffers.joinToString(",") { it.first.toString() }} */")
+						injectedBuffers.forEach {
+							appendLine("$indent    gl_FragData[$stackSize] = ${it.second}")
+						}
 					}
 				}
 
 				if (line.startsWith("#endif")) {
 					if (!lst[stack.size]) {
 						stackSize -= stack.last().size
-						stack[stack.size - 1] = listOf()
+						stack.removeLast() //[stack.size - 1] = listOf()
 
 						// inject else before continuing
+						injectedElse[stack.size - 1] = true
 						appendLine("$indent#else")
-						appendLine("$indent    /* RENDERTARGETS: ${stack.flatten().joinToString(",")},${newBuffers.joinToString(",") { it.first.toString() }} */")
-						newBuffers.forEach {
-							appendLine("$indent    gl_FragData[$stackSize] = ${it.second}")
+
+						val totalBuffers = stackSize + newBuffers.size
+						val injectNum = minOf(maxOf(9 - totalBuffers, 0), newBuffers.size)
+						val injectedBuffers = newBuffers.take(injectNum)
+						if (injectedBuffers.isNotEmpty()) {
+							appendLine("$indent    // $injectNum/${newBuffers.size} buffers injected here")
+							appendLine("$indent    /* RENDERTARGETS: ${stack.flatten().joinToString(",")},${injectedBuffers.joinToString(",") { it.first.toString() }} */")
+							injectedBuffers.forEach {
+								appendLine("$indent    gl_FragData[$stackSize] = ${it.second}")
+							}
 						}
 					} else {
 						lst[stack.size] = false
 						stackSize -= stack.last().size
-						stack[stack.size - 1] = listOf()
+						stack.removeLast() //[stack.size - 1] = listOf()
 					}
 				} else {
 					stackSize -= stack.last().size
@@ -75,8 +86,7 @@ fun injectBuffersIntoShaderCode(shaderCode: String, newBuffers: List<Pair<Int, S
 			}
 		}
 
-		println(it)
-		appendLine(it)
+		appendLine(it) // + " ".repeat(160-it.length) + stack)
 	}
 }
 
