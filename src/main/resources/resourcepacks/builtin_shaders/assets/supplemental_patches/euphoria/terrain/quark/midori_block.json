@@ -7,7 +7,8 @@
   "mat1": [
     "quark:midori_block_slab",
     "quark:midori_block_stairs",
-    "quark:midori_block_wall"
+    "quark:midori_block_wall",
+    "quark:midori_block_vertical_slab"
   ],
   "reflection_handlers": [
     null,
