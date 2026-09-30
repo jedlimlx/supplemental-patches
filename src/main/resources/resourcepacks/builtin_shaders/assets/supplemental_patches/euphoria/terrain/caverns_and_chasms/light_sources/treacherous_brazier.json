@@ -1,0 +1,10 @@
+{
+  "name": "treacherous_brazier",
+  "glsl": "treacherous_brazier.glsl",
+  "mat0": [
+    "netherexp:treacherous_brazier:lit=true"
+  ],
+  "blocklight": "supplemental_patches:netherexp/ancient_fire",
+  "held_lighting": true,
+  "reflection_handler": "minecraft:campfire"
+}
