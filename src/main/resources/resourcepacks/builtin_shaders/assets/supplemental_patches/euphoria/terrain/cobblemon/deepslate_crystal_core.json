@@ -1,0 +1,14 @@
+{
+  "name": "deepslate_crystal_core",
+  "glsl": "deepslate_crystal_core.glsl",
+  "mat2": [
+    "cobblemon:deepslate_crystal_core"
+  ],
+  "blocklight": {
+    "color": "supplemental_patches:cobblemon/deepslate_crystal_core",
+    "conditions": [
+      "GLOWING_DEEPSLATE_CRYSTAL_CORE",
+      "DO_IPBR_LIGHTS"
+    ]
+  }
+}

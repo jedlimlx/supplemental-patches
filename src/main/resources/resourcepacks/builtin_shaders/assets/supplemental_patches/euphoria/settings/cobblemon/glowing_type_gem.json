@@ -1,0 +1,11 @@
+{
+  "type": "setting",
+  "name": "GLOWING_TYPE_GEM",
+  "activation": true,
+  "priority": 1,
+  "default": true,
+  "file": "materials.glsl",
+  "en_US": {
+    "option": "Glowing Type Gem"
+  }
+}

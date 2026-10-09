@@ -1,0 +1,3 @@
+{
+  "code": "vec4(hsv2rgb(vec3(frameTimeCounter * 0.05, 0.7, 1.0)), 0.05)"
+}

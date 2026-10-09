@@ -30,6 +30,7 @@ val MODS = listOf(
 	// extra optimisation
 	"ferrite-core#",
 	"immediately-fast#",
+	"renderscale#",
 
 	// abnormals mods
 	"abnormals-delight*",
@@ -100,7 +101,7 @@ val MODS = listOf(
 	// misc
 	"quark#",
 	"quark-oddities#",
-	"#cobblemon*",
+	"cobblemon:1.8.1-neoforge",
 	"enhanced-celestials",
 	"friends-and-foes!",
 	"illager-invasion!",

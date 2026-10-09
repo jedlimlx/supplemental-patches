@@ -1,0 +1,59 @@
+{
+  "name": "type_gem_block",
+  "glsl": "type_gem_block.glsl",
+  "mat0": [
+    "cobblemon:bug_gem_block"
+  ],
+  "mat2": [
+    "cobblemon:dark_gem_block"
+  ],
+  "mat4": [
+    "cobblemon:dragon_gem_block"
+  ],
+  "mat6": [
+    "cobblemon:electric_gem_block"
+  ],
+  "mat8": [
+    "cobblemon:fairy_gem_block"
+  ],
+  "mat10": [
+    "cobblemon:fighting_gem_block"
+  ],
+  "mat12": [
+    "cobblemon:fire_gem_block"
+  ],
+  "mat14": [
+    "cobblemon:flying_gem_block"
+  ],
+  "mat16": [
+    "cobblemon:ghost_gem_block"
+  ],
+  "mat18": [
+    "cobblemon:grass_gem_block"
+  ],
+  "mat20": [
+    "cobblemon:ground_gem_block"
+  ],
+  "mat22": [
+    "cobblemon:ice_gem_block"
+  ],
+  "mat24": [
+    "cobblemon:normal_gem_block"
+  ],
+  "mat26": [
+    "cobblemon:poison_gem_block"
+  ],
+  "mat28": [
+    "cobblemon:psychic_gem_block"
+  ],
+  "mat30": [
+    "cobblemon:rock_gem_block"
+  ],
+  "mat32": [
+    "cobblemon:steel_gem_block"
+  ],
+  "mat34": [
+    "cobblemon:water_gem_block"
+  ],
+  "block_size": 64
+}

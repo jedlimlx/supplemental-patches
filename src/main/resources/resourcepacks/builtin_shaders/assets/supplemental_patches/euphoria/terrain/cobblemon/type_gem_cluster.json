@@ -1,0 +1,185 @@
+{
+  "name": "type_gem_cluster",
+  "glsl": "type_gem_cluster.glsl",
+  "mat0": [
+    "cobblemon:bug_gem_cluster",
+    "cobblemon:large_bug_gem_bud",
+    "cobblemon:medium_bug_gem_bud",
+    "cobblemon:small_bug_gem_bud"
+  ],
+  "mat2": [
+    "cobblemon:dark_gem_cluster",
+    "cobblemon:large_dark_gem_bud",
+    "cobblemon:medium_dark_gem_bud",
+    "cobblemon:small_dark_gem_bud"
+  ],
+  "mat4": [
+    "cobblemon:dragon_gem_cluster",
+    "cobblemon:large_dragon_gem_bud",
+    "cobblemon:medium_dragon_gem_bud",
+    "cobblemon:small_dragon_gem_bud"
+  ],
+  "mat6": [
+    "cobblemon:electric_gem_cluster",
+    "cobblemon:large_electric_gem_bud",
+    "cobblemon:medium_electric_gem_bud",
+    "cobblemon:small_electric_gem_bud"
+  ],
+  "mat8": [
+    "cobblemon:fairy_gem_cluster",
+    "cobblemon:large_fairy_gem_bud",
+    "cobblemon:medium_fairy_gem_bud",
+    "cobblemon:small_fairy_gem_bud"
+  ],
+  "mat10": [
+    "cobblemon:fighting_gem_cluster",
+    "cobblemon:large_fighting_gem_bud",
+    "cobblemon:medium_fighting_gem_bud",
+    "cobblemon:small_fighting_gem_bud"
+  ],
+  "mat12": [
+    "cobblemon:fire_gem_cluster",
+    "cobblemon:large_fire_gem_bud",
+    "cobblemon:medium_fire_gem_bud",
+    "cobblemon:small_fire_gem_bud"
+  ],
+  "mat14": [
+    "cobblemon:flying_gem_cluster",
+    "cobblemon:large_flying_gem_bud",
+    "cobblemon:medium_flying_gem_bud",
+    "cobblemon:small_flying_gem_bud"
+  ],
+  "mat16": [
+    "cobblemon:ghost_gem_cluster",
+    "cobblemon:large_ghost_gem_bud",
+    "cobblemon:medium_ghost_gem_bud",
+    "cobblemon:small_ghost_gem_bud"
+  ],
+  "mat18": [
+    "cobblemon:grass_gem_cluster",
+    "cobblemon:large_grass_gem_bud",
+    "cobblemon:medium_grass_gem_bud",
+    "cobblemon:small_grass_gem_bud"
+  ],
+  "mat20": [
+    "cobblemon:ground_gem_cluster",
+    "cobblemon:large_ground_gem_bud",
+    "cobblemon:medium_ground_gem_bud",
+    "cobblemon:small_ground_gem_bud"
+  ],
+  "mat22": [
+    "cobblemon:ice_gem_cluster",
+    "cobblemon:large_ice_gem_bud",
+    "cobblemon:medium_ice_gem_bud",
+    "cobblemon:small_ice_gem_bud"
+  ],
+  "mat24": [
+    "cobblemon:normal_gem_cluster",
+    "cobblemon:large_normal_gem_bud",
+    "cobblemon:medium_normal_gem_bud",
+    "cobblemon:small_normal_gem_bud"
+  ],
+  "mat26": [
+    "cobblemon:poison_gem_cluster",
+    "cobblemon:large_poison_gem_bud",
+    "cobblemon:medium_poison_gem_bud",
+    "cobblemon:small_poison_gem_bud"
+  ],
+  "mat28": [
+    "cobblemon:psychic_gem_cluster",
+    "cobblemon:large_psychic_gem_bud",
+    "cobblemon:medium_psychic_gem_bud",
+    "cobblemon:small_psychic_gem_bud"
+  ],
+  "mat30": [
+    "cobblemon:rock_gem_cluster",
+    "cobblemon:large_rock_gem_bud",
+    "cobblemon:medium_rock_gem_bud",
+    "cobblemon:small_rock_gem_bud"
+  ],
+  "mat32": [
+    "cobblemon:steel_gem_cluster",
+    "cobblemon:large_steel_gem_bud",
+    "cobblemon:medium_steel_gem_bud",
+    "cobblemon:small_steel_gem_bud"
+  ],
+  "mat34": [
+    "cobblemon:water_gem_cluster",
+    "cobblemon:large_water_gem_bud",
+    "cobblemon:medium_water_gem_bud",
+    "cobblemon:small_water_gem_bud"
+  ],
+  "block_size": 64,
+  "blocklight":  {
+    "color": [
+      "supplemental_patches:cobblemon/type_gem/bug",
+      null,
+      "supplemental_patches:cobblemon/type_gem/dark",
+      null,
+      "supplemental_patches:cobblemon/type_gem/dragon",
+      null,
+      "supplemental_patches:cobblemon/type_gem/electric",
+      null,
+      "supplemental_patches:cobblemon/type_gem/fairy",
+      null,
+      "supplemental_patches:cobblemon/type_gem/fighting",
+      null,
+      "supplemental_patches:cobblemon/type_gem/fire",
+      null,
+      "supplemental_patches:cobblemon/type_gem/flying",
+      null,
+      "supplemental_patches:cobblemon/type_gem/ghost",
+      null,
+      "supplemental_patches:cobblemon/type_gem/grass",
+      null,
+      "supplemental_patches:cobblemon/type_gem/ground",
+      null,
+      "supplemental_patches:cobblemon/type_gem/ice",
+      null,
+      "supplemental_patches:cobblemon/type_gem/normal",
+      null,
+      "supplemental_patches:cobblemon/type_gem/poison",
+      null,
+      "supplemental_patches:cobblemon/type_gem/psychic",
+      null,
+      "supplemental_patches:cobblemon/type_gem/rock",
+      null,
+      "supplemental_patches:cobblemon/type_gem/steel",
+      null,
+      "supplemental_patches:cobblemon/type_gem/water",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "conditions": [
+      "GLOWING_TYPE_GEM",
+      "DO_IPBR_LIGHTS"
+    ]
+  }
+}
