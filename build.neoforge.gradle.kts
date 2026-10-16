@@ -32,6 +32,9 @@ val MODS = listOf(
 	"immediately-fast#",
 	"renderscale#",
 
+	// dynamic lights
+	"lambdynamiclights#",
+
 	// abnormals mods
 	"abnormals-delight*",
 	"atmospheric",

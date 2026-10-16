@@ -1003,6 +1003,7 @@ fun generateFog(directory: Path) {
 const val SHADOW_DIRECTORY = "/shaders/program/shadow.glsl"
 const val GBUFFER_BLOCK_DIRECTORY = "/shaders/program/gbuffers_block.glsl"
 const val SHADOW_COMP_DIRECTORY = "/shaders/program/shadowcomp.glsl"
+const val IRIS_PBR_DIRECTORY = "/shaders/lib/materials/materialHandling/irisIPBR.glsl"
 
 fun modifyGBuffers(directory: Path) {
     var file = File(directory.absolutePathString() + SHADOW_DIRECTORY)
@@ -1012,6 +1013,22 @@ fun modifyGBuffers(directory: Path) {
             "        DoWave(position.xyz, mat);\n        DoWave_BlockEntity(position.xyz, blockEntityId);"
         )
     )
+
+	file = File(directory.absolutePathString() + IRIS_PBR_DIRECTORY)
+	file.writeText(
+		file.readText().replace(
+			Regex("bool translucentMultCalculated;([\\s\n\r])+vec4 translucentMult;"),
+			"#ifndef GBUFFERS_BLOCK\n" +
+				"    bool translucentMultCalculated;\n" +
+				"    vec4 translucentMult;\n" +
+				"#endif"
+		).replace(
+			"            #include \"/lib/materials/specificMaterials/translucents/beacon.glsl\"",
+			"            #ifndef GBUFFERS_BLOCK\n" +
+				"                #include \"/lib/materials/specificMaterials/translucents/beacon.glsl\"\n" +
+				"            #endif"
+		)
+	)
 
     file = File(directory.absolutePathString() + GBUFFER_BLOCK_DIRECTORY)
     file.writeText(

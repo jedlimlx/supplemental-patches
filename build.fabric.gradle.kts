@@ -27,6 +27,9 @@ val MODS = listOf(
 	"ferrite-core#",
 	"immediately-fast#",
 
+	// dynamic lights
+	"lambdynamiclights#",
+
 	// supplementaries
 	"#supplementaries*",
 	"#amendments*",
